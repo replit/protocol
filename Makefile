@@ -1,12 +1,18 @@
-clean:
-	rm -f js/index.d.ts js/index.js go/api.pb.go
+build: build-go build-js
+publish: publish-go publish-js
 
-javascript: clean
-	cd js && yarn && yarn publish && make clean
+clean-js:
+	rm -f js/index.d.ts js/index.js
+build-js: clean-js
+	cd js && yarn && yarn prepublishOnly
+publish-js:
+	cd js && yarn publish
 
-go: clean
-	protoc api.proto --go_out=plugin=grpc:./go && \
+clean-go:
+	rm -rf go/api.pb.go
+build-go: clean-go
+	protoc api.proto --go_out=plugin=grpc:./go
+publish-go:
 	git subtree split --prefix=go -b go-release && \
 	git push git@github.com:replit/protocol-go.git go-release:master && \
-	git branch -D go-release && \
-	make clean
+	git branch -D go-release
