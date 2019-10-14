@@ -1,0 +1,15 @@
+{
+  "name": "@replit/protocol",
+  "version": "0.0.1",
+  "description": "JavaScript bindings for the repl.it protocol",
+  "main": "index.js",
+  "repository": "https://github.com/replit/protocol",
+  "author": "faris@repl.it",
+  "license": "MIT",
+  "scripts": {
+    "prepublishOnly": "pbjs -t static-module -w default -o index.js ../api.proto && pbts -o index.d.ts index.js"
+  },
+  "dependencies": {
+    "protobufjs": "^6.8.8"
+  }
+}

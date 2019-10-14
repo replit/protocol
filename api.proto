@@ -21,7 +21,7 @@ message Command {
     OpenChannelRes openChanRes = 4;
 
     CloseChannel closeChan = 5;
-    CloseChannel closeChanRes = 6;
+    CloseChannelRes closeChanRes = 6;
 
     ContainerState containerState = 9;
     PortOpen portOpen = 10;
@@ -45,6 +45,7 @@ message Command {
 
     OK ok = 30;
 
+    File persist = 31;
     File write = 32;
     File remove = 33;
     Move move = 34;
@@ -72,6 +73,8 @@ message Command {
 
     Ping ping = 120;
     Pong pong = 121;
+    Hello hello = 122;
+    Goodbye goodbye = 123;
 
     Hint hint = 130;
 
@@ -86,6 +89,10 @@ message Command {
 
     OTPacket ot = 220;
     OTStatus otstatus = 221;
+    OTLinkFile otLinkFile = 222;
+    OTCursor otNewCursor = 223;
+    OTCursor otDeleteCursor = 224;
+    Flush flush = 251;
 
     Debug debug = 230;
 
@@ -97,16 +104,63 @@ message Command {
 
     ExecInfo execInfo = 240;
 
+    // DEPRECATED: use the commands right under this
+    // subscribe should
     File subscribe = 250;
+    File eventCreated = 252;
+    File eventModified = 253;
+    File eventDeleted = 254;
+    Move eventMoved = 255;
+
+    // yep, use these
+    SubscribeFile subscribeFile = 256;
+    FileEvent fileEvent = 257;
+
+    Roster roster = 260;
+    User join = 261;
+    User part = 262;
+
+    Exec exec = 270;
+
+    PackageSearch packageSearch = 280;
+    PackageSearchResp packageSearchResp = 281;
+    PackageInfo packageInfo = 282;
+    PackageInfoResp packageInfoResp = 283;
+    PackageAdd packageAdd = 284;
+    PackageRemove packageRemove = 285;
+    PackageInstall packageInstall = 286;
+    PackageListSpecfile packageListSpecfile = 287;
+    PackageListSpecfileResp packageListSpecfileResp = 288;
+
+    PackageCacheSave packageCacheSave = 289;
 
     ChatMessage chatMessage = 310;
+    ChatTyping chatTyping = 311;
+    ChatScrollback chatScrollback = 312;
   }
 
   string ref = 1000;
 }
 
+message SubscribeFile { repeated File files = 1; }
+
+message FileEvent {
+  File file = 1;
+
+  // when the Op is a Move dest is set to the destination of the move.
+  File dest = 3;
+
+  enum Op { Create = 0; Move = 1; Remove = 2; Modify = 3; }
+  Op op = 2;
+}
+
+message Flush {}
+
+message OTLinkFile { File file = 1; }
+
 message Auth {
   string token = 1;
+  string containerID = 2;
 }
 
 message VCREntry {
@@ -116,6 +170,8 @@ message VCREntry {
   Direction direction = 2;
 
   Command command = 3;
+
+  string uid = 4;
 }
 
 message StartVCR {}
@@ -172,6 +228,14 @@ message Hint { string text = 1; }
 
 message Ping {}
 message Pong {}
+
+message Hello {
+  uint32 userid = 1;
+  string username = 2;
+  string token = 3;
+}
+
+message Goodbye {}
 
 enum State { Stopped = 0; Running = 1; }
 
@@ -254,6 +318,8 @@ message OpenChannel {
 
   enum Action { CREATE = 0; ATTACH = 1; ATTACH_OR_CREATE = 2; }
   Action action = 3;
+
+  int32 id = 4;
 }
 
 message OpenChannelRes {
@@ -265,7 +331,19 @@ message OpenChannelRes {
   string error = 3;
 }
 
-message CloseChannel { int32 id = 1; }
+message CloseChannel {
+  int32 id = 1;
+
+  enum Action { DISCONNECT = 0; TRY_CLOSE = 1; CLOSE = 2; }
+  Action action = 2;
+}
+
+message CloseChannelRes {
+  int32 id = 1;
+
+  enum Status { DISCONNECT = 0; CLOSE = 1; NOTHING = 2; }
+  Status status = 2;
+}
 
 message ContainerState {
   enum State { SLEEP = 0; READY = 1; }
@@ -294,9 +372,78 @@ message OTRuneTransformOp {
 message OTStatus {
   string contents = 1;
   uint32 version = 2;
+  File linkedFile = 3;
+  repeated OTCursor cursors = 4;
+}
+
+message OTCursor {
+  uint32 position = 1;
+  uint32 selectionStart = 2;
+  uint32 selectionEnd = 3;
+  User user = 4;
+  string id = 5;
 }
 
 message ChatMessage {
   string username = 1;
   string text = 2;
 }
+
+message ChatTyping {
+  string username = 1;
+  bool typing = 2;
+}
+
+message User {
+  uint32 id = 1;
+  string name = 2;
+  repeated string roles = 3;
+  int32 session = 4;
+}
+
+message Roster { repeated User user = 1; }
+
+message Exec {
+  repeated string args = 1;
+  map<string, string> env = 2;
+  bool blocking = 3;
+}
+
+message Package {
+  // Used always.
+  string name = 1;
+  // Used only for add and remove.
+  string spec = 2;
+  // Used only for search and info.
+  string description = 10;
+  string version = 11;
+  string homepageURL = 12;
+  string documentationURL = 13;
+  string sourceCodeURL = 14;
+  string bugTrackerURL = 15;
+  string author = 16;
+  string license = 17;
+  repeated Package dependencies = 18;
+}
+
+message PackageSearch { string query = 1; }
+
+message PackageSearchResp { repeated Package results = 1; }
+
+message PackageInfo { Package pkg = 1; }
+
+message PackageInfoResp { Package pkg = 1; }
+
+message PackageAdd { repeated Package pkgs = 1; }
+
+message PackageRemove { repeated Package pkgs = 1; }
+
+message PackageInstall {}
+
+message PackageListSpecfile {}
+
+message PackageListSpecfileResp { repeated Package pkgs = 1; }
+
+message PackageCacheSave {}
+
+message ChatScrollback { repeated ChatMessage scrollback = 1; }
