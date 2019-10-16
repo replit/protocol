@@ -4,9 +4,9 @@ publish: publish-go publish-js
 clean-js:
 	rm -f js/index.d.ts js/index.js
 build-js: clean-js
-	cd js && yarn && yarn prepublishOnly
+	cd js && npm && npm prepublishOnly
 publish-js:
-	cd js && yarn publish
+	cd js && npm publish
 
 clean-go:
 	rm -rf go/api.pb.go
