@@ -4,17 +4,18 @@ bump-%:
 	SEMVER_NEW_TAG=$$(bash ./semver.sh bump $(*) $(VERSION)) &&\
 	SEMVER_NEW_TAG="v$${SEMVER_NEW_TAG}" && \
 	echo "new version: $${SEMVER_NEW_TAG}" && \
-	git tag $${SEMVER_NEW_TAG} && \
-	cd js && npm version $${SEMVER_NEW_TAG}
+	cd js && npm version $${SEMVER_NEW_TAG} && \
+	git commit -am "[$(*)] Bump version to $${SEMVER_NEW_TAG}" && \
+	git tag $${SEMVER_NEW_TAG}
 
-
+all: build publish
 build: build-go build-js
 publish: publish-go publish-js
 
 clean-js:
 	rm -f js/index.d.ts js/index.js
 build-js: clean-js
-	cd js && npm && npm prepublishOnly
+	cd js && npm install && npm run prepublishOnly
 publish-js:
 	cd js && npm publish
 
