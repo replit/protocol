@@ -8,7 +8,7 @@ bump-%:
 	git commit -am "[$(*)] Bump version to $${SEMVER_NEW_TAG}" && \
 	git tag $${SEMVER_NEW_TAG}
 
-all: build publish
+all: build bump-patch publish
 build: build-go build-js
 publish: publish-go publish-js
 
