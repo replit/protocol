@@ -1,6 +1,6 @@
 import * as $protobuf from "protobufjs";
-/** Namespace api. */
-export namespace api {
+/** Namespace replitproto. */
+export namespace replitproto {
 
     /** Properties of a Command. */
     interface ICommand {
@@ -12,31 +12,31 @@ export namespace api {
         session?: (number|null);
 
         /** Command openChan */
-        openChan?: (api.IOpenChannel|null);
+        openChan?: (replitproto.IOpenChannel|null);
 
         /** Command openChanRes */
-        openChanRes?: (api.IOpenChannelRes|null);
+        openChanRes?: (replitproto.IOpenChannelRes|null);
 
         /** Command closeChan */
-        closeChan?: (api.ICloseChannel|null);
+        closeChan?: (replitproto.ICloseChannel|null);
 
         /** Command closeChanRes */
-        closeChanRes?: (api.ICloseChannelRes|null);
+        closeChanRes?: (replitproto.ICloseChannelRes|null);
 
         /** Command containerState */
-        containerState?: (api.IContainerState|null);
+        containerState?: (replitproto.IContainerState|null);
 
         /** Command portOpen */
-        portOpen?: (api.IPortOpen|null);
+        portOpen?: (replitproto.IPortOpen|null);
 
         /** Command toast */
-        toast?: (api.IToast|null);
+        toast?: (replitproto.IToast|null);
 
         /** Command runMain */
-        runMain?: (api.IRunMain|null);
+        runMain?: (replitproto.IRunMain|null);
 
         /** Command clear */
-        clear?: (api.IClear|null);
+        clear?: (replitproto.IClear|null);
 
         /** Command eval */
         "eval"?: (string|null);
@@ -54,214 +54,214 @@ export namespace api {
         error?: (string|null);
 
         /** Command saneTerm */
-        saneTerm?: (api.ISaneTerm|null);
+        saneTerm?: (replitproto.ISaneTerm|null);
 
         /** Command resizeTerm */
-        resizeTerm?: (api.IResizeTerm|null);
+        resizeTerm?: (replitproto.IResizeTerm|null);
 
         /** Command state */
-        state?: (api.State|null);
+        state?: (replitproto.State|null);
 
         /** Command ok */
-        ok?: (api.IOK|null);
+        ok?: (replitproto.IOK|null);
 
         /** Command persist */
-        persist?: (api.IFile|null);
+        persist?: (replitproto.IFile|null);
 
         /** Command write */
-        write?: (api.IFile|null);
+        write?: (replitproto.IFile|null);
 
         /** Command remove */
-        remove?: (api.IFile|null);
+        remove?: (replitproto.IFile|null);
 
         /** Command move */
-        move?: (api.IMove|null);
+        move?: (replitproto.IMove|null);
 
         /** Command mkdir */
-        mkdir?: (api.IFile|null);
+        mkdir?: (replitproto.IFile|null);
 
         /** Command read */
-        read?: (api.IFile|null);
+        read?: (replitproto.IFile|null);
 
         /** Command readdir */
-        readdir?: (api.IFile|null);
+        readdir?: (replitproto.IFile|null);
 
         /** Command files */
-        files?: (api.IFiles|null);
+        files?: (replitproto.IFiles|null);
 
         /** Command file */
-        file?: (api.IFile|null);
+        file?: (replitproto.IFile|null);
 
         /** Command checkChanges */
-        checkChanges?: (api.ICheckChanges|null);
+        checkChanges?: (replitproto.ICheckChanges|null);
 
         /** Command changedFiles */
-        changedFiles?: (api.IFiles|null);
+        changedFiles?: (replitproto.IFiles|null);
 
         /** Command lintResults */
-        lintResults?: (api.ILintResults|null);
+        lintResults?: (replitproto.ILintResults|null);
 
         /** Command runContainedTest */
-        runContainedTest?: (api.IContainedTest|null);
+        runContainedTest?: (replitproto.IContainedTest|null);
 
         /** Command testResult */
-        testResult?: (api.ITestResult|null);
+        testResult?: (replitproto.ITestResult|null);
 
         /** Command debuggerStart */
         debuggerStart?: (string|null);
 
         /** Command debuggerStep */
-        debuggerStep?: (api.IRunMain|null);
+        debuggerStep?: (replitproto.IRunMain|null);
 
         /** Command debuggerStatus */
-        debuggerStatus?: (api.IDebugStatus|null);
+        debuggerStatus?: (replitproto.IDebugStatus|null);
 
         /** Command ensurePackages */
-        ensurePackages?: (api.IEnsurePackages|null);
+        ensurePackages?: (replitproto.IEnsurePackages|null);
 
         /** Command ping */
-        ping?: (api.IPing|null);
+        ping?: (replitproto.IPing|null);
 
         /** Command pong */
-        pong?: (api.IPong|null);
+        pong?: (replitproto.IPong|null);
 
         /** Command hello */
-        hello?: (api.IHello|null);
+        hello?: (replitproto.IHello|null);
 
         /** Command goodbye */
-        goodbye?: (api.IGoodbye|null);
+        goodbye?: (replitproto.IGoodbye|null);
 
         /** Command hint */
-        hint?: (api.IHint|null);
+        hint?: (replitproto.IHint|null);
 
         /** Command connect */
-        connect?: (api.IConnect|null);
+        connect?: (replitproto.IConnect|null);
 
         /** Command send */
-        send?: (api.ISend|null);
+        send?: (replitproto.ISend|null);
 
         /** Command recv */
-        recv?: (api.IRecv|null);
+        recv?: (replitproto.IRecv|null);
 
         /** Command disconnect */
-        disconnect?: (api.IDisconnect|null);
+        disconnect?: (replitproto.IDisconnect|null);
 
         /** Command fileAuthReq */
-        fileAuthReq?: (api.IFileAuthReq|null);
+        fileAuthReq?: (replitproto.IFileAuthReq|null);
 
         /** Command fileAuthRes */
-        fileAuthRes?: (api.IFileAuthRes|null);
+        fileAuthRes?: (replitproto.IFileAuthRes|null);
 
         /** Command mutliFileAuthRes */
-        mutliFileAuthRes?: (api.IMultiFileAuthRes|null);
+        mutliFileAuthRes?: (replitproto.IMultiFileAuthRes|null);
 
         /** Command ot */
-        ot?: (api.IOTPacket|null);
+        ot?: (replitproto.IOTPacket|null);
 
         /** Command otstatus */
-        otstatus?: (api.IOTStatus|null);
+        otstatus?: (replitproto.IOTStatus|null);
 
         /** Command otLinkFile */
-        otLinkFile?: (api.IOTLinkFile|null);
+        otLinkFile?: (replitproto.IOTLinkFile|null);
 
         /** Command otNewCursor */
-        otNewCursor?: (api.IOTCursor|null);
+        otNewCursor?: (replitproto.IOTCursor|null);
 
         /** Command otDeleteCursor */
-        otDeleteCursor?: (api.IOTCursor|null);
+        otDeleteCursor?: (replitproto.IOTCursor|null);
 
         /** Command flush */
-        flush?: (api.IFlush|null);
+        flush?: (replitproto.IFlush|null);
 
         /** Command debug */
-        debug?: (api.IDebug|null);
+        debug?: (replitproto.IDebug|null);
 
         /** Command startVCR */
-        startVCR?: (api.IStartVCR|null);
+        startVCR?: (replitproto.IStartVCR|null);
 
         /** Command readVCR */
-        readVCR?: (api.IReadVCR|null);
+        readVCR?: (replitproto.IReadVCR|null);
 
         /** Command VCRLog */
-        VCRLog?: (api.IVCRLog|null);
+        VCRLog?: (replitproto.IVCRLog|null);
 
         /** Command auth */
-        auth?: (api.IAuth|null);
+        auth?: (replitproto.IAuth|null);
 
         /** Command execInfo */
-        execInfo?: (api.IExecInfo|null);
+        execInfo?: (replitproto.IExecInfo|null);
 
         /** Command subscribe */
-        subscribe?: (api.IFile|null);
+        subscribe?: (replitproto.IFile|null);
 
         /** Command eventCreated */
-        eventCreated?: (api.IFile|null);
+        eventCreated?: (replitproto.IFile|null);
 
         /** Command eventModified */
-        eventModified?: (api.IFile|null);
+        eventModified?: (replitproto.IFile|null);
 
         /** Command eventDeleted */
-        eventDeleted?: (api.IFile|null);
+        eventDeleted?: (replitproto.IFile|null);
 
         /** Command eventMoved */
-        eventMoved?: (api.IMove|null);
+        eventMoved?: (replitproto.IMove|null);
 
         /** Command subscribeFile */
-        subscribeFile?: (api.ISubscribeFile|null);
+        subscribeFile?: (replitproto.ISubscribeFile|null);
 
         /** Command fileEvent */
-        fileEvent?: (api.IFileEvent|null);
+        fileEvent?: (replitproto.IFileEvent|null);
 
         /** Command roster */
-        roster?: (api.IRoster|null);
+        roster?: (replitproto.IRoster|null);
 
         /** Command join */
-        join?: (api.IUser|null);
+        join?: (replitproto.IUser|null);
 
         /** Command part */
-        part?: (api.IUser|null);
+        part?: (replitproto.IUser|null);
 
         /** Command exec */
-        exec?: (api.IExec|null);
+        exec?: (replitproto.IExec|null);
 
         /** Command packageSearch */
-        packageSearch?: (api.IPackageSearch|null);
+        packageSearch?: (replitproto.IPackageSearch|null);
 
         /** Command packageSearchResp */
-        packageSearchResp?: (api.IPackageSearchResp|null);
+        packageSearchResp?: (replitproto.IPackageSearchResp|null);
 
         /** Command packageInfo */
-        packageInfo?: (api.IPackageInfo|null);
+        packageInfo?: (replitproto.IPackageInfo|null);
 
         /** Command packageInfoResp */
-        packageInfoResp?: (api.IPackageInfoResp|null);
+        packageInfoResp?: (replitproto.IPackageInfoResp|null);
 
         /** Command packageAdd */
-        packageAdd?: (api.IPackageAdd|null);
+        packageAdd?: (replitproto.IPackageAdd|null);
 
         /** Command packageRemove */
-        packageRemove?: (api.IPackageRemove|null);
+        packageRemove?: (replitproto.IPackageRemove|null);
 
         /** Command packageInstall */
-        packageInstall?: (api.IPackageInstall|null);
+        packageInstall?: (replitproto.IPackageInstall|null);
 
         /** Command packageListSpecfile */
-        packageListSpecfile?: (api.IPackageListSpecfile|null);
+        packageListSpecfile?: (replitproto.IPackageListSpecfile|null);
 
         /** Command packageListSpecfileResp */
-        packageListSpecfileResp?: (api.IPackageListSpecfileResp|null);
+        packageListSpecfileResp?: (replitproto.IPackageListSpecfileResp|null);
 
         /** Command packageCacheSave */
-        packageCacheSave?: (api.IPackageCacheSave|null);
+        packageCacheSave?: (replitproto.IPackageCacheSave|null);
 
         /** Command chatMessage */
-        chatMessage?: (api.IChatMessage|null);
+        chatMessage?: (replitproto.IChatMessage|null);
 
         /** Command chatTyping */
-        chatTyping?: (api.IChatTyping|null);
+        chatTyping?: (replitproto.IChatTyping|null);
 
         /** Command chatScrollback */
-        chatScrollback?: (api.IChatScrollback|null);
+        chatScrollback?: (replitproto.IChatScrollback|null);
 
         /** Command ref */
         ref?: (string|null);
@@ -274,7 +274,7 @@ export namespace api {
          * Constructs a new Command.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.ICommand);
+        constructor(properties?: replitproto.ICommand);
 
         /** Command channel. */
         public channel: number;
@@ -283,31 +283,31 @@ export namespace api {
         public session: number;
 
         /** Command openChan. */
-        public openChan?: (api.IOpenChannel|null);
+        public openChan?: (replitproto.IOpenChannel|null);
 
         /** Command openChanRes. */
-        public openChanRes?: (api.IOpenChannelRes|null);
+        public openChanRes?: (replitproto.IOpenChannelRes|null);
 
         /** Command closeChan. */
-        public closeChan?: (api.ICloseChannel|null);
+        public closeChan?: (replitproto.ICloseChannel|null);
 
         /** Command closeChanRes. */
-        public closeChanRes?: (api.ICloseChannelRes|null);
+        public closeChanRes?: (replitproto.ICloseChannelRes|null);
 
         /** Command containerState. */
-        public containerState?: (api.IContainerState|null);
+        public containerState?: (replitproto.IContainerState|null);
 
         /** Command portOpen. */
-        public portOpen?: (api.IPortOpen|null);
+        public portOpen?: (replitproto.IPortOpen|null);
 
         /** Command toast. */
-        public toast?: (api.IToast|null);
+        public toast?: (replitproto.IToast|null);
 
         /** Command runMain. */
-        public runMain?: (api.IRunMain|null);
+        public runMain?: (replitproto.IRunMain|null);
 
         /** Command clear. */
-        public clear?: (api.IClear|null);
+        public clear?: (replitproto.IClear|null);
 
         /** Command eval. */
         public eval: string;
@@ -325,214 +325,214 @@ export namespace api {
         public error: string;
 
         /** Command saneTerm. */
-        public saneTerm?: (api.ISaneTerm|null);
+        public saneTerm?: (replitproto.ISaneTerm|null);
 
         /** Command resizeTerm. */
-        public resizeTerm?: (api.IResizeTerm|null);
+        public resizeTerm?: (replitproto.IResizeTerm|null);
 
         /** Command state. */
-        public state: api.State;
+        public state: replitproto.State;
 
         /** Command ok. */
-        public ok?: (api.IOK|null);
+        public ok?: (replitproto.IOK|null);
 
         /** Command persist. */
-        public persist?: (api.IFile|null);
+        public persist?: (replitproto.IFile|null);
 
         /** Command write. */
-        public write?: (api.IFile|null);
+        public write?: (replitproto.IFile|null);
 
         /** Command remove. */
-        public remove?: (api.IFile|null);
+        public remove?: (replitproto.IFile|null);
 
         /** Command move. */
-        public move?: (api.IMove|null);
+        public move?: (replitproto.IMove|null);
 
         /** Command mkdir. */
-        public mkdir?: (api.IFile|null);
+        public mkdir?: (replitproto.IFile|null);
 
         /** Command read. */
-        public read?: (api.IFile|null);
+        public read?: (replitproto.IFile|null);
 
         /** Command readdir. */
-        public readdir?: (api.IFile|null);
+        public readdir?: (replitproto.IFile|null);
 
         /** Command files. */
-        public files?: (api.IFiles|null);
+        public files?: (replitproto.IFiles|null);
 
         /** Command file. */
-        public file?: (api.IFile|null);
+        public file?: (replitproto.IFile|null);
 
         /** Command checkChanges. */
-        public checkChanges?: (api.ICheckChanges|null);
+        public checkChanges?: (replitproto.ICheckChanges|null);
 
         /** Command changedFiles. */
-        public changedFiles?: (api.IFiles|null);
+        public changedFiles?: (replitproto.IFiles|null);
 
         /** Command lintResults. */
-        public lintResults?: (api.ILintResults|null);
+        public lintResults?: (replitproto.ILintResults|null);
 
         /** Command runContainedTest. */
-        public runContainedTest?: (api.IContainedTest|null);
+        public runContainedTest?: (replitproto.IContainedTest|null);
 
         /** Command testResult. */
-        public testResult?: (api.ITestResult|null);
+        public testResult?: (replitproto.ITestResult|null);
 
         /** Command debuggerStart. */
         public debuggerStart: string;
 
         /** Command debuggerStep. */
-        public debuggerStep?: (api.IRunMain|null);
+        public debuggerStep?: (replitproto.IRunMain|null);
 
         /** Command debuggerStatus. */
-        public debuggerStatus?: (api.IDebugStatus|null);
+        public debuggerStatus?: (replitproto.IDebugStatus|null);
 
         /** Command ensurePackages. */
-        public ensurePackages?: (api.IEnsurePackages|null);
+        public ensurePackages?: (replitproto.IEnsurePackages|null);
 
         /** Command ping. */
-        public ping?: (api.IPing|null);
+        public ping?: (replitproto.IPing|null);
 
         /** Command pong. */
-        public pong?: (api.IPong|null);
+        public pong?: (replitproto.IPong|null);
 
         /** Command hello. */
-        public hello?: (api.IHello|null);
+        public hello?: (replitproto.IHello|null);
 
         /** Command goodbye. */
-        public goodbye?: (api.IGoodbye|null);
+        public goodbye?: (replitproto.IGoodbye|null);
 
         /** Command hint. */
-        public hint?: (api.IHint|null);
+        public hint?: (replitproto.IHint|null);
 
         /** Command connect. */
-        public connect?: (api.IConnect|null);
+        public connect?: (replitproto.IConnect|null);
 
         /** Command send. */
-        public send?: (api.ISend|null);
+        public send?: (replitproto.ISend|null);
 
         /** Command recv. */
-        public recv?: (api.IRecv|null);
+        public recv?: (replitproto.IRecv|null);
 
         /** Command disconnect. */
-        public disconnect?: (api.IDisconnect|null);
+        public disconnect?: (replitproto.IDisconnect|null);
 
         /** Command fileAuthReq. */
-        public fileAuthReq?: (api.IFileAuthReq|null);
+        public fileAuthReq?: (replitproto.IFileAuthReq|null);
 
         /** Command fileAuthRes. */
-        public fileAuthRes?: (api.IFileAuthRes|null);
+        public fileAuthRes?: (replitproto.IFileAuthRes|null);
 
         /** Command mutliFileAuthRes. */
-        public mutliFileAuthRes?: (api.IMultiFileAuthRes|null);
+        public mutliFileAuthRes?: (replitproto.IMultiFileAuthRes|null);
 
         /** Command ot. */
-        public ot?: (api.IOTPacket|null);
+        public ot?: (replitproto.IOTPacket|null);
 
         /** Command otstatus. */
-        public otstatus?: (api.IOTStatus|null);
+        public otstatus?: (replitproto.IOTStatus|null);
 
         /** Command otLinkFile. */
-        public otLinkFile?: (api.IOTLinkFile|null);
+        public otLinkFile?: (replitproto.IOTLinkFile|null);
 
         /** Command otNewCursor. */
-        public otNewCursor?: (api.IOTCursor|null);
+        public otNewCursor?: (replitproto.IOTCursor|null);
 
         /** Command otDeleteCursor. */
-        public otDeleteCursor?: (api.IOTCursor|null);
+        public otDeleteCursor?: (replitproto.IOTCursor|null);
 
         /** Command flush. */
-        public flush?: (api.IFlush|null);
+        public flush?: (replitproto.IFlush|null);
 
         /** Command debug. */
-        public debug?: (api.IDebug|null);
+        public debug?: (replitproto.IDebug|null);
 
         /** Command startVCR. */
-        public startVCR?: (api.IStartVCR|null);
+        public startVCR?: (replitproto.IStartVCR|null);
 
         /** Command readVCR. */
-        public readVCR?: (api.IReadVCR|null);
+        public readVCR?: (replitproto.IReadVCR|null);
 
         /** Command VCRLog. */
-        public VCRLog?: (api.IVCRLog|null);
+        public VCRLog?: (replitproto.IVCRLog|null);
 
         /** Command auth. */
-        public auth?: (api.IAuth|null);
+        public auth?: (replitproto.IAuth|null);
 
         /** Command execInfo. */
-        public execInfo?: (api.IExecInfo|null);
+        public execInfo?: (replitproto.IExecInfo|null);
 
         /** Command subscribe. */
-        public subscribe?: (api.IFile|null);
+        public subscribe?: (replitproto.IFile|null);
 
         /** Command eventCreated. */
-        public eventCreated?: (api.IFile|null);
+        public eventCreated?: (replitproto.IFile|null);
 
         /** Command eventModified. */
-        public eventModified?: (api.IFile|null);
+        public eventModified?: (replitproto.IFile|null);
 
         /** Command eventDeleted. */
-        public eventDeleted?: (api.IFile|null);
+        public eventDeleted?: (replitproto.IFile|null);
 
         /** Command eventMoved. */
-        public eventMoved?: (api.IMove|null);
+        public eventMoved?: (replitproto.IMove|null);
 
         /** Command subscribeFile. */
-        public subscribeFile?: (api.ISubscribeFile|null);
+        public subscribeFile?: (replitproto.ISubscribeFile|null);
 
         /** Command fileEvent. */
-        public fileEvent?: (api.IFileEvent|null);
+        public fileEvent?: (replitproto.IFileEvent|null);
 
         /** Command roster. */
-        public roster?: (api.IRoster|null);
+        public roster?: (replitproto.IRoster|null);
 
         /** Command join. */
-        public join?: (api.IUser|null);
+        public join?: (replitproto.IUser|null);
 
         /** Command part. */
-        public part?: (api.IUser|null);
+        public part?: (replitproto.IUser|null);
 
         /** Command exec. */
-        public exec?: (api.IExec|null);
+        public exec?: (replitproto.IExec|null);
 
         /** Command packageSearch. */
-        public packageSearch?: (api.IPackageSearch|null);
+        public packageSearch?: (replitproto.IPackageSearch|null);
 
         /** Command packageSearchResp. */
-        public packageSearchResp?: (api.IPackageSearchResp|null);
+        public packageSearchResp?: (replitproto.IPackageSearchResp|null);
 
         /** Command packageInfo. */
-        public packageInfo?: (api.IPackageInfo|null);
+        public packageInfo?: (replitproto.IPackageInfo|null);
 
         /** Command packageInfoResp. */
-        public packageInfoResp?: (api.IPackageInfoResp|null);
+        public packageInfoResp?: (replitproto.IPackageInfoResp|null);
 
         /** Command packageAdd. */
-        public packageAdd?: (api.IPackageAdd|null);
+        public packageAdd?: (replitproto.IPackageAdd|null);
 
         /** Command packageRemove. */
-        public packageRemove?: (api.IPackageRemove|null);
+        public packageRemove?: (replitproto.IPackageRemove|null);
 
         /** Command packageInstall. */
-        public packageInstall?: (api.IPackageInstall|null);
+        public packageInstall?: (replitproto.IPackageInstall|null);
 
         /** Command packageListSpecfile. */
-        public packageListSpecfile?: (api.IPackageListSpecfile|null);
+        public packageListSpecfile?: (replitproto.IPackageListSpecfile|null);
 
         /** Command packageListSpecfileResp. */
-        public packageListSpecfileResp?: (api.IPackageListSpecfileResp|null);
+        public packageListSpecfileResp?: (replitproto.IPackageListSpecfileResp|null);
 
         /** Command packageCacheSave. */
-        public packageCacheSave?: (api.IPackageCacheSave|null);
+        public packageCacheSave?: (replitproto.IPackageCacheSave|null);
 
         /** Command chatMessage. */
-        public chatMessage?: (api.IChatMessage|null);
+        public chatMessage?: (replitproto.IChatMessage|null);
 
         /** Command chatTyping. */
-        public chatTyping?: (api.IChatTyping|null);
+        public chatTyping?: (replitproto.IChatTyping|null);
 
         /** Command chatScrollback. */
-        public chatScrollback?: (api.IChatScrollback|null);
+        public chatScrollback?: (replitproto.IChatScrollback|null);
 
         /** Command ref. */
         public ref: string;
@@ -545,23 +545,23 @@ export namespace api {
          * @param [properties] Properties to set
          * @returns Command instance
          */
-        public static create(properties?: api.ICommand): api.Command;
+        public static create(properties?: replitproto.ICommand): replitproto.Command;
 
         /**
-         * Encodes the specified Command message. Does not implicitly {@link api.Command.verify|verify} messages.
+         * Encodes the specified Command message. Does not implicitly {@link replitproto.Command.verify|verify} messages.
          * @param message Command message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.ICommand, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.ICommand, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified Command message, length delimited. Does not implicitly {@link api.Command.verify|verify} messages.
+         * Encodes the specified Command message, length delimited. Does not implicitly {@link replitproto.Command.verify|verify} messages.
          * @param message Command message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.ICommand, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.ICommand, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Command message from the specified reader or buffer.
@@ -571,7 +571,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.Command;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.Command;
 
         /**
          * Decodes a Command message from the specified reader or buffer, length delimited.
@@ -580,7 +580,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.Command;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.Command;
 
         /**
          * Verifies a Command message.
@@ -594,7 +594,7 @@ export namespace api {
          * @param object Plain object
          * @returns Command
          */
-        public static fromObject(object: { [k: string]: any }): api.Command;
+        public static fromObject(object: { [k: string]: any }): replitproto.Command;
 
         /**
          * Creates a plain object from a Command message. Also converts values to other types if specified.
@@ -602,7 +602,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.Command, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.Command, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this Command to JSON.
@@ -615,7 +615,7 @@ export namespace api {
     interface ISubscribeFile {
 
         /** SubscribeFile files */
-        files?: (api.IFile[]|null);
+        files?: (replitproto.IFile[]|null);
     }
 
     /** Represents a SubscribeFile. */
@@ -625,33 +625,33 @@ export namespace api {
          * Constructs a new SubscribeFile.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.ISubscribeFile);
+        constructor(properties?: replitproto.ISubscribeFile);
 
         /** SubscribeFile files. */
-        public files: api.IFile[];
+        public files: replitproto.IFile[];
 
         /**
          * Creates a new SubscribeFile instance using the specified properties.
          * @param [properties] Properties to set
          * @returns SubscribeFile instance
          */
-        public static create(properties?: api.ISubscribeFile): api.SubscribeFile;
+        public static create(properties?: replitproto.ISubscribeFile): replitproto.SubscribeFile;
 
         /**
-         * Encodes the specified SubscribeFile message. Does not implicitly {@link api.SubscribeFile.verify|verify} messages.
+         * Encodes the specified SubscribeFile message. Does not implicitly {@link replitproto.SubscribeFile.verify|verify} messages.
          * @param message SubscribeFile message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.ISubscribeFile, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.ISubscribeFile, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified SubscribeFile message, length delimited. Does not implicitly {@link api.SubscribeFile.verify|verify} messages.
+         * Encodes the specified SubscribeFile message, length delimited. Does not implicitly {@link replitproto.SubscribeFile.verify|verify} messages.
          * @param message SubscribeFile message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.ISubscribeFile, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.ISubscribeFile, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a SubscribeFile message from the specified reader or buffer.
@@ -661,7 +661,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.SubscribeFile;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.SubscribeFile;
 
         /**
          * Decodes a SubscribeFile message from the specified reader or buffer, length delimited.
@@ -670,7 +670,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.SubscribeFile;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.SubscribeFile;
 
         /**
          * Verifies a SubscribeFile message.
@@ -684,7 +684,7 @@ export namespace api {
          * @param object Plain object
          * @returns SubscribeFile
          */
-        public static fromObject(object: { [k: string]: any }): api.SubscribeFile;
+        public static fromObject(object: { [k: string]: any }): replitproto.SubscribeFile;
 
         /**
          * Creates a plain object from a SubscribeFile message. Also converts values to other types if specified.
@@ -692,7 +692,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.SubscribeFile, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.SubscribeFile, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this SubscribeFile to JSON.
@@ -705,13 +705,13 @@ export namespace api {
     interface IFileEvent {
 
         /** FileEvent file */
-        file?: (api.IFile|null);
+        file?: (replitproto.IFile|null);
 
         /** FileEvent dest */
-        dest?: (api.IFile|null);
+        dest?: (replitproto.IFile|null);
 
         /** FileEvent op */
-        op?: (api.FileEvent.Op|null);
+        op?: (replitproto.FileEvent.Op|null);
     }
 
     /** Represents a FileEvent. */
@@ -721,39 +721,39 @@ export namespace api {
          * Constructs a new FileEvent.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IFileEvent);
+        constructor(properties?: replitproto.IFileEvent);
 
         /** FileEvent file. */
-        public file?: (api.IFile|null);
+        public file?: (replitproto.IFile|null);
 
         /** FileEvent dest. */
-        public dest?: (api.IFile|null);
+        public dest?: (replitproto.IFile|null);
 
         /** FileEvent op. */
-        public op: api.FileEvent.Op;
+        public op: replitproto.FileEvent.Op;
 
         /**
          * Creates a new FileEvent instance using the specified properties.
          * @param [properties] Properties to set
          * @returns FileEvent instance
          */
-        public static create(properties?: api.IFileEvent): api.FileEvent;
+        public static create(properties?: replitproto.IFileEvent): replitproto.FileEvent;
 
         /**
-         * Encodes the specified FileEvent message. Does not implicitly {@link api.FileEvent.verify|verify} messages.
+         * Encodes the specified FileEvent message. Does not implicitly {@link replitproto.FileEvent.verify|verify} messages.
          * @param message FileEvent message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IFileEvent, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IFileEvent, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified FileEvent message, length delimited. Does not implicitly {@link api.FileEvent.verify|verify} messages.
+         * Encodes the specified FileEvent message, length delimited. Does not implicitly {@link replitproto.FileEvent.verify|verify} messages.
          * @param message FileEvent message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IFileEvent, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IFileEvent, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a FileEvent message from the specified reader or buffer.
@@ -763,7 +763,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.FileEvent;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.FileEvent;
 
         /**
          * Decodes a FileEvent message from the specified reader or buffer, length delimited.
@@ -772,7 +772,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.FileEvent;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.FileEvent;
 
         /**
          * Verifies a FileEvent message.
@@ -786,7 +786,7 @@ export namespace api {
          * @param object Plain object
          * @returns FileEvent
          */
-        public static fromObject(object: { [k: string]: any }): api.FileEvent;
+        public static fromObject(object: { [k: string]: any }): replitproto.FileEvent;
 
         /**
          * Creates a plain object from a FileEvent message. Also converts values to other types if specified.
@@ -794,7 +794,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.FileEvent, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.FileEvent, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this FileEvent to JSON.
@@ -825,30 +825,30 @@ export namespace api {
          * Constructs a new Flush.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IFlush);
+        constructor(properties?: replitproto.IFlush);
 
         /**
          * Creates a new Flush instance using the specified properties.
          * @param [properties] Properties to set
          * @returns Flush instance
          */
-        public static create(properties?: api.IFlush): api.Flush;
+        public static create(properties?: replitproto.IFlush): replitproto.Flush;
 
         /**
-         * Encodes the specified Flush message. Does not implicitly {@link api.Flush.verify|verify} messages.
+         * Encodes the specified Flush message. Does not implicitly {@link replitproto.Flush.verify|verify} messages.
          * @param message Flush message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IFlush, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IFlush, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified Flush message, length delimited. Does not implicitly {@link api.Flush.verify|verify} messages.
+         * Encodes the specified Flush message, length delimited. Does not implicitly {@link replitproto.Flush.verify|verify} messages.
          * @param message Flush message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IFlush, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IFlush, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Flush message from the specified reader or buffer.
@@ -858,7 +858,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.Flush;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.Flush;
 
         /**
          * Decodes a Flush message from the specified reader or buffer, length delimited.
@@ -867,7 +867,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.Flush;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.Flush;
 
         /**
          * Verifies a Flush message.
@@ -881,7 +881,7 @@ export namespace api {
          * @param object Plain object
          * @returns Flush
          */
-        public static fromObject(object: { [k: string]: any }): api.Flush;
+        public static fromObject(object: { [k: string]: any }): replitproto.Flush;
 
         /**
          * Creates a plain object from a Flush message. Also converts values to other types if specified.
@@ -889,7 +889,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.Flush, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.Flush, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this Flush to JSON.
@@ -902,7 +902,7 @@ export namespace api {
     interface IOTLinkFile {
 
         /** OTLinkFile file */
-        file?: (api.IFile|null);
+        file?: (replitproto.IFile|null);
     }
 
     /** Represents a OTLinkFile. */
@@ -912,33 +912,33 @@ export namespace api {
          * Constructs a new OTLinkFile.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IOTLinkFile);
+        constructor(properties?: replitproto.IOTLinkFile);
 
         /** OTLinkFile file. */
-        public file?: (api.IFile|null);
+        public file?: (replitproto.IFile|null);
 
         /**
          * Creates a new OTLinkFile instance using the specified properties.
          * @param [properties] Properties to set
          * @returns OTLinkFile instance
          */
-        public static create(properties?: api.IOTLinkFile): api.OTLinkFile;
+        public static create(properties?: replitproto.IOTLinkFile): replitproto.OTLinkFile;
 
         /**
-         * Encodes the specified OTLinkFile message. Does not implicitly {@link api.OTLinkFile.verify|verify} messages.
+         * Encodes the specified OTLinkFile message. Does not implicitly {@link replitproto.OTLinkFile.verify|verify} messages.
          * @param message OTLinkFile message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IOTLinkFile, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IOTLinkFile, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified OTLinkFile message, length delimited. Does not implicitly {@link api.OTLinkFile.verify|verify} messages.
+         * Encodes the specified OTLinkFile message, length delimited. Does not implicitly {@link replitproto.OTLinkFile.verify|verify} messages.
          * @param message OTLinkFile message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IOTLinkFile, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IOTLinkFile, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a OTLinkFile message from the specified reader or buffer.
@@ -948,7 +948,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.OTLinkFile;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.OTLinkFile;
 
         /**
          * Decodes a OTLinkFile message from the specified reader or buffer, length delimited.
@@ -957,7 +957,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.OTLinkFile;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.OTLinkFile;
 
         /**
          * Verifies a OTLinkFile message.
@@ -971,7 +971,7 @@ export namespace api {
          * @param object Plain object
          * @returns OTLinkFile
          */
-        public static fromObject(object: { [k: string]: any }): api.OTLinkFile;
+        public static fromObject(object: { [k: string]: any }): replitproto.OTLinkFile;
 
         /**
          * Creates a plain object from a OTLinkFile message. Also converts values to other types if specified.
@@ -979,7 +979,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.OTLinkFile, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.OTLinkFile, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this OTLinkFile to JSON.
@@ -1005,7 +1005,7 @@ export namespace api {
          * Constructs a new Auth.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IAuth);
+        constructor(properties?: replitproto.IAuth);
 
         /** Auth token. */
         public token: string;
@@ -1018,23 +1018,23 @@ export namespace api {
          * @param [properties] Properties to set
          * @returns Auth instance
          */
-        public static create(properties?: api.IAuth): api.Auth;
+        public static create(properties?: replitproto.IAuth): replitproto.Auth;
 
         /**
-         * Encodes the specified Auth message. Does not implicitly {@link api.Auth.verify|verify} messages.
+         * Encodes the specified Auth message. Does not implicitly {@link replitproto.Auth.verify|verify} messages.
          * @param message Auth message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IAuth, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IAuth, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified Auth message, length delimited. Does not implicitly {@link api.Auth.verify|verify} messages.
+         * Encodes the specified Auth message, length delimited. Does not implicitly {@link replitproto.Auth.verify|verify} messages.
          * @param message Auth message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IAuth, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IAuth, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes an Auth message from the specified reader or buffer.
@@ -1044,7 +1044,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.Auth;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.Auth;
 
         /**
          * Decodes an Auth message from the specified reader or buffer, length delimited.
@@ -1053,7 +1053,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.Auth;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.Auth;
 
         /**
          * Verifies an Auth message.
@@ -1067,7 +1067,7 @@ export namespace api {
          * @param object Plain object
          * @returns Auth
          */
-        public static fromObject(object: { [k: string]: any }): api.Auth;
+        public static fromObject(object: { [k: string]: any }): replitproto.Auth;
 
         /**
          * Creates a plain object from an Auth message. Also converts values to other types if specified.
@@ -1075,7 +1075,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.Auth, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.Auth, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this Auth to JSON.
@@ -1091,10 +1091,10 @@ export namespace api {
         timestamp?: (number|Long|null);
 
         /** VCREntry direction */
-        direction?: (api.VCREntry.Direction|null);
+        direction?: (replitproto.VCREntry.Direction|null);
 
         /** VCREntry command */
-        command?: (api.ICommand|null);
+        command?: (replitproto.ICommand|null);
 
         /** VCREntry uid */
         uid?: (string|null);
@@ -1107,16 +1107,16 @@ export namespace api {
          * Constructs a new VCREntry.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IVCREntry);
+        constructor(properties?: replitproto.IVCREntry);
 
         /** VCREntry timestamp. */
         public timestamp: (number|Long);
 
         /** VCREntry direction. */
-        public direction: api.VCREntry.Direction;
+        public direction: replitproto.VCREntry.Direction;
 
         /** VCREntry command. */
-        public command?: (api.ICommand|null);
+        public command?: (replitproto.ICommand|null);
 
         /** VCREntry uid. */
         public uid: string;
@@ -1126,23 +1126,23 @@ export namespace api {
          * @param [properties] Properties to set
          * @returns VCREntry instance
          */
-        public static create(properties?: api.IVCREntry): api.VCREntry;
+        public static create(properties?: replitproto.IVCREntry): replitproto.VCREntry;
 
         /**
-         * Encodes the specified VCREntry message. Does not implicitly {@link api.VCREntry.verify|verify} messages.
+         * Encodes the specified VCREntry message. Does not implicitly {@link replitproto.VCREntry.verify|verify} messages.
          * @param message VCREntry message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IVCREntry, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IVCREntry, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified VCREntry message, length delimited. Does not implicitly {@link api.VCREntry.verify|verify} messages.
+         * Encodes the specified VCREntry message, length delimited. Does not implicitly {@link replitproto.VCREntry.verify|verify} messages.
          * @param message VCREntry message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IVCREntry, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IVCREntry, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a VCREntry message from the specified reader or buffer.
@@ -1152,7 +1152,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.VCREntry;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.VCREntry;
 
         /**
          * Decodes a VCREntry message from the specified reader or buffer, length delimited.
@@ -1161,7 +1161,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.VCREntry;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.VCREntry;
 
         /**
          * Verifies a VCREntry message.
@@ -1175,7 +1175,7 @@ export namespace api {
          * @param object Plain object
          * @returns VCREntry
          */
-        public static fromObject(object: { [k: string]: any }): api.VCREntry;
+        public static fromObject(object: { [k: string]: any }): replitproto.VCREntry;
 
         /**
          * Creates a plain object from a VCREntry message. Also converts values to other types if specified.
@@ -1183,7 +1183,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.VCREntry, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.VCREntry, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this VCREntry to JSON.
@@ -1212,30 +1212,30 @@ export namespace api {
          * Constructs a new StartVCR.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IStartVCR);
+        constructor(properties?: replitproto.IStartVCR);
 
         /**
          * Creates a new StartVCR instance using the specified properties.
          * @param [properties] Properties to set
          * @returns StartVCR instance
          */
-        public static create(properties?: api.IStartVCR): api.StartVCR;
+        public static create(properties?: replitproto.IStartVCR): replitproto.StartVCR;
 
         /**
-         * Encodes the specified StartVCR message. Does not implicitly {@link api.StartVCR.verify|verify} messages.
+         * Encodes the specified StartVCR message. Does not implicitly {@link replitproto.StartVCR.verify|verify} messages.
          * @param message StartVCR message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IStartVCR, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IStartVCR, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified StartVCR message, length delimited. Does not implicitly {@link api.StartVCR.verify|verify} messages.
+         * Encodes the specified StartVCR message, length delimited. Does not implicitly {@link replitproto.StartVCR.verify|verify} messages.
          * @param message StartVCR message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IStartVCR, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IStartVCR, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a StartVCR message from the specified reader or buffer.
@@ -1245,7 +1245,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.StartVCR;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.StartVCR;
 
         /**
          * Decodes a StartVCR message from the specified reader or buffer, length delimited.
@@ -1254,7 +1254,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.StartVCR;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.StartVCR;
 
         /**
          * Verifies a StartVCR message.
@@ -1268,7 +1268,7 @@ export namespace api {
          * @param object Plain object
          * @returns StartVCR
          */
-        public static fromObject(object: { [k: string]: any }): api.StartVCR;
+        public static fromObject(object: { [k: string]: any }): replitproto.StartVCR;
 
         /**
          * Creates a plain object from a StartVCR message. Also converts values to other types if specified.
@@ -1276,7 +1276,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.StartVCR, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.StartVCR, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this StartVCR to JSON.
@@ -1296,30 +1296,30 @@ export namespace api {
          * Constructs a new ReadVCR.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IReadVCR);
+        constructor(properties?: replitproto.IReadVCR);
 
         /**
          * Creates a new ReadVCR instance using the specified properties.
          * @param [properties] Properties to set
          * @returns ReadVCR instance
          */
-        public static create(properties?: api.IReadVCR): api.ReadVCR;
+        public static create(properties?: replitproto.IReadVCR): replitproto.ReadVCR;
 
         /**
-         * Encodes the specified ReadVCR message. Does not implicitly {@link api.ReadVCR.verify|verify} messages.
+         * Encodes the specified ReadVCR message. Does not implicitly {@link replitproto.ReadVCR.verify|verify} messages.
          * @param message ReadVCR message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IReadVCR, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IReadVCR, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified ReadVCR message, length delimited. Does not implicitly {@link api.ReadVCR.verify|verify} messages.
+         * Encodes the specified ReadVCR message, length delimited. Does not implicitly {@link replitproto.ReadVCR.verify|verify} messages.
          * @param message ReadVCR message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IReadVCR, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IReadVCR, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a ReadVCR message from the specified reader or buffer.
@@ -1329,7 +1329,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.ReadVCR;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.ReadVCR;
 
         /**
          * Decodes a ReadVCR message from the specified reader or buffer, length delimited.
@@ -1338,7 +1338,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.ReadVCR;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.ReadVCR;
 
         /**
          * Verifies a ReadVCR message.
@@ -1352,7 +1352,7 @@ export namespace api {
          * @param object Plain object
          * @returns ReadVCR
          */
-        public static fromObject(object: { [k: string]: any }): api.ReadVCR;
+        public static fromObject(object: { [k: string]: any }): replitproto.ReadVCR;
 
         /**
          * Creates a plain object from a ReadVCR message. Also converts values to other types if specified.
@@ -1360,7 +1360,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.ReadVCR, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.ReadVCR, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this ReadVCR to JSON.
@@ -1373,10 +1373,10 @@ export namespace api {
     interface IVCRLog {
 
         /** VCRLog log */
-        log?: (api.IVCREntry[]|null);
+        log?: (replitproto.IVCREntry[]|null);
 
         /** VCRLog logfile */
-        logfile?: (api.IFile|null);
+        logfile?: (replitproto.IFile|null);
     }
 
     /** Represents a VCRLog. */
@@ -1386,36 +1386,36 @@ export namespace api {
          * Constructs a new VCRLog.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IVCRLog);
+        constructor(properties?: replitproto.IVCRLog);
 
         /** VCRLog log. */
-        public log: api.IVCREntry[];
+        public log: replitproto.IVCREntry[];
 
         /** VCRLog logfile. */
-        public logfile?: (api.IFile|null);
+        public logfile?: (replitproto.IFile|null);
 
         /**
          * Creates a new VCRLog instance using the specified properties.
          * @param [properties] Properties to set
          * @returns VCRLog instance
          */
-        public static create(properties?: api.IVCRLog): api.VCRLog;
+        public static create(properties?: replitproto.IVCRLog): replitproto.VCRLog;
 
         /**
-         * Encodes the specified VCRLog message. Does not implicitly {@link api.VCRLog.verify|verify} messages.
+         * Encodes the specified VCRLog message. Does not implicitly {@link replitproto.VCRLog.verify|verify} messages.
          * @param message VCRLog message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IVCRLog, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IVCRLog, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified VCRLog message, length delimited. Does not implicitly {@link api.VCRLog.verify|verify} messages.
+         * Encodes the specified VCRLog message, length delimited. Does not implicitly {@link replitproto.VCRLog.verify|verify} messages.
          * @param message VCRLog message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IVCRLog, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IVCRLog, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a VCRLog message from the specified reader or buffer.
@@ -1425,7 +1425,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.VCRLog;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.VCRLog;
 
         /**
          * Decodes a VCRLog message from the specified reader or buffer, length delimited.
@@ -1434,7 +1434,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.VCRLog;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.VCRLog;
 
         /**
          * Verifies a VCRLog message.
@@ -1448,7 +1448,7 @@ export namespace api {
          * @param object Plain object
          * @returns VCRLog
          */
-        public static fromObject(object: { [k: string]: any }): api.VCRLog;
+        public static fromObject(object: { [k: string]: any }): replitproto.VCRLog;
 
         /**
          * Creates a plain object from a VCRLog message. Also converts values to other types if specified.
@@ -1456,7 +1456,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.VCRLog, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.VCRLog, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this VCRLog to JSON.
@@ -1482,7 +1482,7 @@ export namespace api {
          * Constructs a new ExecInfo.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IExecInfo);
+        constructor(properties?: replitproto.IExecInfo);
 
         /** ExecInfo command. */
         public command: string[];
@@ -1495,23 +1495,23 @@ export namespace api {
          * @param [properties] Properties to set
          * @returns ExecInfo instance
          */
-        public static create(properties?: api.IExecInfo): api.ExecInfo;
+        public static create(properties?: replitproto.IExecInfo): replitproto.ExecInfo;
 
         /**
-         * Encodes the specified ExecInfo message. Does not implicitly {@link api.ExecInfo.verify|verify} messages.
+         * Encodes the specified ExecInfo message. Does not implicitly {@link replitproto.ExecInfo.verify|verify} messages.
          * @param message ExecInfo message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IExecInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IExecInfo, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified ExecInfo message, length delimited. Does not implicitly {@link api.ExecInfo.verify|verify} messages.
+         * Encodes the specified ExecInfo message, length delimited. Does not implicitly {@link replitproto.ExecInfo.verify|verify} messages.
          * @param message ExecInfo message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IExecInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IExecInfo, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes an ExecInfo message from the specified reader or buffer.
@@ -1521,7 +1521,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.ExecInfo;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.ExecInfo;
 
         /**
          * Decodes an ExecInfo message from the specified reader or buffer, length delimited.
@@ -1530,7 +1530,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.ExecInfo;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.ExecInfo;
 
         /**
          * Verifies an ExecInfo message.
@@ -1544,7 +1544,7 @@ export namespace api {
          * @param object Plain object
          * @returns ExecInfo
          */
-        public static fromObject(object: { [k: string]: any }): api.ExecInfo;
+        public static fromObject(object: { [k: string]: any }): replitproto.ExecInfo;
 
         /**
          * Creates a plain object from an ExecInfo message. Also converts values to other types if specified.
@@ -1552,7 +1552,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.ExecInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.ExecInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this ExecInfo to JSON.
@@ -1575,7 +1575,7 @@ export namespace api {
          * Constructs a new Debug.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IDebug);
+        constructor(properties?: replitproto.IDebug);
 
         /** Debug text. */
         public text: string;
@@ -1585,23 +1585,23 @@ export namespace api {
          * @param [properties] Properties to set
          * @returns Debug instance
          */
-        public static create(properties?: api.IDebug): api.Debug;
+        public static create(properties?: replitproto.IDebug): replitproto.Debug;
 
         /**
-         * Encodes the specified Debug message. Does not implicitly {@link api.Debug.verify|verify} messages.
+         * Encodes the specified Debug message. Does not implicitly {@link replitproto.Debug.verify|verify} messages.
          * @param message Debug message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IDebug, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IDebug, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified Debug message, length delimited. Does not implicitly {@link api.Debug.verify|verify} messages.
+         * Encodes the specified Debug message, length delimited. Does not implicitly {@link replitproto.Debug.verify|verify} messages.
          * @param message Debug message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IDebug, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IDebug, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Debug message from the specified reader or buffer.
@@ -1611,7 +1611,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.Debug;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.Debug;
 
         /**
          * Decodes a Debug message from the specified reader or buffer, length delimited.
@@ -1620,7 +1620,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.Debug;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.Debug;
 
         /**
          * Verifies a Debug message.
@@ -1634,7 +1634,7 @@ export namespace api {
          * @param object Plain object
          * @returns Debug
          */
-        public static fromObject(object: { [k: string]: any }): api.Debug;
+        public static fromObject(object: { [k: string]: any }): replitproto.Debug;
 
         /**
          * Creates a plain object from a Debug message. Also converts values to other types if specified.
@@ -1642,7 +1642,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.Debug, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.Debug, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this Debug to JSON.
@@ -1663,10 +1663,10 @@ export namespace api {
     interface IFileAuthReq {
 
         /** FileAuthReq file */
-        file?: (api.IFile|null);
+        file?: (replitproto.IFile|null);
 
         /** FileAuthReq method */
-        method?: (api.FileAuthMethod|null);
+        method?: (replitproto.FileAuthMethod|null);
     }
 
     /** Represents a FileAuthReq. */
@@ -1676,36 +1676,36 @@ export namespace api {
          * Constructs a new FileAuthReq.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IFileAuthReq);
+        constructor(properties?: replitproto.IFileAuthReq);
 
         /** FileAuthReq file. */
-        public file?: (api.IFile|null);
+        public file?: (replitproto.IFile|null);
 
         /** FileAuthReq method. */
-        public method: api.FileAuthMethod;
+        public method: replitproto.FileAuthMethod;
 
         /**
          * Creates a new FileAuthReq instance using the specified properties.
          * @param [properties] Properties to set
          * @returns FileAuthReq instance
          */
-        public static create(properties?: api.IFileAuthReq): api.FileAuthReq;
+        public static create(properties?: replitproto.IFileAuthReq): replitproto.FileAuthReq;
 
         /**
-         * Encodes the specified FileAuthReq message. Does not implicitly {@link api.FileAuthReq.verify|verify} messages.
+         * Encodes the specified FileAuthReq message. Does not implicitly {@link replitproto.FileAuthReq.verify|verify} messages.
          * @param message FileAuthReq message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IFileAuthReq, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IFileAuthReq, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified FileAuthReq message, length delimited. Does not implicitly {@link api.FileAuthReq.verify|verify} messages.
+         * Encodes the specified FileAuthReq message, length delimited. Does not implicitly {@link replitproto.FileAuthReq.verify|verify} messages.
          * @param message FileAuthReq message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IFileAuthReq, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IFileAuthReq, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a FileAuthReq message from the specified reader or buffer.
@@ -1715,7 +1715,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.FileAuthReq;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.FileAuthReq;
 
         /**
          * Decodes a FileAuthReq message from the specified reader or buffer, length delimited.
@@ -1724,7 +1724,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.FileAuthReq;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.FileAuthReq;
 
         /**
          * Verifies a FileAuthReq message.
@@ -1738,7 +1738,7 @@ export namespace api {
          * @param object Plain object
          * @returns FileAuthReq
          */
-        public static fromObject(object: { [k: string]: any }): api.FileAuthReq;
+        public static fromObject(object: { [k: string]: any }): replitproto.FileAuthReq;
 
         /**
          * Creates a plain object from a FileAuthReq message. Also converts values to other types if specified.
@@ -1746,7 +1746,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.FileAuthReq, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.FileAuthReq, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this FileAuthReq to JSON.
@@ -1759,10 +1759,10 @@ export namespace api {
     interface IMultiFileAuthRes {
 
         /** MultiFileAuthRes put */
-        put?: (api.IFileAuthRes|null);
+        put?: (replitproto.IFileAuthRes|null);
 
         /** MultiFileAuthRes del */
-        del?: (api.IFileAuthRes|null);
+        del?: (replitproto.IFileAuthRes|null);
     }
 
     /** Represents a MultiFileAuthRes. */
@@ -1772,36 +1772,36 @@ export namespace api {
          * Constructs a new MultiFileAuthRes.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IMultiFileAuthRes);
+        constructor(properties?: replitproto.IMultiFileAuthRes);
 
         /** MultiFileAuthRes put. */
-        public put?: (api.IFileAuthRes|null);
+        public put?: (replitproto.IFileAuthRes|null);
 
         /** MultiFileAuthRes del. */
-        public del?: (api.IFileAuthRes|null);
+        public del?: (replitproto.IFileAuthRes|null);
 
         /**
          * Creates a new MultiFileAuthRes instance using the specified properties.
          * @param [properties] Properties to set
          * @returns MultiFileAuthRes instance
          */
-        public static create(properties?: api.IMultiFileAuthRes): api.MultiFileAuthRes;
+        public static create(properties?: replitproto.IMultiFileAuthRes): replitproto.MultiFileAuthRes;
 
         /**
-         * Encodes the specified MultiFileAuthRes message. Does not implicitly {@link api.MultiFileAuthRes.verify|verify} messages.
+         * Encodes the specified MultiFileAuthRes message. Does not implicitly {@link replitproto.MultiFileAuthRes.verify|verify} messages.
          * @param message MultiFileAuthRes message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IMultiFileAuthRes, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IMultiFileAuthRes, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified MultiFileAuthRes message, length delimited. Does not implicitly {@link api.MultiFileAuthRes.verify|verify} messages.
+         * Encodes the specified MultiFileAuthRes message, length delimited. Does not implicitly {@link replitproto.MultiFileAuthRes.verify|verify} messages.
          * @param message MultiFileAuthRes message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IMultiFileAuthRes, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IMultiFileAuthRes, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a MultiFileAuthRes message from the specified reader or buffer.
@@ -1811,7 +1811,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.MultiFileAuthRes;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.MultiFileAuthRes;
 
         /**
          * Decodes a MultiFileAuthRes message from the specified reader or buffer, length delimited.
@@ -1820,7 +1820,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.MultiFileAuthRes;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.MultiFileAuthRes;
 
         /**
          * Verifies a MultiFileAuthRes message.
@@ -1834,7 +1834,7 @@ export namespace api {
          * @param object Plain object
          * @returns MultiFileAuthRes
          */
-        public static fromObject(object: { [k: string]: any }): api.MultiFileAuthRes;
+        public static fromObject(object: { [k: string]: any }): replitproto.MultiFileAuthRes;
 
         /**
          * Creates a plain object from a MultiFileAuthRes message. Also converts values to other types if specified.
@@ -1842,7 +1842,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.MultiFileAuthRes, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.MultiFileAuthRes, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this MultiFileAuthRes to JSON.
@@ -1855,13 +1855,13 @@ export namespace api {
     interface IFileAuthRes {
 
         /** FileAuthRes file */
-        file?: (api.IFile|null);
+        file?: (replitproto.IFile|null);
 
         /** FileAuthRes url */
         url?: (string|null);
 
         /** FileAuthRes method */
-        method?: (api.FileAuthMethod|null);
+        method?: (replitproto.FileAuthMethod|null);
 
         /** FileAuthRes expire */
         expire?: (number|Long|null);
@@ -1877,16 +1877,16 @@ export namespace api {
          * Constructs a new FileAuthRes.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IFileAuthRes);
+        constructor(properties?: replitproto.IFileAuthRes);
 
         /** FileAuthRes file. */
-        public file?: (api.IFile|null);
+        public file?: (replitproto.IFile|null);
 
         /** FileAuthRes url. */
         public url: string;
 
         /** FileAuthRes method. */
-        public method: api.FileAuthMethod;
+        public method: replitproto.FileAuthMethod;
 
         /** FileAuthRes expire. */
         public expire: (number|Long);
@@ -1899,23 +1899,23 @@ export namespace api {
          * @param [properties] Properties to set
          * @returns FileAuthRes instance
          */
-        public static create(properties?: api.IFileAuthRes): api.FileAuthRes;
+        public static create(properties?: replitproto.IFileAuthRes): replitproto.FileAuthRes;
 
         /**
-         * Encodes the specified FileAuthRes message. Does not implicitly {@link api.FileAuthRes.verify|verify} messages.
+         * Encodes the specified FileAuthRes message. Does not implicitly {@link replitproto.FileAuthRes.verify|verify} messages.
          * @param message FileAuthRes message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IFileAuthRes, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IFileAuthRes, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified FileAuthRes message, length delimited. Does not implicitly {@link api.FileAuthRes.verify|verify} messages.
+         * Encodes the specified FileAuthRes message, length delimited. Does not implicitly {@link replitproto.FileAuthRes.verify|verify} messages.
          * @param message FileAuthRes message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IFileAuthRes, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IFileAuthRes, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a FileAuthRes message from the specified reader or buffer.
@@ -1925,7 +1925,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.FileAuthRes;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.FileAuthRes;
 
         /**
          * Decodes a FileAuthRes message from the specified reader or buffer, length delimited.
@@ -1934,7 +1934,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.FileAuthRes;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.FileAuthRes;
 
         /**
          * Verifies a FileAuthRes message.
@@ -1948,7 +1948,7 @@ export namespace api {
          * @param object Plain object
          * @returns FileAuthRes
          */
-        public static fromObject(object: { [k: string]: any }): api.FileAuthRes;
+        public static fromObject(object: { [k: string]: any }): replitproto.FileAuthRes;
 
         /**
          * Creates a plain object from a FileAuthRes message. Also converts values to other types if specified.
@@ -1956,7 +1956,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.FileAuthRes, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.FileAuthRes, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this FileAuthRes to JSON.
@@ -1979,7 +1979,7 @@ export namespace api {
          * Constructs a new Disconnect.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IDisconnect);
+        constructor(properties?: replitproto.IDisconnect);
 
         /** Disconnect error. */
         public error: string;
@@ -1989,23 +1989,23 @@ export namespace api {
          * @param [properties] Properties to set
          * @returns Disconnect instance
          */
-        public static create(properties?: api.IDisconnect): api.Disconnect;
+        public static create(properties?: replitproto.IDisconnect): replitproto.Disconnect;
 
         /**
-         * Encodes the specified Disconnect message. Does not implicitly {@link api.Disconnect.verify|verify} messages.
+         * Encodes the specified Disconnect message. Does not implicitly {@link replitproto.Disconnect.verify|verify} messages.
          * @param message Disconnect message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IDisconnect, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IDisconnect, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified Disconnect message, length delimited. Does not implicitly {@link api.Disconnect.verify|verify} messages.
+         * Encodes the specified Disconnect message, length delimited. Does not implicitly {@link replitproto.Disconnect.verify|verify} messages.
          * @param message Disconnect message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IDisconnect, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IDisconnect, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Disconnect message from the specified reader or buffer.
@@ -2015,7 +2015,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.Disconnect;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.Disconnect;
 
         /**
          * Decodes a Disconnect message from the specified reader or buffer, length delimited.
@@ -2024,7 +2024,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.Disconnect;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.Disconnect;
 
         /**
          * Verifies a Disconnect message.
@@ -2038,7 +2038,7 @@ export namespace api {
          * @param object Plain object
          * @returns Disconnect
          */
-        public static fromObject(object: { [k: string]: any }): api.Disconnect;
+        public static fromObject(object: { [k: string]: any }): replitproto.Disconnect;
 
         /**
          * Creates a plain object from a Disconnect message. Also converts values to other types if specified.
@@ -2046,7 +2046,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.Disconnect, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.Disconnect, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this Disconnect to JSON.
@@ -2069,7 +2069,7 @@ export namespace api {
          * Constructs a new Send.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.ISend);
+        constructor(properties?: replitproto.ISend);
 
         /** Send buff. */
         public buff: Uint8Array;
@@ -2079,23 +2079,23 @@ export namespace api {
          * @param [properties] Properties to set
          * @returns Send instance
          */
-        public static create(properties?: api.ISend): api.Send;
+        public static create(properties?: replitproto.ISend): replitproto.Send;
 
         /**
-         * Encodes the specified Send message. Does not implicitly {@link api.Send.verify|verify} messages.
+         * Encodes the specified Send message. Does not implicitly {@link replitproto.Send.verify|verify} messages.
          * @param message Send message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.ISend, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.ISend, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified Send message, length delimited. Does not implicitly {@link api.Send.verify|verify} messages.
+         * Encodes the specified Send message, length delimited. Does not implicitly {@link replitproto.Send.verify|verify} messages.
          * @param message Send message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.ISend, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.ISend, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Send message from the specified reader or buffer.
@@ -2105,7 +2105,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.Send;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.Send;
 
         /**
          * Decodes a Send message from the specified reader or buffer, length delimited.
@@ -2114,7 +2114,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.Send;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.Send;
 
         /**
          * Verifies a Send message.
@@ -2128,7 +2128,7 @@ export namespace api {
          * @param object Plain object
          * @returns Send
          */
-        public static fromObject(object: { [k: string]: any }): api.Send;
+        public static fromObject(object: { [k: string]: any }): replitproto.Send;
 
         /**
          * Creates a plain object from a Send message. Also converts values to other types if specified.
@@ -2136,7 +2136,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.Send, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.Send, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this Send to JSON.
@@ -2159,7 +2159,7 @@ export namespace api {
          * Constructs a new Recv.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IRecv);
+        constructor(properties?: replitproto.IRecv);
 
         /** Recv buff. */
         public buff: Uint8Array;
@@ -2169,23 +2169,23 @@ export namespace api {
          * @param [properties] Properties to set
          * @returns Recv instance
          */
-        public static create(properties?: api.IRecv): api.Recv;
+        public static create(properties?: replitproto.IRecv): replitproto.Recv;
 
         /**
-         * Encodes the specified Recv message. Does not implicitly {@link api.Recv.verify|verify} messages.
+         * Encodes the specified Recv message. Does not implicitly {@link replitproto.Recv.verify|verify} messages.
          * @param message Recv message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IRecv, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IRecv, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified Recv message, length delimited. Does not implicitly {@link api.Recv.verify|verify} messages.
+         * Encodes the specified Recv message, length delimited. Does not implicitly {@link replitproto.Recv.verify|verify} messages.
          * @param message Recv message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IRecv, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IRecv, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Recv message from the specified reader or buffer.
@@ -2195,7 +2195,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.Recv;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.Recv;
 
         /**
          * Decodes a Recv message from the specified reader or buffer, length delimited.
@@ -2204,7 +2204,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.Recv;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.Recv;
 
         /**
          * Verifies a Recv message.
@@ -2218,7 +2218,7 @@ export namespace api {
          * @param object Plain object
          * @returns Recv
          */
-        public static fromObject(object: { [k: string]: any }): api.Recv;
+        public static fromObject(object: { [k: string]: any }): replitproto.Recv;
 
         /**
          * Creates a plain object from a Recv message. Also converts values to other types if specified.
@@ -2226,7 +2226,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.Recv, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.Recv, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this Recv to JSON.
@@ -2252,7 +2252,7 @@ export namespace api {
          * Constructs a new Connect.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IConnect);
+        constructor(properties?: replitproto.IConnect);
 
         /** Connect proto. */
         public proto: string;
@@ -2265,23 +2265,23 @@ export namespace api {
          * @param [properties] Properties to set
          * @returns Connect instance
          */
-        public static create(properties?: api.IConnect): api.Connect;
+        public static create(properties?: replitproto.IConnect): replitproto.Connect;
 
         /**
-         * Encodes the specified Connect message. Does not implicitly {@link api.Connect.verify|verify} messages.
+         * Encodes the specified Connect message. Does not implicitly {@link replitproto.Connect.verify|verify} messages.
          * @param message Connect message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IConnect, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IConnect, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified Connect message, length delimited. Does not implicitly {@link api.Connect.verify|verify} messages.
+         * Encodes the specified Connect message, length delimited. Does not implicitly {@link replitproto.Connect.verify|verify} messages.
          * @param message Connect message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IConnect, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IConnect, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Connect message from the specified reader or buffer.
@@ -2291,7 +2291,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.Connect;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.Connect;
 
         /**
          * Decodes a Connect message from the specified reader or buffer, length delimited.
@@ -2300,7 +2300,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.Connect;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.Connect;
 
         /**
          * Verifies a Connect message.
@@ -2314,7 +2314,7 @@ export namespace api {
          * @param object Plain object
          * @returns Connect
          */
-        public static fromObject(object: { [k: string]: any }): api.Connect;
+        public static fromObject(object: { [k: string]: any }): replitproto.Connect;
 
         /**
          * Creates a plain object from a Connect message. Also converts values to other types if specified.
@@ -2322,7 +2322,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.Connect, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.Connect, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this Connect to JSON.
@@ -2345,7 +2345,7 @@ export namespace api {
          * Constructs a new Hint.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IHint);
+        constructor(properties?: replitproto.IHint);
 
         /** Hint text. */
         public text: string;
@@ -2355,23 +2355,23 @@ export namespace api {
          * @param [properties] Properties to set
          * @returns Hint instance
          */
-        public static create(properties?: api.IHint): api.Hint;
+        public static create(properties?: replitproto.IHint): replitproto.Hint;
 
         /**
-         * Encodes the specified Hint message. Does not implicitly {@link api.Hint.verify|verify} messages.
+         * Encodes the specified Hint message. Does not implicitly {@link replitproto.Hint.verify|verify} messages.
          * @param message Hint message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IHint, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IHint, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified Hint message, length delimited. Does not implicitly {@link api.Hint.verify|verify} messages.
+         * Encodes the specified Hint message, length delimited. Does not implicitly {@link replitproto.Hint.verify|verify} messages.
          * @param message Hint message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IHint, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IHint, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Hint message from the specified reader or buffer.
@@ -2381,7 +2381,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.Hint;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.Hint;
 
         /**
          * Decodes a Hint message from the specified reader or buffer, length delimited.
@@ -2390,7 +2390,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.Hint;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.Hint;
 
         /**
          * Verifies a Hint message.
@@ -2404,7 +2404,7 @@ export namespace api {
          * @param object Plain object
          * @returns Hint
          */
-        public static fromObject(object: { [k: string]: any }): api.Hint;
+        public static fromObject(object: { [k: string]: any }): replitproto.Hint;
 
         /**
          * Creates a plain object from a Hint message. Also converts values to other types if specified.
@@ -2412,7 +2412,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.Hint, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.Hint, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this Hint to JSON.
@@ -2432,30 +2432,30 @@ export namespace api {
          * Constructs a new Ping.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPing);
+        constructor(properties?: replitproto.IPing);
 
         /**
          * Creates a new Ping instance using the specified properties.
          * @param [properties] Properties to set
          * @returns Ping instance
          */
-        public static create(properties?: api.IPing): api.Ping;
+        public static create(properties?: replitproto.IPing): replitproto.Ping;
 
         /**
-         * Encodes the specified Ping message. Does not implicitly {@link api.Ping.verify|verify} messages.
+         * Encodes the specified Ping message. Does not implicitly {@link replitproto.Ping.verify|verify} messages.
          * @param message Ping message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPing, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IPing, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified Ping message, length delimited. Does not implicitly {@link api.Ping.verify|verify} messages.
+         * Encodes the specified Ping message, length delimited. Does not implicitly {@link replitproto.Ping.verify|verify} messages.
          * @param message Ping message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPing, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IPing, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Ping message from the specified reader or buffer.
@@ -2465,7 +2465,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.Ping;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.Ping;
 
         /**
          * Decodes a Ping message from the specified reader or buffer, length delimited.
@@ -2474,7 +2474,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.Ping;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.Ping;
 
         /**
          * Verifies a Ping message.
@@ -2488,7 +2488,7 @@ export namespace api {
          * @param object Plain object
          * @returns Ping
          */
-        public static fromObject(object: { [k: string]: any }): api.Ping;
+        public static fromObject(object: { [k: string]: any }): replitproto.Ping;
 
         /**
          * Creates a plain object from a Ping message. Also converts values to other types if specified.
@@ -2496,7 +2496,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.Ping, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.Ping, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this Ping to JSON.
@@ -2516,30 +2516,30 @@ export namespace api {
          * Constructs a new Pong.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPong);
+        constructor(properties?: replitproto.IPong);
 
         /**
          * Creates a new Pong instance using the specified properties.
          * @param [properties] Properties to set
          * @returns Pong instance
          */
-        public static create(properties?: api.IPong): api.Pong;
+        public static create(properties?: replitproto.IPong): replitproto.Pong;
 
         /**
-         * Encodes the specified Pong message. Does not implicitly {@link api.Pong.verify|verify} messages.
+         * Encodes the specified Pong message. Does not implicitly {@link replitproto.Pong.verify|verify} messages.
          * @param message Pong message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPong, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IPong, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified Pong message, length delimited. Does not implicitly {@link api.Pong.verify|verify} messages.
+         * Encodes the specified Pong message, length delimited. Does not implicitly {@link replitproto.Pong.verify|verify} messages.
          * @param message Pong message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPong, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IPong, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Pong message from the specified reader or buffer.
@@ -2549,7 +2549,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.Pong;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.Pong;
 
         /**
          * Decodes a Pong message from the specified reader or buffer, length delimited.
@@ -2558,7 +2558,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.Pong;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.Pong;
 
         /**
          * Verifies a Pong message.
@@ -2572,7 +2572,7 @@ export namespace api {
          * @param object Plain object
          * @returns Pong
          */
-        public static fromObject(object: { [k: string]: any }): api.Pong;
+        public static fromObject(object: { [k: string]: any }): replitproto.Pong;
 
         /**
          * Creates a plain object from a Pong message. Also converts values to other types if specified.
@@ -2580,7 +2580,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.Pong, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.Pong, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this Pong to JSON.
@@ -2609,7 +2609,7 @@ export namespace api {
          * Constructs a new Hello.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IHello);
+        constructor(properties?: replitproto.IHello);
 
         /** Hello userid. */
         public userid: number;
@@ -2625,23 +2625,23 @@ export namespace api {
          * @param [properties] Properties to set
          * @returns Hello instance
          */
-        public static create(properties?: api.IHello): api.Hello;
+        public static create(properties?: replitproto.IHello): replitproto.Hello;
 
         /**
-         * Encodes the specified Hello message. Does not implicitly {@link api.Hello.verify|verify} messages.
+         * Encodes the specified Hello message. Does not implicitly {@link replitproto.Hello.verify|verify} messages.
          * @param message Hello message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IHello, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IHello, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified Hello message, length delimited. Does not implicitly {@link api.Hello.verify|verify} messages.
+         * Encodes the specified Hello message, length delimited. Does not implicitly {@link replitproto.Hello.verify|verify} messages.
          * @param message Hello message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IHello, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IHello, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Hello message from the specified reader or buffer.
@@ -2651,7 +2651,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.Hello;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.Hello;
 
         /**
          * Decodes a Hello message from the specified reader or buffer, length delimited.
@@ -2660,7 +2660,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.Hello;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.Hello;
 
         /**
          * Verifies a Hello message.
@@ -2674,7 +2674,7 @@ export namespace api {
          * @param object Plain object
          * @returns Hello
          */
-        public static fromObject(object: { [k: string]: any }): api.Hello;
+        public static fromObject(object: { [k: string]: any }): replitproto.Hello;
 
         /**
          * Creates a plain object from a Hello message. Also converts values to other types if specified.
@@ -2682,7 +2682,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.Hello, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.Hello, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this Hello to JSON.
@@ -2702,30 +2702,30 @@ export namespace api {
          * Constructs a new Goodbye.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IGoodbye);
+        constructor(properties?: replitproto.IGoodbye);
 
         /**
          * Creates a new Goodbye instance using the specified properties.
          * @param [properties] Properties to set
          * @returns Goodbye instance
          */
-        public static create(properties?: api.IGoodbye): api.Goodbye;
+        public static create(properties?: replitproto.IGoodbye): replitproto.Goodbye;
 
         /**
-         * Encodes the specified Goodbye message. Does not implicitly {@link api.Goodbye.verify|verify} messages.
+         * Encodes the specified Goodbye message. Does not implicitly {@link replitproto.Goodbye.verify|verify} messages.
          * @param message Goodbye message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IGoodbye, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IGoodbye, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified Goodbye message, length delimited. Does not implicitly {@link api.Goodbye.verify|verify} messages.
+         * Encodes the specified Goodbye message, length delimited. Does not implicitly {@link replitproto.Goodbye.verify|verify} messages.
          * @param message Goodbye message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IGoodbye, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IGoodbye, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Goodbye message from the specified reader or buffer.
@@ -2735,7 +2735,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.Goodbye;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.Goodbye;
 
         /**
          * Decodes a Goodbye message from the specified reader or buffer, length delimited.
@@ -2744,7 +2744,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.Goodbye;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.Goodbye;
 
         /**
          * Verifies a Goodbye message.
@@ -2758,7 +2758,7 @@ export namespace api {
          * @param object Plain object
          * @returns Goodbye
          */
-        public static fromObject(object: { [k: string]: any }): api.Goodbye;
+        public static fromObject(object: { [k: string]: any }): replitproto.Goodbye;
 
         /**
          * Creates a plain object from a Goodbye message. Also converts values to other types if specified.
@@ -2766,7 +2766,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.Goodbye, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.Goodbye, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this Goodbye to JSON.
@@ -2792,30 +2792,30 @@ export namespace api {
          * Constructs a new CheckChanges.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.ICheckChanges);
+        constructor(properties?: replitproto.ICheckChanges);
 
         /**
          * Creates a new CheckChanges instance using the specified properties.
          * @param [properties] Properties to set
          * @returns CheckChanges instance
          */
-        public static create(properties?: api.ICheckChanges): api.CheckChanges;
+        public static create(properties?: replitproto.ICheckChanges): replitproto.CheckChanges;
 
         /**
-         * Encodes the specified CheckChanges message. Does not implicitly {@link api.CheckChanges.verify|verify} messages.
+         * Encodes the specified CheckChanges message. Does not implicitly {@link replitproto.CheckChanges.verify|verify} messages.
          * @param message CheckChanges message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.ICheckChanges, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.ICheckChanges, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified CheckChanges message, length delimited. Does not implicitly {@link api.CheckChanges.verify|verify} messages.
+         * Encodes the specified CheckChanges message, length delimited. Does not implicitly {@link replitproto.CheckChanges.verify|verify} messages.
          * @param message CheckChanges message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.ICheckChanges, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.ICheckChanges, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a CheckChanges message from the specified reader or buffer.
@@ -2825,7 +2825,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.CheckChanges;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.CheckChanges;
 
         /**
          * Decodes a CheckChanges message from the specified reader or buffer, length delimited.
@@ -2834,7 +2834,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.CheckChanges;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.CheckChanges;
 
         /**
          * Verifies a CheckChanges message.
@@ -2848,7 +2848,7 @@ export namespace api {
          * @param object Plain object
          * @returns CheckChanges
          */
-        public static fromObject(object: { [k: string]: any }): api.CheckChanges;
+        public static fromObject(object: { [k: string]: any }): replitproto.CheckChanges;
 
         /**
          * Creates a plain object from a CheckChanges message. Also converts values to other types if specified.
@@ -2856,7 +2856,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.CheckChanges, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.CheckChanges, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this CheckChanges to JSON.
@@ -2872,7 +2872,7 @@ export namespace api {
         install?: (boolean|null);
 
         /** EnsurePackages file */
-        file?: (api.IFile|null);
+        file?: (replitproto.IFile|null);
     }
 
     /** Represents an EnsurePackages. */
@@ -2882,36 +2882,36 @@ export namespace api {
          * Constructs a new EnsurePackages.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IEnsurePackages);
+        constructor(properties?: replitproto.IEnsurePackages);
 
         /** EnsurePackages install. */
         public install: boolean;
 
         /** EnsurePackages file. */
-        public file?: (api.IFile|null);
+        public file?: (replitproto.IFile|null);
 
         /**
          * Creates a new EnsurePackages instance using the specified properties.
          * @param [properties] Properties to set
          * @returns EnsurePackages instance
          */
-        public static create(properties?: api.IEnsurePackages): api.EnsurePackages;
+        public static create(properties?: replitproto.IEnsurePackages): replitproto.EnsurePackages;
 
         /**
-         * Encodes the specified EnsurePackages message. Does not implicitly {@link api.EnsurePackages.verify|verify} messages.
+         * Encodes the specified EnsurePackages message. Does not implicitly {@link replitproto.EnsurePackages.verify|verify} messages.
          * @param message EnsurePackages message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IEnsurePackages, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IEnsurePackages, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified EnsurePackages message, length delimited. Does not implicitly {@link api.EnsurePackages.verify|verify} messages.
+         * Encodes the specified EnsurePackages message, length delimited. Does not implicitly {@link replitproto.EnsurePackages.verify|verify} messages.
          * @param message EnsurePackages message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IEnsurePackages, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IEnsurePackages, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes an EnsurePackages message from the specified reader or buffer.
@@ -2921,7 +2921,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.EnsurePackages;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.EnsurePackages;
 
         /**
          * Decodes an EnsurePackages message from the specified reader or buffer, length delimited.
@@ -2930,7 +2930,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.EnsurePackages;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.EnsurePackages;
 
         /**
          * Verifies an EnsurePackages message.
@@ -2944,7 +2944,7 @@ export namespace api {
          * @param object Plain object
          * @returns EnsurePackages
          */
-        public static fromObject(object: { [k: string]: any }): api.EnsurePackages;
+        public static fromObject(object: { [k: string]: any }): replitproto.EnsurePackages;
 
         /**
          * Creates a plain object from an EnsurePackages message. Also converts values to other types if specified.
@@ -2952,7 +2952,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.EnsurePackages, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.EnsurePackages, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this EnsurePackages to JSON.
@@ -2972,30 +2972,30 @@ export namespace api {
          * Constructs a new Start.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IStart);
+        constructor(properties?: replitproto.IStart);
 
         /**
          * Creates a new Start instance using the specified properties.
          * @param [properties] Properties to set
          * @returns Start instance
          */
-        public static create(properties?: api.IStart): api.Start;
+        public static create(properties?: replitproto.IStart): replitproto.Start;
 
         /**
-         * Encodes the specified Start message. Does not implicitly {@link api.Start.verify|verify} messages.
+         * Encodes the specified Start message. Does not implicitly {@link replitproto.Start.verify|verify} messages.
          * @param message Start message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IStart, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IStart, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified Start message, length delimited. Does not implicitly {@link api.Start.verify|verify} messages.
+         * Encodes the specified Start message, length delimited. Does not implicitly {@link replitproto.Start.verify|verify} messages.
          * @param message Start message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IStart, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IStart, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Start message from the specified reader or buffer.
@@ -3005,7 +3005,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.Start;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.Start;
 
         /**
          * Decodes a Start message from the specified reader or buffer, length delimited.
@@ -3014,7 +3014,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.Start;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.Start;
 
         /**
          * Verifies a Start message.
@@ -3028,7 +3028,7 @@ export namespace api {
          * @param object Plain object
          * @returns Start
          */
-        public static fromObject(object: { [k: string]: any }): api.Start;
+        public static fromObject(object: { [k: string]: any }): replitproto.Start;
 
         /**
          * Creates a plain object from a Start message. Also converts values to other types if specified.
@@ -3036,7 +3036,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.Start, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.Start, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this Start to JSON.
@@ -3052,7 +3052,7 @@ export namespace api {
         done?: (boolean|null);
 
         /** DebugStatus stack */
-        stack?: (api.IStackFrame[]|null);
+        stack?: (replitproto.IStackFrame[]|null);
     }
 
     /** Represents a DebugStatus. */
@@ -3062,36 +3062,36 @@ export namespace api {
          * Constructs a new DebugStatus.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IDebugStatus);
+        constructor(properties?: replitproto.IDebugStatus);
 
         /** DebugStatus done. */
         public done: boolean;
 
         /** DebugStatus stack. */
-        public stack: api.IStackFrame[];
+        public stack: replitproto.IStackFrame[];
 
         /**
          * Creates a new DebugStatus instance using the specified properties.
          * @param [properties] Properties to set
          * @returns DebugStatus instance
          */
-        public static create(properties?: api.IDebugStatus): api.DebugStatus;
+        public static create(properties?: replitproto.IDebugStatus): replitproto.DebugStatus;
 
         /**
-         * Encodes the specified DebugStatus message. Does not implicitly {@link api.DebugStatus.verify|verify} messages.
+         * Encodes the specified DebugStatus message. Does not implicitly {@link replitproto.DebugStatus.verify|verify} messages.
          * @param message DebugStatus message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IDebugStatus, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IDebugStatus, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified DebugStatus message, length delimited. Does not implicitly {@link api.DebugStatus.verify|verify} messages.
+         * Encodes the specified DebugStatus message, length delimited. Does not implicitly {@link replitproto.DebugStatus.verify|verify} messages.
          * @param message DebugStatus message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IDebugStatus, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IDebugStatus, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a DebugStatus message from the specified reader or buffer.
@@ -3101,7 +3101,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.DebugStatus;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.DebugStatus;
 
         /**
          * Decodes a DebugStatus message from the specified reader or buffer, length delimited.
@@ -3110,7 +3110,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.DebugStatus;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.DebugStatus;
 
         /**
          * Verifies a DebugStatus message.
@@ -3124,7 +3124,7 @@ export namespace api {
          * @param object Plain object
          * @returns DebugStatus
          */
-        public static fromObject(object: { [k: string]: any }): api.DebugStatus;
+        public static fromObject(object: { [k: string]: any }): replitproto.DebugStatus;
 
         /**
          * Creates a plain object from a DebugStatus message. Also converts values to other types if specified.
@@ -3132,7 +3132,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.DebugStatus, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.DebugStatus, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this DebugStatus to JSON.
@@ -3158,7 +3158,7 @@ export namespace api {
          * Constructs a new StackFrame.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IStackFrame);
+        constructor(properties?: replitproto.IStackFrame);
 
         /** StackFrame function. */
         public function: string;
@@ -3171,23 +3171,23 @@ export namespace api {
          * @param [properties] Properties to set
          * @returns StackFrame instance
          */
-        public static create(properties?: api.IStackFrame): api.StackFrame;
+        public static create(properties?: replitproto.IStackFrame): replitproto.StackFrame;
 
         /**
-         * Encodes the specified StackFrame message. Does not implicitly {@link api.StackFrame.verify|verify} messages.
+         * Encodes the specified StackFrame message. Does not implicitly {@link replitproto.StackFrame.verify|verify} messages.
          * @param message StackFrame message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IStackFrame, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IStackFrame, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified StackFrame message, length delimited. Does not implicitly {@link api.StackFrame.verify|verify} messages.
+         * Encodes the specified StackFrame message, length delimited. Does not implicitly {@link replitproto.StackFrame.verify|verify} messages.
          * @param message StackFrame message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IStackFrame, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IStackFrame, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a StackFrame message from the specified reader or buffer.
@@ -3197,7 +3197,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.StackFrame;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.StackFrame;
 
         /**
          * Decodes a StackFrame message from the specified reader or buffer, length delimited.
@@ -3206,7 +3206,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.StackFrame;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.StackFrame;
 
         /**
          * Verifies a StackFrame message.
@@ -3220,7 +3220,7 @@ export namespace api {
          * @param object Plain object
          * @returns StackFrame
          */
-        public static fromObject(object: { [k: string]: any }): api.StackFrame;
+        public static fromObject(object: { [k: string]: any }): replitproto.StackFrame;
 
         /**
          * Creates a plain object from a StackFrame message. Also converts values to other types if specified.
@@ -3228,7 +3228,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.StackFrame, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.StackFrame, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this StackFrame to JSON.
@@ -3241,10 +3241,10 @@ export namespace api {
     interface IContainedTest {
 
         /** ContainedTest suite */
-        suite?: (api.IFile|null);
+        suite?: (replitproto.IFile|null);
 
         /** ContainedTest project */
-        project?: (api.IFile[]|null);
+        project?: (replitproto.IFile[]|null);
     }
 
     /** Represents a ContainedTest. */
@@ -3254,36 +3254,36 @@ export namespace api {
          * Constructs a new ContainedTest.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IContainedTest);
+        constructor(properties?: replitproto.IContainedTest);
 
         /** ContainedTest suite. */
-        public suite?: (api.IFile|null);
+        public suite?: (replitproto.IFile|null);
 
         /** ContainedTest project. */
-        public project: api.IFile[];
+        public project: replitproto.IFile[];
 
         /**
          * Creates a new ContainedTest instance using the specified properties.
          * @param [properties] Properties to set
          * @returns ContainedTest instance
          */
-        public static create(properties?: api.IContainedTest): api.ContainedTest;
+        public static create(properties?: replitproto.IContainedTest): replitproto.ContainedTest;
 
         /**
-         * Encodes the specified ContainedTest message. Does not implicitly {@link api.ContainedTest.verify|verify} messages.
+         * Encodes the specified ContainedTest message. Does not implicitly {@link replitproto.ContainedTest.verify|verify} messages.
          * @param message ContainedTest message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IContainedTest, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IContainedTest, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified ContainedTest message, length delimited. Does not implicitly {@link api.ContainedTest.verify|verify} messages.
+         * Encodes the specified ContainedTest message, length delimited. Does not implicitly {@link replitproto.ContainedTest.verify|verify} messages.
          * @param message ContainedTest message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IContainedTest, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IContainedTest, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a ContainedTest message from the specified reader or buffer.
@@ -3293,7 +3293,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.ContainedTest;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.ContainedTest;
 
         /**
          * Decodes a ContainedTest message from the specified reader or buffer, length delimited.
@@ -3302,7 +3302,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.ContainedTest;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.ContainedTest;
 
         /**
          * Verifies a ContainedTest message.
@@ -3316,7 +3316,7 @@ export namespace api {
          * @param object Plain object
          * @returns ContainedTest
          */
-        public static fromObject(object: { [k: string]: any }): api.ContainedTest;
+        public static fromObject(object: { [k: string]: any }): replitproto.ContainedTest;
 
         /**
          * Creates a plain object from a ContainedTest message. Also converts values to other types if specified.
@@ -3324,7 +3324,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.ContainedTest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.ContainedTest, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this ContainedTest to JSON.
@@ -3343,7 +3343,7 @@ export namespace api {
         stderr?: (string|null);
 
         /** TestResult fails */
-        fails?: (api.ITestFailure[]|null);
+        fails?: (replitproto.ITestFailure[]|null);
     }
 
     /** Represents a TestResult. */
@@ -3353,7 +3353,7 @@ export namespace api {
          * Constructs a new TestResult.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.ITestResult);
+        constructor(properties?: replitproto.ITestResult);
 
         /** TestResult passed. */
         public passed: boolean;
@@ -3362,30 +3362,30 @@ export namespace api {
         public stderr: string;
 
         /** TestResult fails. */
-        public fails: api.ITestFailure[];
+        public fails: replitproto.ITestFailure[];
 
         /**
          * Creates a new TestResult instance using the specified properties.
          * @param [properties] Properties to set
          * @returns TestResult instance
          */
-        public static create(properties?: api.ITestResult): api.TestResult;
+        public static create(properties?: replitproto.ITestResult): replitproto.TestResult;
 
         /**
-         * Encodes the specified TestResult message. Does not implicitly {@link api.TestResult.verify|verify} messages.
+         * Encodes the specified TestResult message. Does not implicitly {@link replitproto.TestResult.verify|verify} messages.
          * @param message TestResult message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.ITestResult, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.ITestResult, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified TestResult message, length delimited. Does not implicitly {@link api.TestResult.verify|verify} messages.
+         * Encodes the specified TestResult message, length delimited. Does not implicitly {@link replitproto.TestResult.verify|verify} messages.
          * @param message TestResult message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.ITestResult, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.ITestResult, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a TestResult message from the specified reader or buffer.
@@ -3395,7 +3395,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.TestResult;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.TestResult;
 
         /**
          * Decodes a TestResult message from the specified reader or buffer, length delimited.
@@ -3404,7 +3404,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.TestResult;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.TestResult;
 
         /**
          * Verifies a TestResult message.
@@ -3418,7 +3418,7 @@ export namespace api {
          * @param object Plain object
          * @returns TestResult
          */
-        public static fromObject(object: { [k: string]: any }): api.TestResult;
+        public static fromObject(object: { [k: string]: any }): replitproto.TestResult;
 
         /**
          * Creates a plain object from a TestResult message. Also converts values to other types if specified.
@@ -3426,7 +3426,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.TestResult, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.TestResult, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this TestResult to JSON.
@@ -3452,7 +3452,7 @@ export namespace api {
          * Constructs a new TestFailure.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.ITestFailure);
+        constructor(properties?: replitproto.ITestFailure);
 
         /** TestFailure name. */
         public name: string;
@@ -3465,23 +3465,23 @@ export namespace api {
          * @param [properties] Properties to set
          * @returns TestFailure instance
          */
-        public static create(properties?: api.ITestFailure): api.TestFailure;
+        public static create(properties?: replitproto.ITestFailure): replitproto.TestFailure;
 
         /**
-         * Encodes the specified TestFailure message. Does not implicitly {@link api.TestFailure.verify|verify} messages.
+         * Encodes the specified TestFailure message. Does not implicitly {@link replitproto.TestFailure.verify|verify} messages.
          * @param message TestFailure message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.ITestFailure, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.ITestFailure, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified TestFailure message, length delimited. Does not implicitly {@link api.TestFailure.verify|verify} messages.
+         * Encodes the specified TestFailure message, length delimited. Does not implicitly {@link replitproto.TestFailure.verify|verify} messages.
          * @param message TestFailure message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.ITestFailure, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.ITestFailure, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a TestFailure message from the specified reader or buffer.
@@ -3491,7 +3491,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.TestFailure;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.TestFailure;
 
         /**
          * Decodes a TestFailure message from the specified reader or buffer, length delimited.
@@ -3500,7 +3500,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.TestFailure;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.TestFailure;
 
         /**
          * Verifies a TestFailure message.
@@ -3514,7 +3514,7 @@ export namespace api {
          * @param object Plain object
          * @returns TestFailure
          */
-        public static fromObject(object: { [k: string]: any }): api.TestFailure;
+        public static fromObject(object: { [k: string]: any }): replitproto.TestFailure;
 
         /**
          * Creates a plain object from a TestFailure message. Also converts values to other types if specified.
@@ -3522,7 +3522,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.TestFailure, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.TestFailure, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this TestFailure to JSON.
@@ -3548,7 +3548,7 @@ export namespace api {
          * Constructs a new ResizeTerm.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IResizeTerm);
+        constructor(properties?: replitproto.IResizeTerm);
 
         /** ResizeTerm rows. */
         public rows: number;
@@ -3561,23 +3561,23 @@ export namespace api {
          * @param [properties] Properties to set
          * @returns ResizeTerm instance
          */
-        public static create(properties?: api.IResizeTerm): api.ResizeTerm;
+        public static create(properties?: replitproto.IResizeTerm): replitproto.ResizeTerm;
 
         /**
-         * Encodes the specified ResizeTerm message. Does not implicitly {@link api.ResizeTerm.verify|verify} messages.
+         * Encodes the specified ResizeTerm message. Does not implicitly {@link replitproto.ResizeTerm.verify|verify} messages.
          * @param message ResizeTerm message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IResizeTerm, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IResizeTerm, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified ResizeTerm message, length delimited. Does not implicitly {@link api.ResizeTerm.verify|verify} messages.
+         * Encodes the specified ResizeTerm message, length delimited. Does not implicitly {@link replitproto.ResizeTerm.verify|verify} messages.
          * @param message ResizeTerm message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IResizeTerm, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IResizeTerm, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a ResizeTerm message from the specified reader or buffer.
@@ -3587,7 +3587,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.ResizeTerm;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.ResizeTerm;
 
         /**
          * Decodes a ResizeTerm message from the specified reader or buffer, length delimited.
@@ -3596,7 +3596,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.ResizeTerm;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.ResizeTerm;
 
         /**
          * Verifies a ResizeTerm message.
@@ -3610,7 +3610,7 @@ export namespace api {
          * @param object Plain object
          * @returns ResizeTerm
          */
-        public static fromObject(object: { [k: string]: any }): api.ResizeTerm;
+        public static fromObject(object: { [k: string]: any }): replitproto.ResizeTerm;
 
         /**
          * Creates a plain object from a ResizeTerm message. Also converts values to other types if specified.
@@ -3618,7 +3618,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.ResizeTerm, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.ResizeTerm, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this ResizeTerm to JSON.
@@ -3638,30 +3638,30 @@ export namespace api {
          * Constructs a new SaneTerm.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.ISaneTerm);
+        constructor(properties?: replitproto.ISaneTerm);
 
         /**
          * Creates a new SaneTerm instance using the specified properties.
          * @param [properties] Properties to set
          * @returns SaneTerm instance
          */
-        public static create(properties?: api.ISaneTerm): api.SaneTerm;
+        public static create(properties?: replitproto.ISaneTerm): replitproto.SaneTerm;
 
         /**
-         * Encodes the specified SaneTerm message. Does not implicitly {@link api.SaneTerm.verify|verify} messages.
+         * Encodes the specified SaneTerm message. Does not implicitly {@link replitproto.SaneTerm.verify|verify} messages.
          * @param message SaneTerm message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.ISaneTerm, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.ISaneTerm, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified SaneTerm message, length delimited. Does not implicitly {@link api.SaneTerm.verify|verify} messages.
+         * Encodes the specified SaneTerm message, length delimited. Does not implicitly {@link replitproto.SaneTerm.verify|verify} messages.
          * @param message SaneTerm message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.ISaneTerm, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.ISaneTerm, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a SaneTerm message from the specified reader or buffer.
@@ -3671,7 +3671,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.SaneTerm;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.SaneTerm;
 
         /**
          * Decodes a SaneTerm message from the specified reader or buffer, length delimited.
@@ -3680,7 +3680,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.SaneTerm;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.SaneTerm;
 
         /**
          * Verifies a SaneTerm message.
@@ -3694,7 +3694,7 @@ export namespace api {
          * @param object Plain object
          * @returns SaneTerm
          */
-        public static fromObject(object: { [k: string]: any }): api.SaneTerm;
+        public static fromObject(object: { [k: string]: any }): replitproto.SaneTerm;
 
         /**
          * Creates a plain object from a SaneTerm message. Also converts values to other types if specified.
@@ -3702,7 +3702,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.SaneTerm, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.SaneTerm, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this SaneTerm to JSON.
@@ -3715,7 +3715,7 @@ export namespace api {
     interface ILintResults {
 
         /** LintResults results */
-        results?: (api.ILintResult[]|null);
+        results?: (replitproto.ILintResult[]|null);
     }
 
     /** Represents a LintResults. */
@@ -3725,33 +3725,33 @@ export namespace api {
          * Constructs a new LintResults.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.ILintResults);
+        constructor(properties?: replitproto.ILintResults);
 
         /** LintResults results. */
-        public results: api.ILintResult[];
+        public results: replitproto.ILintResult[];
 
         /**
          * Creates a new LintResults instance using the specified properties.
          * @param [properties] Properties to set
          * @returns LintResults instance
          */
-        public static create(properties?: api.ILintResults): api.LintResults;
+        public static create(properties?: replitproto.ILintResults): replitproto.LintResults;
 
         /**
-         * Encodes the specified LintResults message. Does not implicitly {@link api.LintResults.verify|verify} messages.
+         * Encodes the specified LintResults message. Does not implicitly {@link replitproto.LintResults.verify|verify} messages.
          * @param message LintResults message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.ILintResults, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.ILintResults, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified LintResults message, length delimited. Does not implicitly {@link api.LintResults.verify|verify} messages.
+         * Encodes the specified LintResults message, length delimited. Does not implicitly {@link replitproto.LintResults.verify|verify} messages.
          * @param message LintResults message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.ILintResults, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.ILintResults, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a LintResults message from the specified reader or buffer.
@@ -3761,7 +3761,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.LintResults;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.LintResults;
 
         /**
          * Decodes a LintResults message from the specified reader or buffer, length delimited.
@@ -3770,7 +3770,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.LintResults;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.LintResults;
 
         /**
          * Verifies a LintResults message.
@@ -3784,7 +3784,7 @@ export namespace api {
          * @param object Plain object
          * @returns LintResults
          */
-        public static fromObject(object: { [k: string]: any }): api.LintResults;
+        public static fromObject(object: { [k: string]: any }): replitproto.LintResults;
 
         /**
          * Creates a plain object from a LintResults message. Also converts values to other types if specified.
@@ -3792,7 +3792,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.LintResults, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.LintResults, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this LintResults to JSON.
@@ -3824,7 +3824,7 @@ export namespace api {
          * Constructs a new LintResult.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.ILintResult);
+        constructor(properties?: replitproto.ILintResult);
 
         /** LintResult text. */
         public text: string;
@@ -3843,23 +3843,23 @@ export namespace api {
          * @param [properties] Properties to set
          * @returns LintResult instance
          */
-        public static create(properties?: api.ILintResult): api.LintResult;
+        public static create(properties?: replitproto.ILintResult): replitproto.LintResult;
 
         /**
-         * Encodes the specified LintResult message. Does not implicitly {@link api.LintResult.verify|verify} messages.
+         * Encodes the specified LintResult message. Does not implicitly {@link replitproto.LintResult.verify|verify} messages.
          * @param message LintResult message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.ILintResult, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.ILintResult, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified LintResult message, length delimited. Does not implicitly {@link api.LintResult.verify|verify} messages.
+         * Encodes the specified LintResult message, length delimited. Does not implicitly {@link replitproto.LintResult.verify|verify} messages.
          * @param message LintResult message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.ILintResult, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.ILintResult, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a LintResult message from the specified reader or buffer.
@@ -3869,7 +3869,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.LintResult;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.LintResult;
 
         /**
          * Decodes a LintResult message from the specified reader or buffer, length delimited.
@@ -3878,7 +3878,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.LintResult;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.LintResult;
 
         /**
          * Verifies a LintResult message.
@@ -3892,7 +3892,7 @@ export namespace api {
          * @param object Plain object
          * @returns LintResult
          */
-        public static fromObject(object: { [k: string]: any }): api.LintResult;
+        public static fromObject(object: { [k: string]: any }): replitproto.LintResult;
 
         /**
          * Creates a plain object from a LintResult message. Also converts values to other types if specified.
@@ -3900,7 +3900,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.LintResult, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.LintResult, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this LintResult to JSON.
@@ -3920,30 +3920,30 @@ export namespace api {
          * Constructs a new OK.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IOK);
+        constructor(properties?: replitproto.IOK);
 
         /**
          * Creates a new OK instance using the specified properties.
          * @param [properties] Properties to set
          * @returns OK instance
          */
-        public static create(properties?: api.IOK): api.OK;
+        public static create(properties?: replitproto.IOK): replitproto.OK;
 
         /**
-         * Encodes the specified OK message. Does not implicitly {@link api.OK.verify|verify} messages.
+         * Encodes the specified OK message. Does not implicitly {@link replitproto.OK.verify|verify} messages.
          * @param message OK message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IOK, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IOK, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified OK message, length delimited. Does not implicitly {@link api.OK.verify|verify} messages.
+         * Encodes the specified OK message, length delimited. Does not implicitly {@link replitproto.OK.verify|verify} messages.
          * @param message OK message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IOK, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IOK, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a OK message from the specified reader or buffer.
@@ -3953,7 +3953,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.OK;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.OK;
 
         /**
          * Decodes a OK message from the specified reader or buffer, length delimited.
@@ -3962,7 +3962,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.OK;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.OK;
 
         /**
          * Verifies a OK message.
@@ -3976,7 +3976,7 @@ export namespace api {
          * @param object Plain object
          * @returns OK
          */
-        public static fromObject(object: { [k: string]: any }): api.OK;
+        public static fromObject(object: { [k: string]: any }): replitproto.OK;
 
         /**
          * Creates a plain object from a OK message. Also converts values to other types if specified.
@@ -3984,7 +3984,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.OK, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.OK, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this OK to JSON.
@@ -4010,7 +4010,7 @@ export namespace api {
          * Constructs a new Move.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IMove);
+        constructor(properties?: replitproto.IMove);
 
         /** Move oldPath. */
         public oldPath: string;
@@ -4023,23 +4023,23 @@ export namespace api {
          * @param [properties] Properties to set
          * @returns Move instance
          */
-        public static create(properties?: api.IMove): api.Move;
+        public static create(properties?: replitproto.IMove): replitproto.Move;
 
         /**
-         * Encodes the specified Move message. Does not implicitly {@link api.Move.verify|verify} messages.
+         * Encodes the specified Move message. Does not implicitly {@link replitproto.Move.verify|verify} messages.
          * @param message Move message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IMove, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IMove, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified Move message, length delimited. Does not implicitly {@link api.Move.verify|verify} messages.
+         * Encodes the specified Move message, length delimited. Does not implicitly {@link replitproto.Move.verify|verify} messages.
          * @param message Move message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IMove, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IMove, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Move message from the specified reader or buffer.
@@ -4049,7 +4049,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.Move;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.Move;
 
         /**
          * Decodes a Move message from the specified reader or buffer, length delimited.
@@ -4058,7 +4058,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.Move;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.Move;
 
         /**
          * Verifies a Move message.
@@ -4072,7 +4072,7 @@ export namespace api {
          * @param object Plain object
          * @returns Move
          */
-        public static fromObject(object: { [k: string]: any }): api.Move;
+        public static fromObject(object: { [k: string]: any }): replitproto.Move;
 
         /**
          * Creates a plain object from a Move message. Also converts values to other types if specified.
@@ -4080,7 +4080,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.Move, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.Move, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this Move to JSON.
@@ -4093,7 +4093,7 @@ export namespace api {
     interface IFiles {
 
         /** Files files */
-        files?: (api.IFile[]|null);
+        files?: (replitproto.IFile[]|null);
     }
 
     /** Represents a Files. */
@@ -4103,33 +4103,33 @@ export namespace api {
          * Constructs a new Files.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IFiles);
+        constructor(properties?: replitproto.IFiles);
 
         /** Files files. */
-        public files: api.IFile[];
+        public files: replitproto.IFile[];
 
         /**
          * Creates a new Files instance using the specified properties.
          * @param [properties] Properties to set
          * @returns Files instance
          */
-        public static create(properties?: api.IFiles): api.Files;
+        public static create(properties?: replitproto.IFiles): replitproto.Files;
 
         /**
-         * Encodes the specified Files message. Does not implicitly {@link api.Files.verify|verify} messages.
+         * Encodes the specified Files message. Does not implicitly {@link replitproto.Files.verify|verify} messages.
          * @param message Files message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IFiles, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IFiles, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified Files message, length delimited. Does not implicitly {@link api.Files.verify|verify} messages.
+         * Encodes the specified Files message, length delimited. Does not implicitly {@link replitproto.Files.verify|verify} messages.
          * @param message Files message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IFiles, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IFiles, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Files message from the specified reader or buffer.
@@ -4139,7 +4139,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.Files;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.Files;
 
         /**
          * Decodes a Files message from the specified reader or buffer, length delimited.
@@ -4148,7 +4148,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.Files;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.Files;
 
         /**
          * Verifies a Files message.
@@ -4162,7 +4162,7 @@ export namespace api {
          * @param object Plain object
          * @returns Files
          */
-        public static fromObject(object: { [k: string]: any }): api.Files;
+        public static fromObject(object: { [k: string]: any }): replitproto.Files;
 
         /**
          * Creates a plain object from a Files message. Also converts values to other types if specified.
@@ -4170,7 +4170,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.Files, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.Files, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this Files to JSON.
@@ -4186,7 +4186,7 @@ export namespace api {
         path?: (string|null);
 
         /** File type */
-        type?: (api.File.Type|null);
+        type?: (replitproto.File.Type|null);
 
         /** File content */
         content?: (Uint8Array|null);
@@ -4199,13 +4199,13 @@ export namespace api {
          * Constructs a new File.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IFile);
+        constructor(properties?: replitproto.IFile);
 
         /** File path. */
         public path: string;
 
         /** File type. */
-        public type: api.File.Type;
+        public type: replitproto.File.Type;
 
         /** File content. */
         public content: Uint8Array;
@@ -4215,23 +4215,23 @@ export namespace api {
          * @param [properties] Properties to set
          * @returns File instance
          */
-        public static create(properties?: api.IFile): api.File;
+        public static create(properties?: replitproto.IFile): replitproto.File;
 
         /**
-         * Encodes the specified File message. Does not implicitly {@link api.File.verify|verify} messages.
+         * Encodes the specified File message. Does not implicitly {@link replitproto.File.verify|verify} messages.
          * @param message File message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IFile, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IFile, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified File message, length delimited. Does not implicitly {@link api.File.verify|verify} messages.
+         * Encodes the specified File message, length delimited. Does not implicitly {@link replitproto.File.verify|verify} messages.
          * @param message File message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IFile, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IFile, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a File message from the specified reader or buffer.
@@ -4241,7 +4241,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.File;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.File;
 
         /**
          * Decodes a File message from the specified reader or buffer, length delimited.
@@ -4250,7 +4250,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.File;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.File;
 
         /**
          * Verifies a File message.
@@ -4264,7 +4264,7 @@ export namespace api {
          * @param object Plain object
          * @returns File
          */
-        public static fromObject(object: { [k: string]: any }): api.File;
+        public static fromObject(object: { [k: string]: any }): replitproto.File;
 
         /**
          * Creates a plain object from a File message. Also converts values to other types if specified.
@@ -4272,7 +4272,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.File, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.File, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this File to JSON.
@@ -4301,30 +4301,30 @@ export namespace api {
          * Constructs a new Clear.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IClear);
+        constructor(properties?: replitproto.IClear);
 
         /**
          * Creates a new Clear instance using the specified properties.
          * @param [properties] Properties to set
          * @returns Clear instance
          */
-        public static create(properties?: api.IClear): api.Clear;
+        public static create(properties?: replitproto.IClear): replitproto.Clear;
 
         /**
-         * Encodes the specified Clear message. Does not implicitly {@link api.Clear.verify|verify} messages.
+         * Encodes the specified Clear message. Does not implicitly {@link replitproto.Clear.verify|verify} messages.
          * @param message Clear message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IClear, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IClear, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified Clear message, length delimited. Does not implicitly {@link api.Clear.verify|verify} messages.
+         * Encodes the specified Clear message, length delimited. Does not implicitly {@link replitproto.Clear.verify|verify} messages.
          * @param message Clear message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IClear, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IClear, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Clear message from the specified reader or buffer.
@@ -4334,7 +4334,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.Clear;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.Clear;
 
         /**
          * Decodes a Clear message from the specified reader or buffer, length delimited.
@@ -4343,7 +4343,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.Clear;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.Clear;
 
         /**
          * Verifies a Clear message.
@@ -4357,7 +4357,7 @@ export namespace api {
          * @param object Plain object
          * @returns Clear
          */
-        public static fromObject(object: { [k: string]: any }): api.Clear;
+        public static fromObject(object: { [k: string]: any }): replitproto.Clear;
 
         /**
          * Creates a plain object from a Clear message. Also converts values to other types if specified.
@@ -4365,7 +4365,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.Clear, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.Clear, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this Clear to JSON.
@@ -4388,7 +4388,7 @@ export namespace api {
          * Constructs a new Toast.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IToast);
+        constructor(properties?: replitproto.IToast);
 
         /** Toast text. */
         public text: string;
@@ -4398,23 +4398,23 @@ export namespace api {
          * @param [properties] Properties to set
          * @returns Toast instance
          */
-        public static create(properties?: api.IToast): api.Toast;
+        public static create(properties?: replitproto.IToast): replitproto.Toast;
 
         /**
-         * Encodes the specified Toast message. Does not implicitly {@link api.Toast.verify|verify} messages.
+         * Encodes the specified Toast message. Does not implicitly {@link replitproto.Toast.verify|verify} messages.
          * @param message Toast message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IToast, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IToast, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified Toast message, length delimited. Does not implicitly {@link api.Toast.verify|verify} messages.
+         * Encodes the specified Toast message, length delimited. Does not implicitly {@link replitproto.Toast.verify|verify} messages.
          * @param message Toast message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IToast, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IToast, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Toast message from the specified reader or buffer.
@@ -4424,7 +4424,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.Toast;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.Toast;
 
         /**
          * Decodes a Toast message from the specified reader or buffer, length delimited.
@@ -4433,7 +4433,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.Toast;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.Toast;
 
         /**
          * Verifies a Toast message.
@@ -4447,7 +4447,7 @@ export namespace api {
          * @param object Plain object
          * @returns Toast
          */
-        public static fromObject(object: { [k: string]: any }): api.Toast;
+        public static fromObject(object: { [k: string]: any }): replitproto.Toast;
 
         /**
          * Creates a plain object from a Toast message. Also converts values to other types if specified.
@@ -4455,7 +4455,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.Toast, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.Toast, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this Toast to JSON.
@@ -4475,30 +4475,30 @@ export namespace api {
          * Constructs a new RunMain.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IRunMain);
+        constructor(properties?: replitproto.IRunMain);
 
         /**
          * Creates a new RunMain instance using the specified properties.
          * @param [properties] Properties to set
          * @returns RunMain instance
          */
-        public static create(properties?: api.IRunMain): api.RunMain;
+        public static create(properties?: replitproto.IRunMain): replitproto.RunMain;
 
         /**
-         * Encodes the specified RunMain message. Does not implicitly {@link api.RunMain.verify|verify} messages.
+         * Encodes the specified RunMain message. Does not implicitly {@link replitproto.RunMain.verify|verify} messages.
          * @param message RunMain message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IRunMain, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IRunMain, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified RunMain message, length delimited. Does not implicitly {@link api.RunMain.verify|verify} messages.
+         * Encodes the specified RunMain message, length delimited. Does not implicitly {@link replitproto.RunMain.verify|verify} messages.
          * @param message RunMain message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IRunMain, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IRunMain, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a RunMain message from the specified reader or buffer.
@@ -4508,7 +4508,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.RunMain;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.RunMain;
 
         /**
          * Decodes a RunMain message from the specified reader or buffer, length delimited.
@@ -4517,7 +4517,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.RunMain;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.RunMain;
 
         /**
          * Verifies a RunMain message.
@@ -4531,7 +4531,7 @@ export namespace api {
          * @param object Plain object
          * @returns RunMain
          */
-        public static fromObject(object: { [k: string]: any }): api.RunMain;
+        public static fromObject(object: { [k: string]: any }): replitproto.RunMain;
 
         /**
          * Creates a plain object from a RunMain message. Also converts values to other types if specified.
@@ -4539,7 +4539,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.RunMain, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.RunMain, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this RunMain to JSON.
@@ -4558,7 +4558,7 @@ export namespace api {
         name?: (string|null);
 
         /** OpenChannel action */
-        action?: (api.OpenChannel.Action|null);
+        action?: (replitproto.OpenChannel.Action|null);
 
         /** OpenChannel id */
         id?: (number|null);
@@ -4571,7 +4571,7 @@ export namespace api {
          * Constructs a new OpenChannel.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IOpenChannel);
+        constructor(properties?: replitproto.IOpenChannel);
 
         /** OpenChannel service. */
         public service: string;
@@ -4580,7 +4580,7 @@ export namespace api {
         public name: string;
 
         /** OpenChannel action. */
-        public action: api.OpenChannel.Action;
+        public action: replitproto.OpenChannel.Action;
 
         /** OpenChannel id. */
         public id: number;
@@ -4590,23 +4590,23 @@ export namespace api {
          * @param [properties] Properties to set
          * @returns OpenChannel instance
          */
-        public static create(properties?: api.IOpenChannel): api.OpenChannel;
+        public static create(properties?: replitproto.IOpenChannel): replitproto.OpenChannel;
 
         /**
-         * Encodes the specified OpenChannel message. Does not implicitly {@link api.OpenChannel.verify|verify} messages.
+         * Encodes the specified OpenChannel message. Does not implicitly {@link replitproto.OpenChannel.verify|verify} messages.
          * @param message OpenChannel message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IOpenChannel, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IOpenChannel, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified OpenChannel message, length delimited. Does not implicitly {@link api.OpenChannel.verify|verify} messages.
+         * Encodes the specified OpenChannel message, length delimited. Does not implicitly {@link replitproto.OpenChannel.verify|verify} messages.
          * @param message OpenChannel message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IOpenChannel, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IOpenChannel, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes an OpenChannel message from the specified reader or buffer.
@@ -4616,7 +4616,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.OpenChannel;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.OpenChannel;
 
         /**
          * Decodes an OpenChannel message from the specified reader or buffer, length delimited.
@@ -4625,7 +4625,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.OpenChannel;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.OpenChannel;
 
         /**
          * Verifies an OpenChannel message.
@@ -4639,7 +4639,7 @@ export namespace api {
          * @param object Plain object
          * @returns OpenChannel
          */
-        public static fromObject(object: { [k: string]: any }): api.OpenChannel;
+        public static fromObject(object: { [k: string]: any }): replitproto.OpenChannel;
 
         /**
          * Creates a plain object from an OpenChannel message. Also converts values to other types if specified.
@@ -4647,7 +4647,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.OpenChannel, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.OpenChannel, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this OpenChannel to JSON.
@@ -4673,7 +4673,7 @@ export namespace api {
         id?: (number|null);
 
         /** OpenChannelRes state */
-        state?: (api.OpenChannelRes.State|null);
+        state?: (replitproto.OpenChannelRes.State|null);
 
         /** OpenChannelRes error */
         error?: (string|null);
@@ -4686,13 +4686,13 @@ export namespace api {
          * Constructs a new OpenChannelRes.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IOpenChannelRes);
+        constructor(properties?: replitproto.IOpenChannelRes);
 
         /** OpenChannelRes id. */
         public id: number;
 
         /** OpenChannelRes state. */
-        public state: api.OpenChannelRes.State;
+        public state: replitproto.OpenChannelRes.State;
 
         /** OpenChannelRes error. */
         public error: string;
@@ -4702,23 +4702,23 @@ export namespace api {
          * @param [properties] Properties to set
          * @returns OpenChannelRes instance
          */
-        public static create(properties?: api.IOpenChannelRes): api.OpenChannelRes;
+        public static create(properties?: replitproto.IOpenChannelRes): replitproto.OpenChannelRes;
 
         /**
-         * Encodes the specified OpenChannelRes message. Does not implicitly {@link api.OpenChannelRes.verify|verify} messages.
+         * Encodes the specified OpenChannelRes message. Does not implicitly {@link replitproto.OpenChannelRes.verify|verify} messages.
          * @param message OpenChannelRes message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IOpenChannelRes, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IOpenChannelRes, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified OpenChannelRes message, length delimited. Does not implicitly {@link api.OpenChannelRes.verify|verify} messages.
+         * Encodes the specified OpenChannelRes message, length delimited. Does not implicitly {@link replitproto.OpenChannelRes.verify|verify} messages.
          * @param message OpenChannelRes message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IOpenChannelRes, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IOpenChannelRes, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes an OpenChannelRes message from the specified reader or buffer.
@@ -4728,7 +4728,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.OpenChannelRes;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.OpenChannelRes;
 
         /**
          * Decodes an OpenChannelRes message from the specified reader or buffer, length delimited.
@@ -4737,7 +4737,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.OpenChannelRes;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.OpenChannelRes;
 
         /**
          * Verifies an OpenChannelRes message.
@@ -4751,7 +4751,7 @@ export namespace api {
          * @param object Plain object
          * @returns OpenChannelRes
          */
-        public static fromObject(object: { [k: string]: any }): api.OpenChannelRes;
+        public static fromObject(object: { [k: string]: any }): replitproto.OpenChannelRes;
 
         /**
          * Creates a plain object from an OpenChannelRes message. Also converts values to other types if specified.
@@ -4759,7 +4759,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.OpenChannelRes, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.OpenChannelRes, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this OpenChannelRes to JSON.
@@ -4785,7 +4785,7 @@ export namespace api {
         id?: (number|null);
 
         /** CloseChannel action */
-        action?: (api.CloseChannel.Action|null);
+        action?: (replitproto.CloseChannel.Action|null);
     }
 
     /** Represents a CloseChannel. */
@@ -4795,36 +4795,36 @@ export namespace api {
          * Constructs a new CloseChannel.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.ICloseChannel);
+        constructor(properties?: replitproto.ICloseChannel);
 
         /** CloseChannel id. */
         public id: number;
 
         /** CloseChannel action. */
-        public action: api.CloseChannel.Action;
+        public action: replitproto.CloseChannel.Action;
 
         /**
          * Creates a new CloseChannel instance using the specified properties.
          * @param [properties] Properties to set
          * @returns CloseChannel instance
          */
-        public static create(properties?: api.ICloseChannel): api.CloseChannel;
+        public static create(properties?: replitproto.ICloseChannel): replitproto.CloseChannel;
 
         /**
-         * Encodes the specified CloseChannel message. Does not implicitly {@link api.CloseChannel.verify|verify} messages.
+         * Encodes the specified CloseChannel message. Does not implicitly {@link replitproto.CloseChannel.verify|verify} messages.
          * @param message CloseChannel message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.ICloseChannel, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.ICloseChannel, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified CloseChannel message, length delimited. Does not implicitly {@link api.CloseChannel.verify|verify} messages.
+         * Encodes the specified CloseChannel message, length delimited. Does not implicitly {@link replitproto.CloseChannel.verify|verify} messages.
          * @param message CloseChannel message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.ICloseChannel, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.ICloseChannel, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a CloseChannel message from the specified reader or buffer.
@@ -4834,7 +4834,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.CloseChannel;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.CloseChannel;
 
         /**
          * Decodes a CloseChannel message from the specified reader or buffer, length delimited.
@@ -4843,7 +4843,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.CloseChannel;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.CloseChannel;
 
         /**
          * Verifies a CloseChannel message.
@@ -4857,7 +4857,7 @@ export namespace api {
          * @param object Plain object
          * @returns CloseChannel
          */
-        public static fromObject(object: { [k: string]: any }): api.CloseChannel;
+        public static fromObject(object: { [k: string]: any }): replitproto.CloseChannel;
 
         /**
          * Creates a plain object from a CloseChannel message. Also converts values to other types if specified.
@@ -4865,7 +4865,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.CloseChannel, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.CloseChannel, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this CloseChannel to JSON.
@@ -4891,7 +4891,7 @@ export namespace api {
         id?: (number|null);
 
         /** CloseChannelRes status */
-        status?: (api.CloseChannelRes.Status|null);
+        status?: (replitproto.CloseChannelRes.Status|null);
     }
 
     /** Represents a CloseChannelRes. */
@@ -4901,36 +4901,36 @@ export namespace api {
          * Constructs a new CloseChannelRes.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.ICloseChannelRes);
+        constructor(properties?: replitproto.ICloseChannelRes);
 
         /** CloseChannelRes id. */
         public id: number;
 
         /** CloseChannelRes status. */
-        public status: api.CloseChannelRes.Status;
+        public status: replitproto.CloseChannelRes.Status;
 
         /**
          * Creates a new CloseChannelRes instance using the specified properties.
          * @param [properties] Properties to set
          * @returns CloseChannelRes instance
          */
-        public static create(properties?: api.ICloseChannelRes): api.CloseChannelRes;
+        public static create(properties?: replitproto.ICloseChannelRes): replitproto.CloseChannelRes;
 
         /**
-         * Encodes the specified CloseChannelRes message. Does not implicitly {@link api.CloseChannelRes.verify|verify} messages.
+         * Encodes the specified CloseChannelRes message. Does not implicitly {@link replitproto.CloseChannelRes.verify|verify} messages.
          * @param message CloseChannelRes message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.ICloseChannelRes, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.ICloseChannelRes, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified CloseChannelRes message, length delimited. Does not implicitly {@link api.CloseChannelRes.verify|verify} messages.
+         * Encodes the specified CloseChannelRes message, length delimited. Does not implicitly {@link replitproto.CloseChannelRes.verify|verify} messages.
          * @param message CloseChannelRes message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.ICloseChannelRes, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.ICloseChannelRes, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a CloseChannelRes message from the specified reader or buffer.
@@ -4940,7 +4940,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.CloseChannelRes;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.CloseChannelRes;
 
         /**
          * Decodes a CloseChannelRes message from the specified reader or buffer, length delimited.
@@ -4949,7 +4949,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.CloseChannelRes;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.CloseChannelRes;
 
         /**
          * Verifies a CloseChannelRes message.
@@ -4963,7 +4963,7 @@ export namespace api {
          * @param object Plain object
          * @returns CloseChannelRes
          */
-        public static fromObject(object: { [k: string]: any }): api.CloseChannelRes;
+        public static fromObject(object: { [k: string]: any }): replitproto.CloseChannelRes;
 
         /**
          * Creates a plain object from a CloseChannelRes message. Also converts values to other types if specified.
@@ -4971,7 +4971,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.CloseChannelRes, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.CloseChannelRes, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this CloseChannelRes to JSON.
@@ -4994,7 +4994,7 @@ export namespace api {
     interface IContainerState {
 
         /** ContainerState state */
-        state?: (api.ContainerState.State|null);
+        state?: (replitproto.ContainerState.State|null);
     }
 
     /** Represents a ContainerState. */
@@ -5004,33 +5004,33 @@ export namespace api {
          * Constructs a new ContainerState.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IContainerState);
+        constructor(properties?: replitproto.IContainerState);
 
         /** ContainerState state. */
-        public state: api.ContainerState.State;
+        public state: replitproto.ContainerState.State;
 
         /**
          * Creates a new ContainerState instance using the specified properties.
          * @param [properties] Properties to set
          * @returns ContainerState instance
          */
-        public static create(properties?: api.IContainerState): api.ContainerState;
+        public static create(properties?: replitproto.IContainerState): replitproto.ContainerState;
 
         /**
-         * Encodes the specified ContainerState message. Does not implicitly {@link api.ContainerState.verify|verify} messages.
+         * Encodes the specified ContainerState message. Does not implicitly {@link replitproto.ContainerState.verify|verify} messages.
          * @param message ContainerState message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IContainerState, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IContainerState, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified ContainerState message, length delimited. Does not implicitly {@link api.ContainerState.verify|verify} messages.
+         * Encodes the specified ContainerState message, length delimited. Does not implicitly {@link replitproto.ContainerState.verify|verify} messages.
          * @param message ContainerState message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IContainerState, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IContainerState, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a ContainerState message from the specified reader or buffer.
@@ -5040,7 +5040,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.ContainerState;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.ContainerState;
 
         /**
          * Decodes a ContainerState message from the specified reader or buffer, length delimited.
@@ -5049,7 +5049,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.ContainerState;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.ContainerState;
 
         /**
          * Verifies a ContainerState message.
@@ -5063,7 +5063,7 @@ export namespace api {
          * @param object Plain object
          * @returns ContainerState
          */
-        public static fromObject(object: { [k: string]: any }): api.ContainerState;
+        public static fromObject(object: { [k: string]: any }): replitproto.ContainerState;
 
         /**
          * Creates a plain object from a ContainerState message. Also converts values to other types if specified.
@@ -5071,7 +5071,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.ContainerState, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.ContainerState, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this ContainerState to JSON.
@@ -5109,7 +5109,7 @@ export namespace api {
          * Constructs a new PortOpen.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPortOpen);
+        constructor(properties?: replitproto.IPortOpen);
 
         /** PortOpen forwarded. */
         public forwarded: boolean;
@@ -5125,23 +5125,23 @@ export namespace api {
          * @param [properties] Properties to set
          * @returns PortOpen instance
          */
-        public static create(properties?: api.IPortOpen): api.PortOpen;
+        public static create(properties?: replitproto.IPortOpen): replitproto.PortOpen;
 
         /**
-         * Encodes the specified PortOpen message. Does not implicitly {@link api.PortOpen.verify|verify} messages.
+         * Encodes the specified PortOpen message. Does not implicitly {@link replitproto.PortOpen.verify|verify} messages.
          * @param message PortOpen message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPortOpen, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IPortOpen, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified PortOpen message, length delimited. Does not implicitly {@link api.PortOpen.verify|verify} messages.
+         * Encodes the specified PortOpen message, length delimited. Does not implicitly {@link replitproto.PortOpen.verify|verify} messages.
          * @param message PortOpen message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPortOpen, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IPortOpen, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PortOpen message from the specified reader or buffer.
@@ -5151,7 +5151,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.PortOpen;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.PortOpen;
 
         /**
          * Decodes a PortOpen message from the specified reader or buffer, length delimited.
@@ -5160,7 +5160,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.PortOpen;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.PortOpen;
 
         /**
          * Verifies a PortOpen message.
@@ -5174,7 +5174,7 @@ export namespace api {
          * @param object Plain object
          * @returns PortOpen
          */
-        public static fromObject(object: { [k: string]: any }): api.PortOpen;
+        public static fromObject(object: { [k: string]: any }): replitproto.PortOpen;
 
         /**
          * Creates a plain object from a PortOpen message. Also converts values to other types if specified.
@@ -5182,7 +5182,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.PortOpen, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.PortOpen, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this PortOpen to JSON.
@@ -5198,7 +5198,7 @@ export namespace api {
         version?: (number|null);
 
         /** OTPacket ops */
-        ops?: (api.IOTRuneTransformOp[]|null);
+        ops?: (replitproto.IOTRuneTransformOp[]|null);
 
         /** OTPacket crc32 */
         crc32?: (number|null);
@@ -5211,13 +5211,13 @@ export namespace api {
          * Constructs a new OTPacket.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IOTPacket);
+        constructor(properties?: replitproto.IOTPacket);
 
         /** OTPacket version. */
         public version: number;
 
         /** OTPacket ops. */
-        public ops: api.IOTRuneTransformOp[];
+        public ops: replitproto.IOTRuneTransformOp[];
 
         /** OTPacket crc32. */
         public crc32: number;
@@ -5227,23 +5227,23 @@ export namespace api {
          * @param [properties] Properties to set
          * @returns OTPacket instance
          */
-        public static create(properties?: api.IOTPacket): api.OTPacket;
+        public static create(properties?: replitproto.IOTPacket): replitproto.OTPacket;
 
         /**
-         * Encodes the specified OTPacket message. Does not implicitly {@link api.OTPacket.verify|verify} messages.
+         * Encodes the specified OTPacket message. Does not implicitly {@link replitproto.OTPacket.verify|verify} messages.
          * @param message OTPacket message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IOTPacket, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IOTPacket, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified OTPacket message, length delimited. Does not implicitly {@link api.OTPacket.verify|verify} messages.
+         * Encodes the specified OTPacket message, length delimited. Does not implicitly {@link replitproto.OTPacket.verify|verify} messages.
          * @param message OTPacket message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IOTPacket, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IOTPacket, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a OTPacket message from the specified reader or buffer.
@@ -5253,7 +5253,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.OTPacket;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.OTPacket;
 
         /**
          * Decodes a OTPacket message from the specified reader or buffer, length delimited.
@@ -5262,7 +5262,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.OTPacket;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.OTPacket;
 
         /**
          * Verifies a OTPacket message.
@@ -5276,7 +5276,7 @@ export namespace api {
          * @param object Plain object
          * @returns OTPacket
          */
-        public static fromObject(object: { [k: string]: any }): api.OTPacket;
+        public static fromObject(object: { [k: string]: any }): replitproto.OTPacket;
 
         /**
          * Creates a plain object from a OTPacket message. Also converts values to other types if specified.
@@ -5284,7 +5284,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.OTPacket, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.OTPacket, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this OTPacket to JSON.
@@ -5313,7 +5313,7 @@ export namespace api {
          * Constructs a new OTRuneTransformOp.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IOTRuneTransformOp);
+        constructor(properties?: replitproto.IOTRuneTransformOp);
 
         /** OTRuneTransformOp skip. */
         public skip: number;
@@ -5332,23 +5332,23 @@ export namespace api {
          * @param [properties] Properties to set
          * @returns OTRuneTransformOp instance
          */
-        public static create(properties?: api.IOTRuneTransformOp): api.OTRuneTransformOp;
+        public static create(properties?: replitproto.IOTRuneTransformOp): replitproto.OTRuneTransformOp;
 
         /**
-         * Encodes the specified OTRuneTransformOp message. Does not implicitly {@link api.OTRuneTransformOp.verify|verify} messages.
+         * Encodes the specified OTRuneTransformOp message. Does not implicitly {@link replitproto.OTRuneTransformOp.verify|verify} messages.
          * @param message OTRuneTransformOp message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IOTRuneTransformOp, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IOTRuneTransformOp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified OTRuneTransformOp message, length delimited. Does not implicitly {@link api.OTRuneTransformOp.verify|verify} messages.
+         * Encodes the specified OTRuneTransformOp message, length delimited. Does not implicitly {@link replitproto.OTRuneTransformOp.verify|verify} messages.
          * @param message OTRuneTransformOp message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IOTRuneTransformOp, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IOTRuneTransformOp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a OTRuneTransformOp message from the specified reader or buffer.
@@ -5358,7 +5358,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.OTRuneTransformOp;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.OTRuneTransformOp;
 
         /**
          * Decodes a OTRuneTransformOp message from the specified reader or buffer, length delimited.
@@ -5367,7 +5367,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.OTRuneTransformOp;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.OTRuneTransformOp;
 
         /**
          * Verifies a OTRuneTransformOp message.
@@ -5381,7 +5381,7 @@ export namespace api {
          * @param object Plain object
          * @returns OTRuneTransformOp
          */
-        public static fromObject(object: { [k: string]: any }): api.OTRuneTransformOp;
+        public static fromObject(object: { [k: string]: any }): replitproto.OTRuneTransformOp;
 
         /**
          * Creates a plain object from a OTRuneTransformOp message. Also converts values to other types if specified.
@@ -5389,7 +5389,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.OTRuneTransformOp, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.OTRuneTransformOp, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this OTRuneTransformOp to JSON.
@@ -5408,10 +5408,10 @@ export namespace api {
         version?: (number|null);
 
         /** OTStatus linkedFile */
-        linkedFile?: (api.IFile|null);
+        linkedFile?: (replitproto.IFile|null);
 
         /** OTStatus cursors */
-        cursors?: (api.IOTCursor[]|null);
+        cursors?: (replitproto.IOTCursor[]|null);
     }
 
     /** Represents a OTStatus. */
@@ -5421,7 +5421,7 @@ export namespace api {
          * Constructs a new OTStatus.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IOTStatus);
+        constructor(properties?: replitproto.IOTStatus);
 
         /** OTStatus contents. */
         public contents: string;
@@ -5430,33 +5430,33 @@ export namespace api {
         public version: number;
 
         /** OTStatus linkedFile. */
-        public linkedFile?: (api.IFile|null);
+        public linkedFile?: (replitproto.IFile|null);
 
         /** OTStatus cursors. */
-        public cursors: api.IOTCursor[];
+        public cursors: replitproto.IOTCursor[];
 
         /**
          * Creates a new OTStatus instance using the specified properties.
          * @param [properties] Properties to set
          * @returns OTStatus instance
          */
-        public static create(properties?: api.IOTStatus): api.OTStatus;
+        public static create(properties?: replitproto.IOTStatus): replitproto.OTStatus;
 
         /**
-         * Encodes the specified OTStatus message. Does not implicitly {@link api.OTStatus.verify|verify} messages.
+         * Encodes the specified OTStatus message. Does not implicitly {@link replitproto.OTStatus.verify|verify} messages.
          * @param message OTStatus message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IOTStatus, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IOTStatus, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified OTStatus message, length delimited. Does not implicitly {@link api.OTStatus.verify|verify} messages.
+         * Encodes the specified OTStatus message, length delimited. Does not implicitly {@link replitproto.OTStatus.verify|verify} messages.
          * @param message OTStatus message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IOTStatus, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IOTStatus, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a OTStatus message from the specified reader or buffer.
@@ -5466,7 +5466,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.OTStatus;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.OTStatus;
 
         /**
          * Decodes a OTStatus message from the specified reader or buffer, length delimited.
@@ -5475,7 +5475,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.OTStatus;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.OTStatus;
 
         /**
          * Verifies a OTStatus message.
@@ -5489,7 +5489,7 @@ export namespace api {
          * @param object Plain object
          * @returns OTStatus
          */
-        public static fromObject(object: { [k: string]: any }): api.OTStatus;
+        public static fromObject(object: { [k: string]: any }): replitproto.OTStatus;
 
         /**
          * Creates a plain object from a OTStatus message. Also converts values to other types if specified.
@@ -5497,7 +5497,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.OTStatus, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.OTStatus, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this OTStatus to JSON.
@@ -5519,7 +5519,7 @@ export namespace api {
         selectionEnd?: (number|null);
 
         /** OTCursor user */
-        user?: (api.IUser|null);
+        user?: (replitproto.IUser|null);
 
         /** OTCursor id */
         id?: (string|null);
@@ -5532,7 +5532,7 @@ export namespace api {
          * Constructs a new OTCursor.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IOTCursor);
+        constructor(properties?: replitproto.IOTCursor);
 
         /** OTCursor position. */
         public position: number;
@@ -5544,7 +5544,7 @@ export namespace api {
         public selectionEnd: number;
 
         /** OTCursor user. */
-        public user?: (api.IUser|null);
+        public user?: (replitproto.IUser|null);
 
         /** OTCursor id. */
         public id: string;
@@ -5554,23 +5554,23 @@ export namespace api {
          * @param [properties] Properties to set
          * @returns OTCursor instance
          */
-        public static create(properties?: api.IOTCursor): api.OTCursor;
+        public static create(properties?: replitproto.IOTCursor): replitproto.OTCursor;
 
         /**
-         * Encodes the specified OTCursor message. Does not implicitly {@link api.OTCursor.verify|verify} messages.
+         * Encodes the specified OTCursor message. Does not implicitly {@link replitproto.OTCursor.verify|verify} messages.
          * @param message OTCursor message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IOTCursor, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IOTCursor, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified OTCursor message, length delimited. Does not implicitly {@link api.OTCursor.verify|verify} messages.
+         * Encodes the specified OTCursor message, length delimited. Does not implicitly {@link replitproto.OTCursor.verify|verify} messages.
          * @param message OTCursor message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IOTCursor, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IOTCursor, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a OTCursor message from the specified reader or buffer.
@@ -5580,7 +5580,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.OTCursor;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.OTCursor;
 
         /**
          * Decodes a OTCursor message from the specified reader or buffer, length delimited.
@@ -5589,7 +5589,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.OTCursor;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.OTCursor;
 
         /**
          * Verifies a OTCursor message.
@@ -5603,7 +5603,7 @@ export namespace api {
          * @param object Plain object
          * @returns OTCursor
          */
-        public static fromObject(object: { [k: string]: any }): api.OTCursor;
+        public static fromObject(object: { [k: string]: any }): replitproto.OTCursor;
 
         /**
          * Creates a plain object from a OTCursor message. Also converts values to other types if specified.
@@ -5611,7 +5611,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.OTCursor, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.OTCursor, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this OTCursor to JSON.
@@ -5637,7 +5637,7 @@ export namespace api {
          * Constructs a new ChatMessage.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IChatMessage);
+        constructor(properties?: replitproto.IChatMessage);
 
         /** ChatMessage username. */
         public username: string;
@@ -5650,23 +5650,23 @@ export namespace api {
          * @param [properties] Properties to set
          * @returns ChatMessage instance
          */
-        public static create(properties?: api.IChatMessage): api.ChatMessage;
+        public static create(properties?: replitproto.IChatMessage): replitproto.ChatMessage;
 
         /**
-         * Encodes the specified ChatMessage message. Does not implicitly {@link api.ChatMessage.verify|verify} messages.
+         * Encodes the specified ChatMessage message. Does not implicitly {@link replitproto.ChatMessage.verify|verify} messages.
          * @param message ChatMessage message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IChatMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IChatMessage, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified ChatMessage message, length delimited. Does not implicitly {@link api.ChatMessage.verify|verify} messages.
+         * Encodes the specified ChatMessage message, length delimited. Does not implicitly {@link replitproto.ChatMessage.verify|verify} messages.
          * @param message ChatMessage message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IChatMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IChatMessage, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a ChatMessage message from the specified reader or buffer.
@@ -5676,7 +5676,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.ChatMessage;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.ChatMessage;
 
         /**
          * Decodes a ChatMessage message from the specified reader or buffer, length delimited.
@@ -5685,7 +5685,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.ChatMessage;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.ChatMessage;
 
         /**
          * Verifies a ChatMessage message.
@@ -5699,7 +5699,7 @@ export namespace api {
          * @param object Plain object
          * @returns ChatMessage
          */
-        public static fromObject(object: { [k: string]: any }): api.ChatMessage;
+        public static fromObject(object: { [k: string]: any }): replitproto.ChatMessage;
 
         /**
          * Creates a plain object from a ChatMessage message. Also converts values to other types if specified.
@@ -5707,7 +5707,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.ChatMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.ChatMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this ChatMessage to JSON.
@@ -5733,7 +5733,7 @@ export namespace api {
          * Constructs a new ChatTyping.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IChatTyping);
+        constructor(properties?: replitproto.IChatTyping);
 
         /** ChatTyping username. */
         public username: string;
@@ -5746,23 +5746,23 @@ export namespace api {
          * @param [properties] Properties to set
          * @returns ChatTyping instance
          */
-        public static create(properties?: api.IChatTyping): api.ChatTyping;
+        public static create(properties?: replitproto.IChatTyping): replitproto.ChatTyping;
 
         /**
-         * Encodes the specified ChatTyping message. Does not implicitly {@link api.ChatTyping.verify|verify} messages.
+         * Encodes the specified ChatTyping message. Does not implicitly {@link replitproto.ChatTyping.verify|verify} messages.
          * @param message ChatTyping message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IChatTyping, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IChatTyping, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified ChatTyping message, length delimited. Does not implicitly {@link api.ChatTyping.verify|verify} messages.
+         * Encodes the specified ChatTyping message, length delimited. Does not implicitly {@link replitproto.ChatTyping.verify|verify} messages.
          * @param message ChatTyping message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IChatTyping, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IChatTyping, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a ChatTyping message from the specified reader or buffer.
@@ -5772,7 +5772,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.ChatTyping;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.ChatTyping;
 
         /**
          * Decodes a ChatTyping message from the specified reader or buffer, length delimited.
@@ -5781,7 +5781,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.ChatTyping;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.ChatTyping;
 
         /**
          * Verifies a ChatTyping message.
@@ -5795,7 +5795,7 @@ export namespace api {
          * @param object Plain object
          * @returns ChatTyping
          */
-        public static fromObject(object: { [k: string]: any }): api.ChatTyping;
+        public static fromObject(object: { [k: string]: any }): replitproto.ChatTyping;
 
         /**
          * Creates a plain object from a ChatTyping message. Also converts values to other types if specified.
@@ -5803,7 +5803,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.ChatTyping, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.ChatTyping, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this ChatTyping to JSON.
@@ -5835,7 +5835,7 @@ export namespace api {
          * Constructs a new User.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IUser);
+        constructor(properties?: replitproto.IUser);
 
         /** User id. */
         public id: number;
@@ -5854,23 +5854,23 @@ export namespace api {
          * @param [properties] Properties to set
          * @returns User instance
          */
-        public static create(properties?: api.IUser): api.User;
+        public static create(properties?: replitproto.IUser): replitproto.User;
 
         /**
-         * Encodes the specified User message. Does not implicitly {@link api.User.verify|verify} messages.
+         * Encodes the specified User message. Does not implicitly {@link replitproto.User.verify|verify} messages.
          * @param message User message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IUser, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IUser, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified User message, length delimited. Does not implicitly {@link api.User.verify|verify} messages.
+         * Encodes the specified User message, length delimited. Does not implicitly {@link replitproto.User.verify|verify} messages.
          * @param message User message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IUser, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IUser, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a User message from the specified reader or buffer.
@@ -5880,7 +5880,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.User;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.User;
 
         /**
          * Decodes a User message from the specified reader or buffer, length delimited.
@@ -5889,7 +5889,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.User;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.User;
 
         /**
          * Verifies a User message.
@@ -5903,7 +5903,7 @@ export namespace api {
          * @param object Plain object
          * @returns User
          */
-        public static fromObject(object: { [k: string]: any }): api.User;
+        public static fromObject(object: { [k: string]: any }): replitproto.User;
 
         /**
          * Creates a plain object from a User message. Also converts values to other types if specified.
@@ -5911,7 +5911,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.User, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.User, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this User to JSON.
@@ -5924,7 +5924,7 @@ export namespace api {
     interface IRoster {
 
         /** Roster user */
-        user?: (api.IUser[]|null);
+        user?: (replitproto.IUser[]|null);
     }
 
     /** Represents a Roster. */
@@ -5934,33 +5934,33 @@ export namespace api {
          * Constructs a new Roster.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IRoster);
+        constructor(properties?: replitproto.IRoster);
 
         /** Roster user. */
-        public user: api.IUser[];
+        public user: replitproto.IUser[];
 
         /**
          * Creates a new Roster instance using the specified properties.
          * @param [properties] Properties to set
          * @returns Roster instance
          */
-        public static create(properties?: api.IRoster): api.Roster;
+        public static create(properties?: replitproto.IRoster): replitproto.Roster;
 
         /**
-         * Encodes the specified Roster message. Does not implicitly {@link api.Roster.verify|verify} messages.
+         * Encodes the specified Roster message. Does not implicitly {@link replitproto.Roster.verify|verify} messages.
          * @param message Roster message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IRoster, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IRoster, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified Roster message, length delimited. Does not implicitly {@link api.Roster.verify|verify} messages.
+         * Encodes the specified Roster message, length delimited. Does not implicitly {@link replitproto.Roster.verify|verify} messages.
          * @param message Roster message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IRoster, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IRoster, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Roster message from the specified reader or buffer.
@@ -5970,7 +5970,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.Roster;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.Roster;
 
         /**
          * Decodes a Roster message from the specified reader or buffer, length delimited.
@@ -5979,7 +5979,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.Roster;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.Roster;
 
         /**
          * Verifies a Roster message.
@@ -5993,7 +5993,7 @@ export namespace api {
          * @param object Plain object
          * @returns Roster
          */
-        public static fromObject(object: { [k: string]: any }): api.Roster;
+        public static fromObject(object: { [k: string]: any }): replitproto.Roster;
 
         /**
          * Creates a plain object from a Roster message. Also converts values to other types if specified.
@@ -6001,7 +6001,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.Roster, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.Roster, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this Roster to JSON.
@@ -6030,7 +6030,7 @@ export namespace api {
          * Constructs a new Exec.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IExec);
+        constructor(properties?: replitproto.IExec);
 
         /** Exec args. */
         public args: string[];
@@ -6046,23 +6046,23 @@ export namespace api {
          * @param [properties] Properties to set
          * @returns Exec instance
          */
-        public static create(properties?: api.IExec): api.Exec;
+        public static create(properties?: replitproto.IExec): replitproto.Exec;
 
         /**
-         * Encodes the specified Exec message. Does not implicitly {@link api.Exec.verify|verify} messages.
+         * Encodes the specified Exec message. Does not implicitly {@link replitproto.Exec.verify|verify} messages.
          * @param message Exec message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IExec, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IExec, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified Exec message, length delimited. Does not implicitly {@link api.Exec.verify|verify} messages.
+         * Encodes the specified Exec message, length delimited. Does not implicitly {@link replitproto.Exec.verify|verify} messages.
          * @param message Exec message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IExec, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IExec, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes an Exec message from the specified reader or buffer.
@@ -6072,7 +6072,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.Exec;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.Exec;
 
         /**
          * Decodes an Exec message from the specified reader or buffer, length delimited.
@@ -6081,7 +6081,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.Exec;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.Exec;
 
         /**
          * Verifies an Exec message.
@@ -6095,7 +6095,7 @@ export namespace api {
          * @param object Plain object
          * @returns Exec
          */
-        public static fromObject(object: { [k: string]: any }): api.Exec;
+        public static fromObject(object: { [k: string]: any }): replitproto.Exec;
 
         /**
          * Creates a plain object from an Exec message. Also converts values to other types if specified.
@@ -6103,7 +6103,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.Exec, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.Exec, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this Exec to JSON.
@@ -6146,7 +6146,7 @@ export namespace api {
         license?: (string|null);
 
         /** Package dependencies */
-        dependencies?: (api.IPackage[]|null);
+        dependencies?: (replitproto.IPackage[]|null);
     }
 
     /** Represents a Package. */
@@ -6156,7 +6156,7 @@ export namespace api {
          * Constructs a new Package.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPackage);
+        constructor(properties?: replitproto.IPackage);
 
         /** Package name. */
         public name: string;
@@ -6189,30 +6189,30 @@ export namespace api {
         public license: string;
 
         /** Package dependencies. */
-        public dependencies: api.IPackage[];
+        public dependencies: replitproto.IPackage[];
 
         /**
          * Creates a new Package instance using the specified properties.
          * @param [properties] Properties to set
          * @returns Package instance
          */
-        public static create(properties?: api.IPackage): api.Package;
+        public static create(properties?: replitproto.IPackage): replitproto.Package;
 
         /**
-         * Encodes the specified Package message. Does not implicitly {@link api.Package.verify|verify} messages.
+         * Encodes the specified Package message. Does not implicitly {@link replitproto.Package.verify|verify} messages.
          * @param message Package message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPackage, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IPackage, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified Package message, length delimited. Does not implicitly {@link api.Package.verify|verify} messages.
+         * Encodes the specified Package message, length delimited. Does not implicitly {@link replitproto.Package.verify|verify} messages.
          * @param message Package message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPackage, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IPackage, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Package message from the specified reader or buffer.
@@ -6222,7 +6222,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.Package;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.Package;
 
         /**
          * Decodes a Package message from the specified reader or buffer, length delimited.
@@ -6231,7 +6231,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.Package;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.Package;
 
         /**
          * Verifies a Package message.
@@ -6245,7 +6245,7 @@ export namespace api {
          * @param object Plain object
          * @returns Package
          */
-        public static fromObject(object: { [k: string]: any }): api.Package;
+        public static fromObject(object: { [k: string]: any }): replitproto.Package;
 
         /**
          * Creates a plain object from a Package message. Also converts values to other types if specified.
@@ -6253,7 +6253,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.Package, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.Package, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this Package to JSON.
@@ -6276,7 +6276,7 @@ export namespace api {
          * Constructs a new PackageSearch.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPackageSearch);
+        constructor(properties?: replitproto.IPackageSearch);
 
         /** PackageSearch query. */
         public query: string;
@@ -6286,23 +6286,23 @@ export namespace api {
          * @param [properties] Properties to set
          * @returns PackageSearch instance
          */
-        public static create(properties?: api.IPackageSearch): api.PackageSearch;
+        public static create(properties?: replitproto.IPackageSearch): replitproto.PackageSearch;
 
         /**
-         * Encodes the specified PackageSearch message. Does not implicitly {@link api.PackageSearch.verify|verify} messages.
+         * Encodes the specified PackageSearch message. Does not implicitly {@link replitproto.PackageSearch.verify|verify} messages.
          * @param message PackageSearch message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPackageSearch, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IPackageSearch, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified PackageSearch message, length delimited. Does not implicitly {@link api.PackageSearch.verify|verify} messages.
+         * Encodes the specified PackageSearch message, length delimited. Does not implicitly {@link replitproto.PackageSearch.verify|verify} messages.
          * @param message PackageSearch message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPackageSearch, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IPackageSearch, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PackageSearch message from the specified reader or buffer.
@@ -6312,7 +6312,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.PackageSearch;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.PackageSearch;
 
         /**
          * Decodes a PackageSearch message from the specified reader or buffer, length delimited.
@@ -6321,7 +6321,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.PackageSearch;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.PackageSearch;
 
         /**
          * Verifies a PackageSearch message.
@@ -6335,7 +6335,7 @@ export namespace api {
          * @param object Plain object
          * @returns PackageSearch
          */
-        public static fromObject(object: { [k: string]: any }): api.PackageSearch;
+        public static fromObject(object: { [k: string]: any }): replitproto.PackageSearch;
 
         /**
          * Creates a plain object from a PackageSearch message. Also converts values to other types if specified.
@@ -6343,7 +6343,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.PackageSearch, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.PackageSearch, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this PackageSearch to JSON.
@@ -6356,7 +6356,7 @@ export namespace api {
     interface IPackageSearchResp {
 
         /** PackageSearchResp results */
-        results?: (api.IPackage[]|null);
+        results?: (replitproto.IPackage[]|null);
     }
 
     /** Represents a PackageSearchResp. */
@@ -6366,33 +6366,33 @@ export namespace api {
          * Constructs a new PackageSearchResp.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPackageSearchResp);
+        constructor(properties?: replitproto.IPackageSearchResp);
 
         /** PackageSearchResp results. */
-        public results: api.IPackage[];
+        public results: replitproto.IPackage[];
 
         /**
          * Creates a new PackageSearchResp instance using the specified properties.
          * @param [properties] Properties to set
          * @returns PackageSearchResp instance
          */
-        public static create(properties?: api.IPackageSearchResp): api.PackageSearchResp;
+        public static create(properties?: replitproto.IPackageSearchResp): replitproto.PackageSearchResp;
 
         /**
-         * Encodes the specified PackageSearchResp message. Does not implicitly {@link api.PackageSearchResp.verify|verify} messages.
+         * Encodes the specified PackageSearchResp message. Does not implicitly {@link replitproto.PackageSearchResp.verify|verify} messages.
          * @param message PackageSearchResp message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPackageSearchResp, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IPackageSearchResp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified PackageSearchResp message, length delimited. Does not implicitly {@link api.PackageSearchResp.verify|verify} messages.
+         * Encodes the specified PackageSearchResp message, length delimited. Does not implicitly {@link replitproto.PackageSearchResp.verify|verify} messages.
          * @param message PackageSearchResp message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPackageSearchResp, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IPackageSearchResp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PackageSearchResp message from the specified reader or buffer.
@@ -6402,7 +6402,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.PackageSearchResp;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.PackageSearchResp;
 
         /**
          * Decodes a PackageSearchResp message from the specified reader or buffer, length delimited.
@@ -6411,7 +6411,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.PackageSearchResp;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.PackageSearchResp;
 
         /**
          * Verifies a PackageSearchResp message.
@@ -6425,7 +6425,7 @@ export namespace api {
          * @param object Plain object
          * @returns PackageSearchResp
          */
-        public static fromObject(object: { [k: string]: any }): api.PackageSearchResp;
+        public static fromObject(object: { [k: string]: any }): replitproto.PackageSearchResp;
 
         /**
          * Creates a plain object from a PackageSearchResp message. Also converts values to other types if specified.
@@ -6433,7 +6433,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.PackageSearchResp, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.PackageSearchResp, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this PackageSearchResp to JSON.
@@ -6446,7 +6446,7 @@ export namespace api {
     interface IPackageInfo {
 
         /** PackageInfo pkg */
-        pkg?: (api.IPackage|null);
+        pkg?: (replitproto.IPackage|null);
     }
 
     /** Represents a PackageInfo. */
@@ -6456,33 +6456,33 @@ export namespace api {
          * Constructs a new PackageInfo.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPackageInfo);
+        constructor(properties?: replitproto.IPackageInfo);
 
         /** PackageInfo pkg. */
-        public pkg?: (api.IPackage|null);
+        public pkg?: (replitproto.IPackage|null);
 
         /**
          * Creates a new PackageInfo instance using the specified properties.
          * @param [properties] Properties to set
          * @returns PackageInfo instance
          */
-        public static create(properties?: api.IPackageInfo): api.PackageInfo;
+        public static create(properties?: replitproto.IPackageInfo): replitproto.PackageInfo;
 
         /**
-         * Encodes the specified PackageInfo message. Does not implicitly {@link api.PackageInfo.verify|verify} messages.
+         * Encodes the specified PackageInfo message. Does not implicitly {@link replitproto.PackageInfo.verify|verify} messages.
          * @param message PackageInfo message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPackageInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IPackageInfo, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified PackageInfo message, length delimited. Does not implicitly {@link api.PackageInfo.verify|verify} messages.
+         * Encodes the specified PackageInfo message, length delimited. Does not implicitly {@link replitproto.PackageInfo.verify|verify} messages.
          * @param message PackageInfo message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPackageInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IPackageInfo, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PackageInfo message from the specified reader or buffer.
@@ -6492,7 +6492,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.PackageInfo;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.PackageInfo;
 
         /**
          * Decodes a PackageInfo message from the specified reader or buffer, length delimited.
@@ -6501,7 +6501,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.PackageInfo;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.PackageInfo;
 
         /**
          * Verifies a PackageInfo message.
@@ -6515,7 +6515,7 @@ export namespace api {
          * @param object Plain object
          * @returns PackageInfo
          */
-        public static fromObject(object: { [k: string]: any }): api.PackageInfo;
+        public static fromObject(object: { [k: string]: any }): replitproto.PackageInfo;
 
         /**
          * Creates a plain object from a PackageInfo message. Also converts values to other types if specified.
@@ -6523,7 +6523,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.PackageInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.PackageInfo, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this PackageInfo to JSON.
@@ -6536,7 +6536,7 @@ export namespace api {
     interface IPackageInfoResp {
 
         /** PackageInfoResp pkg */
-        pkg?: (api.IPackage|null);
+        pkg?: (replitproto.IPackage|null);
     }
 
     /** Represents a PackageInfoResp. */
@@ -6546,33 +6546,33 @@ export namespace api {
          * Constructs a new PackageInfoResp.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPackageInfoResp);
+        constructor(properties?: replitproto.IPackageInfoResp);
 
         /** PackageInfoResp pkg. */
-        public pkg?: (api.IPackage|null);
+        public pkg?: (replitproto.IPackage|null);
 
         /**
          * Creates a new PackageInfoResp instance using the specified properties.
          * @param [properties] Properties to set
          * @returns PackageInfoResp instance
          */
-        public static create(properties?: api.IPackageInfoResp): api.PackageInfoResp;
+        public static create(properties?: replitproto.IPackageInfoResp): replitproto.PackageInfoResp;
 
         /**
-         * Encodes the specified PackageInfoResp message. Does not implicitly {@link api.PackageInfoResp.verify|verify} messages.
+         * Encodes the specified PackageInfoResp message. Does not implicitly {@link replitproto.PackageInfoResp.verify|verify} messages.
          * @param message PackageInfoResp message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPackageInfoResp, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IPackageInfoResp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified PackageInfoResp message, length delimited. Does not implicitly {@link api.PackageInfoResp.verify|verify} messages.
+         * Encodes the specified PackageInfoResp message, length delimited. Does not implicitly {@link replitproto.PackageInfoResp.verify|verify} messages.
          * @param message PackageInfoResp message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPackageInfoResp, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IPackageInfoResp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PackageInfoResp message from the specified reader or buffer.
@@ -6582,7 +6582,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.PackageInfoResp;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.PackageInfoResp;
 
         /**
          * Decodes a PackageInfoResp message from the specified reader or buffer, length delimited.
@@ -6591,7 +6591,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.PackageInfoResp;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.PackageInfoResp;
 
         /**
          * Verifies a PackageInfoResp message.
@@ -6605,7 +6605,7 @@ export namespace api {
          * @param object Plain object
          * @returns PackageInfoResp
          */
-        public static fromObject(object: { [k: string]: any }): api.PackageInfoResp;
+        public static fromObject(object: { [k: string]: any }): replitproto.PackageInfoResp;
 
         /**
          * Creates a plain object from a PackageInfoResp message. Also converts values to other types if specified.
@@ -6613,7 +6613,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.PackageInfoResp, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.PackageInfoResp, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this PackageInfoResp to JSON.
@@ -6626,7 +6626,7 @@ export namespace api {
     interface IPackageAdd {
 
         /** PackageAdd pkgs */
-        pkgs?: (api.IPackage[]|null);
+        pkgs?: (replitproto.IPackage[]|null);
     }
 
     /** Represents a PackageAdd. */
@@ -6636,33 +6636,33 @@ export namespace api {
          * Constructs a new PackageAdd.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPackageAdd);
+        constructor(properties?: replitproto.IPackageAdd);
 
         /** PackageAdd pkgs. */
-        public pkgs: api.IPackage[];
+        public pkgs: replitproto.IPackage[];
 
         /**
          * Creates a new PackageAdd instance using the specified properties.
          * @param [properties] Properties to set
          * @returns PackageAdd instance
          */
-        public static create(properties?: api.IPackageAdd): api.PackageAdd;
+        public static create(properties?: replitproto.IPackageAdd): replitproto.PackageAdd;
 
         /**
-         * Encodes the specified PackageAdd message. Does not implicitly {@link api.PackageAdd.verify|verify} messages.
+         * Encodes the specified PackageAdd message. Does not implicitly {@link replitproto.PackageAdd.verify|verify} messages.
          * @param message PackageAdd message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPackageAdd, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IPackageAdd, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified PackageAdd message, length delimited. Does not implicitly {@link api.PackageAdd.verify|verify} messages.
+         * Encodes the specified PackageAdd message, length delimited. Does not implicitly {@link replitproto.PackageAdd.verify|verify} messages.
          * @param message PackageAdd message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPackageAdd, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IPackageAdd, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PackageAdd message from the specified reader or buffer.
@@ -6672,7 +6672,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.PackageAdd;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.PackageAdd;
 
         /**
          * Decodes a PackageAdd message from the specified reader or buffer, length delimited.
@@ -6681,7 +6681,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.PackageAdd;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.PackageAdd;
 
         /**
          * Verifies a PackageAdd message.
@@ -6695,7 +6695,7 @@ export namespace api {
          * @param object Plain object
          * @returns PackageAdd
          */
-        public static fromObject(object: { [k: string]: any }): api.PackageAdd;
+        public static fromObject(object: { [k: string]: any }): replitproto.PackageAdd;
 
         /**
          * Creates a plain object from a PackageAdd message. Also converts values to other types if specified.
@@ -6703,7 +6703,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.PackageAdd, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.PackageAdd, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this PackageAdd to JSON.
@@ -6716,7 +6716,7 @@ export namespace api {
     interface IPackageRemove {
 
         /** PackageRemove pkgs */
-        pkgs?: (api.IPackage[]|null);
+        pkgs?: (replitproto.IPackage[]|null);
     }
 
     /** Represents a PackageRemove. */
@@ -6726,33 +6726,33 @@ export namespace api {
          * Constructs a new PackageRemove.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPackageRemove);
+        constructor(properties?: replitproto.IPackageRemove);
 
         /** PackageRemove pkgs. */
-        public pkgs: api.IPackage[];
+        public pkgs: replitproto.IPackage[];
 
         /**
          * Creates a new PackageRemove instance using the specified properties.
          * @param [properties] Properties to set
          * @returns PackageRemove instance
          */
-        public static create(properties?: api.IPackageRemove): api.PackageRemove;
+        public static create(properties?: replitproto.IPackageRemove): replitproto.PackageRemove;
 
         /**
-         * Encodes the specified PackageRemove message. Does not implicitly {@link api.PackageRemove.verify|verify} messages.
+         * Encodes the specified PackageRemove message. Does not implicitly {@link replitproto.PackageRemove.verify|verify} messages.
          * @param message PackageRemove message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPackageRemove, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IPackageRemove, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified PackageRemove message, length delimited. Does not implicitly {@link api.PackageRemove.verify|verify} messages.
+         * Encodes the specified PackageRemove message, length delimited. Does not implicitly {@link replitproto.PackageRemove.verify|verify} messages.
          * @param message PackageRemove message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPackageRemove, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IPackageRemove, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PackageRemove message from the specified reader or buffer.
@@ -6762,7 +6762,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.PackageRemove;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.PackageRemove;
 
         /**
          * Decodes a PackageRemove message from the specified reader or buffer, length delimited.
@@ -6771,7 +6771,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.PackageRemove;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.PackageRemove;
 
         /**
          * Verifies a PackageRemove message.
@@ -6785,7 +6785,7 @@ export namespace api {
          * @param object Plain object
          * @returns PackageRemove
          */
-        public static fromObject(object: { [k: string]: any }): api.PackageRemove;
+        public static fromObject(object: { [k: string]: any }): replitproto.PackageRemove;
 
         /**
          * Creates a plain object from a PackageRemove message. Also converts values to other types if specified.
@@ -6793,7 +6793,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.PackageRemove, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.PackageRemove, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this PackageRemove to JSON.
@@ -6813,30 +6813,30 @@ export namespace api {
          * Constructs a new PackageInstall.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPackageInstall);
+        constructor(properties?: replitproto.IPackageInstall);
 
         /**
          * Creates a new PackageInstall instance using the specified properties.
          * @param [properties] Properties to set
          * @returns PackageInstall instance
          */
-        public static create(properties?: api.IPackageInstall): api.PackageInstall;
+        public static create(properties?: replitproto.IPackageInstall): replitproto.PackageInstall;
 
         /**
-         * Encodes the specified PackageInstall message. Does not implicitly {@link api.PackageInstall.verify|verify} messages.
+         * Encodes the specified PackageInstall message. Does not implicitly {@link replitproto.PackageInstall.verify|verify} messages.
          * @param message PackageInstall message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPackageInstall, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IPackageInstall, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified PackageInstall message, length delimited. Does not implicitly {@link api.PackageInstall.verify|verify} messages.
+         * Encodes the specified PackageInstall message, length delimited. Does not implicitly {@link replitproto.PackageInstall.verify|verify} messages.
          * @param message PackageInstall message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPackageInstall, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IPackageInstall, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PackageInstall message from the specified reader or buffer.
@@ -6846,7 +6846,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.PackageInstall;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.PackageInstall;
 
         /**
          * Decodes a PackageInstall message from the specified reader or buffer, length delimited.
@@ -6855,7 +6855,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.PackageInstall;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.PackageInstall;
 
         /**
          * Verifies a PackageInstall message.
@@ -6869,7 +6869,7 @@ export namespace api {
          * @param object Plain object
          * @returns PackageInstall
          */
-        public static fromObject(object: { [k: string]: any }): api.PackageInstall;
+        public static fromObject(object: { [k: string]: any }): replitproto.PackageInstall;
 
         /**
          * Creates a plain object from a PackageInstall message. Also converts values to other types if specified.
@@ -6877,7 +6877,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.PackageInstall, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.PackageInstall, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this PackageInstall to JSON.
@@ -6897,30 +6897,30 @@ export namespace api {
          * Constructs a new PackageListSpecfile.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPackageListSpecfile);
+        constructor(properties?: replitproto.IPackageListSpecfile);
 
         /**
          * Creates a new PackageListSpecfile instance using the specified properties.
          * @param [properties] Properties to set
          * @returns PackageListSpecfile instance
          */
-        public static create(properties?: api.IPackageListSpecfile): api.PackageListSpecfile;
+        public static create(properties?: replitproto.IPackageListSpecfile): replitproto.PackageListSpecfile;
 
         /**
-         * Encodes the specified PackageListSpecfile message. Does not implicitly {@link api.PackageListSpecfile.verify|verify} messages.
+         * Encodes the specified PackageListSpecfile message. Does not implicitly {@link replitproto.PackageListSpecfile.verify|verify} messages.
          * @param message PackageListSpecfile message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPackageListSpecfile, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IPackageListSpecfile, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified PackageListSpecfile message, length delimited. Does not implicitly {@link api.PackageListSpecfile.verify|verify} messages.
+         * Encodes the specified PackageListSpecfile message, length delimited. Does not implicitly {@link replitproto.PackageListSpecfile.verify|verify} messages.
          * @param message PackageListSpecfile message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPackageListSpecfile, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IPackageListSpecfile, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PackageListSpecfile message from the specified reader or buffer.
@@ -6930,7 +6930,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.PackageListSpecfile;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.PackageListSpecfile;
 
         /**
          * Decodes a PackageListSpecfile message from the specified reader or buffer, length delimited.
@@ -6939,7 +6939,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.PackageListSpecfile;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.PackageListSpecfile;
 
         /**
          * Verifies a PackageListSpecfile message.
@@ -6953,7 +6953,7 @@ export namespace api {
          * @param object Plain object
          * @returns PackageListSpecfile
          */
-        public static fromObject(object: { [k: string]: any }): api.PackageListSpecfile;
+        public static fromObject(object: { [k: string]: any }): replitproto.PackageListSpecfile;
 
         /**
          * Creates a plain object from a PackageListSpecfile message. Also converts values to other types if specified.
@@ -6961,7 +6961,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.PackageListSpecfile, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.PackageListSpecfile, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this PackageListSpecfile to JSON.
@@ -6974,7 +6974,7 @@ export namespace api {
     interface IPackageListSpecfileResp {
 
         /** PackageListSpecfileResp pkgs */
-        pkgs?: (api.IPackage[]|null);
+        pkgs?: (replitproto.IPackage[]|null);
     }
 
     /** Represents a PackageListSpecfileResp. */
@@ -6984,33 +6984,33 @@ export namespace api {
          * Constructs a new PackageListSpecfileResp.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPackageListSpecfileResp);
+        constructor(properties?: replitproto.IPackageListSpecfileResp);
 
         /** PackageListSpecfileResp pkgs. */
-        public pkgs: api.IPackage[];
+        public pkgs: replitproto.IPackage[];
 
         /**
          * Creates a new PackageListSpecfileResp instance using the specified properties.
          * @param [properties] Properties to set
          * @returns PackageListSpecfileResp instance
          */
-        public static create(properties?: api.IPackageListSpecfileResp): api.PackageListSpecfileResp;
+        public static create(properties?: replitproto.IPackageListSpecfileResp): replitproto.PackageListSpecfileResp;
 
         /**
-         * Encodes the specified PackageListSpecfileResp message. Does not implicitly {@link api.PackageListSpecfileResp.verify|verify} messages.
+         * Encodes the specified PackageListSpecfileResp message. Does not implicitly {@link replitproto.PackageListSpecfileResp.verify|verify} messages.
          * @param message PackageListSpecfileResp message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPackageListSpecfileResp, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IPackageListSpecfileResp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified PackageListSpecfileResp message, length delimited. Does not implicitly {@link api.PackageListSpecfileResp.verify|verify} messages.
+         * Encodes the specified PackageListSpecfileResp message, length delimited. Does not implicitly {@link replitproto.PackageListSpecfileResp.verify|verify} messages.
          * @param message PackageListSpecfileResp message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPackageListSpecfileResp, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IPackageListSpecfileResp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PackageListSpecfileResp message from the specified reader or buffer.
@@ -7020,7 +7020,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.PackageListSpecfileResp;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.PackageListSpecfileResp;
 
         /**
          * Decodes a PackageListSpecfileResp message from the specified reader or buffer, length delimited.
@@ -7029,7 +7029,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.PackageListSpecfileResp;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.PackageListSpecfileResp;
 
         /**
          * Verifies a PackageListSpecfileResp message.
@@ -7043,7 +7043,7 @@ export namespace api {
          * @param object Plain object
          * @returns PackageListSpecfileResp
          */
-        public static fromObject(object: { [k: string]: any }): api.PackageListSpecfileResp;
+        public static fromObject(object: { [k: string]: any }): replitproto.PackageListSpecfileResp;
 
         /**
          * Creates a plain object from a PackageListSpecfileResp message. Also converts values to other types if specified.
@@ -7051,7 +7051,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.PackageListSpecfileResp, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.PackageListSpecfileResp, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this PackageListSpecfileResp to JSON.
@@ -7071,30 +7071,30 @@ export namespace api {
          * Constructs a new PackageCacheSave.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPackageCacheSave);
+        constructor(properties?: replitproto.IPackageCacheSave);
 
         /**
          * Creates a new PackageCacheSave instance using the specified properties.
          * @param [properties] Properties to set
          * @returns PackageCacheSave instance
          */
-        public static create(properties?: api.IPackageCacheSave): api.PackageCacheSave;
+        public static create(properties?: replitproto.IPackageCacheSave): replitproto.PackageCacheSave;
 
         /**
-         * Encodes the specified PackageCacheSave message. Does not implicitly {@link api.PackageCacheSave.verify|verify} messages.
+         * Encodes the specified PackageCacheSave message. Does not implicitly {@link replitproto.PackageCacheSave.verify|verify} messages.
          * @param message PackageCacheSave message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPackageCacheSave, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IPackageCacheSave, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified PackageCacheSave message, length delimited. Does not implicitly {@link api.PackageCacheSave.verify|verify} messages.
+         * Encodes the specified PackageCacheSave message, length delimited. Does not implicitly {@link replitproto.PackageCacheSave.verify|verify} messages.
          * @param message PackageCacheSave message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPackageCacheSave, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IPackageCacheSave, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PackageCacheSave message from the specified reader or buffer.
@@ -7104,7 +7104,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.PackageCacheSave;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.PackageCacheSave;
 
         /**
          * Decodes a PackageCacheSave message from the specified reader or buffer, length delimited.
@@ -7113,7 +7113,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.PackageCacheSave;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.PackageCacheSave;
 
         /**
          * Verifies a PackageCacheSave message.
@@ -7127,7 +7127,7 @@ export namespace api {
          * @param object Plain object
          * @returns PackageCacheSave
          */
-        public static fromObject(object: { [k: string]: any }): api.PackageCacheSave;
+        public static fromObject(object: { [k: string]: any }): replitproto.PackageCacheSave;
 
         /**
          * Creates a plain object from a PackageCacheSave message. Also converts values to other types if specified.
@@ -7135,7 +7135,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.PackageCacheSave, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.PackageCacheSave, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this PackageCacheSave to JSON.
@@ -7148,7 +7148,7 @@ export namespace api {
     interface IChatScrollback {
 
         /** ChatScrollback scrollback */
-        scrollback?: (api.IChatMessage[]|null);
+        scrollback?: (replitproto.IChatMessage[]|null);
     }
 
     /** Represents a ChatScrollback. */
@@ -7158,33 +7158,33 @@ export namespace api {
          * Constructs a new ChatScrollback.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IChatScrollback);
+        constructor(properties?: replitproto.IChatScrollback);
 
         /** ChatScrollback scrollback. */
-        public scrollback: api.IChatMessage[];
+        public scrollback: replitproto.IChatMessage[];
 
         /**
          * Creates a new ChatScrollback instance using the specified properties.
          * @param [properties] Properties to set
          * @returns ChatScrollback instance
          */
-        public static create(properties?: api.IChatScrollback): api.ChatScrollback;
+        public static create(properties?: replitproto.IChatScrollback): replitproto.ChatScrollback;
 
         /**
-         * Encodes the specified ChatScrollback message. Does not implicitly {@link api.ChatScrollback.verify|verify} messages.
+         * Encodes the specified ChatScrollback message. Does not implicitly {@link replitproto.ChatScrollback.verify|verify} messages.
          * @param message ChatScrollback message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IChatScrollback, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: replitproto.IChatScrollback, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified ChatScrollback message, length delimited. Does not implicitly {@link api.ChatScrollback.verify|verify} messages.
+         * Encodes the specified ChatScrollback message, length delimited. Does not implicitly {@link replitproto.ChatScrollback.verify|verify} messages.
          * @param message ChatScrollback message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IChatScrollback, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: replitproto.IChatScrollback, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a ChatScrollback message from the specified reader or buffer.
@@ -7194,7 +7194,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.ChatScrollback;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): replitproto.ChatScrollback;
 
         /**
          * Decodes a ChatScrollback message from the specified reader or buffer, length delimited.
@@ -7203,7 +7203,7 @@ export namespace api {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.ChatScrollback;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): replitproto.ChatScrollback;
 
         /**
          * Verifies a ChatScrollback message.
@@ -7217,7 +7217,7 @@ export namespace api {
          * @param object Plain object
          * @returns ChatScrollback
          */
-        public static fromObject(object: { [k: string]: any }): api.ChatScrollback;
+        public static fromObject(object: { [k: string]: any }): replitproto.ChatScrollback;
 
         /**
          * Creates a plain object from a ChatScrollback message. Also converts values to other types if specified.
@@ -7225,7 +7225,7 @@ export namespace api {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.ChatScrollback, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: replitproto.ChatScrollback, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this ChatScrollback to JSON.
