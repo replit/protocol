@@ -25,6 +25,6 @@ build-go: clean-go
 	protoc api.proto --go_out=plugin=grpc:./go
 publish-go:
 	git subtree split --prefix=go -b go-release && \
-	git push git@github.com:replit/protocol-go.git go-release:master -f && \
+	git push git@github.com:replit/protocol-go.git go-release:master && \
 	git push git@github.com:replit/protocol-go.git HEAD:refs/tags/$(VERSION) && \
 	git branch -D go-release
