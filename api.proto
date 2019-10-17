@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package replitproto;
+package api;
 
 message Command {
   // channel and session act as namespaces with 0 being global.

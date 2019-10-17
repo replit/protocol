@@ -16,117 +16,117 @@
     // Exported root namespace
     var $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
     
-    $root.replitproto = (function() {
+    $root.api = (function() {
     
         /**
-         * Namespace replitproto.
-         * @exports replitproto
+         * Namespace api.
+         * @exports api
          * @namespace
          */
-        var replitproto = {};
+        var api = {};
     
-        replitproto.Command = (function() {
+        api.Command = (function() {
     
             /**
              * Properties of a Command.
-             * @memberof replitproto
+             * @memberof api
              * @interface ICommand
              * @property {number|null} [channel] Command channel
              * @property {number|null} [session] Command session
-             * @property {replitproto.IOpenChannel|null} [openChan] Command openChan
-             * @property {replitproto.IOpenChannelRes|null} [openChanRes] Command openChanRes
-             * @property {replitproto.ICloseChannel|null} [closeChan] Command closeChan
-             * @property {replitproto.ICloseChannelRes|null} [closeChanRes] Command closeChanRes
-             * @property {replitproto.IContainerState|null} [containerState] Command containerState
-             * @property {replitproto.IPortOpen|null} [portOpen] Command portOpen
-             * @property {replitproto.IToast|null} [toast] Command toast
-             * @property {replitproto.IRunMain|null} [runMain] Command runMain
-             * @property {replitproto.IClear|null} [clear] Command clear
+             * @property {api.IOpenChannel|null} [openChan] Command openChan
+             * @property {api.IOpenChannelRes|null} [openChanRes] Command openChanRes
+             * @property {api.ICloseChannel|null} [closeChan] Command closeChan
+             * @property {api.ICloseChannelRes|null} [closeChanRes] Command closeChanRes
+             * @property {api.IContainerState|null} [containerState] Command containerState
+             * @property {api.IPortOpen|null} [portOpen] Command portOpen
+             * @property {api.IToast|null} [toast] Command toast
+             * @property {api.IRunMain|null} [runMain] Command runMain
+             * @property {api.IClear|null} [clear] Command clear
              * @property {string|null} ["eval"] Command eval
              * @property {string|null} [result] Command result
              * @property {string|null} [input] Command input
              * @property {string|null} [output] Command output
              * @property {string|null} [error] Command error
-             * @property {replitproto.ISaneTerm|null} [saneTerm] Command saneTerm
-             * @property {replitproto.IResizeTerm|null} [resizeTerm] Command resizeTerm
-             * @property {replitproto.State|null} [state] Command state
-             * @property {replitproto.IOK|null} [ok] Command ok
-             * @property {replitproto.IFile|null} [persist] Command persist
-             * @property {replitproto.IFile|null} [write] Command write
-             * @property {replitproto.IFile|null} [remove] Command remove
-             * @property {replitproto.IMove|null} [move] Command move
-             * @property {replitproto.IFile|null} [mkdir] Command mkdir
-             * @property {replitproto.IFile|null} [read] Command read
-             * @property {replitproto.IFile|null} [readdir] Command readdir
-             * @property {replitproto.IFiles|null} [files] Command files
-             * @property {replitproto.IFile|null} [file] Command file
-             * @property {replitproto.ICheckChanges|null} [checkChanges] Command checkChanges
-             * @property {replitproto.IFiles|null} [changedFiles] Command changedFiles
-             * @property {replitproto.ILintResults|null} [lintResults] Command lintResults
-             * @property {replitproto.IContainedTest|null} [runContainedTest] Command runContainedTest
-             * @property {replitproto.ITestResult|null} [testResult] Command testResult
+             * @property {api.ISaneTerm|null} [saneTerm] Command saneTerm
+             * @property {api.IResizeTerm|null} [resizeTerm] Command resizeTerm
+             * @property {api.State|null} [state] Command state
+             * @property {api.IOK|null} [ok] Command ok
+             * @property {api.IFile|null} [persist] Command persist
+             * @property {api.IFile|null} [write] Command write
+             * @property {api.IFile|null} [remove] Command remove
+             * @property {api.IMove|null} [move] Command move
+             * @property {api.IFile|null} [mkdir] Command mkdir
+             * @property {api.IFile|null} [read] Command read
+             * @property {api.IFile|null} [readdir] Command readdir
+             * @property {api.IFiles|null} [files] Command files
+             * @property {api.IFile|null} [file] Command file
+             * @property {api.ICheckChanges|null} [checkChanges] Command checkChanges
+             * @property {api.IFiles|null} [changedFiles] Command changedFiles
+             * @property {api.ILintResults|null} [lintResults] Command lintResults
+             * @property {api.IContainedTest|null} [runContainedTest] Command runContainedTest
+             * @property {api.ITestResult|null} [testResult] Command testResult
              * @property {string|null} [debuggerStart] Command debuggerStart
-             * @property {replitproto.IRunMain|null} [debuggerStep] Command debuggerStep
-             * @property {replitproto.IDebugStatus|null} [debuggerStatus] Command debuggerStatus
-             * @property {replitproto.IEnsurePackages|null} [ensurePackages] Command ensurePackages
-             * @property {replitproto.IPing|null} [ping] Command ping
-             * @property {replitproto.IPong|null} [pong] Command pong
-             * @property {replitproto.IHello|null} [hello] Command hello
-             * @property {replitproto.IGoodbye|null} [goodbye] Command goodbye
-             * @property {replitproto.IHint|null} [hint] Command hint
-             * @property {replitproto.IConnect|null} [connect] Command connect
-             * @property {replitproto.ISend|null} [send] Command send
-             * @property {replitproto.IRecv|null} [recv] Command recv
-             * @property {replitproto.IDisconnect|null} [disconnect] Command disconnect
-             * @property {replitproto.IFileAuthReq|null} [fileAuthReq] Command fileAuthReq
-             * @property {replitproto.IFileAuthRes|null} [fileAuthRes] Command fileAuthRes
-             * @property {replitproto.IMultiFileAuthRes|null} [mutliFileAuthRes] Command mutliFileAuthRes
-             * @property {replitproto.IOTPacket|null} [ot] Command ot
-             * @property {replitproto.IOTStatus|null} [otstatus] Command otstatus
-             * @property {replitproto.IOTLinkFile|null} [otLinkFile] Command otLinkFile
-             * @property {replitproto.IOTCursor|null} [otNewCursor] Command otNewCursor
-             * @property {replitproto.IOTCursor|null} [otDeleteCursor] Command otDeleteCursor
-             * @property {replitproto.IFlush|null} [flush] Command flush
-             * @property {replitproto.IDebug|null} [debug] Command debug
-             * @property {replitproto.IStartVCR|null} [startVCR] Command startVCR
-             * @property {replitproto.IReadVCR|null} [readVCR] Command readVCR
-             * @property {replitproto.IVCRLog|null} [VCRLog] Command VCRLog
-             * @property {replitproto.IAuth|null} [auth] Command auth
-             * @property {replitproto.IExecInfo|null} [execInfo] Command execInfo
-             * @property {replitproto.IFile|null} [subscribe] Command subscribe
-             * @property {replitproto.IFile|null} [eventCreated] Command eventCreated
-             * @property {replitproto.IFile|null} [eventModified] Command eventModified
-             * @property {replitproto.IFile|null} [eventDeleted] Command eventDeleted
-             * @property {replitproto.IMove|null} [eventMoved] Command eventMoved
-             * @property {replitproto.ISubscribeFile|null} [subscribeFile] Command subscribeFile
-             * @property {replitproto.IFileEvent|null} [fileEvent] Command fileEvent
-             * @property {replitproto.IRoster|null} [roster] Command roster
-             * @property {replitproto.IUser|null} [join] Command join
-             * @property {replitproto.IUser|null} [part] Command part
-             * @property {replitproto.IExec|null} [exec] Command exec
-             * @property {replitproto.IPackageSearch|null} [packageSearch] Command packageSearch
-             * @property {replitproto.IPackageSearchResp|null} [packageSearchResp] Command packageSearchResp
-             * @property {replitproto.IPackageInfo|null} [packageInfo] Command packageInfo
-             * @property {replitproto.IPackageInfoResp|null} [packageInfoResp] Command packageInfoResp
-             * @property {replitproto.IPackageAdd|null} [packageAdd] Command packageAdd
-             * @property {replitproto.IPackageRemove|null} [packageRemove] Command packageRemove
-             * @property {replitproto.IPackageInstall|null} [packageInstall] Command packageInstall
-             * @property {replitproto.IPackageListSpecfile|null} [packageListSpecfile] Command packageListSpecfile
-             * @property {replitproto.IPackageListSpecfileResp|null} [packageListSpecfileResp] Command packageListSpecfileResp
-             * @property {replitproto.IPackageCacheSave|null} [packageCacheSave] Command packageCacheSave
-             * @property {replitproto.IChatMessage|null} [chatMessage] Command chatMessage
-             * @property {replitproto.IChatTyping|null} [chatTyping] Command chatTyping
-             * @property {replitproto.IChatScrollback|null} [chatScrollback] Command chatScrollback
+             * @property {api.IRunMain|null} [debuggerStep] Command debuggerStep
+             * @property {api.IDebugStatus|null} [debuggerStatus] Command debuggerStatus
+             * @property {api.IEnsurePackages|null} [ensurePackages] Command ensurePackages
+             * @property {api.IPing|null} [ping] Command ping
+             * @property {api.IPong|null} [pong] Command pong
+             * @property {api.IHello|null} [hello] Command hello
+             * @property {api.IGoodbye|null} [goodbye] Command goodbye
+             * @property {api.IHint|null} [hint] Command hint
+             * @property {api.IConnect|null} [connect] Command connect
+             * @property {api.ISend|null} [send] Command send
+             * @property {api.IRecv|null} [recv] Command recv
+             * @property {api.IDisconnect|null} [disconnect] Command disconnect
+             * @property {api.IFileAuthReq|null} [fileAuthReq] Command fileAuthReq
+             * @property {api.IFileAuthRes|null} [fileAuthRes] Command fileAuthRes
+             * @property {api.IMultiFileAuthRes|null} [mutliFileAuthRes] Command mutliFileAuthRes
+             * @property {api.IOTPacket|null} [ot] Command ot
+             * @property {api.IOTStatus|null} [otstatus] Command otstatus
+             * @property {api.IOTLinkFile|null} [otLinkFile] Command otLinkFile
+             * @property {api.IOTCursor|null} [otNewCursor] Command otNewCursor
+             * @property {api.IOTCursor|null} [otDeleteCursor] Command otDeleteCursor
+             * @property {api.IFlush|null} [flush] Command flush
+             * @property {api.IDebug|null} [debug] Command debug
+             * @property {api.IStartVCR|null} [startVCR] Command startVCR
+             * @property {api.IReadVCR|null} [readVCR] Command readVCR
+             * @property {api.IVCRLog|null} [VCRLog] Command VCRLog
+             * @property {api.IAuth|null} [auth] Command auth
+             * @property {api.IExecInfo|null} [execInfo] Command execInfo
+             * @property {api.IFile|null} [subscribe] Command subscribe
+             * @property {api.IFile|null} [eventCreated] Command eventCreated
+             * @property {api.IFile|null} [eventModified] Command eventModified
+             * @property {api.IFile|null} [eventDeleted] Command eventDeleted
+             * @property {api.IMove|null} [eventMoved] Command eventMoved
+             * @property {api.ISubscribeFile|null} [subscribeFile] Command subscribeFile
+             * @property {api.IFileEvent|null} [fileEvent] Command fileEvent
+             * @property {api.IRoster|null} [roster] Command roster
+             * @property {api.IUser|null} [join] Command join
+             * @property {api.IUser|null} [part] Command part
+             * @property {api.IExec|null} [exec] Command exec
+             * @property {api.IPackageSearch|null} [packageSearch] Command packageSearch
+             * @property {api.IPackageSearchResp|null} [packageSearchResp] Command packageSearchResp
+             * @property {api.IPackageInfo|null} [packageInfo] Command packageInfo
+             * @property {api.IPackageInfoResp|null} [packageInfoResp] Command packageInfoResp
+             * @property {api.IPackageAdd|null} [packageAdd] Command packageAdd
+             * @property {api.IPackageRemove|null} [packageRemove] Command packageRemove
+             * @property {api.IPackageInstall|null} [packageInstall] Command packageInstall
+             * @property {api.IPackageListSpecfile|null} [packageListSpecfile] Command packageListSpecfile
+             * @property {api.IPackageListSpecfileResp|null} [packageListSpecfileResp] Command packageListSpecfileResp
+             * @property {api.IPackageCacheSave|null} [packageCacheSave] Command packageCacheSave
+             * @property {api.IChatMessage|null} [chatMessage] Command chatMessage
+             * @property {api.IChatTyping|null} [chatTyping] Command chatTyping
+             * @property {api.IChatScrollback|null} [chatScrollback] Command chatScrollback
              * @property {string|null} [ref] Command ref
              */
     
             /**
              * Constructs a new Command.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a Command.
              * @implements ICommand
              * @constructor
-             * @param {replitproto.ICommand=} [properties] Properties to set
+             * @param {api.ICommand=} [properties] Properties to set
              */
             function Command(properties) {
                 if (properties)
@@ -138,7 +138,7 @@
             /**
              * Command channel.
              * @member {number} channel
-             * @memberof replitproto.Command
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.channel = 0;
@@ -146,79 +146,79 @@
             /**
              * Command session.
              * @member {number} session
-             * @memberof replitproto.Command
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.session = 0;
     
             /**
              * Command openChan.
-             * @member {replitproto.IOpenChannel|null|undefined} openChan
-             * @memberof replitproto.Command
+             * @member {api.IOpenChannel|null|undefined} openChan
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.openChan = null;
     
             /**
              * Command openChanRes.
-             * @member {replitproto.IOpenChannelRes|null|undefined} openChanRes
-             * @memberof replitproto.Command
+             * @member {api.IOpenChannelRes|null|undefined} openChanRes
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.openChanRes = null;
     
             /**
              * Command closeChan.
-             * @member {replitproto.ICloseChannel|null|undefined} closeChan
-             * @memberof replitproto.Command
+             * @member {api.ICloseChannel|null|undefined} closeChan
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.closeChan = null;
     
             /**
              * Command closeChanRes.
-             * @member {replitproto.ICloseChannelRes|null|undefined} closeChanRes
-             * @memberof replitproto.Command
+             * @member {api.ICloseChannelRes|null|undefined} closeChanRes
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.closeChanRes = null;
     
             /**
              * Command containerState.
-             * @member {replitproto.IContainerState|null|undefined} containerState
-             * @memberof replitproto.Command
+             * @member {api.IContainerState|null|undefined} containerState
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.containerState = null;
     
             /**
              * Command portOpen.
-             * @member {replitproto.IPortOpen|null|undefined} portOpen
-             * @memberof replitproto.Command
+             * @member {api.IPortOpen|null|undefined} portOpen
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.portOpen = null;
     
             /**
              * Command toast.
-             * @member {replitproto.IToast|null|undefined} toast
-             * @memberof replitproto.Command
+             * @member {api.IToast|null|undefined} toast
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.toast = null;
     
             /**
              * Command runMain.
-             * @member {replitproto.IRunMain|null|undefined} runMain
-             * @memberof replitproto.Command
+             * @member {api.IRunMain|null|undefined} runMain
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.runMain = null;
     
             /**
              * Command clear.
-             * @member {replitproto.IClear|null|undefined} clear
-             * @memberof replitproto.Command
+             * @member {api.IClear|null|undefined} clear
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.clear = null;
@@ -226,7 +226,7 @@
             /**
              * Command eval.
              * @member {string} eval
-             * @memberof replitproto.Command
+             * @memberof api.Command
              * @instance
              */
             Command.prototype["eval"] = "";
@@ -234,7 +234,7 @@
             /**
              * Command result.
              * @member {string} result
-             * @memberof replitproto.Command
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.result = "";
@@ -242,7 +242,7 @@
             /**
              * Command input.
              * @member {string} input
-             * @memberof replitproto.Command
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.input = "";
@@ -250,7 +250,7 @@
             /**
              * Command output.
              * @member {string} output
-             * @memberof replitproto.Command
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.output = "";
@@ -258,151 +258,151 @@
             /**
              * Command error.
              * @member {string} error
-             * @memberof replitproto.Command
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.error = "";
     
             /**
              * Command saneTerm.
-             * @member {replitproto.ISaneTerm|null|undefined} saneTerm
-             * @memberof replitproto.Command
+             * @member {api.ISaneTerm|null|undefined} saneTerm
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.saneTerm = null;
     
             /**
              * Command resizeTerm.
-             * @member {replitproto.IResizeTerm|null|undefined} resizeTerm
-             * @memberof replitproto.Command
+             * @member {api.IResizeTerm|null|undefined} resizeTerm
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.resizeTerm = null;
     
             /**
              * Command state.
-             * @member {replitproto.State} state
-             * @memberof replitproto.Command
+             * @member {api.State} state
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.state = 0;
     
             /**
              * Command ok.
-             * @member {replitproto.IOK|null|undefined} ok
-             * @memberof replitproto.Command
+             * @member {api.IOK|null|undefined} ok
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.ok = null;
     
             /**
              * Command persist.
-             * @member {replitproto.IFile|null|undefined} persist
-             * @memberof replitproto.Command
+             * @member {api.IFile|null|undefined} persist
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.persist = null;
     
             /**
              * Command write.
-             * @member {replitproto.IFile|null|undefined} write
-             * @memberof replitproto.Command
+             * @member {api.IFile|null|undefined} write
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.write = null;
     
             /**
              * Command remove.
-             * @member {replitproto.IFile|null|undefined} remove
-             * @memberof replitproto.Command
+             * @member {api.IFile|null|undefined} remove
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.remove = null;
     
             /**
              * Command move.
-             * @member {replitproto.IMove|null|undefined} move
-             * @memberof replitproto.Command
+             * @member {api.IMove|null|undefined} move
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.move = null;
     
             /**
              * Command mkdir.
-             * @member {replitproto.IFile|null|undefined} mkdir
-             * @memberof replitproto.Command
+             * @member {api.IFile|null|undefined} mkdir
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.mkdir = null;
     
             /**
              * Command read.
-             * @member {replitproto.IFile|null|undefined} read
-             * @memberof replitproto.Command
+             * @member {api.IFile|null|undefined} read
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.read = null;
     
             /**
              * Command readdir.
-             * @member {replitproto.IFile|null|undefined} readdir
-             * @memberof replitproto.Command
+             * @member {api.IFile|null|undefined} readdir
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.readdir = null;
     
             /**
              * Command files.
-             * @member {replitproto.IFiles|null|undefined} files
-             * @memberof replitproto.Command
+             * @member {api.IFiles|null|undefined} files
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.files = null;
     
             /**
              * Command file.
-             * @member {replitproto.IFile|null|undefined} file
-             * @memberof replitproto.Command
+             * @member {api.IFile|null|undefined} file
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.file = null;
     
             /**
              * Command checkChanges.
-             * @member {replitproto.ICheckChanges|null|undefined} checkChanges
-             * @memberof replitproto.Command
+             * @member {api.ICheckChanges|null|undefined} checkChanges
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.checkChanges = null;
     
             /**
              * Command changedFiles.
-             * @member {replitproto.IFiles|null|undefined} changedFiles
-             * @memberof replitproto.Command
+             * @member {api.IFiles|null|undefined} changedFiles
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.changedFiles = null;
     
             /**
              * Command lintResults.
-             * @member {replitproto.ILintResults|null|undefined} lintResults
-             * @memberof replitproto.Command
+             * @member {api.ILintResults|null|undefined} lintResults
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.lintResults = null;
     
             /**
              * Command runContainedTest.
-             * @member {replitproto.IContainedTest|null|undefined} runContainedTest
-             * @memberof replitproto.Command
+             * @member {api.IContainedTest|null|undefined} runContainedTest
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.runContainedTest = null;
     
             /**
              * Command testResult.
-             * @member {replitproto.ITestResult|null|undefined} testResult
-             * @memberof replitproto.Command
+             * @member {api.ITestResult|null|undefined} testResult
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.testResult = null;
@@ -410,415 +410,415 @@
             /**
              * Command debuggerStart.
              * @member {string} debuggerStart
-             * @memberof replitproto.Command
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.debuggerStart = "";
     
             /**
              * Command debuggerStep.
-             * @member {replitproto.IRunMain|null|undefined} debuggerStep
-             * @memberof replitproto.Command
+             * @member {api.IRunMain|null|undefined} debuggerStep
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.debuggerStep = null;
     
             /**
              * Command debuggerStatus.
-             * @member {replitproto.IDebugStatus|null|undefined} debuggerStatus
-             * @memberof replitproto.Command
+             * @member {api.IDebugStatus|null|undefined} debuggerStatus
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.debuggerStatus = null;
     
             /**
              * Command ensurePackages.
-             * @member {replitproto.IEnsurePackages|null|undefined} ensurePackages
-             * @memberof replitproto.Command
+             * @member {api.IEnsurePackages|null|undefined} ensurePackages
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.ensurePackages = null;
     
             /**
              * Command ping.
-             * @member {replitproto.IPing|null|undefined} ping
-             * @memberof replitproto.Command
+             * @member {api.IPing|null|undefined} ping
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.ping = null;
     
             /**
              * Command pong.
-             * @member {replitproto.IPong|null|undefined} pong
-             * @memberof replitproto.Command
+             * @member {api.IPong|null|undefined} pong
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.pong = null;
     
             /**
              * Command hello.
-             * @member {replitproto.IHello|null|undefined} hello
-             * @memberof replitproto.Command
+             * @member {api.IHello|null|undefined} hello
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.hello = null;
     
             /**
              * Command goodbye.
-             * @member {replitproto.IGoodbye|null|undefined} goodbye
-             * @memberof replitproto.Command
+             * @member {api.IGoodbye|null|undefined} goodbye
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.goodbye = null;
     
             /**
              * Command hint.
-             * @member {replitproto.IHint|null|undefined} hint
-             * @memberof replitproto.Command
+             * @member {api.IHint|null|undefined} hint
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.hint = null;
     
             /**
              * Command connect.
-             * @member {replitproto.IConnect|null|undefined} connect
-             * @memberof replitproto.Command
+             * @member {api.IConnect|null|undefined} connect
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.connect = null;
     
             /**
              * Command send.
-             * @member {replitproto.ISend|null|undefined} send
-             * @memberof replitproto.Command
+             * @member {api.ISend|null|undefined} send
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.send = null;
     
             /**
              * Command recv.
-             * @member {replitproto.IRecv|null|undefined} recv
-             * @memberof replitproto.Command
+             * @member {api.IRecv|null|undefined} recv
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.recv = null;
     
             /**
              * Command disconnect.
-             * @member {replitproto.IDisconnect|null|undefined} disconnect
-             * @memberof replitproto.Command
+             * @member {api.IDisconnect|null|undefined} disconnect
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.disconnect = null;
     
             /**
              * Command fileAuthReq.
-             * @member {replitproto.IFileAuthReq|null|undefined} fileAuthReq
-             * @memberof replitproto.Command
+             * @member {api.IFileAuthReq|null|undefined} fileAuthReq
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.fileAuthReq = null;
     
             /**
              * Command fileAuthRes.
-             * @member {replitproto.IFileAuthRes|null|undefined} fileAuthRes
-             * @memberof replitproto.Command
+             * @member {api.IFileAuthRes|null|undefined} fileAuthRes
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.fileAuthRes = null;
     
             /**
              * Command mutliFileAuthRes.
-             * @member {replitproto.IMultiFileAuthRes|null|undefined} mutliFileAuthRes
-             * @memberof replitproto.Command
+             * @member {api.IMultiFileAuthRes|null|undefined} mutliFileAuthRes
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.mutliFileAuthRes = null;
     
             /**
              * Command ot.
-             * @member {replitproto.IOTPacket|null|undefined} ot
-             * @memberof replitproto.Command
+             * @member {api.IOTPacket|null|undefined} ot
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.ot = null;
     
             /**
              * Command otstatus.
-             * @member {replitproto.IOTStatus|null|undefined} otstatus
-             * @memberof replitproto.Command
+             * @member {api.IOTStatus|null|undefined} otstatus
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.otstatus = null;
     
             /**
              * Command otLinkFile.
-             * @member {replitproto.IOTLinkFile|null|undefined} otLinkFile
-             * @memberof replitproto.Command
+             * @member {api.IOTLinkFile|null|undefined} otLinkFile
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.otLinkFile = null;
     
             /**
              * Command otNewCursor.
-             * @member {replitproto.IOTCursor|null|undefined} otNewCursor
-             * @memberof replitproto.Command
+             * @member {api.IOTCursor|null|undefined} otNewCursor
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.otNewCursor = null;
     
             /**
              * Command otDeleteCursor.
-             * @member {replitproto.IOTCursor|null|undefined} otDeleteCursor
-             * @memberof replitproto.Command
+             * @member {api.IOTCursor|null|undefined} otDeleteCursor
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.otDeleteCursor = null;
     
             /**
              * Command flush.
-             * @member {replitproto.IFlush|null|undefined} flush
-             * @memberof replitproto.Command
+             * @member {api.IFlush|null|undefined} flush
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.flush = null;
     
             /**
              * Command debug.
-             * @member {replitproto.IDebug|null|undefined} debug
-             * @memberof replitproto.Command
+             * @member {api.IDebug|null|undefined} debug
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.debug = null;
     
             /**
              * Command startVCR.
-             * @member {replitproto.IStartVCR|null|undefined} startVCR
-             * @memberof replitproto.Command
+             * @member {api.IStartVCR|null|undefined} startVCR
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.startVCR = null;
     
             /**
              * Command readVCR.
-             * @member {replitproto.IReadVCR|null|undefined} readVCR
-             * @memberof replitproto.Command
+             * @member {api.IReadVCR|null|undefined} readVCR
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.readVCR = null;
     
             /**
              * Command VCRLog.
-             * @member {replitproto.IVCRLog|null|undefined} VCRLog
-             * @memberof replitproto.Command
+             * @member {api.IVCRLog|null|undefined} VCRLog
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.VCRLog = null;
     
             /**
              * Command auth.
-             * @member {replitproto.IAuth|null|undefined} auth
-             * @memberof replitproto.Command
+             * @member {api.IAuth|null|undefined} auth
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.auth = null;
     
             /**
              * Command execInfo.
-             * @member {replitproto.IExecInfo|null|undefined} execInfo
-             * @memberof replitproto.Command
+             * @member {api.IExecInfo|null|undefined} execInfo
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.execInfo = null;
     
             /**
              * Command subscribe.
-             * @member {replitproto.IFile|null|undefined} subscribe
-             * @memberof replitproto.Command
+             * @member {api.IFile|null|undefined} subscribe
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.subscribe = null;
     
             /**
              * Command eventCreated.
-             * @member {replitproto.IFile|null|undefined} eventCreated
-             * @memberof replitproto.Command
+             * @member {api.IFile|null|undefined} eventCreated
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.eventCreated = null;
     
             /**
              * Command eventModified.
-             * @member {replitproto.IFile|null|undefined} eventModified
-             * @memberof replitproto.Command
+             * @member {api.IFile|null|undefined} eventModified
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.eventModified = null;
     
             /**
              * Command eventDeleted.
-             * @member {replitproto.IFile|null|undefined} eventDeleted
-             * @memberof replitproto.Command
+             * @member {api.IFile|null|undefined} eventDeleted
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.eventDeleted = null;
     
             /**
              * Command eventMoved.
-             * @member {replitproto.IMove|null|undefined} eventMoved
-             * @memberof replitproto.Command
+             * @member {api.IMove|null|undefined} eventMoved
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.eventMoved = null;
     
             /**
              * Command subscribeFile.
-             * @member {replitproto.ISubscribeFile|null|undefined} subscribeFile
-             * @memberof replitproto.Command
+             * @member {api.ISubscribeFile|null|undefined} subscribeFile
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.subscribeFile = null;
     
             /**
              * Command fileEvent.
-             * @member {replitproto.IFileEvent|null|undefined} fileEvent
-             * @memberof replitproto.Command
+             * @member {api.IFileEvent|null|undefined} fileEvent
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.fileEvent = null;
     
             /**
              * Command roster.
-             * @member {replitproto.IRoster|null|undefined} roster
-             * @memberof replitproto.Command
+             * @member {api.IRoster|null|undefined} roster
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.roster = null;
     
             /**
              * Command join.
-             * @member {replitproto.IUser|null|undefined} join
-             * @memberof replitproto.Command
+             * @member {api.IUser|null|undefined} join
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.join = null;
     
             /**
              * Command part.
-             * @member {replitproto.IUser|null|undefined} part
-             * @memberof replitproto.Command
+             * @member {api.IUser|null|undefined} part
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.part = null;
     
             /**
              * Command exec.
-             * @member {replitproto.IExec|null|undefined} exec
-             * @memberof replitproto.Command
+             * @member {api.IExec|null|undefined} exec
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.exec = null;
     
             /**
              * Command packageSearch.
-             * @member {replitproto.IPackageSearch|null|undefined} packageSearch
-             * @memberof replitproto.Command
+             * @member {api.IPackageSearch|null|undefined} packageSearch
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.packageSearch = null;
     
             /**
              * Command packageSearchResp.
-             * @member {replitproto.IPackageSearchResp|null|undefined} packageSearchResp
-             * @memberof replitproto.Command
+             * @member {api.IPackageSearchResp|null|undefined} packageSearchResp
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.packageSearchResp = null;
     
             /**
              * Command packageInfo.
-             * @member {replitproto.IPackageInfo|null|undefined} packageInfo
-             * @memberof replitproto.Command
+             * @member {api.IPackageInfo|null|undefined} packageInfo
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.packageInfo = null;
     
             /**
              * Command packageInfoResp.
-             * @member {replitproto.IPackageInfoResp|null|undefined} packageInfoResp
-             * @memberof replitproto.Command
+             * @member {api.IPackageInfoResp|null|undefined} packageInfoResp
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.packageInfoResp = null;
     
             /**
              * Command packageAdd.
-             * @member {replitproto.IPackageAdd|null|undefined} packageAdd
-             * @memberof replitproto.Command
+             * @member {api.IPackageAdd|null|undefined} packageAdd
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.packageAdd = null;
     
             /**
              * Command packageRemove.
-             * @member {replitproto.IPackageRemove|null|undefined} packageRemove
-             * @memberof replitproto.Command
+             * @member {api.IPackageRemove|null|undefined} packageRemove
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.packageRemove = null;
     
             /**
              * Command packageInstall.
-             * @member {replitproto.IPackageInstall|null|undefined} packageInstall
-             * @memberof replitproto.Command
+             * @member {api.IPackageInstall|null|undefined} packageInstall
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.packageInstall = null;
     
             /**
              * Command packageListSpecfile.
-             * @member {replitproto.IPackageListSpecfile|null|undefined} packageListSpecfile
-             * @memberof replitproto.Command
+             * @member {api.IPackageListSpecfile|null|undefined} packageListSpecfile
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.packageListSpecfile = null;
     
             /**
              * Command packageListSpecfileResp.
-             * @member {replitproto.IPackageListSpecfileResp|null|undefined} packageListSpecfileResp
-             * @memberof replitproto.Command
+             * @member {api.IPackageListSpecfileResp|null|undefined} packageListSpecfileResp
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.packageListSpecfileResp = null;
     
             /**
              * Command packageCacheSave.
-             * @member {replitproto.IPackageCacheSave|null|undefined} packageCacheSave
-             * @memberof replitproto.Command
+             * @member {api.IPackageCacheSave|null|undefined} packageCacheSave
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.packageCacheSave = null;
     
             /**
              * Command chatMessage.
-             * @member {replitproto.IChatMessage|null|undefined} chatMessage
-             * @memberof replitproto.Command
+             * @member {api.IChatMessage|null|undefined} chatMessage
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.chatMessage = null;
     
             /**
              * Command chatTyping.
-             * @member {replitproto.IChatTyping|null|undefined} chatTyping
-             * @memberof replitproto.Command
+             * @member {api.IChatTyping|null|undefined} chatTyping
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.chatTyping = null;
     
             /**
              * Command chatScrollback.
-             * @member {replitproto.IChatScrollback|null|undefined} chatScrollback
-             * @memberof replitproto.Command
+             * @member {api.IChatScrollback|null|undefined} chatScrollback
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.chatScrollback = null;
@@ -826,7 +826,7 @@
             /**
              * Command ref.
              * @member {string} ref
-             * @memberof replitproto.Command
+             * @memberof api.Command
              * @instance
              */
             Command.prototype.ref = "";
@@ -837,7 +837,7 @@
             /**
              * Command body.
              * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"write"|"remove"|"move"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribe"|"eventCreated"|"eventModified"|"eventDeleted"|"eventMoved"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|undefined} body
-             * @memberof replitproto.Command
+             * @memberof api.Command
              * @instance
              */
             Object.defineProperty(Command.prototype, "body", {
@@ -848,21 +848,21 @@
             /**
              * Creates a new Command instance using the specified properties.
              * @function create
-             * @memberof replitproto.Command
+             * @memberof api.Command
              * @static
-             * @param {replitproto.ICommand=} [properties] Properties to set
-             * @returns {replitproto.Command} Command instance
+             * @param {api.ICommand=} [properties] Properties to set
+             * @returns {api.Command} Command instance
              */
             Command.create = function create(properties) {
                 return new Command(properties);
             };
     
             /**
-             * Encodes the specified Command message. Does not implicitly {@link replitproto.Command.verify|verify} messages.
+             * Encodes the specified Command message. Does not implicitly {@link api.Command.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.Command
+             * @memberof api.Command
              * @static
-             * @param {replitproto.ICommand} message Command message or plain object to encode
+             * @param {api.ICommand} message Command message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -874,23 +874,23 @@
                 if (message.session != null && message.hasOwnProperty("session"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int32(message.session);
                 if (message.openChan != null && message.hasOwnProperty("openChan"))
-                    $root.replitproto.OpenChannel.encode(message.openChan, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    $root.api.OpenChannel.encode(message.openChan, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.openChanRes != null && message.hasOwnProperty("openChanRes"))
-                    $root.replitproto.OpenChannelRes.encode(message.openChanRes, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                    $root.api.OpenChannelRes.encode(message.openChanRes, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 if (message.closeChan != null && message.hasOwnProperty("closeChan"))
-                    $root.replitproto.CloseChannel.encode(message.closeChan, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                    $root.api.CloseChannel.encode(message.closeChan, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
                 if (message.closeChanRes != null && message.hasOwnProperty("closeChanRes"))
-                    $root.replitproto.CloseChannelRes.encode(message.closeChanRes, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                    $root.api.CloseChannelRes.encode(message.closeChanRes, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                 if (message.containerState != null && message.hasOwnProperty("containerState"))
-                    $root.replitproto.ContainerState.encode(message.containerState, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+                    $root.api.ContainerState.encode(message.containerState, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
                 if (message.portOpen != null && message.hasOwnProperty("portOpen"))
-                    $root.replitproto.PortOpen.encode(message.portOpen, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
+                    $root.api.PortOpen.encode(message.portOpen, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
                 if (message.toast != null && message.hasOwnProperty("toast"))
-                    $root.replitproto.Toast.encode(message.toast, writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
+                    $root.api.Toast.encode(message.toast, writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
                 if (message.runMain != null && message.hasOwnProperty("runMain"))
-                    $root.replitproto.RunMain.encode(message.runMain, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
+                    $root.api.RunMain.encode(message.runMain, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
                 if (message.clear != null && message.hasOwnProperty("clear"))
-                    $root.replitproto.Clear.encode(message.clear, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
+                    $root.api.Clear.encode(message.clear, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
                 if (message["eval"] != null && message.hasOwnProperty("eval"))
                     writer.uint32(/* id 20, wireType 2 =*/162).string(message["eval"]);
                 if (message.result != null && message.hasOwnProperty("result"))
@@ -902,156 +902,156 @@
                 if (message.error != null && message.hasOwnProperty("error"))
                     writer.uint32(/* id 24, wireType 2 =*/194).string(message.error);
                 if (message.saneTerm != null && message.hasOwnProperty("saneTerm"))
-                    $root.replitproto.SaneTerm.encode(message.saneTerm, writer.uint32(/* id 26, wireType 2 =*/210).fork()).ldelim();
+                    $root.api.SaneTerm.encode(message.saneTerm, writer.uint32(/* id 26, wireType 2 =*/210).fork()).ldelim();
                 if (message.resizeTerm != null && message.hasOwnProperty("resizeTerm"))
-                    $root.replitproto.ResizeTerm.encode(message.resizeTerm, writer.uint32(/* id 27, wireType 2 =*/218).fork()).ldelim();
+                    $root.api.ResizeTerm.encode(message.resizeTerm, writer.uint32(/* id 27, wireType 2 =*/218).fork()).ldelim();
                 if (message.state != null && message.hasOwnProperty("state"))
                     writer.uint32(/* id 28, wireType 0 =*/224).int32(message.state);
                 if (message.ok != null && message.hasOwnProperty("ok"))
-                    $root.replitproto.OK.encode(message.ok, writer.uint32(/* id 30, wireType 2 =*/242).fork()).ldelim();
+                    $root.api.OK.encode(message.ok, writer.uint32(/* id 30, wireType 2 =*/242).fork()).ldelim();
                 if (message.persist != null && message.hasOwnProperty("persist"))
-                    $root.replitproto.File.encode(message.persist, writer.uint32(/* id 31, wireType 2 =*/250).fork()).ldelim();
+                    $root.api.File.encode(message.persist, writer.uint32(/* id 31, wireType 2 =*/250).fork()).ldelim();
                 if (message.write != null && message.hasOwnProperty("write"))
-                    $root.replitproto.File.encode(message.write, writer.uint32(/* id 32, wireType 2 =*/258).fork()).ldelim();
+                    $root.api.File.encode(message.write, writer.uint32(/* id 32, wireType 2 =*/258).fork()).ldelim();
                 if (message.remove != null && message.hasOwnProperty("remove"))
-                    $root.replitproto.File.encode(message.remove, writer.uint32(/* id 33, wireType 2 =*/266).fork()).ldelim();
+                    $root.api.File.encode(message.remove, writer.uint32(/* id 33, wireType 2 =*/266).fork()).ldelim();
                 if (message.move != null && message.hasOwnProperty("move"))
-                    $root.replitproto.Move.encode(message.move, writer.uint32(/* id 34, wireType 2 =*/274).fork()).ldelim();
+                    $root.api.Move.encode(message.move, writer.uint32(/* id 34, wireType 2 =*/274).fork()).ldelim();
                 if (message.read != null && message.hasOwnProperty("read"))
-                    $root.replitproto.File.encode(message.read, writer.uint32(/* id 35, wireType 2 =*/282).fork()).ldelim();
+                    $root.api.File.encode(message.read, writer.uint32(/* id 35, wireType 2 =*/282).fork()).ldelim();
                 if (message.readdir != null && message.hasOwnProperty("readdir"))
-                    $root.replitproto.File.encode(message.readdir, writer.uint32(/* id 37, wireType 2 =*/298).fork()).ldelim();
+                    $root.api.File.encode(message.readdir, writer.uint32(/* id 37, wireType 2 =*/298).fork()).ldelim();
                 if (message.files != null && message.hasOwnProperty("files"))
-                    $root.replitproto.Files.encode(message.files, writer.uint32(/* id 38, wireType 2 =*/306).fork()).ldelim();
+                    $root.api.Files.encode(message.files, writer.uint32(/* id 38, wireType 2 =*/306).fork()).ldelim();
                 if (message.mkdir != null && message.hasOwnProperty("mkdir"))
-                    $root.replitproto.File.encode(message.mkdir, writer.uint32(/* id 39, wireType 2 =*/314).fork()).ldelim();
+                    $root.api.File.encode(message.mkdir, writer.uint32(/* id 39, wireType 2 =*/314).fork()).ldelim();
                 if (message.file != null && message.hasOwnProperty("file"))
-                    $root.replitproto.File.encode(message.file, writer.uint32(/* id 40, wireType 2 =*/322).fork()).ldelim();
+                    $root.api.File.encode(message.file, writer.uint32(/* id 40, wireType 2 =*/322).fork()).ldelim();
                 if (message.checkChanges != null && message.hasOwnProperty("checkChanges"))
-                    $root.replitproto.CheckChanges.encode(message.checkChanges, writer.uint32(/* id 42, wireType 2 =*/338).fork()).ldelim();
+                    $root.api.CheckChanges.encode(message.checkChanges, writer.uint32(/* id 42, wireType 2 =*/338).fork()).ldelim();
                 if (message.changedFiles != null && message.hasOwnProperty("changedFiles"))
-                    $root.replitproto.Files.encode(message.changedFiles, writer.uint32(/* id 43, wireType 2 =*/346).fork()).ldelim();
+                    $root.api.Files.encode(message.changedFiles, writer.uint32(/* id 43, wireType 2 =*/346).fork()).ldelim();
                 if (message.lintResults != null && message.hasOwnProperty("lintResults"))
-                    $root.replitproto.LintResults.encode(message.lintResults, writer.uint32(/* id 44, wireType 2 =*/354).fork()).ldelim();
+                    $root.api.LintResults.encode(message.lintResults, writer.uint32(/* id 44, wireType 2 =*/354).fork()).ldelim();
                 if (message.runContainedTest != null && message.hasOwnProperty("runContainedTest"))
-                    $root.replitproto.ContainedTest.encode(message.runContainedTest, writer.uint32(/* id 70, wireType 2 =*/562).fork()).ldelim();
+                    $root.api.ContainedTest.encode(message.runContainedTest, writer.uint32(/* id 70, wireType 2 =*/562).fork()).ldelim();
                 if (message.testResult != null && message.hasOwnProperty("testResult"))
-                    $root.replitproto.TestResult.encode(message.testResult, writer.uint32(/* id 71, wireType 2 =*/570).fork()).ldelim();
+                    $root.api.TestResult.encode(message.testResult, writer.uint32(/* id 71, wireType 2 =*/570).fork()).ldelim();
                 if (message.debuggerStart != null && message.hasOwnProperty("debuggerStart"))
                     writer.uint32(/* id 90, wireType 2 =*/722).string(message.debuggerStart);
                 if (message.debuggerStep != null && message.hasOwnProperty("debuggerStep"))
-                    $root.replitproto.RunMain.encode(message.debuggerStep, writer.uint32(/* id 91, wireType 2 =*/730).fork()).ldelim();
+                    $root.api.RunMain.encode(message.debuggerStep, writer.uint32(/* id 91, wireType 2 =*/730).fork()).ldelim();
                 if (message.debuggerStatus != null && message.hasOwnProperty("debuggerStatus"))
-                    $root.replitproto.DebugStatus.encode(message.debuggerStatus, writer.uint32(/* id 92, wireType 2 =*/738).fork()).ldelim();
+                    $root.api.DebugStatus.encode(message.debuggerStatus, writer.uint32(/* id 92, wireType 2 =*/738).fork()).ldelim();
                 if (message.ensurePackages != null && message.hasOwnProperty("ensurePackages"))
-                    $root.replitproto.EnsurePackages.encode(message.ensurePackages, writer.uint32(/* id 100, wireType 2 =*/802).fork()).ldelim();
+                    $root.api.EnsurePackages.encode(message.ensurePackages, writer.uint32(/* id 100, wireType 2 =*/802).fork()).ldelim();
                 if (message.ping != null && message.hasOwnProperty("ping"))
-                    $root.replitproto.Ping.encode(message.ping, writer.uint32(/* id 120, wireType 2 =*/962).fork()).ldelim();
+                    $root.api.Ping.encode(message.ping, writer.uint32(/* id 120, wireType 2 =*/962).fork()).ldelim();
                 if (message.pong != null && message.hasOwnProperty("pong"))
-                    $root.replitproto.Pong.encode(message.pong, writer.uint32(/* id 121, wireType 2 =*/970).fork()).ldelim();
+                    $root.api.Pong.encode(message.pong, writer.uint32(/* id 121, wireType 2 =*/970).fork()).ldelim();
                 if (message.hello != null && message.hasOwnProperty("hello"))
-                    $root.replitproto.Hello.encode(message.hello, writer.uint32(/* id 122, wireType 2 =*/978).fork()).ldelim();
+                    $root.api.Hello.encode(message.hello, writer.uint32(/* id 122, wireType 2 =*/978).fork()).ldelim();
                 if (message.goodbye != null && message.hasOwnProperty("goodbye"))
-                    $root.replitproto.Goodbye.encode(message.goodbye, writer.uint32(/* id 123, wireType 2 =*/986).fork()).ldelim();
+                    $root.api.Goodbye.encode(message.goodbye, writer.uint32(/* id 123, wireType 2 =*/986).fork()).ldelim();
                 if (message.hint != null && message.hasOwnProperty("hint"))
-                    $root.replitproto.Hint.encode(message.hint, writer.uint32(/* id 130, wireType 2 =*/1042).fork()).ldelim();
+                    $root.api.Hint.encode(message.hint, writer.uint32(/* id 130, wireType 2 =*/1042).fork()).ldelim();
                 if (message.connect != null && message.hasOwnProperty("connect"))
-                    $root.replitproto.Connect.encode(message.connect, writer.uint32(/* id 150, wireType 2 =*/1202).fork()).ldelim();
+                    $root.api.Connect.encode(message.connect, writer.uint32(/* id 150, wireType 2 =*/1202).fork()).ldelim();
                 if (message.send != null && message.hasOwnProperty("send"))
-                    $root.replitproto.Send.encode(message.send, writer.uint32(/* id 151, wireType 2 =*/1210).fork()).ldelim();
+                    $root.api.Send.encode(message.send, writer.uint32(/* id 151, wireType 2 =*/1210).fork()).ldelim();
                 if (message.recv != null && message.hasOwnProperty("recv"))
-                    $root.replitproto.Recv.encode(message.recv, writer.uint32(/* id 152, wireType 2 =*/1218).fork()).ldelim();
+                    $root.api.Recv.encode(message.recv, writer.uint32(/* id 152, wireType 2 =*/1218).fork()).ldelim();
                 if (message.disconnect != null && message.hasOwnProperty("disconnect"))
-                    $root.replitproto.Disconnect.encode(message.disconnect, writer.uint32(/* id 153, wireType 2 =*/1226).fork()).ldelim();
+                    $root.api.Disconnect.encode(message.disconnect, writer.uint32(/* id 153, wireType 2 =*/1226).fork()).ldelim();
                 if (message.fileAuthReq != null && message.hasOwnProperty("fileAuthReq"))
-                    $root.replitproto.FileAuthReq.encode(message.fileAuthReq, writer.uint32(/* id 200, wireType 2 =*/1602).fork()).ldelim();
+                    $root.api.FileAuthReq.encode(message.fileAuthReq, writer.uint32(/* id 200, wireType 2 =*/1602).fork()).ldelim();
                 if (message.fileAuthRes != null && message.hasOwnProperty("fileAuthRes"))
-                    $root.replitproto.FileAuthRes.encode(message.fileAuthRes, writer.uint32(/* id 201, wireType 2 =*/1610).fork()).ldelim();
+                    $root.api.FileAuthRes.encode(message.fileAuthRes, writer.uint32(/* id 201, wireType 2 =*/1610).fork()).ldelim();
                 if (message.mutliFileAuthRes != null && message.hasOwnProperty("mutliFileAuthRes"))
-                    $root.replitproto.MultiFileAuthRes.encode(message.mutliFileAuthRes, writer.uint32(/* id 202, wireType 2 =*/1618).fork()).ldelim();
+                    $root.api.MultiFileAuthRes.encode(message.mutliFileAuthRes, writer.uint32(/* id 202, wireType 2 =*/1618).fork()).ldelim();
                 if (message.ot != null && message.hasOwnProperty("ot"))
-                    $root.replitproto.OTPacket.encode(message.ot, writer.uint32(/* id 220, wireType 2 =*/1762).fork()).ldelim();
+                    $root.api.OTPacket.encode(message.ot, writer.uint32(/* id 220, wireType 2 =*/1762).fork()).ldelim();
                 if (message.otstatus != null && message.hasOwnProperty("otstatus"))
-                    $root.replitproto.OTStatus.encode(message.otstatus, writer.uint32(/* id 221, wireType 2 =*/1770).fork()).ldelim();
+                    $root.api.OTStatus.encode(message.otstatus, writer.uint32(/* id 221, wireType 2 =*/1770).fork()).ldelim();
                 if (message.otLinkFile != null && message.hasOwnProperty("otLinkFile"))
-                    $root.replitproto.OTLinkFile.encode(message.otLinkFile, writer.uint32(/* id 222, wireType 2 =*/1778).fork()).ldelim();
+                    $root.api.OTLinkFile.encode(message.otLinkFile, writer.uint32(/* id 222, wireType 2 =*/1778).fork()).ldelim();
                 if (message.otNewCursor != null && message.hasOwnProperty("otNewCursor"))
-                    $root.replitproto.OTCursor.encode(message.otNewCursor, writer.uint32(/* id 223, wireType 2 =*/1786).fork()).ldelim();
+                    $root.api.OTCursor.encode(message.otNewCursor, writer.uint32(/* id 223, wireType 2 =*/1786).fork()).ldelim();
                 if (message.otDeleteCursor != null && message.hasOwnProperty("otDeleteCursor"))
-                    $root.replitproto.OTCursor.encode(message.otDeleteCursor, writer.uint32(/* id 224, wireType 2 =*/1794).fork()).ldelim();
+                    $root.api.OTCursor.encode(message.otDeleteCursor, writer.uint32(/* id 224, wireType 2 =*/1794).fork()).ldelim();
                 if (message.debug != null && message.hasOwnProperty("debug"))
-                    $root.replitproto.Debug.encode(message.debug, writer.uint32(/* id 230, wireType 2 =*/1842).fork()).ldelim();
+                    $root.api.Debug.encode(message.debug, writer.uint32(/* id 230, wireType 2 =*/1842).fork()).ldelim();
                 if (message.startVCR != null && message.hasOwnProperty("startVCR"))
-                    $root.replitproto.StartVCR.encode(message.startVCR, writer.uint32(/* id 231, wireType 2 =*/1850).fork()).ldelim();
+                    $root.api.StartVCR.encode(message.startVCR, writer.uint32(/* id 231, wireType 2 =*/1850).fork()).ldelim();
                 if (message.readVCR != null && message.hasOwnProperty("readVCR"))
-                    $root.replitproto.ReadVCR.encode(message.readVCR, writer.uint32(/* id 232, wireType 2 =*/1858).fork()).ldelim();
+                    $root.api.ReadVCR.encode(message.readVCR, writer.uint32(/* id 232, wireType 2 =*/1858).fork()).ldelim();
                 if (message.VCRLog != null && message.hasOwnProperty("VCRLog"))
-                    $root.replitproto.VCRLog.encode(message.VCRLog, writer.uint32(/* id 233, wireType 2 =*/1866).fork()).ldelim();
+                    $root.api.VCRLog.encode(message.VCRLog, writer.uint32(/* id 233, wireType 2 =*/1866).fork()).ldelim();
                 if (message.auth != null && message.hasOwnProperty("auth"))
-                    $root.replitproto.Auth.encode(message.auth, writer.uint32(/* id 235, wireType 2 =*/1882).fork()).ldelim();
+                    $root.api.Auth.encode(message.auth, writer.uint32(/* id 235, wireType 2 =*/1882).fork()).ldelim();
                 if (message.execInfo != null && message.hasOwnProperty("execInfo"))
-                    $root.replitproto.ExecInfo.encode(message.execInfo, writer.uint32(/* id 240, wireType 2 =*/1922).fork()).ldelim();
+                    $root.api.ExecInfo.encode(message.execInfo, writer.uint32(/* id 240, wireType 2 =*/1922).fork()).ldelim();
                 if (message.subscribe != null && message.hasOwnProperty("subscribe"))
-                    $root.replitproto.File.encode(message.subscribe, writer.uint32(/* id 250, wireType 2 =*/2002).fork()).ldelim();
+                    $root.api.File.encode(message.subscribe, writer.uint32(/* id 250, wireType 2 =*/2002).fork()).ldelim();
                 if (message.flush != null && message.hasOwnProperty("flush"))
-                    $root.replitproto.Flush.encode(message.flush, writer.uint32(/* id 251, wireType 2 =*/2010).fork()).ldelim();
+                    $root.api.Flush.encode(message.flush, writer.uint32(/* id 251, wireType 2 =*/2010).fork()).ldelim();
                 if (message.eventCreated != null && message.hasOwnProperty("eventCreated"))
-                    $root.replitproto.File.encode(message.eventCreated, writer.uint32(/* id 252, wireType 2 =*/2018).fork()).ldelim();
+                    $root.api.File.encode(message.eventCreated, writer.uint32(/* id 252, wireType 2 =*/2018).fork()).ldelim();
                 if (message.eventModified != null && message.hasOwnProperty("eventModified"))
-                    $root.replitproto.File.encode(message.eventModified, writer.uint32(/* id 253, wireType 2 =*/2026).fork()).ldelim();
+                    $root.api.File.encode(message.eventModified, writer.uint32(/* id 253, wireType 2 =*/2026).fork()).ldelim();
                 if (message.eventDeleted != null && message.hasOwnProperty("eventDeleted"))
-                    $root.replitproto.File.encode(message.eventDeleted, writer.uint32(/* id 254, wireType 2 =*/2034).fork()).ldelim();
+                    $root.api.File.encode(message.eventDeleted, writer.uint32(/* id 254, wireType 2 =*/2034).fork()).ldelim();
                 if (message.eventMoved != null && message.hasOwnProperty("eventMoved"))
-                    $root.replitproto.Move.encode(message.eventMoved, writer.uint32(/* id 255, wireType 2 =*/2042).fork()).ldelim();
+                    $root.api.Move.encode(message.eventMoved, writer.uint32(/* id 255, wireType 2 =*/2042).fork()).ldelim();
                 if (message.subscribeFile != null && message.hasOwnProperty("subscribeFile"))
-                    $root.replitproto.SubscribeFile.encode(message.subscribeFile, writer.uint32(/* id 256, wireType 2 =*/2050).fork()).ldelim();
+                    $root.api.SubscribeFile.encode(message.subscribeFile, writer.uint32(/* id 256, wireType 2 =*/2050).fork()).ldelim();
                 if (message.fileEvent != null && message.hasOwnProperty("fileEvent"))
-                    $root.replitproto.FileEvent.encode(message.fileEvent, writer.uint32(/* id 257, wireType 2 =*/2058).fork()).ldelim();
+                    $root.api.FileEvent.encode(message.fileEvent, writer.uint32(/* id 257, wireType 2 =*/2058).fork()).ldelim();
                 if (message.roster != null && message.hasOwnProperty("roster"))
-                    $root.replitproto.Roster.encode(message.roster, writer.uint32(/* id 260, wireType 2 =*/2082).fork()).ldelim();
+                    $root.api.Roster.encode(message.roster, writer.uint32(/* id 260, wireType 2 =*/2082).fork()).ldelim();
                 if (message.join != null && message.hasOwnProperty("join"))
-                    $root.replitproto.User.encode(message.join, writer.uint32(/* id 261, wireType 2 =*/2090).fork()).ldelim();
+                    $root.api.User.encode(message.join, writer.uint32(/* id 261, wireType 2 =*/2090).fork()).ldelim();
                 if (message.part != null && message.hasOwnProperty("part"))
-                    $root.replitproto.User.encode(message.part, writer.uint32(/* id 262, wireType 2 =*/2098).fork()).ldelim();
+                    $root.api.User.encode(message.part, writer.uint32(/* id 262, wireType 2 =*/2098).fork()).ldelim();
                 if (message.exec != null && message.hasOwnProperty("exec"))
-                    $root.replitproto.Exec.encode(message.exec, writer.uint32(/* id 270, wireType 2 =*/2162).fork()).ldelim();
+                    $root.api.Exec.encode(message.exec, writer.uint32(/* id 270, wireType 2 =*/2162).fork()).ldelim();
                 if (message.packageSearch != null && message.hasOwnProperty("packageSearch"))
-                    $root.replitproto.PackageSearch.encode(message.packageSearch, writer.uint32(/* id 280, wireType 2 =*/2242).fork()).ldelim();
+                    $root.api.PackageSearch.encode(message.packageSearch, writer.uint32(/* id 280, wireType 2 =*/2242).fork()).ldelim();
                 if (message.packageSearchResp != null && message.hasOwnProperty("packageSearchResp"))
-                    $root.replitproto.PackageSearchResp.encode(message.packageSearchResp, writer.uint32(/* id 281, wireType 2 =*/2250).fork()).ldelim();
+                    $root.api.PackageSearchResp.encode(message.packageSearchResp, writer.uint32(/* id 281, wireType 2 =*/2250).fork()).ldelim();
                 if (message.packageInfo != null && message.hasOwnProperty("packageInfo"))
-                    $root.replitproto.PackageInfo.encode(message.packageInfo, writer.uint32(/* id 282, wireType 2 =*/2258).fork()).ldelim();
+                    $root.api.PackageInfo.encode(message.packageInfo, writer.uint32(/* id 282, wireType 2 =*/2258).fork()).ldelim();
                 if (message.packageInfoResp != null && message.hasOwnProperty("packageInfoResp"))
-                    $root.replitproto.PackageInfoResp.encode(message.packageInfoResp, writer.uint32(/* id 283, wireType 2 =*/2266).fork()).ldelim();
+                    $root.api.PackageInfoResp.encode(message.packageInfoResp, writer.uint32(/* id 283, wireType 2 =*/2266).fork()).ldelim();
                 if (message.packageAdd != null && message.hasOwnProperty("packageAdd"))
-                    $root.replitproto.PackageAdd.encode(message.packageAdd, writer.uint32(/* id 284, wireType 2 =*/2274).fork()).ldelim();
+                    $root.api.PackageAdd.encode(message.packageAdd, writer.uint32(/* id 284, wireType 2 =*/2274).fork()).ldelim();
                 if (message.packageRemove != null && message.hasOwnProperty("packageRemove"))
-                    $root.replitproto.PackageRemove.encode(message.packageRemove, writer.uint32(/* id 285, wireType 2 =*/2282).fork()).ldelim();
+                    $root.api.PackageRemove.encode(message.packageRemove, writer.uint32(/* id 285, wireType 2 =*/2282).fork()).ldelim();
                 if (message.packageInstall != null && message.hasOwnProperty("packageInstall"))
-                    $root.replitproto.PackageInstall.encode(message.packageInstall, writer.uint32(/* id 286, wireType 2 =*/2290).fork()).ldelim();
+                    $root.api.PackageInstall.encode(message.packageInstall, writer.uint32(/* id 286, wireType 2 =*/2290).fork()).ldelim();
                 if (message.packageListSpecfile != null && message.hasOwnProperty("packageListSpecfile"))
-                    $root.replitproto.PackageListSpecfile.encode(message.packageListSpecfile, writer.uint32(/* id 287, wireType 2 =*/2298).fork()).ldelim();
+                    $root.api.PackageListSpecfile.encode(message.packageListSpecfile, writer.uint32(/* id 287, wireType 2 =*/2298).fork()).ldelim();
                 if (message.packageListSpecfileResp != null && message.hasOwnProperty("packageListSpecfileResp"))
-                    $root.replitproto.PackageListSpecfileResp.encode(message.packageListSpecfileResp, writer.uint32(/* id 288, wireType 2 =*/2306).fork()).ldelim();
+                    $root.api.PackageListSpecfileResp.encode(message.packageListSpecfileResp, writer.uint32(/* id 288, wireType 2 =*/2306).fork()).ldelim();
                 if (message.packageCacheSave != null && message.hasOwnProperty("packageCacheSave"))
-                    $root.replitproto.PackageCacheSave.encode(message.packageCacheSave, writer.uint32(/* id 289, wireType 2 =*/2314).fork()).ldelim();
+                    $root.api.PackageCacheSave.encode(message.packageCacheSave, writer.uint32(/* id 289, wireType 2 =*/2314).fork()).ldelim();
                 if (message.chatMessage != null && message.hasOwnProperty("chatMessage"))
-                    $root.replitproto.ChatMessage.encode(message.chatMessage, writer.uint32(/* id 310, wireType 2 =*/2482).fork()).ldelim();
+                    $root.api.ChatMessage.encode(message.chatMessage, writer.uint32(/* id 310, wireType 2 =*/2482).fork()).ldelim();
                 if (message.chatTyping != null && message.hasOwnProperty("chatTyping"))
-                    $root.replitproto.ChatTyping.encode(message.chatTyping, writer.uint32(/* id 311, wireType 2 =*/2490).fork()).ldelim();
+                    $root.api.ChatTyping.encode(message.chatTyping, writer.uint32(/* id 311, wireType 2 =*/2490).fork()).ldelim();
                 if (message.chatScrollback != null && message.hasOwnProperty("chatScrollback"))
-                    $root.replitproto.ChatScrollback.encode(message.chatScrollback, writer.uint32(/* id 312, wireType 2 =*/2498).fork()).ldelim();
+                    $root.api.ChatScrollback.encode(message.chatScrollback, writer.uint32(/* id 312, wireType 2 =*/2498).fork()).ldelim();
                 if (message.ref != null && message.hasOwnProperty("ref"))
                     writer.uint32(/* id 1000, wireType 2 =*/8002).string(message.ref);
                 return writer;
             };
     
             /**
-             * Encodes the specified Command message, length delimited. Does not implicitly {@link replitproto.Command.verify|verify} messages.
+             * Encodes the specified Command message, length delimited. Does not implicitly {@link api.Command.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.Command
+             * @memberof api.Command
              * @static
-             * @param {replitproto.ICommand} message Command message or plain object to encode
+             * @param {api.ICommand} message Command message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -1062,18 +1062,18 @@
             /**
              * Decodes a Command message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.Command
+             * @memberof api.Command
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.Command} Command
+             * @returns {api.Command} Command
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             Command.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.Command();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Command();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -1084,31 +1084,31 @@
                         message.session = reader.int32();
                         break;
                     case 3:
-                        message.openChan = $root.replitproto.OpenChannel.decode(reader, reader.uint32());
+                        message.openChan = $root.api.OpenChannel.decode(reader, reader.uint32());
                         break;
                     case 4:
-                        message.openChanRes = $root.replitproto.OpenChannelRes.decode(reader, reader.uint32());
+                        message.openChanRes = $root.api.OpenChannelRes.decode(reader, reader.uint32());
                         break;
                     case 5:
-                        message.closeChan = $root.replitproto.CloseChannel.decode(reader, reader.uint32());
+                        message.closeChan = $root.api.CloseChannel.decode(reader, reader.uint32());
                         break;
                     case 6:
-                        message.closeChanRes = $root.replitproto.CloseChannelRes.decode(reader, reader.uint32());
+                        message.closeChanRes = $root.api.CloseChannelRes.decode(reader, reader.uint32());
                         break;
                     case 9:
-                        message.containerState = $root.replitproto.ContainerState.decode(reader, reader.uint32());
+                        message.containerState = $root.api.ContainerState.decode(reader, reader.uint32());
                         break;
                     case 10:
-                        message.portOpen = $root.replitproto.PortOpen.decode(reader, reader.uint32());
+                        message.portOpen = $root.api.PortOpen.decode(reader, reader.uint32());
                         break;
                     case 11:
-                        message.toast = $root.replitproto.Toast.decode(reader, reader.uint32());
+                        message.toast = $root.api.Toast.decode(reader, reader.uint32());
                         break;
                     case 16:
-                        message.runMain = $root.replitproto.RunMain.decode(reader, reader.uint32());
+                        message.runMain = $root.api.RunMain.decode(reader, reader.uint32());
                         break;
                     case 17:
-                        message.clear = $root.replitproto.Clear.decode(reader, reader.uint32());
+                        message.clear = $root.api.Clear.decode(reader, reader.uint32());
                         break;
                     case 20:
                         message["eval"] = reader.string();
@@ -1126,214 +1126,214 @@
                         message.error = reader.string();
                         break;
                     case 26:
-                        message.saneTerm = $root.replitproto.SaneTerm.decode(reader, reader.uint32());
+                        message.saneTerm = $root.api.SaneTerm.decode(reader, reader.uint32());
                         break;
                     case 27:
-                        message.resizeTerm = $root.replitproto.ResizeTerm.decode(reader, reader.uint32());
+                        message.resizeTerm = $root.api.ResizeTerm.decode(reader, reader.uint32());
                         break;
                     case 28:
                         message.state = reader.int32();
                         break;
                     case 30:
-                        message.ok = $root.replitproto.OK.decode(reader, reader.uint32());
+                        message.ok = $root.api.OK.decode(reader, reader.uint32());
                         break;
                     case 31:
-                        message.persist = $root.replitproto.File.decode(reader, reader.uint32());
+                        message.persist = $root.api.File.decode(reader, reader.uint32());
                         break;
                     case 32:
-                        message.write = $root.replitproto.File.decode(reader, reader.uint32());
+                        message.write = $root.api.File.decode(reader, reader.uint32());
                         break;
                     case 33:
-                        message.remove = $root.replitproto.File.decode(reader, reader.uint32());
+                        message.remove = $root.api.File.decode(reader, reader.uint32());
                         break;
                     case 34:
-                        message.move = $root.replitproto.Move.decode(reader, reader.uint32());
+                        message.move = $root.api.Move.decode(reader, reader.uint32());
                         break;
                     case 39:
-                        message.mkdir = $root.replitproto.File.decode(reader, reader.uint32());
+                        message.mkdir = $root.api.File.decode(reader, reader.uint32());
                         break;
                     case 35:
-                        message.read = $root.replitproto.File.decode(reader, reader.uint32());
+                        message.read = $root.api.File.decode(reader, reader.uint32());
                         break;
                     case 37:
-                        message.readdir = $root.replitproto.File.decode(reader, reader.uint32());
+                        message.readdir = $root.api.File.decode(reader, reader.uint32());
                         break;
                     case 38:
-                        message.files = $root.replitproto.Files.decode(reader, reader.uint32());
+                        message.files = $root.api.Files.decode(reader, reader.uint32());
                         break;
                     case 40:
-                        message.file = $root.replitproto.File.decode(reader, reader.uint32());
+                        message.file = $root.api.File.decode(reader, reader.uint32());
                         break;
                     case 42:
-                        message.checkChanges = $root.replitproto.CheckChanges.decode(reader, reader.uint32());
+                        message.checkChanges = $root.api.CheckChanges.decode(reader, reader.uint32());
                         break;
                     case 43:
-                        message.changedFiles = $root.replitproto.Files.decode(reader, reader.uint32());
+                        message.changedFiles = $root.api.Files.decode(reader, reader.uint32());
                         break;
                     case 44:
-                        message.lintResults = $root.replitproto.LintResults.decode(reader, reader.uint32());
+                        message.lintResults = $root.api.LintResults.decode(reader, reader.uint32());
                         break;
                     case 70:
-                        message.runContainedTest = $root.replitproto.ContainedTest.decode(reader, reader.uint32());
+                        message.runContainedTest = $root.api.ContainedTest.decode(reader, reader.uint32());
                         break;
                     case 71:
-                        message.testResult = $root.replitproto.TestResult.decode(reader, reader.uint32());
+                        message.testResult = $root.api.TestResult.decode(reader, reader.uint32());
                         break;
                     case 90:
                         message.debuggerStart = reader.string();
                         break;
                     case 91:
-                        message.debuggerStep = $root.replitproto.RunMain.decode(reader, reader.uint32());
+                        message.debuggerStep = $root.api.RunMain.decode(reader, reader.uint32());
                         break;
                     case 92:
-                        message.debuggerStatus = $root.replitproto.DebugStatus.decode(reader, reader.uint32());
+                        message.debuggerStatus = $root.api.DebugStatus.decode(reader, reader.uint32());
                         break;
                     case 100:
-                        message.ensurePackages = $root.replitproto.EnsurePackages.decode(reader, reader.uint32());
+                        message.ensurePackages = $root.api.EnsurePackages.decode(reader, reader.uint32());
                         break;
                     case 120:
-                        message.ping = $root.replitproto.Ping.decode(reader, reader.uint32());
+                        message.ping = $root.api.Ping.decode(reader, reader.uint32());
                         break;
                     case 121:
-                        message.pong = $root.replitproto.Pong.decode(reader, reader.uint32());
+                        message.pong = $root.api.Pong.decode(reader, reader.uint32());
                         break;
                     case 122:
-                        message.hello = $root.replitproto.Hello.decode(reader, reader.uint32());
+                        message.hello = $root.api.Hello.decode(reader, reader.uint32());
                         break;
                     case 123:
-                        message.goodbye = $root.replitproto.Goodbye.decode(reader, reader.uint32());
+                        message.goodbye = $root.api.Goodbye.decode(reader, reader.uint32());
                         break;
                     case 130:
-                        message.hint = $root.replitproto.Hint.decode(reader, reader.uint32());
+                        message.hint = $root.api.Hint.decode(reader, reader.uint32());
                         break;
                     case 150:
-                        message.connect = $root.replitproto.Connect.decode(reader, reader.uint32());
+                        message.connect = $root.api.Connect.decode(reader, reader.uint32());
                         break;
                     case 151:
-                        message.send = $root.replitproto.Send.decode(reader, reader.uint32());
+                        message.send = $root.api.Send.decode(reader, reader.uint32());
                         break;
                     case 152:
-                        message.recv = $root.replitproto.Recv.decode(reader, reader.uint32());
+                        message.recv = $root.api.Recv.decode(reader, reader.uint32());
                         break;
                     case 153:
-                        message.disconnect = $root.replitproto.Disconnect.decode(reader, reader.uint32());
+                        message.disconnect = $root.api.Disconnect.decode(reader, reader.uint32());
                         break;
                     case 200:
-                        message.fileAuthReq = $root.replitproto.FileAuthReq.decode(reader, reader.uint32());
+                        message.fileAuthReq = $root.api.FileAuthReq.decode(reader, reader.uint32());
                         break;
                     case 201:
-                        message.fileAuthRes = $root.replitproto.FileAuthRes.decode(reader, reader.uint32());
+                        message.fileAuthRes = $root.api.FileAuthRes.decode(reader, reader.uint32());
                         break;
                     case 202:
-                        message.mutliFileAuthRes = $root.replitproto.MultiFileAuthRes.decode(reader, reader.uint32());
+                        message.mutliFileAuthRes = $root.api.MultiFileAuthRes.decode(reader, reader.uint32());
                         break;
                     case 220:
-                        message.ot = $root.replitproto.OTPacket.decode(reader, reader.uint32());
+                        message.ot = $root.api.OTPacket.decode(reader, reader.uint32());
                         break;
                     case 221:
-                        message.otstatus = $root.replitproto.OTStatus.decode(reader, reader.uint32());
+                        message.otstatus = $root.api.OTStatus.decode(reader, reader.uint32());
                         break;
                     case 222:
-                        message.otLinkFile = $root.replitproto.OTLinkFile.decode(reader, reader.uint32());
+                        message.otLinkFile = $root.api.OTLinkFile.decode(reader, reader.uint32());
                         break;
                     case 223:
-                        message.otNewCursor = $root.replitproto.OTCursor.decode(reader, reader.uint32());
+                        message.otNewCursor = $root.api.OTCursor.decode(reader, reader.uint32());
                         break;
                     case 224:
-                        message.otDeleteCursor = $root.replitproto.OTCursor.decode(reader, reader.uint32());
+                        message.otDeleteCursor = $root.api.OTCursor.decode(reader, reader.uint32());
                         break;
                     case 251:
-                        message.flush = $root.replitproto.Flush.decode(reader, reader.uint32());
+                        message.flush = $root.api.Flush.decode(reader, reader.uint32());
                         break;
                     case 230:
-                        message.debug = $root.replitproto.Debug.decode(reader, reader.uint32());
+                        message.debug = $root.api.Debug.decode(reader, reader.uint32());
                         break;
                     case 231:
-                        message.startVCR = $root.replitproto.StartVCR.decode(reader, reader.uint32());
+                        message.startVCR = $root.api.StartVCR.decode(reader, reader.uint32());
                         break;
                     case 232:
-                        message.readVCR = $root.replitproto.ReadVCR.decode(reader, reader.uint32());
+                        message.readVCR = $root.api.ReadVCR.decode(reader, reader.uint32());
                         break;
                     case 233:
-                        message.VCRLog = $root.replitproto.VCRLog.decode(reader, reader.uint32());
+                        message.VCRLog = $root.api.VCRLog.decode(reader, reader.uint32());
                         break;
                     case 235:
-                        message.auth = $root.replitproto.Auth.decode(reader, reader.uint32());
+                        message.auth = $root.api.Auth.decode(reader, reader.uint32());
                         break;
                     case 240:
-                        message.execInfo = $root.replitproto.ExecInfo.decode(reader, reader.uint32());
+                        message.execInfo = $root.api.ExecInfo.decode(reader, reader.uint32());
                         break;
                     case 250:
-                        message.subscribe = $root.replitproto.File.decode(reader, reader.uint32());
+                        message.subscribe = $root.api.File.decode(reader, reader.uint32());
                         break;
                     case 252:
-                        message.eventCreated = $root.replitproto.File.decode(reader, reader.uint32());
+                        message.eventCreated = $root.api.File.decode(reader, reader.uint32());
                         break;
                     case 253:
-                        message.eventModified = $root.replitproto.File.decode(reader, reader.uint32());
+                        message.eventModified = $root.api.File.decode(reader, reader.uint32());
                         break;
                     case 254:
-                        message.eventDeleted = $root.replitproto.File.decode(reader, reader.uint32());
+                        message.eventDeleted = $root.api.File.decode(reader, reader.uint32());
                         break;
                     case 255:
-                        message.eventMoved = $root.replitproto.Move.decode(reader, reader.uint32());
+                        message.eventMoved = $root.api.Move.decode(reader, reader.uint32());
                         break;
                     case 256:
-                        message.subscribeFile = $root.replitproto.SubscribeFile.decode(reader, reader.uint32());
+                        message.subscribeFile = $root.api.SubscribeFile.decode(reader, reader.uint32());
                         break;
                     case 257:
-                        message.fileEvent = $root.replitproto.FileEvent.decode(reader, reader.uint32());
+                        message.fileEvent = $root.api.FileEvent.decode(reader, reader.uint32());
                         break;
                     case 260:
-                        message.roster = $root.replitproto.Roster.decode(reader, reader.uint32());
+                        message.roster = $root.api.Roster.decode(reader, reader.uint32());
                         break;
                     case 261:
-                        message.join = $root.replitproto.User.decode(reader, reader.uint32());
+                        message.join = $root.api.User.decode(reader, reader.uint32());
                         break;
                     case 262:
-                        message.part = $root.replitproto.User.decode(reader, reader.uint32());
+                        message.part = $root.api.User.decode(reader, reader.uint32());
                         break;
                     case 270:
-                        message.exec = $root.replitproto.Exec.decode(reader, reader.uint32());
+                        message.exec = $root.api.Exec.decode(reader, reader.uint32());
                         break;
                     case 280:
-                        message.packageSearch = $root.replitproto.PackageSearch.decode(reader, reader.uint32());
+                        message.packageSearch = $root.api.PackageSearch.decode(reader, reader.uint32());
                         break;
                     case 281:
-                        message.packageSearchResp = $root.replitproto.PackageSearchResp.decode(reader, reader.uint32());
+                        message.packageSearchResp = $root.api.PackageSearchResp.decode(reader, reader.uint32());
                         break;
                     case 282:
-                        message.packageInfo = $root.replitproto.PackageInfo.decode(reader, reader.uint32());
+                        message.packageInfo = $root.api.PackageInfo.decode(reader, reader.uint32());
                         break;
                     case 283:
-                        message.packageInfoResp = $root.replitproto.PackageInfoResp.decode(reader, reader.uint32());
+                        message.packageInfoResp = $root.api.PackageInfoResp.decode(reader, reader.uint32());
                         break;
                     case 284:
-                        message.packageAdd = $root.replitproto.PackageAdd.decode(reader, reader.uint32());
+                        message.packageAdd = $root.api.PackageAdd.decode(reader, reader.uint32());
                         break;
                     case 285:
-                        message.packageRemove = $root.replitproto.PackageRemove.decode(reader, reader.uint32());
+                        message.packageRemove = $root.api.PackageRemove.decode(reader, reader.uint32());
                         break;
                     case 286:
-                        message.packageInstall = $root.replitproto.PackageInstall.decode(reader, reader.uint32());
+                        message.packageInstall = $root.api.PackageInstall.decode(reader, reader.uint32());
                         break;
                     case 287:
-                        message.packageListSpecfile = $root.replitproto.PackageListSpecfile.decode(reader, reader.uint32());
+                        message.packageListSpecfile = $root.api.PackageListSpecfile.decode(reader, reader.uint32());
                         break;
                     case 288:
-                        message.packageListSpecfileResp = $root.replitproto.PackageListSpecfileResp.decode(reader, reader.uint32());
+                        message.packageListSpecfileResp = $root.api.PackageListSpecfileResp.decode(reader, reader.uint32());
                         break;
                     case 289:
-                        message.packageCacheSave = $root.replitproto.PackageCacheSave.decode(reader, reader.uint32());
+                        message.packageCacheSave = $root.api.PackageCacheSave.decode(reader, reader.uint32());
                         break;
                     case 310:
-                        message.chatMessage = $root.replitproto.ChatMessage.decode(reader, reader.uint32());
+                        message.chatMessage = $root.api.ChatMessage.decode(reader, reader.uint32());
                         break;
                     case 311:
-                        message.chatTyping = $root.replitproto.ChatTyping.decode(reader, reader.uint32());
+                        message.chatTyping = $root.api.ChatTyping.decode(reader, reader.uint32());
                         break;
                     case 312:
-                        message.chatScrollback = $root.replitproto.ChatScrollback.decode(reader, reader.uint32());
+                        message.chatScrollback = $root.api.ChatScrollback.decode(reader, reader.uint32());
                         break;
                     case 1000:
                         message.ref = reader.string();
@@ -1349,10 +1349,10 @@
             /**
              * Decodes a Command message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.Command
+             * @memberof api.Command
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.Command} Command
+             * @returns {api.Command} Command
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -1365,7 +1365,7 @@
             /**
              * Verifies a Command message.
              * @function verify
-             * @memberof replitproto.Command
+             * @memberof api.Command
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -1383,7 +1383,7 @@
                 if (message.openChan != null && message.hasOwnProperty("openChan")) {
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.OpenChannel.verify(message.openChan);
+                        var error = $root.api.OpenChannel.verify(message.openChan);
                         if (error)
                             return "openChan." + error;
                     }
@@ -1393,7 +1393,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.OpenChannelRes.verify(message.openChanRes);
+                        var error = $root.api.OpenChannelRes.verify(message.openChanRes);
                         if (error)
                             return "openChanRes." + error;
                     }
@@ -1403,7 +1403,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.CloseChannel.verify(message.closeChan);
+                        var error = $root.api.CloseChannel.verify(message.closeChan);
                         if (error)
                             return "closeChan." + error;
                     }
@@ -1413,7 +1413,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.CloseChannelRes.verify(message.closeChanRes);
+                        var error = $root.api.CloseChannelRes.verify(message.closeChanRes);
                         if (error)
                             return "closeChanRes." + error;
                     }
@@ -1423,7 +1423,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.ContainerState.verify(message.containerState);
+                        var error = $root.api.ContainerState.verify(message.containerState);
                         if (error)
                             return "containerState." + error;
                     }
@@ -1433,7 +1433,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.PortOpen.verify(message.portOpen);
+                        var error = $root.api.PortOpen.verify(message.portOpen);
                         if (error)
                             return "portOpen." + error;
                     }
@@ -1443,7 +1443,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.Toast.verify(message.toast);
+                        var error = $root.api.Toast.verify(message.toast);
                         if (error)
                             return "toast." + error;
                     }
@@ -1453,7 +1453,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.RunMain.verify(message.runMain);
+                        var error = $root.api.RunMain.verify(message.runMain);
                         if (error)
                             return "runMain." + error;
                     }
@@ -1463,7 +1463,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.Clear.verify(message.clear);
+                        var error = $root.api.Clear.verify(message.clear);
                         if (error)
                             return "clear." + error;
                     }
@@ -1508,7 +1508,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.SaneTerm.verify(message.saneTerm);
+                        var error = $root.api.SaneTerm.verify(message.saneTerm);
                         if (error)
                             return "saneTerm." + error;
                     }
@@ -1518,7 +1518,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.ResizeTerm.verify(message.resizeTerm);
+                        var error = $root.api.ResizeTerm.verify(message.resizeTerm);
                         if (error)
                             return "resizeTerm." + error;
                     }
@@ -1540,7 +1540,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.OK.verify(message.ok);
+                        var error = $root.api.OK.verify(message.ok);
                         if (error)
                             return "ok." + error;
                     }
@@ -1550,7 +1550,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.File.verify(message.persist);
+                        var error = $root.api.File.verify(message.persist);
                         if (error)
                             return "persist." + error;
                     }
@@ -1560,7 +1560,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.File.verify(message.write);
+                        var error = $root.api.File.verify(message.write);
                         if (error)
                             return "write." + error;
                     }
@@ -1570,7 +1570,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.File.verify(message.remove);
+                        var error = $root.api.File.verify(message.remove);
                         if (error)
                             return "remove." + error;
                     }
@@ -1580,7 +1580,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.Move.verify(message.move);
+                        var error = $root.api.Move.verify(message.move);
                         if (error)
                             return "move." + error;
                     }
@@ -1590,7 +1590,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.File.verify(message.mkdir);
+                        var error = $root.api.File.verify(message.mkdir);
                         if (error)
                             return "mkdir." + error;
                     }
@@ -1600,7 +1600,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.File.verify(message.read);
+                        var error = $root.api.File.verify(message.read);
                         if (error)
                             return "read." + error;
                     }
@@ -1610,7 +1610,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.File.verify(message.readdir);
+                        var error = $root.api.File.verify(message.readdir);
                         if (error)
                             return "readdir." + error;
                     }
@@ -1620,7 +1620,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.Files.verify(message.files);
+                        var error = $root.api.Files.verify(message.files);
                         if (error)
                             return "files." + error;
                     }
@@ -1630,7 +1630,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.File.verify(message.file);
+                        var error = $root.api.File.verify(message.file);
                         if (error)
                             return "file." + error;
                     }
@@ -1640,7 +1640,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.CheckChanges.verify(message.checkChanges);
+                        var error = $root.api.CheckChanges.verify(message.checkChanges);
                         if (error)
                             return "checkChanges." + error;
                     }
@@ -1650,7 +1650,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.Files.verify(message.changedFiles);
+                        var error = $root.api.Files.verify(message.changedFiles);
                         if (error)
                             return "changedFiles." + error;
                     }
@@ -1660,7 +1660,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.LintResults.verify(message.lintResults);
+                        var error = $root.api.LintResults.verify(message.lintResults);
                         if (error)
                             return "lintResults." + error;
                     }
@@ -1670,7 +1670,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.ContainedTest.verify(message.runContainedTest);
+                        var error = $root.api.ContainedTest.verify(message.runContainedTest);
                         if (error)
                             return "runContainedTest." + error;
                     }
@@ -1680,7 +1680,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.TestResult.verify(message.testResult);
+                        var error = $root.api.TestResult.verify(message.testResult);
                         if (error)
                             return "testResult." + error;
                     }
@@ -1697,7 +1697,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.RunMain.verify(message.debuggerStep);
+                        var error = $root.api.RunMain.verify(message.debuggerStep);
                         if (error)
                             return "debuggerStep." + error;
                     }
@@ -1707,7 +1707,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.DebugStatus.verify(message.debuggerStatus);
+                        var error = $root.api.DebugStatus.verify(message.debuggerStatus);
                         if (error)
                             return "debuggerStatus." + error;
                     }
@@ -1717,7 +1717,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.EnsurePackages.verify(message.ensurePackages);
+                        var error = $root.api.EnsurePackages.verify(message.ensurePackages);
                         if (error)
                             return "ensurePackages." + error;
                     }
@@ -1727,7 +1727,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.Ping.verify(message.ping);
+                        var error = $root.api.Ping.verify(message.ping);
                         if (error)
                             return "ping." + error;
                     }
@@ -1737,7 +1737,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.Pong.verify(message.pong);
+                        var error = $root.api.Pong.verify(message.pong);
                         if (error)
                             return "pong." + error;
                     }
@@ -1747,7 +1747,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.Hello.verify(message.hello);
+                        var error = $root.api.Hello.verify(message.hello);
                         if (error)
                             return "hello." + error;
                     }
@@ -1757,7 +1757,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.Goodbye.verify(message.goodbye);
+                        var error = $root.api.Goodbye.verify(message.goodbye);
                         if (error)
                             return "goodbye." + error;
                     }
@@ -1767,7 +1767,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.Hint.verify(message.hint);
+                        var error = $root.api.Hint.verify(message.hint);
                         if (error)
                             return "hint." + error;
                     }
@@ -1777,7 +1777,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.Connect.verify(message.connect);
+                        var error = $root.api.Connect.verify(message.connect);
                         if (error)
                             return "connect." + error;
                     }
@@ -1787,7 +1787,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.Send.verify(message.send);
+                        var error = $root.api.Send.verify(message.send);
                         if (error)
                             return "send." + error;
                     }
@@ -1797,7 +1797,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.Recv.verify(message.recv);
+                        var error = $root.api.Recv.verify(message.recv);
                         if (error)
                             return "recv." + error;
                     }
@@ -1807,7 +1807,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.Disconnect.verify(message.disconnect);
+                        var error = $root.api.Disconnect.verify(message.disconnect);
                         if (error)
                             return "disconnect." + error;
                     }
@@ -1817,7 +1817,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.FileAuthReq.verify(message.fileAuthReq);
+                        var error = $root.api.FileAuthReq.verify(message.fileAuthReq);
                         if (error)
                             return "fileAuthReq." + error;
                     }
@@ -1827,7 +1827,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.FileAuthRes.verify(message.fileAuthRes);
+                        var error = $root.api.FileAuthRes.verify(message.fileAuthRes);
                         if (error)
                             return "fileAuthRes." + error;
                     }
@@ -1837,7 +1837,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.MultiFileAuthRes.verify(message.mutliFileAuthRes);
+                        var error = $root.api.MultiFileAuthRes.verify(message.mutliFileAuthRes);
                         if (error)
                             return "mutliFileAuthRes." + error;
                     }
@@ -1847,7 +1847,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.OTPacket.verify(message.ot);
+                        var error = $root.api.OTPacket.verify(message.ot);
                         if (error)
                             return "ot." + error;
                     }
@@ -1857,7 +1857,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.OTStatus.verify(message.otstatus);
+                        var error = $root.api.OTStatus.verify(message.otstatus);
                         if (error)
                             return "otstatus." + error;
                     }
@@ -1867,7 +1867,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.OTLinkFile.verify(message.otLinkFile);
+                        var error = $root.api.OTLinkFile.verify(message.otLinkFile);
                         if (error)
                             return "otLinkFile." + error;
                     }
@@ -1877,7 +1877,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.OTCursor.verify(message.otNewCursor);
+                        var error = $root.api.OTCursor.verify(message.otNewCursor);
                         if (error)
                             return "otNewCursor." + error;
                     }
@@ -1887,7 +1887,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.OTCursor.verify(message.otDeleteCursor);
+                        var error = $root.api.OTCursor.verify(message.otDeleteCursor);
                         if (error)
                             return "otDeleteCursor." + error;
                     }
@@ -1897,7 +1897,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.Flush.verify(message.flush);
+                        var error = $root.api.Flush.verify(message.flush);
                         if (error)
                             return "flush." + error;
                     }
@@ -1907,7 +1907,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.Debug.verify(message.debug);
+                        var error = $root.api.Debug.verify(message.debug);
                         if (error)
                             return "debug." + error;
                     }
@@ -1917,7 +1917,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.StartVCR.verify(message.startVCR);
+                        var error = $root.api.StartVCR.verify(message.startVCR);
                         if (error)
                             return "startVCR." + error;
                     }
@@ -1927,7 +1927,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.ReadVCR.verify(message.readVCR);
+                        var error = $root.api.ReadVCR.verify(message.readVCR);
                         if (error)
                             return "readVCR." + error;
                     }
@@ -1937,7 +1937,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.VCRLog.verify(message.VCRLog);
+                        var error = $root.api.VCRLog.verify(message.VCRLog);
                         if (error)
                             return "VCRLog." + error;
                     }
@@ -1947,7 +1947,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.Auth.verify(message.auth);
+                        var error = $root.api.Auth.verify(message.auth);
                         if (error)
                             return "auth." + error;
                     }
@@ -1957,7 +1957,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.ExecInfo.verify(message.execInfo);
+                        var error = $root.api.ExecInfo.verify(message.execInfo);
                         if (error)
                             return "execInfo." + error;
                     }
@@ -1967,7 +1967,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.File.verify(message.subscribe);
+                        var error = $root.api.File.verify(message.subscribe);
                         if (error)
                             return "subscribe." + error;
                     }
@@ -1977,7 +1977,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.File.verify(message.eventCreated);
+                        var error = $root.api.File.verify(message.eventCreated);
                         if (error)
                             return "eventCreated." + error;
                     }
@@ -1987,7 +1987,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.File.verify(message.eventModified);
+                        var error = $root.api.File.verify(message.eventModified);
                         if (error)
                             return "eventModified." + error;
                     }
@@ -1997,7 +1997,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.File.verify(message.eventDeleted);
+                        var error = $root.api.File.verify(message.eventDeleted);
                         if (error)
                             return "eventDeleted." + error;
                     }
@@ -2007,7 +2007,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.Move.verify(message.eventMoved);
+                        var error = $root.api.Move.verify(message.eventMoved);
                         if (error)
                             return "eventMoved." + error;
                     }
@@ -2017,7 +2017,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.SubscribeFile.verify(message.subscribeFile);
+                        var error = $root.api.SubscribeFile.verify(message.subscribeFile);
                         if (error)
                             return "subscribeFile." + error;
                     }
@@ -2027,7 +2027,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.FileEvent.verify(message.fileEvent);
+                        var error = $root.api.FileEvent.verify(message.fileEvent);
                         if (error)
                             return "fileEvent." + error;
                     }
@@ -2037,7 +2037,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.Roster.verify(message.roster);
+                        var error = $root.api.Roster.verify(message.roster);
                         if (error)
                             return "roster." + error;
                     }
@@ -2047,7 +2047,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.User.verify(message.join);
+                        var error = $root.api.User.verify(message.join);
                         if (error)
                             return "join." + error;
                     }
@@ -2057,7 +2057,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.User.verify(message.part);
+                        var error = $root.api.User.verify(message.part);
                         if (error)
                             return "part." + error;
                     }
@@ -2067,7 +2067,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.Exec.verify(message.exec);
+                        var error = $root.api.Exec.verify(message.exec);
                         if (error)
                             return "exec." + error;
                     }
@@ -2077,7 +2077,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.PackageSearch.verify(message.packageSearch);
+                        var error = $root.api.PackageSearch.verify(message.packageSearch);
                         if (error)
                             return "packageSearch." + error;
                     }
@@ -2087,7 +2087,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.PackageSearchResp.verify(message.packageSearchResp);
+                        var error = $root.api.PackageSearchResp.verify(message.packageSearchResp);
                         if (error)
                             return "packageSearchResp." + error;
                     }
@@ -2097,7 +2097,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.PackageInfo.verify(message.packageInfo);
+                        var error = $root.api.PackageInfo.verify(message.packageInfo);
                         if (error)
                             return "packageInfo." + error;
                     }
@@ -2107,7 +2107,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.PackageInfoResp.verify(message.packageInfoResp);
+                        var error = $root.api.PackageInfoResp.verify(message.packageInfoResp);
                         if (error)
                             return "packageInfoResp." + error;
                     }
@@ -2117,7 +2117,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.PackageAdd.verify(message.packageAdd);
+                        var error = $root.api.PackageAdd.verify(message.packageAdd);
                         if (error)
                             return "packageAdd." + error;
                     }
@@ -2127,7 +2127,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.PackageRemove.verify(message.packageRemove);
+                        var error = $root.api.PackageRemove.verify(message.packageRemove);
                         if (error)
                             return "packageRemove." + error;
                     }
@@ -2137,7 +2137,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.PackageInstall.verify(message.packageInstall);
+                        var error = $root.api.PackageInstall.verify(message.packageInstall);
                         if (error)
                             return "packageInstall." + error;
                     }
@@ -2147,7 +2147,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.PackageListSpecfile.verify(message.packageListSpecfile);
+                        var error = $root.api.PackageListSpecfile.verify(message.packageListSpecfile);
                         if (error)
                             return "packageListSpecfile." + error;
                     }
@@ -2157,7 +2157,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.PackageListSpecfileResp.verify(message.packageListSpecfileResp);
+                        var error = $root.api.PackageListSpecfileResp.verify(message.packageListSpecfileResp);
                         if (error)
                             return "packageListSpecfileResp." + error;
                     }
@@ -2167,7 +2167,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.PackageCacheSave.verify(message.packageCacheSave);
+                        var error = $root.api.PackageCacheSave.verify(message.packageCacheSave);
                         if (error)
                             return "packageCacheSave." + error;
                     }
@@ -2177,7 +2177,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.ChatMessage.verify(message.chatMessage);
+                        var error = $root.api.ChatMessage.verify(message.chatMessage);
                         if (error)
                             return "chatMessage." + error;
                     }
@@ -2187,7 +2187,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.ChatTyping.verify(message.chatTyping);
+                        var error = $root.api.ChatTyping.verify(message.chatTyping);
                         if (error)
                             return "chatTyping." + error;
                     }
@@ -2197,7 +2197,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.replitproto.ChatScrollback.verify(message.chatScrollback);
+                        var error = $root.api.ChatScrollback.verify(message.chatScrollback);
                         if (error)
                             return "chatScrollback." + error;
                     }
@@ -2211,63 +2211,63 @@
             /**
              * Creates a Command message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.Command
+             * @memberof api.Command
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.Command} Command
+             * @returns {api.Command} Command
              */
             Command.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.Command)
+                if (object instanceof $root.api.Command)
                     return object;
-                var message = new $root.replitproto.Command();
+                var message = new $root.api.Command();
                 if (object.channel != null)
                     message.channel = object.channel | 0;
                 if (object.session != null)
                     message.session = object.session | 0;
                 if (object.openChan != null) {
                     if (typeof object.openChan !== "object")
-                        throw TypeError(".replitproto.Command.openChan: object expected");
-                    message.openChan = $root.replitproto.OpenChannel.fromObject(object.openChan);
+                        throw TypeError(".api.Command.openChan: object expected");
+                    message.openChan = $root.api.OpenChannel.fromObject(object.openChan);
                 }
                 if (object.openChanRes != null) {
                     if (typeof object.openChanRes !== "object")
-                        throw TypeError(".replitproto.Command.openChanRes: object expected");
-                    message.openChanRes = $root.replitproto.OpenChannelRes.fromObject(object.openChanRes);
+                        throw TypeError(".api.Command.openChanRes: object expected");
+                    message.openChanRes = $root.api.OpenChannelRes.fromObject(object.openChanRes);
                 }
                 if (object.closeChan != null) {
                     if (typeof object.closeChan !== "object")
-                        throw TypeError(".replitproto.Command.closeChan: object expected");
-                    message.closeChan = $root.replitproto.CloseChannel.fromObject(object.closeChan);
+                        throw TypeError(".api.Command.closeChan: object expected");
+                    message.closeChan = $root.api.CloseChannel.fromObject(object.closeChan);
                 }
                 if (object.closeChanRes != null) {
                     if (typeof object.closeChanRes !== "object")
-                        throw TypeError(".replitproto.Command.closeChanRes: object expected");
-                    message.closeChanRes = $root.replitproto.CloseChannelRes.fromObject(object.closeChanRes);
+                        throw TypeError(".api.Command.closeChanRes: object expected");
+                    message.closeChanRes = $root.api.CloseChannelRes.fromObject(object.closeChanRes);
                 }
                 if (object.containerState != null) {
                     if (typeof object.containerState !== "object")
-                        throw TypeError(".replitproto.Command.containerState: object expected");
-                    message.containerState = $root.replitproto.ContainerState.fromObject(object.containerState);
+                        throw TypeError(".api.Command.containerState: object expected");
+                    message.containerState = $root.api.ContainerState.fromObject(object.containerState);
                 }
                 if (object.portOpen != null) {
                     if (typeof object.portOpen !== "object")
-                        throw TypeError(".replitproto.Command.portOpen: object expected");
-                    message.portOpen = $root.replitproto.PortOpen.fromObject(object.portOpen);
+                        throw TypeError(".api.Command.portOpen: object expected");
+                    message.portOpen = $root.api.PortOpen.fromObject(object.portOpen);
                 }
                 if (object.toast != null) {
                     if (typeof object.toast !== "object")
-                        throw TypeError(".replitproto.Command.toast: object expected");
-                    message.toast = $root.replitproto.Toast.fromObject(object.toast);
+                        throw TypeError(".api.Command.toast: object expected");
+                    message.toast = $root.api.Toast.fromObject(object.toast);
                 }
                 if (object.runMain != null) {
                     if (typeof object.runMain !== "object")
-                        throw TypeError(".replitproto.Command.runMain: object expected");
-                    message.runMain = $root.replitproto.RunMain.fromObject(object.runMain);
+                        throw TypeError(".api.Command.runMain: object expected");
+                    message.runMain = $root.api.RunMain.fromObject(object.runMain);
                 }
                 if (object.clear != null) {
                     if (typeof object.clear !== "object")
-                        throw TypeError(".replitproto.Command.clear: object expected");
-                    message.clear = $root.replitproto.Clear.fromObject(object.clear);
+                        throw TypeError(".api.Command.clear: object expected");
+                    message.clear = $root.api.Clear.fromObject(object.clear);
                 }
                 if (object["eval"] != null)
                     message["eval"] = String(object["eval"]);
@@ -2281,13 +2281,13 @@
                     message.error = String(object.error);
                 if (object.saneTerm != null) {
                     if (typeof object.saneTerm !== "object")
-                        throw TypeError(".replitproto.Command.saneTerm: object expected");
-                    message.saneTerm = $root.replitproto.SaneTerm.fromObject(object.saneTerm);
+                        throw TypeError(".api.Command.saneTerm: object expected");
+                    message.saneTerm = $root.api.SaneTerm.fromObject(object.saneTerm);
                 }
                 if (object.resizeTerm != null) {
                     if (typeof object.resizeTerm !== "object")
-                        throw TypeError(".replitproto.Command.resizeTerm: object expected");
-                    message.resizeTerm = $root.replitproto.ResizeTerm.fromObject(object.resizeTerm);
+                        throw TypeError(".api.Command.resizeTerm: object expected");
+                    message.resizeTerm = $root.api.ResizeTerm.fromObject(object.resizeTerm);
                 }
                 switch (object.state) {
                 case "Stopped":
@@ -2301,335 +2301,335 @@
                 }
                 if (object.ok != null) {
                     if (typeof object.ok !== "object")
-                        throw TypeError(".replitproto.Command.ok: object expected");
-                    message.ok = $root.replitproto.OK.fromObject(object.ok);
+                        throw TypeError(".api.Command.ok: object expected");
+                    message.ok = $root.api.OK.fromObject(object.ok);
                 }
                 if (object.persist != null) {
                     if (typeof object.persist !== "object")
-                        throw TypeError(".replitproto.Command.persist: object expected");
-                    message.persist = $root.replitproto.File.fromObject(object.persist);
+                        throw TypeError(".api.Command.persist: object expected");
+                    message.persist = $root.api.File.fromObject(object.persist);
                 }
                 if (object.write != null) {
                     if (typeof object.write !== "object")
-                        throw TypeError(".replitproto.Command.write: object expected");
-                    message.write = $root.replitproto.File.fromObject(object.write);
+                        throw TypeError(".api.Command.write: object expected");
+                    message.write = $root.api.File.fromObject(object.write);
                 }
                 if (object.remove != null) {
                     if (typeof object.remove !== "object")
-                        throw TypeError(".replitproto.Command.remove: object expected");
-                    message.remove = $root.replitproto.File.fromObject(object.remove);
+                        throw TypeError(".api.Command.remove: object expected");
+                    message.remove = $root.api.File.fromObject(object.remove);
                 }
                 if (object.move != null) {
                     if (typeof object.move !== "object")
-                        throw TypeError(".replitproto.Command.move: object expected");
-                    message.move = $root.replitproto.Move.fromObject(object.move);
+                        throw TypeError(".api.Command.move: object expected");
+                    message.move = $root.api.Move.fromObject(object.move);
                 }
                 if (object.mkdir != null) {
                     if (typeof object.mkdir !== "object")
-                        throw TypeError(".replitproto.Command.mkdir: object expected");
-                    message.mkdir = $root.replitproto.File.fromObject(object.mkdir);
+                        throw TypeError(".api.Command.mkdir: object expected");
+                    message.mkdir = $root.api.File.fromObject(object.mkdir);
                 }
                 if (object.read != null) {
                     if (typeof object.read !== "object")
-                        throw TypeError(".replitproto.Command.read: object expected");
-                    message.read = $root.replitproto.File.fromObject(object.read);
+                        throw TypeError(".api.Command.read: object expected");
+                    message.read = $root.api.File.fromObject(object.read);
                 }
                 if (object.readdir != null) {
                     if (typeof object.readdir !== "object")
-                        throw TypeError(".replitproto.Command.readdir: object expected");
-                    message.readdir = $root.replitproto.File.fromObject(object.readdir);
+                        throw TypeError(".api.Command.readdir: object expected");
+                    message.readdir = $root.api.File.fromObject(object.readdir);
                 }
                 if (object.files != null) {
                     if (typeof object.files !== "object")
-                        throw TypeError(".replitproto.Command.files: object expected");
-                    message.files = $root.replitproto.Files.fromObject(object.files);
+                        throw TypeError(".api.Command.files: object expected");
+                    message.files = $root.api.Files.fromObject(object.files);
                 }
                 if (object.file != null) {
                     if (typeof object.file !== "object")
-                        throw TypeError(".replitproto.Command.file: object expected");
-                    message.file = $root.replitproto.File.fromObject(object.file);
+                        throw TypeError(".api.Command.file: object expected");
+                    message.file = $root.api.File.fromObject(object.file);
                 }
                 if (object.checkChanges != null) {
                     if (typeof object.checkChanges !== "object")
-                        throw TypeError(".replitproto.Command.checkChanges: object expected");
-                    message.checkChanges = $root.replitproto.CheckChanges.fromObject(object.checkChanges);
+                        throw TypeError(".api.Command.checkChanges: object expected");
+                    message.checkChanges = $root.api.CheckChanges.fromObject(object.checkChanges);
                 }
                 if (object.changedFiles != null) {
                     if (typeof object.changedFiles !== "object")
-                        throw TypeError(".replitproto.Command.changedFiles: object expected");
-                    message.changedFiles = $root.replitproto.Files.fromObject(object.changedFiles);
+                        throw TypeError(".api.Command.changedFiles: object expected");
+                    message.changedFiles = $root.api.Files.fromObject(object.changedFiles);
                 }
                 if (object.lintResults != null) {
                     if (typeof object.lintResults !== "object")
-                        throw TypeError(".replitproto.Command.lintResults: object expected");
-                    message.lintResults = $root.replitproto.LintResults.fromObject(object.lintResults);
+                        throw TypeError(".api.Command.lintResults: object expected");
+                    message.lintResults = $root.api.LintResults.fromObject(object.lintResults);
                 }
                 if (object.runContainedTest != null) {
                     if (typeof object.runContainedTest !== "object")
-                        throw TypeError(".replitproto.Command.runContainedTest: object expected");
-                    message.runContainedTest = $root.replitproto.ContainedTest.fromObject(object.runContainedTest);
+                        throw TypeError(".api.Command.runContainedTest: object expected");
+                    message.runContainedTest = $root.api.ContainedTest.fromObject(object.runContainedTest);
                 }
                 if (object.testResult != null) {
                     if (typeof object.testResult !== "object")
-                        throw TypeError(".replitproto.Command.testResult: object expected");
-                    message.testResult = $root.replitproto.TestResult.fromObject(object.testResult);
+                        throw TypeError(".api.Command.testResult: object expected");
+                    message.testResult = $root.api.TestResult.fromObject(object.testResult);
                 }
                 if (object.debuggerStart != null)
                     message.debuggerStart = String(object.debuggerStart);
                 if (object.debuggerStep != null) {
                     if (typeof object.debuggerStep !== "object")
-                        throw TypeError(".replitproto.Command.debuggerStep: object expected");
-                    message.debuggerStep = $root.replitproto.RunMain.fromObject(object.debuggerStep);
+                        throw TypeError(".api.Command.debuggerStep: object expected");
+                    message.debuggerStep = $root.api.RunMain.fromObject(object.debuggerStep);
                 }
                 if (object.debuggerStatus != null) {
                     if (typeof object.debuggerStatus !== "object")
-                        throw TypeError(".replitproto.Command.debuggerStatus: object expected");
-                    message.debuggerStatus = $root.replitproto.DebugStatus.fromObject(object.debuggerStatus);
+                        throw TypeError(".api.Command.debuggerStatus: object expected");
+                    message.debuggerStatus = $root.api.DebugStatus.fromObject(object.debuggerStatus);
                 }
                 if (object.ensurePackages != null) {
                     if (typeof object.ensurePackages !== "object")
-                        throw TypeError(".replitproto.Command.ensurePackages: object expected");
-                    message.ensurePackages = $root.replitproto.EnsurePackages.fromObject(object.ensurePackages);
+                        throw TypeError(".api.Command.ensurePackages: object expected");
+                    message.ensurePackages = $root.api.EnsurePackages.fromObject(object.ensurePackages);
                 }
                 if (object.ping != null) {
                     if (typeof object.ping !== "object")
-                        throw TypeError(".replitproto.Command.ping: object expected");
-                    message.ping = $root.replitproto.Ping.fromObject(object.ping);
+                        throw TypeError(".api.Command.ping: object expected");
+                    message.ping = $root.api.Ping.fromObject(object.ping);
                 }
                 if (object.pong != null) {
                     if (typeof object.pong !== "object")
-                        throw TypeError(".replitproto.Command.pong: object expected");
-                    message.pong = $root.replitproto.Pong.fromObject(object.pong);
+                        throw TypeError(".api.Command.pong: object expected");
+                    message.pong = $root.api.Pong.fromObject(object.pong);
                 }
                 if (object.hello != null) {
                     if (typeof object.hello !== "object")
-                        throw TypeError(".replitproto.Command.hello: object expected");
-                    message.hello = $root.replitproto.Hello.fromObject(object.hello);
+                        throw TypeError(".api.Command.hello: object expected");
+                    message.hello = $root.api.Hello.fromObject(object.hello);
                 }
                 if (object.goodbye != null) {
                     if (typeof object.goodbye !== "object")
-                        throw TypeError(".replitproto.Command.goodbye: object expected");
-                    message.goodbye = $root.replitproto.Goodbye.fromObject(object.goodbye);
+                        throw TypeError(".api.Command.goodbye: object expected");
+                    message.goodbye = $root.api.Goodbye.fromObject(object.goodbye);
                 }
                 if (object.hint != null) {
                     if (typeof object.hint !== "object")
-                        throw TypeError(".replitproto.Command.hint: object expected");
-                    message.hint = $root.replitproto.Hint.fromObject(object.hint);
+                        throw TypeError(".api.Command.hint: object expected");
+                    message.hint = $root.api.Hint.fromObject(object.hint);
                 }
                 if (object.connect != null) {
                     if (typeof object.connect !== "object")
-                        throw TypeError(".replitproto.Command.connect: object expected");
-                    message.connect = $root.replitproto.Connect.fromObject(object.connect);
+                        throw TypeError(".api.Command.connect: object expected");
+                    message.connect = $root.api.Connect.fromObject(object.connect);
                 }
                 if (object.send != null) {
                     if (typeof object.send !== "object")
-                        throw TypeError(".replitproto.Command.send: object expected");
-                    message.send = $root.replitproto.Send.fromObject(object.send);
+                        throw TypeError(".api.Command.send: object expected");
+                    message.send = $root.api.Send.fromObject(object.send);
                 }
                 if (object.recv != null) {
                     if (typeof object.recv !== "object")
-                        throw TypeError(".replitproto.Command.recv: object expected");
-                    message.recv = $root.replitproto.Recv.fromObject(object.recv);
+                        throw TypeError(".api.Command.recv: object expected");
+                    message.recv = $root.api.Recv.fromObject(object.recv);
                 }
                 if (object.disconnect != null) {
                     if (typeof object.disconnect !== "object")
-                        throw TypeError(".replitproto.Command.disconnect: object expected");
-                    message.disconnect = $root.replitproto.Disconnect.fromObject(object.disconnect);
+                        throw TypeError(".api.Command.disconnect: object expected");
+                    message.disconnect = $root.api.Disconnect.fromObject(object.disconnect);
                 }
                 if (object.fileAuthReq != null) {
                     if (typeof object.fileAuthReq !== "object")
-                        throw TypeError(".replitproto.Command.fileAuthReq: object expected");
-                    message.fileAuthReq = $root.replitproto.FileAuthReq.fromObject(object.fileAuthReq);
+                        throw TypeError(".api.Command.fileAuthReq: object expected");
+                    message.fileAuthReq = $root.api.FileAuthReq.fromObject(object.fileAuthReq);
                 }
                 if (object.fileAuthRes != null) {
                     if (typeof object.fileAuthRes !== "object")
-                        throw TypeError(".replitproto.Command.fileAuthRes: object expected");
-                    message.fileAuthRes = $root.replitproto.FileAuthRes.fromObject(object.fileAuthRes);
+                        throw TypeError(".api.Command.fileAuthRes: object expected");
+                    message.fileAuthRes = $root.api.FileAuthRes.fromObject(object.fileAuthRes);
                 }
                 if (object.mutliFileAuthRes != null) {
                     if (typeof object.mutliFileAuthRes !== "object")
-                        throw TypeError(".replitproto.Command.mutliFileAuthRes: object expected");
-                    message.mutliFileAuthRes = $root.replitproto.MultiFileAuthRes.fromObject(object.mutliFileAuthRes);
+                        throw TypeError(".api.Command.mutliFileAuthRes: object expected");
+                    message.mutliFileAuthRes = $root.api.MultiFileAuthRes.fromObject(object.mutliFileAuthRes);
                 }
                 if (object.ot != null) {
                     if (typeof object.ot !== "object")
-                        throw TypeError(".replitproto.Command.ot: object expected");
-                    message.ot = $root.replitproto.OTPacket.fromObject(object.ot);
+                        throw TypeError(".api.Command.ot: object expected");
+                    message.ot = $root.api.OTPacket.fromObject(object.ot);
                 }
                 if (object.otstatus != null) {
                     if (typeof object.otstatus !== "object")
-                        throw TypeError(".replitproto.Command.otstatus: object expected");
-                    message.otstatus = $root.replitproto.OTStatus.fromObject(object.otstatus);
+                        throw TypeError(".api.Command.otstatus: object expected");
+                    message.otstatus = $root.api.OTStatus.fromObject(object.otstatus);
                 }
                 if (object.otLinkFile != null) {
                     if (typeof object.otLinkFile !== "object")
-                        throw TypeError(".replitproto.Command.otLinkFile: object expected");
-                    message.otLinkFile = $root.replitproto.OTLinkFile.fromObject(object.otLinkFile);
+                        throw TypeError(".api.Command.otLinkFile: object expected");
+                    message.otLinkFile = $root.api.OTLinkFile.fromObject(object.otLinkFile);
                 }
                 if (object.otNewCursor != null) {
                     if (typeof object.otNewCursor !== "object")
-                        throw TypeError(".replitproto.Command.otNewCursor: object expected");
-                    message.otNewCursor = $root.replitproto.OTCursor.fromObject(object.otNewCursor);
+                        throw TypeError(".api.Command.otNewCursor: object expected");
+                    message.otNewCursor = $root.api.OTCursor.fromObject(object.otNewCursor);
                 }
                 if (object.otDeleteCursor != null) {
                     if (typeof object.otDeleteCursor !== "object")
-                        throw TypeError(".replitproto.Command.otDeleteCursor: object expected");
-                    message.otDeleteCursor = $root.replitproto.OTCursor.fromObject(object.otDeleteCursor);
+                        throw TypeError(".api.Command.otDeleteCursor: object expected");
+                    message.otDeleteCursor = $root.api.OTCursor.fromObject(object.otDeleteCursor);
                 }
                 if (object.flush != null) {
                     if (typeof object.flush !== "object")
-                        throw TypeError(".replitproto.Command.flush: object expected");
-                    message.flush = $root.replitproto.Flush.fromObject(object.flush);
+                        throw TypeError(".api.Command.flush: object expected");
+                    message.flush = $root.api.Flush.fromObject(object.flush);
                 }
                 if (object.debug != null) {
                     if (typeof object.debug !== "object")
-                        throw TypeError(".replitproto.Command.debug: object expected");
-                    message.debug = $root.replitproto.Debug.fromObject(object.debug);
+                        throw TypeError(".api.Command.debug: object expected");
+                    message.debug = $root.api.Debug.fromObject(object.debug);
                 }
                 if (object.startVCR != null) {
                     if (typeof object.startVCR !== "object")
-                        throw TypeError(".replitproto.Command.startVCR: object expected");
-                    message.startVCR = $root.replitproto.StartVCR.fromObject(object.startVCR);
+                        throw TypeError(".api.Command.startVCR: object expected");
+                    message.startVCR = $root.api.StartVCR.fromObject(object.startVCR);
                 }
                 if (object.readVCR != null) {
                     if (typeof object.readVCR !== "object")
-                        throw TypeError(".replitproto.Command.readVCR: object expected");
-                    message.readVCR = $root.replitproto.ReadVCR.fromObject(object.readVCR);
+                        throw TypeError(".api.Command.readVCR: object expected");
+                    message.readVCR = $root.api.ReadVCR.fromObject(object.readVCR);
                 }
                 if (object.VCRLog != null) {
                     if (typeof object.VCRLog !== "object")
-                        throw TypeError(".replitproto.Command.VCRLog: object expected");
-                    message.VCRLog = $root.replitproto.VCRLog.fromObject(object.VCRLog);
+                        throw TypeError(".api.Command.VCRLog: object expected");
+                    message.VCRLog = $root.api.VCRLog.fromObject(object.VCRLog);
                 }
                 if (object.auth != null) {
                     if (typeof object.auth !== "object")
-                        throw TypeError(".replitproto.Command.auth: object expected");
-                    message.auth = $root.replitproto.Auth.fromObject(object.auth);
+                        throw TypeError(".api.Command.auth: object expected");
+                    message.auth = $root.api.Auth.fromObject(object.auth);
                 }
                 if (object.execInfo != null) {
                     if (typeof object.execInfo !== "object")
-                        throw TypeError(".replitproto.Command.execInfo: object expected");
-                    message.execInfo = $root.replitproto.ExecInfo.fromObject(object.execInfo);
+                        throw TypeError(".api.Command.execInfo: object expected");
+                    message.execInfo = $root.api.ExecInfo.fromObject(object.execInfo);
                 }
                 if (object.subscribe != null) {
                     if (typeof object.subscribe !== "object")
-                        throw TypeError(".replitproto.Command.subscribe: object expected");
-                    message.subscribe = $root.replitproto.File.fromObject(object.subscribe);
+                        throw TypeError(".api.Command.subscribe: object expected");
+                    message.subscribe = $root.api.File.fromObject(object.subscribe);
                 }
                 if (object.eventCreated != null) {
                     if (typeof object.eventCreated !== "object")
-                        throw TypeError(".replitproto.Command.eventCreated: object expected");
-                    message.eventCreated = $root.replitproto.File.fromObject(object.eventCreated);
+                        throw TypeError(".api.Command.eventCreated: object expected");
+                    message.eventCreated = $root.api.File.fromObject(object.eventCreated);
                 }
                 if (object.eventModified != null) {
                     if (typeof object.eventModified !== "object")
-                        throw TypeError(".replitproto.Command.eventModified: object expected");
-                    message.eventModified = $root.replitproto.File.fromObject(object.eventModified);
+                        throw TypeError(".api.Command.eventModified: object expected");
+                    message.eventModified = $root.api.File.fromObject(object.eventModified);
                 }
                 if (object.eventDeleted != null) {
                     if (typeof object.eventDeleted !== "object")
-                        throw TypeError(".replitproto.Command.eventDeleted: object expected");
-                    message.eventDeleted = $root.replitproto.File.fromObject(object.eventDeleted);
+                        throw TypeError(".api.Command.eventDeleted: object expected");
+                    message.eventDeleted = $root.api.File.fromObject(object.eventDeleted);
                 }
                 if (object.eventMoved != null) {
                     if (typeof object.eventMoved !== "object")
-                        throw TypeError(".replitproto.Command.eventMoved: object expected");
-                    message.eventMoved = $root.replitproto.Move.fromObject(object.eventMoved);
+                        throw TypeError(".api.Command.eventMoved: object expected");
+                    message.eventMoved = $root.api.Move.fromObject(object.eventMoved);
                 }
                 if (object.subscribeFile != null) {
                     if (typeof object.subscribeFile !== "object")
-                        throw TypeError(".replitproto.Command.subscribeFile: object expected");
-                    message.subscribeFile = $root.replitproto.SubscribeFile.fromObject(object.subscribeFile);
+                        throw TypeError(".api.Command.subscribeFile: object expected");
+                    message.subscribeFile = $root.api.SubscribeFile.fromObject(object.subscribeFile);
                 }
                 if (object.fileEvent != null) {
                     if (typeof object.fileEvent !== "object")
-                        throw TypeError(".replitproto.Command.fileEvent: object expected");
-                    message.fileEvent = $root.replitproto.FileEvent.fromObject(object.fileEvent);
+                        throw TypeError(".api.Command.fileEvent: object expected");
+                    message.fileEvent = $root.api.FileEvent.fromObject(object.fileEvent);
                 }
                 if (object.roster != null) {
                     if (typeof object.roster !== "object")
-                        throw TypeError(".replitproto.Command.roster: object expected");
-                    message.roster = $root.replitproto.Roster.fromObject(object.roster);
+                        throw TypeError(".api.Command.roster: object expected");
+                    message.roster = $root.api.Roster.fromObject(object.roster);
                 }
                 if (object.join != null) {
                     if (typeof object.join !== "object")
-                        throw TypeError(".replitproto.Command.join: object expected");
-                    message.join = $root.replitproto.User.fromObject(object.join);
+                        throw TypeError(".api.Command.join: object expected");
+                    message.join = $root.api.User.fromObject(object.join);
                 }
                 if (object.part != null) {
                     if (typeof object.part !== "object")
-                        throw TypeError(".replitproto.Command.part: object expected");
-                    message.part = $root.replitproto.User.fromObject(object.part);
+                        throw TypeError(".api.Command.part: object expected");
+                    message.part = $root.api.User.fromObject(object.part);
                 }
                 if (object.exec != null) {
                     if (typeof object.exec !== "object")
-                        throw TypeError(".replitproto.Command.exec: object expected");
-                    message.exec = $root.replitproto.Exec.fromObject(object.exec);
+                        throw TypeError(".api.Command.exec: object expected");
+                    message.exec = $root.api.Exec.fromObject(object.exec);
                 }
                 if (object.packageSearch != null) {
                     if (typeof object.packageSearch !== "object")
-                        throw TypeError(".replitproto.Command.packageSearch: object expected");
-                    message.packageSearch = $root.replitproto.PackageSearch.fromObject(object.packageSearch);
+                        throw TypeError(".api.Command.packageSearch: object expected");
+                    message.packageSearch = $root.api.PackageSearch.fromObject(object.packageSearch);
                 }
                 if (object.packageSearchResp != null) {
                     if (typeof object.packageSearchResp !== "object")
-                        throw TypeError(".replitproto.Command.packageSearchResp: object expected");
-                    message.packageSearchResp = $root.replitproto.PackageSearchResp.fromObject(object.packageSearchResp);
+                        throw TypeError(".api.Command.packageSearchResp: object expected");
+                    message.packageSearchResp = $root.api.PackageSearchResp.fromObject(object.packageSearchResp);
                 }
                 if (object.packageInfo != null) {
                     if (typeof object.packageInfo !== "object")
-                        throw TypeError(".replitproto.Command.packageInfo: object expected");
-                    message.packageInfo = $root.replitproto.PackageInfo.fromObject(object.packageInfo);
+                        throw TypeError(".api.Command.packageInfo: object expected");
+                    message.packageInfo = $root.api.PackageInfo.fromObject(object.packageInfo);
                 }
                 if (object.packageInfoResp != null) {
                     if (typeof object.packageInfoResp !== "object")
-                        throw TypeError(".replitproto.Command.packageInfoResp: object expected");
-                    message.packageInfoResp = $root.replitproto.PackageInfoResp.fromObject(object.packageInfoResp);
+                        throw TypeError(".api.Command.packageInfoResp: object expected");
+                    message.packageInfoResp = $root.api.PackageInfoResp.fromObject(object.packageInfoResp);
                 }
                 if (object.packageAdd != null) {
                     if (typeof object.packageAdd !== "object")
-                        throw TypeError(".replitproto.Command.packageAdd: object expected");
-                    message.packageAdd = $root.replitproto.PackageAdd.fromObject(object.packageAdd);
+                        throw TypeError(".api.Command.packageAdd: object expected");
+                    message.packageAdd = $root.api.PackageAdd.fromObject(object.packageAdd);
                 }
                 if (object.packageRemove != null) {
                     if (typeof object.packageRemove !== "object")
-                        throw TypeError(".replitproto.Command.packageRemove: object expected");
-                    message.packageRemove = $root.replitproto.PackageRemove.fromObject(object.packageRemove);
+                        throw TypeError(".api.Command.packageRemove: object expected");
+                    message.packageRemove = $root.api.PackageRemove.fromObject(object.packageRemove);
                 }
                 if (object.packageInstall != null) {
                     if (typeof object.packageInstall !== "object")
-                        throw TypeError(".replitproto.Command.packageInstall: object expected");
-                    message.packageInstall = $root.replitproto.PackageInstall.fromObject(object.packageInstall);
+                        throw TypeError(".api.Command.packageInstall: object expected");
+                    message.packageInstall = $root.api.PackageInstall.fromObject(object.packageInstall);
                 }
                 if (object.packageListSpecfile != null) {
                     if (typeof object.packageListSpecfile !== "object")
-                        throw TypeError(".replitproto.Command.packageListSpecfile: object expected");
-                    message.packageListSpecfile = $root.replitproto.PackageListSpecfile.fromObject(object.packageListSpecfile);
+                        throw TypeError(".api.Command.packageListSpecfile: object expected");
+                    message.packageListSpecfile = $root.api.PackageListSpecfile.fromObject(object.packageListSpecfile);
                 }
                 if (object.packageListSpecfileResp != null) {
                     if (typeof object.packageListSpecfileResp !== "object")
-                        throw TypeError(".replitproto.Command.packageListSpecfileResp: object expected");
-                    message.packageListSpecfileResp = $root.replitproto.PackageListSpecfileResp.fromObject(object.packageListSpecfileResp);
+                        throw TypeError(".api.Command.packageListSpecfileResp: object expected");
+                    message.packageListSpecfileResp = $root.api.PackageListSpecfileResp.fromObject(object.packageListSpecfileResp);
                 }
                 if (object.packageCacheSave != null) {
                     if (typeof object.packageCacheSave !== "object")
-                        throw TypeError(".replitproto.Command.packageCacheSave: object expected");
-                    message.packageCacheSave = $root.replitproto.PackageCacheSave.fromObject(object.packageCacheSave);
+                        throw TypeError(".api.Command.packageCacheSave: object expected");
+                    message.packageCacheSave = $root.api.PackageCacheSave.fromObject(object.packageCacheSave);
                 }
                 if (object.chatMessage != null) {
                     if (typeof object.chatMessage !== "object")
-                        throw TypeError(".replitproto.Command.chatMessage: object expected");
-                    message.chatMessage = $root.replitproto.ChatMessage.fromObject(object.chatMessage);
+                        throw TypeError(".api.Command.chatMessage: object expected");
+                    message.chatMessage = $root.api.ChatMessage.fromObject(object.chatMessage);
                 }
                 if (object.chatTyping != null) {
                     if (typeof object.chatTyping !== "object")
-                        throw TypeError(".replitproto.Command.chatTyping: object expected");
-                    message.chatTyping = $root.replitproto.ChatTyping.fromObject(object.chatTyping);
+                        throw TypeError(".api.Command.chatTyping: object expected");
+                    message.chatTyping = $root.api.ChatTyping.fromObject(object.chatTyping);
                 }
                 if (object.chatScrollback != null) {
                     if (typeof object.chatScrollback !== "object")
-                        throw TypeError(".replitproto.Command.chatScrollback: object expected");
-                    message.chatScrollback = $root.replitproto.ChatScrollback.fromObject(object.chatScrollback);
+                        throw TypeError(".api.Command.chatScrollback: object expected");
+                    message.chatScrollback = $root.api.ChatScrollback.fromObject(object.chatScrollback);
                 }
                 if (object.ref != null)
                     message.ref = String(object.ref);
@@ -2639,9 +2639,9 @@
             /**
              * Creates a plain object from a Command message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.Command
+             * @memberof api.Command
              * @static
-             * @param {replitproto.Command} message Command
+             * @param {api.Command} message Command
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -2659,47 +2659,47 @@
                 if (message.session != null && message.hasOwnProperty("session"))
                     object.session = message.session;
                 if (message.openChan != null && message.hasOwnProperty("openChan")) {
-                    object.openChan = $root.replitproto.OpenChannel.toObject(message.openChan, options);
+                    object.openChan = $root.api.OpenChannel.toObject(message.openChan, options);
                     if (options.oneofs)
                         object.body = "openChan";
                 }
                 if (message.openChanRes != null && message.hasOwnProperty("openChanRes")) {
-                    object.openChanRes = $root.replitproto.OpenChannelRes.toObject(message.openChanRes, options);
+                    object.openChanRes = $root.api.OpenChannelRes.toObject(message.openChanRes, options);
                     if (options.oneofs)
                         object.body = "openChanRes";
                 }
                 if (message.closeChan != null && message.hasOwnProperty("closeChan")) {
-                    object.closeChan = $root.replitproto.CloseChannel.toObject(message.closeChan, options);
+                    object.closeChan = $root.api.CloseChannel.toObject(message.closeChan, options);
                     if (options.oneofs)
                         object.body = "closeChan";
                 }
                 if (message.closeChanRes != null && message.hasOwnProperty("closeChanRes")) {
-                    object.closeChanRes = $root.replitproto.CloseChannelRes.toObject(message.closeChanRes, options);
+                    object.closeChanRes = $root.api.CloseChannelRes.toObject(message.closeChanRes, options);
                     if (options.oneofs)
                         object.body = "closeChanRes";
                 }
                 if (message.containerState != null && message.hasOwnProperty("containerState")) {
-                    object.containerState = $root.replitproto.ContainerState.toObject(message.containerState, options);
+                    object.containerState = $root.api.ContainerState.toObject(message.containerState, options);
                     if (options.oneofs)
                         object.body = "containerState";
                 }
                 if (message.portOpen != null && message.hasOwnProperty("portOpen")) {
-                    object.portOpen = $root.replitproto.PortOpen.toObject(message.portOpen, options);
+                    object.portOpen = $root.api.PortOpen.toObject(message.portOpen, options);
                     if (options.oneofs)
                         object.body = "portOpen";
                 }
                 if (message.toast != null && message.hasOwnProperty("toast")) {
-                    object.toast = $root.replitproto.Toast.toObject(message.toast, options);
+                    object.toast = $root.api.Toast.toObject(message.toast, options);
                     if (options.oneofs)
                         object.body = "toast";
                 }
                 if (message.runMain != null && message.hasOwnProperty("runMain")) {
-                    object.runMain = $root.replitproto.RunMain.toObject(message.runMain, options);
+                    object.runMain = $root.api.RunMain.toObject(message.runMain, options);
                     if (options.oneofs)
                         object.body = "runMain";
                 }
                 if (message.clear != null && message.hasOwnProperty("clear")) {
-                    object.clear = $root.replitproto.Clear.toObject(message.clear, options);
+                    object.clear = $root.api.Clear.toObject(message.clear, options);
                     if (options.oneofs)
                         object.body = "clear";
                 }
@@ -2729,92 +2729,92 @@
                         object.body = "error";
                 }
                 if (message.saneTerm != null && message.hasOwnProperty("saneTerm")) {
-                    object.saneTerm = $root.replitproto.SaneTerm.toObject(message.saneTerm, options);
+                    object.saneTerm = $root.api.SaneTerm.toObject(message.saneTerm, options);
                     if (options.oneofs)
                         object.body = "saneTerm";
                 }
                 if (message.resizeTerm != null && message.hasOwnProperty("resizeTerm")) {
-                    object.resizeTerm = $root.replitproto.ResizeTerm.toObject(message.resizeTerm, options);
+                    object.resizeTerm = $root.api.ResizeTerm.toObject(message.resizeTerm, options);
                     if (options.oneofs)
                         object.body = "resizeTerm";
                 }
                 if (message.state != null && message.hasOwnProperty("state")) {
-                    object.state = options.enums === String ? $root.replitproto.State[message.state] : message.state;
+                    object.state = options.enums === String ? $root.api.State[message.state] : message.state;
                     if (options.oneofs)
                         object.body = "state";
                 }
                 if (message.ok != null && message.hasOwnProperty("ok")) {
-                    object.ok = $root.replitproto.OK.toObject(message.ok, options);
+                    object.ok = $root.api.OK.toObject(message.ok, options);
                     if (options.oneofs)
                         object.body = "ok";
                 }
                 if (message.persist != null && message.hasOwnProperty("persist")) {
-                    object.persist = $root.replitproto.File.toObject(message.persist, options);
+                    object.persist = $root.api.File.toObject(message.persist, options);
                     if (options.oneofs)
                         object.body = "persist";
                 }
                 if (message.write != null && message.hasOwnProperty("write")) {
-                    object.write = $root.replitproto.File.toObject(message.write, options);
+                    object.write = $root.api.File.toObject(message.write, options);
                     if (options.oneofs)
                         object.body = "write";
                 }
                 if (message.remove != null && message.hasOwnProperty("remove")) {
-                    object.remove = $root.replitproto.File.toObject(message.remove, options);
+                    object.remove = $root.api.File.toObject(message.remove, options);
                     if (options.oneofs)
                         object.body = "remove";
                 }
                 if (message.move != null && message.hasOwnProperty("move")) {
-                    object.move = $root.replitproto.Move.toObject(message.move, options);
+                    object.move = $root.api.Move.toObject(message.move, options);
                     if (options.oneofs)
                         object.body = "move";
                 }
                 if (message.read != null && message.hasOwnProperty("read")) {
-                    object.read = $root.replitproto.File.toObject(message.read, options);
+                    object.read = $root.api.File.toObject(message.read, options);
                     if (options.oneofs)
                         object.body = "read";
                 }
                 if (message.readdir != null && message.hasOwnProperty("readdir")) {
-                    object.readdir = $root.replitproto.File.toObject(message.readdir, options);
+                    object.readdir = $root.api.File.toObject(message.readdir, options);
                     if (options.oneofs)
                         object.body = "readdir";
                 }
                 if (message.files != null && message.hasOwnProperty("files")) {
-                    object.files = $root.replitproto.Files.toObject(message.files, options);
+                    object.files = $root.api.Files.toObject(message.files, options);
                     if (options.oneofs)
                         object.body = "files";
                 }
                 if (message.mkdir != null && message.hasOwnProperty("mkdir")) {
-                    object.mkdir = $root.replitproto.File.toObject(message.mkdir, options);
+                    object.mkdir = $root.api.File.toObject(message.mkdir, options);
                     if (options.oneofs)
                         object.body = "mkdir";
                 }
                 if (message.file != null && message.hasOwnProperty("file")) {
-                    object.file = $root.replitproto.File.toObject(message.file, options);
+                    object.file = $root.api.File.toObject(message.file, options);
                     if (options.oneofs)
                         object.body = "file";
                 }
                 if (message.checkChanges != null && message.hasOwnProperty("checkChanges")) {
-                    object.checkChanges = $root.replitproto.CheckChanges.toObject(message.checkChanges, options);
+                    object.checkChanges = $root.api.CheckChanges.toObject(message.checkChanges, options);
                     if (options.oneofs)
                         object.body = "checkChanges";
                 }
                 if (message.changedFiles != null && message.hasOwnProperty("changedFiles")) {
-                    object.changedFiles = $root.replitproto.Files.toObject(message.changedFiles, options);
+                    object.changedFiles = $root.api.Files.toObject(message.changedFiles, options);
                     if (options.oneofs)
                         object.body = "changedFiles";
                 }
                 if (message.lintResults != null && message.hasOwnProperty("lintResults")) {
-                    object.lintResults = $root.replitproto.LintResults.toObject(message.lintResults, options);
+                    object.lintResults = $root.api.LintResults.toObject(message.lintResults, options);
                     if (options.oneofs)
                         object.body = "lintResults";
                 }
                 if (message.runContainedTest != null && message.hasOwnProperty("runContainedTest")) {
-                    object.runContainedTest = $root.replitproto.ContainedTest.toObject(message.runContainedTest, options);
+                    object.runContainedTest = $root.api.ContainedTest.toObject(message.runContainedTest, options);
                     if (options.oneofs)
                         object.body = "runContainedTest";
                 }
                 if (message.testResult != null && message.hasOwnProperty("testResult")) {
-                    object.testResult = $root.replitproto.TestResult.toObject(message.testResult, options);
+                    object.testResult = $root.api.TestResult.toObject(message.testResult, options);
                     if (options.oneofs)
                         object.body = "testResult";
                 }
@@ -2824,257 +2824,257 @@
                         object.body = "debuggerStart";
                 }
                 if (message.debuggerStep != null && message.hasOwnProperty("debuggerStep")) {
-                    object.debuggerStep = $root.replitproto.RunMain.toObject(message.debuggerStep, options);
+                    object.debuggerStep = $root.api.RunMain.toObject(message.debuggerStep, options);
                     if (options.oneofs)
                         object.body = "debuggerStep";
                 }
                 if (message.debuggerStatus != null && message.hasOwnProperty("debuggerStatus")) {
-                    object.debuggerStatus = $root.replitproto.DebugStatus.toObject(message.debuggerStatus, options);
+                    object.debuggerStatus = $root.api.DebugStatus.toObject(message.debuggerStatus, options);
                     if (options.oneofs)
                         object.body = "debuggerStatus";
                 }
                 if (message.ensurePackages != null && message.hasOwnProperty("ensurePackages")) {
-                    object.ensurePackages = $root.replitproto.EnsurePackages.toObject(message.ensurePackages, options);
+                    object.ensurePackages = $root.api.EnsurePackages.toObject(message.ensurePackages, options);
                     if (options.oneofs)
                         object.body = "ensurePackages";
                 }
                 if (message.ping != null && message.hasOwnProperty("ping")) {
-                    object.ping = $root.replitproto.Ping.toObject(message.ping, options);
+                    object.ping = $root.api.Ping.toObject(message.ping, options);
                     if (options.oneofs)
                         object.body = "ping";
                 }
                 if (message.pong != null && message.hasOwnProperty("pong")) {
-                    object.pong = $root.replitproto.Pong.toObject(message.pong, options);
+                    object.pong = $root.api.Pong.toObject(message.pong, options);
                     if (options.oneofs)
                         object.body = "pong";
                 }
                 if (message.hello != null && message.hasOwnProperty("hello")) {
-                    object.hello = $root.replitproto.Hello.toObject(message.hello, options);
+                    object.hello = $root.api.Hello.toObject(message.hello, options);
                     if (options.oneofs)
                         object.body = "hello";
                 }
                 if (message.goodbye != null && message.hasOwnProperty("goodbye")) {
-                    object.goodbye = $root.replitproto.Goodbye.toObject(message.goodbye, options);
+                    object.goodbye = $root.api.Goodbye.toObject(message.goodbye, options);
                     if (options.oneofs)
                         object.body = "goodbye";
                 }
                 if (message.hint != null && message.hasOwnProperty("hint")) {
-                    object.hint = $root.replitproto.Hint.toObject(message.hint, options);
+                    object.hint = $root.api.Hint.toObject(message.hint, options);
                     if (options.oneofs)
                         object.body = "hint";
                 }
                 if (message.connect != null && message.hasOwnProperty("connect")) {
-                    object.connect = $root.replitproto.Connect.toObject(message.connect, options);
+                    object.connect = $root.api.Connect.toObject(message.connect, options);
                     if (options.oneofs)
                         object.body = "connect";
                 }
                 if (message.send != null && message.hasOwnProperty("send")) {
-                    object.send = $root.replitproto.Send.toObject(message.send, options);
+                    object.send = $root.api.Send.toObject(message.send, options);
                     if (options.oneofs)
                         object.body = "send";
                 }
                 if (message.recv != null && message.hasOwnProperty("recv")) {
-                    object.recv = $root.replitproto.Recv.toObject(message.recv, options);
+                    object.recv = $root.api.Recv.toObject(message.recv, options);
                     if (options.oneofs)
                         object.body = "recv";
                 }
                 if (message.disconnect != null && message.hasOwnProperty("disconnect")) {
-                    object.disconnect = $root.replitproto.Disconnect.toObject(message.disconnect, options);
+                    object.disconnect = $root.api.Disconnect.toObject(message.disconnect, options);
                     if (options.oneofs)
                         object.body = "disconnect";
                 }
                 if (message.fileAuthReq != null && message.hasOwnProperty("fileAuthReq")) {
-                    object.fileAuthReq = $root.replitproto.FileAuthReq.toObject(message.fileAuthReq, options);
+                    object.fileAuthReq = $root.api.FileAuthReq.toObject(message.fileAuthReq, options);
                     if (options.oneofs)
                         object.body = "fileAuthReq";
                 }
                 if (message.fileAuthRes != null && message.hasOwnProperty("fileAuthRes")) {
-                    object.fileAuthRes = $root.replitproto.FileAuthRes.toObject(message.fileAuthRes, options);
+                    object.fileAuthRes = $root.api.FileAuthRes.toObject(message.fileAuthRes, options);
                     if (options.oneofs)
                         object.body = "fileAuthRes";
                 }
                 if (message.mutliFileAuthRes != null && message.hasOwnProperty("mutliFileAuthRes")) {
-                    object.mutliFileAuthRes = $root.replitproto.MultiFileAuthRes.toObject(message.mutliFileAuthRes, options);
+                    object.mutliFileAuthRes = $root.api.MultiFileAuthRes.toObject(message.mutliFileAuthRes, options);
                     if (options.oneofs)
                         object.body = "mutliFileAuthRes";
                 }
                 if (message.ot != null && message.hasOwnProperty("ot")) {
-                    object.ot = $root.replitproto.OTPacket.toObject(message.ot, options);
+                    object.ot = $root.api.OTPacket.toObject(message.ot, options);
                     if (options.oneofs)
                         object.body = "ot";
                 }
                 if (message.otstatus != null && message.hasOwnProperty("otstatus")) {
-                    object.otstatus = $root.replitproto.OTStatus.toObject(message.otstatus, options);
+                    object.otstatus = $root.api.OTStatus.toObject(message.otstatus, options);
                     if (options.oneofs)
                         object.body = "otstatus";
                 }
                 if (message.otLinkFile != null && message.hasOwnProperty("otLinkFile")) {
-                    object.otLinkFile = $root.replitproto.OTLinkFile.toObject(message.otLinkFile, options);
+                    object.otLinkFile = $root.api.OTLinkFile.toObject(message.otLinkFile, options);
                     if (options.oneofs)
                         object.body = "otLinkFile";
                 }
                 if (message.otNewCursor != null && message.hasOwnProperty("otNewCursor")) {
-                    object.otNewCursor = $root.replitproto.OTCursor.toObject(message.otNewCursor, options);
+                    object.otNewCursor = $root.api.OTCursor.toObject(message.otNewCursor, options);
                     if (options.oneofs)
                         object.body = "otNewCursor";
                 }
                 if (message.otDeleteCursor != null && message.hasOwnProperty("otDeleteCursor")) {
-                    object.otDeleteCursor = $root.replitproto.OTCursor.toObject(message.otDeleteCursor, options);
+                    object.otDeleteCursor = $root.api.OTCursor.toObject(message.otDeleteCursor, options);
                     if (options.oneofs)
                         object.body = "otDeleteCursor";
                 }
                 if (message.debug != null && message.hasOwnProperty("debug")) {
-                    object.debug = $root.replitproto.Debug.toObject(message.debug, options);
+                    object.debug = $root.api.Debug.toObject(message.debug, options);
                     if (options.oneofs)
                         object.body = "debug";
                 }
                 if (message.startVCR != null && message.hasOwnProperty("startVCR")) {
-                    object.startVCR = $root.replitproto.StartVCR.toObject(message.startVCR, options);
+                    object.startVCR = $root.api.StartVCR.toObject(message.startVCR, options);
                     if (options.oneofs)
                         object.body = "startVCR";
                 }
                 if (message.readVCR != null && message.hasOwnProperty("readVCR")) {
-                    object.readVCR = $root.replitproto.ReadVCR.toObject(message.readVCR, options);
+                    object.readVCR = $root.api.ReadVCR.toObject(message.readVCR, options);
                     if (options.oneofs)
                         object.body = "readVCR";
                 }
                 if (message.VCRLog != null && message.hasOwnProperty("VCRLog")) {
-                    object.VCRLog = $root.replitproto.VCRLog.toObject(message.VCRLog, options);
+                    object.VCRLog = $root.api.VCRLog.toObject(message.VCRLog, options);
                     if (options.oneofs)
                         object.body = "VCRLog";
                 }
                 if (message.auth != null && message.hasOwnProperty("auth")) {
-                    object.auth = $root.replitproto.Auth.toObject(message.auth, options);
+                    object.auth = $root.api.Auth.toObject(message.auth, options);
                     if (options.oneofs)
                         object.body = "auth";
                 }
                 if (message.execInfo != null && message.hasOwnProperty("execInfo")) {
-                    object.execInfo = $root.replitproto.ExecInfo.toObject(message.execInfo, options);
+                    object.execInfo = $root.api.ExecInfo.toObject(message.execInfo, options);
                     if (options.oneofs)
                         object.body = "execInfo";
                 }
                 if (message.subscribe != null && message.hasOwnProperty("subscribe")) {
-                    object.subscribe = $root.replitproto.File.toObject(message.subscribe, options);
+                    object.subscribe = $root.api.File.toObject(message.subscribe, options);
                     if (options.oneofs)
                         object.body = "subscribe";
                 }
                 if (message.flush != null && message.hasOwnProperty("flush")) {
-                    object.flush = $root.replitproto.Flush.toObject(message.flush, options);
+                    object.flush = $root.api.Flush.toObject(message.flush, options);
                     if (options.oneofs)
                         object.body = "flush";
                 }
                 if (message.eventCreated != null && message.hasOwnProperty("eventCreated")) {
-                    object.eventCreated = $root.replitproto.File.toObject(message.eventCreated, options);
+                    object.eventCreated = $root.api.File.toObject(message.eventCreated, options);
                     if (options.oneofs)
                         object.body = "eventCreated";
                 }
                 if (message.eventModified != null && message.hasOwnProperty("eventModified")) {
-                    object.eventModified = $root.replitproto.File.toObject(message.eventModified, options);
+                    object.eventModified = $root.api.File.toObject(message.eventModified, options);
                     if (options.oneofs)
                         object.body = "eventModified";
                 }
                 if (message.eventDeleted != null && message.hasOwnProperty("eventDeleted")) {
-                    object.eventDeleted = $root.replitproto.File.toObject(message.eventDeleted, options);
+                    object.eventDeleted = $root.api.File.toObject(message.eventDeleted, options);
                     if (options.oneofs)
                         object.body = "eventDeleted";
                 }
                 if (message.eventMoved != null && message.hasOwnProperty("eventMoved")) {
-                    object.eventMoved = $root.replitproto.Move.toObject(message.eventMoved, options);
+                    object.eventMoved = $root.api.Move.toObject(message.eventMoved, options);
                     if (options.oneofs)
                         object.body = "eventMoved";
                 }
                 if (message.subscribeFile != null && message.hasOwnProperty("subscribeFile")) {
-                    object.subscribeFile = $root.replitproto.SubscribeFile.toObject(message.subscribeFile, options);
+                    object.subscribeFile = $root.api.SubscribeFile.toObject(message.subscribeFile, options);
                     if (options.oneofs)
                         object.body = "subscribeFile";
                 }
                 if (message.fileEvent != null && message.hasOwnProperty("fileEvent")) {
-                    object.fileEvent = $root.replitproto.FileEvent.toObject(message.fileEvent, options);
+                    object.fileEvent = $root.api.FileEvent.toObject(message.fileEvent, options);
                     if (options.oneofs)
                         object.body = "fileEvent";
                 }
                 if (message.roster != null && message.hasOwnProperty("roster")) {
-                    object.roster = $root.replitproto.Roster.toObject(message.roster, options);
+                    object.roster = $root.api.Roster.toObject(message.roster, options);
                     if (options.oneofs)
                         object.body = "roster";
                 }
                 if (message.join != null && message.hasOwnProperty("join")) {
-                    object.join = $root.replitproto.User.toObject(message.join, options);
+                    object.join = $root.api.User.toObject(message.join, options);
                     if (options.oneofs)
                         object.body = "join";
                 }
                 if (message.part != null && message.hasOwnProperty("part")) {
-                    object.part = $root.replitproto.User.toObject(message.part, options);
+                    object.part = $root.api.User.toObject(message.part, options);
                     if (options.oneofs)
                         object.body = "part";
                 }
                 if (message.exec != null && message.hasOwnProperty("exec")) {
-                    object.exec = $root.replitproto.Exec.toObject(message.exec, options);
+                    object.exec = $root.api.Exec.toObject(message.exec, options);
                     if (options.oneofs)
                         object.body = "exec";
                 }
                 if (message.packageSearch != null && message.hasOwnProperty("packageSearch")) {
-                    object.packageSearch = $root.replitproto.PackageSearch.toObject(message.packageSearch, options);
+                    object.packageSearch = $root.api.PackageSearch.toObject(message.packageSearch, options);
                     if (options.oneofs)
                         object.body = "packageSearch";
                 }
                 if (message.packageSearchResp != null && message.hasOwnProperty("packageSearchResp")) {
-                    object.packageSearchResp = $root.replitproto.PackageSearchResp.toObject(message.packageSearchResp, options);
+                    object.packageSearchResp = $root.api.PackageSearchResp.toObject(message.packageSearchResp, options);
                     if (options.oneofs)
                         object.body = "packageSearchResp";
                 }
                 if (message.packageInfo != null && message.hasOwnProperty("packageInfo")) {
-                    object.packageInfo = $root.replitproto.PackageInfo.toObject(message.packageInfo, options);
+                    object.packageInfo = $root.api.PackageInfo.toObject(message.packageInfo, options);
                     if (options.oneofs)
                         object.body = "packageInfo";
                 }
                 if (message.packageInfoResp != null && message.hasOwnProperty("packageInfoResp")) {
-                    object.packageInfoResp = $root.replitproto.PackageInfoResp.toObject(message.packageInfoResp, options);
+                    object.packageInfoResp = $root.api.PackageInfoResp.toObject(message.packageInfoResp, options);
                     if (options.oneofs)
                         object.body = "packageInfoResp";
                 }
                 if (message.packageAdd != null && message.hasOwnProperty("packageAdd")) {
-                    object.packageAdd = $root.replitproto.PackageAdd.toObject(message.packageAdd, options);
+                    object.packageAdd = $root.api.PackageAdd.toObject(message.packageAdd, options);
                     if (options.oneofs)
                         object.body = "packageAdd";
                 }
                 if (message.packageRemove != null && message.hasOwnProperty("packageRemove")) {
-                    object.packageRemove = $root.replitproto.PackageRemove.toObject(message.packageRemove, options);
+                    object.packageRemove = $root.api.PackageRemove.toObject(message.packageRemove, options);
                     if (options.oneofs)
                         object.body = "packageRemove";
                 }
                 if (message.packageInstall != null && message.hasOwnProperty("packageInstall")) {
-                    object.packageInstall = $root.replitproto.PackageInstall.toObject(message.packageInstall, options);
+                    object.packageInstall = $root.api.PackageInstall.toObject(message.packageInstall, options);
                     if (options.oneofs)
                         object.body = "packageInstall";
                 }
                 if (message.packageListSpecfile != null && message.hasOwnProperty("packageListSpecfile")) {
-                    object.packageListSpecfile = $root.replitproto.PackageListSpecfile.toObject(message.packageListSpecfile, options);
+                    object.packageListSpecfile = $root.api.PackageListSpecfile.toObject(message.packageListSpecfile, options);
                     if (options.oneofs)
                         object.body = "packageListSpecfile";
                 }
                 if (message.packageListSpecfileResp != null && message.hasOwnProperty("packageListSpecfileResp")) {
-                    object.packageListSpecfileResp = $root.replitproto.PackageListSpecfileResp.toObject(message.packageListSpecfileResp, options);
+                    object.packageListSpecfileResp = $root.api.PackageListSpecfileResp.toObject(message.packageListSpecfileResp, options);
                     if (options.oneofs)
                         object.body = "packageListSpecfileResp";
                 }
                 if (message.packageCacheSave != null && message.hasOwnProperty("packageCacheSave")) {
-                    object.packageCacheSave = $root.replitproto.PackageCacheSave.toObject(message.packageCacheSave, options);
+                    object.packageCacheSave = $root.api.PackageCacheSave.toObject(message.packageCacheSave, options);
                     if (options.oneofs)
                         object.body = "packageCacheSave";
                 }
                 if (message.chatMessage != null && message.hasOwnProperty("chatMessage")) {
-                    object.chatMessage = $root.replitproto.ChatMessage.toObject(message.chatMessage, options);
+                    object.chatMessage = $root.api.ChatMessage.toObject(message.chatMessage, options);
                     if (options.oneofs)
                         object.body = "chatMessage";
                 }
                 if (message.chatTyping != null && message.hasOwnProperty("chatTyping")) {
-                    object.chatTyping = $root.replitproto.ChatTyping.toObject(message.chatTyping, options);
+                    object.chatTyping = $root.api.ChatTyping.toObject(message.chatTyping, options);
                     if (options.oneofs)
                         object.body = "chatTyping";
                 }
                 if (message.chatScrollback != null && message.hasOwnProperty("chatScrollback")) {
-                    object.chatScrollback = $root.replitproto.ChatScrollback.toObject(message.chatScrollback, options);
+                    object.chatScrollback = $root.api.ChatScrollback.toObject(message.chatScrollback, options);
                     if (options.oneofs)
                         object.body = "chatScrollback";
                 }
@@ -3086,7 +3086,7 @@
             /**
              * Converts this Command to JSON.
              * @function toJSON
-             * @memberof replitproto.Command
+             * @memberof api.Command
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -3097,22 +3097,22 @@
             return Command;
         })();
     
-        replitproto.SubscribeFile = (function() {
+        api.SubscribeFile = (function() {
     
             /**
              * Properties of a SubscribeFile.
-             * @memberof replitproto
+             * @memberof api
              * @interface ISubscribeFile
-             * @property {Array.<replitproto.IFile>|null} [files] SubscribeFile files
+             * @property {Array.<api.IFile>|null} [files] SubscribeFile files
              */
     
             /**
              * Constructs a new SubscribeFile.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a SubscribeFile.
              * @implements ISubscribeFile
              * @constructor
-             * @param {replitproto.ISubscribeFile=} [properties] Properties to set
+             * @param {api.ISubscribeFile=} [properties] Properties to set
              */
             function SubscribeFile(properties) {
                 this.files = [];
@@ -3124,8 +3124,8 @@
     
             /**
              * SubscribeFile files.
-             * @member {Array.<replitproto.IFile>} files
-             * @memberof replitproto.SubscribeFile
+             * @member {Array.<api.IFile>} files
+             * @memberof api.SubscribeFile
              * @instance
              */
             SubscribeFile.prototype.files = $util.emptyArray;
@@ -3133,21 +3133,21 @@
             /**
              * Creates a new SubscribeFile instance using the specified properties.
              * @function create
-             * @memberof replitproto.SubscribeFile
+             * @memberof api.SubscribeFile
              * @static
-             * @param {replitproto.ISubscribeFile=} [properties] Properties to set
-             * @returns {replitproto.SubscribeFile} SubscribeFile instance
+             * @param {api.ISubscribeFile=} [properties] Properties to set
+             * @returns {api.SubscribeFile} SubscribeFile instance
              */
             SubscribeFile.create = function create(properties) {
                 return new SubscribeFile(properties);
             };
     
             /**
-             * Encodes the specified SubscribeFile message. Does not implicitly {@link replitproto.SubscribeFile.verify|verify} messages.
+             * Encodes the specified SubscribeFile message. Does not implicitly {@link api.SubscribeFile.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.SubscribeFile
+             * @memberof api.SubscribeFile
              * @static
-             * @param {replitproto.ISubscribeFile} message SubscribeFile message or plain object to encode
+             * @param {api.ISubscribeFile} message SubscribeFile message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -3156,16 +3156,16 @@
                     writer = $Writer.create();
                 if (message.files != null && message.files.length)
                     for (var i = 0; i < message.files.length; ++i)
-                        $root.replitproto.File.encode(message.files[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                        $root.api.File.encode(message.files[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
     
             /**
-             * Encodes the specified SubscribeFile message, length delimited. Does not implicitly {@link replitproto.SubscribeFile.verify|verify} messages.
+             * Encodes the specified SubscribeFile message, length delimited. Does not implicitly {@link api.SubscribeFile.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.SubscribeFile
+             * @memberof api.SubscribeFile
              * @static
-             * @param {replitproto.ISubscribeFile} message SubscribeFile message or plain object to encode
+             * @param {api.ISubscribeFile} message SubscribeFile message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -3176,25 +3176,25 @@
             /**
              * Decodes a SubscribeFile message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.SubscribeFile
+             * @memberof api.SubscribeFile
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.SubscribeFile} SubscribeFile
+             * @returns {api.SubscribeFile} SubscribeFile
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             SubscribeFile.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.SubscribeFile();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.SubscribeFile();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         if (!(message.files && message.files.length))
                             message.files = [];
-                        message.files.push($root.replitproto.File.decode(reader, reader.uint32()));
+                        message.files.push($root.api.File.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -3207,10 +3207,10 @@
             /**
              * Decodes a SubscribeFile message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.SubscribeFile
+             * @memberof api.SubscribeFile
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.SubscribeFile} SubscribeFile
+             * @returns {api.SubscribeFile} SubscribeFile
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -3223,7 +3223,7 @@
             /**
              * Verifies a SubscribeFile message.
              * @function verify
-             * @memberof replitproto.SubscribeFile
+             * @memberof api.SubscribeFile
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -3235,7 +3235,7 @@
                     if (!Array.isArray(message.files))
                         return "files: array expected";
                     for (var i = 0; i < message.files.length; ++i) {
-                        var error = $root.replitproto.File.verify(message.files[i]);
+                        var error = $root.api.File.verify(message.files[i]);
                         if (error)
                             return "files." + error;
                     }
@@ -3246,23 +3246,23 @@
             /**
              * Creates a SubscribeFile message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.SubscribeFile
+             * @memberof api.SubscribeFile
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.SubscribeFile} SubscribeFile
+             * @returns {api.SubscribeFile} SubscribeFile
              */
             SubscribeFile.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.SubscribeFile)
+                if (object instanceof $root.api.SubscribeFile)
                     return object;
-                var message = new $root.replitproto.SubscribeFile();
+                var message = new $root.api.SubscribeFile();
                 if (object.files) {
                     if (!Array.isArray(object.files))
-                        throw TypeError(".replitproto.SubscribeFile.files: array expected");
+                        throw TypeError(".api.SubscribeFile.files: array expected");
                     message.files = [];
                     for (var i = 0; i < object.files.length; ++i) {
                         if (typeof object.files[i] !== "object")
-                            throw TypeError(".replitproto.SubscribeFile.files: object expected");
-                        message.files[i] = $root.replitproto.File.fromObject(object.files[i]);
+                            throw TypeError(".api.SubscribeFile.files: object expected");
+                        message.files[i] = $root.api.File.fromObject(object.files[i]);
                     }
                 }
                 return message;
@@ -3271,9 +3271,9 @@
             /**
              * Creates a plain object from a SubscribeFile message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.SubscribeFile
+             * @memberof api.SubscribeFile
              * @static
-             * @param {replitproto.SubscribeFile} message SubscribeFile
+             * @param {api.SubscribeFile} message SubscribeFile
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -3286,7 +3286,7 @@
                 if (message.files && message.files.length) {
                     object.files = [];
                     for (var j = 0; j < message.files.length; ++j)
-                        object.files[j] = $root.replitproto.File.toObject(message.files[j], options);
+                        object.files[j] = $root.api.File.toObject(message.files[j], options);
                 }
                 return object;
             };
@@ -3294,7 +3294,7 @@
             /**
              * Converts this SubscribeFile to JSON.
              * @function toJSON
-             * @memberof replitproto.SubscribeFile
+             * @memberof api.SubscribeFile
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -3305,24 +3305,24 @@
             return SubscribeFile;
         })();
     
-        replitproto.FileEvent = (function() {
+        api.FileEvent = (function() {
     
             /**
              * Properties of a FileEvent.
-             * @memberof replitproto
+             * @memberof api
              * @interface IFileEvent
-             * @property {replitproto.IFile|null} [file] FileEvent file
-             * @property {replitproto.IFile|null} [dest] FileEvent dest
-             * @property {replitproto.FileEvent.Op|null} [op] FileEvent op
+             * @property {api.IFile|null} [file] FileEvent file
+             * @property {api.IFile|null} [dest] FileEvent dest
+             * @property {api.FileEvent.Op|null} [op] FileEvent op
              */
     
             /**
              * Constructs a new FileEvent.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a FileEvent.
              * @implements IFileEvent
              * @constructor
-             * @param {replitproto.IFileEvent=} [properties] Properties to set
+             * @param {api.IFileEvent=} [properties] Properties to set
              */
             function FileEvent(properties) {
                 if (properties)
@@ -3333,24 +3333,24 @@
     
             /**
              * FileEvent file.
-             * @member {replitproto.IFile|null|undefined} file
-             * @memberof replitproto.FileEvent
+             * @member {api.IFile|null|undefined} file
+             * @memberof api.FileEvent
              * @instance
              */
             FileEvent.prototype.file = null;
     
             /**
              * FileEvent dest.
-             * @member {replitproto.IFile|null|undefined} dest
-             * @memberof replitproto.FileEvent
+             * @member {api.IFile|null|undefined} dest
+             * @memberof api.FileEvent
              * @instance
              */
             FileEvent.prototype.dest = null;
     
             /**
              * FileEvent op.
-             * @member {replitproto.FileEvent.Op} op
-             * @memberof replitproto.FileEvent
+             * @member {api.FileEvent.Op} op
+             * @memberof api.FileEvent
              * @instance
              */
             FileEvent.prototype.op = 0;
@@ -3358,21 +3358,21 @@
             /**
              * Creates a new FileEvent instance using the specified properties.
              * @function create
-             * @memberof replitproto.FileEvent
+             * @memberof api.FileEvent
              * @static
-             * @param {replitproto.IFileEvent=} [properties] Properties to set
-             * @returns {replitproto.FileEvent} FileEvent instance
+             * @param {api.IFileEvent=} [properties] Properties to set
+             * @returns {api.FileEvent} FileEvent instance
              */
             FileEvent.create = function create(properties) {
                 return new FileEvent(properties);
             };
     
             /**
-             * Encodes the specified FileEvent message. Does not implicitly {@link replitproto.FileEvent.verify|verify} messages.
+             * Encodes the specified FileEvent message. Does not implicitly {@link api.FileEvent.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.FileEvent
+             * @memberof api.FileEvent
              * @static
-             * @param {replitproto.IFileEvent} message FileEvent message or plain object to encode
+             * @param {api.IFileEvent} message FileEvent message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -3380,20 +3380,20 @@
                 if (!writer)
                     writer = $Writer.create();
                 if (message.file != null && message.hasOwnProperty("file"))
-                    $root.replitproto.File.encode(message.file, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    $root.api.File.encode(message.file, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.op != null && message.hasOwnProperty("op"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int32(message.op);
                 if (message.dest != null && message.hasOwnProperty("dest"))
-                    $root.replitproto.File.encode(message.dest, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    $root.api.File.encode(message.dest, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 return writer;
             };
     
             /**
-             * Encodes the specified FileEvent message, length delimited. Does not implicitly {@link replitproto.FileEvent.verify|verify} messages.
+             * Encodes the specified FileEvent message, length delimited. Does not implicitly {@link api.FileEvent.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.FileEvent
+             * @memberof api.FileEvent
              * @static
-             * @param {replitproto.IFileEvent} message FileEvent message or plain object to encode
+             * @param {api.IFileEvent} message FileEvent message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -3404,26 +3404,26 @@
             /**
              * Decodes a FileEvent message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.FileEvent
+             * @memberof api.FileEvent
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.FileEvent} FileEvent
+             * @returns {api.FileEvent} FileEvent
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             FileEvent.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.FileEvent();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.FileEvent();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.file = $root.replitproto.File.decode(reader, reader.uint32());
+                        message.file = $root.api.File.decode(reader, reader.uint32());
                         break;
                     case 3:
-                        message.dest = $root.replitproto.File.decode(reader, reader.uint32());
+                        message.dest = $root.api.File.decode(reader, reader.uint32());
                         break;
                     case 2:
                         message.op = reader.int32();
@@ -3439,10 +3439,10 @@
             /**
              * Decodes a FileEvent message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.FileEvent
+             * @memberof api.FileEvent
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.FileEvent} FileEvent
+             * @returns {api.FileEvent} FileEvent
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -3455,7 +3455,7 @@
             /**
              * Verifies a FileEvent message.
              * @function verify
-             * @memberof replitproto.FileEvent
+             * @memberof api.FileEvent
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -3464,12 +3464,12 @@
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.file != null && message.hasOwnProperty("file")) {
-                    var error = $root.replitproto.File.verify(message.file);
+                    var error = $root.api.File.verify(message.file);
                     if (error)
                         return "file." + error;
                 }
                 if (message.dest != null && message.hasOwnProperty("dest")) {
-                    var error = $root.replitproto.File.verify(message.dest);
+                    var error = $root.api.File.verify(message.dest);
                     if (error)
                         return "dest." + error;
                 }
@@ -3489,24 +3489,24 @@
             /**
              * Creates a FileEvent message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.FileEvent
+             * @memberof api.FileEvent
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.FileEvent} FileEvent
+             * @returns {api.FileEvent} FileEvent
              */
             FileEvent.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.FileEvent)
+                if (object instanceof $root.api.FileEvent)
                     return object;
-                var message = new $root.replitproto.FileEvent();
+                var message = new $root.api.FileEvent();
                 if (object.file != null) {
                     if (typeof object.file !== "object")
-                        throw TypeError(".replitproto.FileEvent.file: object expected");
-                    message.file = $root.replitproto.File.fromObject(object.file);
+                        throw TypeError(".api.FileEvent.file: object expected");
+                    message.file = $root.api.File.fromObject(object.file);
                 }
                 if (object.dest != null) {
                     if (typeof object.dest !== "object")
-                        throw TypeError(".replitproto.FileEvent.dest: object expected");
-                    message.dest = $root.replitproto.File.fromObject(object.dest);
+                        throw TypeError(".api.FileEvent.dest: object expected");
+                    message.dest = $root.api.File.fromObject(object.dest);
                 }
                 switch (object.op) {
                 case "Create":
@@ -3532,9 +3532,9 @@
             /**
              * Creates a plain object from a FileEvent message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.FileEvent
+             * @memberof api.FileEvent
              * @static
-             * @param {replitproto.FileEvent} message FileEvent
+             * @param {api.FileEvent} message FileEvent
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -3548,18 +3548,18 @@
                     object.dest = null;
                 }
                 if (message.file != null && message.hasOwnProperty("file"))
-                    object.file = $root.replitproto.File.toObject(message.file, options);
+                    object.file = $root.api.File.toObject(message.file, options);
                 if (message.op != null && message.hasOwnProperty("op"))
-                    object.op = options.enums === String ? $root.replitproto.FileEvent.Op[message.op] : message.op;
+                    object.op = options.enums === String ? $root.api.FileEvent.Op[message.op] : message.op;
                 if (message.dest != null && message.hasOwnProperty("dest"))
-                    object.dest = $root.replitproto.File.toObject(message.dest, options);
+                    object.dest = $root.api.File.toObject(message.dest, options);
                 return object;
             };
     
             /**
              * Converts this FileEvent to JSON.
              * @function toJSON
-             * @memberof replitproto.FileEvent
+             * @memberof api.FileEvent
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -3569,7 +3569,7 @@
     
             /**
              * Op enum.
-             * @name replitproto.FileEvent.Op
+             * @name api.FileEvent.Op
              * @enum {string}
              * @property {number} Create=0 Create value
              * @property {number} Move=1 Move value
@@ -3588,21 +3588,21 @@
             return FileEvent;
         })();
     
-        replitproto.Flush = (function() {
+        api.Flush = (function() {
     
             /**
              * Properties of a Flush.
-             * @memberof replitproto
+             * @memberof api
              * @interface IFlush
              */
     
             /**
              * Constructs a new Flush.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a Flush.
              * @implements IFlush
              * @constructor
-             * @param {replitproto.IFlush=} [properties] Properties to set
+             * @param {api.IFlush=} [properties] Properties to set
              */
             function Flush(properties) {
                 if (properties)
@@ -3614,21 +3614,21 @@
             /**
              * Creates a new Flush instance using the specified properties.
              * @function create
-             * @memberof replitproto.Flush
+             * @memberof api.Flush
              * @static
-             * @param {replitproto.IFlush=} [properties] Properties to set
-             * @returns {replitproto.Flush} Flush instance
+             * @param {api.IFlush=} [properties] Properties to set
+             * @returns {api.Flush} Flush instance
              */
             Flush.create = function create(properties) {
                 return new Flush(properties);
             };
     
             /**
-             * Encodes the specified Flush message. Does not implicitly {@link replitproto.Flush.verify|verify} messages.
+             * Encodes the specified Flush message. Does not implicitly {@link api.Flush.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.Flush
+             * @memberof api.Flush
              * @static
-             * @param {replitproto.IFlush} message Flush message or plain object to encode
+             * @param {api.IFlush} message Flush message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -3639,11 +3639,11 @@
             };
     
             /**
-             * Encodes the specified Flush message, length delimited. Does not implicitly {@link replitproto.Flush.verify|verify} messages.
+             * Encodes the specified Flush message, length delimited. Does not implicitly {@link api.Flush.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.Flush
+             * @memberof api.Flush
              * @static
-             * @param {replitproto.IFlush} message Flush message or plain object to encode
+             * @param {api.IFlush} message Flush message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -3654,18 +3654,18 @@
             /**
              * Decodes a Flush message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.Flush
+             * @memberof api.Flush
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.Flush} Flush
+             * @returns {api.Flush} Flush
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             Flush.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.Flush();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Flush();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -3680,10 +3680,10 @@
             /**
              * Decodes a Flush message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.Flush
+             * @memberof api.Flush
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.Flush} Flush
+             * @returns {api.Flush} Flush
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -3696,7 +3696,7 @@
             /**
              * Verifies a Flush message.
              * @function verify
-             * @memberof replitproto.Flush
+             * @memberof api.Flush
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -3710,23 +3710,23 @@
             /**
              * Creates a Flush message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.Flush
+             * @memberof api.Flush
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.Flush} Flush
+             * @returns {api.Flush} Flush
              */
             Flush.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.Flush)
+                if (object instanceof $root.api.Flush)
                     return object;
-                return new $root.replitproto.Flush();
+                return new $root.api.Flush();
             };
     
             /**
              * Creates a plain object from a Flush message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.Flush
+             * @memberof api.Flush
              * @static
-             * @param {replitproto.Flush} message Flush
+             * @param {api.Flush} message Flush
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -3737,7 +3737,7 @@
             /**
              * Converts this Flush to JSON.
              * @function toJSON
-             * @memberof replitproto.Flush
+             * @memberof api.Flush
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -3748,22 +3748,22 @@
             return Flush;
         })();
     
-        replitproto.OTLinkFile = (function() {
+        api.OTLinkFile = (function() {
     
             /**
              * Properties of a OTLinkFile.
-             * @memberof replitproto
+             * @memberof api
              * @interface IOTLinkFile
-             * @property {replitproto.IFile|null} [file] OTLinkFile file
+             * @property {api.IFile|null} [file] OTLinkFile file
              */
     
             /**
              * Constructs a new OTLinkFile.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a OTLinkFile.
              * @implements IOTLinkFile
              * @constructor
-             * @param {replitproto.IOTLinkFile=} [properties] Properties to set
+             * @param {api.IOTLinkFile=} [properties] Properties to set
              */
             function OTLinkFile(properties) {
                 if (properties)
@@ -3774,8 +3774,8 @@
     
             /**
              * OTLinkFile file.
-             * @member {replitproto.IFile|null|undefined} file
-             * @memberof replitproto.OTLinkFile
+             * @member {api.IFile|null|undefined} file
+             * @memberof api.OTLinkFile
              * @instance
              */
             OTLinkFile.prototype.file = null;
@@ -3783,21 +3783,21 @@
             /**
              * Creates a new OTLinkFile instance using the specified properties.
              * @function create
-             * @memberof replitproto.OTLinkFile
+             * @memberof api.OTLinkFile
              * @static
-             * @param {replitproto.IOTLinkFile=} [properties] Properties to set
-             * @returns {replitproto.OTLinkFile} OTLinkFile instance
+             * @param {api.IOTLinkFile=} [properties] Properties to set
+             * @returns {api.OTLinkFile} OTLinkFile instance
              */
             OTLinkFile.create = function create(properties) {
                 return new OTLinkFile(properties);
             };
     
             /**
-             * Encodes the specified OTLinkFile message. Does not implicitly {@link replitproto.OTLinkFile.verify|verify} messages.
+             * Encodes the specified OTLinkFile message. Does not implicitly {@link api.OTLinkFile.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.OTLinkFile
+             * @memberof api.OTLinkFile
              * @static
-             * @param {replitproto.IOTLinkFile} message OTLinkFile message or plain object to encode
+             * @param {api.IOTLinkFile} message OTLinkFile message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -3805,16 +3805,16 @@
                 if (!writer)
                     writer = $Writer.create();
                 if (message.file != null && message.hasOwnProperty("file"))
-                    $root.replitproto.File.encode(message.file, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    $root.api.File.encode(message.file, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
     
             /**
-             * Encodes the specified OTLinkFile message, length delimited. Does not implicitly {@link replitproto.OTLinkFile.verify|verify} messages.
+             * Encodes the specified OTLinkFile message, length delimited. Does not implicitly {@link api.OTLinkFile.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.OTLinkFile
+             * @memberof api.OTLinkFile
              * @static
-             * @param {replitproto.IOTLinkFile} message OTLinkFile message or plain object to encode
+             * @param {api.IOTLinkFile} message OTLinkFile message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -3825,23 +3825,23 @@
             /**
              * Decodes a OTLinkFile message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.OTLinkFile
+             * @memberof api.OTLinkFile
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.OTLinkFile} OTLinkFile
+             * @returns {api.OTLinkFile} OTLinkFile
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             OTLinkFile.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.OTLinkFile();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.OTLinkFile();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.file = $root.replitproto.File.decode(reader, reader.uint32());
+                        message.file = $root.api.File.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -3854,10 +3854,10 @@
             /**
              * Decodes a OTLinkFile message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.OTLinkFile
+             * @memberof api.OTLinkFile
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.OTLinkFile} OTLinkFile
+             * @returns {api.OTLinkFile} OTLinkFile
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -3870,7 +3870,7 @@
             /**
              * Verifies a OTLinkFile message.
              * @function verify
-             * @memberof replitproto.OTLinkFile
+             * @memberof api.OTLinkFile
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -3879,7 +3879,7 @@
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.file != null && message.hasOwnProperty("file")) {
-                    var error = $root.replitproto.File.verify(message.file);
+                    var error = $root.api.File.verify(message.file);
                     if (error)
                         return "file." + error;
                 }
@@ -3889,19 +3889,19 @@
             /**
              * Creates a OTLinkFile message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.OTLinkFile
+             * @memberof api.OTLinkFile
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.OTLinkFile} OTLinkFile
+             * @returns {api.OTLinkFile} OTLinkFile
              */
             OTLinkFile.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.OTLinkFile)
+                if (object instanceof $root.api.OTLinkFile)
                     return object;
-                var message = new $root.replitproto.OTLinkFile();
+                var message = new $root.api.OTLinkFile();
                 if (object.file != null) {
                     if (typeof object.file !== "object")
-                        throw TypeError(".replitproto.OTLinkFile.file: object expected");
-                    message.file = $root.replitproto.File.fromObject(object.file);
+                        throw TypeError(".api.OTLinkFile.file: object expected");
+                    message.file = $root.api.File.fromObject(object.file);
                 }
                 return message;
             };
@@ -3909,9 +3909,9 @@
             /**
              * Creates a plain object from a OTLinkFile message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.OTLinkFile
+             * @memberof api.OTLinkFile
              * @static
-             * @param {replitproto.OTLinkFile} message OTLinkFile
+             * @param {api.OTLinkFile} message OTLinkFile
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -3922,14 +3922,14 @@
                 if (options.defaults)
                     object.file = null;
                 if (message.file != null && message.hasOwnProperty("file"))
-                    object.file = $root.replitproto.File.toObject(message.file, options);
+                    object.file = $root.api.File.toObject(message.file, options);
                 return object;
             };
     
             /**
              * Converts this OTLinkFile to JSON.
              * @function toJSON
-             * @memberof replitproto.OTLinkFile
+             * @memberof api.OTLinkFile
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -3940,11 +3940,11 @@
             return OTLinkFile;
         })();
     
-        replitproto.Auth = (function() {
+        api.Auth = (function() {
     
             /**
              * Properties of an Auth.
-             * @memberof replitproto
+             * @memberof api
              * @interface IAuth
              * @property {string|null} [token] Auth token
              * @property {string|null} [containerID] Auth containerID
@@ -3952,11 +3952,11 @@
     
             /**
              * Constructs a new Auth.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents an Auth.
              * @implements IAuth
              * @constructor
-             * @param {replitproto.IAuth=} [properties] Properties to set
+             * @param {api.IAuth=} [properties] Properties to set
              */
             function Auth(properties) {
                 if (properties)
@@ -3968,7 +3968,7 @@
             /**
              * Auth token.
              * @member {string} token
-             * @memberof replitproto.Auth
+             * @memberof api.Auth
              * @instance
              */
             Auth.prototype.token = "";
@@ -3976,7 +3976,7 @@
             /**
              * Auth containerID.
              * @member {string} containerID
-             * @memberof replitproto.Auth
+             * @memberof api.Auth
              * @instance
              */
             Auth.prototype.containerID = "";
@@ -3984,21 +3984,21 @@
             /**
              * Creates a new Auth instance using the specified properties.
              * @function create
-             * @memberof replitproto.Auth
+             * @memberof api.Auth
              * @static
-             * @param {replitproto.IAuth=} [properties] Properties to set
-             * @returns {replitproto.Auth} Auth instance
+             * @param {api.IAuth=} [properties] Properties to set
+             * @returns {api.Auth} Auth instance
              */
             Auth.create = function create(properties) {
                 return new Auth(properties);
             };
     
             /**
-             * Encodes the specified Auth message. Does not implicitly {@link replitproto.Auth.verify|verify} messages.
+             * Encodes the specified Auth message. Does not implicitly {@link api.Auth.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.Auth
+             * @memberof api.Auth
              * @static
-             * @param {replitproto.IAuth} message Auth message or plain object to encode
+             * @param {api.IAuth} message Auth message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -4013,11 +4013,11 @@
             };
     
             /**
-             * Encodes the specified Auth message, length delimited. Does not implicitly {@link replitproto.Auth.verify|verify} messages.
+             * Encodes the specified Auth message, length delimited. Does not implicitly {@link api.Auth.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.Auth
+             * @memberof api.Auth
              * @static
-             * @param {replitproto.IAuth} message Auth message or plain object to encode
+             * @param {api.IAuth} message Auth message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -4028,18 +4028,18 @@
             /**
              * Decodes an Auth message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.Auth
+             * @memberof api.Auth
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.Auth} Auth
+             * @returns {api.Auth} Auth
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             Auth.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.Auth();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Auth();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -4060,10 +4060,10 @@
             /**
              * Decodes an Auth message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.Auth
+             * @memberof api.Auth
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.Auth} Auth
+             * @returns {api.Auth} Auth
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -4076,7 +4076,7 @@
             /**
              * Verifies an Auth message.
              * @function verify
-             * @memberof replitproto.Auth
+             * @memberof api.Auth
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -4096,15 +4096,15 @@
             /**
              * Creates an Auth message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.Auth
+             * @memberof api.Auth
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.Auth} Auth
+             * @returns {api.Auth} Auth
              */
             Auth.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.Auth)
+                if (object instanceof $root.api.Auth)
                     return object;
-                var message = new $root.replitproto.Auth();
+                var message = new $root.api.Auth();
                 if (object.token != null)
                     message.token = String(object.token);
                 if (object.containerID != null)
@@ -4115,9 +4115,9 @@
             /**
              * Creates a plain object from an Auth message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.Auth
+             * @memberof api.Auth
              * @static
-             * @param {replitproto.Auth} message Auth
+             * @param {api.Auth} message Auth
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -4139,7 +4139,7 @@
             /**
              * Converts this Auth to JSON.
              * @function toJSON
-             * @memberof replitproto.Auth
+             * @memberof api.Auth
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -4150,25 +4150,25 @@
             return Auth;
         })();
     
-        replitproto.VCREntry = (function() {
+        api.VCREntry = (function() {
     
             /**
              * Properties of a VCREntry.
-             * @memberof replitproto
+             * @memberof api
              * @interface IVCREntry
              * @property {number|Long|null} [timestamp] VCREntry timestamp
-             * @property {replitproto.VCREntry.Direction|null} [direction] VCREntry direction
-             * @property {replitproto.ICommand|null} [command] VCREntry command
+             * @property {api.VCREntry.Direction|null} [direction] VCREntry direction
+             * @property {api.ICommand|null} [command] VCREntry command
              * @property {string|null} [uid] VCREntry uid
              */
     
             /**
              * Constructs a new VCREntry.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a VCREntry.
              * @implements IVCREntry
              * @constructor
-             * @param {replitproto.IVCREntry=} [properties] Properties to set
+             * @param {api.IVCREntry=} [properties] Properties to set
              */
             function VCREntry(properties) {
                 if (properties)
@@ -4180,23 +4180,23 @@
             /**
              * VCREntry timestamp.
              * @member {number|Long} timestamp
-             * @memberof replitproto.VCREntry
+             * @memberof api.VCREntry
              * @instance
              */
             VCREntry.prototype.timestamp = $util.Long ? $util.Long.fromBits(0,0,true) : 0;
     
             /**
              * VCREntry direction.
-             * @member {replitproto.VCREntry.Direction} direction
-             * @memberof replitproto.VCREntry
+             * @member {api.VCREntry.Direction} direction
+             * @memberof api.VCREntry
              * @instance
              */
             VCREntry.prototype.direction = 0;
     
             /**
              * VCREntry command.
-             * @member {replitproto.ICommand|null|undefined} command
-             * @memberof replitproto.VCREntry
+             * @member {api.ICommand|null|undefined} command
+             * @memberof api.VCREntry
              * @instance
              */
             VCREntry.prototype.command = null;
@@ -4204,7 +4204,7 @@
             /**
              * VCREntry uid.
              * @member {string} uid
-             * @memberof replitproto.VCREntry
+             * @memberof api.VCREntry
              * @instance
              */
             VCREntry.prototype.uid = "";
@@ -4212,21 +4212,21 @@
             /**
              * Creates a new VCREntry instance using the specified properties.
              * @function create
-             * @memberof replitproto.VCREntry
+             * @memberof api.VCREntry
              * @static
-             * @param {replitproto.IVCREntry=} [properties] Properties to set
-             * @returns {replitproto.VCREntry} VCREntry instance
+             * @param {api.IVCREntry=} [properties] Properties to set
+             * @returns {api.VCREntry} VCREntry instance
              */
             VCREntry.create = function create(properties) {
                 return new VCREntry(properties);
             };
     
             /**
-             * Encodes the specified VCREntry message. Does not implicitly {@link replitproto.VCREntry.verify|verify} messages.
+             * Encodes the specified VCREntry message. Does not implicitly {@link api.VCREntry.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.VCREntry
+             * @memberof api.VCREntry
              * @static
-             * @param {replitproto.IVCREntry} message VCREntry message or plain object to encode
+             * @param {api.IVCREntry} message VCREntry message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -4238,18 +4238,18 @@
                 if (message.direction != null && message.hasOwnProperty("direction"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int32(message.direction);
                 if (message.command != null && message.hasOwnProperty("command"))
-                    $root.replitproto.Command.encode(message.command, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    $root.api.Command.encode(message.command, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.uid != null && message.hasOwnProperty("uid"))
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.uid);
                 return writer;
             };
     
             /**
-             * Encodes the specified VCREntry message, length delimited. Does not implicitly {@link replitproto.VCREntry.verify|verify} messages.
+             * Encodes the specified VCREntry message, length delimited. Does not implicitly {@link api.VCREntry.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.VCREntry
+             * @memberof api.VCREntry
              * @static
-             * @param {replitproto.IVCREntry} message VCREntry message or plain object to encode
+             * @param {api.IVCREntry} message VCREntry message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -4260,18 +4260,18 @@
             /**
              * Decodes a VCREntry message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.VCREntry
+             * @memberof api.VCREntry
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.VCREntry} VCREntry
+             * @returns {api.VCREntry} VCREntry
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             VCREntry.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.VCREntry();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.VCREntry();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -4282,7 +4282,7 @@
                         message.direction = reader.int32();
                         break;
                     case 3:
-                        message.command = $root.replitproto.Command.decode(reader, reader.uint32());
+                        message.command = $root.api.Command.decode(reader, reader.uint32());
                         break;
                     case 4:
                         message.uid = reader.string();
@@ -4298,10 +4298,10 @@
             /**
              * Decodes a VCREntry message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.VCREntry
+             * @memberof api.VCREntry
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.VCREntry} VCREntry
+             * @returns {api.VCREntry} VCREntry
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -4314,7 +4314,7 @@
             /**
              * Verifies a VCREntry message.
              * @function verify
-             * @memberof replitproto.VCREntry
+             * @memberof api.VCREntry
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -4334,7 +4334,7 @@
                         break;
                     }
                 if (message.command != null && message.hasOwnProperty("command")) {
-                    var error = $root.replitproto.Command.verify(message.command);
+                    var error = $root.api.Command.verify(message.command);
                     if (error)
                         return "command." + error;
                 }
@@ -4347,15 +4347,15 @@
             /**
              * Creates a VCREntry message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.VCREntry
+             * @memberof api.VCREntry
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.VCREntry} VCREntry
+             * @returns {api.VCREntry} VCREntry
              */
             VCREntry.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.VCREntry)
+                if (object instanceof $root.api.VCREntry)
                     return object;
-                var message = new $root.replitproto.VCREntry();
+                var message = new $root.api.VCREntry();
                 if (object.timestamp != null)
                     if ($util.Long)
                         (message.timestamp = $util.Long.fromValue(object.timestamp)).unsigned = true;
@@ -4377,8 +4377,8 @@
                 }
                 if (object.command != null) {
                     if (typeof object.command !== "object")
-                        throw TypeError(".replitproto.VCREntry.command: object expected");
-                    message.command = $root.replitproto.Command.fromObject(object.command);
+                        throw TypeError(".api.VCREntry.command: object expected");
+                    message.command = $root.api.Command.fromObject(object.command);
                 }
                 if (object.uid != null)
                     message.uid = String(object.uid);
@@ -4388,9 +4388,9 @@
             /**
              * Creates a plain object from a VCREntry message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.VCREntry
+             * @memberof api.VCREntry
              * @static
-             * @param {replitproto.VCREntry} message VCREntry
+             * @param {api.VCREntry} message VCREntry
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -4414,9 +4414,9 @@
                     else
                         object.timestamp = options.longs === String ? $util.Long.prototype.toString.call(message.timestamp) : options.longs === Number ? new $util.LongBits(message.timestamp.low >>> 0, message.timestamp.high >>> 0).toNumber(true) : message.timestamp;
                 if (message.direction != null && message.hasOwnProperty("direction"))
-                    object.direction = options.enums === String ? $root.replitproto.VCREntry.Direction[message.direction] : message.direction;
+                    object.direction = options.enums === String ? $root.api.VCREntry.Direction[message.direction] : message.direction;
                 if (message.command != null && message.hasOwnProperty("command"))
-                    object.command = $root.replitproto.Command.toObject(message.command, options);
+                    object.command = $root.api.Command.toObject(message.command, options);
                 if (message.uid != null && message.hasOwnProperty("uid"))
                     object.uid = message.uid;
                 return object;
@@ -4425,7 +4425,7 @@
             /**
              * Converts this VCREntry to JSON.
              * @function toJSON
-             * @memberof replitproto.VCREntry
+             * @memberof api.VCREntry
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -4435,7 +4435,7 @@
     
             /**
              * Direction enum.
-             * @name replitproto.VCREntry.Direction
+             * @name api.VCREntry.Direction
              * @enum {string}
              * @property {number} IN=0 IN value
              * @property {number} OUT=1 OUT value
@@ -4450,21 +4450,21 @@
             return VCREntry;
         })();
     
-        replitproto.StartVCR = (function() {
+        api.StartVCR = (function() {
     
             /**
              * Properties of a StartVCR.
-             * @memberof replitproto
+             * @memberof api
              * @interface IStartVCR
              */
     
             /**
              * Constructs a new StartVCR.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a StartVCR.
              * @implements IStartVCR
              * @constructor
-             * @param {replitproto.IStartVCR=} [properties] Properties to set
+             * @param {api.IStartVCR=} [properties] Properties to set
              */
             function StartVCR(properties) {
                 if (properties)
@@ -4476,21 +4476,21 @@
             /**
              * Creates a new StartVCR instance using the specified properties.
              * @function create
-             * @memberof replitproto.StartVCR
+             * @memberof api.StartVCR
              * @static
-             * @param {replitproto.IStartVCR=} [properties] Properties to set
-             * @returns {replitproto.StartVCR} StartVCR instance
+             * @param {api.IStartVCR=} [properties] Properties to set
+             * @returns {api.StartVCR} StartVCR instance
              */
             StartVCR.create = function create(properties) {
                 return new StartVCR(properties);
             };
     
             /**
-             * Encodes the specified StartVCR message. Does not implicitly {@link replitproto.StartVCR.verify|verify} messages.
+             * Encodes the specified StartVCR message. Does not implicitly {@link api.StartVCR.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.StartVCR
+             * @memberof api.StartVCR
              * @static
-             * @param {replitproto.IStartVCR} message StartVCR message or plain object to encode
+             * @param {api.IStartVCR} message StartVCR message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -4501,11 +4501,11 @@
             };
     
             /**
-             * Encodes the specified StartVCR message, length delimited. Does not implicitly {@link replitproto.StartVCR.verify|verify} messages.
+             * Encodes the specified StartVCR message, length delimited. Does not implicitly {@link api.StartVCR.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.StartVCR
+             * @memberof api.StartVCR
              * @static
-             * @param {replitproto.IStartVCR} message StartVCR message or plain object to encode
+             * @param {api.IStartVCR} message StartVCR message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -4516,18 +4516,18 @@
             /**
              * Decodes a StartVCR message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.StartVCR
+             * @memberof api.StartVCR
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.StartVCR} StartVCR
+             * @returns {api.StartVCR} StartVCR
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             StartVCR.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.StartVCR();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.StartVCR();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -4542,10 +4542,10 @@
             /**
              * Decodes a StartVCR message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.StartVCR
+             * @memberof api.StartVCR
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.StartVCR} StartVCR
+             * @returns {api.StartVCR} StartVCR
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -4558,7 +4558,7 @@
             /**
              * Verifies a StartVCR message.
              * @function verify
-             * @memberof replitproto.StartVCR
+             * @memberof api.StartVCR
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -4572,23 +4572,23 @@
             /**
              * Creates a StartVCR message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.StartVCR
+             * @memberof api.StartVCR
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.StartVCR} StartVCR
+             * @returns {api.StartVCR} StartVCR
              */
             StartVCR.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.StartVCR)
+                if (object instanceof $root.api.StartVCR)
                     return object;
-                return new $root.replitproto.StartVCR();
+                return new $root.api.StartVCR();
             };
     
             /**
              * Creates a plain object from a StartVCR message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.StartVCR
+             * @memberof api.StartVCR
              * @static
-             * @param {replitproto.StartVCR} message StartVCR
+             * @param {api.StartVCR} message StartVCR
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -4599,7 +4599,7 @@
             /**
              * Converts this StartVCR to JSON.
              * @function toJSON
-             * @memberof replitproto.StartVCR
+             * @memberof api.StartVCR
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -4610,21 +4610,21 @@
             return StartVCR;
         })();
     
-        replitproto.ReadVCR = (function() {
+        api.ReadVCR = (function() {
     
             /**
              * Properties of a ReadVCR.
-             * @memberof replitproto
+             * @memberof api
              * @interface IReadVCR
              */
     
             /**
              * Constructs a new ReadVCR.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a ReadVCR.
              * @implements IReadVCR
              * @constructor
-             * @param {replitproto.IReadVCR=} [properties] Properties to set
+             * @param {api.IReadVCR=} [properties] Properties to set
              */
             function ReadVCR(properties) {
                 if (properties)
@@ -4636,21 +4636,21 @@
             /**
              * Creates a new ReadVCR instance using the specified properties.
              * @function create
-             * @memberof replitproto.ReadVCR
+             * @memberof api.ReadVCR
              * @static
-             * @param {replitproto.IReadVCR=} [properties] Properties to set
-             * @returns {replitproto.ReadVCR} ReadVCR instance
+             * @param {api.IReadVCR=} [properties] Properties to set
+             * @returns {api.ReadVCR} ReadVCR instance
              */
             ReadVCR.create = function create(properties) {
                 return new ReadVCR(properties);
             };
     
             /**
-             * Encodes the specified ReadVCR message. Does not implicitly {@link replitproto.ReadVCR.verify|verify} messages.
+             * Encodes the specified ReadVCR message. Does not implicitly {@link api.ReadVCR.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.ReadVCR
+             * @memberof api.ReadVCR
              * @static
-             * @param {replitproto.IReadVCR} message ReadVCR message or plain object to encode
+             * @param {api.IReadVCR} message ReadVCR message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -4661,11 +4661,11 @@
             };
     
             /**
-             * Encodes the specified ReadVCR message, length delimited. Does not implicitly {@link replitproto.ReadVCR.verify|verify} messages.
+             * Encodes the specified ReadVCR message, length delimited. Does not implicitly {@link api.ReadVCR.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.ReadVCR
+             * @memberof api.ReadVCR
              * @static
-             * @param {replitproto.IReadVCR} message ReadVCR message or plain object to encode
+             * @param {api.IReadVCR} message ReadVCR message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -4676,18 +4676,18 @@
             /**
              * Decodes a ReadVCR message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.ReadVCR
+             * @memberof api.ReadVCR
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.ReadVCR} ReadVCR
+             * @returns {api.ReadVCR} ReadVCR
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             ReadVCR.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.ReadVCR();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.ReadVCR();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -4702,10 +4702,10 @@
             /**
              * Decodes a ReadVCR message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.ReadVCR
+             * @memberof api.ReadVCR
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.ReadVCR} ReadVCR
+             * @returns {api.ReadVCR} ReadVCR
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -4718,7 +4718,7 @@
             /**
              * Verifies a ReadVCR message.
              * @function verify
-             * @memberof replitproto.ReadVCR
+             * @memberof api.ReadVCR
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -4732,23 +4732,23 @@
             /**
              * Creates a ReadVCR message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.ReadVCR
+             * @memberof api.ReadVCR
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.ReadVCR} ReadVCR
+             * @returns {api.ReadVCR} ReadVCR
              */
             ReadVCR.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.ReadVCR)
+                if (object instanceof $root.api.ReadVCR)
                     return object;
-                return new $root.replitproto.ReadVCR();
+                return new $root.api.ReadVCR();
             };
     
             /**
              * Creates a plain object from a ReadVCR message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.ReadVCR
+             * @memberof api.ReadVCR
              * @static
-             * @param {replitproto.ReadVCR} message ReadVCR
+             * @param {api.ReadVCR} message ReadVCR
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -4759,7 +4759,7 @@
             /**
              * Converts this ReadVCR to JSON.
              * @function toJSON
-             * @memberof replitproto.ReadVCR
+             * @memberof api.ReadVCR
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -4770,23 +4770,23 @@
             return ReadVCR;
         })();
     
-        replitproto.VCRLog = (function() {
+        api.VCRLog = (function() {
     
             /**
              * Properties of a VCRLog.
-             * @memberof replitproto
+             * @memberof api
              * @interface IVCRLog
-             * @property {Array.<replitproto.IVCREntry>|null} [log] VCRLog log
-             * @property {replitproto.IFile|null} [logfile] VCRLog logfile
+             * @property {Array.<api.IVCREntry>|null} [log] VCRLog log
+             * @property {api.IFile|null} [logfile] VCRLog logfile
              */
     
             /**
              * Constructs a new VCRLog.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a VCRLog.
              * @implements IVCRLog
              * @constructor
-             * @param {replitproto.IVCRLog=} [properties] Properties to set
+             * @param {api.IVCRLog=} [properties] Properties to set
              */
             function VCRLog(properties) {
                 this.log = [];
@@ -4798,16 +4798,16 @@
     
             /**
              * VCRLog log.
-             * @member {Array.<replitproto.IVCREntry>} log
-             * @memberof replitproto.VCRLog
+             * @member {Array.<api.IVCREntry>} log
+             * @memberof api.VCRLog
              * @instance
              */
             VCRLog.prototype.log = $util.emptyArray;
     
             /**
              * VCRLog logfile.
-             * @member {replitproto.IFile|null|undefined} logfile
-             * @memberof replitproto.VCRLog
+             * @member {api.IFile|null|undefined} logfile
+             * @memberof api.VCRLog
              * @instance
              */
             VCRLog.prototype.logfile = null;
@@ -4815,21 +4815,21 @@
             /**
              * Creates a new VCRLog instance using the specified properties.
              * @function create
-             * @memberof replitproto.VCRLog
+             * @memberof api.VCRLog
              * @static
-             * @param {replitproto.IVCRLog=} [properties] Properties to set
-             * @returns {replitproto.VCRLog} VCRLog instance
+             * @param {api.IVCRLog=} [properties] Properties to set
+             * @returns {api.VCRLog} VCRLog instance
              */
             VCRLog.create = function create(properties) {
                 return new VCRLog(properties);
             };
     
             /**
-             * Encodes the specified VCRLog message. Does not implicitly {@link replitproto.VCRLog.verify|verify} messages.
+             * Encodes the specified VCRLog message. Does not implicitly {@link api.VCRLog.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.VCRLog
+             * @memberof api.VCRLog
              * @static
-             * @param {replitproto.IVCRLog} message VCRLog message or plain object to encode
+             * @param {api.IVCRLog} message VCRLog message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -4838,18 +4838,18 @@
                     writer = $Writer.create();
                 if (message.log != null && message.log.length)
                     for (var i = 0; i < message.log.length; ++i)
-                        $root.replitproto.VCREntry.encode(message.log[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                        $root.api.VCREntry.encode(message.log[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.logfile != null && message.hasOwnProperty("logfile"))
-                    $root.replitproto.File.encode(message.logfile, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    $root.api.File.encode(message.logfile, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 return writer;
             };
     
             /**
-             * Encodes the specified VCRLog message, length delimited. Does not implicitly {@link replitproto.VCRLog.verify|verify} messages.
+             * Encodes the specified VCRLog message, length delimited. Does not implicitly {@link api.VCRLog.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.VCRLog
+             * @memberof api.VCRLog
              * @static
-             * @param {replitproto.IVCRLog} message VCRLog message or plain object to encode
+             * @param {api.IVCRLog} message VCRLog message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -4860,28 +4860,28 @@
             /**
              * Decodes a VCRLog message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.VCRLog
+             * @memberof api.VCRLog
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.VCRLog} VCRLog
+             * @returns {api.VCRLog} VCRLog
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             VCRLog.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.VCRLog();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.VCRLog();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         if (!(message.log && message.log.length))
                             message.log = [];
-                        message.log.push($root.replitproto.VCREntry.decode(reader, reader.uint32()));
+                        message.log.push($root.api.VCREntry.decode(reader, reader.uint32()));
                         break;
                     case 2:
-                        message.logfile = $root.replitproto.File.decode(reader, reader.uint32());
+                        message.logfile = $root.api.File.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -4894,10 +4894,10 @@
             /**
              * Decodes a VCRLog message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.VCRLog
+             * @memberof api.VCRLog
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.VCRLog} VCRLog
+             * @returns {api.VCRLog} VCRLog
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -4910,7 +4910,7 @@
             /**
              * Verifies a VCRLog message.
              * @function verify
-             * @memberof replitproto.VCRLog
+             * @memberof api.VCRLog
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -4922,13 +4922,13 @@
                     if (!Array.isArray(message.log))
                         return "log: array expected";
                     for (var i = 0; i < message.log.length; ++i) {
-                        var error = $root.replitproto.VCREntry.verify(message.log[i]);
+                        var error = $root.api.VCREntry.verify(message.log[i]);
                         if (error)
                             return "log." + error;
                     }
                 }
                 if (message.logfile != null && message.hasOwnProperty("logfile")) {
-                    var error = $root.replitproto.File.verify(message.logfile);
+                    var error = $root.api.File.verify(message.logfile);
                     if (error)
                         return "logfile." + error;
                 }
@@ -4938,29 +4938,29 @@
             /**
              * Creates a VCRLog message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.VCRLog
+             * @memberof api.VCRLog
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.VCRLog} VCRLog
+             * @returns {api.VCRLog} VCRLog
              */
             VCRLog.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.VCRLog)
+                if (object instanceof $root.api.VCRLog)
                     return object;
-                var message = new $root.replitproto.VCRLog();
+                var message = new $root.api.VCRLog();
                 if (object.log) {
                     if (!Array.isArray(object.log))
-                        throw TypeError(".replitproto.VCRLog.log: array expected");
+                        throw TypeError(".api.VCRLog.log: array expected");
                     message.log = [];
                     for (var i = 0; i < object.log.length; ++i) {
                         if (typeof object.log[i] !== "object")
-                            throw TypeError(".replitproto.VCRLog.log: object expected");
-                        message.log[i] = $root.replitproto.VCREntry.fromObject(object.log[i]);
+                            throw TypeError(".api.VCRLog.log: object expected");
+                        message.log[i] = $root.api.VCREntry.fromObject(object.log[i]);
                     }
                 }
                 if (object.logfile != null) {
                     if (typeof object.logfile !== "object")
-                        throw TypeError(".replitproto.VCRLog.logfile: object expected");
-                    message.logfile = $root.replitproto.File.fromObject(object.logfile);
+                        throw TypeError(".api.VCRLog.logfile: object expected");
+                    message.logfile = $root.api.File.fromObject(object.logfile);
                 }
                 return message;
             };
@@ -4968,9 +4968,9 @@
             /**
              * Creates a plain object from a VCRLog message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.VCRLog
+             * @memberof api.VCRLog
              * @static
-             * @param {replitproto.VCRLog} message VCRLog
+             * @param {api.VCRLog} message VCRLog
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -4985,17 +4985,17 @@
                 if (message.log && message.log.length) {
                     object.log = [];
                     for (var j = 0; j < message.log.length; ++j)
-                        object.log[j] = $root.replitproto.VCREntry.toObject(message.log[j], options);
+                        object.log[j] = $root.api.VCREntry.toObject(message.log[j], options);
                 }
                 if (message.logfile != null && message.hasOwnProperty("logfile"))
-                    object.logfile = $root.replitproto.File.toObject(message.logfile, options);
+                    object.logfile = $root.api.File.toObject(message.logfile, options);
                 return object;
             };
     
             /**
              * Converts this VCRLog to JSON.
              * @function toJSON
-             * @memberof replitproto.VCRLog
+             * @memberof api.VCRLog
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -5006,11 +5006,11 @@
             return VCRLog;
         })();
     
-        replitproto.ExecInfo = (function() {
+        api.ExecInfo = (function() {
     
             /**
              * Properties of an ExecInfo.
-             * @memberof replitproto
+             * @memberof api
              * @interface IExecInfo
              * @property {Array.<string>|null} [command] ExecInfo command
              * @property {string|null} [reason] ExecInfo reason
@@ -5018,11 +5018,11 @@
     
             /**
              * Constructs a new ExecInfo.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents an ExecInfo.
              * @implements IExecInfo
              * @constructor
-             * @param {replitproto.IExecInfo=} [properties] Properties to set
+             * @param {api.IExecInfo=} [properties] Properties to set
              */
             function ExecInfo(properties) {
                 this.command = [];
@@ -5035,7 +5035,7 @@
             /**
              * ExecInfo command.
              * @member {Array.<string>} command
-             * @memberof replitproto.ExecInfo
+             * @memberof api.ExecInfo
              * @instance
              */
             ExecInfo.prototype.command = $util.emptyArray;
@@ -5043,7 +5043,7 @@
             /**
              * ExecInfo reason.
              * @member {string} reason
-             * @memberof replitproto.ExecInfo
+             * @memberof api.ExecInfo
              * @instance
              */
             ExecInfo.prototype.reason = "";
@@ -5051,21 +5051,21 @@
             /**
              * Creates a new ExecInfo instance using the specified properties.
              * @function create
-             * @memberof replitproto.ExecInfo
+             * @memberof api.ExecInfo
              * @static
-             * @param {replitproto.IExecInfo=} [properties] Properties to set
-             * @returns {replitproto.ExecInfo} ExecInfo instance
+             * @param {api.IExecInfo=} [properties] Properties to set
+             * @returns {api.ExecInfo} ExecInfo instance
              */
             ExecInfo.create = function create(properties) {
                 return new ExecInfo(properties);
             };
     
             /**
-             * Encodes the specified ExecInfo message. Does not implicitly {@link replitproto.ExecInfo.verify|verify} messages.
+             * Encodes the specified ExecInfo message. Does not implicitly {@link api.ExecInfo.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.ExecInfo
+             * @memberof api.ExecInfo
              * @static
-             * @param {replitproto.IExecInfo} message ExecInfo message or plain object to encode
+             * @param {api.IExecInfo} message ExecInfo message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -5081,11 +5081,11 @@
             };
     
             /**
-             * Encodes the specified ExecInfo message, length delimited. Does not implicitly {@link replitproto.ExecInfo.verify|verify} messages.
+             * Encodes the specified ExecInfo message, length delimited. Does not implicitly {@link api.ExecInfo.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.ExecInfo
+             * @memberof api.ExecInfo
              * @static
-             * @param {replitproto.IExecInfo} message ExecInfo message or plain object to encode
+             * @param {api.IExecInfo} message ExecInfo message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -5096,18 +5096,18 @@
             /**
              * Decodes an ExecInfo message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.ExecInfo
+             * @memberof api.ExecInfo
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.ExecInfo} ExecInfo
+             * @returns {api.ExecInfo} ExecInfo
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             ExecInfo.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.ExecInfo();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.ExecInfo();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -5130,10 +5130,10 @@
             /**
              * Decodes an ExecInfo message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.ExecInfo
+             * @memberof api.ExecInfo
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.ExecInfo} ExecInfo
+             * @returns {api.ExecInfo} ExecInfo
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -5146,7 +5146,7 @@
             /**
              * Verifies an ExecInfo message.
              * @function verify
-             * @memberof replitproto.ExecInfo
+             * @memberof api.ExecInfo
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -5170,18 +5170,18 @@
             /**
              * Creates an ExecInfo message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.ExecInfo
+             * @memberof api.ExecInfo
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.ExecInfo} ExecInfo
+             * @returns {api.ExecInfo} ExecInfo
              */
             ExecInfo.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.ExecInfo)
+                if (object instanceof $root.api.ExecInfo)
                     return object;
-                var message = new $root.replitproto.ExecInfo();
+                var message = new $root.api.ExecInfo();
                 if (object.command) {
                     if (!Array.isArray(object.command))
-                        throw TypeError(".replitproto.ExecInfo.command: array expected");
+                        throw TypeError(".api.ExecInfo.command: array expected");
                     message.command = [];
                     for (var i = 0; i < object.command.length; ++i)
                         message.command[i] = String(object.command[i]);
@@ -5194,9 +5194,9 @@
             /**
              * Creates a plain object from an ExecInfo message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.ExecInfo
+             * @memberof api.ExecInfo
              * @static
-             * @param {replitproto.ExecInfo} message ExecInfo
+             * @param {api.ExecInfo} message ExecInfo
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -5221,7 +5221,7 @@
             /**
              * Converts this ExecInfo to JSON.
              * @function toJSON
-             * @memberof replitproto.ExecInfo
+             * @memberof api.ExecInfo
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -5232,22 +5232,22 @@
             return ExecInfo;
         })();
     
-        replitproto.Debug = (function() {
+        api.Debug = (function() {
     
             /**
              * Properties of a Debug.
-             * @memberof replitproto
+             * @memberof api
              * @interface IDebug
              * @property {string|null} [text] Debug text
              */
     
             /**
              * Constructs a new Debug.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a Debug.
              * @implements IDebug
              * @constructor
-             * @param {replitproto.IDebug=} [properties] Properties to set
+             * @param {api.IDebug=} [properties] Properties to set
              */
             function Debug(properties) {
                 if (properties)
@@ -5259,7 +5259,7 @@
             /**
              * Debug text.
              * @member {string} text
-             * @memberof replitproto.Debug
+             * @memberof api.Debug
              * @instance
              */
             Debug.prototype.text = "";
@@ -5267,21 +5267,21 @@
             /**
              * Creates a new Debug instance using the specified properties.
              * @function create
-             * @memberof replitproto.Debug
+             * @memberof api.Debug
              * @static
-             * @param {replitproto.IDebug=} [properties] Properties to set
-             * @returns {replitproto.Debug} Debug instance
+             * @param {api.IDebug=} [properties] Properties to set
+             * @returns {api.Debug} Debug instance
              */
             Debug.create = function create(properties) {
                 return new Debug(properties);
             };
     
             /**
-             * Encodes the specified Debug message. Does not implicitly {@link replitproto.Debug.verify|verify} messages.
+             * Encodes the specified Debug message. Does not implicitly {@link api.Debug.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.Debug
+             * @memberof api.Debug
              * @static
-             * @param {replitproto.IDebug} message Debug message or plain object to encode
+             * @param {api.IDebug} message Debug message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -5294,11 +5294,11 @@
             };
     
             /**
-             * Encodes the specified Debug message, length delimited. Does not implicitly {@link replitproto.Debug.verify|verify} messages.
+             * Encodes the specified Debug message, length delimited. Does not implicitly {@link api.Debug.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.Debug
+             * @memberof api.Debug
              * @static
-             * @param {replitproto.IDebug} message Debug message or plain object to encode
+             * @param {api.IDebug} message Debug message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -5309,18 +5309,18 @@
             /**
              * Decodes a Debug message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.Debug
+             * @memberof api.Debug
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.Debug} Debug
+             * @returns {api.Debug} Debug
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             Debug.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.Debug();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Debug();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -5338,10 +5338,10 @@
             /**
              * Decodes a Debug message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.Debug
+             * @memberof api.Debug
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.Debug} Debug
+             * @returns {api.Debug} Debug
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -5354,7 +5354,7 @@
             /**
              * Verifies a Debug message.
              * @function verify
-             * @memberof replitproto.Debug
+             * @memberof api.Debug
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -5371,15 +5371,15 @@
             /**
              * Creates a Debug message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.Debug
+             * @memberof api.Debug
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.Debug} Debug
+             * @returns {api.Debug} Debug
              */
             Debug.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.Debug)
+                if (object instanceof $root.api.Debug)
                     return object;
-                var message = new $root.replitproto.Debug();
+                var message = new $root.api.Debug();
                 if (object.text != null)
                     message.text = String(object.text);
                 return message;
@@ -5388,9 +5388,9 @@
             /**
              * Creates a plain object from a Debug message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.Debug
+             * @memberof api.Debug
              * @static
-             * @param {replitproto.Debug} message Debug
+             * @param {api.Debug} message Debug
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -5408,7 +5408,7 @@
             /**
              * Converts this Debug to JSON.
              * @function toJSON
-             * @memberof replitproto.Debug
+             * @memberof api.Debug
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -5421,14 +5421,14 @@
     
         /**
          * FileAuthMethod enum.
-         * @name replitproto.FileAuthMethod
+         * @name api.FileAuthMethod
          * @enum {string}
          * @property {number} GET=0 GET value
          * @property {number} HEAD=1 HEAD value
          * @property {number} PUT=2 PUT value
          * @property {number} DELETE=3 DELETE value
          */
-        replitproto.FileAuthMethod = (function() {
+        api.FileAuthMethod = (function() {
             var valuesById = {}, values = Object.create(valuesById);
             values[valuesById[0] = "GET"] = 0;
             values[valuesById[1] = "HEAD"] = 1;
@@ -5437,23 +5437,23 @@
             return values;
         })();
     
-        replitproto.FileAuthReq = (function() {
+        api.FileAuthReq = (function() {
     
             /**
              * Properties of a FileAuthReq.
-             * @memberof replitproto
+             * @memberof api
              * @interface IFileAuthReq
-             * @property {replitproto.IFile|null} [file] FileAuthReq file
-             * @property {replitproto.FileAuthMethod|null} [method] FileAuthReq method
+             * @property {api.IFile|null} [file] FileAuthReq file
+             * @property {api.FileAuthMethod|null} [method] FileAuthReq method
              */
     
             /**
              * Constructs a new FileAuthReq.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a FileAuthReq.
              * @implements IFileAuthReq
              * @constructor
-             * @param {replitproto.IFileAuthReq=} [properties] Properties to set
+             * @param {api.IFileAuthReq=} [properties] Properties to set
              */
             function FileAuthReq(properties) {
                 if (properties)
@@ -5464,16 +5464,16 @@
     
             /**
              * FileAuthReq file.
-             * @member {replitproto.IFile|null|undefined} file
-             * @memberof replitproto.FileAuthReq
+             * @member {api.IFile|null|undefined} file
+             * @memberof api.FileAuthReq
              * @instance
              */
             FileAuthReq.prototype.file = null;
     
             /**
              * FileAuthReq method.
-             * @member {replitproto.FileAuthMethod} method
-             * @memberof replitproto.FileAuthReq
+             * @member {api.FileAuthMethod} method
+             * @memberof api.FileAuthReq
              * @instance
              */
             FileAuthReq.prototype.method = 0;
@@ -5481,21 +5481,21 @@
             /**
              * Creates a new FileAuthReq instance using the specified properties.
              * @function create
-             * @memberof replitproto.FileAuthReq
+             * @memberof api.FileAuthReq
              * @static
-             * @param {replitproto.IFileAuthReq=} [properties] Properties to set
-             * @returns {replitproto.FileAuthReq} FileAuthReq instance
+             * @param {api.IFileAuthReq=} [properties] Properties to set
+             * @returns {api.FileAuthReq} FileAuthReq instance
              */
             FileAuthReq.create = function create(properties) {
                 return new FileAuthReq(properties);
             };
     
             /**
-             * Encodes the specified FileAuthReq message. Does not implicitly {@link replitproto.FileAuthReq.verify|verify} messages.
+             * Encodes the specified FileAuthReq message. Does not implicitly {@link api.FileAuthReq.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.FileAuthReq
+             * @memberof api.FileAuthReq
              * @static
-             * @param {replitproto.IFileAuthReq} message FileAuthReq message or plain object to encode
+             * @param {api.IFileAuthReq} message FileAuthReq message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -5503,18 +5503,18 @@
                 if (!writer)
                     writer = $Writer.create();
                 if (message.file != null && message.hasOwnProperty("file"))
-                    $root.replitproto.File.encode(message.file, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    $root.api.File.encode(message.file, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.method != null && message.hasOwnProperty("method"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int32(message.method);
                 return writer;
             };
     
             /**
-             * Encodes the specified FileAuthReq message, length delimited. Does not implicitly {@link replitproto.FileAuthReq.verify|verify} messages.
+             * Encodes the specified FileAuthReq message, length delimited. Does not implicitly {@link api.FileAuthReq.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.FileAuthReq
+             * @memberof api.FileAuthReq
              * @static
-             * @param {replitproto.IFileAuthReq} message FileAuthReq message or plain object to encode
+             * @param {api.IFileAuthReq} message FileAuthReq message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -5525,23 +5525,23 @@
             /**
              * Decodes a FileAuthReq message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.FileAuthReq
+             * @memberof api.FileAuthReq
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.FileAuthReq} FileAuthReq
+             * @returns {api.FileAuthReq} FileAuthReq
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             FileAuthReq.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.FileAuthReq();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.FileAuthReq();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.file = $root.replitproto.File.decode(reader, reader.uint32());
+                        message.file = $root.api.File.decode(reader, reader.uint32());
                         break;
                     case 2:
                         message.method = reader.int32();
@@ -5557,10 +5557,10 @@
             /**
              * Decodes a FileAuthReq message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.FileAuthReq
+             * @memberof api.FileAuthReq
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.FileAuthReq} FileAuthReq
+             * @returns {api.FileAuthReq} FileAuthReq
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -5573,7 +5573,7 @@
             /**
              * Verifies a FileAuthReq message.
              * @function verify
-             * @memberof replitproto.FileAuthReq
+             * @memberof api.FileAuthReq
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -5582,7 +5582,7 @@
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.file != null && message.hasOwnProperty("file")) {
-                    var error = $root.replitproto.File.verify(message.file);
+                    var error = $root.api.File.verify(message.file);
                     if (error)
                         return "file." + error;
                 }
@@ -5602,19 +5602,19 @@
             /**
              * Creates a FileAuthReq message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.FileAuthReq
+             * @memberof api.FileAuthReq
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.FileAuthReq} FileAuthReq
+             * @returns {api.FileAuthReq} FileAuthReq
              */
             FileAuthReq.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.FileAuthReq)
+                if (object instanceof $root.api.FileAuthReq)
                     return object;
-                var message = new $root.replitproto.FileAuthReq();
+                var message = new $root.api.FileAuthReq();
                 if (object.file != null) {
                     if (typeof object.file !== "object")
-                        throw TypeError(".replitproto.FileAuthReq.file: object expected");
-                    message.file = $root.replitproto.File.fromObject(object.file);
+                        throw TypeError(".api.FileAuthReq.file: object expected");
+                    message.file = $root.api.File.fromObject(object.file);
                 }
                 switch (object.method) {
                 case "GET":
@@ -5640,9 +5640,9 @@
             /**
              * Creates a plain object from a FileAuthReq message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.FileAuthReq
+             * @memberof api.FileAuthReq
              * @static
-             * @param {replitproto.FileAuthReq} message FileAuthReq
+             * @param {api.FileAuthReq} message FileAuthReq
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -5655,16 +5655,16 @@
                     object.method = options.enums === String ? "GET" : 0;
                 }
                 if (message.file != null && message.hasOwnProperty("file"))
-                    object.file = $root.replitproto.File.toObject(message.file, options);
+                    object.file = $root.api.File.toObject(message.file, options);
                 if (message.method != null && message.hasOwnProperty("method"))
-                    object.method = options.enums === String ? $root.replitproto.FileAuthMethod[message.method] : message.method;
+                    object.method = options.enums === String ? $root.api.FileAuthMethod[message.method] : message.method;
                 return object;
             };
     
             /**
              * Converts this FileAuthReq to JSON.
              * @function toJSON
-             * @memberof replitproto.FileAuthReq
+             * @memberof api.FileAuthReq
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -5675,23 +5675,23 @@
             return FileAuthReq;
         })();
     
-        replitproto.MultiFileAuthRes = (function() {
+        api.MultiFileAuthRes = (function() {
     
             /**
              * Properties of a MultiFileAuthRes.
-             * @memberof replitproto
+             * @memberof api
              * @interface IMultiFileAuthRes
-             * @property {replitproto.IFileAuthRes|null} [put] MultiFileAuthRes put
-             * @property {replitproto.IFileAuthRes|null} [del] MultiFileAuthRes del
+             * @property {api.IFileAuthRes|null} [put] MultiFileAuthRes put
+             * @property {api.IFileAuthRes|null} [del] MultiFileAuthRes del
              */
     
             /**
              * Constructs a new MultiFileAuthRes.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a MultiFileAuthRes.
              * @implements IMultiFileAuthRes
              * @constructor
-             * @param {replitproto.IMultiFileAuthRes=} [properties] Properties to set
+             * @param {api.IMultiFileAuthRes=} [properties] Properties to set
              */
             function MultiFileAuthRes(properties) {
                 if (properties)
@@ -5702,16 +5702,16 @@
     
             /**
              * MultiFileAuthRes put.
-             * @member {replitproto.IFileAuthRes|null|undefined} put
-             * @memberof replitproto.MultiFileAuthRes
+             * @member {api.IFileAuthRes|null|undefined} put
+             * @memberof api.MultiFileAuthRes
              * @instance
              */
             MultiFileAuthRes.prototype.put = null;
     
             /**
              * MultiFileAuthRes del.
-             * @member {replitproto.IFileAuthRes|null|undefined} del
-             * @memberof replitproto.MultiFileAuthRes
+             * @member {api.IFileAuthRes|null|undefined} del
+             * @memberof api.MultiFileAuthRes
              * @instance
              */
             MultiFileAuthRes.prototype.del = null;
@@ -5719,21 +5719,21 @@
             /**
              * Creates a new MultiFileAuthRes instance using the specified properties.
              * @function create
-             * @memberof replitproto.MultiFileAuthRes
+             * @memberof api.MultiFileAuthRes
              * @static
-             * @param {replitproto.IMultiFileAuthRes=} [properties] Properties to set
-             * @returns {replitproto.MultiFileAuthRes} MultiFileAuthRes instance
+             * @param {api.IMultiFileAuthRes=} [properties] Properties to set
+             * @returns {api.MultiFileAuthRes} MultiFileAuthRes instance
              */
             MultiFileAuthRes.create = function create(properties) {
                 return new MultiFileAuthRes(properties);
             };
     
             /**
-             * Encodes the specified MultiFileAuthRes message. Does not implicitly {@link replitproto.MultiFileAuthRes.verify|verify} messages.
+             * Encodes the specified MultiFileAuthRes message. Does not implicitly {@link api.MultiFileAuthRes.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.MultiFileAuthRes
+             * @memberof api.MultiFileAuthRes
              * @static
-             * @param {replitproto.IMultiFileAuthRes} message MultiFileAuthRes message or plain object to encode
+             * @param {api.IMultiFileAuthRes} message MultiFileAuthRes message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -5741,18 +5741,18 @@
                 if (!writer)
                     writer = $Writer.create();
                 if (message.put != null && message.hasOwnProperty("put"))
-                    $root.replitproto.FileAuthRes.encode(message.put, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    $root.api.FileAuthRes.encode(message.put, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.del != null && message.hasOwnProperty("del"))
-                    $root.replitproto.FileAuthRes.encode(message.del, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    $root.api.FileAuthRes.encode(message.del, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 return writer;
             };
     
             /**
-             * Encodes the specified MultiFileAuthRes message, length delimited. Does not implicitly {@link replitproto.MultiFileAuthRes.verify|verify} messages.
+             * Encodes the specified MultiFileAuthRes message, length delimited. Does not implicitly {@link api.MultiFileAuthRes.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.MultiFileAuthRes
+             * @memberof api.MultiFileAuthRes
              * @static
-             * @param {replitproto.IMultiFileAuthRes} message MultiFileAuthRes message or plain object to encode
+             * @param {api.IMultiFileAuthRes} message MultiFileAuthRes message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -5763,26 +5763,26 @@
             /**
              * Decodes a MultiFileAuthRes message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.MultiFileAuthRes
+             * @memberof api.MultiFileAuthRes
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.MultiFileAuthRes} MultiFileAuthRes
+             * @returns {api.MultiFileAuthRes} MultiFileAuthRes
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             MultiFileAuthRes.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.MultiFileAuthRes();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.MultiFileAuthRes();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.put = $root.replitproto.FileAuthRes.decode(reader, reader.uint32());
+                        message.put = $root.api.FileAuthRes.decode(reader, reader.uint32());
                         break;
                     case 2:
-                        message.del = $root.replitproto.FileAuthRes.decode(reader, reader.uint32());
+                        message.del = $root.api.FileAuthRes.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -5795,10 +5795,10 @@
             /**
              * Decodes a MultiFileAuthRes message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.MultiFileAuthRes
+             * @memberof api.MultiFileAuthRes
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.MultiFileAuthRes} MultiFileAuthRes
+             * @returns {api.MultiFileAuthRes} MultiFileAuthRes
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -5811,7 +5811,7 @@
             /**
              * Verifies a MultiFileAuthRes message.
              * @function verify
-             * @memberof replitproto.MultiFileAuthRes
+             * @memberof api.MultiFileAuthRes
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -5820,12 +5820,12 @@
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.put != null && message.hasOwnProperty("put")) {
-                    var error = $root.replitproto.FileAuthRes.verify(message.put);
+                    var error = $root.api.FileAuthRes.verify(message.put);
                     if (error)
                         return "put." + error;
                 }
                 if (message.del != null && message.hasOwnProperty("del")) {
-                    var error = $root.replitproto.FileAuthRes.verify(message.del);
+                    var error = $root.api.FileAuthRes.verify(message.del);
                     if (error)
                         return "del." + error;
                 }
@@ -5835,24 +5835,24 @@
             /**
              * Creates a MultiFileAuthRes message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.MultiFileAuthRes
+             * @memberof api.MultiFileAuthRes
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.MultiFileAuthRes} MultiFileAuthRes
+             * @returns {api.MultiFileAuthRes} MultiFileAuthRes
              */
             MultiFileAuthRes.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.MultiFileAuthRes)
+                if (object instanceof $root.api.MultiFileAuthRes)
                     return object;
-                var message = new $root.replitproto.MultiFileAuthRes();
+                var message = new $root.api.MultiFileAuthRes();
                 if (object.put != null) {
                     if (typeof object.put !== "object")
-                        throw TypeError(".replitproto.MultiFileAuthRes.put: object expected");
-                    message.put = $root.replitproto.FileAuthRes.fromObject(object.put);
+                        throw TypeError(".api.MultiFileAuthRes.put: object expected");
+                    message.put = $root.api.FileAuthRes.fromObject(object.put);
                 }
                 if (object.del != null) {
                     if (typeof object.del !== "object")
-                        throw TypeError(".replitproto.MultiFileAuthRes.del: object expected");
-                    message.del = $root.replitproto.FileAuthRes.fromObject(object.del);
+                        throw TypeError(".api.MultiFileAuthRes.del: object expected");
+                    message.del = $root.api.FileAuthRes.fromObject(object.del);
                 }
                 return message;
             };
@@ -5860,9 +5860,9 @@
             /**
              * Creates a plain object from a MultiFileAuthRes message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.MultiFileAuthRes
+             * @memberof api.MultiFileAuthRes
              * @static
-             * @param {replitproto.MultiFileAuthRes} message MultiFileAuthRes
+             * @param {api.MultiFileAuthRes} message MultiFileAuthRes
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -5875,16 +5875,16 @@
                     object.del = null;
                 }
                 if (message.put != null && message.hasOwnProperty("put"))
-                    object.put = $root.replitproto.FileAuthRes.toObject(message.put, options);
+                    object.put = $root.api.FileAuthRes.toObject(message.put, options);
                 if (message.del != null && message.hasOwnProperty("del"))
-                    object.del = $root.replitproto.FileAuthRes.toObject(message.del, options);
+                    object.del = $root.api.FileAuthRes.toObject(message.del, options);
                 return object;
             };
     
             /**
              * Converts this MultiFileAuthRes to JSON.
              * @function toJSON
-             * @memberof replitproto.MultiFileAuthRes
+             * @memberof api.MultiFileAuthRes
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -5895,26 +5895,26 @@
             return MultiFileAuthRes;
         })();
     
-        replitproto.FileAuthRes = (function() {
+        api.FileAuthRes = (function() {
     
             /**
              * Properties of a FileAuthRes.
-             * @memberof replitproto
+             * @memberof api
              * @interface IFileAuthRes
-             * @property {replitproto.IFile|null} [file] FileAuthRes file
+             * @property {api.IFile|null} [file] FileAuthRes file
              * @property {string|null} [url] FileAuthRes url
-             * @property {replitproto.FileAuthMethod|null} [method] FileAuthRes method
+             * @property {api.FileAuthMethod|null} [method] FileAuthRes method
              * @property {number|Long|null} [expire] FileAuthRes expire
              * @property {string|null} [error] FileAuthRes error
              */
     
             /**
              * Constructs a new FileAuthRes.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a FileAuthRes.
              * @implements IFileAuthRes
              * @constructor
-             * @param {replitproto.IFileAuthRes=} [properties] Properties to set
+             * @param {api.IFileAuthRes=} [properties] Properties to set
              */
             function FileAuthRes(properties) {
                 if (properties)
@@ -5925,8 +5925,8 @@
     
             /**
              * FileAuthRes file.
-             * @member {replitproto.IFile|null|undefined} file
-             * @memberof replitproto.FileAuthRes
+             * @member {api.IFile|null|undefined} file
+             * @memberof api.FileAuthRes
              * @instance
              */
             FileAuthRes.prototype.file = null;
@@ -5934,15 +5934,15 @@
             /**
              * FileAuthRes url.
              * @member {string} url
-             * @memberof replitproto.FileAuthRes
+             * @memberof api.FileAuthRes
              * @instance
              */
             FileAuthRes.prototype.url = "";
     
             /**
              * FileAuthRes method.
-             * @member {replitproto.FileAuthMethod} method
-             * @memberof replitproto.FileAuthRes
+             * @member {api.FileAuthMethod} method
+             * @memberof api.FileAuthRes
              * @instance
              */
             FileAuthRes.prototype.method = 0;
@@ -5950,7 +5950,7 @@
             /**
              * FileAuthRes expire.
              * @member {number|Long} expire
-             * @memberof replitproto.FileAuthRes
+             * @memberof api.FileAuthRes
              * @instance
              */
             FileAuthRes.prototype.expire = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
@@ -5958,7 +5958,7 @@
             /**
              * FileAuthRes error.
              * @member {string} error
-             * @memberof replitproto.FileAuthRes
+             * @memberof api.FileAuthRes
              * @instance
              */
             FileAuthRes.prototype.error = "";
@@ -5966,21 +5966,21 @@
             /**
              * Creates a new FileAuthRes instance using the specified properties.
              * @function create
-             * @memberof replitproto.FileAuthRes
+             * @memberof api.FileAuthRes
              * @static
-             * @param {replitproto.IFileAuthRes=} [properties] Properties to set
-             * @returns {replitproto.FileAuthRes} FileAuthRes instance
+             * @param {api.IFileAuthRes=} [properties] Properties to set
+             * @returns {api.FileAuthRes} FileAuthRes instance
              */
             FileAuthRes.create = function create(properties) {
                 return new FileAuthRes(properties);
             };
     
             /**
-             * Encodes the specified FileAuthRes message. Does not implicitly {@link replitproto.FileAuthRes.verify|verify} messages.
+             * Encodes the specified FileAuthRes message. Does not implicitly {@link api.FileAuthRes.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.FileAuthRes
+             * @memberof api.FileAuthRes
              * @static
-             * @param {replitproto.IFileAuthRes} message FileAuthRes message or plain object to encode
+             * @param {api.IFileAuthRes} message FileAuthRes message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -5988,7 +5988,7 @@
                 if (!writer)
                     writer = $Writer.create();
                 if (message.file != null && message.hasOwnProperty("file"))
-                    $root.replitproto.File.encode(message.file, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    $root.api.File.encode(message.file, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.url != null && message.hasOwnProperty("url"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.url);
                 if (message.method != null && message.hasOwnProperty("method"))
@@ -6001,11 +6001,11 @@
             };
     
             /**
-             * Encodes the specified FileAuthRes message, length delimited. Does not implicitly {@link replitproto.FileAuthRes.verify|verify} messages.
+             * Encodes the specified FileAuthRes message, length delimited. Does not implicitly {@link api.FileAuthRes.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.FileAuthRes
+             * @memberof api.FileAuthRes
              * @static
-             * @param {replitproto.IFileAuthRes} message FileAuthRes message or plain object to encode
+             * @param {api.IFileAuthRes} message FileAuthRes message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -6016,23 +6016,23 @@
             /**
              * Decodes a FileAuthRes message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.FileAuthRes
+             * @memberof api.FileAuthRes
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.FileAuthRes} FileAuthRes
+             * @returns {api.FileAuthRes} FileAuthRes
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             FileAuthRes.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.FileAuthRes();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.FileAuthRes();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.file = $root.replitproto.File.decode(reader, reader.uint32());
+                        message.file = $root.api.File.decode(reader, reader.uint32());
                         break;
                     case 2:
                         message.url = reader.string();
@@ -6057,10 +6057,10 @@
             /**
              * Decodes a FileAuthRes message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.FileAuthRes
+             * @memberof api.FileAuthRes
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.FileAuthRes} FileAuthRes
+             * @returns {api.FileAuthRes} FileAuthRes
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -6073,7 +6073,7 @@
             /**
              * Verifies a FileAuthRes message.
              * @function verify
-             * @memberof replitproto.FileAuthRes
+             * @memberof api.FileAuthRes
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -6082,7 +6082,7 @@
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.file != null && message.hasOwnProperty("file")) {
-                    var error = $root.replitproto.File.verify(message.file);
+                    var error = $root.api.File.verify(message.file);
                     if (error)
                         return "file." + error;
                 }
@@ -6111,19 +6111,19 @@
             /**
              * Creates a FileAuthRes message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.FileAuthRes
+             * @memberof api.FileAuthRes
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.FileAuthRes} FileAuthRes
+             * @returns {api.FileAuthRes} FileAuthRes
              */
             FileAuthRes.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.FileAuthRes)
+                if (object instanceof $root.api.FileAuthRes)
                     return object;
-                var message = new $root.replitproto.FileAuthRes();
+                var message = new $root.api.FileAuthRes();
                 if (object.file != null) {
                     if (typeof object.file !== "object")
-                        throw TypeError(".replitproto.FileAuthRes.file: object expected");
-                    message.file = $root.replitproto.File.fromObject(object.file);
+                        throw TypeError(".api.FileAuthRes.file: object expected");
+                    message.file = $root.api.File.fromObject(object.file);
                 }
                 if (object.url != null)
                     message.url = String(object.url);
@@ -6162,9 +6162,9 @@
             /**
              * Creates a plain object from a FileAuthRes message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.FileAuthRes
+             * @memberof api.FileAuthRes
              * @static
-             * @param {replitproto.FileAuthRes} message FileAuthRes
+             * @param {api.FileAuthRes} message FileAuthRes
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -6184,11 +6184,11 @@
                     object.error = "";
                 }
                 if (message.file != null && message.hasOwnProperty("file"))
-                    object.file = $root.replitproto.File.toObject(message.file, options);
+                    object.file = $root.api.File.toObject(message.file, options);
                 if (message.url != null && message.hasOwnProperty("url"))
                     object.url = message.url;
                 if (message.method != null && message.hasOwnProperty("method"))
-                    object.method = options.enums === String ? $root.replitproto.FileAuthMethod[message.method] : message.method;
+                    object.method = options.enums === String ? $root.api.FileAuthMethod[message.method] : message.method;
                 if (message.expire != null && message.hasOwnProperty("expire"))
                     if (typeof message.expire === "number")
                         object.expire = options.longs === String ? String(message.expire) : message.expire;
@@ -6202,7 +6202,7 @@
             /**
              * Converts this FileAuthRes to JSON.
              * @function toJSON
-             * @memberof replitproto.FileAuthRes
+             * @memberof api.FileAuthRes
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -6213,22 +6213,22 @@
             return FileAuthRes;
         })();
     
-        replitproto.Disconnect = (function() {
+        api.Disconnect = (function() {
     
             /**
              * Properties of a Disconnect.
-             * @memberof replitproto
+             * @memberof api
              * @interface IDisconnect
              * @property {string|null} [error] Disconnect error
              */
     
             /**
              * Constructs a new Disconnect.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a Disconnect.
              * @implements IDisconnect
              * @constructor
-             * @param {replitproto.IDisconnect=} [properties] Properties to set
+             * @param {api.IDisconnect=} [properties] Properties to set
              */
             function Disconnect(properties) {
                 if (properties)
@@ -6240,7 +6240,7 @@
             /**
              * Disconnect error.
              * @member {string} error
-             * @memberof replitproto.Disconnect
+             * @memberof api.Disconnect
              * @instance
              */
             Disconnect.prototype.error = "";
@@ -6248,21 +6248,21 @@
             /**
              * Creates a new Disconnect instance using the specified properties.
              * @function create
-             * @memberof replitproto.Disconnect
+             * @memberof api.Disconnect
              * @static
-             * @param {replitproto.IDisconnect=} [properties] Properties to set
-             * @returns {replitproto.Disconnect} Disconnect instance
+             * @param {api.IDisconnect=} [properties] Properties to set
+             * @returns {api.Disconnect} Disconnect instance
              */
             Disconnect.create = function create(properties) {
                 return new Disconnect(properties);
             };
     
             /**
-             * Encodes the specified Disconnect message. Does not implicitly {@link replitproto.Disconnect.verify|verify} messages.
+             * Encodes the specified Disconnect message. Does not implicitly {@link api.Disconnect.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.Disconnect
+             * @memberof api.Disconnect
              * @static
-             * @param {replitproto.IDisconnect} message Disconnect message or plain object to encode
+             * @param {api.IDisconnect} message Disconnect message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -6275,11 +6275,11 @@
             };
     
             /**
-             * Encodes the specified Disconnect message, length delimited. Does not implicitly {@link replitproto.Disconnect.verify|verify} messages.
+             * Encodes the specified Disconnect message, length delimited. Does not implicitly {@link api.Disconnect.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.Disconnect
+             * @memberof api.Disconnect
              * @static
-             * @param {replitproto.IDisconnect} message Disconnect message or plain object to encode
+             * @param {api.IDisconnect} message Disconnect message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -6290,18 +6290,18 @@
             /**
              * Decodes a Disconnect message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.Disconnect
+             * @memberof api.Disconnect
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.Disconnect} Disconnect
+             * @returns {api.Disconnect} Disconnect
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             Disconnect.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.Disconnect();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Disconnect();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -6319,10 +6319,10 @@
             /**
              * Decodes a Disconnect message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.Disconnect
+             * @memberof api.Disconnect
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.Disconnect} Disconnect
+             * @returns {api.Disconnect} Disconnect
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -6335,7 +6335,7 @@
             /**
              * Verifies a Disconnect message.
              * @function verify
-             * @memberof replitproto.Disconnect
+             * @memberof api.Disconnect
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -6352,15 +6352,15 @@
             /**
              * Creates a Disconnect message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.Disconnect
+             * @memberof api.Disconnect
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.Disconnect} Disconnect
+             * @returns {api.Disconnect} Disconnect
              */
             Disconnect.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.Disconnect)
+                if (object instanceof $root.api.Disconnect)
                     return object;
-                var message = new $root.replitproto.Disconnect();
+                var message = new $root.api.Disconnect();
                 if (object.error != null)
                     message.error = String(object.error);
                 return message;
@@ -6369,9 +6369,9 @@
             /**
              * Creates a plain object from a Disconnect message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.Disconnect
+             * @memberof api.Disconnect
              * @static
-             * @param {replitproto.Disconnect} message Disconnect
+             * @param {api.Disconnect} message Disconnect
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -6389,7 +6389,7 @@
             /**
              * Converts this Disconnect to JSON.
              * @function toJSON
-             * @memberof replitproto.Disconnect
+             * @memberof api.Disconnect
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -6400,22 +6400,22 @@
             return Disconnect;
         })();
     
-        replitproto.Send = (function() {
+        api.Send = (function() {
     
             /**
              * Properties of a Send.
-             * @memberof replitproto
+             * @memberof api
              * @interface ISend
              * @property {Uint8Array|null} [buff] Send buff
              */
     
             /**
              * Constructs a new Send.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a Send.
              * @implements ISend
              * @constructor
-             * @param {replitproto.ISend=} [properties] Properties to set
+             * @param {api.ISend=} [properties] Properties to set
              */
             function Send(properties) {
                 if (properties)
@@ -6427,7 +6427,7 @@
             /**
              * Send buff.
              * @member {Uint8Array} buff
-             * @memberof replitproto.Send
+             * @memberof api.Send
              * @instance
              */
             Send.prototype.buff = $util.newBuffer([]);
@@ -6435,21 +6435,21 @@
             /**
              * Creates a new Send instance using the specified properties.
              * @function create
-             * @memberof replitproto.Send
+             * @memberof api.Send
              * @static
-             * @param {replitproto.ISend=} [properties] Properties to set
-             * @returns {replitproto.Send} Send instance
+             * @param {api.ISend=} [properties] Properties to set
+             * @returns {api.Send} Send instance
              */
             Send.create = function create(properties) {
                 return new Send(properties);
             };
     
             /**
-             * Encodes the specified Send message. Does not implicitly {@link replitproto.Send.verify|verify} messages.
+             * Encodes the specified Send message. Does not implicitly {@link api.Send.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.Send
+             * @memberof api.Send
              * @static
-             * @param {replitproto.ISend} message Send message or plain object to encode
+             * @param {api.ISend} message Send message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -6462,11 +6462,11 @@
             };
     
             /**
-             * Encodes the specified Send message, length delimited. Does not implicitly {@link replitproto.Send.verify|verify} messages.
+             * Encodes the specified Send message, length delimited. Does not implicitly {@link api.Send.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.Send
+             * @memberof api.Send
              * @static
-             * @param {replitproto.ISend} message Send message or plain object to encode
+             * @param {api.ISend} message Send message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -6477,18 +6477,18 @@
             /**
              * Decodes a Send message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.Send
+             * @memberof api.Send
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.Send} Send
+             * @returns {api.Send} Send
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             Send.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.Send();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Send();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -6506,10 +6506,10 @@
             /**
              * Decodes a Send message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.Send
+             * @memberof api.Send
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.Send} Send
+             * @returns {api.Send} Send
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -6522,7 +6522,7 @@
             /**
              * Verifies a Send message.
              * @function verify
-             * @memberof replitproto.Send
+             * @memberof api.Send
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -6539,15 +6539,15 @@
             /**
              * Creates a Send message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.Send
+             * @memberof api.Send
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.Send} Send
+             * @returns {api.Send} Send
              */
             Send.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.Send)
+                if (object instanceof $root.api.Send)
                     return object;
-                var message = new $root.replitproto.Send();
+                var message = new $root.api.Send();
                 if (object.buff != null)
                     if (typeof object.buff === "string")
                         $util.base64.decode(object.buff, message.buff = $util.newBuffer($util.base64.length(object.buff)), 0);
@@ -6559,9 +6559,9 @@
             /**
              * Creates a plain object from a Send message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.Send
+             * @memberof api.Send
              * @static
-             * @param {replitproto.Send} message Send
+             * @param {api.Send} message Send
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -6585,7 +6585,7 @@
             /**
              * Converts this Send to JSON.
              * @function toJSON
-             * @memberof replitproto.Send
+             * @memberof api.Send
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -6596,22 +6596,22 @@
             return Send;
         })();
     
-        replitproto.Recv = (function() {
+        api.Recv = (function() {
     
             /**
              * Properties of a Recv.
-             * @memberof replitproto
+             * @memberof api
              * @interface IRecv
              * @property {Uint8Array|null} [buff] Recv buff
              */
     
             /**
              * Constructs a new Recv.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a Recv.
              * @implements IRecv
              * @constructor
-             * @param {replitproto.IRecv=} [properties] Properties to set
+             * @param {api.IRecv=} [properties] Properties to set
              */
             function Recv(properties) {
                 if (properties)
@@ -6623,7 +6623,7 @@
             /**
              * Recv buff.
              * @member {Uint8Array} buff
-             * @memberof replitproto.Recv
+             * @memberof api.Recv
              * @instance
              */
             Recv.prototype.buff = $util.newBuffer([]);
@@ -6631,21 +6631,21 @@
             /**
              * Creates a new Recv instance using the specified properties.
              * @function create
-             * @memberof replitproto.Recv
+             * @memberof api.Recv
              * @static
-             * @param {replitproto.IRecv=} [properties] Properties to set
-             * @returns {replitproto.Recv} Recv instance
+             * @param {api.IRecv=} [properties] Properties to set
+             * @returns {api.Recv} Recv instance
              */
             Recv.create = function create(properties) {
                 return new Recv(properties);
             };
     
             /**
-             * Encodes the specified Recv message. Does not implicitly {@link replitproto.Recv.verify|verify} messages.
+             * Encodes the specified Recv message. Does not implicitly {@link api.Recv.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.Recv
+             * @memberof api.Recv
              * @static
-             * @param {replitproto.IRecv} message Recv message or plain object to encode
+             * @param {api.IRecv} message Recv message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -6658,11 +6658,11 @@
             };
     
             /**
-             * Encodes the specified Recv message, length delimited. Does not implicitly {@link replitproto.Recv.verify|verify} messages.
+             * Encodes the specified Recv message, length delimited. Does not implicitly {@link api.Recv.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.Recv
+             * @memberof api.Recv
              * @static
-             * @param {replitproto.IRecv} message Recv message or plain object to encode
+             * @param {api.IRecv} message Recv message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -6673,18 +6673,18 @@
             /**
              * Decodes a Recv message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.Recv
+             * @memberof api.Recv
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.Recv} Recv
+             * @returns {api.Recv} Recv
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             Recv.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.Recv();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Recv();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -6702,10 +6702,10 @@
             /**
              * Decodes a Recv message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.Recv
+             * @memberof api.Recv
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.Recv} Recv
+             * @returns {api.Recv} Recv
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -6718,7 +6718,7 @@
             /**
              * Verifies a Recv message.
              * @function verify
-             * @memberof replitproto.Recv
+             * @memberof api.Recv
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -6735,15 +6735,15 @@
             /**
              * Creates a Recv message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.Recv
+             * @memberof api.Recv
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.Recv} Recv
+             * @returns {api.Recv} Recv
              */
             Recv.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.Recv)
+                if (object instanceof $root.api.Recv)
                     return object;
-                var message = new $root.replitproto.Recv();
+                var message = new $root.api.Recv();
                 if (object.buff != null)
                     if (typeof object.buff === "string")
                         $util.base64.decode(object.buff, message.buff = $util.newBuffer($util.base64.length(object.buff)), 0);
@@ -6755,9 +6755,9 @@
             /**
              * Creates a plain object from a Recv message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.Recv
+             * @memberof api.Recv
              * @static
-             * @param {replitproto.Recv} message Recv
+             * @param {api.Recv} message Recv
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -6781,7 +6781,7 @@
             /**
              * Converts this Recv to JSON.
              * @function toJSON
-             * @memberof replitproto.Recv
+             * @memberof api.Recv
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -6792,11 +6792,11 @@
             return Recv;
         })();
     
-        replitproto.Connect = (function() {
+        api.Connect = (function() {
     
             /**
              * Properties of a Connect.
-             * @memberof replitproto
+             * @memberof api
              * @interface IConnect
              * @property {string|null} [proto] Connect proto
              * @property {string|null} [addr] Connect addr
@@ -6804,11 +6804,11 @@
     
             /**
              * Constructs a new Connect.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a Connect.
              * @implements IConnect
              * @constructor
-             * @param {replitproto.IConnect=} [properties] Properties to set
+             * @param {api.IConnect=} [properties] Properties to set
              */
             function Connect(properties) {
                 if (properties)
@@ -6820,7 +6820,7 @@
             /**
              * Connect proto.
              * @member {string} proto
-             * @memberof replitproto.Connect
+             * @memberof api.Connect
              * @instance
              */
             Connect.prototype.proto = "";
@@ -6828,7 +6828,7 @@
             /**
              * Connect addr.
              * @member {string} addr
-             * @memberof replitproto.Connect
+             * @memberof api.Connect
              * @instance
              */
             Connect.prototype.addr = "";
@@ -6836,21 +6836,21 @@
             /**
              * Creates a new Connect instance using the specified properties.
              * @function create
-             * @memberof replitproto.Connect
+             * @memberof api.Connect
              * @static
-             * @param {replitproto.IConnect=} [properties] Properties to set
-             * @returns {replitproto.Connect} Connect instance
+             * @param {api.IConnect=} [properties] Properties to set
+             * @returns {api.Connect} Connect instance
              */
             Connect.create = function create(properties) {
                 return new Connect(properties);
             };
     
             /**
-             * Encodes the specified Connect message. Does not implicitly {@link replitproto.Connect.verify|verify} messages.
+             * Encodes the specified Connect message. Does not implicitly {@link api.Connect.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.Connect
+             * @memberof api.Connect
              * @static
-             * @param {replitproto.IConnect} message Connect message or plain object to encode
+             * @param {api.IConnect} message Connect message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -6865,11 +6865,11 @@
             };
     
             /**
-             * Encodes the specified Connect message, length delimited. Does not implicitly {@link replitproto.Connect.verify|verify} messages.
+             * Encodes the specified Connect message, length delimited. Does not implicitly {@link api.Connect.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.Connect
+             * @memberof api.Connect
              * @static
-             * @param {replitproto.IConnect} message Connect message or plain object to encode
+             * @param {api.IConnect} message Connect message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -6880,18 +6880,18 @@
             /**
              * Decodes a Connect message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.Connect
+             * @memberof api.Connect
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.Connect} Connect
+             * @returns {api.Connect} Connect
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             Connect.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.Connect();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Connect();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -6912,10 +6912,10 @@
             /**
              * Decodes a Connect message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.Connect
+             * @memberof api.Connect
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.Connect} Connect
+             * @returns {api.Connect} Connect
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -6928,7 +6928,7 @@
             /**
              * Verifies a Connect message.
              * @function verify
-             * @memberof replitproto.Connect
+             * @memberof api.Connect
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -6948,15 +6948,15 @@
             /**
              * Creates a Connect message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.Connect
+             * @memberof api.Connect
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.Connect} Connect
+             * @returns {api.Connect} Connect
              */
             Connect.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.Connect)
+                if (object instanceof $root.api.Connect)
                     return object;
-                var message = new $root.replitproto.Connect();
+                var message = new $root.api.Connect();
                 if (object.proto != null)
                     message.proto = String(object.proto);
                 if (object.addr != null)
@@ -6967,9 +6967,9 @@
             /**
              * Creates a plain object from a Connect message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.Connect
+             * @memberof api.Connect
              * @static
-             * @param {replitproto.Connect} message Connect
+             * @param {api.Connect} message Connect
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -6991,7 +6991,7 @@
             /**
              * Converts this Connect to JSON.
              * @function toJSON
-             * @memberof replitproto.Connect
+             * @memberof api.Connect
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -7002,22 +7002,22 @@
             return Connect;
         })();
     
-        replitproto.Hint = (function() {
+        api.Hint = (function() {
     
             /**
              * Properties of a Hint.
-             * @memberof replitproto
+             * @memberof api
              * @interface IHint
              * @property {string|null} [text] Hint text
              */
     
             /**
              * Constructs a new Hint.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a Hint.
              * @implements IHint
              * @constructor
-             * @param {replitproto.IHint=} [properties] Properties to set
+             * @param {api.IHint=} [properties] Properties to set
              */
             function Hint(properties) {
                 if (properties)
@@ -7029,7 +7029,7 @@
             /**
              * Hint text.
              * @member {string} text
-             * @memberof replitproto.Hint
+             * @memberof api.Hint
              * @instance
              */
             Hint.prototype.text = "";
@@ -7037,21 +7037,21 @@
             /**
              * Creates a new Hint instance using the specified properties.
              * @function create
-             * @memberof replitproto.Hint
+             * @memberof api.Hint
              * @static
-             * @param {replitproto.IHint=} [properties] Properties to set
-             * @returns {replitproto.Hint} Hint instance
+             * @param {api.IHint=} [properties] Properties to set
+             * @returns {api.Hint} Hint instance
              */
             Hint.create = function create(properties) {
                 return new Hint(properties);
             };
     
             /**
-             * Encodes the specified Hint message. Does not implicitly {@link replitproto.Hint.verify|verify} messages.
+             * Encodes the specified Hint message. Does not implicitly {@link api.Hint.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.Hint
+             * @memberof api.Hint
              * @static
-             * @param {replitproto.IHint} message Hint message or plain object to encode
+             * @param {api.IHint} message Hint message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -7064,11 +7064,11 @@
             };
     
             /**
-             * Encodes the specified Hint message, length delimited. Does not implicitly {@link replitproto.Hint.verify|verify} messages.
+             * Encodes the specified Hint message, length delimited. Does not implicitly {@link api.Hint.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.Hint
+             * @memberof api.Hint
              * @static
-             * @param {replitproto.IHint} message Hint message or plain object to encode
+             * @param {api.IHint} message Hint message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -7079,18 +7079,18 @@
             /**
              * Decodes a Hint message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.Hint
+             * @memberof api.Hint
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.Hint} Hint
+             * @returns {api.Hint} Hint
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             Hint.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.Hint();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Hint();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -7108,10 +7108,10 @@
             /**
              * Decodes a Hint message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.Hint
+             * @memberof api.Hint
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.Hint} Hint
+             * @returns {api.Hint} Hint
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -7124,7 +7124,7 @@
             /**
              * Verifies a Hint message.
              * @function verify
-             * @memberof replitproto.Hint
+             * @memberof api.Hint
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -7141,15 +7141,15 @@
             /**
              * Creates a Hint message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.Hint
+             * @memberof api.Hint
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.Hint} Hint
+             * @returns {api.Hint} Hint
              */
             Hint.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.Hint)
+                if (object instanceof $root.api.Hint)
                     return object;
-                var message = new $root.replitproto.Hint();
+                var message = new $root.api.Hint();
                 if (object.text != null)
                     message.text = String(object.text);
                 return message;
@@ -7158,9 +7158,9 @@
             /**
              * Creates a plain object from a Hint message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.Hint
+             * @memberof api.Hint
              * @static
-             * @param {replitproto.Hint} message Hint
+             * @param {api.Hint} message Hint
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -7178,7 +7178,7 @@
             /**
              * Converts this Hint to JSON.
              * @function toJSON
-             * @memberof replitproto.Hint
+             * @memberof api.Hint
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -7189,21 +7189,21 @@
             return Hint;
         })();
     
-        replitproto.Ping = (function() {
+        api.Ping = (function() {
     
             /**
              * Properties of a Ping.
-             * @memberof replitproto
+             * @memberof api
              * @interface IPing
              */
     
             /**
              * Constructs a new Ping.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a Ping.
              * @implements IPing
              * @constructor
-             * @param {replitproto.IPing=} [properties] Properties to set
+             * @param {api.IPing=} [properties] Properties to set
              */
             function Ping(properties) {
                 if (properties)
@@ -7215,21 +7215,21 @@
             /**
              * Creates a new Ping instance using the specified properties.
              * @function create
-             * @memberof replitproto.Ping
+             * @memberof api.Ping
              * @static
-             * @param {replitproto.IPing=} [properties] Properties to set
-             * @returns {replitproto.Ping} Ping instance
+             * @param {api.IPing=} [properties] Properties to set
+             * @returns {api.Ping} Ping instance
              */
             Ping.create = function create(properties) {
                 return new Ping(properties);
             };
     
             /**
-             * Encodes the specified Ping message. Does not implicitly {@link replitproto.Ping.verify|verify} messages.
+             * Encodes the specified Ping message. Does not implicitly {@link api.Ping.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.Ping
+             * @memberof api.Ping
              * @static
-             * @param {replitproto.IPing} message Ping message or plain object to encode
+             * @param {api.IPing} message Ping message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -7240,11 +7240,11 @@
             };
     
             /**
-             * Encodes the specified Ping message, length delimited. Does not implicitly {@link replitproto.Ping.verify|verify} messages.
+             * Encodes the specified Ping message, length delimited. Does not implicitly {@link api.Ping.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.Ping
+             * @memberof api.Ping
              * @static
-             * @param {replitproto.IPing} message Ping message or plain object to encode
+             * @param {api.IPing} message Ping message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -7255,18 +7255,18 @@
             /**
              * Decodes a Ping message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.Ping
+             * @memberof api.Ping
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.Ping} Ping
+             * @returns {api.Ping} Ping
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             Ping.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.Ping();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Ping();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -7281,10 +7281,10 @@
             /**
              * Decodes a Ping message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.Ping
+             * @memberof api.Ping
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.Ping} Ping
+             * @returns {api.Ping} Ping
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -7297,7 +7297,7 @@
             /**
              * Verifies a Ping message.
              * @function verify
-             * @memberof replitproto.Ping
+             * @memberof api.Ping
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -7311,23 +7311,23 @@
             /**
              * Creates a Ping message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.Ping
+             * @memberof api.Ping
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.Ping} Ping
+             * @returns {api.Ping} Ping
              */
             Ping.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.Ping)
+                if (object instanceof $root.api.Ping)
                     return object;
-                return new $root.replitproto.Ping();
+                return new $root.api.Ping();
             };
     
             /**
              * Creates a plain object from a Ping message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.Ping
+             * @memberof api.Ping
              * @static
-             * @param {replitproto.Ping} message Ping
+             * @param {api.Ping} message Ping
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -7338,7 +7338,7 @@
             /**
              * Converts this Ping to JSON.
              * @function toJSON
-             * @memberof replitproto.Ping
+             * @memberof api.Ping
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -7349,21 +7349,21 @@
             return Ping;
         })();
     
-        replitproto.Pong = (function() {
+        api.Pong = (function() {
     
             /**
              * Properties of a Pong.
-             * @memberof replitproto
+             * @memberof api
              * @interface IPong
              */
     
             /**
              * Constructs a new Pong.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a Pong.
              * @implements IPong
              * @constructor
-             * @param {replitproto.IPong=} [properties] Properties to set
+             * @param {api.IPong=} [properties] Properties to set
              */
             function Pong(properties) {
                 if (properties)
@@ -7375,21 +7375,21 @@
             /**
              * Creates a new Pong instance using the specified properties.
              * @function create
-             * @memberof replitproto.Pong
+             * @memberof api.Pong
              * @static
-             * @param {replitproto.IPong=} [properties] Properties to set
-             * @returns {replitproto.Pong} Pong instance
+             * @param {api.IPong=} [properties] Properties to set
+             * @returns {api.Pong} Pong instance
              */
             Pong.create = function create(properties) {
                 return new Pong(properties);
             };
     
             /**
-             * Encodes the specified Pong message. Does not implicitly {@link replitproto.Pong.verify|verify} messages.
+             * Encodes the specified Pong message. Does not implicitly {@link api.Pong.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.Pong
+             * @memberof api.Pong
              * @static
-             * @param {replitproto.IPong} message Pong message or plain object to encode
+             * @param {api.IPong} message Pong message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -7400,11 +7400,11 @@
             };
     
             /**
-             * Encodes the specified Pong message, length delimited. Does not implicitly {@link replitproto.Pong.verify|verify} messages.
+             * Encodes the specified Pong message, length delimited. Does not implicitly {@link api.Pong.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.Pong
+             * @memberof api.Pong
              * @static
-             * @param {replitproto.IPong} message Pong message or plain object to encode
+             * @param {api.IPong} message Pong message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -7415,18 +7415,18 @@
             /**
              * Decodes a Pong message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.Pong
+             * @memberof api.Pong
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.Pong} Pong
+             * @returns {api.Pong} Pong
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             Pong.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.Pong();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Pong();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -7441,10 +7441,10 @@
             /**
              * Decodes a Pong message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.Pong
+             * @memberof api.Pong
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.Pong} Pong
+             * @returns {api.Pong} Pong
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -7457,7 +7457,7 @@
             /**
              * Verifies a Pong message.
              * @function verify
-             * @memberof replitproto.Pong
+             * @memberof api.Pong
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -7471,23 +7471,23 @@
             /**
              * Creates a Pong message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.Pong
+             * @memberof api.Pong
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.Pong} Pong
+             * @returns {api.Pong} Pong
              */
             Pong.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.Pong)
+                if (object instanceof $root.api.Pong)
                     return object;
-                return new $root.replitproto.Pong();
+                return new $root.api.Pong();
             };
     
             /**
              * Creates a plain object from a Pong message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.Pong
+             * @memberof api.Pong
              * @static
-             * @param {replitproto.Pong} message Pong
+             * @param {api.Pong} message Pong
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -7498,7 +7498,7 @@
             /**
              * Converts this Pong to JSON.
              * @function toJSON
-             * @memberof replitproto.Pong
+             * @memberof api.Pong
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -7509,11 +7509,11 @@
             return Pong;
         })();
     
-        replitproto.Hello = (function() {
+        api.Hello = (function() {
     
             /**
              * Properties of a Hello.
-             * @memberof replitproto
+             * @memberof api
              * @interface IHello
              * @property {number|null} [userid] Hello userid
              * @property {string|null} [username] Hello username
@@ -7522,11 +7522,11 @@
     
             /**
              * Constructs a new Hello.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a Hello.
              * @implements IHello
              * @constructor
-             * @param {replitproto.IHello=} [properties] Properties to set
+             * @param {api.IHello=} [properties] Properties to set
              */
             function Hello(properties) {
                 if (properties)
@@ -7538,7 +7538,7 @@
             /**
              * Hello userid.
              * @member {number} userid
-             * @memberof replitproto.Hello
+             * @memberof api.Hello
              * @instance
              */
             Hello.prototype.userid = 0;
@@ -7546,7 +7546,7 @@
             /**
              * Hello username.
              * @member {string} username
-             * @memberof replitproto.Hello
+             * @memberof api.Hello
              * @instance
              */
             Hello.prototype.username = "";
@@ -7554,7 +7554,7 @@
             /**
              * Hello token.
              * @member {string} token
-             * @memberof replitproto.Hello
+             * @memberof api.Hello
              * @instance
              */
             Hello.prototype.token = "";
@@ -7562,21 +7562,21 @@
             /**
              * Creates a new Hello instance using the specified properties.
              * @function create
-             * @memberof replitproto.Hello
+             * @memberof api.Hello
              * @static
-             * @param {replitproto.IHello=} [properties] Properties to set
-             * @returns {replitproto.Hello} Hello instance
+             * @param {api.IHello=} [properties] Properties to set
+             * @returns {api.Hello} Hello instance
              */
             Hello.create = function create(properties) {
                 return new Hello(properties);
             };
     
             /**
-             * Encodes the specified Hello message. Does not implicitly {@link replitproto.Hello.verify|verify} messages.
+             * Encodes the specified Hello message. Does not implicitly {@link api.Hello.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.Hello
+             * @memberof api.Hello
              * @static
-             * @param {replitproto.IHello} message Hello message or plain object to encode
+             * @param {api.IHello} message Hello message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -7593,11 +7593,11 @@
             };
     
             /**
-             * Encodes the specified Hello message, length delimited. Does not implicitly {@link replitproto.Hello.verify|verify} messages.
+             * Encodes the specified Hello message, length delimited. Does not implicitly {@link api.Hello.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.Hello
+             * @memberof api.Hello
              * @static
-             * @param {replitproto.IHello} message Hello message or plain object to encode
+             * @param {api.IHello} message Hello message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -7608,18 +7608,18 @@
             /**
              * Decodes a Hello message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.Hello
+             * @memberof api.Hello
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.Hello} Hello
+             * @returns {api.Hello} Hello
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             Hello.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.Hello();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Hello();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -7643,10 +7643,10 @@
             /**
              * Decodes a Hello message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.Hello
+             * @memberof api.Hello
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.Hello} Hello
+             * @returns {api.Hello} Hello
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -7659,7 +7659,7 @@
             /**
              * Verifies a Hello message.
              * @function verify
-             * @memberof replitproto.Hello
+             * @memberof api.Hello
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -7682,15 +7682,15 @@
             /**
              * Creates a Hello message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.Hello
+             * @memberof api.Hello
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.Hello} Hello
+             * @returns {api.Hello} Hello
              */
             Hello.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.Hello)
+                if (object instanceof $root.api.Hello)
                     return object;
-                var message = new $root.replitproto.Hello();
+                var message = new $root.api.Hello();
                 if (object.userid != null)
                     message.userid = object.userid >>> 0;
                 if (object.username != null)
@@ -7703,9 +7703,9 @@
             /**
              * Creates a plain object from a Hello message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.Hello
+             * @memberof api.Hello
              * @static
-             * @param {replitproto.Hello} message Hello
+             * @param {api.Hello} message Hello
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -7730,7 +7730,7 @@
             /**
              * Converts this Hello to JSON.
              * @function toJSON
-             * @memberof replitproto.Hello
+             * @memberof api.Hello
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -7741,21 +7741,21 @@
             return Hello;
         })();
     
-        replitproto.Goodbye = (function() {
+        api.Goodbye = (function() {
     
             /**
              * Properties of a Goodbye.
-             * @memberof replitproto
+             * @memberof api
              * @interface IGoodbye
              */
     
             /**
              * Constructs a new Goodbye.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a Goodbye.
              * @implements IGoodbye
              * @constructor
-             * @param {replitproto.IGoodbye=} [properties] Properties to set
+             * @param {api.IGoodbye=} [properties] Properties to set
              */
             function Goodbye(properties) {
                 if (properties)
@@ -7767,21 +7767,21 @@
             /**
              * Creates a new Goodbye instance using the specified properties.
              * @function create
-             * @memberof replitproto.Goodbye
+             * @memberof api.Goodbye
              * @static
-             * @param {replitproto.IGoodbye=} [properties] Properties to set
-             * @returns {replitproto.Goodbye} Goodbye instance
+             * @param {api.IGoodbye=} [properties] Properties to set
+             * @returns {api.Goodbye} Goodbye instance
              */
             Goodbye.create = function create(properties) {
                 return new Goodbye(properties);
             };
     
             /**
-             * Encodes the specified Goodbye message. Does not implicitly {@link replitproto.Goodbye.verify|verify} messages.
+             * Encodes the specified Goodbye message. Does not implicitly {@link api.Goodbye.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.Goodbye
+             * @memberof api.Goodbye
              * @static
-             * @param {replitproto.IGoodbye} message Goodbye message or plain object to encode
+             * @param {api.IGoodbye} message Goodbye message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -7792,11 +7792,11 @@
             };
     
             /**
-             * Encodes the specified Goodbye message, length delimited. Does not implicitly {@link replitproto.Goodbye.verify|verify} messages.
+             * Encodes the specified Goodbye message, length delimited. Does not implicitly {@link api.Goodbye.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.Goodbye
+             * @memberof api.Goodbye
              * @static
-             * @param {replitproto.IGoodbye} message Goodbye message or plain object to encode
+             * @param {api.IGoodbye} message Goodbye message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -7807,18 +7807,18 @@
             /**
              * Decodes a Goodbye message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.Goodbye
+             * @memberof api.Goodbye
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.Goodbye} Goodbye
+             * @returns {api.Goodbye} Goodbye
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             Goodbye.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.Goodbye();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Goodbye();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -7833,10 +7833,10 @@
             /**
              * Decodes a Goodbye message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.Goodbye
+             * @memberof api.Goodbye
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.Goodbye} Goodbye
+             * @returns {api.Goodbye} Goodbye
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -7849,7 +7849,7 @@
             /**
              * Verifies a Goodbye message.
              * @function verify
-             * @memberof replitproto.Goodbye
+             * @memberof api.Goodbye
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -7863,23 +7863,23 @@
             /**
              * Creates a Goodbye message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.Goodbye
+             * @memberof api.Goodbye
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.Goodbye} Goodbye
+             * @returns {api.Goodbye} Goodbye
              */
             Goodbye.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.Goodbye)
+                if (object instanceof $root.api.Goodbye)
                     return object;
-                return new $root.replitproto.Goodbye();
+                return new $root.api.Goodbye();
             };
     
             /**
              * Creates a plain object from a Goodbye message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.Goodbye
+             * @memberof api.Goodbye
              * @static
-             * @param {replitproto.Goodbye} message Goodbye
+             * @param {api.Goodbye} message Goodbye
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -7890,7 +7890,7 @@
             /**
              * Converts this Goodbye to JSON.
              * @function toJSON
-             * @memberof replitproto.Goodbye
+             * @memberof api.Goodbye
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -7903,33 +7903,33 @@
     
         /**
          * State enum.
-         * @name replitproto.State
+         * @name api.State
          * @enum {string}
          * @property {number} Stopped=0 Stopped value
          * @property {number} Running=1 Running value
          */
-        replitproto.State = (function() {
+        api.State = (function() {
             var valuesById = {}, values = Object.create(valuesById);
             values[valuesById[0] = "Stopped"] = 0;
             values[valuesById[1] = "Running"] = 1;
             return values;
         })();
     
-        replitproto.CheckChanges = (function() {
+        api.CheckChanges = (function() {
     
             /**
              * Properties of a CheckChanges.
-             * @memberof replitproto
+             * @memberof api
              * @interface ICheckChanges
              */
     
             /**
              * Constructs a new CheckChanges.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a CheckChanges.
              * @implements ICheckChanges
              * @constructor
-             * @param {replitproto.ICheckChanges=} [properties] Properties to set
+             * @param {api.ICheckChanges=} [properties] Properties to set
              */
             function CheckChanges(properties) {
                 if (properties)
@@ -7941,21 +7941,21 @@
             /**
              * Creates a new CheckChanges instance using the specified properties.
              * @function create
-             * @memberof replitproto.CheckChanges
+             * @memberof api.CheckChanges
              * @static
-             * @param {replitproto.ICheckChanges=} [properties] Properties to set
-             * @returns {replitproto.CheckChanges} CheckChanges instance
+             * @param {api.ICheckChanges=} [properties] Properties to set
+             * @returns {api.CheckChanges} CheckChanges instance
              */
             CheckChanges.create = function create(properties) {
                 return new CheckChanges(properties);
             };
     
             /**
-             * Encodes the specified CheckChanges message. Does not implicitly {@link replitproto.CheckChanges.verify|verify} messages.
+             * Encodes the specified CheckChanges message. Does not implicitly {@link api.CheckChanges.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.CheckChanges
+             * @memberof api.CheckChanges
              * @static
-             * @param {replitproto.ICheckChanges} message CheckChanges message or plain object to encode
+             * @param {api.ICheckChanges} message CheckChanges message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -7966,11 +7966,11 @@
             };
     
             /**
-             * Encodes the specified CheckChanges message, length delimited. Does not implicitly {@link replitproto.CheckChanges.verify|verify} messages.
+             * Encodes the specified CheckChanges message, length delimited. Does not implicitly {@link api.CheckChanges.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.CheckChanges
+             * @memberof api.CheckChanges
              * @static
-             * @param {replitproto.ICheckChanges} message CheckChanges message or plain object to encode
+             * @param {api.ICheckChanges} message CheckChanges message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -7981,18 +7981,18 @@
             /**
              * Decodes a CheckChanges message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.CheckChanges
+             * @memberof api.CheckChanges
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.CheckChanges} CheckChanges
+             * @returns {api.CheckChanges} CheckChanges
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             CheckChanges.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.CheckChanges();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.CheckChanges();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -8007,10 +8007,10 @@
             /**
              * Decodes a CheckChanges message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.CheckChanges
+             * @memberof api.CheckChanges
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.CheckChanges} CheckChanges
+             * @returns {api.CheckChanges} CheckChanges
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -8023,7 +8023,7 @@
             /**
              * Verifies a CheckChanges message.
              * @function verify
-             * @memberof replitproto.CheckChanges
+             * @memberof api.CheckChanges
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -8037,23 +8037,23 @@
             /**
              * Creates a CheckChanges message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.CheckChanges
+             * @memberof api.CheckChanges
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.CheckChanges} CheckChanges
+             * @returns {api.CheckChanges} CheckChanges
              */
             CheckChanges.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.CheckChanges)
+                if (object instanceof $root.api.CheckChanges)
                     return object;
-                return new $root.replitproto.CheckChanges();
+                return new $root.api.CheckChanges();
             };
     
             /**
              * Creates a plain object from a CheckChanges message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.CheckChanges
+             * @memberof api.CheckChanges
              * @static
-             * @param {replitproto.CheckChanges} message CheckChanges
+             * @param {api.CheckChanges} message CheckChanges
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -8064,7 +8064,7 @@
             /**
              * Converts this CheckChanges to JSON.
              * @function toJSON
-             * @memberof replitproto.CheckChanges
+             * @memberof api.CheckChanges
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -8075,23 +8075,23 @@
             return CheckChanges;
         })();
     
-        replitproto.EnsurePackages = (function() {
+        api.EnsurePackages = (function() {
     
             /**
              * Properties of an EnsurePackages.
-             * @memberof replitproto
+             * @memberof api
              * @interface IEnsurePackages
              * @property {boolean|null} [install] EnsurePackages install
-             * @property {replitproto.IFile|null} [file] EnsurePackages file
+             * @property {api.IFile|null} [file] EnsurePackages file
              */
     
             /**
              * Constructs a new EnsurePackages.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents an EnsurePackages.
              * @implements IEnsurePackages
              * @constructor
-             * @param {replitproto.IEnsurePackages=} [properties] Properties to set
+             * @param {api.IEnsurePackages=} [properties] Properties to set
              */
             function EnsurePackages(properties) {
                 if (properties)
@@ -8103,15 +8103,15 @@
             /**
              * EnsurePackages install.
              * @member {boolean} install
-             * @memberof replitproto.EnsurePackages
+             * @memberof api.EnsurePackages
              * @instance
              */
             EnsurePackages.prototype.install = false;
     
             /**
              * EnsurePackages file.
-             * @member {replitproto.IFile|null|undefined} file
-             * @memberof replitproto.EnsurePackages
+             * @member {api.IFile|null|undefined} file
+             * @memberof api.EnsurePackages
              * @instance
              */
             EnsurePackages.prototype.file = null;
@@ -8119,21 +8119,21 @@
             /**
              * Creates a new EnsurePackages instance using the specified properties.
              * @function create
-             * @memberof replitproto.EnsurePackages
+             * @memberof api.EnsurePackages
              * @static
-             * @param {replitproto.IEnsurePackages=} [properties] Properties to set
-             * @returns {replitproto.EnsurePackages} EnsurePackages instance
+             * @param {api.IEnsurePackages=} [properties] Properties to set
+             * @returns {api.EnsurePackages} EnsurePackages instance
              */
             EnsurePackages.create = function create(properties) {
                 return new EnsurePackages(properties);
             };
     
             /**
-             * Encodes the specified EnsurePackages message. Does not implicitly {@link replitproto.EnsurePackages.verify|verify} messages.
+             * Encodes the specified EnsurePackages message. Does not implicitly {@link api.EnsurePackages.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.EnsurePackages
+             * @memberof api.EnsurePackages
              * @static
-             * @param {replitproto.IEnsurePackages} message EnsurePackages message or plain object to encode
+             * @param {api.IEnsurePackages} message EnsurePackages message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -8143,16 +8143,16 @@
                 if (message.install != null && message.hasOwnProperty("install"))
                     writer.uint32(/* id 1, wireType 0 =*/8).bool(message.install);
                 if (message.file != null && message.hasOwnProperty("file"))
-                    $root.replitproto.File.encode(message.file, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                    $root.api.File.encode(message.file, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 return writer;
             };
     
             /**
-             * Encodes the specified EnsurePackages message, length delimited. Does not implicitly {@link replitproto.EnsurePackages.verify|verify} messages.
+             * Encodes the specified EnsurePackages message, length delimited. Does not implicitly {@link api.EnsurePackages.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.EnsurePackages
+             * @memberof api.EnsurePackages
              * @static
-             * @param {replitproto.IEnsurePackages} message EnsurePackages message or plain object to encode
+             * @param {api.IEnsurePackages} message EnsurePackages message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -8163,18 +8163,18 @@
             /**
              * Decodes an EnsurePackages message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.EnsurePackages
+             * @memberof api.EnsurePackages
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.EnsurePackages} EnsurePackages
+             * @returns {api.EnsurePackages} EnsurePackages
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             EnsurePackages.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.EnsurePackages();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.EnsurePackages();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -8182,7 +8182,7 @@
                         message.install = reader.bool();
                         break;
                     case 2:
-                        message.file = $root.replitproto.File.decode(reader, reader.uint32());
+                        message.file = $root.api.File.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -8195,10 +8195,10 @@
             /**
              * Decodes an EnsurePackages message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.EnsurePackages
+             * @memberof api.EnsurePackages
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.EnsurePackages} EnsurePackages
+             * @returns {api.EnsurePackages} EnsurePackages
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -8211,7 +8211,7 @@
             /**
              * Verifies an EnsurePackages message.
              * @function verify
-             * @memberof replitproto.EnsurePackages
+             * @memberof api.EnsurePackages
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -8223,7 +8223,7 @@
                     if (typeof message.install !== "boolean")
                         return "install: boolean expected";
                 if (message.file != null && message.hasOwnProperty("file")) {
-                    var error = $root.replitproto.File.verify(message.file);
+                    var error = $root.api.File.verify(message.file);
                     if (error)
                         return "file." + error;
                 }
@@ -8233,21 +8233,21 @@
             /**
              * Creates an EnsurePackages message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.EnsurePackages
+             * @memberof api.EnsurePackages
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.EnsurePackages} EnsurePackages
+             * @returns {api.EnsurePackages} EnsurePackages
              */
             EnsurePackages.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.EnsurePackages)
+                if (object instanceof $root.api.EnsurePackages)
                     return object;
-                var message = new $root.replitproto.EnsurePackages();
+                var message = new $root.api.EnsurePackages();
                 if (object.install != null)
                     message.install = Boolean(object.install);
                 if (object.file != null) {
                     if (typeof object.file !== "object")
-                        throw TypeError(".replitproto.EnsurePackages.file: object expected");
-                    message.file = $root.replitproto.File.fromObject(object.file);
+                        throw TypeError(".api.EnsurePackages.file: object expected");
+                    message.file = $root.api.File.fromObject(object.file);
                 }
                 return message;
             };
@@ -8255,9 +8255,9 @@
             /**
              * Creates a plain object from an EnsurePackages message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.EnsurePackages
+             * @memberof api.EnsurePackages
              * @static
-             * @param {replitproto.EnsurePackages} message EnsurePackages
+             * @param {api.EnsurePackages} message EnsurePackages
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -8272,14 +8272,14 @@
                 if (message.install != null && message.hasOwnProperty("install"))
                     object.install = message.install;
                 if (message.file != null && message.hasOwnProperty("file"))
-                    object.file = $root.replitproto.File.toObject(message.file, options);
+                    object.file = $root.api.File.toObject(message.file, options);
                 return object;
             };
     
             /**
              * Converts this EnsurePackages to JSON.
              * @function toJSON
-             * @memberof replitproto.EnsurePackages
+             * @memberof api.EnsurePackages
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -8290,21 +8290,21 @@
             return EnsurePackages;
         })();
     
-        replitproto.Start = (function() {
+        api.Start = (function() {
     
             /**
              * Properties of a Start.
-             * @memberof replitproto
+             * @memberof api
              * @interface IStart
              */
     
             /**
              * Constructs a new Start.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a Start.
              * @implements IStart
              * @constructor
-             * @param {replitproto.IStart=} [properties] Properties to set
+             * @param {api.IStart=} [properties] Properties to set
              */
             function Start(properties) {
                 if (properties)
@@ -8316,21 +8316,21 @@
             /**
              * Creates a new Start instance using the specified properties.
              * @function create
-             * @memberof replitproto.Start
+             * @memberof api.Start
              * @static
-             * @param {replitproto.IStart=} [properties] Properties to set
-             * @returns {replitproto.Start} Start instance
+             * @param {api.IStart=} [properties] Properties to set
+             * @returns {api.Start} Start instance
              */
             Start.create = function create(properties) {
                 return new Start(properties);
             };
     
             /**
-             * Encodes the specified Start message. Does not implicitly {@link replitproto.Start.verify|verify} messages.
+             * Encodes the specified Start message. Does not implicitly {@link api.Start.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.Start
+             * @memberof api.Start
              * @static
-             * @param {replitproto.IStart} message Start message or plain object to encode
+             * @param {api.IStart} message Start message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -8341,11 +8341,11 @@
             };
     
             /**
-             * Encodes the specified Start message, length delimited. Does not implicitly {@link replitproto.Start.verify|verify} messages.
+             * Encodes the specified Start message, length delimited. Does not implicitly {@link api.Start.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.Start
+             * @memberof api.Start
              * @static
-             * @param {replitproto.IStart} message Start message or plain object to encode
+             * @param {api.IStart} message Start message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -8356,18 +8356,18 @@
             /**
              * Decodes a Start message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.Start
+             * @memberof api.Start
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.Start} Start
+             * @returns {api.Start} Start
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             Start.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.Start();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Start();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -8382,10 +8382,10 @@
             /**
              * Decodes a Start message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.Start
+             * @memberof api.Start
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.Start} Start
+             * @returns {api.Start} Start
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -8398,7 +8398,7 @@
             /**
              * Verifies a Start message.
              * @function verify
-             * @memberof replitproto.Start
+             * @memberof api.Start
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -8412,23 +8412,23 @@
             /**
              * Creates a Start message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.Start
+             * @memberof api.Start
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.Start} Start
+             * @returns {api.Start} Start
              */
             Start.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.Start)
+                if (object instanceof $root.api.Start)
                     return object;
-                return new $root.replitproto.Start();
+                return new $root.api.Start();
             };
     
             /**
              * Creates a plain object from a Start message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.Start
+             * @memberof api.Start
              * @static
-             * @param {replitproto.Start} message Start
+             * @param {api.Start} message Start
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -8439,7 +8439,7 @@
             /**
              * Converts this Start to JSON.
              * @function toJSON
-             * @memberof replitproto.Start
+             * @memberof api.Start
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -8450,23 +8450,23 @@
             return Start;
         })();
     
-        replitproto.DebugStatus = (function() {
+        api.DebugStatus = (function() {
     
             /**
              * Properties of a DebugStatus.
-             * @memberof replitproto
+             * @memberof api
              * @interface IDebugStatus
              * @property {boolean|null} [done] DebugStatus done
-             * @property {Array.<replitproto.IStackFrame>|null} [stack] DebugStatus stack
+             * @property {Array.<api.IStackFrame>|null} [stack] DebugStatus stack
              */
     
             /**
              * Constructs a new DebugStatus.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a DebugStatus.
              * @implements IDebugStatus
              * @constructor
-             * @param {replitproto.IDebugStatus=} [properties] Properties to set
+             * @param {api.IDebugStatus=} [properties] Properties to set
              */
             function DebugStatus(properties) {
                 this.stack = [];
@@ -8479,15 +8479,15 @@
             /**
              * DebugStatus done.
              * @member {boolean} done
-             * @memberof replitproto.DebugStatus
+             * @memberof api.DebugStatus
              * @instance
              */
             DebugStatus.prototype.done = false;
     
             /**
              * DebugStatus stack.
-             * @member {Array.<replitproto.IStackFrame>} stack
-             * @memberof replitproto.DebugStatus
+             * @member {Array.<api.IStackFrame>} stack
+             * @memberof api.DebugStatus
              * @instance
              */
             DebugStatus.prototype.stack = $util.emptyArray;
@@ -8495,21 +8495,21 @@
             /**
              * Creates a new DebugStatus instance using the specified properties.
              * @function create
-             * @memberof replitproto.DebugStatus
+             * @memberof api.DebugStatus
              * @static
-             * @param {replitproto.IDebugStatus=} [properties] Properties to set
-             * @returns {replitproto.DebugStatus} DebugStatus instance
+             * @param {api.IDebugStatus=} [properties] Properties to set
+             * @returns {api.DebugStatus} DebugStatus instance
              */
             DebugStatus.create = function create(properties) {
                 return new DebugStatus(properties);
             };
     
             /**
-             * Encodes the specified DebugStatus message. Does not implicitly {@link replitproto.DebugStatus.verify|verify} messages.
+             * Encodes the specified DebugStatus message. Does not implicitly {@link api.DebugStatus.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.DebugStatus
+             * @memberof api.DebugStatus
              * @static
-             * @param {replitproto.IDebugStatus} message DebugStatus message or plain object to encode
+             * @param {api.IDebugStatus} message DebugStatus message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -8520,16 +8520,16 @@
                     writer.uint32(/* id 1, wireType 0 =*/8).bool(message.done);
                 if (message.stack != null && message.stack.length)
                     for (var i = 0; i < message.stack.length; ++i)
-                        $root.replitproto.StackFrame.encode(message.stack[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                        $root.api.StackFrame.encode(message.stack[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 return writer;
             };
     
             /**
-             * Encodes the specified DebugStatus message, length delimited. Does not implicitly {@link replitproto.DebugStatus.verify|verify} messages.
+             * Encodes the specified DebugStatus message, length delimited. Does not implicitly {@link api.DebugStatus.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.DebugStatus
+             * @memberof api.DebugStatus
              * @static
-             * @param {replitproto.IDebugStatus} message DebugStatus message or plain object to encode
+             * @param {api.IDebugStatus} message DebugStatus message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -8540,18 +8540,18 @@
             /**
              * Decodes a DebugStatus message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.DebugStatus
+             * @memberof api.DebugStatus
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.DebugStatus} DebugStatus
+             * @returns {api.DebugStatus} DebugStatus
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             DebugStatus.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.DebugStatus();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.DebugStatus();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -8561,7 +8561,7 @@
                     case 2:
                         if (!(message.stack && message.stack.length))
                             message.stack = [];
-                        message.stack.push($root.replitproto.StackFrame.decode(reader, reader.uint32()));
+                        message.stack.push($root.api.StackFrame.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -8574,10 +8574,10 @@
             /**
              * Decodes a DebugStatus message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.DebugStatus
+             * @memberof api.DebugStatus
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.DebugStatus} DebugStatus
+             * @returns {api.DebugStatus} DebugStatus
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -8590,7 +8590,7 @@
             /**
              * Verifies a DebugStatus message.
              * @function verify
-             * @memberof replitproto.DebugStatus
+             * @memberof api.DebugStatus
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -8605,7 +8605,7 @@
                     if (!Array.isArray(message.stack))
                         return "stack: array expected";
                     for (var i = 0; i < message.stack.length; ++i) {
-                        var error = $root.replitproto.StackFrame.verify(message.stack[i]);
+                        var error = $root.api.StackFrame.verify(message.stack[i]);
                         if (error)
                             return "stack." + error;
                     }
@@ -8616,25 +8616,25 @@
             /**
              * Creates a DebugStatus message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.DebugStatus
+             * @memberof api.DebugStatus
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.DebugStatus} DebugStatus
+             * @returns {api.DebugStatus} DebugStatus
              */
             DebugStatus.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.DebugStatus)
+                if (object instanceof $root.api.DebugStatus)
                     return object;
-                var message = new $root.replitproto.DebugStatus();
+                var message = new $root.api.DebugStatus();
                 if (object.done != null)
                     message.done = Boolean(object.done);
                 if (object.stack) {
                     if (!Array.isArray(object.stack))
-                        throw TypeError(".replitproto.DebugStatus.stack: array expected");
+                        throw TypeError(".api.DebugStatus.stack: array expected");
                     message.stack = [];
                     for (var i = 0; i < object.stack.length; ++i) {
                         if (typeof object.stack[i] !== "object")
-                            throw TypeError(".replitproto.DebugStatus.stack: object expected");
-                        message.stack[i] = $root.replitproto.StackFrame.fromObject(object.stack[i]);
+                            throw TypeError(".api.DebugStatus.stack: object expected");
+                        message.stack[i] = $root.api.StackFrame.fromObject(object.stack[i]);
                     }
                 }
                 return message;
@@ -8643,9 +8643,9 @@
             /**
              * Creates a plain object from a DebugStatus message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.DebugStatus
+             * @memberof api.DebugStatus
              * @static
-             * @param {replitproto.DebugStatus} message DebugStatus
+             * @param {api.DebugStatus} message DebugStatus
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -8662,7 +8662,7 @@
                 if (message.stack && message.stack.length) {
                     object.stack = [];
                     for (var j = 0; j < message.stack.length; ++j)
-                        object.stack[j] = $root.replitproto.StackFrame.toObject(message.stack[j], options);
+                        object.stack[j] = $root.api.StackFrame.toObject(message.stack[j], options);
                 }
                 return object;
             };
@@ -8670,7 +8670,7 @@
             /**
              * Converts this DebugStatus to JSON.
              * @function toJSON
-             * @memberof replitproto.DebugStatus
+             * @memberof api.DebugStatus
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -8681,11 +8681,11 @@
             return DebugStatus;
         })();
     
-        replitproto.StackFrame = (function() {
+        api.StackFrame = (function() {
     
             /**
              * Properties of a StackFrame.
-             * @memberof replitproto
+             * @memberof api
              * @interface IStackFrame
              * @property {string|null} ["function"] StackFrame function
              * @property {number|null} [line] StackFrame line
@@ -8693,11 +8693,11 @@
     
             /**
              * Constructs a new StackFrame.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a StackFrame.
              * @implements IStackFrame
              * @constructor
-             * @param {replitproto.IStackFrame=} [properties] Properties to set
+             * @param {api.IStackFrame=} [properties] Properties to set
              */
             function StackFrame(properties) {
                 if (properties)
@@ -8709,7 +8709,7 @@
             /**
              * StackFrame function.
              * @member {string} function
-             * @memberof replitproto.StackFrame
+             * @memberof api.StackFrame
              * @instance
              */
             StackFrame.prototype["function"] = "";
@@ -8717,7 +8717,7 @@
             /**
              * StackFrame line.
              * @member {number} line
-             * @memberof replitproto.StackFrame
+             * @memberof api.StackFrame
              * @instance
              */
             StackFrame.prototype.line = 0;
@@ -8725,21 +8725,21 @@
             /**
              * Creates a new StackFrame instance using the specified properties.
              * @function create
-             * @memberof replitproto.StackFrame
+             * @memberof api.StackFrame
              * @static
-             * @param {replitproto.IStackFrame=} [properties] Properties to set
-             * @returns {replitproto.StackFrame} StackFrame instance
+             * @param {api.IStackFrame=} [properties] Properties to set
+             * @returns {api.StackFrame} StackFrame instance
              */
             StackFrame.create = function create(properties) {
                 return new StackFrame(properties);
             };
     
             /**
-             * Encodes the specified StackFrame message. Does not implicitly {@link replitproto.StackFrame.verify|verify} messages.
+             * Encodes the specified StackFrame message. Does not implicitly {@link api.StackFrame.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.StackFrame
+             * @memberof api.StackFrame
              * @static
-             * @param {replitproto.IStackFrame} message StackFrame message or plain object to encode
+             * @param {api.IStackFrame} message StackFrame message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -8754,11 +8754,11 @@
             };
     
             /**
-             * Encodes the specified StackFrame message, length delimited. Does not implicitly {@link replitproto.StackFrame.verify|verify} messages.
+             * Encodes the specified StackFrame message, length delimited. Does not implicitly {@link api.StackFrame.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.StackFrame
+             * @memberof api.StackFrame
              * @static
-             * @param {replitproto.IStackFrame} message StackFrame message or plain object to encode
+             * @param {api.IStackFrame} message StackFrame message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -8769,18 +8769,18 @@
             /**
              * Decodes a StackFrame message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.StackFrame
+             * @memberof api.StackFrame
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.StackFrame} StackFrame
+             * @returns {api.StackFrame} StackFrame
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             StackFrame.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.StackFrame();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.StackFrame();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -8801,10 +8801,10 @@
             /**
              * Decodes a StackFrame message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.StackFrame
+             * @memberof api.StackFrame
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.StackFrame} StackFrame
+             * @returns {api.StackFrame} StackFrame
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -8817,7 +8817,7 @@
             /**
              * Verifies a StackFrame message.
              * @function verify
-             * @memberof replitproto.StackFrame
+             * @memberof api.StackFrame
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -8837,15 +8837,15 @@
             /**
              * Creates a StackFrame message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.StackFrame
+             * @memberof api.StackFrame
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.StackFrame} StackFrame
+             * @returns {api.StackFrame} StackFrame
              */
             StackFrame.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.StackFrame)
+                if (object instanceof $root.api.StackFrame)
                     return object;
-                var message = new $root.replitproto.StackFrame();
+                var message = new $root.api.StackFrame();
                 if (object["function"] != null)
                     message["function"] = String(object["function"]);
                 if (object.line != null)
@@ -8856,9 +8856,9 @@
             /**
              * Creates a plain object from a StackFrame message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.StackFrame
+             * @memberof api.StackFrame
              * @static
-             * @param {replitproto.StackFrame} message StackFrame
+             * @param {api.StackFrame} message StackFrame
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -8880,7 +8880,7 @@
             /**
              * Converts this StackFrame to JSON.
              * @function toJSON
-             * @memberof replitproto.StackFrame
+             * @memberof api.StackFrame
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -8891,23 +8891,23 @@
             return StackFrame;
         })();
     
-        replitproto.ContainedTest = (function() {
+        api.ContainedTest = (function() {
     
             /**
              * Properties of a ContainedTest.
-             * @memberof replitproto
+             * @memberof api
              * @interface IContainedTest
-             * @property {replitproto.IFile|null} [suite] ContainedTest suite
-             * @property {Array.<replitproto.IFile>|null} [project] ContainedTest project
+             * @property {api.IFile|null} [suite] ContainedTest suite
+             * @property {Array.<api.IFile>|null} [project] ContainedTest project
              */
     
             /**
              * Constructs a new ContainedTest.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a ContainedTest.
              * @implements IContainedTest
              * @constructor
-             * @param {replitproto.IContainedTest=} [properties] Properties to set
+             * @param {api.IContainedTest=} [properties] Properties to set
              */
             function ContainedTest(properties) {
                 this.project = [];
@@ -8919,16 +8919,16 @@
     
             /**
              * ContainedTest suite.
-             * @member {replitproto.IFile|null|undefined} suite
-             * @memberof replitproto.ContainedTest
+             * @member {api.IFile|null|undefined} suite
+             * @memberof api.ContainedTest
              * @instance
              */
             ContainedTest.prototype.suite = null;
     
             /**
              * ContainedTest project.
-             * @member {Array.<replitproto.IFile>} project
-             * @memberof replitproto.ContainedTest
+             * @member {Array.<api.IFile>} project
+             * @memberof api.ContainedTest
              * @instance
              */
             ContainedTest.prototype.project = $util.emptyArray;
@@ -8936,21 +8936,21 @@
             /**
              * Creates a new ContainedTest instance using the specified properties.
              * @function create
-             * @memberof replitproto.ContainedTest
+             * @memberof api.ContainedTest
              * @static
-             * @param {replitproto.IContainedTest=} [properties] Properties to set
-             * @returns {replitproto.ContainedTest} ContainedTest instance
+             * @param {api.IContainedTest=} [properties] Properties to set
+             * @returns {api.ContainedTest} ContainedTest instance
              */
             ContainedTest.create = function create(properties) {
                 return new ContainedTest(properties);
             };
     
             /**
-             * Encodes the specified ContainedTest message. Does not implicitly {@link replitproto.ContainedTest.verify|verify} messages.
+             * Encodes the specified ContainedTest message. Does not implicitly {@link api.ContainedTest.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.ContainedTest
+             * @memberof api.ContainedTest
              * @static
-             * @param {replitproto.IContainedTest} message ContainedTest message or plain object to encode
+             * @param {api.IContainedTest} message ContainedTest message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -8958,19 +8958,19 @@
                 if (!writer)
                     writer = $Writer.create();
                 if (message.suite != null && message.hasOwnProperty("suite"))
-                    $root.replitproto.File.encode(message.suite, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    $root.api.File.encode(message.suite, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.project != null && message.project.length)
                     for (var i = 0; i < message.project.length; ++i)
-                        $root.replitproto.File.encode(message.project[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                        $root.api.File.encode(message.project[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 return writer;
             };
     
             /**
-             * Encodes the specified ContainedTest message, length delimited. Does not implicitly {@link replitproto.ContainedTest.verify|verify} messages.
+             * Encodes the specified ContainedTest message, length delimited. Does not implicitly {@link api.ContainedTest.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.ContainedTest
+             * @memberof api.ContainedTest
              * @static
-             * @param {replitproto.IContainedTest} message ContainedTest message or plain object to encode
+             * @param {api.IContainedTest} message ContainedTest message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -8981,28 +8981,28 @@
             /**
              * Decodes a ContainedTest message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.ContainedTest
+             * @memberof api.ContainedTest
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.ContainedTest} ContainedTest
+             * @returns {api.ContainedTest} ContainedTest
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             ContainedTest.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.ContainedTest();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.ContainedTest();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.suite = $root.replitproto.File.decode(reader, reader.uint32());
+                        message.suite = $root.api.File.decode(reader, reader.uint32());
                         break;
                     case 2:
                         if (!(message.project && message.project.length))
                             message.project = [];
-                        message.project.push($root.replitproto.File.decode(reader, reader.uint32()));
+                        message.project.push($root.api.File.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -9015,10 +9015,10 @@
             /**
              * Decodes a ContainedTest message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.ContainedTest
+             * @memberof api.ContainedTest
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.ContainedTest} ContainedTest
+             * @returns {api.ContainedTest} ContainedTest
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -9031,7 +9031,7 @@
             /**
              * Verifies a ContainedTest message.
              * @function verify
-             * @memberof replitproto.ContainedTest
+             * @memberof api.ContainedTest
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -9040,7 +9040,7 @@
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.suite != null && message.hasOwnProperty("suite")) {
-                    var error = $root.replitproto.File.verify(message.suite);
+                    var error = $root.api.File.verify(message.suite);
                     if (error)
                         return "suite." + error;
                 }
@@ -9048,7 +9048,7 @@
                     if (!Array.isArray(message.project))
                         return "project: array expected";
                     for (var i = 0; i < message.project.length; ++i) {
-                        var error = $root.replitproto.File.verify(message.project[i]);
+                        var error = $root.api.File.verify(message.project[i]);
                         if (error)
                             return "project." + error;
                     }
@@ -9059,28 +9059,28 @@
             /**
              * Creates a ContainedTest message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.ContainedTest
+             * @memberof api.ContainedTest
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.ContainedTest} ContainedTest
+             * @returns {api.ContainedTest} ContainedTest
              */
             ContainedTest.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.ContainedTest)
+                if (object instanceof $root.api.ContainedTest)
                     return object;
-                var message = new $root.replitproto.ContainedTest();
+                var message = new $root.api.ContainedTest();
                 if (object.suite != null) {
                     if (typeof object.suite !== "object")
-                        throw TypeError(".replitproto.ContainedTest.suite: object expected");
-                    message.suite = $root.replitproto.File.fromObject(object.suite);
+                        throw TypeError(".api.ContainedTest.suite: object expected");
+                    message.suite = $root.api.File.fromObject(object.suite);
                 }
                 if (object.project) {
                     if (!Array.isArray(object.project))
-                        throw TypeError(".replitproto.ContainedTest.project: array expected");
+                        throw TypeError(".api.ContainedTest.project: array expected");
                     message.project = [];
                     for (var i = 0; i < object.project.length; ++i) {
                         if (typeof object.project[i] !== "object")
-                            throw TypeError(".replitproto.ContainedTest.project: object expected");
-                        message.project[i] = $root.replitproto.File.fromObject(object.project[i]);
+                            throw TypeError(".api.ContainedTest.project: object expected");
+                        message.project[i] = $root.api.File.fromObject(object.project[i]);
                     }
                 }
                 return message;
@@ -9089,9 +9089,9 @@
             /**
              * Creates a plain object from a ContainedTest message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.ContainedTest
+             * @memberof api.ContainedTest
              * @static
-             * @param {replitproto.ContainedTest} message ContainedTest
+             * @param {api.ContainedTest} message ContainedTest
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -9104,11 +9104,11 @@
                 if (options.defaults)
                     object.suite = null;
                 if (message.suite != null && message.hasOwnProperty("suite"))
-                    object.suite = $root.replitproto.File.toObject(message.suite, options);
+                    object.suite = $root.api.File.toObject(message.suite, options);
                 if (message.project && message.project.length) {
                     object.project = [];
                     for (var j = 0; j < message.project.length; ++j)
-                        object.project[j] = $root.replitproto.File.toObject(message.project[j], options);
+                        object.project[j] = $root.api.File.toObject(message.project[j], options);
                 }
                 return object;
             };
@@ -9116,7 +9116,7 @@
             /**
              * Converts this ContainedTest to JSON.
              * @function toJSON
-             * @memberof replitproto.ContainedTest
+             * @memberof api.ContainedTest
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -9127,24 +9127,24 @@
             return ContainedTest;
         })();
     
-        replitproto.TestResult = (function() {
+        api.TestResult = (function() {
     
             /**
              * Properties of a TestResult.
-             * @memberof replitproto
+             * @memberof api
              * @interface ITestResult
              * @property {boolean|null} [passed] TestResult passed
              * @property {string|null} [stderr] TestResult stderr
-             * @property {Array.<replitproto.ITestFailure>|null} [fails] TestResult fails
+             * @property {Array.<api.ITestFailure>|null} [fails] TestResult fails
              */
     
             /**
              * Constructs a new TestResult.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a TestResult.
              * @implements ITestResult
              * @constructor
-             * @param {replitproto.ITestResult=} [properties] Properties to set
+             * @param {api.ITestResult=} [properties] Properties to set
              */
             function TestResult(properties) {
                 this.fails = [];
@@ -9157,7 +9157,7 @@
             /**
              * TestResult passed.
              * @member {boolean} passed
-             * @memberof replitproto.TestResult
+             * @memberof api.TestResult
              * @instance
              */
             TestResult.prototype.passed = false;
@@ -9165,15 +9165,15 @@
             /**
              * TestResult stderr.
              * @member {string} stderr
-             * @memberof replitproto.TestResult
+             * @memberof api.TestResult
              * @instance
              */
             TestResult.prototype.stderr = "";
     
             /**
              * TestResult fails.
-             * @member {Array.<replitproto.ITestFailure>} fails
-             * @memberof replitproto.TestResult
+             * @member {Array.<api.ITestFailure>} fails
+             * @memberof api.TestResult
              * @instance
              */
             TestResult.prototype.fails = $util.emptyArray;
@@ -9181,21 +9181,21 @@
             /**
              * Creates a new TestResult instance using the specified properties.
              * @function create
-             * @memberof replitproto.TestResult
+             * @memberof api.TestResult
              * @static
-             * @param {replitproto.ITestResult=} [properties] Properties to set
-             * @returns {replitproto.TestResult} TestResult instance
+             * @param {api.ITestResult=} [properties] Properties to set
+             * @returns {api.TestResult} TestResult instance
              */
             TestResult.create = function create(properties) {
                 return new TestResult(properties);
             };
     
             /**
-             * Encodes the specified TestResult message. Does not implicitly {@link replitproto.TestResult.verify|verify} messages.
+             * Encodes the specified TestResult message. Does not implicitly {@link api.TestResult.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.TestResult
+             * @memberof api.TestResult
              * @static
-             * @param {replitproto.ITestResult} message TestResult message or plain object to encode
+             * @param {api.ITestResult} message TestResult message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -9208,16 +9208,16 @@
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.stderr);
                 if (message.fails != null && message.fails.length)
                     for (var i = 0; i < message.fails.length; ++i)
-                        $root.replitproto.TestFailure.encode(message.fails[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                        $root.api.TestFailure.encode(message.fails[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 return writer;
             };
     
             /**
-             * Encodes the specified TestResult message, length delimited. Does not implicitly {@link replitproto.TestResult.verify|verify} messages.
+             * Encodes the specified TestResult message, length delimited. Does not implicitly {@link api.TestResult.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.TestResult
+             * @memberof api.TestResult
              * @static
-             * @param {replitproto.ITestResult} message TestResult message or plain object to encode
+             * @param {api.ITestResult} message TestResult message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -9228,18 +9228,18 @@
             /**
              * Decodes a TestResult message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.TestResult
+             * @memberof api.TestResult
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.TestResult} TestResult
+             * @returns {api.TestResult} TestResult
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             TestResult.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.TestResult();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.TestResult();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -9252,7 +9252,7 @@
                     case 3:
                         if (!(message.fails && message.fails.length))
                             message.fails = [];
-                        message.fails.push($root.replitproto.TestFailure.decode(reader, reader.uint32()));
+                        message.fails.push($root.api.TestFailure.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -9265,10 +9265,10 @@
             /**
              * Decodes a TestResult message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.TestResult
+             * @memberof api.TestResult
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.TestResult} TestResult
+             * @returns {api.TestResult} TestResult
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -9281,7 +9281,7 @@
             /**
              * Verifies a TestResult message.
              * @function verify
-             * @memberof replitproto.TestResult
+             * @memberof api.TestResult
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -9299,7 +9299,7 @@
                     if (!Array.isArray(message.fails))
                         return "fails: array expected";
                     for (var i = 0; i < message.fails.length; ++i) {
-                        var error = $root.replitproto.TestFailure.verify(message.fails[i]);
+                        var error = $root.api.TestFailure.verify(message.fails[i]);
                         if (error)
                             return "fails." + error;
                     }
@@ -9310,27 +9310,27 @@
             /**
              * Creates a TestResult message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.TestResult
+             * @memberof api.TestResult
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.TestResult} TestResult
+             * @returns {api.TestResult} TestResult
              */
             TestResult.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.TestResult)
+                if (object instanceof $root.api.TestResult)
                     return object;
-                var message = new $root.replitproto.TestResult();
+                var message = new $root.api.TestResult();
                 if (object.passed != null)
                     message.passed = Boolean(object.passed);
                 if (object.stderr != null)
                     message.stderr = String(object.stderr);
                 if (object.fails) {
                     if (!Array.isArray(object.fails))
-                        throw TypeError(".replitproto.TestResult.fails: array expected");
+                        throw TypeError(".api.TestResult.fails: array expected");
                     message.fails = [];
                     for (var i = 0; i < object.fails.length; ++i) {
                         if (typeof object.fails[i] !== "object")
-                            throw TypeError(".replitproto.TestResult.fails: object expected");
-                        message.fails[i] = $root.replitproto.TestFailure.fromObject(object.fails[i]);
+                            throw TypeError(".api.TestResult.fails: object expected");
+                        message.fails[i] = $root.api.TestFailure.fromObject(object.fails[i]);
                     }
                 }
                 return message;
@@ -9339,9 +9339,9 @@
             /**
              * Creates a plain object from a TestResult message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.TestResult
+             * @memberof api.TestResult
              * @static
-             * @param {replitproto.TestResult} message TestResult
+             * @param {api.TestResult} message TestResult
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -9362,7 +9362,7 @@
                 if (message.fails && message.fails.length) {
                     object.fails = [];
                     for (var j = 0; j < message.fails.length; ++j)
-                        object.fails[j] = $root.replitproto.TestFailure.toObject(message.fails[j], options);
+                        object.fails[j] = $root.api.TestFailure.toObject(message.fails[j], options);
                 }
                 return object;
             };
@@ -9370,7 +9370,7 @@
             /**
              * Converts this TestResult to JSON.
              * @function toJSON
-             * @memberof replitproto.TestResult
+             * @memberof api.TestResult
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -9381,11 +9381,11 @@
             return TestResult;
         })();
     
-        replitproto.TestFailure = (function() {
+        api.TestFailure = (function() {
     
             /**
              * Properties of a TestFailure.
-             * @memberof replitproto
+             * @memberof api
              * @interface ITestFailure
              * @property {string|null} [name] TestFailure name
              * @property {string|null} [trace] TestFailure trace
@@ -9393,11 +9393,11 @@
     
             /**
              * Constructs a new TestFailure.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a TestFailure.
              * @implements ITestFailure
              * @constructor
-             * @param {replitproto.ITestFailure=} [properties] Properties to set
+             * @param {api.ITestFailure=} [properties] Properties to set
              */
             function TestFailure(properties) {
                 if (properties)
@@ -9409,7 +9409,7 @@
             /**
              * TestFailure name.
              * @member {string} name
-             * @memberof replitproto.TestFailure
+             * @memberof api.TestFailure
              * @instance
              */
             TestFailure.prototype.name = "";
@@ -9417,7 +9417,7 @@
             /**
              * TestFailure trace.
              * @member {string} trace
-             * @memberof replitproto.TestFailure
+             * @memberof api.TestFailure
              * @instance
              */
             TestFailure.prototype.trace = "";
@@ -9425,21 +9425,21 @@
             /**
              * Creates a new TestFailure instance using the specified properties.
              * @function create
-             * @memberof replitproto.TestFailure
+             * @memberof api.TestFailure
              * @static
-             * @param {replitproto.ITestFailure=} [properties] Properties to set
-             * @returns {replitproto.TestFailure} TestFailure instance
+             * @param {api.ITestFailure=} [properties] Properties to set
+             * @returns {api.TestFailure} TestFailure instance
              */
             TestFailure.create = function create(properties) {
                 return new TestFailure(properties);
             };
     
             /**
-             * Encodes the specified TestFailure message. Does not implicitly {@link replitproto.TestFailure.verify|verify} messages.
+             * Encodes the specified TestFailure message. Does not implicitly {@link api.TestFailure.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.TestFailure
+             * @memberof api.TestFailure
              * @static
-             * @param {replitproto.ITestFailure} message TestFailure message or plain object to encode
+             * @param {api.ITestFailure} message TestFailure message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -9454,11 +9454,11 @@
             };
     
             /**
-             * Encodes the specified TestFailure message, length delimited. Does not implicitly {@link replitproto.TestFailure.verify|verify} messages.
+             * Encodes the specified TestFailure message, length delimited. Does not implicitly {@link api.TestFailure.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.TestFailure
+             * @memberof api.TestFailure
              * @static
-             * @param {replitproto.ITestFailure} message TestFailure message or plain object to encode
+             * @param {api.ITestFailure} message TestFailure message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -9469,18 +9469,18 @@
             /**
              * Decodes a TestFailure message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.TestFailure
+             * @memberof api.TestFailure
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.TestFailure} TestFailure
+             * @returns {api.TestFailure} TestFailure
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             TestFailure.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.TestFailure();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.TestFailure();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -9501,10 +9501,10 @@
             /**
              * Decodes a TestFailure message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.TestFailure
+             * @memberof api.TestFailure
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.TestFailure} TestFailure
+             * @returns {api.TestFailure} TestFailure
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -9517,7 +9517,7 @@
             /**
              * Verifies a TestFailure message.
              * @function verify
-             * @memberof replitproto.TestFailure
+             * @memberof api.TestFailure
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -9537,15 +9537,15 @@
             /**
              * Creates a TestFailure message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.TestFailure
+             * @memberof api.TestFailure
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.TestFailure} TestFailure
+             * @returns {api.TestFailure} TestFailure
              */
             TestFailure.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.TestFailure)
+                if (object instanceof $root.api.TestFailure)
                     return object;
-                var message = new $root.replitproto.TestFailure();
+                var message = new $root.api.TestFailure();
                 if (object.name != null)
                     message.name = String(object.name);
                 if (object.trace != null)
@@ -9556,9 +9556,9 @@
             /**
              * Creates a plain object from a TestFailure message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.TestFailure
+             * @memberof api.TestFailure
              * @static
-             * @param {replitproto.TestFailure} message TestFailure
+             * @param {api.TestFailure} message TestFailure
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -9580,7 +9580,7 @@
             /**
              * Converts this TestFailure to JSON.
              * @function toJSON
-             * @memberof replitproto.TestFailure
+             * @memberof api.TestFailure
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -9591,11 +9591,11 @@
             return TestFailure;
         })();
     
-        replitproto.ResizeTerm = (function() {
+        api.ResizeTerm = (function() {
     
             /**
              * Properties of a ResizeTerm.
-             * @memberof replitproto
+             * @memberof api
              * @interface IResizeTerm
              * @property {number|null} [rows] ResizeTerm rows
              * @property {number|null} [cols] ResizeTerm cols
@@ -9603,11 +9603,11 @@
     
             /**
              * Constructs a new ResizeTerm.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a ResizeTerm.
              * @implements IResizeTerm
              * @constructor
-             * @param {replitproto.IResizeTerm=} [properties] Properties to set
+             * @param {api.IResizeTerm=} [properties] Properties to set
              */
             function ResizeTerm(properties) {
                 if (properties)
@@ -9619,7 +9619,7 @@
             /**
              * ResizeTerm rows.
              * @member {number} rows
-             * @memberof replitproto.ResizeTerm
+             * @memberof api.ResizeTerm
              * @instance
              */
             ResizeTerm.prototype.rows = 0;
@@ -9627,7 +9627,7 @@
             /**
              * ResizeTerm cols.
              * @member {number} cols
-             * @memberof replitproto.ResizeTerm
+             * @memberof api.ResizeTerm
              * @instance
              */
             ResizeTerm.prototype.cols = 0;
@@ -9635,21 +9635,21 @@
             /**
              * Creates a new ResizeTerm instance using the specified properties.
              * @function create
-             * @memberof replitproto.ResizeTerm
+             * @memberof api.ResizeTerm
              * @static
-             * @param {replitproto.IResizeTerm=} [properties] Properties to set
-             * @returns {replitproto.ResizeTerm} ResizeTerm instance
+             * @param {api.IResizeTerm=} [properties] Properties to set
+             * @returns {api.ResizeTerm} ResizeTerm instance
              */
             ResizeTerm.create = function create(properties) {
                 return new ResizeTerm(properties);
             };
     
             /**
-             * Encodes the specified ResizeTerm message. Does not implicitly {@link replitproto.ResizeTerm.verify|verify} messages.
+             * Encodes the specified ResizeTerm message. Does not implicitly {@link api.ResizeTerm.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.ResizeTerm
+             * @memberof api.ResizeTerm
              * @static
-             * @param {replitproto.IResizeTerm} message ResizeTerm message or plain object to encode
+             * @param {api.IResizeTerm} message ResizeTerm message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -9664,11 +9664,11 @@
             };
     
             /**
-             * Encodes the specified ResizeTerm message, length delimited. Does not implicitly {@link replitproto.ResizeTerm.verify|verify} messages.
+             * Encodes the specified ResizeTerm message, length delimited. Does not implicitly {@link api.ResizeTerm.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.ResizeTerm
+             * @memberof api.ResizeTerm
              * @static
-             * @param {replitproto.IResizeTerm} message ResizeTerm message or plain object to encode
+             * @param {api.IResizeTerm} message ResizeTerm message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -9679,18 +9679,18 @@
             /**
              * Decodes a ResizeTerm message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.ResizeTerm
+             * @memberof api.ResizeTerm
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.ResizeTerm} ResizeTerm
+             * @returns {api.ResizeTerm} ResizeTerm
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             ResizeTerm.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.ResizeTerm();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.ResizeTerm();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -9711,10 +9711,10 @@
             /**
              * Decodes a ResizeTerm message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.ResizeTerm
+             * @memberof api.ResizeTerm
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.ResizeTerm} ResizeTerm
+             * @returns {api.ResizeTerm} ResizeTerm
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -9727,7 +9727,7 @@
             /**
              * Verifies a ResizeTerm message.
              * @function verify
-             * @memberof replitproto.ResizeTerm
+             * @memberof api.ResizeTerm
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -9747,15 +9747,15 @@
             /**
              * Creates a ResizeTerm message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.ResizeTerm
+             * @memberof api.ResizeTerm
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.ResizeTerm} ResizeTerm
+             * @returns {api.ResizeTerm} ResizeTerm
              */
             ResizeTerm.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.ResizeTerm)
+                if (object instanceof $root.api.ResizeTerm)
                     return object;
-                var message = new $root.replitproto.ResizeTerm();
+                var message = new $root.api.ResizeTerm();
                 if (object.rows != null)
                     message.rows = object.rows >>> 0;
                 if (object.cols != null)
@@ -9766,9 +9766,9 @@
             /**
              * Creates a plain object from a ResizeTerm message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.ResizeTerm
+             * @memberof api.ResizeTerm
              * @static
-             * @param {replitproto.ResizeTerm} message ResizeTerm
+             * @param {api.ResizeTerm} message ResizeTerm
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -9790,7 +9790,7 @@
             /**
              * Converts this ResizeTerm to JSON.
              * @function toJSON
-             * @memberof replitproto.ResizeTerm
+             * @memberof api.ResizeTerm
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -9801,21 +9801,21 @@
             return ResizeTerm;
         })();
     
-        replitproto.SaneTerm = (function() {
+        api.SaneTerm = (function() {
     
             /**
              * Properties of a SaneTerm.
-             * @memberof replitproto
+             * @memberof api
              * @interface ISaneTerm
              */
     
             /**
              * Constructs a new SaneTerm.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a SaneTerm.
              * @implements ISaneTerm
              * @constructor
-             * @param {replitproto.ISaneTerm=} [properties] Properties to set
+             * @param {api.ISaneTerm=} [properties] Properties to set
              */
             function SaneTerm(properties) {
                 if (properties)
@@ -9827,21 +9827,21 @@
             /**
              * Creates a new SaneTerm instance using the specified properties.
              * @function create
-             * @memberof replitproto.SaneTerm
+             * @memberof api.SaneTerm
              * @static
-             * @param {replitproto.ISaneTerm=} [properties] Properties to set
-             * @returns {replitproto.SaneTerm} SaneTerm instance
+             * @param {api.ISaneTerm=} [properties] Properties to set
+             * @returns {api.SaneTerm} SaneTerm instance
              */
             SaneTerm.create = function create(properties) {
                 return new SaneTerm(properties);
             };
     
             /**
-             * Encodes the specified SaneTerm message. Does not implicitly {@link replitproto.SaneTerm.verify|verify} messages.
+             * Encodes the specified SaneTerm message. Does not implicitly {@link api.SaneTerm.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.SaneTerm
+             * @memberof api.SaneTerm
              * @static
-             * @param {replitproto.ISaneTerm} message SaneTerm message or plain object to encode
+             * @param {api.ISaneTerm} message SaneTerm message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -9852,11 +9852,11 @@
             };
     
             /**
-             * Encodes the specified SaneTerm message, length delimited. Does not implicitly {@link replitproto.SaneTerm.verify|verify} messages.
+             * Encodes the specified SaneTerm message, length delimited. Does not implicitly {@link api.SaneTerm.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.SaneTerm
+             * @memberof api.SaneTerm
              * @static
-             * @param {replitproto.ISaneTerm} message SaneTerm message or plain object to encode
+             * @param {api.ISaneTerm} message SaneTerm message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -9867,18 +9867,18 @@
             /**
              * Decodes a SaneTerm message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.SaneTerm
+             * @memberof api.SaneTerm
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.SaneTerm} SaneTerm
+             * @returns {api.SaneTerm} SaneTerm
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             SaneTerm.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.SaneTerm();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.SaneTerm();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -9893,10 +9893,10 @@
             /**
              * Decodes a SaneTerm message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.SaneTerm
+             * @memberof api.SaneTerm
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.SaneTerm} SaneTerm
+             * @returns {api.SaneTerm} SaneTerm
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -9909,7 +9909,7 @@
             /**
              * Verifies a SaneTerm message.
              * @function verify
-             * @memberof replitproto.SaneTerm
+             * @memberof api.SaneTerm
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -9923,23 +9923,23 @@
             /**
              * Creates a SaneTerm message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.SaneTerm
+             * @memberof api.SaneTerm
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.SaneTerm} SaneTerm
+             * @returns {api.SaneTerm} SaneTerm
              */
             SaneTerm.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.SaneTerm)
+                if (object instanceof $root.api.SaneTerm)
                     return object;
-                return new $root.replitproto.SaneTerm();
+                return new $root.api.SaneTerm();
             };
     
             /**
              * Creates a plain object from a SaneTerm message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.SaneTerm
+             * @memberof api.SaneTerm
              * @static
-             * @param {replitproto.SaneTerm} message SaneTerm
+             * @param {api.SaneTerm} message SaneTerm
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -9950,7 +9950,7 @@
             /**
              * Converts this SaneTerm to JSON.
              * @function toJSON
-             * @memberof replitproto.SaneTerm
+             * @memberof api.SaneTerm
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -9961,22 +9961,22 @@
             return SaneTerm;
         })();
     
-        replitproto.LintResults = (function() {
+        api.LintResults = (function() {
     
             /**
              * Properties of a LintResults.
-             * @memberof replitproto
+             * @memberof api
              * @interface ILintResults
-             * @property {Array.<replitproto.ILintResult>|null} [results] LintResults results
+             * @property {Array.<api.ILintResult>|null} [results] LintResults results
              */
     
             /**
              * Constructs a new LintResults.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a LintResults.
              * @implements ILintResults
              * @constructor
-             * @param {replitproto.ILintResults=} [properties] Properties to set
+             * @param {api.ILintResults=} [properties] Properties to set
              */
             function LintResults(properties) {
                 this.results = [];
@@ -9988,8 +9988,8 @@
     
             /**
              * LintResults results.
-             * @member {Array.<replitproto.ILintResult>} results
-             * @memberof replitproto.LintResults
+             * @member {Array.<api.ILintResult>} results
+             * @memberof api.LintResults
              * @instance
              */
             LintResults.prototype.results = $util.emptyArray;
@@ -9997,21 +9997,21 @@
             /**
              * Creates a new LintResults instance using the specified properties.
              * @function create
-             * @memberof replitproto.LintResults
+             * @memberof api.LintResults
              * @static
-             * @param {replitproto.ILintResults=} [properties] Properties to set
-             * @returns {replitproto.LintResults} LintResults instance
+             * @param {api.ILintResults=} [properties] Properties to set
+             * @returns {api.LintResults} LintResults instance
              */
             LintResults.create = function create(properties) {
                 return new LintResults(properties);
             };
     
             /**
-             * Encodes the specified LintResults message. Does not implicitly {@link replitproto.LintResults.verify|verify} messages.
+             * Encodes the specified LintResults message. Does not implicitly {@link api.LintResults.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.LintResults
+             * @memberof api.LintResults
              * @static
-             * @param {replitproto.ILintResults} message LintResults message or plain object to encode
+             * @param {api.ILintResults} message LintResults message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -10020,16 +10020,16 @@
                     writer = $Writer.create();
                 if (message.results != null && message.results.length)
                     for (var i = 0; i < message.results.length; ++i)
-                        $root.replitproto.LintResult.encode(message.results[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                        $root.api.LintResult.encode(message.results[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
     
             /**
-             * Encodes the specified LintResults message, length delimited. Does not implicitly {@link replitproto.LintResults.verify|verify} messages.
+             * Encodes the specified LintResults message, length delimited. Does not implicitly {@link api.LintResults.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.LintResults
+             * @memberof api.LintResults
              * @static
-             * @param {replitproto.ILintResults} message LintResults message or plain object to encode
+             * @param {api.ILintResults} message LintResults message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -10040,25 +10040,25 @@
             /**
              * Decodes a LintResults message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.LintResults
+             * @memberof api.LintResults
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.LintResults} LintResults
+             * @returns {api.LintResults} LintResults
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             LintResults.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.LintResults();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.LintResults();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         if (!(message.results && message.results.length))
                             message.results = [];
-                        message.results.push($root.replitproto.LintResult.decode(reader, reader.uint32()));
+                        message.results.push($root.api.LintResult.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -10071,10 +10071,10 @@
             /**
              * Decodes a LintResults message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.LintResults
+             * @memberof api.LintResults
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.LintResults} LintResults
+             * @returns {api.LintResults} LintResults
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -10087,7 +10087,7 @@
             /**
              * Verifies a LintResults message.
              * @function verify
-             * @memberof replitproto.LintResults
+             * @memberof api.LintResults
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -10099,7 +10099,7 @@
                     if (!Array.isArray(message.results))
                         return "results: array expected";
                     for (var i = 0; i < message.results.length; ++i) {
-                        var error = $root.replitproto.LintResult.verify(message.results[i]);
+                        var error = $root.api.LintResult.verify(message.results[i]);
                         if (error)
                             return "results." + error;
                     }
@@ -10110,23 +10110,23 @@
             /**
              * Creates a LintResults message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.LintResults
+             * @memberof api.LintResults
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.LintResults} LintResults
+             * @returns {api.LintResults} LintResults
              */
             LintResults.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.LintResults)
+                if (object instanceof $root.api.LintResults)
                     return object;
-                var message = new $root.replitproto.LintResults();
+                var message = new $root.api.LintResults();
                 if (object.results) {
                     if (!Array.isArray(object.results))
-                        throw TypeError(".replitproto.LintResults.results: array expected");
+                        throw TypeError(".api.LintResults.results: array expected");
                     message.results = [];
                     for (var i = 0; i < object.results.length; ++i) {
                         if (typeof object.results[i] !== "object")
-                            throw TypeError(".replitproto.LintResults.results: object expected");
-                        message.results[i] = $root.replitproto.LintResult.fromObject(object.results[i]);
+                            throw TypeError(".api.LintResults.results: object expected");
+                        message.results[i] = $root.api.LintResult.fromObject(object.results[i]);
                     }
                 }
                 return message;
@@ -10135,9 +10135,9 @@
             /**
              * Creates a plain object from a LintResults message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.LintResults
+             * @memberof api.LintResults
              * @static
-             * @param {replitproto.LintResults} message LintResults
+             * @param {api.LintResults} message LintResults
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -10150,7 +10150,7 @@
                 if (message.results && message.results.length) {
                     object.results = [];
                     for (var j = 0; j < message.results.length; ++j)
-                        object.results[j] = $root.replitproto.LintResult.toObject(message.results[j], options);
+                        object.results[j] = $root.api.LintResult.toObject(message.results[j], options);
                 }
                 return object;
             };
@@ -10158,7 +10158,7 @@
             /**
              * Converts this LintResults to JSON.
              * @function toJSON
-             * @memberof replitproto.LintResults
+             * @memberof api.LintResults
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -10169,11 +10169,11 @@
             return LintResults;
         })();
     
-        replitproto.LintResult = (function() {
+        api.LintResult = (function() {
     
             /**
              * Properties of a LintResult.
-             * @memberof replitproto
+             * @memberof api
              * @interface ILintResult
              * @property {string|null} [text] LintResult text
              * @property {number|null} [row] LintResult row
@@ -10183,11 +10183,11 @@
     
             /**
              * Constructs a new LintResult.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a LintResult.
              * @implements ILintResult
              * @constructor
-             * @param {replitproto.ILintResult=} [properties] Properties to set
+             * @param {api.ILintResult=} [properties] Properties to set
              */
             function LintResult(properties) {
                 if (properties)
@@ -10199,7 +10199,7 @@
             /**
              * LintResult text.
              * @member {string} text
-             * @memberof replitproto.LintResult
+             * @memberof api.LintResult
              * @instance
              */
             LintResult.prototype.text = "";
@@ -10207,7 +10207,7 @@
             /**
              * LintResult row.
              * @member {number} row
-             * @memberof replitproto.LintResult
+             * @memberof api.LintResult
              * @instance
              */
             LintResult.prototype.row = 0;
@@ -10215,7 +10215,7 @@
             /**
              * LintResult column.
              * @member {number} column
-             * @memberof replitproto.LintResult
+             * @memberof api.LintResult
              * @instance
              */
             LintResult.prototype.column = 0;
@@ -10223,7 +10223,7 @@
             /**
              * LintResult type.
              * @member {string} type
-             * @memberof replitproto.LintResult
+             * @memberof api.LintResult
              * @instance
              */
             LintResult.prototype.type = "";
@@ -10231,21 +10231,21 @@
             /**
              * Creates a new LintResult instance using the specified properties.
              * @function create
-             * @memberof replitproto.LintResult
+             * @memberof api.LintResult
              * @static
-             * @param {replitproto.ILintResult=} [properties] Properties to set
-             * @returns {replitproto.LintResult} LintResult instance
+             * @param {api.ILintResult=} [properties] Properties to set
+             * @returns {api.LintResult} LintResult instance
              */
             LintResult.create = function create(properties) {
                 return new LintResult(properties);
             };
     
             /**
-             * Encodes the specified LintResult message. Does not implicitly {@link replitproto.LintResult.verify|verify} messages.
+             * Encodes the specified LintResult message. Does not implicitly {@link api.LintResult.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.LintResult
+             * @memberof api.LintResult
              * @static
-             * @param {replitproto.ILintResult} message LintResult message or plain object to encode
+             * @param {api.ILintResult} message LintResult message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -10264,11 +10264,11 @@
             };
     
             /**
-             * Encodes the specified LintResult message, length delimited. Does not implicitly {@link replitproto.LintResult.verify|verify} messages.
+             * Encodes the specified LintResult message, length delimited. Does not implicitly {@link api.LintResult.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.LintResult
+             * @memberof api.LintResult
              * @static
-             * @param {replitproto.ILintResult} message LintResult message or plain object to encode
+             * @param {api.ILintResult} message LintResult message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -10279,18 +10279,18 @@
             /**
              * Decodes a LintResult message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.LintResult
+             * @memberof api.LintResult
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.LintResult} LintResult
+             * @returns {api.LintResult} LintResult
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             LintResult.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.LintResult();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.LintResult();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -10317,10 +10317,10 @@
             /**
              * Decodes a LintResult message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.LintResult
+             * @memberof api.LintResult
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.LintResult} LintResult
+             * @returns {api.LintResult} LintResult
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -10333,7 +10333,7 @@
             /**
              * Verifies a LintResult message.
              * @function verify
-             * @memberof replitproto.LintResult
+             * @memberof api.LintResult
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -10359,15 +10359,15 @@
             /**
              * Creates a LintResult message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.LintResult
+             * @memberof api.LintResult
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.LintResult} LintResult
+             * @returns {api.LintResult} LintResult
              */
             LintResult.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.LintResult)
+                if (object instanceof $root.api.LintResult)
                     return object;
-                var message = new $root.replitproto.LintResult();
+                var message = new $root.api.LintResult();
                 if (object.text != null)
                     message.text = String(object.text);
                 if (object.row != null)
@@ -10382,9 +10382,9 @@
             /**
              * Creates a plain object from a LintResult message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.LintResult
+             * @memberof api.LintResult
              * @static
-             * @param {replitproto.LintResult} message LintResult
+             * @param {api.LintResult} message LintResult
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -10412,7 +10412,7 @@
             /**
              * Converts this LintResult to JSON.
              * @function toJSON
-             * @memberof replitproto.LintResult
+             * @memberof api.LintResult
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -10423,21 +10423,21 @@
             return LintResult;
         })();
     
-        replitproto.OK = (function() {
+        api.OK = (function() {
     
             /**
              * Properties of a OK.
-             * @memberof replitproto
+             * @memberof api
              * @interface IOK
              */
     
             /**
              * Constructs a new OK.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a OK.
              * @implements IOK
              * @constructor
-             * @param {replitproto.IOK=} [properties] Properties to set
+             * @param {api.IOK=} [properties] Properties to set
              */
             function OK(properties) {
                 if (properties)
@@ -10449,21 +10449,21 @@
             /**
              * Creates a new OK instance using the specified properties.
              * @function create
-             * @memberof replitproto.OK
+             * @memberof api.OK
              * @static
-             * @param {replitproto.IOK=} [properties] Properties to set
-             * @returns {replitproto.OK} OK instance
+             * @param {api.IOK=} [properties] Properties to set
+             * @returns {api.OK} OK instance
              */
             OK.create = function create(properties) {
                 return new OK(properties);
             };
     
             /**
-             * Encodes the specified OK message. Does not implicitly {@link replitproto.OK.verify|verify} messages.
+             * Encodes the specified OK message. Does not implicitly {@link api.OK.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.OK
+             * @memberof api.OK
              * @static
-             * @param {replitproto.IOK} message OK message or plain object to encode
+             * @param {api.IOK} message OK message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -10474,11 +10474,11 @@
             };
     
             /**
-             * Encodes the specified OK message, length delimited. Does not implicitly {@link replitproto.OK.verify|verify} messages.
+             * Encodes the specified OK message, length delimited. Does not implicitly {@link api.OK.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.OK
+             * @memberof api.OK
              * @static
-             * @param {replitproto.IOK} message OK message or plain object to encode
+             * @param {api.IOK} message OK message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -10489,18 +10489,18 @@
             /**
              * Decodes a OK message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.OK
+             * @memberof api.OK
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.OK} OK
+             * @returns {api.OK} OK
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             OK.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.OK();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.OK();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -10515,10 +10515,10 @@
             /**
              * Decodes a OK message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.OK
+             * @memberof api.OK
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.OK} OK
+             * @returns {api.OK} OK
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -10531,7 +10531,7 @@
             /**
              * Verifies a OK message.
              * @function verify
-             * @memberof replitproto.OK
+             * @memberof api.OK
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -10545,23 +10545,23 @@
             /**
              * Creates a OK message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.OK
+             * @memberof api.OK
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.OK} OK
+             * @returns {api.OK} OK
              */
             OK.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.OK)
+                if (object instanceof $root.api.OK)
                     return object;
-                return new $root.replitproto.OK();
+                return new $root.api.OK();
             };
     
             /**
              * Creates a plain object from a OK message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.OK
+             * @memberof api.OK
              * @static
-             * @param {replitproto.OK} message OK
+             * @param {api.OK} message OK
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -10572,7 +10572,7 @@
             /**
              * Converts this OK to JSON.
              * @function toJSON
-             * @memberof replitproto.OK
+             * @memberof api.OK
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -10583,11 +10583,11 @@
             return OK;
         })();
     
-        replitproto.Move = (function() {
+        api.Move = (function() {
     
             /**
              * Properties of a Move.
-             * @memberof replitproto
+             * @memberof api
              * @interface IMove
              * @property {string|null} [oldPath] Move oldPath
              * @property {string|null} [newPath] Move newPath
@@ -10595,11 +10595,11 @@
     
             /**
              * Constructs a new Move.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a Move.
              * @implements IMove
              * @constructor
-             * @param {replitproto.IMove=} [properties] Properties to set
+             * @param {api.IMove=} [properties] Properties to set
              */
             function Move(properties) {
                 if (properties)
@@ -10611,7 +10611,7 @@
             /**
              * Move oldPath.
              * @member {string} oldPath
-             * @memberof replitproto.Move
+             * @memberof api.Move
              * @instance
              */
             Move.prototype.oldPath = "";
@@ -10619,7 +10619,7 @@
             /**
              * Move newPath.
              * @member {string} newPath
-             * @memberof replitproto.Move
+             * @memberof api.Move
              * @instance
              */
             Move.prototype.newPath = "";
@@ -10627,21 +10627,21 @@
             /**
              * Creates a new Move instance using the specified properties.
              * @function create
-             * @memberof replitproto.Move
+             * @memberof api.Move
              * @static
-             * @param {replitproto.IMove=} [properties] Properties to set
-             * @returns {replitproto.Move} Move instance
+             * @param {api.IMove=} [properties] Properties to set
+             * @returns {api.Move} Move instance
              */
             Move.create = function create(properties) {
                 return new Move(properties);
             };
     
             /**
-             * Encodes the specified Move message. Does not implicitly {@link replitproto.Move.verify|verify} messages.
+             * Encodes the specified Move message. Does not implicitly {@link api.Move.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.Move
+             * @memberof api.Move
              * @static
-             * @param {replitproto.IMove} message Move message or plain object to encode
+             * @param {api.IMove} message Move message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -10656,11 +10656,11 @@
             };
     
             /**
-             * Encodes the specified Move message, length delimited. Does not implicitly {@link replitproto.Move.verify|verify} messages.
+             * Encodes the specified Move message, length delimited. Does not implicitly {@link api.Move.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.Move
+             * @memberof api.Move
              * @static
-             * @param {replitproto.IMove} message Move message or plain object to encode
+             * @param {api.IMove} message Move message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -10671,18 +10671,18 @@
             /**
              * Decodes a Move message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.Move
+             * @memberof api.Move
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.Move} Move
+             * @returns {api.Move} Move
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             Move.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.Move();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Move();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -10703,10 +10703,10 @@
             /**
              * Decodes a Move message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.Move
+             * @memberof api.Move
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.Move} Move
+             * @returns {api.Move} Move
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -10719,7 +10719,7 @@
             /**
              * Verifies a Move message.
              * @function verify
-             * @memberof replitproto.Move
+             * @memberof api.Move
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -10739,15 +10739,15 @@
             /**
              * Creates a Move message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.Move
+             * @memberof api.Move
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.Move} Move
+             * @returns {api.Move} Move
              */
             Move.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.Move)
+                if (object instanceof $root.api.Move)
                     return object;
-                var message = new $root.replitproto.Move();
+                var message = new $root.api.Move();
                 if (object.oldPath != null)
                     message.oldPath = String(object.oldPath);
                 if (object.newPath != null)
@@ -10758,9 +10758,9 @@
             /**
              * Creates a plain object from a Move message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.Move
+             * @memberof api.Move
              * @static
-             * @param {replitproto.Move} message Move
+             * @param {api.Move} message Move
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -10782,7 +10782,7 @@
             /**
              * Converts this Move to JSON.
              * @function toJSON
-             * @memberof replitproto.Move
+             * @memberof api.Move
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -10793,22 +10793,22 @@
             return Move;
         })();
     
-        replitproto.Files = (function() {
+        api.Files = (function() {
     
             /**
              * Properties of a Files.
-             * @memberof replitproto
+             * @memberof api
              * @interface IFiles
-             * @property {Array.<replitproto.IFile>|null} [files] Files files
+             * @property {Array.<api.IFile>|null} [files] Files files
              */
     
             /**
              * Constructs a new Files.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a Files.
              * @implements IFiles
              * @constructor
-             * @param {replitproto.IFiles=} [properties] Properties to set
+             * @param {api.IFiles=} [properties] Properties to set
              */
             function Files(properties) {
                 this.files = [];
@@ -10820,8 +10820,8 @@
     
             /**
              * Files files.
-             * @member {Array.<replitproto.IFile>} files
-             * @memberof replitproto.Files
+             * @member {Array.<api.IFile>} files
+             * @memberof api.Files
              * @instance
              */
             Files.prototype.files = $util.emptyArray;
@@ -10829,21 +10829,21 @@
             /**
              * Creates a new Files instance using the specified properties.
              * @function create
-             * @memberof replitproto.Files
+             * @memberof api.Files
              * @static
-             * @param {replitproto.IFiles=} [properties] Properties to set
-             * @returns {replitproto.Files} Files instance
+             * @param {api.IFiles=} [properties] Properties to set
+             * @returns {api.Files} Files instance
              */
             Files.create = function create(properties) {
                 return new Files(properties);
             };
     
             /**
-             * Encodes the specified Files message. Does not implicitly {@link replitproto.Files.verify|verify} messages.
+             * Encodes the specified Files message. Does not implicitly {@link api.Files.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.Files
+             * @memberof api.Files
              * @static
-             * @param {replitproto.IFiles} message Files message or plain object to encode
+             * @param {api.IFiles} message Files message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -10852,16 +10852,16 @@
                     writer = $Writer.create();
                 if (message.files != null && message.files.length)
                     for (var i = 0; i < message.files.length; ++i)
-                        $root.replitproto.File.encode(message.files[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                        $root.api.File.encode(message.files[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
     
             /**
-             * Encodes the specified Files message, length delimited. Does not implicitly {@link replitproto.Files.verify|verify} messages.
+             * Encodes the specified Files message, length delimited. Does not implicitly {@link api.Files.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.Files
+             * @memberof api.Files
              * @static
-             * @param {replitproto.IFiles} message Files message or plain object to encode
+             * @param {api.IFiles} message Files message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -10872,25 +10872,25 @@
             /**
              * Decodes a Files message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.Files
+             * @memberof api.Files
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.Files} Files
+             * @returns {api.Files} Files
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             Files.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.Files();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Files();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         if (!(message.files && message.files.length))
                             message.files = [];
-                        message.files.push($root.replitproto.File.decode(reader, reader.uint32()));
+                        message.files.push($root.api.File.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -10903,10 +10903,10 @@
             /**
              * Decodes a Files message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.Files
+             * @memberof api.Files
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.Files} Files
+             * @returns {api.Files} Files
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -10919,7 +10919,7 @@
             /**
              * Verifies a Files message.
              * @function verify
-             * @memberof replitproto.Files
+             * @memberof api.Files
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -10931,7 +10931,7 @@
                     if (!Array.isArray(message.files))
                         return "files: array expected";
                     for (var i = 0; i < message.files.length; ++i) {
-                        var error = $root.replitproto.File.verify(message.files[i]);
+                        var error = $root.api.File.verify(message.files[i]);
                         if (error)
                             return "files." + error;
                     }
@@ -10942,23 +10942,23 @@
             /**
              * Creates a Files message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.Files
+             * @memberof api.Files
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.Files} Files
+             * @returns {api.Files} Files
              */
             Files.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.Files)
+                if (object instanceof $root.api.Files)
                     return object;
-                var message = new $root.replitproto.Files();
+                var message = new $root.api.Files();
                 if (object.files) {
                     if (!Array.isArray(object.files))
-                        throw TypeError(".replitproto.Files.files: array expected");
+                        throw TypeError(".api.Files.files: array expected");
                     message.files = [];
                     for (var i = 0; i < object.files.length; ++i) {
                         if (typeof object.files[i] !== "object")
-                            throw TypeError(".replitproto.Files.files: object expected");
-                        message.files[i] = $root.replitproto.File.fromObject(object.files[i]);
+                            throw TypeError(".api.Files.files: object expected");
+                        message.files[i] = $root.api.File.fromObject(object.files[i]);
                     }
                 }
                 return message;
@@ -10967,9 +10967,9 @@
             /**
              * Creates a plain object from a Files message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.Files
+             * @memberof api.Files
              * @static
-             * @param {replitproto.Files} message Files
+             * @param {api.Files} message Files
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -10982,7 +10982,7 @@
                 if (message.files && message.files.length) {
                     object.files = [];
                     for (var j = 0; j < message.files.length; ++j)
-                        object.files[j] = $root.replitproto.File.toObject(message.files[j], options);
+                        object.files[j] = $root.api.File.toObject(message.files[j], options);
                 }
                 return object;
             };
@@ -10990,7 +10990,7 @@
             /**
              * Converts this Files to JSON.
              * @function toJSON
-             * @memberof replitproto.Files
+             * @memberof api.Files
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -11001,24 +11001,24 @@
             return Files;
         })();
     
-        replitproto.File = (function() {
+        api.File = (function() {
     
             /**
              * Properties of a File.
-             * @memberof replitproto
+             * @memberof api
              * @interface IFile
              * @property {string|null} [path] File path
-             * @property {replitproto.File.Type|null} [type] File type
+             * @property {api.File.Type|null} [type] File type
              * @property {Uint8Array|null} [content] File content
              */
     
             /**
              * Constructs a new File.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a File.
              * @implements IFile
              * @constructor
-             * @param {replitproto.IFile=} [properties] Properties to set
+             * @param {api.IFile=} [properties] Properties to set
              */
             function File(properties) {
                 if (properties)
@@ -11030,15 +11030,15 @@
             /**
              * File path.
              * @member {string} path
-             * @memberof replitproto.File
+             * @memberof api.File
              * @instance
              */
             File.prototype.path = "";
     
             /**
              * File type.
-             * @member {replitproto.File.Type} type
-             * @memberof replitproto.File
+             * @member {api.File.Type} type
+             * @memberof api.File
              * @instance
              */
             File.prototype.type = 0;
@@ -11046,7 +11046,7 @@
             /**
              * File content.
              * @member {Uint8Array} content
-             * @memberof replitproto.File
+             * @memberof api.File
              * @instance
              */
             File.prototype.content = $util.newBuffer([]);
@@ -11054,21 +11054,21 @@
             /**
              * Creates a new File instance using the specified properties.
              * @function create
-             * @memberof replitproto.File
+             * @memberof api.File
              * @static
-             * @param {replitproto.IFile=} [properties] Properties to set
-             * @returns {replitproto.File} File instance
+             * @param {api.IFile=} [properties] Properties to set
+             * @returns {api.File} File instance
              */
             File.create = function create(properties) {
                 return new File(properties);
             };
     
             /**
-             * Encodes the specified File message. Does not implicitly {@link replitproto.File.verify|verify} messages.
+             * Encodes the specified File message. Does not implicitly {@link api.File.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.File
+             * @memberof api.File
              * @static
-             * @param {replitproto.IFile} message File message or plain object to encode
+             * @param {api.IFile} message File message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -11085,11 +11085,11 @@
             };
     
             /**
-             * Encodes the specified File message, length delimited. Does not implicitly {@link replitproto.File.verify|verify} messages.
+             * Encodes the specified File message, length delimited. Does not implicitly {@link api.File.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.File
+             * @memberof api.File
              * @static
-             * @param {replitproto.IFile} message File message or plain object to encode
+             * @param {api.IFile} message File message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -11100,18 +11100,18 @@
             /**
              * Decodes a File message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.File
+             * @memberof api.File
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.File} File
+             * @returns {api.File} File
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             File.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.File();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.File();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -11135,10 +11135,10 @@
             /**
              * Decodes a File message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.File
+             * @memberof api.File
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.File} File
+             * @returns {api.File} File
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -11151,7 +11151,7 @@
             /**
              * Verifies a File message.
              * @function verify
-             * @memberof replitproto.File
+             * @memberof api.File
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -11179,15 +11179,15 @@
             /**
              * Creates a File message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.File
+             * @memberof api.File
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.File} File
+             * @returns {api.File} File
              */
             File.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.File)
+                if (object instanceof $root.api.File)
                     return object;
-                var message = new $root.replitproto.File();
+                var message = new $root.api.File();
                 if (object.path != null)
                     message.path = String(object.path);
                 switch (object.type) {
@@ -11211,9 +11211,9 @@
             /**
              * Creates a plain object from a File message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.File
+             * @memberof api.File
              * @static
-             * @param {replitproto.File} message File
+             * @param {api.File} message File
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -11235,7 +11235,7 @@
                 if (message.path != null && message.hasOwnProperty("path"))
                     object.path = message.path;
                 if (message.type != null && message.hasOwnProperty("type"))
-                    object.type = options.enums === String ? $root.replitproto.File.Type[message.type] : message.type;
+                    object.type = options.enums === String ? $root.api.File.Type[message.type] : message.type;
                 if (message.content != null && message.hasOwnProperty("content"))
                     object.content = options.bytes === String ? $util.base64.encode(message.content, 0, message.content.length) : options.bytes === Array ? Array.prototype.slice.call(message.content) : message.content;
                 return object;
@@ -11244,7 +11244,7 @@
             /**
              * Converts this File to JSON.
              * @function toJSON
-             * @memberof replitproto.File
+             * @memberof api.File
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -11254,7 +11254,7 @@
     
             /**
              * Type enum.
-             * @name replitproto.File.Type
+             * @name api.File.Type
              * @enum {string}
              * @property {number} REGULAR=0 REGULAR value
              * @property {number} DIRECTORY=1 DIRECTORY value
@@ -11269,21 +11269,21 @@
             return File;
         })();
     
-        replitproto.Clear = (function() {
+        api.Clear = (function() {
     
             /**
              * Properties of a Clear.
-             * @memberof replitproto
+             * @memberof api
              * @interface IClear
              */
     
             /**
              * Constructs a new Clear.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a Clear.
              * @implements IClear
              * @constructor
-             * @param {replitproto.IClear=} [properties] Properties to set
+             * @param {api.IClear=} [properties] Properties to set
              */
             function Clear(properties) {
                 if (properties)
@@ -11295,21 +11295,21 @@
             /**
              * Creates a new Clear instance using the specified properties.
              * @function create
-             * @memberof replitproto.Clear
+             * @memberof api.Clear
              * @static
-             * @param {replitproto.IClear=} [properties] Properties to set
-             * @returns {replitproto.Clear} Clear instance
+             * @param {api.IClear=} [properties] Properties to set
+             * @returns {api.Clear} Clear instance
              */
             Clear.create = function create(properties) {
                 return new Clear(properties);
             };
     
             /**
-             * Encodes the specified Clear message. Does not implicitly {@link replitproto.Clear.verify|verify} messages.
+             * Encodes the specified Clear message. Does not implicitly {@link api.Clear.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.Clear
+             * @memberof api.Clear
              * @static
-             * @param {replitproto.IClear} message Clear message or plain object to encode
+             * @param {api.IClear} message Clear message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -11320,11 +11320,11 @@
             };
     
             /**
-             * Encodes the specified Clear message, length delimited. Does not implicitly {@link replitproto.Clear.verify|verify} messages.
+             * Encodes the specified Clear message, length delimited. Does not implicitly {@link api.Clear.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.Clear
+             * @memberof api.Clear
              * @static
-             * @param {replitproto.IClear} message Clear message or plain object to encode
+             * @param {api.IClear} message Clear message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -11335,18 +11335,18 @@
             /**
              * Decodes a Clear message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.Clear
+             * @memberof api.Clear
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.Clear} Clear
+             * @returns {api.Clear} Clear
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             Clear.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.Clear();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Clear();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -11361,10 +11361,10 @@
             /**
              * Decodes a Clear message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.Clear
+             * @memberof api.Clear
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.Clear} Clear
+             * @returns {api.Clear} Clear
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -11377,7 +11377,7 @@
             /**
              * Verifies a Clear message.
              * @function verify
-             * @memberof replitproto.Clear
+             * @memberof api.Clear
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -11391,23 +11391,23 @@
             /**
              * Creates a Clear message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.Clear
+             * @memberof api.Clear
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.Clear} Clear
+             * @returns {api.Clear} Clear
              */
             Clear.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.Clear)
+                if (object instanceof $root.api.Clear)
                     return object;
-                return new $root.replitproto.Clear();
+                return new $root.api.Clear();
             };
     
             /**
              * Creates a plain object from a Clear message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.Clear
+             * @memberof api.Clear
              * @static
-             * @param {replitproto.Clear} message Clear
+             * @param {api.Clear} message Clear
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -11418,7 +11418,7 @@
             /**
              * Converts this Clear to JSON.
              * @function toJSON
-             * @memberof replitproto.Clear
+             * @memberof api.Clear
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -11429,22 +11429,22 @@
             return Clear;
         })();
     
-        replitproto.Toast = (function() {
+        api.Toast = (function() {
     
             /**
              * Properties of a Toast.
-             * @memberof replitproto
+             * @memberof api
              * @interface IToast
              * @property {string|null} [text] Toast text
              */
     
             /**
              * Constructs a new Toast.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a Toast.
              * @implements IToast
              * @constructor
-             * @param {replitproto.IToast=} [properties] Properties to set
+             * @param {api.IToast=} [properties] Properties to set
              */
             function Toast(properties) {
                 if (properties)
@@ -11456,7 +11456,7 @@
             /**
              * Toast text.
              * @member {string} text
-             * @memberof replitproto.Toast
+             * @memberof api.Toast
              * @instance
              */
             Toast.prototype.text = "";
@@ -11464,21 +11464,21 @@
             /**
              * Creates a new Toast instance using the specified properties.
              * @function create
-             * @memberof replitproto.Toast
+             * @memberof api.Toast
              * @static
-             * @param {replitproto.IToast=} [properties] Properties to set
-             * @returns {replitproto.Toast} Toast instance
+             * @param {api.IToast=} [properties] Properties to set
+             * @returns {api.Toast} Toast instance
              */
             Toast.create = function create(properties) {
                 return new Toast(properties);
             };
     
             /**
-             * Encodes the specified Toast message. Does not implicitly {@link replitproto.Toast.verify|verify} messages.
+             * Encodes the specified Toast message. Does not implicitly {@link api.Toast.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.Toast
+             * @memberof api.Toast
              * @static
-             * @param {replitproto.IToast} message Toast message or plain object to encode
+             * @param {api.IToast} message Toast message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -11491,11 +11491,11 @@
             };
     
             /**
-             * Encodes the specified Toast message, length delimited. Does not implicitly {@link replitproto.Toast.verify|verify} messages.
+             * Encodes the specified Toast message, length delimited. Does not implicitly {@link api.Toast.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.Toast
+             * @memberof api.Toast
              * @static
-             * @param {replitproto.IToast} message Toast message or plain object to encode
+             * @param {api.IToast} message Toast message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -11506,18 +11506,18 @@
             /**
              * Decodes a Toast message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.Toast
+             * @memberof api.Toast
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.Toast} Toast
+             * @returns {api.Toast} Toast
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             Toast.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.Toast();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Toast();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -11535,10 +11535,10 @@
             /**
              * Decodes a Toast message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.Toast
+             * @memberof api.Toast
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.Toast} Toast
+             * @returns {api.Toast} Toast
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -11551,7 +11551,7 @@
             /**
              * Verifies a Toast message.
              * @function verify
-             * @memberof replitproto.Toast
+             * @memberof api.Toast
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -11568,15 +11568,15 @@
             /**
              * Creates a Toast message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.Toast
+             * @memberof api.Toast
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.Toast} Toast
+             * @returns {api.Toast} Toast
              */
             Toast.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.Toast)
+                if (object instanceof $root.api.Toast)
                     return object;
-                var message = new $root.replitproto.Toast();
+                var message = new $root.api.Toast();
                 if (object.text != null)
                     message.text = String(object.text);
                 return message;
@@ -11585,9 +11585,9 @@
             /**
              * Creates a plain object from a Toast message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.Toast
+             * @memberof api.Toast
              * @static
-             * @param {replitproto.Toast} message Toast
+             * @param {api.Toast} message Toast
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -11605,7 +11605,7 @@
             /**
              * Converts this Toast to JSON.
              * @function toJSON
-             * @memberof replitproto.Toast
+             * @memberof api.Toast
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -11616,21 +11616,21 @@
             return Toast;
         })();
     
-        replitproto.RunMain = (function() {
+        api.RunMain = (function() {
     
             /**
              * Properties of a RunMain.
-             * @memberof replitproto
+             * @memberof api
              * @interface IRunMain
              */
     
             /**
              * Constructs a new RunMain.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a RunMain.
              * @implements IRunMain
              * @constructor
-             * @param {replitproto.IRunMain=} [properties] Properties to set
+             * @param {api.IRunMain=} [properties] Properties to set
              */
             function RunMain(properties) {
                 if (properties)
@@ -11642,21 +11642,21 @@
             /**
              * Creates a new RunMain instance using the specified properties.
              * @function create
-             * @memberof replitproto.RunMain
+             * @memberof api.RunMain
              * @static
-             * @param {replitproto.IRunMain=} [properties] Properties to set
-             * @returns {replitproto.RunMain} RunMain instance
+             * @param {api.IRunMain=} [properties] Properties to set
+             * @returns {api.RunMain} RunMain instance
              */
             RunMain.create = function create(properties) {
                 return new RunMain(properties);
             };
     
             /**
-             * Encodes the specified RunMain message. Does not implicitly {@link replitproto.RunMain.verify|verify} messages.
+             * Encodes the specified RunMain message. Does not implicitly {@link api.RunMain.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.RunMain
+             * @memberof api.RunMain
              * @static
-             * @param {replitproto.IRunMain} message RunMain message or plain object to encode
+             * @param {api.IRunMain} message RunMain message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -11667,11 +11667,11 @@
             };
     
             /**
-             * Encodes the specified RunMain message, length delimited. Does not implicitly {@link replitproto.RunMain.verify|verify} messages.
+             * Encodes the specified RunMain message, length delimited. Does not implicitly {@link api.RunMain.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.RunMain
+             * @memberof api.RunMain
              * @static
-             * @param {replitproto.IRunMain} message RunMain message or plain object to encode
+             * @param {api.IRunMain} message RunMain message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -11682,18 +11682,18 @@
             /**
              * Decodes a RunMain message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.RunMain
+             * @memberof api.RunMain
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.RunMain} RunMain
+             * @returns {api.RunMain} RunMain
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             RunMain.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.RunMain();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.RunMain();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -11708,10 +11708,10 @@
             /**
              * Decodes a RunMain message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.RunMain
+             * @memberof api.RunMain
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.RunMain} RunMain
+             * @returns {api.RunMain} RunMain
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -11724,7 +11724,7 @@
             /**
              * Verifies a RunMain message.
              * @function verify
-             * @memberof replitproto.RunMain
+             * @memberof api.RunMain
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -11738,23 +11738,23 @@
             /**
              * Creates a RunMain message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.RunMain
+             * @memberof api.RunMain
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.RunMain} RunMain
+             * @returns {api.RunMain} RunMain
              */
             RunMain.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.RunMain)
+                if (object instanceof $root.api.RunMain)
                     return object;
-                return new $root.replitproto.RunMain();
+                return new $root.api.RunMain();
             };
     
             /**
              * Creates a plain object from a RunMain message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.RunMain
+             * @memberof api.RunMain
              * @static
-             * @param {replitproto.RunMain} message RunMain
+             * @param {api.RunMain} message RunMain
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -11765,7 +11765,7 @@
             /**
              * Converts this RunMain to JSON.
              * @function toJSON
-             * @memberof replitproto.RunMain
+             * @memberof api.RunMain
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -11776,25 +11776,25 @@
             return RunMain;
         })();
     
-        replitproto.OpenChannel = (function() {
+        api.OpenChannel = (function() {
     
             /**
              * Properties of an OpenChannel.
-             * @memberof replitproto
+             * @memberof api
              * @interface IOpenChannel
              * @property {string|null} [service] OpenChannel service
              * @property {string|null} [name] OpenChannel name
-             * @property {replitproto.OpenChannel.Action|null} [action] OpenChannel action
+             * @property {api.OpenChannel.Action|null} [action] OpenChannel action
              * @property {number|null} [id] OpenChannel id
              */
     
             /**
              * Constructs a new OpenChannel.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents an OpenChannel.
              * @implements IOpenChannel
              * @constructor
-             * @param {replitproto.IOpenChannel=} [properties] Properties to set
+             * @param {api.IOpenChannel=} [properties] Properties to set
              */
             function OpenChannel(properties) {
                 if (properties)
@@ -11806,7 +11806,7 @@
             /**
              * OpenChannel service.
              * @member {string} service
-             * @memberof replitproto.OpenChannel
+             * @memberof api.OpenChannel
              * @instance
              */
             OpenChannel.prototype.service = "";
@@ -11814,15 +11814,15 @@
             /**
              * OpenChannel name.
              * @member {string} name
-             * @memberof replitproto.OpenChannel
+             * @memberof api.OpenChannel
              * @instance
              */
             OpenChannel.prototype.name = "";
     
             /**
              * OpenChannel action.
-             * @member {replitproto.OpenChannel.Action} action
-             * @memberof replitproto.OpenChannel
+             * @member {api.OpenChannel.Action} action
+             * @memberof api.OpenChannel
              * @instance
              */
             OpenChannel.prototype.action = 0;
@@ -11830,7 +11830,7 @@
             /**
              * OpenChannel id.
              * @member {number} id
-             * @memberof replitproto.OpenChannel
+             * @memberof api.OpenChannel
              * @instance
              */
             OpenChannel.prototype.id = 0;
@@ -11838,21 +11838,21 @@
             /**
              * Creates a new OpenChannel instance using the specified properties.
              * @function create
-             * @memberof replitproto.OpenChannel
+             * @memberof api.OpenChannel
              * @static
-             * @param {replitproto.IOpenChannel=} [properties] Properties to set
-             * @returns {replitproto.OpenChannel} OpenChannel instance
+             * @param {api.IOpenChannel=} [properties] Properties to set
+             * @returns {api.OpenChannel} OpenChannel instance
              */
             OpenChannel.create = function create(properties) {
                 return new OpenChannel(properties);
             };
     
             /**
-             * Encodes the specified OpenChannel message. Does not implicitly {@link replitproto.OpenChannel.verify|verify} messages.
+             * Encodes the specified OpenChannel message. Does not implicitly {@link api.OpenChannel.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.OpenChannel
+             * @memberof api.OpenChannel
              * @static
-             * @param {replitproto.IOpenChannel} message OpenChannel message or plain object to encode
+             * @param {api.IOpenChannel} message OpenChannel message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -11871,11 +11871,11 @@
             };
     
             /**
-             * Encodes the specified OpenChannel message, length delimited. Does not implicitly {@link replitproto.OpenChannel.verify|verify} messages.
+             * Encodes the specified OpenChannel message, length delimited. Does not implicitly {@link api.OpenChannel.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.OpenChannel
+             * @memberof api.OpenChannel
              * @static
-             * @param {replitproto.IOpenChannel} message OpenChannel message or plain object to encode
+             * @param {api.IOpenChannel} message OpenChannel message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -11886,18 +11886,18 @@
             /**
              * Decodes an OpenChannel message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.OpenChannel
+             * @memberof api.OpenChannel
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.OpenChannel} OpenChannel
+             * @returns {api.OpenChannel} OpenChannel
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             OpenChannel.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.OpenChannel();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.OpenChannel();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -11924,10 +11924,10 @@
             /**
              * Decodes an OpenChannel message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.OpenChannel
+             * @memberof api.OpenChannel
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.OpenChannel} OpenChannel
+             * @returns {api.OpenChannel} OpenChannel
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -11940,7 +11940,7 @@
             /**
              * Verifies an OpenChannel message.
              * @function verify
-             * @memberof replitproto.OpenChannel
+             * @memberof api.OpenChannel
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -11972,15 +11972,15 @@
             /**
              * Creates an OpenChannel message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.OpenChannel
+             * @memberof api.OpenChannel
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.OpenChannel} OpenChannel
+             * @returns {api.OpenChannel} OpenChannel
              */
             OpenChannel.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.OpenChannel)
+                if (object instanceof $root.api.OpenChannel)
                     return object;
-                var message = new $root.replitproto.OpenChannel();
+                var message = new $root.api.OpenChannel();
                 if (object.service != null)
                     message.service = String(object.service);
                 if (object.name != null)
@@ -12007,9 +12007,9 @@
             /**
              * Creates a plain object from an OpenChannel message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.OpenChannel
+             * @memberof api.OpenChannel
              * @static
-             * @param {replitproto.OpenChannel} message OpenChannel
+             * @param {api.OpenChannel} message OpenChannel
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -12028,7 +12028,7 @@
                 if (message.name != null && message.hasOwnProperty("name"))
                     object.name = message.name;
                 if (message.action != null && message.hasOwnProperty("action"))
-                    object.action = options.enums === String ? $root.replitproto.OpenChannel.Action[message.action] : message.action;
+                    object.action = options.enums === String ? $root.api.OpenChannel.Action[message.action] : message.action;
                 if (message.id != null && message.hasOwnProperty("id"))
                     object.id = message.id;
                 return object;
@@ -12037,7 +12037,7 @@
             /**
              * Converts this OpenChannel to JSON.
              * @function toJSON
-             * @memberof replitproto.OpenChannel
+             * @memberof api.OpenChannel
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -12047,7 +12047,7 @@
     
             /**
              * Action enum.
-             * @name replitproto.OpenChannel.Action
+             * @name api.OpenChannel.Action
              * @enum {string}
              * @property {number} CREATE=0 CREATE value
              * @property {number} ATTACH=1 ATTACH value
@@ -12064,24 +12064,24 @@
             return OpenChannel;
         })();
     
-        replitproto.OpenChannelRes = (function() {
+        api.OpenChannelRes = (function() {
     
             /**
              * Properties of an OpenChannelRes.
-             * @memberof replitproto
+             * @memberof api
              * @interface IOpenChannelRes
              * @property {number|null} [id] OpenChannelRes id
-             * @property {replitproto.OpenChannelRes.State|null} [state] OpenChannelRes state
+             * @property {api.OpenChannelRes.State|null} [state] OpenChannelRes state
              * @property {string|null} [error] OpenChannelRes error
              */
     
             /**
              * Constructs a new OpenChannelRes.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents an OpenChannelRes.
              * @implements IOpenChannelRes
              * @constructor
-             * @param {replitproto.IOpenChannelRes=} [properties] Properties to set
+             * @param {api.IOpenChannelRes=} [properties] Properties to set
              */
             function OpenChannelRes(properties) {
                 if (properties)
@@ -12093,15 +12093,15 @@
             /**
              * OpenChannelRes id.
              * @member {number} id
-             * @memberof replitproto.OpenChannelRes
+             * @memberof api.OpenChannelRes
              * @instance
              */
             OpenChannelRes.prototype.id = 0;
     
             /**
              * OpenChannelRes state.
-             * @member {replitproto.OpenChannelRes.State} state
-             * @memberof replitproto.OpenChannelRes
+             * @member {api.OpenChannelRes.State} state
+             * @memberof api.OpenChannelRes
              * @instance
              */
             OpenChannelRes.prototype.state = 0;
@@ -12109,7 +12109,7 @@
             /**
              * OpenChannelRes error.
              * @member {string} error
-             * @memberof replitproto.OpenChannelRes
+             * @memberof api.OpenChannelRes
              * @instance
              */
             OpenChannelRes.prototype.error = "";
@@ -12117,21 +12117,21 @@
             /**
              * Creates a new OpenChannelRes instance using the specified properties.
              * @function create
-             * @memberof replitproto.OpenChannelRes
+             * @memberof api.OpenChannelRes
              * @static
-             * @param {replitproto.IOpenChannelRes=} [properties] Properties to set
-             * @returns {replitproto.OpenChannelRes} OpenChannelRes instance
+             * @param {api.IOpenChannelRes=} [properties] Properties to set
+             * @returns {api.OpenChannelRes} OpenChannelRes instance
              */
             OpenChannelRes.create = function create(properties) {
                 return new OpenChannelRes(properties);
             };
     
             /**
-             * Encodes the specified OpenChannelRes message. Does not implicitly {@link replitproto.OpenChannelRes.verify|verify} messages.
+             * Encodes the specified OpenChannelRes message. Does not implicitly {@link api.OpenChannelRes.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.OpenChannelRes
+             * @memberof api.OpenChannelRes
              * @static
-             * @param {replitproto.IOpenChannelRes} message OpenChannelRes message or plain object to encode
+             * @param {api.IOpenChannelRes} message OpenChannelRes message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -12148,11 +12148,11 @@
             };
     
             /**
-             * Encodes the specified OpenChannelRes message, length delimited. Does not implicitly {@link replitproto.OpenChannelRes.verify|verify} messages.
+             * Encodes the specified OpenChannelRes message, length delimited. Does not implicitly {@link api.OpenChannelRes.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.OpenChannelRes
+             * @memberof api.OpenChannelRes
              * @static
-             * @param {replitproto.IOpenChannelRes} message OpenChannelRes message or plain object to encode
+             * @param {api.IOpenChannelRes} message OpenChannelRes message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -12163,18 +12163,18 @@
             /**
              * Decodes an OpenChannelRes message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.OpenChannelRes
+             * @memberof api.OpenChannelRes
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.OpenChannelRes} OpenChannelRes
+             * @returns {api.OpenChannelRes} OpenChannelRes
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             OpenChannelRes.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.OpenChannelRes();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.OpenChannelRes();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -12198,10 +12198,10 @@
             /**
              * Decodes an OpenChannelRes message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.OpenChannelRes
+             * @memberof api.OpenChannelRes
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.OpenChannelRes} OpenChannelRes
+             * @returns {api.OpenChannelRes} OpenChannelRes
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -12214,7 +12214,7 @@
             /**
              * Verifies an OpenChannelRes message.
              * @function verify
-             * @memberof replitproto.OpenChannelRes
+             * @memberof api.OpenChannelRes
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -12243,15 +12243,15 @@
             /**
              * Creates an OpenChannelRes message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.OpenChannelRes
+             * @memberof api.OpenChannelRes
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.OpenChannelRes} OpenChannelRes
+             * @returns {api.OpenChannelRes} OpenChannelRes
              */
             OpenChannelRes.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.OpenChannelRes)
+                if (object instanceof $root.api.OpenChannelRes)
                     return object;
-                var message = new $root.replitproto.OpenChannelRes();
+                var message = new $root.api.OpenChannelRes();
                 if (object.id != null)
                     message.id = object.id | 0;
                 switch (object.state) {
@@ -12276,9 +12276,9 @@
             /**
              * Creates a plain object from an OpenChannelRes message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.OpenChannelRes
+             * @memberof api.OpenChannelRes
              * @static
-             * @param {replitproto.OpenChannelRes} message OpenChannelRes
+             * @param {api.OpenChannelRes} message OpenChannelRes
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -12294,7 +12294,7 @@
                 if (message.id != null && message.hasOwnProperty("id"))
                     object.id = message.id;
                 if (message.state != null && message.hasOwnProperty("state"))
-                    object.state = options.enums === String ? $root.replitproto.OpenChannelRes.State[message.state] : message.state;
+                    object.state = options.enums === String ? $root.api.OpenChannelRes.State[message.state] : message.state;
                 if (message.error != null && message.hasOwnProperty("error"))
                     object.error = message.error;
                 return object;
@@ -12303,7 +12303,7 @@
             /**
              * Converts this OpenChannelRes to JSON.
              * @function toJSON
-             * @memberof replitproto.OpenChannelRes
+             * @memberof api.OpenChannelRes
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -12313,7 +12313,7 @@
     
             /**
              * State enum.
-             * @name replitproto.OpenChannelRes.State
+             * @name api.OpenChannelRes.State
              * @enum {string}
              * @property {number} CREATED=0 CREATED value
              * @property {number} ATTACHED=1 ATTACHED value
@@ -12330,23 +12330,23 @@
             return OpenChannelRes;
         })();
     
-        replitproto.CloseChannel = (function() {
+        api.CloseChannel = (function() {
     
             /**
              * Properties of a CloseChannel.
-             * @memberof replitproto
+             * @memberof api
              * @interface ICloseChannel
              * @property {number|null} [id] CloseChannel id
-             * @property {replitproto.CloseChannel.Action|null} [action] CloseChannel action
+             * @property {api.CloseChannel.Action|null} [action] CloseChannel action
              */
     
             /**
              * Constructs a new CloseChannel.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a CloseChannel.
              * @implements ICloseChannel
              * @constructor
-             * @param {replitproto.ICloseChannel=} [properties] Properties to set
+             * @param {api.ICloseChannel=} [properties] Properties to set
              */
             function CloseChannel(properties) {
                 if (properties)
@@ -12358,15 +12358,15 @@
             /**
              * CloseChannel id.
              * @member {number} id
-             * @memberof replitproto.CloseChannel
+             * @memberof api.CloseChannel
              * @instance
              */
             CloseChannel.prototype.id = 0;
     
             /**
              * CloseChannel action.
-             * @member {replitproto.CloseChannel.Action} action
-             * @memberof replitproto.CloseChannel
+             * @member {api.CloseChannel.Action} action
+             * @memberof api.CloseChannel
              * @instance
              */
             CloseChannel.prototype.action = 0;
@@ -12374,21 +12374,21 @@
             /**
              * Creates a new CloseChannel instance using the specified properties.
              * @function create
-             * @memberof replitproto.CloseChannel
+             * @memberof api.CloseChannel
              * @static
-             * @param {replitproto.ICloseChannel=} [properties] Properties to set
-             * @returns {replitproto.CloseChannel} CloseChannel instance
+             * @param {api.ICloseChannel=} [properties] Properties to set
+             * @returns {api.CloseChannel} CloseChannel instance
              */
             CloseChannel.create = function create(properties) {
                 return new CloseChannel(properties);
             };
     
             /**
-             * Encodes the specified CloseChannel message. Does not implicitly {@link replitproto.CloseChannel.verify|verify} messages.
+             * Encodes the specified CloseChannel message. Does not implicitly {@link api.CloseChannel.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.CloseChannel
+             * @memberof api.CloseChannel
              * @static
-             * @param {replitproto.ICloseChannel} message CloseChannel message or plain object to encode
+             * @param {api.ICloseChannel} message CloseChannel message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -12403,11 +12403,11 @@
             };
     
             /**
-             * Encodes the specified CloseChannel message, length delimited. Does not implicitly {@link replitproto.CloseChannel.verify|verify} messages.
+             * Encodes the specified CloseChannel message, length delimited. Does not implicitly {@link api.CloseChannel.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.CloseChannel
+             * @memberof api.CloseChannel
              * @static
-             * @param {replitproto.ICloseChannel} message CloseChannel message or plain object to encode
+             * @param {api.ICloseChannel} message CloseChannel message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -12418,18 +12418,18 @@
             /**
              * Decodes a CloseChannel message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.CloseChannel
+             * @memberof api.CloseChannel
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.CloseChannel} CloseChannel
+             * @returns {api.CloseChannel} CloseChannel
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             CloseChannel.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.CloseChannel();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.CloseChannel();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -12450,10 +12450,10 @@
             /**
              * Decodes a CloseChannel message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.CloseChannel
+             * @memberof api.CloseChannel
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.CloseChannel} CloseChannel
+             * @returns {api.CloseChannel} CloseChannel
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -12466,7 +12466,7 @@
             /**
              * Verifies a CloseChannel message.
              * @function verify
-             * @memberof replitproto.CloseChannel
+             * @memberof api.CloseChannel
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -12492,15 +12492,15 @@
             /**
              * Creates a CloseChannel message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.CloseChannel
+             * @memberof api.CloseChannel
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.CloseChannel} CloseChannel
+             * @returns {api.CloseChannel} CloseChannel
              */
             CloseChannel.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.CloseChannel)
+                if (object instanceof $root.api.CloseChannel)
                     return object;
-                var message = new $root.replitproto.CloseChannel();
+                var message = new $root.api.CloseChannel();
                 if (object.id != null)
                     message.id = object.id | 0;
                 switch (object.action) {
@@ -12523,9 +12523,9 @@
             /**
              * Creates a plain object from a CloseChannel message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.CloseChannel
+             * @memberof api.CloseChannel
              * @static
-             * @param {replitproto.CloseChannel} message CloseChannel
+             * @param {api.CloseChannel} message CloseChannel
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -12540,14 +12540,14 @@
                 if (message.id != null && message.hasOwnProperty("id"))
                     object.id = message.id;
                 if (message.action != null && message.hasOwnProperty("action"))
-                    object.action = options.enums === String ? $root.replitproto.CloseChannel.Action[message.action] : message.action;
+                    object.action = options.enums === String ? $root.api.CloseChannel.Action[message.action] : message.action;
                 return object;
             };
     
             /**
              * Converts this CloseChannel to JSON.
              * @function toJSON
-             * @memberof replitproto.CloseChannel
+             * @memberof api.CloseChannel
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -12557,7 +12557,7 @@
     
             /**
              * Action enum.
-             * @name replitproto.CloseChannel.Action
+             * @name api.CloseChannel.Action
              * @enum {string}
              * @property {number} DISCONNECT=0 DISCONNECT value
              * @property {number} TRY_CLOSE=1 TRY_CLOSE value
@@ -12574,23 +12574,23 @@
             return CloseChannel;
         })();
     
-        replitproto.CloseChannelRes = (function() {
+        api.CloseChannelRes = (function() {
     
             /**
              * Properties of a CloseChannelRes.
-             * @memberof replitproto
+             * @memberof api
              * @interface ICloseChannelRes
              * @property {number|null} [id] CloseChannelRes id
-             * @property {replitproto.CloseChannelRes.Status|null} [status] CloseChannelRes status
+             * @property {api.CloseChannelRes.Status|null} [status] CloseChannelRes status
              */
     
             /**
              * Constructs a new CloseChannelRes.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a CloseChannelRes.
              * @implements ICloseChannelRes
              * @constructor
-             * @param {replitproto.ICloseChannelRes=} [properties] Properties to set
+             * @param {api.ICloseChannelRes=} [properties] Properties to set
              */
             function CloseChannelRes(properties) {
                 if (properties)
@@ -12602,15 +12602,15 @@
             /**
              * CloseChannelRes id.
              * @member {number} id
-             * @memberof replitproto.CloseChannelRes
+             * @memberof api.CloseChannelRes
              * @instance
              */
             CloseChannelRes.prototype.id = 0;
     
             /**
              * CloseChannelRes status.
-             * @member {replitproto.CloseChannelRes.Status} status
-             * @memberof replitproto.CloseChannelRes
+             * @member {api.CloseChannelRes.Status} status
+             * @memberof api.CloseChannelRes
              * @instance
              */
             CloseChannelRes.prototype.status = 0;
@@ -12618,21 +12618,21 @@
             /**
              * Creates a new CloseChannelRes instance using the specified properties.
              * @function create
-             * @memberof replitproto.CloseChannelRes
+             * @memberof api.CloseChannelRes
              * @static
-             * @param {replitproto.ICloseChannelRes=} [properties] Properties to set
-             * @returns {replitproto.CloseChannelRes} CloseChannelRes instance
+             * @param {api.ICloseChannelRes=} [properties] Properties to set
+             * @returns {api.CloseChannelRes} CloseChannelRes instance
              */
             CloseChannelRes.create = function create(properties) {
                 return new CloseChannelRes(properties);
             };
     
             /**
-             * Encodes the specified CloseChannelRes message. Does not implicitly {@link replitproto.CloseChannelRes.verify|verify} messages.
+             * Encodes the specified CloseChannelRes message. Does not implicitly {@link api.CloseChannelRes.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.CloseChannelRes
+             * @memberof api.CloseChannelRes
              * @static
-             * @param {replitproto.ICloseChannelRes} message CloseChannelRes message or plain object to encode
+             * @param {api.ICloseChannelRes} message CloseChannelRes message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -12647,11 +12647,11 @@
             };
     
             /**
-             * Encodes the specified CloseChannelRes message, length delimited. Does not implicitly {@link replitproto.CloseChannelRes.verify|verify} messages.
+             * Encodes the specified CloseChannelRes message, length delimited. Does not implicitly {@link api.CloseChannelRes.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.CloseChannelRes
+             * @memberof api.CloseChannelRes
              * @static
-             * @param {replitproto.ICloseChannelRes} message CloseChannelRes message or plain object to encode
+             * @param {api.ICloseChannelRes} message CloseChannelRes message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -12662,18 +12662,18 @@
             /**
              * Decodes a CloseChannelRes message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.CloseChannelRes
+             * @memberof api.CloseChannelRes
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.CloseChannelRes} CloseChannelRes
+             * @returns {api.CloseChannelRes} CloseChannelRes
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             CloseChannelRes.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.CloseChannelRes();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.CloseChannelRes();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -12694,10 +12694,10 @@
             /**
              * Decodes a CloseChannelRes message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.CloseChannelRes
+             * @memberof api.CloseChannelRes
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.CloseChannelRes} CloseChannelRes
+             * @returns {api.CloseChannelRes} CloseChannelRes
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -12710,7 +12710,7 @@
             /**
              * Verifies a CloseChannelRes message.
              * @function verify
-             * @memberof replitproto.CloseChannelRes
+             * @memberof api.CloseChannelRes
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -12736,15 +12736,15 @@
             /**
              * Creates a CloseChannelRes message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.CloseChannelRes
+             * @memberof api.CloseChannelRes
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.CloseChannelRes} CloseChannelRes
+             * @returns {api.CloseChannelRes} CloseChannelRes
              */
             CloseChannelRes.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.CloseChannelRes)
+                if (object instanceof $root.api.CloseChannelRes)
                     return object;
-                var message = new $root.replitproto.CloseChannelRes();
+                var message = new $root.api.CloseChannelRes();
                 if (object.id != null)
                     message.id = object.id | 0;
                 switch (object.status) {
@@ -12767,9 +12767,9 @@
             /**
              * Creates a plain object from a CloseChannelRes message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.CloseChannelRes
+             * @memberof api.CloseChannelRes
              * @static
-             * @param {replitproto.CloseChannelRes} message CloseChannelRes
+             * @param {api.CloseChannelRes} message CloseChannelRes
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -12784,14 +12784,14 @@
                 if (message.id != null && message.hasOwnProperty("id"))
                     object.id = message.id;
                 if (message.status != null && message.hasOwnProperty("status"))
-                    object.status = options.enums === String ? $root.replitproto.CloseChannelRes.Status[message.status] : message.status;
+                    object.status = options.enums === String ? $root.api.CloseChannelRes.Status[message.status] : message.status;
                 return object;
             };
     
             /**
              * Converts this CloseChannelRes to JSON.
              * @function toJSON
-             * @memberof replitproto.CloseChannelRes
+             * @memberof api.CloseChannelRes
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -12801,7 +12801,7 @@
     
             /**
              * Status enum.
-             * @name replitproto.CloseChannelRes.Status
+             * @name api.CloseChannelRes.Status
              * @enum {string}
              * @property {number} DISCONNECT=0 DISCONNECT value
              * @property {number} CLOSE=1 CLOSE value
@@ -12818,22 +12818,22 @@
             return CloseChannelRes;
         })();
     
-        replitproto.ContainerState = (function() {
+        api.ContainerState = (function() {
     
             /**
              * Properties of a ContainerState.
-             * @memberof replitproto
+             * @memberof api
              * @interface IContainerState
-             * @property {replitproto.ContainerState.State|null} [state] ContainerState state
+             * @property {api.ContainerState.State|null} [state] ContainerState state
              */
     
             /**
              * Constructs a new ContainerState.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a ContainerState.
              * @implements IContainerState
              * @constructor
-             * @param {replitproto.IContainerState=} [properties] Properties to set
+             * @param {api.IContainerState=} [properties] Properties to set
              */
             function ContainerState(properties) {
                 if (properties)
@@ -12844,8 +12844,8 @@
     
             /**
              * ContainerState state.
-             * @member {replitproto.ContainerState.State} state
-             * @memberof replitproto.ContainerState
+             * @member {api.ContainerState.State} state
+             * @memberof api.ContainerState
              * @instance
              */
             ContainerState.prototype.state = 0;
@@ -12853,21 +12853,21 @@
             /**
              * Creates a new ContainerState instance using the specified properties.
              * @function create
-             * @memberof replitproto.ContainerState
+             * @memberof api.ContainerState
              * @static
-             * @param {replitproto.IContainerState=} [properties] Properties to set
-             * @returns {replitproto.ContainerState} ContainerState instance
+             * @param {api.IContainerState=} [properties] Properties to set
+             * @returns {api.ContainerState} ContainerState instance
              */
             ContainerState.create = function create(properties) {
                 return new ContainerState(properties);
             };
     
             /**
-             * Encodes the specified ContainerState message. Does not implicitly {@link replitproto.ContainerState.verify|verify} messages.
+             * Encodes the specified ContainerState message. Does not implicitly {@link api.ContainerState.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.ContainerState
+             * @memberof api.ContainerState
              * @static
-             * @param {replitproto.IContainerState} message ContainerState message or plain object to encode
+             * @param {api.IContainerState} message ContainerState message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -12880,11 +12880,11 @@
             };
     
             /**
-             * Encodes the specified ContainerState message, length delimited. Does not implicitly {@link replitproto.ContainerState.verify|verify} messages.
+             * Encodes the specified ContainerState message, length delimited. Does not implicitly {@link api.ContainerState.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.ContainerState
+             * @memberof api.ContainerState
              * @static
-             * @param {replitproto.IContainerState} message ContainerState message or plain object to encode
+             * @param {api.IContainerState} message ContainerState message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -12895,18 +12895,18 @@
             /**
              * Decodes a ContainerState message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.ContainerState
+             * @memberof api.ContainerState
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.ContainerState} ContainerState
+             * @returns {api.ContainerState} ContainerState
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             ContainerState.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.ContainerState();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.ContainerState();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -12924,10 +12924,10 @@
             /**
              * Decodes a ContainerState message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.ContainerState
+             * @memberof api.ContainerState
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.ContainerState} ContainerState
+             * @returns {api.ContainerState} ContainerState
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -12940,7 +12940,7 @@
             /**
              * Verifies a ContainerState message.
              * @function verify
-             * @memberof replitproto.ContainerState
+             * @memberof api.ContainerState
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -12962,15 +12962,15 @@
             /**
              * Creates a ContainerState message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.ContainerState
+             * @memberof api.ContainerState
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.ContainerState} ContainerState
+             * @returns {api.ContainerState} ContainerState
              */
             ContainerState.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.ContainerState)
+                if (object instanceof $root.api.ContainerState)
                     return object;
-                var message = new $root.replitproto.ContainerState();
+                var message = new $root.api.ContainerState();
                 switch (object.state) {
                 case "SLEEP":
                 case 0:
@@ -12987,9 +12987,9 @@
             /**
              * Creates a plain object from a ContainerState message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.ContainerState
+             * @memberof api.ContainerState
              * @static
-             * @param {replitproto.ContainerState} message ContainerState
+             * @param {api.ContainerState} message ContainerState
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -13000,14 +13000,14 @@
                 if (options.defaults)
                     object.state = options.enums === String ? "SLEEP" : 0;
                 if (message.state != null && message.hasOwnProperty("state"))
-                    object.state = options.enums === String ? $root.replitproto.ContainerState.State[message.state] : message.state;
+                    object.state = options.enums === String ? $root.api.ContainerState.State[message.state] : message.state;
                 return object;
             };
     
             /**
              * Converts this ContainerState to JSON.
              * @function toJSON
-             * @memberof replitproto.ContainerState
+             * @memberof api.ContainerState
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -13017,7 +13017,7 @@
     
             /**
              * State enum.
-             * @name replitproto.ContainerState.State
+             * @name api.ContainerState.State
              * @enum {string}
              * @property {number} SLEEP=0 SLEEP value
              * @property {number} READY=1 READY value
@@ -13032,11 +13032,11 @@
             return ContainerState;
         })();
     
-        replitproto.PortOpen = (function() {
+        api.PortOpen = (function() {
     
             /**
              * Properties of a PortOpen.
-             * @memberof replitproto
+             * @memberof api
              * @interface IPortOpen
              * @property {boolean|null} [forwarded] PortOpen forwarded
              * @property {number|null} [port] PortOpen port
@@ -13045,11 +13045,11 @@
     
             /**
              * Constructs a new PortOpen.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a PortOpen.
              * @implements IPortOpen
              * @constructor
-             * @param {replitproto.IPortOpen=} [properties] Properties to set
+             * @param {api.IPortOpen=} [properties] Properties to set
              */
             function PortOpen(properties) {
                 if (properties)
@@ -13061,7 +13061,7 @@
             /**
              * PortOpen forwarded.
              * @member {boolean} forwarded
-             * @memberof replitproto.PortOpen
+             * @memberof api.PortOpen
              * @instance
              */
             PortOpen.prototype.forwarded = false;
@@ -13069,7 +13069,7 @@
             /**
              * PortOpen port.
              * @member {number} port
-             * @memberof replitproto.PortOpen
+             * @memberof api.PortOpen
              * @instance
              */
             PortOpen.prototype.port = 0;
@@ -13077,7 +13077,7 @@
             /**
              * PortOpen address.
              * @member {string} address
-             * @memberof replitproto.PortOpen
+             * @memberof api.PortOpen
              * @instance
              */
             PortOpen.prototype.address = "";
@@ -13085,21 +13085,21 @@
             /**
              * Creates a new PortOpen instance using the specified properties.
              * @function create
-             * @memberof replitproto.PortOpen
+             * @memberof api.PortOpen
              * @static
-             * @param {replitproto.IPortOpen=} [properties] Properties to set
-             * @returns {replitproto.PortOpen} PortOpen instance
+             * @param {api.IPortOpen=} [properties] Properties to set
+             * @returns {api.PortOpen} PortOpen instance
              */
             PortOpen.create = function create(properties) {
                 return new PortOpen(properties);
             };
     
             /**
-             * Encodes the specified PortOpen message. Does not implicitly {@link replitproto.PortOpen.verify|verify} messages.
+             * Encodes the specified PortOpen message. Does not implicitly {@link api.PortOpen.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.PortOpen
+             * @memberof api.PortOpen
              * @static
-             * @param {replitproto.IPortOpen} message PortOpen message or plain object to encode
+             * @param {api.IPortOpen} message PortOpen message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -13116,11 +13116,11 @@
             };
     
             /**
-             * Encodes the specified PortOpen message, length delimited. Does not implicitly {@link replitproto.PortOpen.verify|verify} messages.
+             * Encodes the specified PortOpen message, length delimited. Does not implicitly {@link api.PortOpen.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.PortOpen
+             * @memberof api.PortOpen
              * @static
-             * @param {replitproto.IPortOpen} message PortOpen message or plain object to encode
+             * @param {api.IPortOpen} message PortOpen message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -13131,18 +13131,18 @@
             /**
              * Decodes a PortOpen message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.PortOpen
+             * @memberof api.PortOpen
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.PortOpen} PortOpen
+             * @returns {api.PortOpen} PortOpen
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             PortOpen.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.PortOpen();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.PortOpen();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -13166,10 +13166,10 @@
             /**
              * Decodes a PortOpen message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.PortOpen
+             * @memberof api.PortOpen
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.PortOpen} PortOpen
+             * @returns {api.PortOpen} PortOpen
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -13182,7 +13182,7 @@
             /**
              * Verifies a PortOpen message.
              * @function verify
-             * @memberof replitproto.PortOpen
+             * @memberof api.PortOpen
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -13205,15 +13205,15 @@
             /**
              * Creates a PortOpen message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.PortOpen
+             * @memberof api.PortOpen
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.PortOpen} PortOpen
+             * @returns {api.PortOpen} PortOpen
              */
             PortOpen.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.PortOpen)
+                if (object instanceof $root.api.PortOpen)
                     return object;
-                var message = new $root.replitproto.PortOpen();
+                var message = new $root.api.PortOpen();
                 if (object.forwarded != null)
                     message.forwarded = Boolean(object.forwarded);
                 if (object.port != null)
@@ -13226,9 +13226,9 @@
             /**
              * Creates a plain object from a PortOpen message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.PortOpen
+             * @memberof api.PortOpen
              * @static
-             * @param {replitproto.PortOpen} message PortOpen
+             * @param {api.PortOpen} message PortOpen
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -13253,7 +13253,7 @@
             /**
              * Converts this PortOpen to JSON.
              * @function toJSON
-             * @memberof replitproto.PortOpen
+             * @memberof api.PortOpen
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -13264,24 +13264,24 @@
             return PortOpen;
         })();
     
-        replitproto.OTPacket = (function() {
+        api.OTPacket = (function() {
     
             /**
              * Properties of a OTPacket.
-             * @memberof replitproto
+             * @memberof api
              * @interface IOTPacket
              * @property {number|null} [version] OTPacket version
-             * @property {Array.<replitproto.IOTRuneTransformOp>|null} [ops] OTPacket ops
+             * @property {Array.<api.IOTRuneTransformOp>|null} [ops] OTPacket ops
              * @property {number|null} [crc32] OTPacket crc32
              */
     
             /**
              * Constructs a new OTPacket.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a OTPacket.
              * @implements IOTPacket
              * @constructor
-             * @param {replitproto.IOTPacket=} [properties] Properties to set
+             * @param {api.IOTPacket=} [properties] Properties to set
              */
             function OTPacket(properties) {
                 this.ops = [];
@@ -13294,15 +13294,15 @@
             /**
              * OTPacket version.
              * @member {number} version
-             * @memberof replitproto.OTPacket
+             * @memberof api.OTPacket
              * @instance
              */
             OTPacket.prototype.version = 0;
     
             /**
              * OTPacket ops.
-             * @member {Array.<replitproto.IOTRuneTransformOp>} ops
-             * @memberof replitproto.OTPacket
+             * @member {Array.<api.IOTRuneTransformOp>} ops
+             * @memberof api.OTPacket
              * @instance
              */
             OTPacket.prototype.ops = $util.emptyArray;
@@ -13310,7 +13310,7 @@
             /**
              * OTPacket crc32.
              * @member {number} crc32
-             * @memberof replitproto.OTPacket
+             * @memberof api.OTPacket
              * @instance
              */
             OTPacket.prototype.crc32 = 0;
@@ -13318,21 +13318,21 @@
             /**
              * Creates a new OTPacket instance using the specified properties.
              * @function create
-             * @memberof replitproto.OTPacket
+             * @memberof api.OTPacket
              * @static
-             * @param {replitproto.IOTPacket=} [properties] Properties to set
-             * @returns {replitproto.OTPacket} OTPacket instance
+             * @param {api.IOTPacket=} [properties] Properties to set
+             * @returns {api.OTPacket} OTPacket instance
              */
             OTPacket.create = function create(properties) {
                 return new OTPacket(properties);
             };
     
             /**
-             * Encodes the specified OTPacket message. Does not implicitly {@link replitproto.OTPacket.verify|verify} messages.
+             * Encodes the specified OTPacket message. Does not implicitly {@link api.OTPacket.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.OTPacket
+             * @memberof api.OTPacket
              * @static
-             * @param {replitproto.IOTPacket} message OTPacket message or plain object to encode
+             * @param {api.IOTPacket} message OTPacket message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -13343,18 +13343,18 @@
                     writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.version);
                 if (message.ops != null && message.ops.length)
                     for (var i = 0; i < message.ops.length; ++i)
-                        $root.replitproto.OTRuneTransformOp.encode(message.ops[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                        $root.api.OTRuneTransformOp.encode(message.ops[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.crc32 != null && message.hasOwnProperty("crc32"))
                     writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.crc32);
                 return writer;
             };
     
             /**
-             * Encodes the specified OTPacket message, length delimited. Does not implicitly {@link replitproto.OTPacket.verify|verify} messages.
+             * Encodes the specified OTPacket message, length delimited. Does not implicitly {@link api.OTPacket.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.OTPacket
+             * @memberof api.OTPacket
              * @static
-             * @param {replitproto.IOTPacket} message OTPacket message or plain object to encode
+             * @param {api.IOTPacket} message OTPacket message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -13365,18 +13365,18 @@
             /**
              * Decodes a OTPacket message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.OTPacket
+             * @memberof api.OTPacket
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.OTPacket} OTPacket
+             * @returns {api.OTPacket} OTPacket
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             OTPacket.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.OTPacket();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.OTPacket();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -13386,7 +13386,7 @@
                     case 2:
                         if (!(message.ops && message.ops.length))
                             message.ops = [];
-                        message.ops.push($root.replitproto.OTRuneTransformOp.decode(reader, reader.uint32()));
+                        message.ops.push($root.api.OTRuneTransformOp.decode(reader, reader.uint32()));
                         break;
                     case 3:
                         message.crc32 = reader.uint32();
@@ -13402,10 +13402,10 @@
             /**
              * Decodes a OTPacket message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.OTPacket
+             * @memberof api.OTPacket
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.OTPacket} OTPacket
+             * @returns {api.OTPacket} OTPacket
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -13418,7 +13418,7 @@
             /**
              * Verifies a OTPacket message.
              * @function verify
-             * @memberof replitproto.OTPacket
+             * @memberof api.OTPacket
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -13433,7 +13433,7 @@
                     if (!Array.isArray(message.ops))
                         return "ops: array expected";
                     for (var i = 0; i < message.ops.length; ++i) {
-                        var error = $root.replitproto.OTRuneTransformOp.verify(message.ops[i]);
+                        var error = $root.api.OTRuneTransformOp.verify(message.ops[i]);
                         if (error)
                             return "ops." + error;
                     }
@@ -13447,25 +13447,25 @@
             /**
              * Creates a OTPacket message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.OTPacket
+             * @memberof api.OTPacket
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.OTPacket} OTPacket
+             * @returns {api.OTPacket} OTPacket
              */
             OTPacket.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.OTPacket)
+                if (object instanceof $root.api.OTPacket)
                     return object;
-                var message = new $root.replitproto.OTPacket();
+                var message = new $root.api.OTPacket();
                 if (object.version != null)
                     message.version = object.version >>> 0;
                 if (object.ops) {
                     if (!Array.isArray(object.ops))
-                        throw TypeError(".replitproto.OTPacket.ops: array expected");
+                        throw TypeError(".api.OTPacket.ops: array expected");
                     message.ops = [];
                     for (var i = 0; i < object.ops.length; ++i) {
                         if (typeof object.ops[i] !== "object")
-                            throw TypeError(".replitproto.OTPacket.ops: object expected");
-                        message.ops[i] = $root.replitproto.OTRuneTransformOp.fromObject(object.ops[i]);
+                            throw TypeError(".api.OTPacket.ops: object expected");
+                        message.ops[i] = $root.api.OTRuneTransformOp.fromObject(object.ops[i]);
                     }
                 }
                 if (object.crc32 != null)
@@ -13476,9 +13476,9 @@
             /**
              * Creates a plain object from a OTPacket message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.OTPacket
+             * @memberof api.OTPacket
              * @static
-             * @param {replitproto.OTPacket} message OTPacket
+             * @param {api.OTPacket} message OTPacket
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -13497,7 +13497,7 @@
                 if (message.ops && message.ops.length) {
                     object.ops = [];
                     for (var j = 0; j < message.ops.length; ++j)
-                        object.ops[j] = $root.replitproto.OTRuneTransformOp.toObject(message.ops[j], options);
+                        object.ops[j] = $root.api.OTRuneTransformOp.toObject(message.ops[j], options);
                 }
                 if (message.crc32 != null && message.hasOwnProperty("crc32"))
                     object.crc32 = message.crc32;
@@ -13507,7 +13507,7 @@
             /**
              * Converts this OTPacket to JSON.
              * @function toJSON
-             * @memberof replitproto.OTPacket
+             * @memberof api.OTPacket
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -13518,11 +13518,11 @@
             return OTPacket;
         })();
     
-        replitproto.OTRuneTransformOp = (function() {
+        api.OTRuneTransformOp = (function() {
     
             /**
              * Properties of a OTRuneTransformOp.
-             * @memberof replitproto
+             * @memberof api
              * @interface IOTRuneTransformOp
              * @property {number|null} [skip] OTRuneTransformOp skip
              * @property {number|null} ["delete"] OTRuneTransformOp delete
@@ -13531,11 +13531,11 @@
     
             /**
              * Constructs a new OTRuneTransformOp.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a OTRuneTransformOp.
              * @implements IOTRuneTransformOp
              * @constructor
-             * @param {replitproto.IOTRuneTransformOp=} [properties] Properties to set
+             * @param {api.IOTRuneTransformOp=} [properties] Properties to set
              */
             function OTRuneTransformOp(properties) {
                 if (properties)
@@ -13547,7 +13547,7 @@
             /**
              * OTRuneTransformOp skip.
              * @member {number} skip
-             * @memberof replitproto.OTRuneTransformOp
+             * @memberof api.OTRuneTransformOp
              * @instance
              */
             OTRuneTransformOp.prototype.skip = 0;
@@ -13555,7 +13555,7 @@
             /**
              * OTRuneTransformOp delete.
              * @member {number} delete
-             * @memberof replitproto.OTRuneTransformOp
+             * @memberof api.OTRuneTransformOp
              * @instance
              */
             OTRuneTransformOp.prototype["delete"] = 0;
@@ -13563,7 +13563,7 @@
             /**
              * OTRuneTransformOp insert.
              * @member {string} insert
-             * @memberof replitproto.OTRuneTransformOp
+             * @memberof api.OTRuneTransformOp
              * @instance
              */
             OTRuneTransformOp.prototype.insert = "";
@@ -13574,7 +13574,7 @@
             /**
              * OTRuneTransformOp op.
              * @member {"skip"|"delete"|"insert"|undefined} op
-             * @memberof replitproto.OTRuneTransformOp
+             * @memberof api.OTRuneTransformOp
              * @instance
              */
             Object.defineProperty(OTRuneTransformOp.prototype, "op", {
@@ -13585,21 +13585,21 @@
             /**
              * Creates a new OTRuneTransformOp instance using the specified properties.
              * @function create
-             * @memberof replitproto.OTRuneTransformOp
+             * @memberof api.OTRuneTransformOp
              * @static
-             * @param {replitproto.IOTRuneTransformOp=} [properties] Properties to set
-             * @returns {replitproto.OTRuneTransformOp} OTRuneTransformOp instance
+             * @param {api.IOTRuneTransformOp=} [properties] Properties to set
+             * @returns {api.OTRuneTransformOp} OTRuneTransformOp instance
              */
             OTRuneTransformOp.create = function create(properties) {
                 return new OTRuneTransformOp(properties);
             };
     
             /**
-             * Encodes the specified OTRuneTransformOp message. Does not implicitly {@link replitproto.OTRuneTransformOp.verify|verify} messages.
+             * Encodes the specified OTRuneTransformOp message. Does not implicitly {@link api.OTRuneTransformOp.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.OTRuneTransformOp
+             * @memberof api.OTRuneTransformOp
              * @static
-             * @param {replitproto.IOTRuneTransformOp} message OTRuneTransformOp message or plain object to encode
+             * @param {api.IOTRuneTransformOp} message OTRuneTransformOp message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -13616,11 +13616,11 @@
             };
     
             /**
-             * Encodes the specified OTRuneTransformOp message, length delimited. Does not implicitly {@link replitproto.OTRuneTransformOp.verify|verify} messages.
+             * Encodes the specified OTRuneTransformOp message, length delimited. Does not implicitly {@link api.OTRuneTransformOp.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.OTRuneTransformOp
+             * @memberof api.OTRuneTransformOp
              * @static
-             * @param {replitproto.IOTRuneTransformOp} message OTRuneTransformOp message or plain object to encode
+             * @param {api.IOTRuneTransformOp} message OTRuneTransformOp message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -13631,18 +13631,18 @@
             /**
              * Decodes a OTRuneTransformOp message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.OTRuneTransformOp
+             * @memberof api.OTRuneTransformOp
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.OTRuneTransformOp} OTRuneTransformOp
+             * @returns {api.OTRuneTransformOp} OTRuneTransformOp
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             OTRuneTransformOp.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.OTRuneTransformOp();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.OTRuneTransformOp();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -13666,10 +13666,10 @@
             /**
              * Decodes a OTRuneTransformOp message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.OTRuneTransformOp
+             * @memberof api.OTRuneTransformOp
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.OTRuneTransformOp} OTRuneTransformOp
+             * @returns {api.OTRuneTransformOp} OTRuneTransformOp
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -13682,7 +13682,7 @@
             /**
              * Verifies a OTRuneTransformOp message.
              * @function verify
-             * @memberof replitproto.OTRuneTransformOp
+             * @memberof api.OTRuneTransformOp
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -13716,15 +13716,15 @@
             /**
              * Creates a OTRuneTransformOp message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.OTRuneTransformOp
+             * @memberof api.OTRuneTransformOp
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.OTRuneTransformOp} OTRuneTransformOp
+             * @returns {api.OTRuneTransformOp} OTRuneTransformOp
              */
             OTRuneTransformOp.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.OTRuneTransformOp)
+                if (object instanceof $root.api.OTRuneTransformOp)
                     return object;
-                var message = new $root.replitproto.OTRuneTransformOp();
+                var message = new $root.api.OTRuneTransformOp();
                 if (object.skip != null)
                     message.skip = object.skip >>> 0;
                 if (object["delete"] != null)
@@ -13737,9 +13737,9 @@
             /**
              * Creates a plain object from a OTRuneTransformOp message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.OTRuneTransformOp
+             * @memberof api.OTRuneTransformOp
              * @static
-             * @param {replitproto.OTRuneTransformOp} message OTRuneTransformOp
+             * @param {api.OTRuneTransformOp} message OTRuneTransformOp
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -13768,7 +13768,7 @@
             /**
              * Converts this OTRuneTransformOp to JSON.
              * @function toJSON
-             * @memberof replitproto.OTRuneTransformOp
+             * @memberof api.OTRuneTransformOp
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -13779,25 +13779,25 @@
             return OTRuneTransformOp;
         })();
     
-        replitproto.OTStatus = (function() {
+        api.OTStatus = (function() {
     
             /**
              * Properties of a OTStatus.
-             * @memberof replitproto
+             * @memberof api
              * @interface IOTStatus
              * @property {string|null} [contents] OTStatus contents
              * @property {number|null} [version] OTStatus version
-             * @property {replitproto.IFile|null} [linkedFile] OTStatus linkedFile
-             * @property {Array.<replitproto.IOTCursor>|null} [cursors] OTStatus cursors
+             * @property {api.IFile|null} [linkedFile] OTStatus linkedFile
+             * @property {Array.<api.IOTCursor>|null} [cursors] OTStatus cursors
              */
     
             /**
              * Constructs a new OTStatus.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a OTStatus.
              * @implements IOTStatus
              * @constructor
-             * @param {replitproto.IOTStatus=} [properties] Properties to set
+             * @param {api.IOTStatus=} [properties] Properties to set
              */
             function OTStatus(properties) {
                 this.cursors = [];
@@ -13810,7 +13810,7 @@
             /**
              * OTStatus contents.
              * @member {string} contents
-             * @memberof replitproto.OTStatus
+             * @memberof api.OTStatus
              * @instance
              */
             OTStatus.prototype.contents = "";
@@ -13818,23 +13818,23 @@
             /**
              * OTStatus version.
              * @member {number} version
-             * @memberof replitproto.OTStatus
+             * @memberof api.OTStatus
              * @instance
              */
             OTStatus.prototype.version = 0;
     
             /**
              * OTStatus linkedFile.
-             * @member {replitproto.IFile|null|undefined} linkedFile
-             * @memberof replitproto.OTStatus
+             * @member {api.IFile|null|undefined} linkedFile
+             * @memberof api.OTStatus
              * @instance
              */
             OTStatus.prototype.linkedFile = null;
     
             /**
              * OTStatus cursors.
-             * @member {Array.<replitproto.IOTCursor>} cursors
-             * @memberof replitproto.OTStatus
+             * @member {Array.<api.IOTCursor>} cursors
+             * @memberof api.OTStatus
              * @instance
              */
             OTStatus.prototype.cursors = $util.emptyArray;
@@ -13842,21 +13842,21 @@
             /**
              * Creates a new OTStatus instance using the specified properties.
              * @function create
-             * @memberof replitproto.OTStatus
+             * @memberof api.OTStatus
              * @static
-             * @param {replitproto.IOTStatus=} [properties] Properties to set
-             * @returns {replitproto.OTStatus} OTStatus instance
+             * @param {api.IOTStatus=} [properties] Properties to set
+             * @returns {api.OTStatus} OTStatus instance
              */
             OTStatus.create = function create(properties) {
                 return new OTStatus(properties);
             };
     
             /**
-             * Encodes the specified OTStatus message. Does not implicitly {@link replitproto.OTStatus.verify|verify} messages.
+             * Encodes the specified OTStatus message. Does not implicitly {@link api.OTStatus.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.OTStatus
+             * @memberof api.OTStatus
              * @static
-             * @param {replitproto.IOTStatus} message OTStatus message or plain object to encode
+             * @param {api.IOTStatus} message OTStatus message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -13868,19 +13868,19 @@
                 if (message.version != null && message.hasOwnProperty("version"))
                     writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.version);
                 if (message.linkedFile != null && message.hasOwnProperty("linkedFile"))
-                    $root.replitproto.File.encode(message.linkedFile, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                    $root.api.File.encode(message.linkedFile, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.cursors != null && message.cursors.length)
                     for (var i = 0; i < message.cursors.length; ++i)
-                        $root.replitproto.OTCursor.encode(message.cursors[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                        $root.api.OTCursor.encode(message.cursors[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 return writer;
             };
     
             /**
-             * Encodes the specified OTStatus message, length delimited. Does not implicitly {@link replitproto.OTStatus.verify|verify} messages.
+             * Encodes the specified OTStatus message, length delimited. Does not implicitly {@link api.OTStatus.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.OTStatus
+             * @memberof api.OTStatus
              * @static
-             * @param {replitproto.IOTStatus} message OTStatus message or plain object to encode
+             * @param {api.IOTStatus} message OTStatus message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -13891,18 +13891,18 @@
             /**
              * Decodes a OTStatus message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.OTStatus
+             * @memberof api.OTStatus
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.OTStatus} OTStatus
+             * @returns {api.OTStatus} OTStatus
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             OTStatus.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.OTStatus();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.OTStatus();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -13913,12 +13913,12 @@
                         message.version = reader.uint32();
                         break;
                     case 3:
-                        message.linkedFile = $root.replitproto.File.decode(reader, reader.uint32());
+                        message.linkedFile = $root.api.File.decode(reader, reader.uint32());
                         break;
                     case 4:
                         if (!(message.cursors && message.cursors.length))
                             message.cursors = [];
-                        message.cursors.push($root.replitproto.OTCursor.decode(reader, reader.uint32()));
+                        message.cursors.push($root.api.OTCursor.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -13931,10 +13931,10 @@
             /**
              * Decodes a OTStatus message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.OTStatus
+             * @memberof api.OTStatus
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.OTStatus} OTStatus
+             * @returns {api.OTStatus} OTStatus
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -13947,7 +13947,7 @@
             /**
              * Verifies a OTStatus message.
              * @function verify
-             * @memberof replitproto.OTStatus
+             * @memberof api.OTStatus
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -13962,7 +13962,7 @@
                     if (!$util.isInteger(message.version))
                         return "version: integer expected";
                 if (message.linkedFile != null && message.hasOwnProperty("linkedFile")) {
-                    var error = $root.replitproto.File.verify(message.linkedFile);
+                    var error = $root.api.File.verify(message.linkedFile);
                     if (error)
                         return "linkedFile." + error;
                 }
@@ -13970,7 +13970,7 @@
                     if (!Array.isArray(message.cursors))
                         return "cursors: array expected";
                     for (var i = 0; i < message.cursors.length; ++i) {
-                        var error = $root.replitproto.OTCursor.verify(message.cursors[i]);
+                        var error = $root.api.OTCursor.verify(message.cursors[i]);
                         if (error)
                             return "cursors." + error;
                     }
@@ -13981,32 +13981,32 @@
             /**
              * Creates a OTStatus message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.OTStatus
+             * @memberof api.OTStatus
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.OTStatus} OTStatus
+             * @returns {api.OTStatus} OTStatus
              */
             OTStatus.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.OTStatus)
+                if (object instanceof $root.api.OTStatus)
                     return object;
-                var message = new $root.replitproto.OTStatus();
+                var message = new $root.api.OTStatus();
                 if (object.contents != null)
                     message.contents = String(object.contents);
                 if (object.version != null)
                     message.version = object.version >>> 0;
                 if (object.linkedFile != null) {
                     if (typeof object.linkedFile !== "object")
-                        throw TypeError(".replitproto.OTStatus.linkedFile: object expected");
-                    message.linkedFile = $root.replitproto.File.fromObject(object.linkedFile);
+                        throw TypeError(".api.OTStatus.linkedFile: object expected");
+                    message.linkedFile = $root.api.File.fromObject(object.linkedFile);
                 }
                 if (object.cursors) {
                     if (!Array.isArray(object.cursors))
-                        throw TypeError(".replitproto.OTStatus.cursors: array expected");
+                        throw TypeError(".api.OTStatus.cursors: array expected");
                     message.cursors = [];
                     for (var i = 0; i < object.cursors.length; ++i) {
                         if (typeof object.cursors[i] !== "object")
-                            throw TypeError(".replitproto.OTStatus.cursors: object expected");
-                        message.cursors[i] = $root.replitproto.OTCursor.fromObject(object.cursors[i]);
+                            throw TypeError(".api.OTStatus.cursors: object expected");
+                        message.cursors[i] = $root.api.OTCursor.fromObject(object.cursors[i]);
                     }
                 }
                 return message;
@@ -14015,9 +14015,9 @@
             /**
              * Creates a plain object from a OTStatus message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.OTStatus
+             * @memberof api.OTStatus
              * @static
-             * @param {replitproto.OTStatus} message OTStatus
+             * @param {api.OTStatus} message OTStatus
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -14037,11 +14037,11 @@
                 if (message.version != null && message.hasOwnProperty("version"))
                     object.version = message.version;
                 if (message.linkedFile != null && message.hasOwnProperty("linkedFile"))
-                    object.linkedFile = $root.replitproto.File.toObject(message.linkedFile, options);
+                    object.linkedFile = $root.api.File.toObject(message.linkedFile, options);
                 if (message.cursors && message.cursors.length) {
                     object.cursors = [];
                     for (var j = 0; j < message.cursors.length; ++j)
-                        object.cursors[j] = $root.replitproto.OTCursor.toObject(message.cursors[j], options);
+                        object.cursors[j] = $root.api.OTCursor.toObject(message.cursors[j], options);
                 }
                 return object;
             };
@@ -14049,7 +14049,7 @@
             /**
              * Converts this OTStatus to JSON.
              * @function toJSON
-             * @memberof replitproto.OTStatus
+             * @memberof api.OTStatus
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -14060,26 +14060,26 @@
             return OTStatus;
         })();
     
-        replitproto.OTCursor = (function() {
+        api.OTCursor = (function() {
     
             /**
              * Properties of a OTCursor.
-             * @memberof replitproto
+             * @memberof api
              * @interface IOTCursor
              * @property {number|null} [position] OTCursor position
              * @property {number|null} [selectionStart] OTCursor selectionStart
              * @property {number|null} [selectionEnd] OTCursor selectionEnd
-             * @property {replitproto.IUser|null} [user] OTCursor user
+             * @property {api.IUser|null} [user] OTCursor user
              * @property {string|null} [id] OTCursor id
              */
     
             /**
              * Constructs a new OTCursor.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a OTCursor.
              * @implements IOTCursor
              * @constructor
-             * @param {replitproto.IOTCursor=} [properties] Properties to set
+             * @param {api.IOTCursor=} [properties] Properties to set
              */
             function OTCursor(properties) {
                 if (properties)
@@ -14091,7 +14091,7 @@
             /**
              * OTCursor position.
              * @member {number} position
-             * @memberof replitproto.OTCursor
+             * @memberof api.OTCursor
              * @instance
              */
             OTCursor.prototype.position = 0;
@@ -14099,7 +14099,7 @@
             /**
              * OTCursor selectionStart.
              * @member {number} selectionStart
-             * @memberof replitproto.OTCursor
+             * @memberof api.OTCursor
              * @instance
              */
             OTCursor.prototype.selectionStart = 0;
@@ -14107,15 +14107,15 @@
             /**
              * OTCursor selectionEnd.
              * @member {number} selectionEnd
-             * @memberof replitproto.OTCursor
+             * @memberof api.OTCursor
              * @instance
              */
             OTCursor.prototype.selectionEnd = 0;
     
             /**
              * OTCursor user.
-             * @member {replitproto.IUser|null|undefined} user
-             * @memberof replitproto.OTCursor
+             * @member {api.IUser|null|undefined} user
+             * @memberof api.OTCursor
              * @instance
              */
             OTCursor.prototype.user = null;
@@ -14123,7 +14123,7 @@
             /**
              * OTCursor id.
              * @member {string} id
-             * @memberof replitproto.OTCursor
+             * @memberof api.OTCursor
              * @instance
              */
             OTCursor.prototype.id = "";
@@ -14131,21 +14131,21 @@
             /**
              * Creates a new OTCursor instance using the specified properties.
              * @function create
-             * @memberof replitproto.OTCursor
+             * @memberof api.OTCursor
              * @static
-             * @param {replitproto.IOTCursor=} [properties] Properties to set
-             * @returns {replitproto.OTCursor} OTCursor instance
+             * @param {api.IOTCursor=} [properties] Properties to set
+             * @returns {api.OTCursor} OTCursor instance
              */
             OTCursor.create = function create(properties) {
                 return new OTCursor(properties);
             };
     
             /**
-             * Encodes the specified OTCursor message. Does not implicitly {@link replitproto.OTCursor.verify|verify} messages.
+             * Encodes the specified OTCursor message. Does not implicitly {@link api.OTCursor.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.OTCursor
+             * @memberof api.OTCursor
              * @static
-             * @param {replitproto.IOTCursor} message OTCursor message or plain object to encode
+             * @param {api.IOTCursor} message OTCursor message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -14159,18 +14159,18 @@
                 if (message.selectionEnd != null && message.hasOwnProperty("selectionEnd"))
                     writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.selectionEnd);
                 if (message.user != null && message.hasOwnProperty("user"))
-                    $root.replitproto.User.encode(message.user, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                    $root.api.User.encode(message.user, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 if (message.id != null && message.hasOwnProperty("id"))
                     writer.uint32(/* id 5, wireType 2 =*/42).string(message.id);
                 return writer;
             };
     
             /**
-             * Encodes the specified OTCursor message, length delimited. Does not implicitly {@link replitproto.OTCursor.verify|verify} messages.
+             * Encodes the specified OTCursor message, length delimited. Does not implicitly {@link api.OTCursor.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.OTCursor
+             * @memberof api.OTCursor
              * @static
-             * @param {replitproto.IOTCursor} message OTCursor message or plain object to encode
+             * @param {api.IOTCursor} message OTCursor message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -14181,18 +14181,18 @@
             /**
              * Decodes a OTCursor message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.OTCursor
+             * @memberof api.OTCursor
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.OTCursor} OTCursor
+             * @returns {api.OTCursor} OTCursor
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             OTCursor.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.OTCursor();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.OTCursor();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -14206,7 +14206,7 @@
                         message.selectionEnd = reader.uint32();
                         break;
                     case 4:
-                        message.user = $root.replitproto.User.decode(reader, reader.uint32());
+                        message.user = $root.api.User.decode(reader, reader.uint32());
                         break;
                     case 5:
                         message.id = reader.string();
@@ -14222,10 +14222,10 @@
             /**
              * Decodes a OTCursor message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.OTCursor
+             * @memberof api.OTCursor
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.OTCursor} OTCursor
+             * @returns {api.OTCursor} OTCursor
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -14238,7 +14238,7 @@
             /**
              * Verifies a OTCursor message.
              * @function verify
-             * @memberof replitproto.OTCursor
+             * @memberof api.OTCursor
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -14256,7 +14256,7 @@
                     if (!$util.isInteger(message.selectionEnd))
                         return "selectionEnd: integer expected";
                 if (message.user != null && message.hasOwnProperty("user")) {
-                    var error = $root.replitproto.User.verify(message.user);
+                    var error = $root.api.User.verify(message.user);
                     if (error)
                         return "user." + error;
                 }
@@ -14269,15 +14269,15 @@
             /**
              * Creates a OTCursor message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.OTCursor
+             * @memberof api.OTCursor
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.OTCursor} OTCursor
+             * @returns {api.OTCursor} OTCursor
              */
             OTCursor.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.OTCursor)
+                if (object instanceof $root.api.OTCursor)
                     return object;
-                var message = new $root.replitproto.OTCursor();
+                var message = new $root.api.OTCursor();
                 if (object.position != null)
                     message.position = object.position >>> 0;
                 if (object.selectionStart != null)
@@ -14286,8 +14286,8 @@
                     message.selectionEnd = object.selectionEnd >>> 0;
                 if (object.user != null) {
                     if (typeof object.user !== "object")
-                        throw TypeError(".replitproto.OTCursor.user: object expected");
-                    message.user = $root.replitproto.User.fromObject(object.user);
+                        throw TypeError(".api.OTCursor.user: object expected");
+                    message.user = $root.api.User.fromObject(object.user);
                 }
                 if (object.id != null)
                     message.id = String(object.id);
@@ -14297,9 +14297,9 @@
             /**
              * Creates a plain object from a OTCursor message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.OTCursor
+             * @memberof api.OTCursor
              * @static
-             * @param {replitproto.OTCursor} message OTCursor
+             * @param {api.OTCursor} message OTCursor
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -14321,7 +14321,7 @@
                 if (message.selectionEnd != null && message.hasOwnProperty("selectionEnd"))
                     object.selectionEnd = message.selectionEnd;
                 if (message.user != null && message.hasOwnProperty("user"))
-                    object.user = $root.replitproto.User.toObject(message.user, options);
+                    object.user = $root.api.User.toObject(message.user, options);
                 if (message.id != null && message.hasOwnProperty("id"))
                     object.id = message.id;
                 return object;
@@ -14330,7 +14330,7 @@
             /**
              * Converts this OTCursor to JSON.
              * @function toJSON
-             * @memberof replitproto.OTCursor
+             * @memberof api.OTCursor
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -14341,11 +14341,11 @@
             return OTCursor;
         })();
     
-        replitproto.ChatMessage = (function() {
+        api.ChatMessage = (function() {
     
             /**
              * Properties of a ChatMessage.
-             * @memberof replitproto
+             * @memberof api
              * @interface IChatMessage
              * @property {string|null} [username] ChatMessage username
              * @property {string|null} [text] ChatMessage text
@@ -14353,11 +14353,11 @@
     
             /**
              * Constructs a new ChatMessage.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a ChatMessage.
              * @implements IChatMessage
              * @constructor
-             * @param {replitproto.IChatMessage=} [properties] Properties to set
+             * @param {api.IChatMessage=} [properties] Properties to set
              */
             function ChatMessage(properties) {
                 if (properties)
@@ -14369,7 +14369,7 @@
             /**
              * ChatMessage username.
              * @member {string} username
-             * @memberof replitproto.ChatMessage
+             * @memberof api.ChatMessage
              * @instance
              */
             ChatMessage.prototype.username = "";
@@ -14377,7 +14377,7 @@
             /**
              * ChatMessage text.
              * @member {string} text
-             * @memberof replitproto.ChatMessage
+             * @memberof api.ChatMessage
              * @instance
              */
             ChatMessage.prototype.text = "";
@@ -14385,21 +14385,21 @@
             /**
              * Creates a new ChatMessage instance using the specified properties.
              * @function create
-             * @memberof replitproto.ChatMessage
+             * @memberof api.ChatMessage
              * @static
-             * @param {replitproto.IChatMessage=} [properties] Properties to set
-             * @returns {replitproto.ChatMessage} ChatMessage instance
+             * @param {api.IChatMessage=} [properties] Properties to set
+             * @returns {api.ChatMessage} ChatMessage instance
              */
             ChatMessage.create = function create(properties) {
                 return new ChatMessage(properties);
             };
     
             /**
-             * Encodes the specified ChatMessage message. Does not implicitly {@link replitproto.ChatMessage.verify|verify} messages.
+             * Encodes the specified ChatMessage message. Does not implicitly {@link api.ChatMessage.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.ChatMessage
+             * @memberof api.ChatMessage
              * @static
-             * @param {replitproto.IChatMessage} message ChatMessage message or plain object to encode
+             * @param {api.IChatMessage} message ChatMessage message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -14414,11 +14414,11 @@
             };
     
             /**
-             * Encodes the specified ChatMessage message, length delimited. Does not implicitly {@link replitproto.ChatMessage.verify|verify} messages.
+             * Encodes the specified ChatMessage message, length delimited. Does not implicitly {@link api.ChatMessage.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.ChatMessage
+             * @memberof api.ChatMessage
              * @static
-             * @param {replitproto.IChatMessage} message ChatMessage message or plain object to encode
+             * @param {api.IChatMessage} message ChatMessage message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -14429,18 +14429,18 @@
             /**
              * Decodes a ChatMessage message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.ChatMessage
+             * @memberof api.ChatMessage
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.ChatMessage} ChatMessage
+             * @returns {api.ChatMessage} ChatMessage
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             ChatMessage.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.ChatMessage();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.ChatMessage();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -14461,10 +14461,10 @@
             /**
              * Decodes a ChatMessage message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.ChatMessage
+             * @memberof api.ChatMessage
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.ChatMessage} ChatMessage
+             * @returns {api.ChatMessage} ChatMessage
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -14477,7 +14477,7 @@
             /**
              * Verifies a ChatMessage message.
              * @function verify
-             * @memberof replitproto.ChatMessage
+             * @memberof api.ChatMessage
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -14497,15 +14497,15 @@
             /**
              * Creates a ChatMessage message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.ChatMessage
+             * @memberof api.ChatMessage
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.ChatMessage} ChatMessage
+             * @returns {api.ChatMessage} ChatMessage
              */
             ChatMessage.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.ChatMessage)
+                if (object instanceof $root.api.ChatMessage)
                     return object;
-                var message = new $root.replitproto.ChatMessage();
+                var message = new $root.api.ChatMessage();
                 if (object.username != null)
                     message.username = String(object.username);
                 if (object.text != null)
@@ -14516,9 +14516,9 @@
             /**
              * Creates a plain object from a ChatMessage message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.ChatMessage
+             * @memberof api.ChatMessage
              * @static
-             * @param {replitproto.ChatMessage} message ChatMessage
+             * @param {api.ChatMessage} message ChatMessage
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -14540,7 +14540,7 @@
             /**
              * Converts this ChatMessage to JSON.
              * @function toJSON
-             * @memberof replitproto.ChatMessage
+             * @memberof api.ChatMessage
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -14551,11 +14551,11 @@
             return ChatMessage;
         })();
     
-        replitproto.ChatTyping = (function() {
+        api.ChatTyping = (function() {
     
             /**
              * Properties of a ChatTyping.
-             * @memberof replitproto
+             * @memberof api
              * @interface IChatTyping
              * @property {string|null} [username] ChatTyping username
              * @property {boolean|null} [typing] ChatTyping typing
@@ -14563,11 +14563,11 @@
     
             /**
              * Constructs a new ChatTyping.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a ChatTyping.
              * @implements IChatTyping
              * @constructor
-             * @param {replitproto.IChatTyping=} [properties] Properties to set
+             * @param {api.IChatTyping=} [properties] Properties to set
              */
             function ChatTyping(properties) {
                 if (properties)
@@ -14579,7 +14579,7 @@
             /**
              * ChatTyping username.
              * @member {string} username
-             * @memberof replitproto.ChatTyping
+             * @memberof api.ChatTyping
              * @instance
              */
             ChatTyping.prototype.username = "";
@@ -14587,7 +14587,7 @@
             /**
              * ChatTyping typing.
              * @member {boolean} typing
-             * @memberof replitproto.ChatTyping
+             * @memberof api.ChatTyping
              * @instance
              */
             ChatTyping.prototype.typing = false;
@@ -14595,21 +14595,21 @@
             /**
              * Creates a new ChatTyping instance using the specified properties.
              * @function create
-             * @memberof replitproto.ChatTyping
+             * @memberof api.ChatTyping
              * @static
-             * @param {replitproto.IChatTyping=} [properties] Properties to set
-             * @returns {replitproto.ChatTyping} ChatTyping instance
+             * @param {api.IChatTyping=} [properties] Properties to set
+             * @returns {api.ChatTyping} ChatTyping instance
              */
             ChatTyping.create = function create(properties) {
                 return new ChatTyping(properties);
             };
     
             /**
-             * Encodes the specified ChatTyping message. Does not implicitly {@link replitproto.ChatTyping.verify|verify} messages.
+             * Encodes the specified ChatTyping message. Does not implicitly {@link api.ChatTyping.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.ChatTyping
+             * @memberof api.ChatTyping
              * @static
-             * @param {replitproto.IChatTyping} message ChatTyping message or plain object to encode
+             * @param {api.IChatTyping} message ChatTyping message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -14624,11 +14624,11 @@
             };
     
             /**
-             * Encodes the specified ChatTyping message, length delimited. Does not implicitly {@link replitproto.ChatTyping.verify|verify} messages.
+             * Encodes the specified ChatTyping message, length delimited. Does not implicitly {@link api.ChatTyping.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.ChatTyping
+             * @memberof api.ChatTyping
              * @static
-             * @param {replitproto.IChatTyping} message ChatTyping message or plain object to encode
+             * @param {api.IChatTyping} message ChatTyping message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -14639,18 +14639,18 @@
             /**
              * Decodes a ChatTyping message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.ChatTyping
+             * @memberof api.ChatTyping
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.ChatTyping} ChatTyping
+             * @returns {api.ChatTyping} ChatTyping
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             ChatTyping.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.ChatTyping();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.ChatTyping();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -14671,10 +14671,10 @@
             /**
              * Decodes a ChatTyping message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.ChatTyping
+             * @memberof api.ChatTyping
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.ChatTyping} ChatTyping
+             * @returns {api.ChatTyping} ChatTyping
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -14687,7 +14687,7 @@
             /**
              * Verifies a ChatTyping message.
              * @function verify
-             * @memberof replitproto.ChatTyping
+             * @memberof api.ChatTyping
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -14707,15 +14707,15 @@
             /**
              * Creates a ChatTyping message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.ChatTyping
+             * @memberof api.ChatTyping
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.ChatTyping} ChatTyping
+             * @returns {api.ChatTyping} ChatTyping
              */
             ChatTyping.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.ChatTyping)
+                if (object instanceof $root.api.ChatTyping)
                     return object;
-                var message = new $root.replitproto.ChatTyping();
+                var message = new $root.api.ChatTyping();
                 if (object.username != null)
                     message.username = String(object.username);
                 if (object.typing != null)
@@ -14726,9 +14726,9 @@
             /**
              * Creates a plain object from a ChatTyping message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.ChatTyping
+             * @memberof api.ChatTyping
              * @static
-             * @param {replitproto.ChatTyping} message ChatTyping
+             * @param {api.ChatTyping} message ChatTyping
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -14750,7 +14750,7 @@
             /**
              * Converts this ChatTyping to JSON.
              * @function toJSON
-             * @memberof replitproto.ChatTyping
+             * @memberof api.ChatTyping
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -14761,11 +14761,11 @@
             return ChatTyping;
         })();
     
-        replitproto.User = (function() {
+        api.User = (function() {
     
             /**
              * Properties of a User.
-             * @memberof replitproto
+             * @memberof api
              * @interface IUser
              * @property {number|null} [id] User id
              * @property {string|null} [name] User name
@@ -14775,11 +14775,11 @@
     
             /**
              * Constructs a new User.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a User.
              * @implements IUser
              * @constructor
-             * @param {replitproto.IUser=} [properties] Properties to set
+             * @param {api.IUser=} [properties] Properties to set
              */
             function User(properties) {
                 this.roles = [];
@@ -14792,7 +14792,7 @@
             /**
              * User id.
              * @member {number} id
-             * @memberof replitproto.User
+             * @memberof api.User
              * @instance
              */
             User.prototype.id = 0;
@@ -14800,7 +14800,7 @@
             /**
              * User name.
              * @member {string} name
-             * @memberof replitproto.User
+             * @memberof api.User
              * @instance
              */
             User.prototype.name = "";
@@ -14808,7 +14808,7 @@
             /**
              * User roles.
              * @member {Array.<string>} roles
-             * @memberof replitproto.User
+             * @memberof api.User
              * @instance
              */
             User.prototype.roles = $util.emptyArray;
@@ -14816,7 +14816,7 @@
             /**
              * User session.
              * @member {number} session
-             * @memberof replitproto.User
+             * @memberof api.User
              * @instance
              */
             User.prototype.session = 0;
@@ -14824,21 +14824,21 @@
             /**
              * Creates a new User instance using the specified properties.
              * @function create
-             * @memberof replitproto.User
+             * @memberof api.User
              * @static
-             * @param {replitproto.IUser=} [properties] Properties to set
-             * @returns {replitproto.User} User instance
+             * @param {api.IUser=} [properties] Properties to set
+             * @returns {api.User} User instance
              */
             User.create = function create(properties) {
                 return new User(properties);
             };
     
             /**
-             * Encodes the specified User message. Does not implicitly {@link replitproto.User.verify|verify} messages.
+             * Encodes the specified User message. Does not implicitly {@link api.User.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.User
+             * @memberof api.User
              * @static
-             * @param {replitproto.IUser} message User message or plain object to encode
+             * @param {api.IUser} message User message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -14858,11 +14858,11 @@
             };
     
             /**
-             * Encodes the specified User message, length delimited. Does not implicitly {@link replitproto.User.verify|verify} messages.
+             * Encodes the specified User message, length delimited. Does not implicitly {@link api.User.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.User
+             * @memberof api.User
              * @static
-             * @param {replitproto.IUser} message User message or plain object to encode
+             * @param {api.IUser} message User message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -14873,18 +14873,18 @@
             /**
              * Decodes a User message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.User
+             * @memberof api.User
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.User} User
+             * @returns {api.User} User
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             User.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.User();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.User();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -14913,10 +14913,10 @@
             /**
              * Decodes a User message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.User
+             * @memberof api.User
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.User} User
+             * @returns {api.User} User
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -14929,7 +14929,7 @@
             /**
              * Verifies a User message.
              * @function verify
-             * @memberof replitproto.User
+             * @memberof api.User
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -14959,22 +14959,22 @@
             /**
              * Creates a User message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.User
+             * @memberof api.User
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.User} User
+             * @returns {api.User} User
              */
             User.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.User)
+                if (object instanceof $root.api.User)
                     return object;
-                var message = new $root.replitproto.User();
+                var message = new $root.api.User();
                 if (object.id != null)
                     message.id = object.id >>> 0;
                 if (object.name != null)
                     message.name = String(object.name);
                 if (object.roles) {
                     if (!Array.isArray(object.roles))
-                        throw TypeError(".replitproto.User.roles: array expected");
+                        throw TypeError(".api.User.roles: array expected");
                     message.roles = [];
                     for (var i = 0; i < object.roles.length; ++i)
                         message.roles[i] = String(object.roles[i]);
@@ -14987,9 +14987,9 @@
             /**
              * Creates a plain object from a User message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.User
+             * @memberof api.User
              * @static
-             * @param {replitproto.User} message User
+             * @param {api.User} message User
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -15021,7 +15021,7 @@
             /**
              * Converts this User to JSON.
              * @function toJSON
-             * @memberof replitproto.User
+             * @memberof api.User
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -15032,22 +15032,22 @@
             return User;
         })();
     
-        replitproto.Roster = (function() {
+        api.Roster = (function() {
     
             /**
              * Properties of a Roster.
-             * @memberof replitproto
+             * @memberof api
              * @interface IRoster
-             * @property {Array.<replitproto.IUser>|null} [user] Roster user
+             * @property {Array.<api.IUser>|null} [user] Roster user
              */
     
             /**
              * Constructs a new Roster.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a Roster.
              * @implements IRoster
              * @constructor
-             * @param {replitproto.IRoster=} [properties] Properties to set
+             * @param {api.IRoster=} [properties] Properties to set
              */
             function Roster(properties) {
                 this.user = [];
@@ -15059,8 +15059,8 @@
     
             /**
              * Roster user.
-             * @member {Array.<replitproto.IUser>} user
-             * @memberof replitproto.Roster
+             * @member {Array.<api.IUser>} user
+             * @memberof api.Roster
              * @instance
              */
             Roster.prototype.user = $util.emptyArray;
@@ -15068,21 +15068,21 @@
             /**
              * Creates a new Roster instance using the specified properties.
              * @function create
-             * @memberof replitproto.Roster
+             * @memberof api.Roster
              * @static
-             * @param {replitproto.IRoster=} [properties] Properties to set
-             * @returns {replitproto.Roster} Roster instance
+             * @param {api.IRoster=} [properties] Properties to set
+             * @returns {api.Roster} Roster instance
              */
             Roster.create = function create(properties) {
                 return new Roster(properties);
             };
     
             /**
-             * Encodes the specified Roster message. Does not implicitly {@link replitproto.Roster.verify|verify} messages.
+             * Encodes the specified Roster message. Does not implicitly {@link api.Roster.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.Roster
+             * @memberof api.Roster
              * @static
-             * @param {replitproto.IRoster} message Roster message or plain object to encode
+             * @param {api.IRoster} message Roster message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -15091,16 +15091,16 @@
                     writer = $Writer.create();
                 if (message.user != null && message.user.length)
                     for (var i = 0; i < message.user.length; ++i)
-                        $root.replitproto.User.encode(message.user[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                        $root.api.User.encode(message.user[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
     
             /**
-             * Encodes the specified Roster message, length delimited. Does not implicitly {@link replitproto.Roster.verify|verify} messages.
+             * Encodes the specified Roster message, length delimited. Does not implicitly {@link api.Roster.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.Roster
+             * @memberof api.Roster
              * @static
-             * @param {replitproto.IRoster} message Roster message or plain object to encode
+             * @param {api.IRoster} message Roster message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -15111,25 +15111,25 @@
             /**
              * Decodes a Roster message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.Roster
+             * @memberof api.Roster
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.Roster} Roster
+             * @returns {api.Roster} Roster
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             Roster.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.Roster();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Roster();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         if (!(message.user && message.user.length))
                             message.user = [];
-                        message.user.push($root.replitproto.User.decode(reader, reader.uint32()));
+                        message.user.push($root.api.User.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -15142,10 +15142,10 @@
             /**
              * Decodes a Roster message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.Roster
+             * @memberof api.Roster
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.Roster} Roster
+             * @returns {api.Roster} Roster
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -15158,7 +15158,7 @@
             /**
              * Verifies a Roster message.
              * @function verify
-             * @memberof replitproto.Roster
+             * @memberof api.Roster
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -15170,7 +15170,7 @@
                     if (!Array.isArray(message.user))
                         return "user: array expected";
                     for (var i = 0; i < message.user.length; ++i) {
-                        var error = $root.replitproto.User.verify(message.user[i]);
+                        var error = $root.api.User.verify(message.user[i]);
                         if (error)
                             return "user." + error;
                     }
@@ -15181,23 +15181,23 @@
             /**
              * Creates a Roster message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.Roster
+             * @memberof api.Roster
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.Roster} Roster
+             * @returns {api.Roster} Roster
              */
             Roster.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.Roster)
+                if (object instanceof $root.api.Roster)
                     return object;
-                var message = new $root.replitproto.Roster();
+                var message = new $root.api.Roster();
                 if (object.user) {
                     if (!Array.isArray(object.user))
-                        throw TypeError(".replitproto.Roster.user: array expected");
+                        throw TypeError(".api.Roster.user: array expected");
                     message.user = [];
                     for (var i = 0; i < object.user.length; ++i) {
                         if (typeof object.user[i] !== "object")
-                            throw TypeError(".replitproto.Roster.user: object expected");
-                        message.user[i] = $root.replitproto.User.fromObject(object.user[i]);
+                            throw TypeError(".api.Roster.user: object expected");
+                        message.user[i] = $root.api.User.fromObject(object.user[i]);
                     }
                 }
                 return message;
@@ -15206,9 +15206,9 @@
             /**
              * Creates a plain object from a Roster message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.Roster
+             * @memberof api.Roster
              * @static
-             * @param {replitproto.Roster} message Roster
+             * @param {api.Roster} message Roster
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -15221,7 +15221,7 @@
                 if (message.user && message.user.length) {
                     object.user = [];
                     for (var j = 0; j < message.user.length; ++j)
-                        object.user[j] = $root.replitproto.User.toObject(message.user[j], options);
+                        object.user[j] = $root.api.User.toObject(message.user[j], options);
                 }
                 return object;
             };
@@ -15229,7 +15229,7 @@
             /**
              * Converts this Roster to JSON.
              * @function toJSON
-             * @memberof replitproto.Roster
+             * @memberof api.Roster
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -15240,11 +15240,11 @@
             return Roster;
         })();
     
-        replitproto.Exec = (function() {
+        api.Exec = (function() {
     
             /**
              * Properties of an Exec.
-             * @memberof replitproto
+             * @memberof api
              * @interface IExec
              * @property {Array.<string>|null} [args] Exec args
              * @property {Object.<string,string>|null} [env] Exec env
@@ -15253,11 +15253,11 @@
     
             /**
              * Constructs a new Exec.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents an Exec.
              * @implements IExec
              * @constructor
-             * @param {replitproto.IExec=} [properties] Properties to set
+             * @param {api.IExec=} [properties] Properties to set
              */
             function Exec(properties) {
                 this.args = [];
@@ -15271,7 +15271,7 @@
             /**
              * Exec args.
              * @member {Array.<string>} args
-             * @memberof replitproto.Exec
+             * @memberof api.Exec
              * @instance
              */
             Exec.prototype.args = $util.emptyArray;
@@ -15279,7 +15279,7 @@
             /**
              * Exec env.
              * @member {Object.<string,string>} env
-             * @memberof replitproto.Exec
+             * @memberof api.Exec
              * @instance
              */
             Exec.prototype.env = $util.emptyObject;
@@ -15287,7 +15287,7 @@
             /**
              * Exec blocking.
              * @member {boolean} blocking
-             * @memberof replitproto.Exec
+             * @memberof api.Exec
              * @instance
              */
             Exec.prototype.blocking = false;
@@ -15295,21 +15295,21 @@
             /**
              * Creates a new Exec instance using the specified properties.
              * @function create
-             * @memberof replitproto.Exec
+             * @memberof api.Exec
              * @static
-             * @param {replitproto.IExec=} [properties] Properties to set
-             * @returns {replitproto.Exec} Exec instance
+             * @param {api.IExec=} [properties] Properties to set
+             * @returns {api.Exec} Exec instance
              */
             Exec.create = function create(properties) {
                 return new Exec(properties);
             };
     
             /**
-             * Encodes the specified Exec message. Does not implicitly {@link replitproto.Exec.verify|verify} messages.
+             * Encodes the specified Exec message. Does not implicitly {@link api.Exec.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.Exec
+             * @memberof api.Exec
              * @static
-             * @param {replitproto.IExec} message Exec message or plain object to encode
+             * @param {api.IExec} message Exec message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -15328,11 +15328,11 @@
             };
     
             /**
-             * Encodes the specified Exec message, length delimited. Does not implicitly {@link replitproto.Exec.verify|verify} messages.
+             * Encodes the specified Exec message, length delimited. Does not implicitly {@link api.Exec.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.Exec
+             * @memberof api.Exec
              * @static
-             * @param {replitproto.IExec} message Exec message or plain object to encode
+             * @param {api.IExec} message Exec message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -15343,18 +15343,18 @@
             /**
              * Decodes an Exec message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.Exec
+             * @memberof api.Exec
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.Exec} Exec
+             * @returns {api.Exec} Exec
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             Exec.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.Exec(), key;
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Exec(), key;
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -15385,10 +15385,10 @@
             /**
              * Decodes an Exec message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.Exec
+             * @memberof api.Exec
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.Exec} Exec
+             * @returns {api.Exec} Exec
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -15401,7 +15401,7 @@
             /**
              * Verifies an Exec message.
              * @function verify
-             * @memberof replitproto.Exec
+             * @memberof api.Exec
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -15433,25 +15433,25 @@
             /**
              * Creates an Exec message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.Exec
+             * @memberof api.Exec
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.Exec} Exec
+             * @returns {api.Exec} Exec
              */
             Exec.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.Exec)
+                if (object instanceof $root.api.Exec)
                     return object;
-                var message = new $root.replitproto.Exec();
+                var message = new $root.api.Exec();
                 if (object.args) {
                     if (!Array.isArray(object.args))
-                        throw TypeError(".replitproto.Exec.args: array expected");
+                        throw TypeError(".api.Exec.args: array expected");
                     message.args = [];
                     for (var i = 0; i < object.args.length; ++i)
                         message.args[i] = String(object.args[i]);
                 }
                 if (object.env) {
                     if (typeof object.env !== "object")
-                        throw TypeError(".replitproto.Exec.env: object expected");
+                        throw TypeError(".api.Exec.env: object expected");
                     message.env = {};
                     for (var keys = Object.keys(object.env), i = 0; i < keys.length; ++i)
                         message.env[keys[i]] = String(object.env[keys[i]]);
@@ -15464,9 +15464,9 @@
             /**
              * Creates a plain object from an Exec message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.Exec
+             * @memberof api.Exec
              * @static
-             * @param {replitproto.Exec} message Exec
+             * @param {api.Exec} message Exec
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -15499,7 +15499,7 @@
             /**
              * Converts this Exec to JSON.
              * @function toJSON
-             * @memberof replitproto.Exec
+             * @memberof api.Exec
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -15510,11 +15510,11 @@
             return Exec;
         })();
     
-        replitproto.Package = (function() {
+        api.Package = (function() {
     
             /**
              * Properties of a Package.
-             * @memberof replitproto
+             * @memberof api
              * @interface IPackage
              * @property {string|null} [name] Package name
              * @property {string|null} [spec] Package spec
@@ -15526,16 +15526,16 @@
              * @property {string|null} [bugTrackerURL] Package bugTrackerURL
              * @property {string|null} [author] Package author
              * @property {string|null} [license] Package license
-             * @property {Array.<replitproto.IPackage>|null} [dependencies] Package dependencies
+             * @property {Array.<api.IPackage>|null} [dependencies] Package dependencies
              */
     
             /**
              * Constructs a new Package.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a Package.
              * @implements IPackage
              * @constructor
-             * @param {replitproto.IPackage=} [properties] Properties to set
+             * @param {api.IPackage=} [properties] Properties to set
              */
             function Package(properties) {
                 this.dependencies = [];
@@ -15548,7 +15548,7 @@
             /**
              * Package name.
              * @member {string} name
-             * @memberof replitproto.Package
+             * @memberof api.Package
              * @instance
              */
             Package.prototype.name = "";
@@ -15556,7 +15556,7 @@
             /**
              * Package spec.
              * @member {string} spec
-             * @memberof replitproto.Package
+             * @memberof api.Package
              * @instance
              */
             Package.prototype.spec = "";
@@ -15564,7 +15564,7 @@
             /**
              * Package description.
              * @member {string} description
-             * @memberof replitproto.Package
+             * @memberof api.Package
              * @instance
              */
             Package.prototype.description = "";
@@ -15572,7 +15572,7 @@
             /**
              * Package version.
              * @member {string} version
-             * @memberof replitproto.Package
+             * @memberof api.Package
              * @instance
              */
             Package.prototype.version = "";
@@ -15580,7 +15580,7 @@
             /**
              * Package homepageURL.
              * @member {string} homepageURL
-             * @memberof replitproto.Package
+             * @memberof api.Package
              * @instance
              */
             Package.prototype.homepageURL = "";
@@ -15588,7 +15588,7 @@
             /**
              * Package documentationURL.
              * @member {string} documentationURL
-             * @memberof replitproto.Package
+             * @memberof api.Package
              * @instance
              */
             Package.prototype.documentationURL = "";
@@ -15596,7 +15596,7 @@
             /**
              * Package sourceCodeURL.
              * @member {string} sourceCodeURL
-             * @memberof replitproto.Package
+             * @memberof api.Package
              * @instance
              */
             Package.prototype.sourceCodeURL = "";
@@ -15604,7 +15604,7 @@
             /**
              * Package bugTrackerURL.
              * @member {string} bugTrackerURL
-             * @memberof replitproto.Package
+             * @memberof api.Package
              * @instance
              */
             Package.prototype.bugTrackerURL = "";
@@ -15612,7 +15612,7 @@
             /**
              * Package author.
              * @member {string} author
-             * @memberof replitproto.Package
+             * @memberof api.Package
              * @instance
              */
             Package.prototype.author = "";
@@ -15620,15 +15620,15 @@
             /**
              * Package license.
              * @member {string} license
-             * @memberof replitproto.Package
+             * @memberof api.Package
              * @instance
              */
             Package.prototype.license = "";
     
             /**
              * Package dependencies.
-             * @member {Array.<replitproto.IPackage>} dependencies
-             * @memberof replitproto.Package
+             * @member {Array.<api.IPackage>} dependencies
+             * @memberof api.Package
              * @instance
              */
             Package.prototype.dependencies = $util.emptyArray;
@@ -15636,21 +15636,21 @@
             /**
              * Creates a new Package instance using the specified properties.
              * @function create
-             * @memberof replitproto.Package
+             * @memberof api.Package
              * @static
-             * @param {replitproto.IPackage=} [properties] Properties to set
-             * @returns {replitproto.Package} Package instance
+             * @param {api.IPackage=} [properties] Properties to set
+             * @returns {api.Package} Package instance
              */
             Package.create = function create(properties) {
                 return new Package(properties);
             };
     
             /**
-             * Encodes the specified Package message. Does not implicitly {@link replitproto.Package.verify|verify} messages.
+             * Encodes the specified Package message. Does not implicitly {@link api.Package.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.Package
+             * @memberof api.Package
              * @static
-             * @param {replitproto.IPackage} message Package message or plain object to encode
+             * @param {api.IPackage} message Package message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -15679,16 +15679,16 @@
                     writer.uint32(/* id 17, wireType 2 =*/138).string(message.license);
                 if (message.dependencies != null && message.dependencies.length)
                     for (var i = 0; i < message.dependencies.length; ++i)
-                        $root.replitproto.Package.encode(message.dependencies[i], writer.uint32(/* id 18, wireType 2 =*/146).fork()).ldelim();
+                        $root.api.Package.encode(message.dependencies[i], writer.uint32(/* id 18, wireType 2 =*/146).fork()).ldelim();
                 return writer;
             };
     
             /**
-             * Encodes the specified Package message, length delimited. Does not implicitly {@link replitproto.Package.verify|verify} messages.
+             * Encodes the specified Package message, length delimited. Does not implicitly {@link api.Package.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.Package
+             * @memberof api.Package
              * @static
-             * @param {replitproto.IPackage} message Package message or plain object to encode
+             * @param {api.IPackage} message Package message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -15699,18 +15699,18 @@
             /**
              * Decodes a Package message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.Package
+             * @memberof api.Package
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.Package} Package
+             * @returns {api.Package} Package
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             Package.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.Package();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Package();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -15747,7 +15747,7 @@
                     case 18:
                         if (!(message.dependencies && message.dependencies.length))
                             message.dependencies = [];
-                        message.dependencies.push($root.replitproto.Package.decode(reader, reader.uint32()));
+                        message.dependencies.push($root.api.Package.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -15760,10 +15760,10 @@
             /**
              * Decodes a Package message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.Package
+             * @memberof api.Package
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.Package} Package
+             * @returns {api.Package} Package
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -15776,7 +15776,7 @@
             /**
              * Verifies a Package message.
              * @function verify
-             * @memberof replitproto.Package
+             * @memberof api.Package
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -15818,7 +15818,7 @@
                     if (!Array.isArray(message.dependencies))
                         return "dependencies: array expected";
                     for (var i = 0; i < message.dependencies.length; ++i) {
-                        var error = $root.replitproto.Package.verify(message.dependencies[i]);
+                        var error = $root.api.Package.verify(message.dependencies[i]);
                         if (error)
                             return "dependencies." + error;
                     }
@@ -15829,15 +15829,15 @@
             /**
              * Creates a Package message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.Package
+             * @memberof api.Package
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.Package} Package
+             * @returns {api.Package} Package
              */
             Package.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.Package)
+                if (object instanceof $root.api.Package)
                     return object;
-                var message = new $root.replitproto.Package();
+                var message = new $root.api.Package();
                 if (object.name != null)
                     message.name = String(object.name);
                 if (object.spec != null)
@@ -15860,12 +15860,12 @@
                     message.license = String(object.license);
                 if (object.dependencies) {
                     if (!Array.isArray(object.dependencies))
-                        throw TypeError(".replitproto.Package.dependencies: array expected");
+                        throw TypeError(".api.Package.dependencies: array expected");
                     message.dependencies = [];
                     for (var i = 0; i < object.dependencies.length; ++i) {
                         if (typeof object.dependencies[i] !== "object")
-                            throw TypeError(".replitproto.Package.dependencies: object expected");
-                        message.dependencies[i] = $root.replitproto.Package.fromObject(object.dependencies[i]);
+                            throw TypeError(".api.Package.dependencies: object expected");
+                        message.dependencies[i] = $root.api.Package.fromObject(object.dependencies[i]);
                     }
                 }
                 return message;
@@ -15874,9 +15874,9 @@
             /**
              * Creates a plain object from a Package message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.Package
+             * @memberof api.Package
              * @static
-             * @param {replitproto.Package} message Package
+             * @param {api.Package} message Package
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -15921,7 +15921,7 @@
                 if (message.dependencies && message.dependencies.length) {
                     object.dependencies = [];
                     for (var j = 0; j < message.dependencies.length; ++j)
-                        object.dependencies[j] = $root.replitproto.Package.toObject(message.dependencies[j], options);
+                        object.dependencies[j] = $root.api.Package.toObject(message.dependencies[j], options);
                 }
                 return object;
             };
@@ -15929,7 +15929,7 @@
             /**
              * Converts this Package to JSON.
              * @function toJSON
-             * @memberof replitproto.Package
+             * @memberof api.Package
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -15940,22 +15940,22 @@
             return Package;
         })();
     
-        replitproto.PackageSearch = (function() {
+        api.PackageSearch = (function() {
     
             /**
              * Properties of a PackageSearch.
-             * @memberof replitproto
+             * @memberof api
              * @interface IPackageSearch
              * @property {string|null} [query] PackageSearch query
              */
     
             /**
              * Constructs a new PackageSearch.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a PackageSearch.
              * @implements IPackageSearch
              * @constructor
-             * @param {replitproto.IPackageSearch=} [properties] Properties to set
+             * @param {api.IPackageSearch=} [properties] Properties to set
              */
             function PackageSearch(properties) {
                 if (properties)
@@ -15967,7 +15967,7 @@
             /**
              * PackageSearch query.
              * @member {string} query
-             * @memberof replitproto.PackageSearch
+             * @memberof api.PackageSearch
              * @instance
              */
             PackageSearch.prototype.query = "";
@@ -15975,21 +15975,21 @@
             /**
              * Creates a new PackageSearch instance using the specified properties.
              * @function create
-             * @memberof replitproto.PackageSearch
+             * @memberof api.PackageSearch
              * @static
-             * @param {replitproto.IPackageSearch=} [properties] Properties to set
-             * @returns {replitproto.PackageSearch} PackageSearch instance
+             * @param {api.IPackageSearch=} [properties] Properties to set
+             * @returns {api.PackageSearch} PackageSearch instance
              */
             PackageSearch.create = function create(properties) {
                 return new PackageSearch(properties);
             };
     
             /**
-             * Encodes the specified PackageSearch message. Does not implicitly {@link replitproto.PackageSearch.verify|verify} messages.
+             * Encodes the specified PackageSearch message. Does not implicitly {@link api.PackageSearch.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.PackageSearch
+             * @memberof api.PackageSearch
              * @static
-             * @param {replitproto.IPackageSearch} message PackageSearch message or plain object to encode
+             * @param {api.IPackageSearch} message PackageSearch message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -16002,11 +16002,11 @@
             };
     
             /**
-             * Encodes the specified PackageSearch message, length delimited. Does not implicitly {@link replitproto.PackageSearch.verify|verify} messages.
+             * Encodes the specified PackageSearch message, length delimited. Does not implicitly {@link api.PackageSearch.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.PackageSearch
+             * @memberof api.PackageSearch
              * @static
-             * @param {replitproto.IPackageSearch} message PackageSearch message or plain object to encode
+             * @param {api.IPackageSearch} message PackageSearch message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -16017,18 +16017,18 @@
             /**
              * Decodes a PackageSearch message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.PackageSearch
+             * @memberof api.PackageSearch
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.PackageSearch} PackageSearch
+             * @returns {api.PackageSearch} PackageSearch
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             PackageSearch.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.PackageSearch();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.PackageSearch();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -16046,10 +16046,10 @@
             /**
              * Decodes a PackageSearch message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.PackageSearch
+             * @memberof api.PackageSearch
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.PackageSearch} PackageSearch
+             * @returns {api.PackageSearch} PackageSearch
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -16062,7 +16062,7 @@
             /**
              * Verifies a PackageSearch message.
              * @function verify
-             * @memberof replitproto.PackageSearch
+             * @memberof api.PackageSearch
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -16079,15 +16079,15 @@
             /**
              * Creates a PackageSearch message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.PackageSearch
+             * @memberof api.PackageSearch
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.PackageSearch} PackageSearch
+             * @returns {api.PackageSearch} PackageSearch
              */
             PackageSearch.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.PackageSearch)
+                if (object instanceof $root.api.PackageSearch)
                     return object;
-                var message = new $root.replitproto.PackageSearch();
+                var message = new $root.api.PackageSearch();
                 if (object.query != null)
                     message.query = String(object.query);
                 return message;
@@ -16096,9 +16096,9 @@
             /**
              * Creates a plain object from a PackageSearch message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.PackageSearch
+             * @memberof api.PackageSearch
              * @static
-             * @param {replitproto.PackageSearch} message PackageSearch
+             * @param {api.PackageSearch} message PackageSearch
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -16116,7 +16116,7 @@
             /**
              * Converts this PackageSearch to JSON.
              * @function toJSON
-             * @memberof replitproto.PackageSearch
+             * @memberof api.PackageSearch
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -16127,22 +16127,22 @@
             return PackageSearch;
         })();
     
-        replitproto.PackageSearchResp = (function() {
+        api.PackageSearchResp = (function() {
     
             /**
              * Properties of a PackageSearchResp.
-             * @memberof replitproto
+             * @memberof api
              * @interface IPackageSearchResp
-             * @property {Array.<replitproto.IPackage>|null} [results] PackageSearchResp results
+             * @property {Array.<api.IPackage>|null} [results] PackageSearchResp results
              */
     
             /**
              * Constructs a new PackageSearchResp.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a PackageSearchResp.
              * @implements IPackageSearchResp
              * @constructor
-             * @param {replitproto.IPackageSearchResp=} [properties] Properties to set
+             * @param {api.IPackageSearchResp=} [properties] Properties to set
              */
             function PackageSearchResp(properties) {
                 this.results = [];
@@ -16154,8 +16154,8 @@
     
             /**
              * PackageSearchResp results.
-             * @member {Array.<replitproto.IPackage>} results
-             * @memberof replitproto.PackageSearchResp
+             * @member {Array.<api.IPackage>} results
+             * @memberof api.PackageSearchResp
              * @instance
              */
             PackageSearchResp.prototype.results = $util.emptyArray;
@@ -16163,21 +16163,21 @@
             /**
              * Creates a new PackageSearchResp instance using the specified properties.
              * @function create
-             * @memberof replitproto.PackageSearchResp
+             * @memberof api.PackageSearchResp
              * @static
-             * @param {replitproto.IPackageSearchResp=} [properties] Properties to set
-             * @returns {replitproto.PackageSearchResp} PackageSearchResp instance
+             * @param {api.IPackageSearchResp=} [properties] Properties to set
+             * @returns {api.PackageSearchResp} PackageSearchResp instance
              */
             PackageSearchResp.create = function create(properties) {
                 return new PackageSearchResp(properties);
             };
     
             /**
-             * Encodes the specified PackageSearchResp message. Does not implicitly {@link replitproto.PackageSearchResp.verify|verify} messages.
+             * Encodes the specified PackageSearchResp message. Does not implicitly {@link api.PackageSearchResp.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.PackageSearchResp
+             * @memberof api.PackageSearchResp
              * @static
-             * @param {replitproto.IPackageSearchResp} message PackageSearchResp message or plain object to encode
+             * @param {api.IPackageSearchResp} message PackageSearchResp message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -16186,16 +16186,16 @@
                     writer = $Writer.create();
                 if (message.results != null && message.results.length)
                     for (var i = 0; i < message.results.length; ++i)
-                        $root.replitproto.Package.encode(message.results[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                        $root.api.Package.encode(message.results[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
     
             /**
-             * Encodes the specified PackageSearchResp message, length delimited. Does not implicitly {@link replitproto.PackageSearchResp.verify|verify} messages.
+             * Encodes the specified PackageSearchResp message, length delimited. Does not implicitly {@link api.PackageSearchResp.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.PackageSearchResp
+             * @memberof api.PackageSearchResp
              * @static
-             * @param {replitproto.IPackageSearchResp} message PackageSearchResp message or plain object to encode
+             * @param {api.IPackageSearchResp} message PackageSearchResp message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -16206,25 +16206,25 @@
             /**
              * Decodes a PackageSearchResp message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.PackageSearchResp
+             * @memberof api.PackageSearchResp
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.PackageSearchResp} PackageSearchResp
+             * @returns {api.PackageSearchResp} PackageSearchResp
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             PackageSearchResp.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.PackageSearchResp();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.PackageSearchResp();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         if (!(message.results && message.results.length))
                             message.results = [];
-                        message.results.push($root.replitproto.Package.decode(reader, reader.uint32()));
+                        message.results.push($root.api.Package.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -16237,10 +16237,10 @@
             /**
              * Decodes a PackageSearchResp message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.PackageSearchResp
+             * @memberof api.PackageSearchResp
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.PackageSearchResp} PackageSearchResp
+             * @returns {api.PackageSearchResp} PackageSearchResp
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -16253,7 +16253,7 @@
             /**
              * Verifies a PackageSearchResp message.
              * @function verify
-             * @memberof replitproto.PackageSearchResp
+             * @memberof api.PackageSearchResp
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -16265,7 +16265,7 @@
                     if (!Array.isArray(message.results))
                         return "results: array expected";
                     for (var i = 0; i < message.results.length; ++i) {
-                        var error = $root.replitproto.Package.verify(message.results[i]);
+                        var error = $root.api.Package.verify(message.results[i]);
                         if (error)
                             return "results." + error;
                     }
@@ -16276,23 +16276,23 @@
             /**
              * Creates a PackageSearchResp message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.PackageSearchResp
+             * @memberof api.PackageSearchResp
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.PackageSearchResp} PackageSearchResp
+             * @returns {api.PackageSearchResp} PackageSearchResp
              */
             PackageSearchResp.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.PackageSearchResp)
+                if (object instanceof $root.api.PackageSearchResp)
                     return object;
-                var message = new $root.replitproto.PackageSearchResp();
+                var message = new $root.api.PackageSearchResp();
                 if (object.results) {
                     if (!Array.isArray(object.results))
-                        throw TypeError(".replitproto.PackageSearchResp.results: array expected");
+                        throw TypeError(".api.PackageSearchResp.results: array expected");
                     message.results = [];
                     for (var i = 0; i < object.results.length; ++i) {
                         if (typeof object.results[i] !== "object")
-                            throw TypeError(".replitproto.PackageSearchResp.results: object expected");
-                        message.results[i] = $root.replitproto.Package.fromObject(object.results[i]);
+                            throw TypeError(".api.PackageSearchResp.results: object expected");
+                        message.results[i] = $root.api.Package.fromObject(object.results[i]);
                     }
                 }
                 return message;
@@ -16301,9 +16301,9 @@
             /**
              * Creates a plain object from a PackageSearchResp message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.PackageSearchResp
+             * @memberof api.PackageSearchResp
              * @static
-             * @param {replitproto.PackageSearchResp} message PackageSearchResp
+             * @param {api.PackageSearchResp} message PackageSearchResp
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -16316,7 +16316,7 @@
                 if (message.results && message.results.length) {
                     object.results = [];
                     for (var j = 0; j < message.results.length; ++j)
-                        object.results[j] = $root.replitproto.Package.toObject(message.results[j], options);
+                        object.results[j] = $root.api.Package.toObject(message.results[j], options);
                 }
                 return object;
             };
@@ -16324,7 +16324,7 @@
             /**
              * Converts this PackageSearchResp to JSON.
              * @function toJSON
-             * @memberof replitproto.PackageSearchResp
+             * @memberof api.PackageSearchResp
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -16335,22 +16335,22 @@
             return PackageSearchResp;
         })();
     
-        replitproto.PackageInfo = (function() {
+        api.PackageInfo = (function() {
     
             /**
              * Properties of a PackageInfo.
-             * @memberof replitproto
+             * @memberof api
              * @interface IPackageInfo
-             * @property {replitproto.IPackage|null} [pkg] PackageInfo pkg
+             * @property {api.IPackage|null} [pkg] PackageInfo pkg
              */
     
             /**
              * Constructs a new PackageInfo.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a PackageInfo.
              * @implements IPackageInfo
              * @constructor
-             * @param {replitproto.IPackageInfo=} [properties] Properties to set
+             * @param {api.IPackageInfo=} [properties] Properties to set
              */
             function PackageInfo(properties) {
                 if (properties)
@@ -16361,8 +16361,8 @@
     
             /**
              * PackageInfo pkg.
-             * @member {replitproto.IPackage|null|undefined} pkg
-             * @memberof replitproto.PackageInfo
+             * @member {api.IPackage|null|undefined} pkg
+             * @memberof api.PackageInfo
              * @instance
              */
             PackageInfo.prototype.pkg = null;
@@ -16370,21 +16370,21 @@
             /**
              * Creates a new PackageInfo instance using the specified properties.
              * @function create
-             * @memberof replitproto.PackageInfo
+             * @memberof api.PackageInfo
              * @static
-             * @param {replitproto.IPackageInfo=} [properties] Properties to set
-             * @returns {replitproto.PackageInfo} PackageInfo instance
+             * @param {api.IPackageInfo=} [properties] Properties to set
+             * @returns {api.PackageInfo} PackageInfo instance
              */
             PackageInfo.create = function create(properties) {
                 return new PackageInfo(properties);
             };
     
             /**
-             * Encodes the specified PackageInfo message. Does not implicitly {@link replitproto.PackageInfo.verify|verify} messages.
+             * Encodes the specified PackageInfo message. Does not implicitly {@link api.PackageInfo.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.PackageInfo
+             * @memberof api.PackageInfo
              * @static
-             * @param {replitproto.IPackageInfo} message PackageInfo message or plain object to encode
+             * @param {api.IPackageInfo} message PackageInfo message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -16392,16 +16392,16 @@
                 if (!writer)
                     writer = $Writer.create();
                 if (message.pkg != null && message.hasOwnProperty("pkg"))
-                    $root.replitproto.Package.encode(message.pkg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    $root.api.Package.encode(message.pkg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
     
             /**
-             * Encodes the specified PackageInfo message, length delimited. Does not implicitly {@link replitproto.PackageInfo.verify|verify} messages.
+             * Encodes the specified PackageInfo message, length delimited. Does not implicitly {@link api.PackageInfo.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.PackageInfo
+             * @memberof api.PackageInfo
              * @static
-             * @param {replitproto.IPackageInfo} message PackageInfo message or plain object to encode
+             * @param {api.IPackageInfo} message PackageInfo message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -16412,23 +16412,23 @@
             /**
              * Decodes a PackageInfo message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.PackageInfo
+             * @memberof api.PackageInfo
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.PackageInfo} PackageInfo
+             * @returns {api.PackageInfo} PackageInfo
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             PackageInfo.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.PackageInfo();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.PackageInfo();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.pkg = $root.replitproto.Package.decode(reader, reader.uint32());
+                        message.pkg = $root.api.Package.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -16441,10 +16441,10 @@
             /**
              * Decodes a PackageInfo message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.PackageInfo
+             * @memberof api.PackageInfo
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.PackageInfo} PackageInfo
+             * @returns {api.PackageInfo} PackageInfo
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -16457,7 +16457,7 @@
             /**
              * Verifies a PackageInfo message.
              * @function verify
-             * @memberof replitproto.PackageInfo
+             * @memberof api.PackageInfo
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -16466,7 +16466,7 @@
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.pkg != null && message.hasOwnProperty("pkg")) {
-                    var error = $root.replitproto.Package.verify(message.pkg);
+                    var error = $root.api.Package.verify(message.pkg);
                     if (error)
                         return "pkg." + error;
                 }
@@ -16476,19 +16476,19 @@
             /**
              * Creates a PackageInfo message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.PackageInfo
+             * @memberof api.PackageInfo
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.PackageInfo} PackageInfo
+             * @returns {api.PackageInfo} PackageInfo
              */
             PackageInfo.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.PackageInfo)
+                if (object instanceof $root.api.PackageInfo)
                     return object;
-                var message = new $root.replitproto.PackageInfo();
+                var message = new $root.api.PackageInfo();
                 if (object.pkg != null) {
                     if (typeof object.pkg !== "object")
-                        throw TypeError(".replitproto.PackageInfo.pkg: object expected");
-                    message.pkg = $root.replitproto.Package.fromObject(object.pkg);
+                        throw TypeError(".api.PackageInfo.pkg: object expected");
+                    message.pkg = $root.api.Package.fromObject(object.pkg);
                 }
                 return message;
             };
@@ -16496,9 +16496,9 @@
             /**
              * Creates a plain object from a PackageInfo message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.PackageInfo
+             * @memberof api.PackageInfo
              * @static
-             * @param {replitproto.PackageInfo} message PackageInfo
+             * @param {api.PackageInfo} message PackageInfo
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -16509,14 +16509,14 @@
                 if (options.defaults)
                     object.pkg = null;
                 if (message.pkg != null && message.hasOwnProperty("pkg"))
-                    object.pkg = $root.replitproto.Package.toObject(message.pkg, options);
+                    object.pkg = $root.api.Package.toObject(message.pkg, options);
                 return object;
             };
     
             /**
              * Converts this PackageInfo to JSON.
              * @function toJSON
-             * @memberof replitproto.PackageInfo
+             * @memberof api.PackageInfo
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -16527,22 +16527,22 @@
             return PackageInfo;
         })();
     
-        replitproto.PackageInfoResp = (function() {
+        api.PackageInfoResp = (function() {
     
             /**
              * Properties of a PackageInfoResp.
-             * @memberof replitproto
+             * @memberof api
              * @interface IPackageInfoResp
-             * @property {replitproto.IPackage|null} [pkg] PackageInfoResp pkg
+             * @property {api.IPackage|null} [pkg] PackageInfoResp pkg
              */
     
             /**
              * Constructs a new PackageInfoResp.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a PackageInfoResp.
              * @implements IPackageInfoResp
              * @constructor
-             * @param {replitproto.IPackageInfoResp=} [properties] Properties to set
+             * @param {api.IPackageInfoResp=} [properties] Properties to set
              */
             function PackageInfoResp(properties) {
                 if (properties)
@@ -16553,8 +16553,8 @@
     
             /**
              * PackageInfoResp pkg.
-             * @member {replitproto.IPackage|null|undefined} pkg
-             * @memberof replitproto.PackageInfoResp
+             * @member {api.IPackage|null|undefined} pkg
+             * @memberof api.PackageInfoResp
              * @instance
              */
             PackageInfoResp.prototype.pkg = null;
@@ -16562,21 +16562,21 @@
             /**
              * Creates a new PackageInfoResp instance using the specified properties.
              * @function create
-             * @memberof replitproto.PackageInfoResp
+             * @memberof api.PackageInfoResp
              * @static
-             * @param {replitproto.IPackageInfoResp=} [properties] Properties to set
-             * @returns {replitproto.PackageInfoResp} PackageInfoResp instance
+             * @param {api.IPackageInfoResp=} [properties] Properties to set
+             * @returns {api.PackageInfoResp} PackageInfoResp instance
              */
             PackageInfoResp.create = function create(properties) {
                 return new PackageInfoResp(properties);
             };
     
             /**
-             * Encodes the specified PackageInfoResp message. Does not implicitly {@link replitproto.PackageInfoResp.verify|verify} messages.
+             * Encodes the specified PackageInfoResp message. Does not implicitly {@link api.PackageInfoResp.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.PackageInfoResp
+             * @memberof api.PackageInfoResp
              * @static
-             * @param {replitproto.IPackageInfoResp} message PackageInfoResp message or plain object to encode
+             * @param {api.IPackageInfoResp} message PackageInfoResp message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -16584,16 +16584,16 @@
                 if (!writer)
                     writer = $Writer.create();
                 if (message.pkg != null && message.hasOwnProperty("pkg"))
-                    $root.replitproto.Package.encode(message.pkg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                    $root.api.Package.encode(message.pkg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
     
             /**
-             * Encodes the specified PackageInfoResp message, length delimited. Does not implicitly {@link replitproto.PackageInfoResp.verify|verify} messages.
+             * Encodes the specified PackageInfoResp message, length delimited. Does not implicitly {@link api.PackageInfoResp.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.PackageInfoResp
+             * @memberof api.PackageInfoResp
              * @static
-             * @param {replitproto.IPackageInfoResp} message PackageInfoResp message or plain object to encode
+             * @param {api.IPackageInfoResp} message PackageInfoResp message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -16604,23 +16604,23 @@
             /**
              * Decodes a PackageInfoResp message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.PackageInfoResp
+             * @memberof api.PackageInfoResp
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.PackageInfoResp} PackageInfoResp
+             * @returns {api.PackageInfoResp} PackageInfoResp
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             PackageInfoResp.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.PackageInfoResp();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.PackageInfoResp();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.pkg = $root.replitproto.Package.decode(reader, reader.uint32());
+                        message.pkg = $root.api.Package.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -16633,10 +16633,10 @@
             /**
              * Decodes a PackageInfoResp message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.PackageInfoResp
+             * @memberof api.PackageInfoResp
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.PackageInfoResp} PackageInfoResp
+             * @returns {api.PackageInfoResp} PackageInfoResp
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -16649,7 +16649,7 @@
             /**
              * Verifies a PackageInfoResp message.
              * @function verify
-             * @memberof replitproto.PackageInfoResp
+             * @memberof api.PackageInfoResp
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -16658,7 +16658,7 @@
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.pkg != null && message.hasOwnProperty("pkg")) {
-                    var error = $root.replitproto.Package.verify(message.pkg);
+                    var error = $root.api.Package.verify(message.pkg);
                     if (error)
                         return "pkg." + error;
                 }
@@ -16668,19 +16668,19 @@
             /**
              * Creates a PackageInfoResp message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.PackageInfoResp
+             * @memberof api.PackageInfoResp
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.PackageInfoResp} PackageInfoResp
+             * @returns {api.PackageInfoResp} PackageInfoResp
              */
             PackageInfoResp.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.PackageInfoResp)
+                if (object instanceof $root.api.PackageInfoResp)
                     return object;
-                var message = new $root.replitproto.PackageInfoResp();
+                var message = new $root.api.PackageInfoResp();
                 if (object.pkg != null) {
                     if (typeof object.pkg !== "object")
-                        throw TypeError(".replitproto.PackageInfoResp.pkg: object expected");
-                    message.pkg = $root.replitproto.Package.fromObject(object.pkg);
+                        throw TypeError(".api.PackageInfoResp.pkg: object expected");
+                    message.pkg = $root.api.Package.fromObject(object.pkg);
                 }
                 return message;
             };
@@ -16688,9 +16688,9 @@
             /**
              * Creates a plain object from a PackageInfoResp message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.PackageInfoResp
+             * @memberof api.PackageInfoResp
              * @static
-             * @param {replitproto.PackageInfoResp} message PackageInfoResp
+             * @param {api.PackageInfoResp} message PackageInfoResp
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -16701,14 +16701,14 @@
                 if (options.defaults)
                     object.pkg = null;
                 if (message.pkg != null && message.hasOwnProperty("pkg"))
-                    object.pkg = $root.replitproto.Package.toObject(message.pkg, options);
+                    object.pkg = $root.api.Package.toObject(message.pkg, options);
                 return object;
             };
     
             /**
              * Converts this PackageInfoResp to JSON.
              * @function toJSON
-             * @memberof replitproto.PackageInfoResp
+             * @memberof api.PackageInfoResp
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -16719,22 +16719,22 @@
             return PackageInfoResp;
         })();
     
-        replitproto.PackageAdd = (function() {
+        api.PackageAdd = (function() {
     
             /**
              * Properties of a PackageAdd.
-             * @memberof replitproto
+             * @memberof api
              * @interface IPackageAdd
-             * @property {Array.<replitproto.IPackage>|null} [pkgs] PackageAdd pkgs
+             * @property {Array.<api.IPackage>|null} [pkgs] PackageAdd pkgs
              */
     
             /**
              * Constructs a new PackageAdd.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a PackageAdd.
              * @implements IPackageAdd
              * @constructor
-             * @param {replitproto.IPackageAdd=} [properties] Properties to set
+             * @param {api.IPackageAdd=} [properties] Properties to set
              */
             function PackageAdd(properties) {
                 this.pkgs = [];
@@ -16746,8 +16746,8 @@
     
             /**
              * PackageAdd pkgs.
-             * @member {Array.<replitproto.IPackage>} pkgs
-             * @memberof replitproto.PackageAdd
+             * @member {Array.<api.IPackage>} pkgs
+             * @memberof api.PackageAdd
              * @instance
              */
             PackageAdd.prototype.pkgs = $util.emptyArray;
@@ -16755,21 +16755,21 @@
             /**
              * Creates a new PackageAdd instance using the specified properties.
              * @function create
-             * @memberof replitproto.PackageAdd
+             * @memberof api.PackageAdd
              * @static
-             * @param {replitproto.IPackageAdd=} [properties] Properties to set
-             * @returns {replitproto.PackageAdd} PackageAdd instance
+             * @param {api.IPackageAdd=} [properties] Properties to set
+             * @returns {api.PackageAdd} PackageAdd instance
              */
             PackageAdd.create = function create(properties) {
                 return new PackageAdd(properties);
             };
     
             /**
-             * Encodes the specified PackageAdd message. Does not implicitly {@link replitproto.PackageAdd.verify|verify} messages.
+             * Encodes the specified PackageAdd message. Does not implicitly {@link api.PackageAdd.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.PackageAdd
+             * @memberof api.PackageAdd
              * @static
-             * @param {replitproto.IPackageAdd} message PackageAdd message or plain object to encode
+             * @param {api.IPackageAdd} message PackageAdd message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -16778,16 +16778,16 @@
                     writer = $Writer.create();
                 if (message.pkgs != null && message.pkgs.length)
                     for (var i = 0; i < message.pkgs.length; ++i)
-                        $root.replitproto.Package.encode(message.pkgs[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                        $root.api.Package.encode(message.pkgs[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
     
             /**
-             * Encodes the specified PackageAdd message, length delimited. Does not implicitly {@link replitproto.PackageAdd.verify|verify} messages.
+             * Encodes the specified PackageAdd message, length delimited. Does not implicitly {@link api.PackageAdd.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.PackageAdd
+             * @memberof api.PackageAdd
              * @static
-             * @param {replitproto.IPackageAdd} message PackageAdd message or plain object to encode
+             * @param {api.IPackageAdd} message PackageAdd message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -16798,25 +16798,25 @@
             /**
              * Decodes a PackageAdd message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.PackageAdd
+             * @memberof api.PackageAdd
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.PackageAdd} PackageAdd
+             * @returns {api.PackageAdd} PackageAdd
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             PackageAdd.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.PackageAdd();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.PackageAdd();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         if (!(message.pkgs && message.pkgs.length))
                             message.pkgs = [];
-                        message.pkgs.push($root.replitproto.Package.decode(reader, reader.uint32()));
+                        message.pkgs.push($root.api.Package.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -16829,10 +16829,10 @@
             /**
              * Decodes a PackageAdd message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.PackageAdd
+             * @memberof api.PackageAdd
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.PackageAdd} PackageAdd
+             * @returns {api.PackageAdd} PackageAdd
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -16845,7 +16845,7 @@
             /**
              * Verifies a PackageAdd message.
              * @function verify
-             * @memberof replitproto.PackageAdd
+             * @memberof api.PackageAdd
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -16857,7 +16857,7 @@
                     if (!Array.isArray(message.pkgs))
                         return "pkgs: array expected";
                     for (var i = 0; i < message.pkgs.length; ++i) {
-                        var error = $root.replitproto.Package.verify(message.pkgs[i]);
+                        var error = $root.api.Package.verify(message.pkgs[i]);
                         if (error)
                             return "pkgs." + error;
                     }
@@ -16868,23 +16868,23 @@
             /**
              * Creates a PackageAdd message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.PackageAdd
+             * @memberof api.PackageAdd
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.PackageAdd} PackageAdd
+             * @returns {api.PackageAdd} PackageAdd
              */
             PackageAdd.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.PackageAdd)
+                if (object instanceof $root.api.PackageAdd)
                     return object;
-                var message = new $root.replitproto.PackageAdd();
+                var message = new $root.api.PackageAdd();
                 if (object.pkgs) {
                     if (!Array.isArray(object.pkgs))
-                        throw TypeError(".replitproto.PackageAdd.pkgs: array expected");
+                        throw TypeError(".api.PackageAdd.pkgs: array expected");
                     message.pkgs = [];
                     for (var i = 0; i < object.pkgs.length; ++i) {
                         if (typeof object.pkgs[i] !== "object")
-                            throw TypeError(".replitproto.PackageAdd.pkgs: object expected");
-                        message.pkgs[i] = $root.replitproto.Package.fromObject(object.pkgs[i]);
+                            throw TypeError(".api.PackageAdd.pkgs: object expected");
+                        message.pkgs[i] = $root.api.Package.fromObject(object.pkgs[i]);
                     }
                 }
                 return message;
@@ -16893,9 +16893,9 @@
             /**
              * Creates a plain object from a PackageAdd message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.PackageAdd
+             * @memberof api.PackageAdd
              * @static
-             * @param {replitproto.PackageAdd} message PackageAdd
+             * @param {api.PackageAdd} message PackageAdd
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -16908,7 +16908,7 @@
                 if (message.pkgs && message.pkgs.length) {
                     object.pkgs = [];
                     for (var j = 0; j < message.pkgs.length; ++j)
-                        object.pkgs[j] = $root.replitproto.Package.toObject(message.pkgs[j], options);
+                        object.pkgs[j] = $root.api.Package.toObject(message.pkgs[j], options);
                 }
                 return object;
             };
@@ -16916,7 +16916,7 @@
             /**
              * Converts this PackageAdd to JSON.
              * @function toJSON
-             * @memberof replitproto.PackageAdd
+             * @memberof api.PackageAdd
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -16927,22 +16927,22 @@
             return PackageAdd;
         })();
     
-        replitproto.PackageRemove = (function() {
+        api.PackageRemove = (function() {
     
             /**
              * Properties of a PackageRemove.
-             * @memberof replitproto
+             * @memberof api
              * @interface IPackageRemove
-             * @property {Array.<replitproto.IPackage>|null} [pkgs] PackageRemove pkgs
+             * @property {Array.<api.IPackage>|null} [pkgs] PackageRemove pkgs
              */
     
             /**
              * Constructs a new PackageRemove.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a PackageRemove.
              * @implements IPackageRemove
              * @constructor
-             * @param {replitproto.IPackageRemove=} [properties] Properties to set
+             * @param {api.IPackageRemove=} [properties] Properties to set
              */
             function PackageRemove(properties) {
                 this.pkgs = [];
@@ -16954,8 +16954,8 @@
     
             /**
              * PackageRemove pkgs.
-             * @member {Array.<replitproto.IPackage>} pkgs
-             * @memberof replitproto.PackageRemove
+             * @member {Array.<api.IPackage>} pkgs
+             * @memberof api.PackageRemove
              * @instance
              */
             PackageRemove.prototype.pkgs = $util.emptyArray;
@@ -16963,21 +16963,21 @@
             /**
              * Creates a new PackageRemove instance using the specified properties.
              * @function create
-             * @memberof replitproto.PackageRemove
+             * @memberof api.PackageRemove
              * @static
-             * @param {replitproto.IPackageRemove=} [properties] Properties to set
-             * @returns {replitproto.PackageRemove} PackageRemove instance
+             * @param {api.IPackageRemove=} [properties] Properties to set
+             * @returns {api.PackageRemove} PackageRemove instance
              */
             PackageRemove.create = function create(properties) {
                 return new PackageRemove(properties);
             };
     
             /**
-             * Encodes the specified PackageRemove message. Does not implicitly {@link replitproto.PackageRemove.verify|verify} messages.
+             * Encodes the specified PackageRemove message. Does not implicitly {@link api.PackageRemove.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.PackageRemove
+             * @memberof api.PackageRemove
              * @static
-             * @param {replitproto.IPackageRemove} message PackageRemove message or plain object to encode
+             * @param {api.IPackageRemove} message PackageRemove message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -16986,16 +16986,16 @@
                     writer = $Writer.create();
                 if (message.pkgs != null && message.pkgs.length)
                     for (var i = 0; i < message.pkgs.length; ++i)
-                        $root.replitproto.Package.encode(message.pkgs[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                        $root.api.Package.encode(message.pkgs[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
     
             /**
-             * Encodes the specified PackageRemove message, length delimited. Does not implicitly {@link replitproto.PackageRemove.verify|verify} messages.
+             * Encodes the specified PackageRemove message, length delimited. Does not implicitly {@link api.PackageRemove.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.PackageRemove
+             * @memberof api.PackageRemove
              * @static
-             * @param {replitproto.IPackageRemove} message PackageRemove message or plain object to encode
+             * @param {api.IPackageRemove} message PackageRemove message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -17006,25 +17006,25 @@
             /**
              * Decodes a PackageRemove message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.PackageRemove
+             * @memberof api.PackageRemove
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.PackageRemove} PackageRemove
+             * @returns {api.PackageRemove} PackageRemove
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             PackageRemove.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.PackageRemove();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.PackageRemove();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         if (!(message.pkgs && message.pkgs.length))
                             message.pkgs = [];
-                        message.pkgs.push($root.replitproto.Package.decode(reader, reader.uint32()));
+                        message.pkgs.push($root.api.Package.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -17037,10 +17037,10 @@
             /**
              * Decodes a PackageRemove message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.PackageRemove
+             * @memberof api.PackageRemove
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.PackageRemove} PackageRemove
+             * @returns {api.PackageRemove} PackageRemove
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -17053,7 +17053,7 @@
             /**
              * Verifies a PackageRemove message.
              * @function verify
-             * @memberof replitproto.PackageRemove
+             * @memberof api.PackageRemove
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -17065,7 +17065,7 @@
                     if (!Array.isArray(message.pkgs))
                         return "pkgs: array expected";
                     for (var i = 0; i < message.pkgs.length; ++i) {
-                        var error = $root.replitproto.Package.verify(message.pkgs[i]);
+                        var error = $root.api.Package.verify(message.pkgs[i]);
                         if (error)
                             return "pkgs." + error;
                     }
@@ -17076,23 +17076,23 @@
             /**
              * Creates a PackageRemove message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.PackageRemove
+             * @memberof api.PackageRemove
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.PackageRemove} PackageRemove
+             * @returns {api.PackageRemove} PackageRemove
              */
             PackageRemove.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.PackageRemove)
+                if (object instanceof $root.api.PackageRemove)
                     return object;
-                var message = new $root.replitproto.PackageRemove();
+                var message = new $root.api.PackageRemove();
                 if (object.pkgs) {
                     if (!Array.isArray(object.pkgs))
-                        throw TypeError(".replitproto.PackageRemove.pkgs: array expected");
+                        throw TypeError(".api.PackageRemove.pkgs: array expected");
                     message.pkgs = [];
                     for (var i = 0; i < object.pkgs.length; ++i) {
                         if (typeof object.pkgs[i] !== "object")
-                            throw TypeError(".replitproto.PackageRemove.pkgs: object expected");
-                        message.pkgs[i] = $root.replitproto.Package.fromObject(object.pkgs[i]);
+                            throw TypeError(".api.PackageRemove.pkgs: object expected");
+                        message.pkgs[i] = $root.api.Package.fromObject(object.pkgs[i]);
                     }
                 }
                 return message;
@@ -17101,9 +17101,9 @@
             /**
              * Creates a plain object from a PackageRemove message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.PackageRemove
+             * @memberof api.PackageRemove
              * @static
-             * @param {replitproto.PackageRemove} message PackageRemove
+             * @param {api.PackageRemove} message PackageRemove
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -17116,7 +17116,7 @@
                 if (message.pkgs && message.pkgs.length) {
                     object.pkgs = [];
                     for (var j = 0; j < message.pkgs.length; ++j)
-                        object.pkgs[j] = $root.replitproto.Package.toObject(message.pkgs[j], options);
+                        object.pkgs[j] = $root.api.Package.toObject(message.pkgs[j], options);
                 }
                 return object;
             };
@@ -17124,7 +17124,7 @@
             /**
              * Converts this PackageRemove to JSON.
              * @function toJSON
-             * @memberof replitproto.PackageRemove
+             * @memberof api.PackageRemove
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -17135,21 +17135,21 @@
             return PackageRemove;
         })();
     
-        replitproto.PackageInstall = (function() {
+        api.PackageInstall = (function() {
     
             /**
              * Properties of a PackageInstall.
-             * @memberof replitproto
+             * @memberof api
              * @interface IPackageInstall
              */
     
             /**
              * Constructs a new PackageInstall.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a PackageInstall.
              * @implements IPackageInstall
              * @constructor
-             * @param {replitproto.IPackageInstall=} [properties] Properties to set
+             * @param {api.IPackageInstall=} [properties] Properties to set
              */
             function PackageInstall(properties) {
                 if (properties)
@@ -17161,21 +17161,21 @@
             /**
              * Creates a new PackageInstall instance using the specified properties.
              * @function create
-             * @memberof replitproto.PackageInstall
+             * @memberof api.PackageInstall
              * @static
-             * @param {replitproto.IPackageInstall=} [properties] Properties to set
-             * @returns {replitproto.PackageInstall} PackageInstall instance
+             * @param {api.IPackageInstall=} [properties] Properties to set
+             * @returns {api.PackageInstall} PackageInstall instance
              */
             PackageInstall.create = function create(properties) {
                 return new PackageInstall(properties);
             };
     
             /**
-             * Encodes the specified PackageInstall message. Does not implicitly {@link replitproto.PackageInstall.verify|verify} messages.
+             * Encodes the specified PackageInstall message. Does not implicitly {@link api.PackageInstall.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.PackageInstall
+             * @memberof api.PackageInstall
              * @static
-             * @param {replitproto.IPackageInstall} message PackageInstall message or plain object to encode
+             * @param {api.IPackageInstall} message PackageInstall message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -17186,11 +17186,11 @@
             };
     
             /**
-             * Encodes the specified PackageInstall message, length delimited. Does not implicitly {@link replitproto.PackageInstall.verify|verify} messages.
+             * Encodes the specified PackageInstall message, length delimited. Does not implicitly {@link api.PackageInstall.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.PackageInstall
+             * @memberof api.PackageInstall
              * @static
-             * @param {replitproto.IPackageInstall} message PackageInstall message or plain object to encode
+             * @param {api.IPackageInstall} message PackageInstall message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -17201,18 +17201,18 @@
             /**
              * Decodes a PackageInstall message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.PackageInstall
+             * @memberof api.PackageInstall
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.PackageInstall} PackageInstall
+             * @returns {api.PackageInstall} PackageInstall
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             PackageInstall.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.PackageInstall();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.PackageInstall();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -17227,10 +17227,10 @@
             /**
              * Decodes a PackageInstall message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.PackageInstall
+             * @memberof api.PackageInstall
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.PackageInstall} PackageInstall
+             * @returns {api.PackageInstall} PackageInstall
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -17243,7 +17243,7 @@
             /**
              * Verifies a PackageInstall message.
              * @function verify
-             * @memberof replitproto.PackageInstall
+             * @memberof api.PackageInstall
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -17257,23 +17257,23 @@
             /**
              * Creates a PackageInstall message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.PackageInstall
+             * @memberof api.PackageInstall
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.PackageInstall} PackageInstall
+             * @returns {api.PackageInstall} PackageInstall
              */
             PackageInstall.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.PackageInstall)
+                if (object instanceof $root.api.PackageInstall)
                     return object;
-                return new $root.replitproto.PackageInstall();
+                return new $root.api.PackageInstall();
             };
     
             /**
              * Creates a plain object from a PackageInstall message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.PackageInstall
+             * @memberof api.PackageInstall
              * @static
-             * @param {replitproto.PackageInstall} message PackageInstall
+             * @param {api.PackageInstall} message PackageInstall
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -17284,7 +17284,7 @@
             /**
              * Converts this PackageInstall to JSON.
              * @function toJSON
-             * @memberof replitproto.PackageInstall
+             * @memberof api.PackageInstall
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -17295,21 +17295,21 @@
             return PackageInstall;
         })();
     
-        replitproto.PackageListSpecfile = (function() {
+        api.PackageListSpecfile = (function() {
     
             /**
              * Properties of a PackageListSpecfile.
-             * @memberof replitproto
+             * @memberof api
              * @interface IPackageListSpecfile
              */
     
             /**
              * Constructs a new PackageListSpecfile.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a PackageListSpecfile.
              * @implements IPackageListSpecfile
              * @constructor
-             * @param {replitproto.IPackageListSpecfile=} [properties] Properties to set
+             * @param {api.IPackageListSpecfile=} [properties] Properties to set
              */
             function PackageListSpecfile(properties) {
                 if (properties)
@@ -17321,21 +17321,21 @@
             /**
              * Creates a new PackageListSpecfile instance using the specified properties.
              * @function create
-             * @memberof replitproto.PackageListSpecfile
+             * @memberof api.PackageListSpecfile
              * @static
-             * @param {replitproto.IPackageListSpecfile=} [properties] Properties to set
-             * @returns {replitproto.PackageListSpecfile} PackageListSpecfile instance
+             * @param {api.IPackageListSpecfile=} [properties] Properties to set
+             * @returns {api.PackageListSpecfile} PackageListSpecfile instance
              */
             PackageListSpecfile.create = function create(properties) {
                 return new PackageListSpecfile(properties);
             };
     
             /**
-             * Encodes the specified PackageListSpecfile message. Does not implicitly {@link replitproto.PackageListSpecfile.verify|verify} messages.
+             * Encodes the specified PackageListSpecfile message. Does not implicitly {@link api.PackageListSpecfile.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.PackageListSpecfile
+             * @memberof api.PackageListSpecfile
              * @static
-             * @param {replitproto.IPackageListSpecfile} message PackageListSpecfile message or plain object to encode
+             * @param {api.IPackageListSpecfile} message PackageListSpecfile message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -17346,11 +17346,11 @@
             };
     
             /**
-             * Encodes the specified PackageListSpecfile message, length delimited. Does not implicitly {@link replitproto.PackageListSpecfile.verify|verify} messages.
+             * Encodes the specified PackageListSpecfile message, length delimited. Does not implicitly {@link api.PackageListSpecfile.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.PackageListSpecfile
+             * @memberof api.PackageListSpecfile
              * @static
-             * @param {replitproto.IPackageListSpecfile} message PackageListSpecfile message or plain object to encode
+             * @param {api.IPackageListSpecfile} message PackageListSpecfile message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -17361,18 +17361,18 @@
             /**
              * Decodes a PackageListSpecfile message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.PackageListSpecfile
+             * @memberof api.PackageListSpecfile
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.PackageListSpecfile} PackageListSpecfile
+             * @returns {api.PackageListSpecfile} PackageListSpecfile
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             PackageListSpecfile.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.PackageListSpecfile();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.PackageListSpecfile();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -17387,10 +17387,10 @@
             /**
              * Decodes a PackageListSpecfile message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.PackageListSpecfile
+             * @memberof api.PackageListSpecfile
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.PackageListSpecfile} PackageListSpecfile
+             * @returns {api.PackageListSpecfile} PackageListSpecfile
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -17403,7 +17403,7 @@
             /**
              * Verifies a PackageListSpecfile message.
              * @function verify
-             * @memberof replitproto.PackageListSpecfile
+             * @memberof api.PackageListSpecfile
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -17417,23 +17417,23 @@
             /**
              * Creates a PackageListSpecfile message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.PackageListSpecfile
+             * @memberof api.PackageListSpecfile
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.PackageListSpecfile} PackageListSpecfile
+             * @returns {api.PackageListSpecfile} PackageListSpecfile
              */
             PackageListSpecfile.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.PackageListSpecfile)
+                if (object instanceof $root.api.PackageListSpecfile)
                     return object;
-                return new $root.replitproto.PackageListSpecfile();
+                return new $root.api.PackageListSpecfile();
             };
     
             /**
              * Creates a plain object from a PackageListSpecfile message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.PackageListSpecfile
+             * @memberof api.PackageListSpecfile
              * @static
-             * @param {replitproto.PackageListSpecfile} message PackageListSpecfile
+             * @param {api.PackageListSpecfile} message PackageListSpecfile
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -17444,7 +17444,7 @@
             /**
              * Converts this PackageListSpecfile to JSON.
              * @function toJSON
-             * @memberof replitproto.PackageListSpecfile
+             * @memberof api.PackageListSpecfile
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -17455,22 +17455,22 @@
             return PackageListSpecfile;
         })();
     
-        replitproto.PackageListSpecfileResp = (function() {
+        api.PackageListSpecfileResp = (function() {
     
             /**
              * Properties of a PackageListSpecfileResp.
-             * @memberof replitproto
+             * @memberof api
              * @interface IPackageListSpecfileResp
-             * @property {Array.<replitproto.IPackage>|null} [pkgs] PackageListSpecfileResp pkgs
+             * @property {Array.<api.IPackage>|null} [pkgs] PackageListSpecfileResp pkgs
              */
     
             /**
              * Constructs a new PackageListSpecfileResp.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a PackageListSpecfileResp.
              * @implements IPackageListSpecfileResp
              * @constructor
-             * @param {replitproto.IPackageListSpecfileResp=} [properties] Properties to set
+             * @param {api.IPackageListSpecfileResp=} [properties] Properties to set
              */
             function PackageListSpecfileResp(properties) {
                 this.pkgs = [];
@@ -17482,8 +17482,8 @@
     
             /**
              * PackageListSpecfileResp pkgs.
-             * @member {Array.<replitproto.IPackage>} pkgs
-             * @memberof replitproto.PackageListSpecfileResp
+             * @member {Array.<api.IPackage>} pkgs
+             * @memberof api.PackageListSpecfileResp
              * @instance
              */
             PackageListSpecfileResp.prototype.pkgs = $util.emptyArray;
@@ -17491,21 +17491,21 @@
             /**
              * Creates a new PackageListSpecfileResp instance using the specified properties.
              * @function create
-             * @memberof replitproto.PackageListSpecfileResp
+             * @memberof api.PackageListSpecfileResp
              * @static
-             * @param {replitproto.IPackageListSpecfileResp=} [properties] Properties to set
-             * @returns {replitproto.PackageListSpecfileResp} PackageListSpecfileResp instance
+             * @param {api.IPackageListSpecfileResp=} [properties] Properties to set
+             * @returns {api.PackageListSpecfileResp} PackageListSpecfileResp instance
              */
             PackageListSpecfileResp.create = function create(properties) {
                 return new PackageListSpecfileResp(properties);
             };
     
             /**
-             * Encodes the specified PackageListSpecfileResp message. Does not implicitly {@link replitproto.PackageListSpecfileResp.verify|verify} messages.
+             * Encodes the specified PackageListSpecfileResp message. Does not implicitly {@link api.PackageListSpecfileResp.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.PackageListSpecfileResp
+             * @memberof api.PackageListSpecfileResp
              * @static
-             * @param {replitproto.IPackageListSpecfileResp} message PackageListSpecfileResp message or plain object to encode
+             * @param {api.IPackageListSpecfileResp} message PackageListSpecfileResp message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -17514,16 +17514,16 @@
                     writer = $Writer.create();
                 if (message.pkgs != null && message.pkgs.length)
                     for (var i = 0; i < message.pkgs.length; ++i)
-                        $root.replitproto.Package.encode(message.pkgs[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                        $root.api.Package.encode(message.pkgs[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
     
             /**
-             * Encodes the specified PackageListSpecfileResp message, length delimited. Does not implicitly {@link replitproto.PackageListSpecfileResp.verify|verify} messages.
+             * Encodes the specified PackageListSpecfileResp message, length delimited. Does not implicitly {@link api.PackageListSpecfileResp.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.PackageListSpecfileResp
+             * @memberof api.PackageListSpecfileResp
              * @static
-             * @param {replitproto.IPackageListSpecfileResp} message PackageListSpecfileResp message or plain object to encode
+             * @param {api.IPackageListSpecfileResp} message PackageListSpecfileResp message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -17534,25 +17534,25 @@
             /**
              * Decodes a PackageListSpecfileResp message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.PackageListSpecfileResp
+             * @memberof api.PackageListSpecfileResp
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.PackageListSpecfileResp} PackageListSpecfileResp
+             * @returns {api.PackageListSpecfileResp} PackageListSpecfileResp
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             PackageListSpecfileResp.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.PackageListSpecfileResp();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.PackageListSpecfileResp();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         if (!(message.pkgs && message.pkgs.length))
                             message.pkgs = [];
-                        message.pkgs.push($root.replitproto.Package.decode(reader, reader.uint32()));
+                        message.pkgs.push($root.api.Package.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -17565,10 +17565,10 @@
             /**
              * Decodes a PackageListSpecfileResp message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.PackageListSpecfileResp
+             * @memberof api.PackageListSpecfileResp
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.PackageListSpecfileResp} PackageListSpecfileResp
+             * @returns {api.PackageListSpecfileResp} PackageListSpecfileResp
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -17581,7 +17581,7 @@
             /**
              * Verifies a PackageListSpecfileResp message.
              * @function verify
-             * @memberof replitproto.PackageListSpecfileResp
+             * @memberof api.PackageListSpecfileResp
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -17593,7 +17593,7 @@
                     if (!Array.isArray(message.pkgs))
                         return "pkgs: array expected";
                     for (var i = 0; i < message.pkgs.length; ++i) {
-                        var error = $root.replitproto.Package.verify(message.pkgs[i]);
+                        var error = $root.api.Package.verify(message.pkgs[i]);
                         if (error)
                             return "pkgs." + error;
                     }
@@ -17604,23 +17604,23 @@
             /**
              * Creates a PackageListSpecfileResp message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.PackageListSpecfileResp
+             * @memberof api.PackageListSpecfileResp
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.PackageListSpecfileResp} PackageListSpecfileResp
+             * @returns {api.PackageListSpecfileResp} PackageListSpecfileResp
              */
             PackageListSpecfileResp.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.PackageListSpecfileResp)
+                if (object instanceof $root.api.PackageListSpecfileResp)
                     return object;
-                var message = new $root.replitproto.PackageListSpecfileResp();
+                var message = new $root.api.PackageListSpecfileResp();
                 if (object.pkgs) {
                     if (!Array.isArray(object.pkgs))
-                        throw TypeError(".replitproto.PackageListSpecfileResp.pkgs: array expected");
+                        throw TypeError(".api.PackageListSpecfileResp.pkgs: array expected");
                     message.pkgs = [];
                     for (var i = 0; i < object.pkgs.length; ++i) {
                         if (typeof object.pkgs[i] !== "object")
-                            throw TypeError(".replitproto.PackageListSpecfileResp.pkgs: object expected");
-                        message.pkgs[i] = $root.replitproto.Package.fromObject(object.pkgs[i]);
+                            throw TypeError(".api.PackageListSpecfileResp.pkgs: object expected");
+                        message.pkgs[i] = $root.api.Package.fromObject(object.pkgs[i]);
                     }
                 }
                 return message;
@@ -17629,9 +17629,9 @@
             /**
              * Creates a plain object from a PackageListSpecfileResp message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.PackageListSpecfileResp
+             * @memberof api.PackageListSpecfileResp
              * @static
-             * @param {replitproto.PackageListSpecfileResp} message PackageListSpecfileResp
+             * @param {api.PackageListSpecfileResp} message PackageListSpecfileResp
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -17644,7 +17644,7 @@
                 if (message.pkgs && message.pkgs.length) {
                     object.pkgs = [];
                     for (var j = 0; j < message.pkgs.length; ++j)
-                        object.pkgs[j] = $root.replitproto.Package.toObject(message.pkgs[j], options);
+                        object.pkgs[j] = $root.api.Package.toObject(message.pkgs[j], options);
                 }
                 return object;
             };
@@ -17652,7 +17652,7 @@
             /**
              * Converts this PackageListSpecfileResp to JSON.
              * @function toJSON
-             * @memberof replitproto.PackageListSpecfileResp
+             * @memberof api.PackageListSpecfileResp
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -17663,21 +17663,21 @@
             return PackageListSpecfileResp;
         })();
     
-        replitproto.PackageCacheSave = (function() {
+        api.PackageCacheSave = (function() {
     
             /**
              * Properties of a PackageCacheSave.
-             * @memberof replitproto
+             * @memberof api
              * @interface IPackageCacheSave
              */
     
             /**
              * Constructs a new PackageCacheSave.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a PackageCacheSave.
              * @implements IPackageCacheSave
              * @constructor
-             * @param {replitproto.IPackageCacheSave=} [properties] Properties to set
+             * @param {api.IPackageCacheSave=} [properties] Properties to set
              */
             function PackageCacheSave(properties) {
                 if (properties)
@@ -17689,21 +17689,21 @@
             /**
              * Creates a new PackageCacheSave instance using the specified properties.
              * @function create
-             * @memberof replitproto.PackageCacheSave
+             * @memberof api.PackageCacheSave
              * @static
-             * @param {replitproto.IPackageCacheSave=} [properties] Properties to set
-             * @returns {replitproto.PackageCacheSave} PackageCacheSave instance
+             * @param {api.IPackageCacheSave=} [properties] Properties to set
+             * @returns {api.PackageCacheSave} PackageCacheSave instance
              */
             PackageCacheSave.create = function create(properties) {
                 return new PackageCacheSave(properties);
             };
     
             /**
-             * Encodes the specified PackageCacheSave message. Does not implicitly {@link replitproto.PackageCacheSave.verify|verify} messages.
+             * Encodes the specified PackageCacheSave message. Does not implicitly {@link api.PackageCacheSave.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.PackageCacheSave
+             * @memberof api.PackageCacheSave
              * @static
-             * @param {replitproto.IPackageCacheSave} message PackageCacheSave message or plain object to encode
+             * @param {api.IPackageCacheSave} message PackageCacheSave message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -17714,11 +17714,11 @@
             };
     
             /**
-             * Encodes the specified PackageCacheSave message, length delimited. Does not implicitly {@link replitproto.PackageCacheSave.verify|verify} messages.
+             * Encodes the specified PackageCacheSave message, length delimited. Does not implicitly {@link api.PackageCacheSave.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.PackageCacheSave
+             * @memberof api.PackageCacheSave
              * @static
-             * @param {replitproto.IPackageCacheSave} message PackageCacheSave message or plain object to encode
+             * @param {api.IPackageCacheSave} message PackageCacheSave message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -17729,18 +17729,18 @@
             /**
              * Decodes a PackageCacheSave message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.PackageCacheSave
+             * @memberof api.PackageCacheSave
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.PackageCacheSave} PackageCacheSave
+             * @returns {api.PackageCacheSave} PackageCacheSave
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             PackageCacheSave.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.PackageCacheSave();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.PackageCacheSave();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -17755,10 +17755,10 @@
             /**
              * Decodes a PackageCacheSave message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.PackageCacheSave
+             * @memberof api.PackageCacheSave
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.PackageCacheSave} PackageCacheSave
+             * @returns {api.PackageCacheSave} PackageCacheSave
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -17771,7 +17771,7 @@
             /**
              * Verifies a PackageCacheSave message.
              * @function verify
-             * @memberof replitproto.PackageCacheSave
+             * @memberof api.PackageCacheSave
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -17785,23 +17785,23 @@
             /**
              * Creates a PackageCacheSave message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.PackageCacheSave
+             * @memberof api.PackageCacheSave
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.PackageCacheSave} PackageCacheSave
+             * @returns {api.PackageCacheSave} PackageCacheSave
              */
             PackageCacheSave.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.PackageCacheSave)
+                if (object instanceof $root.api.PackageCacheSave)
                     return object;
-                return new $root.replitproto.PackageCacheSave();
+                return new $root.api.PackageCacheSave();
             };
     
             /**
              * Creates a plain object from a PackageCacheSave message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.PackageCacheSave
+             * @memberof api.PackageCacheSave
              * @static
-             * @param {replitproto.PackageCacheSave} message PackageCacheSave
+             * @param {api.PackageCacheSave} message PackageCacheSave
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -17812,7 +17812,7 @@
             /**
              * Converts this PackageCacheSave to JSON.
              * @function toJSON
-             * @memberof replitproto.PackageCacheSave
+             * @memberof api.PackageCacheSave
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -17823,22 +17823,22 @@
             return PackageCacheSave;
         })();
     
-        replitproto.ChatScrollback = (function() {
+        api.ChatScrollback = (function() {
     
             /**
              * Properties of a ChatScrollback.
-             * @memberof replitproto
+             * @memberof api
              * @interface IChatScrollback
-             * @property {Array.<replitproto.IChatMessage>|null} [scrollback] ChatScrollback scrollback
+             * @property {Array.<api.IChatMessage>|null} [scrollback] ChatScrollback scrollback
              */
     
             /**
              * Constructs a new ChatScrollback.
-             * @memberof replitproto
+             * @memberof api
              * @classdesc Represents a ChatScrollback.
              * @implements IChatScrollback
              * @constructor
-             * @param {replitproto.IChatScrollback=} [properties] Properties to set
+             * @param {api.IChatScrollback=} [properties] Properties to set
              */
             function ChatScrollback(properties) {
                 this.scrollback = [];
@@ -17850,8 +17850,8 @@
     
             /**
              * ChatScrollback scrollback.
-             * @member {Array.<replitproto.IChatMessage>} scrollback
-             * @memberof replitproto.ChatScrollback
+             * @member {Array.<api.IChatMessage>} scrollback
+             * @memberof api.ChatScrollback
              * @instance
              */
             ChatScrollback.prototype.scrollback = $util.emptyArray;
@@ -17859,21 +17859,21 @@
             /**
              * Creates a new ChatScrollback instance using the specified properties.
              * @function create
-             * @memberof replitproto.ChatScrollback
+             * @memberof api.ChatScrollback
              * @static
-             * @param {replitproto.IChatScrollback=} [properties] Properties to set
-             * @returns {replitproto.ChatScrollback} ChatScrollback instance
+             * @param {api.IChatScrollback=} [properties] Properties to set
+             * @returns {api.ChatScrollback} ChatScrollback instance
              */
             ChatScrollback.create = function create(properties) {
                 return new ChatScrollback(properties);
             };
     
             /**
-             * Encodes the specified ChatScrollback message. Does not implicitly {@link replitproto.ChatScrollback.verify|verify} messages.
+             * Encodes the specified ChatScrollback message. Does not implicitly {@link api.ChatScrollback.verify|verify} messages.
              * @function encode
-             * @memberof replitproto.ChatScrollback
+             * @memberof api.ChatScrollback
              * @static
-             * @param {replitproto.IChatScrollback} message ChatScrollback message or plain object to encode
+             * @param {api.IChatScrollback} message ChatScrollback message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -17882,16 +17882,16 @@
                     writer = $Writer.create();
                 if (message.scrollback != null && message.scrollback.length)
                     for (var i = 0; i < message.scrollback.length; ++i)
-                        $root.replitproto.ChatMessage.encode(message.scrollback[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                        $root.api.ChatMessage.encode(message.scrollback[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
     
             /**
-             * Encodes the specified ChatScrollback message, length delimited. Does not implicitly {@link replitproto.ChatScrollback.verify|verify} messages.
+             * Encodes the specified ChatScrollback message, length delimited. Does not implicitly {@link api.ChatScrollback.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof replitproto.ChatScrollback
+             * @memberof api.ChatScrollback
              * @static
-             * @param {replitproto.IChatScrollback} message ChatScrollback message or plain object to encode
+             * @param {api.IChatScrollback} message ChatScrollback message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -17902,25 +17902,25 @@
             /**
              * Decodes a ChatScrollback message from the specified reader or buffer.
              * @function decode
-             * @memberof replitproto.ChatScrollback
+             * @memberof api.ChatScrollback
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {replitproto.ChatScrollback} ChatScrollback
+             * @returns {api.ChatScrollback} ChatScrollback
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             ChatScrollback.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.replitproto.ChatScrollback();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.ChatScrollback();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
                         if (!(message.scrollback && message.scrollback.length))
                             message.scrollback = [];
-                        message.scrollback.push($root.replitproto.ChatMessage.decode(reader, reader.uint32()));
+                        message.scrollback.push($root.api.ChatMessage.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -17933,10 +17933,10 @@
             /**
              * Decodes a ChatScrollback message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof replitproto.ChatScrollback
+             * @memberof api.ChatScrollback
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {replitproto.ChatScrollback} ChatScrollback
+             * @returns {api.ChatScrollback} ChatScrollback
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -17949,7 +17949,7 @@
             /**
              * Verifies a ChatScrollback message.
              * @function verify
-             * @memberof replitproto.ChatScrollback
+             * @memberof api.ChatScrollback
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -17961,7 +17961,7 @@
                     if (!Array.isArray(message.scrollback))
                         return "scrollback: array expected";
                     for (var i = 0; i < message.scrollback.length; ++i) {
-                        var error = $root.replitproto.ChatMessage.verify(message.scrollback[i]);
+                        var error = $root.api.ChatMessage.verify(message.scrollback[i]);
                         if (error)
                             return "scrollback." + error;
                     }
@@ -17972,23 +17972,23 @@
             /**
              * Creates a ChatScrollback message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof replitproto.ChatScrollback
+             * @memberof api.ChatScrollback
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {replitproto.ChatScrollback} ChatScrollback
+             * @returns {api.ChatScrollback} ChatScrollback
              */
             ChatScrollback.fromObject = function fromObject(object) {
-                if (object instanceof $root.replitproto.ChatScrollback)
+                if (object instanceof $root.api.ChatScrollback)
                     return object;
-                var message = new $root.replitproto.ChatScrollback();
+                var message = new $root.api.ChatScrollback();
                 if (object.scrollback) {
                     if (!Array.isArray(object.scrollback))
-                        throw TypeError(".replitproto.ChatScrollback.scrollback: array expected");
+                        throw TypeError(".api.ChatScrollback.scrollback: array expected");
                     message.scrollback = [];
                     for (var i = 0; i < object.scrollback.length; ++i) {
                         if (typeof object.scrollback[i] !== "object")
-                            throw TypeError(".replitproto.ChatScrollback.scrollback: object expected");
-                        message.scrollback[i] = $root.replitproto.ChatMessage.fromObject(object.scrollback[i]);
+                            throw TypeError(".api.ChatScrollback.scrollback: object expected");
+                        message.scrollback[i] = $root.api.ChatMessage.fromObject(object.scrollback[i]);
                     }
                 }
                 return message;
@@ -17997,9 +17997,9 @@
             /**
              * Creates a plain object from a ChatScrollback message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof replitproto.ChatScrollback
+             * @memberof api.ChatScrollback
              * @static
-             * @param {replitproto.ChatScrollback} message ChatScrollback
+             * @param {api.ChatScrollback} message ChatScrollback
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -18012,7 +18012,7 @@
                 if (message.scrollback && message.scrollback.length) {
                     object.scrollback = [];
                     for (var j = 0; j < message.scrollback.length; ++j)
-                        object.scrollback[j] = $root.replitproto.ChatMessage.toObject(message.scrollback[j], options);
+                        object.scrollback[j] = $root.api.ChatMessage.toObject(message.scrollback[j], options);
                 }
                 return object;
             };
@@ -18020,7 +18020,7 @@
             /**
              * Converts this ChatScrollback to JSON.
              * @function toJSON
-             * @memberof replitproto.ChatScrollback
+             * @memberof api.ChatScrollback
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -18031,7 +18031,7 @@
             return ChatScrollback;
         })();
     
-        return replitproto;
+        return api;
     })();
 
     return $root;
