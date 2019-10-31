@@ -49,6 +49,7 @@ message Command {
     File write = 32;
     File remove = 33;
     Move move = 34;
+    File tryRemove = 36;
     File mkdir = 39;
 
     File read = 35;

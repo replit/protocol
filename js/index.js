@@ -55,6 +55,7 @@
              * @property {api.IFile|null} [write] Command write
              * @property {api.IFile|null} [remove] Command remove
              * @property {api.IMove|null} [move] Command move
+             * @property {api.IFile|null} [tryRemove] Command tryRemove
              * @property {api.IFile|null} [mkdir] Command mkdir
              * @property {api.IFile|null} [read] Command read
              * @property {api.IFile|null} [readdir] Command readdir
@@ -326,6 +327,14 @@
              * @instance
              */
             Command.prototype.move = null;
+    
+            /**
+             * Command tryRemove.
+             * @member {api.IFile|null|undefined} tryRemove
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.tryRemove = null;
     
             /**
              * Command mkdir.
@@ -836,12 +845,12 @@
     
             /**
              * Command body.
-             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"write"|"remove"|"move"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribe"|"eventCreated"|"eventModified"|"eventDeleted"|"eventMoved"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|undefined} body
+             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribe"|"eventCreated"|"eventModified"|"eventDeleted"|"eventMoved"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|undefined} body
              * @memberof api.Command
              * @instance
              */
             Object.defineProperty(Command.prototype, "body", {
-                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "write", "remove", "move", "mkdir", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribe", "eventCreated", "eventModified", "eventDeleted", "eventMoved", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback"]),
+                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "write", "remove", "move", "tryRemove", "mkdir", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribe", "eventCreated", "eventModified", "eventDeleted", "eventMoved", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
     
@@ -919,6 +928,8 @@
                     $root.api.Move.encode(message.move, writer.uint32(/* id 34, wireType 2 =*/274).fork()).ldelim();
                 if (message.read != null && message.hasOwnProperty("read"))
                     $root.api.File.encode(message.read, writer.uint32(/* id 35, wireType 2 =*/282).fork()).ldelim();
+                if (message.tryRemove != null && message.hasOwnProperty("tryRemove"))
+                    $root.api.File.encode(message.tryRemove, writer.uint32(/* id 36, wireType 2 =*/290).fork()).ldelim();
                 if (message.readdir != null && message.hasOwnProperty("readdir"))
                     $root.api.File.encode(message.readdir, writer.uint32(/* id 37, wireType 2 =*/298).fork()).ldelim();
                 if (message.files != null && message.hasOwnProperty("files"))
@@ -1148,6 +1159,9 @@
                         break;
                     case 34:
                         message.move = $root.api.Move.decode(reader, reader.uint32());
+                        break;
+                    case 36:
+                        message.tryRemove = $root.api.File.decode(reader, reader.uint32());
                         break;
                     case 39:
                         message.mkdir = $root.api.File.decode(reader, reader.uint32());
@@ -1583,6 +1597,16 @@
                         var error = $root.api.Move.verify(message.move);
                         if (error)
                             return "move." + error;
+                    }
+                }
+                if (message.tryRemove != null && message.hasOwnProperty("tryRemove")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.File.verify(message.tryRemove);
+                        if (error)
+                            return "tryRemove." + error;
                     }
                 }
                 if (message.mkdir != null && message.hasOwnProperty("mkdir")) {
@@ -2324,6 +2348,11 @@
                         throw TypeError(".api.Command.move: object expected");
                     message.move = $root.api.Move.fromObject(object.move);
                 }
+                if (object.tryRemove != null) {
+                    if (typeof object.tryRemove !== "object")
+                        throw TypeError(".api.Command.tryRemove: object expected");
+                    message.tryRemove = $root.api.File.fromObject(object.tryRemove);
+                }
                 if (object.mkdir != null) {
                     if (typeof object.mkdir !== "object")
                         throw TypeError(".api.Command.mkdir: object expected");
@@ -2772,6 +2801,11 @@
                     object.read = $root.api.File.toObject(message.read, options);
                     if (options.oneofs)
                         object.body = "read";
+                }
+                if (message.tryRemove != null && message.hasOwnProperty("tryRemove")) {
+                    object.tryRemove = $root.api.File.toObject(message.tryRemove, options);
+                    if (options.oneofs)
+                        object.body = "tryRemove";
                 }
                 if (message.readdir != null && message.hasOwnProperty("readdir")) {
                     object.readdir = $root.api.File.toObject(message.readdir, options);
