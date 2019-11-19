@@ -266,6 +266,15 @@ export namespace api {
         /** Command chatScrollback */
         chatScrollback?: (api.IChatScrollback|null);
 
+        /** Command fsSnapshot */
+        fsSnapshot?: (api.IFSSnapshot|null);
+
+        /** Command fsTakeLock */
+        fsTakeLock?: (api.IFSLock|null);
+
+        /** Command fsReleaseLock */
+        fsReleaseLock?: (api.IFSLock|null);
+
         /** Command ref */
         ref?: (string|null);
     }
@@ -540,11 +549,20 @@ export namespace api {
         /** Command chatScrollback. */
         public chatScrollback?: (api.IChatScrollback|null);
 
+        /** Command fsSnapshot. */
+        public fsSnapshot?: (api.IFSSnapshot|null);
+
+        /** Command fsTakeLock. */
+        public fsTakeLock?: (api.IFSLock|null);
+
+        /** Command fsReleaseLock. */
+        public fsReleaseLock?: (api.IFSLock|null);
+
         /** Command ref. */
         public ref: string;
 
         /** Command body. */
-        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribe"|"eventCreated"|"eventModified"|"eventDeleted"|"eventMoved"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback");
+        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribe"|"eventCreated"|"eventModified"|"eventDeleted"|"eventMoved"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock");
 
         /**
          * Creates a new Command instance using the specified properties.
@@ -612,6 +630,180 @@ export namespace api {
 
         /**
          * Converts this Command to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a FSLock. */
+    interface IFSLock {
+
+        /** FSLock name */
+        name?: (string|null);
+    }
+
+    /** Represents a FSLock. */
+    class FSLock implements IFSLock {
+
+        /**
+         * Constructs a new FSLock.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: api.IFSLock);
+
+        /** FSLock name. */
+        public name: string;
+
+        /**
+         * Creates a new FSLock instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns FSLock instance
+         */
+        public static create(properties?: api.IFSLock): api.FSLock;
+
+        /**
+         * Encodes the specified FSLock message. Does not implicitly {@link api.FSLock.verify|verify} messages.
+         * @param message FSLock message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.IFSLock, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified FSLock message, length delimited. Does not implicitly {@link api.FSLock.verify|verify} messages.
+         * @param message FSLock message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.IFSLock, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a FSLock message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns FSLock
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.FSLock;
+
+        /**
+         * Decodes a FSLock message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns FSLock
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.FSLock;
+
+        /**
+         * Verifies a FSLock message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a FSLock message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns FSLock
+         */
+        public static fromObject(object: { [k: string]: any }): api.FSLock;
+
+        /**
+         * Creates a plain object from a FSLock message. Also converts values to other types if specified.
+         * @param message FSLock
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.FSLock, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this FSLock to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a FSSnapshot. */
+    interface IFSSnapshot {
+    }
+
+    /** Represents a FSSnapshot. */
+    class FSSnapshot implements IFSSnapshot {
+
+        /**
+         * Constructs a new FSSnapshot.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: api.IFSSnapshot);
+
+        /**
+         * Creates a new FSSnapshot instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns FSSnapshot instance
+         */
+        public static create(properties?: api.IFSSnapshot): api.FSSnapshot;
+
+        /**
+         * Encodes the specified FSSnapshot message. Does not implicitly {@link api.FSSnapshot.verify|verify} messages.
+         * @param message FSSnapshot message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.IFSSnapshot, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified FSSnapshot message, length delimited. Does not implicitly {@link api.FSSnapshot.verify|verify} messages.
+         * @param message FSSnapshot message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.IFSSnapshot, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a FSSnapshot message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns FSSnapshot
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.FSSnapshot;
+
+        /**
+         * Decodes a FSSnapshot message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns FSSnapshot
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.FSSnapshot;
+
+        /**
+         * Verifies a FSSnapshot message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a FSSnapshot message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns FSSnapshot
+         */
+        public static fromObject(object: { [k: string]: any }): api.FSSnapshot;
+
+        /**
+         * Creates a plain object from a FSSnapshot message. Also converts values to other types if specified.
+         * @param message FSSnapshot
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.FSSnapshot, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this FSSnapshot to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };

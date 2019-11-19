@@ -138,10 +138,18 @@ message Command {
     ChatMessage chatMessage = 310;
     ChatTyping chatTyping = 311;
     ChatScrollback chatScrollback = 312;
+
+    FSSnapshot fsSnapshot = 330;
+    FSLock fsTakeLock = 331;
+    FSLock fsReleaseLock = 332;
   }
 
   string ref = 1000;
 }
+
+message FSLock { string name = 1; }
+
+message FSSnapshot {}
 
 message SubscribeFile { repeated File files = 1; }
 

@@ -118,6 +118,9 @@
              * @property {api.IChatMessage|null} [chatMessage] Command chatMessage
              * @property {api.IChatTyping|null} [chatTyping] Command chatTyping
              * @property {api.IChatScrollback|null} [chatScrollback] Command chatScrollback
+             * @property {api.IFSSnapshot|null} [fsSnapshot] Command fsSnapshot
+             * @property {api.IFSLock|null} [fsTakeLock] Command fsTakeLock
+             * @property {api.IFSLock|null} [fsReleaseLock] Command fsReleaseLock
              * @property {string|null} [ref] Command ref
              */
     
@@ -833,6 +836,30 @@
             Command.prototype.chatScrollback = null;
     
             /**
+             * Command fsSnapshot.
+             * @member {api.IFSSnapshot|null|undefined} fsSnapshot
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.fsSnapshot = null;
+    
+            /**
+             * Command fsTakeLock.
+             * @member {api.IFSLock|null|undefined} fsTakeLock
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.fsTakeLock = null;
+    
+            /**
+             * Command fsReleaseLock.
+             * @member {api.IFSLock|null|undefined} fsReleaseLock
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.fsReleaseLock = null;
+    
+            /**
              * Command ref.
              * @member {string} ref
              * @memberof api.Command
@@ -845,12 +872,12 @@
     
             /**
              * Command body.
-             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribe"|"eventCreated"|"eventModified"|"eventDeleted"|"eventMoved"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|undefined} body
+             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribe"|"eventCreated"|"eventModified"|"eventDeleted"|"eventMoved"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|undefined} body
              * @memberof api.Command
              * @instance
              */
             Object.defineProperty(Command.prototype, "body", {
-                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "write", "remove", "move", "tryRemove", "mkdir", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribe", "eventCreated", "eventModified", "eventDeleted", "eventMoved", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback"]),
+                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "write", "remove", "move", "tryRemove", "mkdir", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribe", "eventCreated", "eventModified", "eventDeleted", "eventMoved", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
     
@@ -1052,6 +1079,12 @@
                     $root.api.ChatTyping.encode(message.chatTyping, writer.uint32(/* id 311, wireType 2 =*/2490).fork()).ldelim();
                 if (message.chatScrollback != null && message.hasOwnProperty("chatScrollback"))
                     $root.api.ChatScrollback.encode(message.chatScrollback, writer.uint32(/* id 312, wireType 2 =*/2498).fork()).ldelim();
+                if (message.fsSnapshot != null && message.hasOwnProperty("fsSnapshot"))
+                    $root.api.FSSnapshot.encode(message.fsSnapshot, writer.uint32(/* id 330, wireType 2 =*/2642).fork()).ldelim();
+                if (message.fsTakeLock != null && message.hasOwnProperty("fsTakeLock"))
+                    $root.api.FSLock.encode(message.fsTakeLock, writer.uint32(/* id 331, wireType 2 =*/2650).fork()).ldelim();
+                if (message.fsReleaseLock != null && message.hasOwnProperty("fsReleaseLock"))
+                    $root.api.FSLock.encode(message.fsReleaseLock, writer.uint32(/* id 332, wireType 2 =*/2658).fork()).ldelim();
                 if (message.ref != null && message.hasOwnProperty("ref"))
                     writer.uint32(/* id 1000, wireType 2 =*/8002).string(message.ref);
                 return writer;
@@ -1348,6 +1381,15 @@
                         break;
                     case 312:
                         message.chatScrollback = $root.api.ChatScrollback.decode(reader, reader.uint32());
+                        break;
+                    case 330:
+                        message.fsSnapshot = $root.api.FSSnapshot.decode(reader, reader.uint32());
+                        break;
+                    case 331:
+                        message.fsTakeLock = $root.api.FSLock.decode(reader, reader.uint32());
+                        break;
+                    case 332:
+                        message.fsReleaseLock = $root.api.FSLock.decode(reader, reader.uint32());
                         break;
                     case 1000:
                         message.ref = reader.string();
@@ -2226,6 +2268,36 @@
                             return "chatScrollback." + error;
                     }
                 }
+                if (message.fsSnapshot != null && message.hasOwnProperty("fsSnapshot")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.FSSnapshot.verify(message.fsSnapshot);
+                        if (error)
+                            return "fsSnapshot." + error;
+                    }
+                }
+                if (message.fsTakeLock != null && message.hasOwnProperty("fsTakeLock")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.FSLock.verify(message.fsTakeLock);
+                        if (error)
+                            return "fsTakeLock." + error;
+                    }
+                }
+                if (message.fsReleaseLock != null && message.hasOwnProperty("fsReleaseLock")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.FSLock.verify(message.fsReleaseLock);
+                        if (error)
+                            return "fsReleaseLock." + error;
+                    }
+                }
                 if (message.ref != null && message.hasOwnProperty("ref"))
                     if (!$util.isString(message.ref))
                         return "ref: string expected";
@@ -2659,6 +2731,21 @@
                     if (typeof object.chatScrollback !== "object")
                         throw TypeError(".api.Command.chatScrollback: object expected");
                     message.chatScrollback = $root.api.ChatScrollback.fromObject(object.chatScrollback);
+                }
+                if (object.fsSnapshot != null) {
+                    if (typeof object.fsSnapshot !== "object")
+                        throw TypeError(".api.Command.fsSnapshot: object expected");
+                    message.fsSnapshot = $root.api.FSSnapshot.fromObject(object.fsSnapshot);
+                }
+                if (object.fsTakeLock != null) {
+                    if (typeof object.fsTakeLock !== "object")
+                        throw TypeError(".api.Command.fsTakeLock: object expected");
+                    message.fsTakeLock = $root.api.FSLock.fromObject(object.fsTakeLock);
+                }
+                if (object.fsReleaseLock != null) {
+                    if (typeof object.fsReleaseLock !== "object")
+                        throw TypeError(".api.Command.fsReleaseLock: object expected");
+                    message.fsReleaseLock = $root.api.FSLock.fromObject(object.fsReleaseLock);
                 }
                 if (object.ref != null)
                     message.ref = String(object.ref);
@@ -3112,6 +3199,21 @@
                     if (options.oneofs)
                         object.body = "chatScrollback";
                 }
+                if (message.fsSnapshot != null && message.hasOwnProperty("fsSnapshot")) {
+                    object.fsSnapshot = $root.api.FSSnapshot.toObject(message.fsSnapshot, options);
+                    if (options.oneofs)
+                        object.body = "fsSnapshot";
+                }
+                if (message.fsTakeLock != null && message.hasOwnProperty("fsTakeLock")) {
+                    object.fsTakeLock = $root.api.FSLock.toObject(message.fsTakeLock, options);
+                    if (options.oneofs)
+                        object.body = "fsTakeLock";
+                }
+                if (message.fsReleaseLock != null && message.hasOwnProperty("fsReleaseLock")) {
+                    object.fsReleaseLock = $root.api.FSLock.toObject(message.fsReleaseLock, options);
+                    if (options.oneofs)
+                        object.body = "fsReleaseLock";
+                }
                 if (message.ref != null && message.hasOwnProperty("ref"))
                     object.ref = message.ref;
                 return object;
@@ -3129,6 +3231,353 @@
             };
     
             return Command;
+        })();
+    
+        api.FSLock = (function() {
+    
+            /**
+             * Properties of a FSLock.
+             * @memberof api
+             * @interface IFSLock
+             * @property {string|null} [name] FSLock name
+             */
+    
+            /**
+             * Constructs a new FSLock.
+             * @memberof api
+             * @classdesc Represents a FSLock.
+             * @implements IFSLock
+             * @constructor
+             * @param {api.IFSLock=} [properties] Properties to set
+             */
+            function FSLock(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * FSLock name.
+             * @member {string} name
+             * @memberof api.FSLock
+             * @instance
+             */
+            FSLock.prototype.name = "";
+    
+            /**
+             * Creates a new FSLock instance using the specified properties.
+             * @function create
+             * @memberof api.FSLock
+             * @static
+             * @param {api.IFSLock=} [properties] Properties to set
+             * @returns {api.FSLock} FSLock instance
+             */
+            FSLock.create = function create(properties) {
+                return new FSLock(properties);
+            };
+    
+            /**
+             * Encodes the specified FSLock message. Does not implicitly {@link api.FSLock.verify|verify} messages.
+             * @function encode
+             * @memberof api.FSLock
+             * @static
+             * @param {api.IFSLock} message FSLock message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            FSLock.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.name != null && message.hasOwnProperty("name"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified FSLock message, length delimited. Does not implicitly {@link api.FSLock.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.FSLock
+             * @static
+             * @param {api.IFSLock} message FSLock message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            FSLock.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a FSLock message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.FSLock
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.FSLock} FSLock
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            FSLock.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.FSLock();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.name = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a FSLock message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.FSLock
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.FSLock} FSLock
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            FSLock.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a FSLock message.
+             * @function verify
+             * @memberof api.FSLock
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            FSLock.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.name != null && message.hasOwnProperty("name"))
+                    if (!$util.isString(message.name))
+                        return "name: string expected";
+                return null;
+            };
+    
+            /**
+             * Creates a FSLock message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.FSLock
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.FSLock} FSLock
+             */
+            FSLock.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.FSLock)
+                    return object;
+                var message = new $root.api.FSLock();
+                if (object.name != null)
+                    message.name = String(object.name);
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a FSLock message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.FSLock
+             * @static
+             * @param {api.FSLock} message FSLock
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            FSLock.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    object.name = "";
+                if (message.name != null && message.hasOwnProperty("name"))
+                    object.name = message.name;
+                return object;
+            };
+    
+            /**
+             * Converts this FSLock to JSON.
+             * @function toJSON
+             * @memberof api.FSLock
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            FSLock.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return FSLock;
+        })();
+    
+        api.FSSnapshot = (function() {
+    
+            /**
+             * Properties of a FSSnapshot.
+             * @memberof api
+             * @interface IFSSnapshot
+             */
+    
+            /**
+             * Constructs a new FSSnapshot.
+             * @memberof api
+             * @classdesc Represents a FSSnapshot.
+             * @implements IFSSnapshot
+             * @constructor
+             * @param {api.IFSSnapshot=} [properties] Properties to set
+             */
+            function FSSnapshot(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * Creates a new FSSnapshot instance using the specified properties.
+             * @function create
+             * @memberof api.FSSnapshot
+             * @static
+             * @param {api.IFSSnapshot=} [properties] Properties to set
+             * @returns {api.FSSnapshot} FSSnapshot instance
+             */
+            FSSnapshot.create = function create(properties) {
+                return new FSSnapshot(properties);
+            };
+    
+            /**
+             * Encodes the specified FSSnapshot message. Does not implicitly {@link api.FSSnapshot.verify|verify} messages.
+             * @function encode
+             * @memberof api.FSSnapshot
+             * @static
+             * @param {api.IFSSnapshot} message FSSnapshot message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            FSSnapshot.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified FSSnapshot message, length delimited. Does not implicitly {@link api.FSSnapshot.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.FSSnapshot
+             * @static
+             * @param {api.IFSSnapshot} message FSSnapshot message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            FSSnapshot.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a FSSnapshot message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.FSSnapshot
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.FSSnapshot} FSSnapshot
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            FSSnapshot.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.FSSnapshot();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a FSSnapshot message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.FSSnapshot
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.FSSnapshot} FSSnapshot
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            FSSnapshot.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a FSSnapshot message.
+             * @function verify
+             * @memberof api.FSSnapshot
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            FSSnapshot.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                return null;
+            };
+    
+            /**
+             * Creates a FSSnapshot message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.FSSnapshot
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.FSSnapshot} FSSnapshot
+             */
+            FSSnapshot.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.FSSnapshot)
+                    return object;
+                return new $root.api.FSSnapshot();
+            };
+    
+            /**
+             * Creates a plain object from a FSSnapshot message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.FSSnapshot
+             * @static
+             * @param {api.FSSnapshot} message FSSnapshot
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            FSSnapshot.toObject = function toObject() {
+                return {};
+            };
+    
+            /**
+             * Converts this FSSnapshot to JSON.
+             * @function toJSON
+             * @memberof api.FSSnapshot
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            FSSnapshot.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return FSSnapshot;
         })();
     
         api.SubscribeFile = (function() {
