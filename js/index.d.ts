@@ -68,6 +68,9 @@ export namespace api {
         /** Command persist */
         persist?: (api.IFile|null);
 
+        /** Command persistMirror */
+        persistMirror?: (api.IFile|null);
+
         /** Command write */
         write?: (api.IFile|null);
 
@@ -157,6 +160,12 @@ export namespace api {
 
         /** Command mutliFileAuthRes */
         mutliFileAuthRes?: (api.IMultiFileAuthRes|null);
+
+        /** Command listObjects */
+        listObjects?: (api.IListObjects|null);
+
+        /** Command listObjectsResp */
+        listObjectsResp?: (api.IListObjectsResp|null);
 
         /** Command ot */
         ot?: (api.IOTPacket|null);
@@ -351,6 +360,9 @@ export namespace api {
         /** Command persist. */
         public persist?: (api.IFile|null);
 
+        /** Command persistMirror. */
+        public persistMirror?: (api.IFile|null);
+
         /** Command write. */
         public write?: (api.IFile|null);
 
@@ -440,6 +452,12 @@ export namespace api {
 
         /** Command mutliFileAuthRes. */
         public mutliFileAuthRes?: (api.IMultiFileAuthRes|null);
+
+        /** Command listObjects. */
+        public listObjects?: (api.IListObjects|null);
+
+        /** Command listObjectsResp. */
+        public listObjectsResp?: (api.IListObjectsResp|null);
 
         /** Command ot. */
         public ot?: (api.IOTPacket|null);
@@ -562,7 +580,7 @@ export namespace api {
         public ref: string;
 
         /** Command body. */
-        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribe"|"eventCreated"|"eventModified"|"eventDeleted"|"eventMoved"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock");
+        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribe"|"eventCreated"|"eventModified"|"eventDeleted"|"eventMoved"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock");
 
         /**
          * Creates a new Command instance using the specified properties.
@@ -1961,6 +1979,9 @@ export namespace api {
 
         /** MultiFileAuthRes del */
         del?: (api.IFileAuthRes|null);
+
+        /** MultiFileAuthRes get */
+        get?: (api.IFileAuthRes|null);
     }
 
     /** Represents a MultiFileAuthRes. */
@@ -1977,6 +1998,9 @@ export namespace api {
 
         /** MultiFileAuthRes del. */
         public del?: (api.IFileAuthRes|null);
+
+        /** MultiFileAuthRes get. */
+        public get?: (api.IFileAuthRes|null);
 
         /**
          * Creates a new MultiFileAuthRes instance using the specified properties.
@@ -2158,6 +2182,186 @@ export namespace api {
 
         /**
          * Converts this FileAuthRes to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a ListObjects. */
+    interface IListObjects {
+
+        /** ListObjects prefix */
+        prefix?: (string|null);
+    }
+
+    /** Represents a ListObjects. */
+    class ListObjects implements IListObjects {
+
+        /**
+         * Constructs a new ListObjects.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: api.IListObjects);
+
+        /** ListObjects prefix. */
+        public prefix: string;
+
+        /**
+         * Creates a new ListObjects instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns ListObjects instance
+         */
+        public static create(properties?: api.IListObjects): api.ListObjects;
+
+        /**
+         * Encodes the specified ListObjects message. Does not implicitly {@link api.ListObjects.verify|verify} messages.
+         * @param message ListObjects message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.IListObjects, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified ListObjects message, length delimited. Does not implicitly {@link api.ListObjects.verify|verify} messages.
+         * @param message ListObjects message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.IListObjects, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a ListObjects message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns ListObjects
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.ListObjects;
+
+        /**
+         * Decodes a ListObjects message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns ListObjects
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.ListObjects;
+
+        /**
+         * Verifies a ListObjects message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a ListObjects message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns ListObjects
+         */
+        public static fromObject(object: { [k: string]: any }): api.ListObjects;
+
+        /**
+         * Creates a plain object from a ListObjects message. Also converts values to other types if specified.
+         * @param message ListObjects
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.ListObjects, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this ListObjects to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a ListObjectsResp. */
+    interface IListObjectsResp {
+
+        /** ListObjectsResp objects */
+        objects?: (string[]|null);
+    }
+
+    /** Represents a ListObjectsResp. */
+    class ListObjectsResp implements IListObjectsResp {
+
+        /**
+         * Constructs a new ListObjectsResp.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: api.IListObjectsResp);
+
+        /** ListObjectsResp objects. */
+        public objects: string[];
+
+        /**
+         * Creates a new ListObjectsResp instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns ListObjectsResp instance
+         */
+        public static create(properties?: api.IListObjectsResp): api.ListObjectsResp;
+
+        /**
+         * Encodes the specified ListObjectsResp message. Does not implicitly {@link api.ListObjectsResp.verify|verify} messages.
+         * @param message ListObjectsResp message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.IListObjectsResp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified ListObjectsResp message, length delimited. Does not implicitly {@link api.ListObjectsResp.verify|verify} messages.
+         * @param message ListObjectsResp message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.IListObjectsResp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a ListObjectsResp message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns ListObjectsResp
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.ListObjectsResp;
+
+        /**
+         * Decodes a ListObjectsResp message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns ListObjectsResp
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.ListObjectsResp;
+
+        /**
+         * Verifies a ListObjectsResp message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a ListObjectsResp message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns ListObjectsResp
+         */
+        public static fromObject(object: { [k: string]: any }): api.ListObjectsResp;
+
+        /**
+         * Creates a plain object from a ListObjectsResp message. Also converts values to other types if specified.
+         * @param message ListObjectsResp
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.ListObjectsResp, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this ListObjectsResp to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };

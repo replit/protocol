@@ -46,6 +46,7 @@ message Command {
     OK ok = 30;
 
     File persist = 31;
+    File persistMirror = 41;
     File write = 32;
     File remove = 33;
     Move move = 34;
@@ -87,6 +88,9 @@ message Command {
     FileAuthReq fileAuthReq = 200;
     FileAuthRes fileAuthRes = 201;
     MultiFileAuthRes mutliFileAuthRes = 202;
+
+    ListObjects listObjects = 205;
+    ListObjectsResp listObjectsResp = 206;
 
     OTPacket ot = 220;
     OTStatus otstatus = 221;
@@ -209,6 +213,7 @@ message FileAuthReq {
 message MultiFileAuthRes {
   FileAuthRes put = 1;
   FileAuthRes del = 2;
+  FileAuthRes get = 3;
 }
 
 message FileAuthRes {
@@ -220,6 +225,14 @@ message FileAuthRes {
   int64 expire = 4;
 
   string error = 5;
+}
+
+message ListObjects {
+  string prefix = 1;
+}
+
+message ListObjectsResp {
+  repeated string objects = 1;
 }
 
 message Disconnect { string error = 1; }

@@ -52,6 +52,7 @@
              * @property {api.State|null} [state] Command state
              * @property {api.IOK|null} [ok] Command ok
              * @property {api.IFile|null} [persist] Command persist
+             * @property {api.IFile|null} [persistMirror] Command persistMirror
              * @property {api.IFile|null} [write] Command write
              * @property {api.IFile|null} [remove] Command remove
              * @property {api.IMove|null} [move] Command move
@@ -82,6 +83,8 @@
              * @property {api.IFileAuthReq|null} [fileAuthReq] Command fileAuthReq
              * @property {api.IFileAuthRes|null} [fileAuthRes] Command fileAuthRes
              * @property {api.IMultiFileAuthRes|null} [mutliFileAuthRes] Command mutliFileAuthRes
+             * @property {api.IListObjects|null} [listObjects] Command listObjects
+             * @property {api.IListObjectsResp|null} [listObjectsResp] Command listObjectsResp
              * @property {api.IOTPacket|null} [ot] Command ot
              * @property {api.IOTStatus|null} [otstatus] Command otstatus
              * @property {api.IOTLinkFile|null} [otLinkFile] Command otLinkFile
@@ -306,6 +309,14 @@
              * @instance
              */
             Command.prototype.persist = null;
+    
+            /**
+             * Command persistMirror.
+             * @member {api.IFile|null|undefined} persistMirror
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.persistMirror = null;
     
             /**
              * Command write.
@@ -546,6 +557,22 @@
              * @instance
              */
             Command.prototype.mutliFileAuthRes = null;
+    
+            /**
+             * Command listObjects.
+             * @member {api.IListObjects|null|undefined} listObjects
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.listObjects = null;
+    
+            /**
+             * Command listObjectsResp.
+             * @member {api.IListObjectsResp|null|undefined} listObjectsResp
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.listObjectsResp = null;
     
             /**
              * Command ot.
@@ -872,12 +899,12 @@
     
             /**
              * Command body.
-             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribe"|"eventCreated"|"eventModified"|"eventDeleted"|"eventMoved"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|undefined} body
+             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribe"|"eventCreated"|"eventModified"|"eventDeleted"|"eventMoved"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|undefined} body
              * @memberof api.Command
              * @instance
              */
             Object.defineProperty(Command.prototype, "body", {
-                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "write", "remove", "move", "tryRemove", "mkdir", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribe", "eventCreated", "eventModified", "eventDeleted", "eventMoved", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock"]),
+                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribe", "eventCreated", "eventModified", "eventDeleted", "eventMoved", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
     
@@ -965,6 +992,8 @@
                     $root.api.File.encode(message.mkdir, writer.uint32(/* id 39, wireType 2 =*/314).fork()).ldelim();
                 if (message.file != null && message.hasOwnProperty("file"))
                     $root.api.File.encode(message.file, writer.uint32(/* id 40, wireType 2 =*/322).fork()).ldelim();
+                if (message.persistMirror != null && message.hasOwnProperty("persistMirror"))
+                    $root.api.File.encode(message.persistMirror, writer.uint32(/* id 41, wireType 2 =*/330).fork()).ldelim();
                 if (message.checkChanges != null && message.hasOwnProperty("checkChanges"))
                     $root.api.CheckChanges.encode(message.checkChanges, writer.uint32(/* id 42, wireType 2 =*/338).fork()).ldelim();
                 if (message.changedFiles != null && message.hasOwnProperty("changedFiles"))
@@ -1007,6 +1036,10 @@
                     $root.api.FileAuthRes.encode(message.fileAuthRes, writer.uint32(/* id 201, wireType 2 =*/1610).fork()).ldelim();
                 if (message.mutliFileAuthRes != null && message.hasOwnProperty("mutliFileAuthRes"))
                     $root.api.MultiFileAuthRes.encode(message.mutliFileAuthRes, writer.uint32(/* id 202, wireType 2 =*/1618).fork()).ldelim();
+                if (message.listObjects != null && message.hasOwnProperty("listObjects"))
+                    $root.api.ListObjects.encode(message.listObjects, writer.uint32(/* id 205, wireType 2 =*/1642).fork()).ldelim();
+                if (message.listObjectsResp != null && message.hasOwnProperty("listObjectsResp"))
+                    $root.api.ListObjectsResp.encode(message.listObjectsResp, writer.uint32(/* id 206, wireType 2 =*/1650).fork()).ldelim();
                 if (message.ot != null && message.hasOwnProperty("ot"))
                     $root.api.OTPacket.encode(message.ot, writer.uint32(/* id 220, wireType 2 =*/1762).fork()).ldelim();
                 if (message.otstatus != null && message.hasOwnProperty("otstatus"))
@@ -1184,6 +1217,9 @@
                     case 31:
                         message.persist = $root.api.File.decode(reader, reader.uint32());
                         break;
+                    case 41:
+                        message.persistMirror = $root.api.File.decode(reader, reader.uint32());
+                        break;
                     case 32:
                         message.write = $root.api.File.decode(reader, reader.uint32());
                         break;
@@ -1273,6 +1309,12 @@
                         break;
                     case 202:
                         message.mutliFileAuthRes = $root.api.MultiFileAuthRes.decode(reader, reader.uint32());
+                        break;
+                    case 205:
+                        message.listObjects = $root.api.ListObjects.decode(reader, reader.uint32());
+                        break;
+                    case 206:
+                        message.listObjectsResp = $root.api.ListObjectsResp.decode(reader, reader.uint32());
                         break;
                     case 220:
                         message.ot = $root.api.OTPacket.decode(reader, reader.uint32());
@@ -1611,6 +1653,16 @@
                             return "persist." + error;
                     }
                 }
+                if (message.persistMirror != null && message.hasOwnProperty("persistMirror")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.File.verify(message.persistMirror);
+                        if (error)
+                            return "persistMirror." + error;
+                    }
+                }
                 if (message.write != null && message.hasOwnProperty("write")) {
                     if (properties.body === 1)
                         return "body: multiple values";
@@ -1906,6 +1958,26 @@
                         var error = $root.api.MultiFileAuthRes.verify(message.mutliFileAuthRes);
                         if (error)
                             return "mutliFileAuthRes." + error;
+                    }
+                }
+                if (message.listObjects != null && message.hasOwnProperty("listObjects")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.ListObjects.verify(message.listObjects);
+                        if (error)
+                            return "listObjects." + error;
+                    }
+                }
+                if (message.listObjectsResp != null && message.hasOwnProperty("listObjectsResp")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.ListObjectsResp.verify(message.listObjectsResp);
+                        if (error)
+                            return "listObjectsResp." + error;
                     }
                 }
                 if (message.ot != null && message.hasOwnProperty("ot")) {
@@ -2405,6 +2477,11 @@
                         throw TypeError(".api.Command.persist: object expected");
                     message.persist = $root.api.File.fromObject(object.persist);
                 }
+                if (object.persistMirror != null) {
+                    if (typeof object.persistMirror !== "object")
+                        throw TypeError(".api.Command.persistMirror: object expected");
+                    message.persistMirror = $root.api.File.fromObject(object.persistMirror);
+                }
                 if (object.write != null) {
                     if (typeof object.write !== "object")
                         throw TypeError(".api.Command.write: object expected");
@@ -2551,6 +2628,16 @@
                     if (typeof object.mutliFileAuthRes !== "object")
                         throw TypeError(".api.Command.mutliFileAuthRes: object expected");
                     message.mutliFileAuthRes = $root.api.MultiFileAuthRes.fromObject(object.mutliFileAuthRes);
+                }
+                if (object.listObjects != null) {
+                    if (typeof object.listObjects !== "object")
+                        throw TypeError(".api.Command.listObjects: object expected");
+                    message.listObjects = $root.api.ListObjects.fromObject(object.listObjects);
+                }
+                if (object.listObjectsResp != null) {
+                    if (typeof object.listObjectsResp !== "object")
+                        throw TypeError(".api.Command.listObjectsResp: object expected");
+                    message.listObjectsResp = $root.api.ListObjectsResp.fromObject(object.listObjectsResp);
                 }
                 if (object.ot != null) {
                     if (typeof object.ot !== "object")
@@ -2914,6 +3001,11 @@
                     if (options.oneofs)
                         object.body = "file";
                 }
+                if (message.persistMirror != null && message.hasOwnProperty("persistMirror")) {
+                    object.persistMirror = $root.api.File.toObject(message.persistMirror, options);
+                    if (options.oneofs)
+                        object.body = "persistMirror";
+                }
                 if (message.checkChanges != null && message.hasOwnProperty("checkChanges")) {
                     object.checkChanges = $root.api.CheckChanges.toObject(message.checkChanges, options);
                     if (options.oneofs)
@@ -3018,6 +3110,16 @@
                     object.mutliFileAuthRes = $root.api.MultiFileAuthRes.toObject(message.mutliFileAuthRes, options);
                     if (options.oneofs)
                         object.body = "mutliFileAuthRes";
+                }
+                if (message.listObjects != null && message.hasOwnProperty("listObjects")) {
+                    object.listObjects = $root.api.ListObjects.toObject(message.listObjects, options);
+                    if (options.oneofs)
+                        object.body = "listObjects";
+                }
+                if (message.listObjectsResp != null && message.hasOwnProperty("listObjectsResp")) {
+                    object.listObjectsResp = $root.api.ListObjectsResp.toObject(message.listObjectsResp, options);
+                    if (options.oneofs)
+                        object.body = "listObjectsResp";
                 }
                 if (message.ot != null && message.hasOwnProperty("ot")) {
                     object.ot = $root.api.OTPacket.toObject(message.ot, options);
@@ -6166,6 +6268,7 @@
              * @interface IMultiFileAuthRes
              * @property {api.IFileAuthRes|null} [put] MultiFileAuthRes put
              * @property {api.IFileAuthRes|null} [del] MultiFileAuthRes del
+             * @property {api.IFileAuthRes|null} [get] MultiFileAuthRes get
              */
     
             /**
@@ -6200,6 +6303,14 @@
             MultiFileAuthRes.prototype.del = null;
     
             /**
+             * MultiFileAuthRes get.
+             * @member {api.IFileAuthRes|null|undefined} get
+             * @memberof api.MultiFileAuthRes
+             * @instance
+             */
+            MultiFileAuthRes.prototype.get = null;
+    
+            /**
              * Creates a new MultiFileAuthRes instance using the specified properties.
              * @function create
              * @memberof api.MultiFileAuthRes
@@ -6227,6 +6338,8 @@
                     $root.api.FileAuthRes.encode(message.put, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.del != null && message.hasOwnProperty("del"))
                     $root.api.FileAuthRes.encode(message.del, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.get != null && message.hasOwnProperty("get"))
+                    $root.api.FileAuthRes.encode(message.get, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 return writer;
             };
     
@@ -6266,6 +6379,9 @@
                         break;
                     case 2:
                         message.del = $root.api.FileAuthRes.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.get = $root.api.FileAuthRes.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -6312,6 +6428,11 @@
                     if (error)
                         return "del." + error;
                 }
+                if (message.get != null && message.hasOwnProperty("get")) {
+                    var error = $root.api.FileAuthRes.verify(message.get);
+                    if (error)
+                        return "get." + error;
+                }
                 return null;
             };
     
@@ -6337,6 +6458,11 @@
                         throw TypeError(".api.MultiFileAuthRes.del: object expected");
                     message.del = $root.api.FileAuthRes.fromObject(object.del);
                 }
+                if (object.get != null) {
+                    if (typeof object.get !== "object")
+                        throw TypeError(".api.MultiFileAuthRes.get: object expected");
+                    message.get = $root.api.FileAuthRes.fromObject(object.get);
+                }
                 return message;
             };
     
@@ -6356,11 +6482,14 @@
                 if (options.defaults) {
                     object.put = null;
                     object.del = null;
+                    object.get = null;
                 }
                 if (message.put != null && message.hasOwnProperty("put"))
                     object.put = $root.api.FileAuthRes.toObject(message.put, options);
                 if (message.del != null && message.hasOwnProperty("del"))
                     object.del = $root.api.FileAuthRes.toObject(message.del, options);
+                if (message.get != null && message.hasOwnProperty("get"))
+                    object.get = $root.api.FileAuthRes.toObject(message.get, options);
                 return object;
             };
     
@@ -6694,6 +6823,396 @@
             };
     
             return FileAuthRes;
+        })();
+    
+        api.ListObjects = (function() {
+    
+            /**
+             * Properties of a ListObjects.
+             * @memberof api
+             * @interface IListObjects
+             * @property {string|null} [prefix] ListObjects prefix
+             */
+    
+            /**
+             * Constructs a new ListObjects.
+             * @memberof api
+             * @classdesc Represents a ListObjects.
+             * @implements IListObjects
+             * @constructor
+             * @param {api.IListObjects=} [properties] Properties to set
+             */
+            function ListObjects(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * ListObjects prefix.
+             * @member {string} prefix
+             * @memberof api.ListObjects
+             * @instance
+             */
+            ListObjects.prototype.prefix = "";
+    
+            /**
+             * Creates a new ListObjects instance using the specified properties.
+             * @function create
+             * @memberof api.ListObjects
+             * @static
+             * @param {api.IListObjects=} [properties] Properties to set
+             * @returns {api.ListObjects} ListObjects instance
+             */
+            ListObjects.create = function create(properties) {
+                return new ListObjects(properties);
+            };
+    
+            /**
+             * Encodes the specified ListObjects message. Does not implicitly {@link api.ListObjects.verify|verify} messages.
+             * @function encode
+             * @memberof api.ListObjects
+             * @static
+             * @param {api.IListObjects} message ListObjects message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ListObjects.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.prefix != null && message.hasOwnProperty("prefix"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.prefix);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified ListObjects message, length delimited. Does not implicitly {@link api.ListObjects.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.ListObjects
+             * @static
+             * @param {api.IListObjects} message ListObjects message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ListObjects.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a ListObjects message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.ListObjects
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.ListObjects} ListObjects
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ListObjects.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.ListObjects();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.prefix = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a ListObjects message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.ListObjects
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.ListObjects} ListObjects
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ListObjects.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a ListObjects message.
+             * @function verify
+             * @memberof api.ListObjects
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ListObjects.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.prefix != null && message.hasOwnProperty("prefix"))
+                    if (!$util.isString(message.prefix))
+                        return "prefix: string expected";
+                return null;
+            };
+    
+            /**
+             * Creates a ListObjects message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.ListObjects
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.ListObjects} ListObjects
+             */
+            ListObjects.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.ListObjects)
+                    return object;
+                var message = new $root.api.ListObjects();
+                if (object.prefix != null)
+                    message.prefix = String(object.prefix);
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a ListObjects message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.ListObjects
+             * @static
+             * @param {api.ListObjects} message ListObjects
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            ListObjects.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    object.prefix = "";
+                if (message.prefix != null && message.hasOwnProperty("prefix"))
+                    object.prefix = message.prefix;
+                return object;
+            };
+    
+            /**
+             * Converts this ListObjects to JSON.
+             * @function toJSON
+             * @memberof api.ListObjects
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            ListObjects.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return ListObjects;
+        })();
+    
+        api.ListObjectsResp = (function() {
+    
+            /**
+             * Properties of a ListObjectsResp.
+             * @memberof api
+             * @interface IListObjectsResp
+             * @property {Array.<string>|null} [objects] ListObjectsResp objects
+             */
+    
+            /**
+             * Constructs a new ListObjectsResp.
+             * @memberof api
+             * @classdesc Represents a ListObjectsResp.
+             * @implements IListObjectsResp
+             * @constructor
+             * @param {api.IListObjectsResp=} [properties] Properties to set
+             */
+            function ListObjectsResp(properties) {
+                this.objects = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * ListObjectsResp objects.
+             * @member {Array.<string>} objects
+             * @memberof api.ListObjectsResp
+             * @instance
+             */
+            ListObjectsResp.prototype.objects = $util.emptyArray;
+    
+            /**
+             * Creates a new ListObjectsResp instance using the specified properties.
+             * @function create
+             * @memberof api.ListObjectsResp
+             * @static
+             * @param {api.IListObjectsResp=} [properties] Properties to set
+             * @returns {api.ListObjectsResp} ListObjectsResp instance
+             */
+            ListObjectsResp.create = function create(properties) {
+                return new ListObjectsResp(properties);
+            };
+    
+            /**
+             * Encodes the specified ListObjectsResp message. Does not implicitly {@link api.ListObjectsResp.verify|verify} messages.
+             * @function encode
+             * @memberof api.ListObjectsResp
+             * @static
+             * @param {api.IListObjectsResp} message ListObjectsResp message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ListObjectsResp.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.objects != null && message.objects.length)
+                    for (var i = 0; i < message.objects.length; ++i)
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.objects[i]);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified ListObjectsResp message, length delimited. Does not implicitly {@link api.ListObjectsResp.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.ListObjectsResp
+             * @static
+             * @param {api.IListObjectsResp} message ListObjectsResp message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ListObjectsResp.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a ListObjectsResp message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.ListObjectsResp
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.ListObjectsResp} ListObjectsResp
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ListObjectsResp.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.ListObjectsResp();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.objects && message.objects.length))
+                            message.objects = [];
+                        message.objects.push(reader.string());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a ListObjectsResp message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.ListObjectsResp
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.ListObjectsResp} ListObjectsResp
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ListObjectsResp.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a ListObjectsResp message.
+             * @function verify
+             * @memberof api.ListObjectsResp
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ListObjectsResp.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.objects != null && message.hasOwnProperty("objects")) {
+                    if (!Array.isArray(message.objects))
+                        return "objects: array expected";
+                    for (var i = 0; i < message.objects.length; ++i)
+                        if (!$util.isString(message.objects[i]))
+                            return "objects: string[] expected";
+                }
+                return null;
+            };
+    
+            /**
+             * Creates a ListObjectsResp message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.ListObjectsResp
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.ListObjectsResp} ListObjectsResp
+             */
+            ListObjectsResp.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.ListObjectsResp)
+                    return object;
+                var message = new $root.api.ListObjectsResp();
+                if (object.objects) {
+                    if (!Array.isArray(object.objects))
+                        throw TypeError(".api.ListObjectsResp.objects: array expected");
+                    message.objects = [];
+                    for (var i = 0; i < object.objects.length; ++i)
+                        message.objects[i] = String(object.objects[i]);
+                }
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a ListObjectsResp message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.ListObjectsResp
+             * @static
+             * @param {api.ListObjectsResp} message ListObjectsResp
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            ListObjectsResp.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.objects = [];
+                if (message.objects && message.objects.length) {
+                    object.objects = [];
+                    for (var j = 0; j < message.objects.length; ++j)
+                        object.objects[j] = message.objects[j];
+                }
+                return object;
+            };
+    
+            /**
+             * Converts this ListObjectsResp to JSON.
+             * @function toJSON
+             * @memberof api.ListObjectsResp
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            ListObjectsResp.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return ListObjectsResp;
         })();
     
         api.Disconnect = (function() {
