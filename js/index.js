@@ -97,11 +97,6 @@
              * @property {api.IVCRLog|null} [VCRLog] Command VCRLog
              * @property {api.IAuth|null} [auth] Command auth
              * @property {api.IExecInfo|null} [execInfo] Command execInfo
-             * @property {api.IFile|null} [subscribe] Command subscribe
-             * @property {api.IFile|null} [eventCreated] Command eventCreated
-             * @property {api.IFile|null} [eventModified] Command eventModified
-             * @property {api.IFile|null} [eventDeleted] Command eventDeleted
-             * @property {api.IMove|null} [eventMoved] Command eventMoved
              * @property {api.ISubscribeFile|null} [subscribeFile] Command subscribeFile
              * @property {api.IFileEvent|null} [fileEvent] Command fileEvent
              * @property {api.IRoster|null} [roster] Command roster
@@ -124,6 +119,8 @@
              * @property {api.IFSSnapshot|null} [fsSnapshot] Command fsSnapshot
              * @property {api.IFSLock|null} [fsTakeLock] Command fsTakeLock
              * @property {api.IFSLock|null} [fsReleaseLock] Command fsReleaseLock
+             * @property {boolean|null} [hasCap] Command hasCap
+             * @property {api.IPid1Config|null} [pid1Config] Command pid1Config
              * @property {string|null} [ref] Command ref
              */
     
@@ -671,46 +668,6 @@
             Command.prototype.execInfo = null;
     
             /**
-             * Command subscribe.
-             * @member {api.IFile|null|undefined} subscribe
-             * @memberof api.Command
-             * @instance
-             */
-            Command.prototype.subscribe = null;
-    
-            /**
-             * Command eventCreated.
-             * @member {api.IFile|null|undefined} eventCreated
-             * @memberof api.Command
-             * @instance
-             */
-            Command.prototype.eventCreated = null;
-    
-            /**
-             * Command eventModified.
-             * @member {api.IFile|null|undefined} eventModified
-             * @memberof api.Command
-             * @instance
-             */
-            Command.prototype.eventModified = null;
-    
-            /**
-             * Command eventDeleted.
-             * @member {api.IFile|null|undefined} eventDeleted
-             * @memberof api.Command
-             * @instance
-             */
-            Command.prototype.eventDeleted = null;
-    
-            /**
-             * Command eventMoved.
-             * @member {api.IMove|null|undefined} eventMoved
-             * @memberof api.Command
-             * @instance
-             */
-            Command.prototype.eventMoved = null;
-    
-            /**
              * Command subscribeFile.
              * @member {api.ISubscribeFile|null|undefined} subscribeFile
              * @memberof api.Command
@@ -887,6 +844,22 @@
             Command.prototype.fsReleaseLock = null;
     
             /**
+             * Command hasCap.
+             * @member {boolean} hasCap
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.hasCap = false;
+    
+            /**
+             * Command pid1Config.
+             * @member {api.IPid1Config|null|undefined} pid1Config
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.pid1Config = null;
+    
+            /**
              * Command ref.
              * @member {string} ref
              * @memberof api.Command
@@ -899,12 +872,12 @@
     
             /**
              * Command body.
-             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribe"|"eventCreated"|"eventModified"|"eventDeleted"|"eventMoved"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|undefined} body
+             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|undefined} body
              * @memberof api.Command
              * @instance
              */
             Object.defineProperty(Command.prototype, "body", {
-                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribe", "eventCreated", "eventModified", "eventDeleted", "eventMoved", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock"]),
+                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock", "hasCap", "pid1Config"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
     
@@ -1062,18 +1035,8 @@
                     $root.api.Auth.encode(message.auth, writer.uint32(/* id 235, wireType 2 =*/1882).fork()).ldelim();
                 if (message.execInfo != null && message.hasOwnProperty("execInfo"))
                     $root.api.ExecInfo.encode(message.execInfo, writer.uint32(/* id 240, wireType 2 =*/1922).fork()).ldelim();
-                if (message.subscribe != null && message.hasOwnProperty("subscribe"))
-                    $root.api.File.encode(message.subscribe, writer.uint32(/* id 250, wireType 2 =*/2002).fork()).ldelim();
                 if (message.flush != null && message.hasOwnProperty("flush"))
                     $root.api.Flush.encode(message.flush, writer.uint32(/* id 251, wireType 2 =*/2010).fork()).ldelim();
-                if (message.eventCreated != null && message.hasOwnProperty("eventCreated"))
-                    $root.api.File.encode(message.eventCreated, writer.uint32(/* id 252, wireType 2 =*/2018).fork()).ldelim();
-                if (message.eventModified != null && message.hasOwnProperty("eventModified"))
-                    $root.api.File.encode(message.eventModified, writer.uint32(/* id 253, wireType 2 =*/2026).fork()).ldelim();
-                if (message.eventDeleted != null && message.hasOwnProperty("eventDeleted"))
-                    $root.api.File.encode(message.eventDeleted, writer.uint32(/* id 254, wireType 2 =*/2034).fork()).ldelim();
-                if (message.eventMoved != null && message.hasOwnProperty("eventMoved"))
-                    $root.api.Move.encode(message.eventMoved, writer.uint32(/* id 255, wireType 2 =*/2042).fork()).ldelim();
                 if (message.subscribeFile != null && message.hasOwnProperty("subscribeFile"))
                     $root.api.SubscribeFile.encode(message.subscribeFile, writer.uint32(/* id 256, wireType 2 =*/2050).fork()).ldelim();
                 if (message.fileEvent != null && message.hasOwnProperty("fileEvent"))
@@ -1118,6 +1081,10 @@
                     $root.api.FSLock.encode(message.fsTakeLock, writer.uint32(/* id 331, wireType 2 =*/2650).fork()).ldelim();
                 if (message.fsReleaseLock != null && message.hasOwnProperty("fsReleaseLock"))
                     $root.api.FSLock.encode(message.fsReleaseLock, writer.uint32(/* id 332, wireType 2 =*/2658).fork()).ldelim();
+                if (message.hasCap != null && message.hasOwnProperty("hasCap"))
+                    writer.uint32(/* id 335, wireType 0 =*/2680).bool(message.hasCap);
+                if (message.pid1Config != null && message.hasOwnProperty("pid1Config"))
+                    $root.api.Pid1Config.encode(message.pid1Config, writer.uint32(/* id 340, wireType 2 =*/2722).fork()).ldelim();
                 if (message.ref != null && message.hasOwnProperty("ref"))
                     writer.uint32(/* id 1000, wireType 2 =*/8002).string(message.ref);
                 return writer;
@@ -1352,21 +1319,6 @@
                     case 240:
                         message.execInfo = $root.api.ExecInfo.decode(reader, reader.uint32());
                         break;
-                    case 250:
-                        message.subscribe = $root.api.File.decode(reader, reader.uint32());
-                        break;
-                    case 252:
-                        message.eventCreated = $root.api.File.decode(reader, reader.uint32());
-                        break;
-                    case 253:
-                        message.eventModified = $root.api.File.decode(reader, reader.uint32());
-                        break;
-                    case 254:
-                        message.eventDeleted = $root.api.File.decode(reader, reader.uint32());
-                        break;
-                    case 255:
-                        message.eventMoved = $root.api.Move.decode(reader, reader.uint32());
-                        break;
                     case 256:
                         message.subscribeFile = $root.api.SubscribeFile.decode(reader, reader.uint32());
                         break;
@@ -1432,6 +1384,12 @@
                         break;
                     case 332:
                         message.fsReleaseLock = $root.api.FSLock.decode(reader, reader.uint32());
+                        break;
+                    case 335:
+                        message.hasCap = reader.bool();
+                        break;
+                    case 340:
+                        message.pid1Config = $root.api.Pid1Config.decode(reader, reader.uint32());
                         break;
                     case 1000:
                         message.ref = reader.string();
@@ -2100,56 +2058,6 @@
                             return "execInfo." + error;
                     }
                 }
-                if (message.subscribe != null && message.hasOwnProperty("subscribe")) {
-                    if (properties.body === 1)
-                        return "body: multiple values";
-                    properties.body = 1;
-                    {
-                        var error = $root.api.File.verify(message.subscribe);
-                        if (error)
-                            return "subscribe." + error;
-                    }
-                }
-                if (message.eventCreated != null && message.hasOwnProperty("eventCreated")) {
-                    if (properties.body === 1)
-                        return "body: multiple values";
-                    properties.body = 1;
-                    {
-                        var error = $root.api.File.verify(message.eventCreated);
-                        if (error)
-                            return "eventCreated." + error;
-                    }
-                }
-                if (message.eventModified != null && message.hasOwnProperty("eventModified")) {
-                    if (properties.body === 1)
-                        return "body: multiple values";
-                    properties.body = 1;
-                    {
-                        var error = $root.api.File.verify(message.eventModified);
-                        if (error)
-                            return "eventModified." + error;
-                    }
-                }
-                if (message.eventDeleted != null && message.hasOwnProperty("eventDeleted")) {
-                    if (properties.body === 1)
-                        return "body: multiple values";
-                    properties.body = 1;
-                    {
-                        var error = $root.api.File.verify(message.eventDeleted);
-                        if (error)
-                            return "eventDeleted." + error;
-                    }
-                }
-                if (message.eventMoved != null && message.hasOwnProperty("eventMoved")) {
-                    if (properties.body === 1)
-                        return "body: multiple values";
-                    properties.body = 1;
-                    {
-                        var error = $root.api.Move.verify(message.eventMoved);
-                        if (error)
-                            return "eventMoved." + error;
-                    }
-                }
                 if (message.subscribeFile != null && message.hasOwnProperty("subscribeFile")) {
                     if (properties.body === 1)
                         return "body: multiple values";
@@ -2368,6 +2276,23 @@
                         var error = $root.api.FSLock.verify(message.fsReleaseLock);
                         if (error)
                             return "fsReleaseLock." + error;
+                    }
+                }
+                if (message.hasCap != null && message.hasOwnProperty("hasCap")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    if (typeof message.hasCap !== "boolean")
+                        return "hasCap: boolean expected";
+                }
+                if (message.pid1Config != null && message.hasOwnProperty("pid1Config")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.Pid1Config.verify(message.pid1Config);
+                        if (error)
+                            return "pid1Config." + error;
                     }
                 }
                 if (message.ref != null && message.hasOwnProperty("ref"))
@@ -2699,31 +2624,6 @@
                         throw TypeError(".api.Command.execInfo: object expected");
                     message.execInfo = $root.api.ExecInfo.fromObject(object.execInfo);
                 }
-                if (object.subscribe != null) {
-                    if (typeof object.subscribe !== "object")
-                        throw TypeError(".api.Command.subscribe: object expected");
-                    message.subscribe = $root.api.File.fromObject(object.subscribe);
-                }
-                if (object.eventCreated != null) {
-                    if (typeof object.eventCreated !== "object")
-                        throw TypeError(".api.Command.eventCreated: object expected");
-                    message.eventCreated = $root.api.File.fromObject(object.eventCreated);
-                }
-                if (object.eventModified != null) {
-                    if (typeof object.eventModified !== "object")
-                        throw TypeError(".api.Command.eventModified: object expected");
-                    message.eventModified = $root.api.File.fromObject(object.eventModified);
-                }
-                if (object.eventDeleted != null) {
-                    if (typeof object.eventDeleted !== "object")
-                        throw TypeError(".api.Command.eventDeleted: object expected");
-                    message.eventDeleted = $root.api.File.fromObject(object.eventDeleted);
-                }
-                if (object.eventMoved != null) {
-                    if (typeof object.eventMoved !== "object")
-                        throw TypeError(".api.Command.eventMoved: object expected");
-                    message.eventMoved = $root.api.Move.fromObject(object.eventMoved);
-                }
                 if (object.subscribeFile != null) {
                     if (typeof object.subscribeFile !== "object")
                         throw TypeError(".api.Command.subscribeFile: object expected");
@@ -2833,6 +2733,13 @@
                     if (typeof object.fsReleaseLock !== "object")
                         throw TypeError(".api.Command.fsReleaseLock: object expected");
                     message.fsReleaseLock = $root.api.FSLock.fromObject(object.fsReleaseLock);
+                }
+                if (object.hasCap != null)
+                    message.hasCap = Boolean(object.hasCap);
+                if (object.pid1Config != null) {
+                    if (typeof object.pid1Config !== "object")
+                        throw TypeError(".api.Command.pid1Config: object expected");
+                    message.pid1Config = $root.api.Pid1Config.fromObject(object.pid1Config);
                 }
                 if (object.ref != null)
                     message.ref = String(object.ref);
@@ -3176,35 +3083,10 @@
                     if (options.oneofs)
                         object.body = "execInfo";
                 }
-                if (message.subscribe != null && message.hasOwnProperty("subscribe")) {
-                    object.subscribe = $root.api.File.toObject(message.subscribe, options);
-                    if (options.oneofs)
-                        object.body = "subscribe";
-                }
                 if (message.flush != null && message.hasOwnProperty("flush")) {
                     object.flush = $root.api.Flush.toObject(message.flush, options);
                     if (options.oneofs)
                         object.body = "flush";
-                }
-                if (message.eventCreated != null && message.hasOwnProperty("eventCreated")) {
-                    object.eventCreated = $root.api.File.toObject(message.eventCreated, options);
-                    if (options.oneofs)
-                        object.body = "eventCreated";
-                }
-                if (message.eventModified != null && message.hasOwnProperty("eventModified")) {
-                    object.eventModified = $root.api.File.toObject(message.eventModified, options);
-                    if (options.oneofs)
-                        object.body = "eventModified";
-                }
-                if (message.eventDeleted != null && message.hasOwnProperty("eventDeleted")) {
-                    object.eventDeleted = $root.api.File.toObject(message.eventDeleted, options);
-                    if (options.oneofs)
-                        object.body = "eventDeleted";
-                }
-                if (message.eventMoved != null && message.hasOwnProperty("eventMoved")) {
-                    object.eventMoved = $root.api.Move.toObject(message.eventMoved, options);
-                    if (options.oneofs)
-                        object.body = "eventMoved";
                 }
                 if (message.subscribeFile != null && message.hasOwnProperty("subscribeFile")) {
                     object.subscribeFile = $root.api.SubscribeFile.toObject(message.subscribeFile, options);
@@ -3316,6 +3198,16 @@
                     if (options.oneofs)
                         object.body = "fsReleaseLock";
                 }
+                if (message.hasCap != null && message.hasOwnProperty("hasCap")) {
+                    object.hasCap = message.hasCap;
+                    if (options.oneofs)
+                        object.body = "hasCap";
+                }
+                if (message.pid1Config != null && message.hasOwnProperty("pid1Config")) {
+                    object.pid1Config = $root.api.Pid1Config.toObject(message.pid1Config, options);
+                    if (options.oneofs)
+                        object.body = "pid1Config";
+                }
                 if (message.ref != null && message.hasOwnProperty("ref"))
                     object.ref = message.ref;
                 return object;
@@ -3333,6 +3225,216 @@
             };
     
             return Command;
+        })();
+    
+        api.Pid1Config = (function() {
+    
+            /**
+             * Properties of a Pid1Config.
+             * @memberof api
+             * @interface IPid1Config
+             * @property {string|null} [cwd] Pid1Config cwd
+             * @property {string|null} [language] Pid1Config language
+             */
+    
+            /**
+             * Constructs a new Pid1Config.
+             * @memberof api
+             * @classdesc Represents a Pid1Config.
+             * @implements IPid1Config
+             * @constructor
+             * @param {api.IPid1Config=} [properties] Properties to set
+             */
+            function Pid1Config(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * Pid1Config cwd.
+             * @member {string} cwd
+             * @memberof api.Pid1Config
+             * @instance
+             */
+            Pid1Config.prototype.cwd = "";
+    
+            /**
+             * Pid1Config language.
+             * @member {string} language
+             * @memberof api.Pid1Config
+             * @instance
+             */
+            Pid1Config.prototype.language = "";
+    
+            /**
+             * Creates a new Pid1Config instance using the specified properties.
+             * @function create
+             * @memberof api.Pid1Config
+             * @static
+             * @param {api.IPid1Config=} [properties] Properties to set
+             * @returns {api.Pid1Config} Pid1Config instance
+             */
+            Pid1Config.create = function create(properties) {
+                return new Pid1Config(properties);
+            };
+    
+            /**
+             * Encodes the specified Pid1Config message. Does not implicitly {@link api.Pid1Config.verify|verify} messages.
+             * @function encode
+             * @memberof api.Pid1Config
+             * @static
+             * @param {api.IPid1Config} message Pid1Config message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Pid1Config.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.cwd != null && message.hasOwnProperty("cwd"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.cwd);
+                if (message.language != null && message.hasOwnProperty("language"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.language);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified Pid1Config message, length delimited. Does not implicitly {@link api.Pid1Config.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.Pid1Config
+             * @static
+             * @param {api.IPid1Config} message Pid1Config message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Pid1Config.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a Pid1Config message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.Pid1Config
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.Pid1Config} Pid1Config
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Pid1Config.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Pid1Config();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.cwd = reader.string();
+                        break;
+                    case 2:
+                        message.language = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a Pid1Config message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.Pid1Config
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.Pid1Config} Pid1Config
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Pid1Config.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a Pid1Config message.
+             * @function verify
+             * @memberof api.Pid1Config
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Pid1Config.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.cwd != null && message.hasOwnProperty("cwd"))
+                    if (!$util.isString(message.cwd))
+                        return "cwd: string expected";
+                if (message.language != null && message.hasOwnProperty("language"))
+                    if (!$util.isString(message.language))
+                        return "language: string expected";
+                return null;
+            };
+    
+            /**
+             * Creates a Pid1Config message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.Pid1Config
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.Pid1Config} Pid1Config
+             */
+            Pid1Config.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.Pid1Config)
+                    return object;
+                var message = new $root.api.Pid1Config();
+                if (object.cwd != null)
+                    message.cwd = String(object.cwd);
+                if (object.language != null)
+                    message.language = String(object.language);
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a Pid1Config message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.Pid1Config
+             * @static
+             * @param {api.Pid1Config} message Pid1Config
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Pid1Config.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.cwd = "";
+                    object.language = "";
+                }
+                if (message.cwd != null && message.hasOwnProperty("cwd"))
+                    object.cwd = message.cwd;
+                if (message.language != null && message.hasOwnProperty("language"))
+                    object.language = message.language;
+                return object;
+            };
+    
+            /**
+             * Converts this Pid1Config to JSON.
+             * @function toJSON
+             * @memberof api.Pid1Config
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Pid1Config.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return Pid1Config;
         })();
     
         api.FSLock = (function() {

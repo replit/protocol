@@ -203,21 +203,6 @@ export namespace api {
         /** Command execInfo */
         execInfo?: (api.IExecInfo|null);
 
-        /** Command subscribe */
-        subscribe?: (api.IFile|null);
-
-        /** Command eventCreated */
-        eventCreated?: (api.IFile|null);
-
-        /** Command eventModified */
-        eventModified?: (api.IFile|null);
-
-        /** Command eventDeleted */
-        eventDeleted?: (api.IFile|null);
-
-        /** Command eventMoved */
-        eventMoved?: (api.IMove|null);
-
         /** Command subscribeFile */
         subscribeFile?: (api.ISubscribeFile|null);
 
@@ -283,6 +268,12 @@ export namespace api {
 
         /** Command fsReleaseLock */
         fsReleaseLock?: (api.IFSLock|null);
+
+        /** Command hasCap */
+        hasCap?: (boolean|null);
+
+        /** Command pid1Config */
+        pid1Config?: (api.IPid1Config|null);
 
         /** Command ref */
         ref?: (string|null);
@@ -495,21 +486,6 @@ export namespace api {
         /** Command execInfo. */
         public execInfo?: (api.IExecInfo|null);
 
-        /** Command subscribe. */
-        public subscribe?: (api.IFile|null);
-
-        /** Command eventCreated. */
-        public eventCreated?: (api.IFile|null);
-
-        /** Command eventModified. */
-        public eventModified?: (api.IFile|null);
-
-        /** Command eventDeleted. */
-        public eventDeleted?: (api.IFile|null);
-
-        /** Command eventMoved. */
-        public eventMoved?: (api.IMove|null);
-
         /** Command subscribeFile. */
         public subscribeFile?: (api.ISubscribeFile|null);
 
@@ -576,11 +552,17 @@ export namespace api {
         /** Command fsReleaseLock. */
         public fsReleaseLock?: (api.IFSLock|null);
 
+        /** Command hasCap. */
+        public hasCap: boolean;
+
+        /** Command pid1Config. */
+        public pid1Config?: (api.IPid1Config|null);
+
         /** Command ref. */
         public ref: string;
 
         /** Command body. */
-        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribe"|"eventCreated"|"eventModified"|"eventDeleted"|"eventMoved"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock");
+        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config");
 
         /**
          * Creates a new Command instance using the specified properties.
@@ -648,6 +630,102 @@ export namespace api {
 
         /**
          * Converts this Command to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a Pid1Config. */
+    interface IPid1Config {
+
+        /** Pid1Config cwd */
+        cwd?: (string|null);
+
+        /** Pid1Config language */
+        language?: (string|null);
+    }
+
+    /** Represents a Pid1Config. */
+    class Pid1Config implements IPid1Config {
+
+        /**
+         * Constructs a new Pid1Config.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: api.IPid1Config);
+
+        /** Pid1Config cwd. */
+        public cwd: string;
+
+        /** Pid1Config language. */
+        public language: string;
+
+        /**
+         * Creates a new Pid1Config instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns Pid1Config instance
+         */
+        public static create(properties?: api.IPid1Config): api.Pid1Config;
+
+        /**
+         * Encodes the specified Pid1Config message. Does not implicitly {@link api.Pid1Config.verify|verify} messages.
+         * @param message Pid1Config message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.IPid1Config, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified Pid1Config message, length delimited. Does not implicitly {@link api.Pid1Config.verify|verify} messages.
+         * @param message Pid1Config message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.IPid1Config, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a Pid1Config message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns Pid1Config
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.Pid1Config;
+
+        /**
+         * Decodes a Pid1Config message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns Pid1Config
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.Pid1Config;
+
+        /**
+         * Verifies a Pid1Config message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a Pid1Config message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns Pid1Config
+         */
+        public static fromObject(object: { [k: string]: any }): api.Pid1Config;
+
+        /**
+         * Creates a plain object from a Pid1Config message. Also converts values to other types if specified.
+         * @param message Pid1Config
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.Pid1Config, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this Pid1Config to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
