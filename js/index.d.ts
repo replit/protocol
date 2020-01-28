@@ -275,6 +275,12 @@ export namespace api {
         /** Command pid1Config */
         pid1Config?: (api.IPid1Config|null);
 
+        /** Command metrics */
+        metrics?: (api.IMetrics|null);
+
+        /** Command bootStatus */
+        bootStatus?: (api.IBootStatus|null);
+
         /** Command ref */
         ref?: (string|null);
     }
@@ -558,11 +564,17 @@ export namespace api {
         /** Command pid1Config. */
         public pid1Config?: (api.IPid1Config|null);
 
+        /** Command metrics. */
+        public metrics?: (api.IMetrics|null);
+
+        /** Command bootStatus. */
+        public bootStatus?: (api.IBootStatus|null);
+
         /** Command ref. */
         public ref: string;
 
         /** Command body. */
-        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config");
+        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus");
 
         /**
          * Creates a new Command instance using the specified properties.
@@ -633,6 +645,122 @@ export namespace api {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a BootStatus. */
+    interface IBootStatus {
+
+        /** BootStatus stage */
+        stage?: (api.BootStatus.Stage|null);
+
+        /** BootStatus progress */
+        progress?: (number|null);
+
+        /** BootStatus total */
+        total?: (number|null);
+    }
+
+    /** Represents a BootStatus. */
+    class BootStatus implements IBootStatus {
+
+        /**
+         * Constructs a new BootStatus.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: api.IBootStatus);
+
+        /** BootStatus stage. */
+        public stage: api.BootStatus.Stage;
+
+        /** BootStatus progress. */
+        public progress: number;
+
+        /** BootStatus total. */
+        public total: number;
+
+        /**
+         * Creates a new BootStatus instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns BootStatus instance
+         */
+        public static create(properties?: api.IBootStatus): api.BootStatus;
+
+        /**
+         * Encodes the specified BootStatus message. Does not implicitly {@link api.BootStatus.verify|verify} messages.
+         * @param message BootStatus message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.IBootStatus, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified BootStatus message, length delimited. Does not implicitly {@link api.BootStatus.verify|verify} messages.
+         * @param message BootStatus message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.IBootStatus, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a BootStatus message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns BootStatus
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.BootStatus;
+
+        /**
+         * Decodes a BootStatus message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns BootStatus
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.BootStatus;
+
+        /**
+         * Verifies a BootStatus message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a BootStatus message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns BootStatus
+         */
+        public static fromObject(object: { [k: string]: any }): api.BootStatus;
+
+        /**
+         * Creates a plain object from a BootStatus message. Also converts values to other types if specified.
+         * @param message BootStatus
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.BootStatus, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this BootStatus to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    namespace BootStatus {
+
+        /** Stage enum. */
+        enum Stage {
+            HANDSHAKE = 0,
+            ACQUIRING = 3,
+            COMPLETE = 4,
+            PROXY = 5,
+            PULL_FILES = 6,
+            LOAD_BLOCK = 7,
+            RETRY = 8
+        }
     }
 
     /** Properties of a Pid1Config. */
@@ -7709,6 +7837,96 @@ export namespace api {
 
         /**
          * Converts this ChatScrollback to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a Metrics. */
+    interface IMetrics {
+
+        /** Metrics prometheusMetricFamilies */
+        prometheusMetricFamilies?: (Uint8Array[]|null);
+    }
+
+    /** Represents a Metrics. */
+    class Metrics implements IMetrics {
+
+        /**
+         * Constructs a new Metrics.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: api.IMetrics);
+
+        /** Metrics prometheusMetricFamilies. */
+        public prometheusMetricFamilies: Uint8Array[];
+
+        /**
+         * Creates a new Metrics instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns Metrics instance
+         */
+        public static create(properties?: api.IMetrics): api.Metrics;
+
+        /**
+         * Encodes the specified Metrics message. Does not implicitly {@link api.Metrics.verify|verify} messages.
+         * @param message Metrics message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.IMetrics, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified Metrics message, length delimited. Does not implicitly {@link api.Metrics.verify|verify} messages.
+         * @param message Metrics message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.IMetrics, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a Metrics message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns Metrics
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.Metrics;
+
+        /**
+         * Decodes a Metrics message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns Metrics
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.Metrics;
+
+        /**
+         * Verifies a Metrics message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a Metrics message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns Metrics
+         */
+        public static fromObject(object: { [k: string]: any }): api.Metrics;
+
+        /**
+         * Creates a plain object from a Metrics message. Also converts values to other types if specified.
+         * @param message Metrics
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.Metrics, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this Metrics to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };

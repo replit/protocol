@@ -144,9 +144,32 @@ message Command {
 
     // used to configure pid1 at runtime
     Pid1Config pid1Config = 340;
+
+    Metrics metrics = 350;
+
+    BootStatus bootStatus = 351;
   }
 
   string ref = 1000;
+}
+
+message BootStatus {
+  enum Stage {
+    HANDSHAKE = 0;
+    ACQUIRING = 3;
+    COMPLETE = 4;
+    PROXY = 5;
+    PULL_FILES = 6;
+    LOAD_BLOCK = 7;
+    RETRY = 8;
+  };
+
+  Stage stage = 1;
+
+  // progress/total is context dependant. Most stages have no progress info,
+  // this is sent as 0/0 (the default value).
+  uint32 progress = 2;
+  uint32 total = 3;
 }
 
 message Pid1Config {
@@ -507,3 +530,6 @@ message PackageCacheSave {}
 
 message ChatScrollback { repeated ChatMessage scrollback = 1; }
 
+message Metrics {
+  repeated bytes prometheusMetricFamilies = 1;
+}

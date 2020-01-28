@@ -121,6 +121,8 @@
              * @property {api.IFSLock|null} [fsReleaseLock] Command fsReleaseLock
              * @property {boolean|null} [hasCap] Command hasCap
              * @property {api.IPid1Config|null} [pid1Config] Command pid1Config
+             * @property {api.IMetrics|null} [metrics] Command metrics
+             * @property {api.IBootStatus|null} [bootStatus] Command bootStatus
              * @property {string|null} [ref] Command ref
              */
     
@@ -860,6 +862,22 @@
             Command.prototype.pid1Config = null;
     
             /**
+             * Command metrics.
+             * @member {api.IMetrics|null|undefined} metrics
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.metrics = null;
+    
+            /**
+             * Command bootStatus.
+             * @member {api.IBootStatus|null|undefined} bootStatus
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.bootStatus = null;
+    
+            /**
              * Command ref.
              * @member {string} ref
              * @memberof api.Command
@@ -872,12 +890,12 @@
     
             /**
              * Command body.
-             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|undefined} body
+             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|undefined} body
              * @memberof api.Command
              * @instance
              */
             Object.defineProperty(Command.prototype, "body", {
-                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock", "hasCap", "pid1Config"]),
+                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock", "hasCap", "pid1Config", "metrics", "bootStatus"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
     
@@ -1085,6 +1103,10 @@
                     writer.uint32(/* id 335, wireType 0 =*/2680).bool(message.hasCap);
                 if (message.pid1Config != null && message.hasOwnProperty("pid1Config"))
                     $root.api.Pid1Config.encode(message.pid1Config, writer.uint32(/* id 340, wireType 2 =*/2722).fork()).ldelim();
+                if (message.metrics != null && message.hasOwnProperty("metrics"))
+                    $root.api.Metrics.encode(message.metrics, writer.uint32(/* id 350, wireType 2 =*/2802).fork()).ldelim();
+                if (message.bootStatus != null && message.hasOwnProperty("bootStatus"))
+                    $root.api.BootStatus.encode(message.bootStatus, writer.uint32(/* id 351, wireType 2 =*/2810).fork()).ldelim();
                 if (message.ref != null && message.hasOwnProperty("ref"))
                     writer.uint32(/* id 1000, wireType 2 =*/8002).string(message.ref);
                 return writer;
@@ -1390,6 +1412,12 @@
                         break;
                     case 340:
                         message.pid1Config = $root.api.Pid1Config.decode(reader, reader.uint32());
+                        break;
+                    case 350:
+                        message.metrics = $root.api.Metrics.decode(reader, reader.uint32());
+                        break;
+                    case 351:
+                        message.bootStatus = $root.api.BootStatus.decode(reader, reader.uint32());
                         break;
                     case 1000:
                         message.ref = reader.string();
@@ -2295,6 +2323,26 @@
                             return "pid1Config." + error;
                     }
                 }
+                if (message.metrics != null && message.hasOwnProperty("metrics")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.Metrics.verify(message.metrics);
+                        if (error)
+                            return "metrics." + error;
+                    }
+                }
+                if (message.bootStatus != null && message.hasOwnProperty("bootStatus")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.BootStatus.verify(message.bootStatus);
+                        if (error)
+                            return "bootStatus." + error;
+                    }
+                }
                 if (message.ref != null && message.hasOwnProperty("ref"))
                     if (!$util.isString(message.ref))
                         return "ref: string expected";
@@ -2740,6 +2788,16 @@
                     if (typeof object.pid1Config !== "object")
                         throw TypeError(".api.Command.pid1Config: object expected");
                     message.pid1Config = $root.api.Pid1Config.fromObject(object.pid1Config);
+                }
+                if (object.metrics != null) {
+                    if (typeof object.metrics !== "object")
+                        throw TypeError(".api.Command.metrics: object expected");
+                    message.metrics = $root.api.Metrics.fromObject(object.metrics);
+                }
+                if (object.bootStatus != null) {
+                    if (typeof object.bootStatus !== "object")
+                        throw TypeError(".api.Command.bootStatus: object expected");
+                    message.bootStatus = $root.api.BootStatus.fromObject(object.bootStatus);
                 }
                 if (object.ref != null)
                     message.ref = String(object.ref);
@@ -3208,6 +3266,16 @@
                     if (options.oneofs)
                         object.body = "pid1Config";
                 }
+                if (message.metrics != null && message.hasOwnProperty("metrics")) {
+                    object.metrics = $root.api.Metrics.toObject(message.metrics, options);
+                    if (options.oneofs)
+                        object.body = "metrics";
+                }
+                if (message.bootStatus != null && message.hasOwnProperty("bootStatus")) {
+                    object.bootStatus = $root.api.BootStatus.toObject(message.bootStatus, options);
+                    if (options.oneofs)
+                        object.body = "bootStatus";
+                }
                 if (message.ref != null && message.hasOwnProperty("ref"))
                     object.ref = message.ref;
                 return object;
@@ -3225,6 +3293,300 @@
             };
     
             return Command;
+        })();
+    
+        api.BootStatus = (function() {
+    
+            /**
+             * Properties of a BootStatus.
+             * @memberof api
+             * @interface IBootStatus
+             * @property {api.BootStatus.Stage|null} [stage] BootStatus stage
+             * @property {number|null} [progress] BootStatus progress
+             * @property {number|null} [total] BootStatus total
+             */
+    
+            /**
+             * Constructs a new BootStatus.
+             * @memberof api
+             * @classdesc Represents a BootStatus.
+             * @implements IBootStatus
+             * @constructor
+             * @param {api.IBootStatus=} [properties] Properties to set
+             */
+            function BootStatus(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * BootStatus stage.
+             * @member {api.BootStatus.Stage} stage
+             * @memberof api.BootStatus
+             * @instance
+             */
+            BootStatus.prototype.stage = 0;
+    
+            /**
+             * BootStatus progress.
+             * @member {number} progress
+             * @memberof api.BootStatus
+             * @instance
+             */
+            BootStatus.prototype.progress = 0;
+    
+            /**
+             * BootStatus total.
+             * @member {number} total
+             * @memberof api.BootStatus
+             * @instance
+             */
+            BootStatus.prototype.total = 0;
+    
+            /**
+             * Creates a new BootStatus instance using the specified properties.
+             * @function create
+             * @memberof api.BootStatus
+             * @static
+             * @param {api.IBootStatus=} [properties] Properties to set
+             * @returns {api.BootStatus} BootStatus instance
+             */
+            BootStatus.create = function create(properties) {
+                return new BootStatus(properties);
+            };
+    
+            /**
+             * Encodes the specified BootStatus message. Does not implicitly {@link api.BootStatus.verify|verify} messages.
+             * @function encode
+             * @memberof api.BootStatus
+             * @static
+             * @param {api.IBootStatus} message BootStatus message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            BootStatus.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.stage != null && message.hasOwnProperty("stage"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int32(message.stage);
+                if (message.progress != null && message.hasOwnProperty("progress"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.progress);
+                if (message.total != null && message.hasOwnProperty("total"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.total);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified BootStatus message, length delimited. Does not implicitly {@link api.BootStatus.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.BootStatus
+             * @static
+             * @param {api.IBootStatus} message BootStatus message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            BootStatus.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a BootStatus message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.BootStatus
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.BootStatus} BootStatus
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            BootStatus.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.BootStatus();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.stage = reader.int32();
+                        break;
+                    case 2:
+                        message.progress = reader.uint32();
+                        break;
+                    case 3:
+                        message.total = reader.uint32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a BootStatus message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.BootStatus
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.BootStatus} BootStatus
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            BootStatus.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a BootStatus message.
+             * @function verify
+             * @memberof api.BootStatus
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            BootStatus.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.stage != null && message.hasOwnProperty("stage"))
+                    switch (message.stage) {
+                    default:
+                        return "stage: enum value expected";
+                    case 0:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                    case 7:
+                    case 8:
+                        break;
+                    }
+                if (message.progress != null && message.hasOwnProperty("progress"))
+                    if (!$util.isInteger(message.progress))
+                        return "progress: integer expected";
+                if (message.total != null && message.hasOwnProperty("total"))
+                    if (!$util.isInteger(message.total))
+                        return "total: integer expected";
+                return null;
+            };
+    
+            /**
+             * Creates a BootStatus message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.BootStatus
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.BootStatus} BootStatus
+             */
+            BootStatus.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.BootStatus)
+                    return object;
+                var message = new $root.api.BootStatus();
+                switch (object.stage) {
+                case "HANDSHAKE":
+                case 0:
+                    message.stage = 0;
+                    break;
+                case "ACQUIRING":
+                case 3:
+                    message.stage = 3;
+                    break;
+                case "COMPLETE":
+                case 4:
+                    message.stage = 4;
+                    break;
+                case "PROXY":
+                case 5:
+                    message.stage = 5;
+                    break;
+                case "PULL_FILES":
+                case 6:
+                    message.stage = 6;
+                    break;
+                case "LOAD_BLOCK":
+                case 7:
+                    message.stage = 7;
+                    break;
+                case "RETRY":
+                case 8:
+                    message.stage = 8;
+                    break;
+                }
+                if (object.progress != null)
+                    message.progress = object.progress >>> 0;
+                if (object.total != null)
+                    message.total = object.total >>> 0;
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a BootStatus message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.BootStatus
+             * @static
+             * @param {api.BootStatus} message BootStatus
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            BootStatus.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.stage = options.enums === String ? "HANDSHAKE" : 0;
+                    object.progress = 0;
+                    object.total = 0;
+                }
+                if (message.stage != null && message.hasOwnProperty("stage"))
+                    object.stage = options.enums === String ? $root.api.BootStatus.Stage[message.stage] : message.stage;
+                if (message.progress != null && message.hasOwnProperty("progress"))
+                    object.progress = message.progress;
+                if (message.total != null && message.hasOwnProperty("total"))
+                    object.total = message.total;
+                return object;
+            };
+    
+            /**
+             * Converts this BootStatus to JSON.
+             * @function toJSON
+             * @memberof api.BootStatus
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            BootStatus.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            /**
+             * Stage enum.
+             * @name api.BootStatus.Stage
+             * @enum {string}
+             * @property {number} HANDSHAKE=0 HANDSHAKE value
+             * @property {number} ACQUIRING=3 ACQUIRING value
+             * @property {number} COMPLETE=4 COMPLETE value
+             * @property {number} PROXY=5 PROXY value
+             * @property {number} PULL_FILES=6 PULL_FILES value
+             * @property {number} LOAD_BLOCK=7 LOAD_BLOCK value
+             * @property {number} RETRY=8 RETRY value
+             */
+            BootStatus.Stage = (function() {
+                var valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "HANDSHAKE"] = 0;
+                values[valuesById[3] = "ACQUIRING"] = 3;
+                values[valuesById[4] = "COMPLETE"] = 4;
+                values[valuesById[5] = "PROXY"] = 5;
+                values[valuesById[6] = "PULL_FILES"] = 6;
+                values[valuesById[7] = "LOAD_BLOCK"] = 7;
+                values[valuesById[8] = "RETRY"] = 8;
+                return values;
+            })();
+    
+            return BootStatus;
         })();
     
         api.Pid1Config = (function() {
@@ -19133,6 +19495,212 @@
             };
     
             return ChatScrollback;
+        })();
+    
+        api.Metrics = (function() {
+    
+            /**
+             * Properties of a Metrics.
+             * @memberof api
+             * @interface IMetrics
+             * @property {Array.<Uint8Array>|null} [prometheusMetricFamilies] Metrics prometheusMetricFamilies
+             */
+    
+            /**
+             * Constructs a new Metrics.
+             * @memberof api
+             * @classdesc Represents a Metrics.
+             * @implements IMetrics
+             * @constructor
+             * @param {api.IMetrics=} [properties] Properties to set
+             */
+            function Metrics(properties) {
+                this.prometheusMetricFamilies = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * Metrics prometheusMetricFamilies.
+             * @member {Array.<Uint8Array>} prometheusMetricFamilies
+             * @memberof api.Metrics
+             * @instance
+             */
+            Metrics.prototype.prometheusMetricFamilies = $util.emptyArray;
+    
+            /**
+             * Creates a new Metrics instance using the specified properties.
+             * @function create
+             * @memberof api.Metrics
+             * @static
+             * @param {api.IMetrics=} [properties] Properties to set
+             * @returns {api.Metrics} Metrics instance
+             */
+            Metrics.create = function create(properties) {
+                return new Metrics(properties);
+            };
+    
+            /**
+             * Encodes the specified Metrics message. Does not implicitly {@link api.Metrics.verify|verify} messages.
+             * @function encode
+             * @memberof api.Metrics
+             * @static
+             * @param {api.IMetrics} message Metrics message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Metrics.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.prometheusMetricFamilies != null && message.prometheusMetricFamilies.length)
+                    for (var i = 0; i < message.prometheusMetricFamilies.length; ++i)
+                        writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.prometheusMetricFamilies[i]);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified Metrics message, length delimited. Does not implicitly {@link api.Metrics.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.Metrics
+             * @static
+             * @param {api.IMetrics} message Metrics message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Metrics.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a Metrics message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.Metrics
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.Metrics} Metrics
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Metrics.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Metrics();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.prometheusMetricFamilies && message.prometheusMetricFamilies.length))
+                            message.prometheusMetricFamilies = [];
+                        message.prometheusMetricFamilies.push(reader.bytes());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a Metrics message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.Metrics
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.Metrics} Metrics
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Metrics.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a Metrics message.
+             * @function verify
+             * @memberof api.Metrics
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Metrics.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.prometheusMetricFamilies != null && message.hasOwnProperty("prometheusMetricFamilies")) {
+                    if (!Array.isArray(message.prometheusMetricFamilies))
+                        return "prometheusMetricFamilies: array expected";
+                    for (var i = 0; i < message.prometheusMetricFamilies.length; ++i)
+                        if (!(message.prometheusMetricFamilies[i] && typeof message.prometheusMetricFamilies[i].length === "number" || $util.isString(message.prometheusMetricFamilies[i])))
+                            return "prometheusMetricFamilies: buffer[] expected";
+                }
+                return null;
+            };
+    
+            /**
+             * Creates a Metrics message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.Metrics
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.Metrics} Metrics
+             */
+            Metrics.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.Metrics)
+                    return object;
+                var message = new $root.api.Metrics();
+                if (object.prometheusMetricFamilies) {
+                    if (!Array.isArray(object.prometheusMetricFamilies))
+                        throw TypeError(".api.Metrics.prometheusMetricFamilies: array expected");
+                    message.prometheusMetricFamilies = [];
+                    for (var i = 0; i < object.prometheusMetricFamilies.length; ++i)
+                        if (typeof object.prometheusMetricFamilies[i] === "string")
+                            $util.base64.decode(object.prometheusMetricFamilies[i], message.prometheusMetricFamilies[i] = $util.newBuffer($util.base64.length(object.prometheusMetricFamilies[i])), 0);
+                        else if (object.prometheusMetricFamilies[i].length)
+                            message.prometheusMetricFamilies[i] = object.prometheusMetricFamilies[i];
+                }
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a Metrics message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.Metrics
+             * @static
+             * @param {api.Metrics} message Metrics
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Metrics.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.prometheusMetricFamilies = [];
+                if (message.prometheusMetricFamilies && message.prometheusMetricFamilies.length) {
+                    object.prometheusMetricFamilies = [];
+                    for (var j = 0; j < message.prometheusMetricFamilies.length; ++j)
+                        object.prometheusMetricFamilies[j] = options.bytes === String ? $util.base64.encode(message.prometheusMetricFamilies[j], 0, message.prometheusMetricFamilies[j].length) : options.bytes === Array ? Array.prototype.slice.call(message.prometheusMetricFamilies[j]) : message.prometheusMetricFamilies[j];
+                }
+                return object;
+            };
+    
+            /**
+             * Converts this Metrics to JSON.
+             * @function toJSON
+             * @memberof api.Metrics
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Metrics.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return Metrics;
         })();
     
         return api;
