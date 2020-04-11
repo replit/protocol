@@ -1,7 +1,8 @@
 Read the docs here http://protodoc.turbio.repl.co
 
-This repository acts as a source of truth for the protocol definitions. Contains language bindings and served as packages
+This repository acts as a source of truth for the protocol definitions. Contains language bindings and the language packages.
 
+## Packages
 
 ### JavaScript
 Installation:
@@ -17,5 +18,23 @@ Installation:
 
 https://github.com/replit/protocol-go is a mirror because go requires modules to be on the root
 
-### Python
-TBD
+## Contributing
+
+### Prequisits
+- `node`
+- `npm`
+- `go`
+- `protoc`
+- `protoc-gen-go`
+
+### Updating the protos
+
+Update the `api.proto`, then run `make clean && make build`. You can checkout the rest of the `make` commands.
+
+To test out your changes you build the packages and use . For example using `npm link`
+
+### Publishing
+
+Just do `make all`. You need write access to the relative publishing repositories for each language (i.e. npm/github).
+
+
