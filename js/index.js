@@ -3437,7 +3437,7 @@
              * Properties of an AudioStream.
              * @memberof api
              * @interface IAudioStream
-             * @property {Array.<Uint8Array>|null} [data] AudioStream data
+             * @property {Array.<number>|null} [data] AudioStream data
              */
     
             /**
@@ -3458,7 +3458,7 @@
     
             /**
              * AudioStream data.
-             * @member {Array.<Uint8Array>} data
+             * @member {Array.<number>} data
              * @memberof api.AudioStream
              * @instance
              */
@@ -3488,9 +3488,12 @@
             AudioStream.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.data != null && message.data.length)
+                if (message.data != null && message.data.length) {
+                    writer.uint32(/* id 1, wireType 2 =*/10).fork();
                     for (var i = 0; i < message.data.length; ++i)
-                        writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.data[i]);
+                        writer.int32(message.data[i]);
+                    writer.ldelim();
+                }
                 return writer;
             };
     
@@ -3528,7 +3531,12 @@
                     case 1:
                         if (!(message.data && message.data.length))
                             message.data = [];
-                        message.data.push(reader.bytes());
+                        if ((tag & 7) === 2) {
+                            var end2 = reader.uint32() + reader.pos;
+                            while (reader.pos < end2)
+                                message.data.push(reader.int32());
+                        } else
+                            message.data.push(reader.int32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -3569,8 +3577,8 @@
                     if (!Array.isArray(message.data))
                         return "data: array expected";
                     for (var i = 0; i < message.data.length; ++i)
-                        if (!(message.data[i] && typeof message.data[i].length === "number" || $util.isString(message.data[i])))
-                            return "data: buffer[] expected";
+                        if (!$util.isInteger(message.data[i]))
+                            return "data: integer[] expected";
                 }
                 return null;
             };
@@ -3592,10 +3600,7 @@
                         throw TypeError(".api.AudioStream.data: array expected");
                     message.data = [];
                     for (var i = 0; i < object.data.length; ++i)
-                        if (typeof object.data[i] === "string")
-                            $util.base64.decode(object.data[i], message.data[i] = $util.newBuffer($util.base64.length(object.data[i])), 0);
-                        else if (object.data[i].length)
-                            message.data[i] = object.data[i];
+                        message.data[i] = object.data[i] | 0;
                 }
                 return message;
             };
@@ -3618,7 +3623,7 @@
                 if (message.data && message.data.length) {
                     object.data = [];
                     for (var j = 0; j < message.data.length; ++j)
-                        object.data[j] = options.bytes === String ? $util.base64.encode(message.data[j], 0, message.data[j].length) : options.bytes === Array ? Array.prototype.slice.call(message.data[j]) : message.data[j];
+                        object.data[j] = message.data[j];
                 }
                 return object;
             };

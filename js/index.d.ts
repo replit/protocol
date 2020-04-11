@@ -675,7 +675,7 @@ export namespace api {
     interface IAudioStream {
 
         /** AudioStream data */
-        data?: (Uint8Array[]|null);
+        data?: (number[]|null);
     }
 
     /** Represents an AudioStream. */
@@ -688,7 +688,7 @@ export namespace api {
         constructor(properties?: api.IAudioStream);
 
         /** AudioStream data. */
-        public data: Uint8Array[];
+        public data: number[];
 
         /**
          * Creates a new AudioStream instance using the specified properties.
