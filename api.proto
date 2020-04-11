@@ -148,10 +148,37 @@ message Command {
     Metrics metrics = 350;
 
     BootStatus bootStatus = 351;
+
+    // metadata store
+    ReadMeta readMeta = 360;
+    WriteMeta writeMeta = 361;
+    AppendMeta appendMeta = 362;
+
+    // audio
+    AudioStream audioStream = 363;
   }
 
   string ref = 1000;
 }
+
+message AudioStream { repeated bytes data = 1;}
+
+message ReadMeta {
+  string key = 1;
+  bool exists = 2;
+  bytes data = 3;
+}
+
+message WriteMeta {
+  string key = 1;
+  bytes data = 2;
+}
+
+message AppendMeta {
+  string key = 1;
+  bytes data = 2;
+}
+
 
 message BootStatus {
   enum Stage {

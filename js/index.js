@@ -123,6 +123,10 @@
              * @property {api.IPid1Config|null} [pid1Config] Command pid1Config
              * @property {api.IMetrics|null} [metrics] Command metrics
              * @property {api.IBootStatus|null} [bootStatus] Command bootStatus
+             * @property {api.IReadMeta|null} [readMeta] Command readMeta
+             * @property {api.IWriteMeta|null} [writeMeta] Command writeMeta
+             * @property {api.IAppendMeta|null} [appendMeta] Command appendMeta
+             * @property {api.IAudioStream|null} [audioStream] Command audioStream
              * @property {string|null} [ref] Command ref
              */
     
@@ -878,6 +882,38 @@
             Command.prototype.bootStatus = null;
     
             /**
+             * Command readMeta.
+             * @member {api.IReadMeta|null|undefined} readMeta
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.readMeta = null;
+    
+            /**
+             * Command writeMeta.
+             * @member {api.IWriteMeta|null|undefined} writeMeta
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.writeMeta = null;
+    
+            /**
+             * Command appendMeta.
+             * @member {api.IAppendMeta|null|undefined} appendMeta
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.appendMeta = null;
+    
+            /**
+             * Command audioStream.
+             * @member {api.IAudioStream|null|undefined} audioStream
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.audioStream = null;
+    
+            /**
              * Command ref.
              * @member {string} ref
              * @memberof api.Command
@@ -890,12 +926,12 @@
     
             /**
              * Command body.
-             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|undefined} body
+             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audioStream"|undefined} body
              * @memberof api.Command
              * @instance
              */
             Object.defineProperty(Command.prototype, "body", {
-                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock", "hasCap", "pid1Config", "metrics", "bootStatus"]),
+                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock", "hasCap", "pid1Config", "metrics", "bootStatus", "readMeta", "writeMeta", "appendMeta", "audioStream"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
     
@@ -1107,6 +1143,14 @@
                     $root.api.Metrics.encode(message.metrics, writer.uint32(/* id 350, wireType 2 =*/2802).fork()).ldelim();
                 if (message.bootStatus != null && message.hasOwnProperty("bootStatus"))
                     $root.api.BootStatus.encode(message.bootStatus, writer.uint32(/* id 351, wireType 2 =*/2810).fork()).ldelim();
+                if (message.readMeta != null && message.hasOwnProperty("readMeta"))
+                    $root.api.ReadMeta.encode(message.readMeta, writer.uint32(/* id 360, wireType 2 =*/2882).fork()).ldelim();
+                if (message.writeMeta != null && message.hasOwnProperty("writeMeta"))
+                    $root.api.WriteMeta.encode(message.writeMeta, writer.uint32(/* id 361, wireType 2 =*/2890).fork()).ldelim();
+                if (message.appendMeta != null && message.hasOwnProperty("appendMeta"))
+                    $root.api.AppendMeta.encode(message.appendMeta, writer.uint32(/* id 362, wireType 2 =*/2898).fork()).ldelim();
+                if (message.audioStream != null && message.hasOwnProperty("audioStream"))
+                    $root.api.AudioStream.encode(message.audioStream, writer.uint32(/* id 363, wireType 2 =*/2906).fork()).ldelim();
                 if (message.ref != null && message.hasOwnProperty("ref"))
                     writer.uint32(/* id 1000, wireType 2 =*/8002).string(message.ref);
                 return writer;
@@ -1418,6 +1462,18 @@
                         break;
                     case 351:
                         message.bootStatus = $root.api.BootStatus.decode(reader, reader.uint32());
+                        break;
+                    case 360:
+                        message.readMeta = $root.api.ReadMeta.decode(reader, reader.uint32());
+                        break;
+                    case 361:
+                        message.writeMeta = $root.api.WriteMeta.decode(reader, reader.uint32());
+                        break;
+                    case 362:
+                        message.appendMeta = $root.api.AppendMeta.decode(reader, reader.uint32());
+                        break;
+                    case 363:
+                        message.audioStream = $root.api.AudioStream.decode(reader, reader.uint32());
                         break;
                     case 1000:
                         message.ref = reader.string();
@@ -2343,6 +2399,46 @@
                             return "bootStatus." + error;
                     }
                 }
+                if (message.readMeta != null && message.hasOwnProperty("readMeta")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.ReadMeta.verify(message.readMeta);
+                        if (error)
+                            return "readMeta." + error;
+                    }
+                }
+                if (message.writeMeta != null && message.hasOwnProperty("writeMeta")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.WriteMeta.verify(message.writeMeta);
+                        if (error)
+                            return "writeMeta." + error;
+                    }
+                }
+                if (message.appendMeta != null && message.hasOwnProperty("appendMeta")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.AppendMeta.verify(message.appendMeta);
+                        if (error)
+                            return "appendMeta." + error;
+                    }
+                }
+                if (message.audioStream != null && message.hasOwnProperty("audioStream")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.AudioStream.verify(message.audioStream);
+                        if (error)
+                            return "audioStream." + error;
+                    }
+                }
                 if (message.ref != null && message.hasOwnProperty("ref"))
                     if (!$util.isString(message.ref))
                         return "ref: string expected";
@@ -2798,6 +2894,26 @@
                     if (typeof object.bootStatus !== "object")
                         throw TypeError(".api.Command.bootStatus: object expected");
                     message.bootStatus = $root.api.BootStatus.fromObject(object.bootStatus);
+                }
+                if (object.readMeta != null) {
+                    if (typeof object.readMeta !== "object")
+                        throw TypeError(".api.Command.readMeta: object expected");
+                    message.readMeta = $root.api.ReadMeta.fromObject(object.readMeta);
+                }
+                if (object.writeMeta != null) {
+                    if (typeof object.writeMeta !== "object")
+                        throw TypeError(".api.Command.writeMeta: object expected");
+                    message.writeMeta = $root.api.WriteMeta.fromObject(object.writeMeta);
+                }
+                if (object.appendMeta != null) {
+                    if (typeof object.appendMeta !== "object")
+                        throw TypeError(".api.Command.appendMeta: object expected");
+                    message.appendMeta = $root.api.AppendMeta.fromObject(object.appendMeta);
+                }
+                if (object.audioStream != null) {
+                    if (typeof object.audioStream !== "object")
+                        throw TypeError(".api.Command.audioStream: object expected");
+                    message.audioStream = $root.api.AudioStream.fromObject(object.audioStream);
                 }
                 if (object.ref != null)
                     message.ref = String(object.ref);
@@ -3276,6 +3392,26 @@
                     if (options.oneofs)
                         object.body = "bootStatus";
                 }
+                if (message.readMeta != null && message.hasOwnProperty("readMeta")) {
+                    object.readMeta = $root.api.ReadMeta.toObject(message.readMeta, options);
+                    if (options.oneofs)
+                        object.body = "readMeta";
+                }
+                if (message.writeMeta != null && message.hasOwnProperty("writeMeta")) {
+                    object.writeMeta = $root.api.WriteMeta.toObject(message.writeMeta, options);
+                    if (options.oneofs)
+                        object.body = "writeMeta";
+                }
+                if (message.appendMeta != null && message.hasOwnProperty("appendMeta")) {
+                    object.appendMeta = $root.api.AppendMeta.toObject(message.appendMeta, options);
+                    if (options.oneofs)
+                        object.body = "appendMeta";
+                }
+                if (message.audioStream != null && message.hasOwnProperty("audioStream")) {
+                    object.audioStream = $root.api.AudioStream.toObject(message.audioStream, options);
+                    if (options.oneofs)
+                        object.body = "audioStream";
+                }
                 if (message.ref != null && message.hasOwnProperty("ref"))
                     object.ref = message.ref;
                 return object;
@@ -3293,6 +3429,891 @@
             };
     
             return Command;
+        })();
+    
+        api.AudioStream = (function() {
+    
+            /**
+             * Properties of an AudioStream.
+             * @memberof api
+             * @interface IAudioStream
+             * @property {Array.<Uint8Array>|null} [data] AudioStream data
+             */
+    
+            /**
+             * Constructs a new AudioStream.
+             * @memberof api
+             * @classdesc Represents an AudioStream.
+             * @implements IAudioStream
+             * @constructor
+             * @param {api.IAudioStream=} [properties] Properties to set
+             */
+            function AudioStream(properties) {
+                this.data = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * AudioStream data.
+             * @member {Array.<Uint8Array>} data
+             * @memberof api.AudioStream
+             * @instance
+             */
+            AudioStream.prototype.data = $util.emptyArray;
+    
+            /**
+             * Creates a new AudioStream instance using the specified properties.
+             * @function create
+             * @memberof api.AudioStream
+             * @static
+             * @param {api.IAudioStream=} [properties] Properties to set
+             * @returns {api.AudioStream} AudioStream instance
+             */
+            AudioStream.create = function create(properties) {
+                return new AudioStream(properties);
+            };
+    
+            /**
+             * Encodes the specified AudioStream message. Does not implicitly {@link api.AudioStream.verify|verify} messages.
+             * @function encode
+             * @memberof api.AudioStream
+             * @static
+             * @param {api.IAudioStream} message AudioStream message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            AudioStream.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.data != null && message.data.length)
+                    for (var i = 0; i < message.data.length; ++i)
+                        writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.data[i]);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified AudioStream message, length delimited. Does not implicitly {@link api.AudioStream.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.AudioStream
+             * @static
+             * @param {api.IAudioStream} message AudioStream message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            AudioStream.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes an AudioStream message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.AudioStream
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.AudioStream} AudioStream
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            AudioStream.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.AudioStream();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.data && message.data.length))
+                            message.data = [];
+                        message.data.push(reader.bytes());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes an AudioStream message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.AudioStream
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.AudioStream} AudioStream
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            AudioStream.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies an AudioStream message.
+             * @function verify
+             * @memberof api.AudioStream
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            AudioStream.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.data != null && message.hasOwnProperty("data")) {
+                    if (!Array.isArray(message.data))
+                        return "data: array expected";
+                    for (var i = 0; i < message.data.length; ++i)
+                        if (!(message.data[i] && typeof message.data[i].length === "number" || $util.isString(message.data[i])))
+                            return "data: buffer[] expected";
+                }
+                return null;
+            };
+    
+            /**
+             * Creates an AudioStream message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.AudioStream
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.AudioStream} AudioStream
+             */
+            AudioStream.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.AudioStream)
+                    return object;
+                var message = new $root.api.AudioStream();
+                if (object.data) {
+                    if (!Array.isArray(object.data))
+                        throw TypeError(".api.AudioStream.data: array expected");
+                    message.data = [];
+                    for (var i = 0; i < object.data.length; ++i)
+                        if (typeof object.data[i] === "string")
+                            $util.base64.decode(object.data[i], message.data[i] = $util.newBuffer($util.base64.length(object.data[i])), 0);
+                        else if (object.data[i].length)
+                            message.data[i] = object.data[i];
+                }
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from an AudioStream message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.AudioStream
+             * @static
+             * @param {api.AudioStream} message AudioStream
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            AudioStream.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.data = [];
+                if (message.data && message.data.length) {
+                    object.data = [];
+                    for (var j = 0; j < message.data.length; ++j)
+                        object.data[j] = options.bytes === String ? $util.base64.encode(message.data[j], 0, message.data[j].length) : options.bytes === Array ? Array.prototype.slice.call(message.data[j]) : message.data[j];
+                }
+                return object;
+            };
+    
+            /**
+             * Converts this AudioStream to JSON.
+             * @function toJSON
+             * @memberof api.AudioStream
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            AudioStream.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return AudioStream;
+        })();
+    
+        api.ReadMeta = (function() {
+    
+            /**
+             * Properties of a ReadMeta.
+             * @memberof api
+             * @interface IReadMeta
+             * @property {string|null} [key] ReadMeta key
+             * @property {boolean|null} [exists] ReadMeta exists
+             * @property {Uint8Array|null} [data] ReadMeta data
+             */
+    
+            /**
+             * Constructs a new ReadMeta.
+             * @memberof api
+             * @classdesc Represents a ReadMeta.
+             * @implements IReadMeta
+             * @constructor
+             * @param {api.IReadMeta=} [properties] Properties to set
+             */
+            function ReadMeta(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * ReadMeta key.
+             * @member {string} key
+             * @memberof api.ReadMeta
+             * @instance
+             */
+            ReadMeta.prototype.key = "";
+    
+            /**
+             * ReadMeta exists.
+             * @member {boolean} exists
+             * @memberof api.ReadMeta
+             * @instance
+             */
+            ReadMeta.prototype.exists = false;
+    
+            /**
+             * ReadMeta data.
+             * @member {Uint8Array} data
+             * @memberof api.ReadMeta
+             * @instance
+             */
+            ReadMeta.prototype.data = $util.newBuffer([]);
+    
+            /**
+             * Creates a new ReadMeta instance using the specified properties.
+             * @function create
+             * @memberof api.ReadMeta
+             * @static
+             * @param {api.IReadMeta=} [properties] Properties to set
+             * @returns {api.ReadMeta} ReadMeta instance
+             */
+            ReadMeta.create = function create(properties) {
+                return new ReadMeta(properties);
+            };
+    
+            /**
+             * Encodes the specified ReadMeta message. Does not implicitly {@link api.ReadMeta.verify|verify} messages.
+             * @function encode
+             * @memberof api.ReadMeta
+             * @static
+             * @param {api.IReadMeta} message ReadMeta message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ReadMeta.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.key != null && message.hasOwnProperty("key"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.key);
+                if (message.exists != null && message.hasOwnProperty("exists"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).bool(message.exists);
+                if (message.data != null && message.hasOwnProperty("data"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.data);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified ReadMeta message, length delimited. Does not implicitly {@link api.ReadMeta.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.ReadMeta
+             * @static
+             * @param {api.IReadMeta} message ReadMeta message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ReadMeta.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a ReadMeta message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.ReadMeta
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.ReadMeta} ReadMeta
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ReadMeta.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.ReadMeta();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.key = reader.string();
+                        break;
+                    case 2:
+                        message.exists = reader.bool();
+                        break;
+                    case 3:
+                        message.data = reader.bytes();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a ReadMeta message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.ReadMeta
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.ReadMeta} ReadMeta
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ReadMeta.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a ReadMeta message.
+             * @function verify
+             * @memberof api.ReadMeta
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ReadMeta.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.key != null && message.hasOwnProperty("key"))
+                    if (!$util.isString(message.key))
+                        return "key: string expected";
+                if (message.exists != null && message.hasOwnProperty("exists"))
+                    if (typeof message.exists !== "boolean")
+                        return "exists: boolean expected";
+                if (message.data != null && message.hasOwnProperty("data"))
+                    if (!(message.data && typeof message.data.length === "number" || $util.isString(message.data)))
+                        return "data: buffer expected";
+                return null;
+            };
+    
+            /**
+             * Creates a ReadMeta message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.ReadMeta
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.ReadMeta} ReadMeta
+             */
+            ReadMeta.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.ReadMeta)
+                    return object;
+                var message = new $root.api.ReadMeta();
+                if (object.key != null)
+                    message.key = String(object.key);
+                if (object.exists != null)
+                    message.exists = Boolean(object.exists);
+                if (object.data != null)
+                    if (typeof object.data === "string")
+                        $util.base64.decode(object.data, message.data = $util.newBuffer($util.base64.length(object.data)), 0);
+                    else if (object.data.length)
+                        message.data = object.data;
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a ReadMeta message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.ReadMeta
+             * @static
+             * @param {api.ReadMeta} message ReadMeta
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            ReadMeta.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.key = "";
+                    object.exists = false;
+                    if (options.bytes === String)
+                        object.data = "";
+                    else {
+                        object.data = [];
+                        if (options.bytes !== Array)
+                            object.data = $util.newBuffer(object.data);
+                    }
+                }
+                if (message.key != null && message.hasOwnProperty("key"))
+                    object.key = message.key;
+                if (message.exists != null && message.hasOwnProperty("exists"))
+                    object.exists = message.exists;
+                if (message.data != null && message.hasOwnProperty("data"))
+                    object.data = options.bytes === String ? $util.base64.encode(message.data, 0, message.data.length) : options.bytes === Array ? Array.prototype.slice.call(message.data) : message.data;
+                return object;
+            };
+    
+            /**
+             * Converts this ReadMeta to JSON.
+             * @function toJSON
+             * @memberof api.ReadMeta
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            ReadMeta.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return ReadMeta;
+        })();
+    
+        api.WriteMeta = (function() {
+    
+            /**
+             * Properties of a WriteMeta.
+             * @memberof api
+             * @interface IWriteMeta
+             * @property {string|null} [key] WriteMeta key
+             * @property {Uint8Array|null} [data] WriteMeta data
+             */
+    
+            /**
+             * Constructs a new WriteMeta.
+             * @memberof api
+             * @classdesc Represents a WriteMeta.
+             * @implements IWriteMeta
+             * @constructor
+             * @param {api.IWriteMeta=} [properties] Properties to set
+             */
+            function WriteMeta(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * WriteMeta key.
+             * @member {string} key
+             * @memberof api.WriteMeta
+             * @instance
+             */
+            WriteMeta.prototype.key = "";
+    
+            /**
+             * WriteMeta data.
+             * @member {Uint8Array} data
+             * @memberof api.WriteMeta
+             * @instance
+             */
+            WriteMeta.prototype.data = $util.newBuffer([]);
+    
+            /**
+             * Creates a new WriteMeta instance using the specified properties.
+             * @function create
+             * @memberof api.WriteMeta
+             * @static
+             * @param {api.IWriteMeta=} [properties] Properties to set
+             * @returns {api.WriteMeta} WriteMeta instance
+             */
+            WriteMeta.create = function create(properties) {
+                return new WriteMeta(properties);
+            };
+    
+            /**
+             * Encodes the specified WriteMeta message. Does not implicitly {@link api.WriteMeta.verify|verify} messages.
+             * @function encode
+             * @memberof api.WriteMeta
+             * @static
+             * @param {api.IWriteMeta} message WriteMeta message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            WriteMeta.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.key != null && message.hasOwnProperty("key"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.key);
+                if (message.data != null && message.hasOwnProperty("data"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.data);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified WriteMeta message, length delimited. Does not implicitly {@link api.WriteMeta.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.WriteMeta
+             * @static
+             * @param {api.IWriteMeta} message WriteMeta message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            WriteMeta.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a WriteMeta message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.WriteMeta
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.WriteMeta} WriteMeta
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            WriteMeta.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.WriteMeta();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.key = reader.string();
+                        break;
+                    case 2:
+                        message.data = reader.bytes();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a WriteMeta message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.WriteMeta
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.WriteMeta} WriteMeta
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            WriteMeta.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a WriteMeta message.
+             * @function verify
+             * @memberof api.WriteMeta
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            WriteMeta.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.key != null && message.hasOwnProperty("key"))
+                    if (!$util.isString(message.key))
+                        return "key: string expected";
+                if (message.data != null && message.hasOwnProperty("data"))
+                    if (!(message.data && typeof message.data.length === "number" || $util.isString(message.data)))
+                        return "data: buffer expected";
+                return null;
+            };
+    
+            /**
+             * Creates a WriteMeta message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.WriteMeta
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.WriteMeta} WriteMeta
+             */
+            WriteMeta.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.WriteMeta)
+                    return object;
+                var message = new $root.api.WriteMeta();
+                if (object.key != null)
+                    message.key = String(object.key);
+                if (object.data != null)
+                    if (typeof object.data === "string")
+                        $util.base64.decode(object.data, message.data = $util.newBuffer($util.base64.length(object.data)), 0);
+                    else if (object.data.length)
+                        message.data = object.data;
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a WriteMeta message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.WriteMeta
+             * @static
+             * @param {api.WriteMeta} message WriteMeta
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            WriteMeta.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.key = "";
+                    if (options.bytes === String)
+                        object.data = "";
+                    else {
+                        object.data = [];
+                        if (options.bytes !== Array)
+                            object.data = $util.newBuffer(object.data);
+                    }
+                }
+                if (message.key != null && message.hasOwnProperty("key"))
+                    object.key = message.key;
+                if (message.data != null && message.hasOwnProperty("data"))
+                    object.data = options.bytes === String ? $util.base64.encode(message.data, 0, message.data.length) : options.bytes === Array ? Array.prototype.slice.call(message.data) : message.data;
+                return object;
+            };
+    
+            /**
+             * Converts this WriteMeta to JSON.
+             * @function toJSON
+             * @memberof api.WriteMeta
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            WriteMeta.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return WriteMeta;
+        })();
+    
+        api.AppendMeta = (function() {
+    
+            /**
+             * Properties of an AppendMeta.
+             * @memberof api
+             * @interface IAppendMeta
+             * @property {string|null} [key] AppendMeta key
+             * @property {Uint8Array|null} [data] AppendMeta data
+             */
+    
+            /**
+             * Constructs a new AppendMeta.
+             * @memberof api
+             * @classdesc Represents an AppendMeta.
+             * @implements IAppendMeta
+             * @constructor
+             * @param {api.IAppendMeta=} [properties] Properties to set
+             */
+            function AppendMeta(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * AppendMeta key.
+             * @member {string} key
+             * @memberof api.AppendMeta
+             * @instance
+             */
+            AppendMeta.prototype.key = "";
+    
+            /**
+             * AppendMeta data.
+             * @member {Uint8Array} data
+             * @memberof api.AppendMeta
+             * @instance
+             */
+            AppendMeta.prototype.data = $util.newBuffer([]);
+    
+            /**
+             * Creates a new AppendMeta instance using the specified properties.
+             * @function create
+             * @memberof api.AppendMeta
+             * @static
+             * @param {api.IAppendMeta=} [properties] Properties to set
+             * @returns {api.AppendMeta} AppendMeta instance
+             */
+            AppendMeta.create = function create(properties) {
+                return new AppendMeta(properties);
+            };
+    
+            /**
+             * Encodes the specified AppendMeta message. Does not implicitly {@link api.AppendMeta.verify|verify} messages.
+             * @function encode
+             * @memberof api.AppendMeta
+             * @static
+             * @param {api.IAppendMeta} message AppendMeta message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            AppendMeta.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.key != null && message.hasOwnProperty("key"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.key);
+                if (message.data != null && message.hasOwnProperty("data"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.data);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified AppendMeta message, length delimited. Does not implicitly {@link api.AppendMeta.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.AppendMeta
+             * @static
+             * @param {api.IAppendMeta} message AppendMeta message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            AppendMeta.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes an AppendMeta message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.AppendMeta
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.AppendMeta} AppendMeta
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            AppendMeta.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.AppendMeta();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.key = reader.string();
+                        break;
+                    case 2:
+                        message.data = reader.bytes();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes an AppendMeta message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.AppendMeta
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.AppendMeta} AppendMeta
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            AppendMeta.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies an AppendMeta message.
+             * @function verify
+             * @memberof api.AppendMeta
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            AppendMeta.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.key != null && message.hasOwnProperty("key"))
+                    if (!$util.isString(message.key))
+                        return "key: string expected";
+                if (message.data != null && message.hasOwnProperty("data"))
+                    if (!(message.data && typeof message.data.length === "number" || $util.isString(message.data)))
+                        return "data: buffer expected";
+                return null;
+            };
+    
+            /**
+             * Creates an AppendMeta message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.AppendMeta
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.AppendMeta} AppendMeta
+             */
+            AppendMeta.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.AppendMeta)
+                    return object;
+                var message = new $root.api.AppendMeta();
+                if (object.key != null)
+                    message.key = String(object.key);
+                if (object.data != null)
+                    if (typeof object.data === "string")
+                        $util.base64.decode(object.data, message.data = $util.newBuffer($util.base64.length(object.data)), 0);
+                    else if (object.data.length)
+                        message.data = object.data;
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from an AppendMeta message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.AppendMeta
+             * @static
+             * @param {api.AppendMeta} message AppendMeta
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            AppendMeta.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.key = "";
+                    if (options.bytes === String)
+                        object.data = "";
+                    else {
+                        object.data = [];
+                        if (options.bytes !== Array)
+                            object.data = $util.newBuffer(object.data);
+                    }
+                }
+                if (message.key != null && message.hasOwnProperty("key"))
+                    object.key = message.key;
+                if (message.data != null && message.hasOwnProperty("data"))
+                    object.data = options.bytes === String ? $util.base64.encode(message.data, 0, message.data.length) : options.bytes === Array ? Array.prototype.slice.call(message.data) : message.data;
+                return object;
+            };
+    
+            /**
+             * Converts this AppendMeta to JSON.
+             * @function toJSON
+             * @memberof api.AppendMeta
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            AppendMeta.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return AppendMeta;
         })();
     
         api.BootStatus = (function() {
