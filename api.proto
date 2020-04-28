@@ -161,10 +161,7 @@ message Command {
   string ref = 1000;
 }
 
-message Audio {
-  repeated int32 data = 1;
-  bool isRunning = 2;
-}
+message Audio { repeated int32 data = 1; }
 
 message ReadMeta {
   string key = 1;

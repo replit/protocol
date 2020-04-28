@@ -3438,7 +3438,6 @@
              * @memberof api
              * @interface IAudio
              * @property {Array.<number>|null} [data] Audio data
-             * @property {boolean|null} [isRunning] Audio isRunning
              */
     
             /**
@@ -3464,14 +3463,6 @@
              * @instance
              */
             Audio.prototype.data = $util.emptyArray;
-    
-            /**
-             * Audio isRunning.
-             * @member {boolean} isRunning
-             * @memberof api.Audio
-             * @instance
-             */
-            Audio.prototype.isRunning = false;
     
             /**
              * Creates a new Audio instance using the specified properties.
@@ -3503,8 +3494,6 @@
                         writer.int32(message.data[i]);
                     writer.ldelim();
                 }
-                if (message.isRunning != null && message.hasOwnProperty("isRunning"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).bool(message.isRunning);
                 return writer;
             };
     
@@ -3549,9 +3538,6 @@
                         } else
                             message.data.push(reader.int32());
                         break;
-                    case 2:
-                        message.isRunning = reader.bool();
-                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -3594,9 +3580,6 @@
                         if (!$util.isInteger(message.data[i]))
                             return "data: integer[] expected";
                 }
-                if (message.isRunning != null && message.hasOwnProperty("isRunning"))
-                    if (typeof message.isRunning !== "boolean")
-                        return "isRunning: boolean expected";
                 return null;
             };
     
@@ -3619,8 +3602,6 @@
                     for (var i = 0; i < object.data.length; ++i)
                         message.data[i] = object.data[i] | 0;
                 }
-                if (object.isRunning != null)
-                    message.isRunning = Boolean(object.isRunning);
                 return message;
             };
     
@@ -3639,15 +3620,11 @@
                 var object = {};
                 if (options.arrays || options.defaults)
                     object.data = [];
-                if (options.defaults)
-                    object.isRunning = false;
                 if (message.data && message.data.length) {
                     object.data = [];
                     for (var j = 0; j < message.data.length; ++j)
                         object.data[j] = message.data[j];
                 }
-                if (message.isRunning != null && message.hasOwnProperty("isRunning"))
-                    object.isRunning = message.isRunning;
                 return object;
             };
     

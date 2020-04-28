@@ -676,9 +676,6 @@ export namespace api {
 
         /** Audio data */
         data?: (number[]|null);
-
-        /** Audio isRunning */
-        isRunning?: (boolean|null);
     }
 
     /** Represents an Audio. */
@@ -692,9 +689,6 @@ export namespace api {
 
         /** Audio data. */
         public data: number[];
-
-        /** Audio isRunning. */
-        public isRunning: boolean;
 
         /**
          * Creates a new Audio instance using the specified properties.
