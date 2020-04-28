@@ -23,7 +23,7 @@ publish-js:
 clean-go:
 	rm -rf go/api.pb.go
 build-go: clean-go
-	protoc api.proto --go_out=plugin=grpc:./go
+	protoc api.proto --go_out=./go
 publish-go:
 	VERSION=$$(git tag | sort -r --version-sort | head -n1) && \
 	git subtree split --prefix=go -b go-release && \

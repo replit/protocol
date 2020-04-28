@@ -290,8 +290,8 @@ export namespace api {
         /** Command appendMeta */
         appendMeta?: (api.IAppendMeta|null);
 
-        /** Command audioStream */
-        audioStream?: (api.IAudioStream|null);
+        /** Command audio */
+        audio?: (api.IAudio|null);
 
         /** Command ref */
         ref?: (string|null);
@@ -591,14 +591,14 @@ export namespace api {
         /** Command appendMeta. */
         public appendMeta?: (api.IAppendMeta|null);
 
-        /** Command audioStream. */
-        public audioStream?: (api.IAudioStream|null);
+        /** Command audio. */
+        public audio?: (api.IAudio|null);
 
         /** Command ref. */
         public ref: string;
 
         /** Command body. */
-        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audioStream");
+        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio");
 
         /**
          * Creates a new Command instance using the specified properties.
@@ -671,91 +671,91 @@ export namespace api {
         public toJSON(): { [k: string]: any };
     }
 
-    /** Properties of an AudioStream. */
-    interface IAudioStream {
+    /** Properties of an Audio. */
+    interface IAudio {
 
-        /** AudioStream data */
+        /** Audio data */
         data?: (number[]|null);
     }
 
-    /** Represents an AudioStream. */
-    class AudioStream implements IAudioStream {
+    /** Represents an Audio. */
+    class Audio implements IAudio {
 
         /**
-         * Constructs a new AudioStream.
+         * Constructs a new Audio.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IAudioStream);
+        constructor(properties?: api.IAudio);
 
-        /** AudioStream data. */
+        /** Audio data. */
         public data: number[];
 
         /**
-         * Creates a new AudioStream instance using the specified properties.
+         * Creates a new Audio instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns AudioStream instance
+         * @returns Audio instance
          */
-        public static create(properties?: api.IAudioStream): api.AudioStream;
+        public static create(properties?: api.IAudio): api.Audio;
 
         /**
-         * Encodes the specified AudioStream message. Does not implicitly {@link api.AudioStream.verify|verify} messages.
-         * @param message AudioStream message or plain object to encode
+         * Encodes the specified Audio message. Does not implicitly {@link api.Audio.verify|verify} messages.
+         * @param message Audio message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IAudioStream, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.IAudio, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified AudioStream message, length delimited. Does not implicitly {@link api.AudioStream.verify|verify} messages.
-         * @param message AudioStream message or plain object to encode
+         * Encodes the specified Audio message, length delimited. Does not implicitly {@link api.Audio.verify|verify} messages.
+         * @param message Audio message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IAudioStream, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.IAudio, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes an AudioStream message from the specified reader or buffer.
+         * Decodes an Audio message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns AudioStream
+         * @returns Audio
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.AudioStream;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.Audio;
 
         /**
-         * Decodes an AudioStream message from the specified reader or buffer, length delimited.
+         * Decodes an Audio message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns AudioStream
+         * @returns Audio
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.AudioStream;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.Audio;
 
         /**
-         * Verifies an AudioStream message.
+         * Verifies an Audio message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates an AudioStream message from a plain object. Also converts values to their respective internal types.
+         * Creates an Audio message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns AudioStream
+         * @returns Audio
          */
-        public static fromObject(object: { [k: string]: any }): api.AudioStream;
+        public static fromObject(object: { [k: string]: any }): api.Audio;
 
         /**
-         * Creates a plain object from an AudioStream message. Also converts values to other types if specified.
-         * @param message AudioStream
+         * Creates a plain object from an Audio message. Also converts values to other types if specified.
+         * @param message Audio
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.AudioStream, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: api.Audio, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this AudioStream to JSON.
+         * Converts this Audio to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
