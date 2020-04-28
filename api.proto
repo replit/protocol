@@ -155,13 +155,16 @@ message Command {
     AppendMeta appendMeta = 362;
 
     // audio
-    AudioStream audioStream = 363;
+    Audio audio = 363;
   }
 
   string ref = 1000;
 }
 
-message AudioStream { repeated int32 data = 1;}
+message Audio {
+  repeated int32 data = 1;
+  bool isRunning = 2;
+}
 
 message ReadMeta {
   string key = 1;

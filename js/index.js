@@ -126,7 +126,7 @@
              * @property {api.IReadMeta|null} [readMeta] Command readMeta
              * @property {api.IWriteMeta|null} [writeMeta] Command writeMeta
              * @property {api.IAppendMeta|null} [appendMeta] Command appendMeta
-             * @property {api.IAudioStream|null} [audioStream] Command audioStream
+             * @property {api.IAudio|null} [audio] Command audio
              * @property {string|null} [ref] Command ref
              */
     
@@ -906,12 +906,12 @@
             Command.prototype.appendMeta = null;
     
             /**
-             * Command audioStream.
-             * @member {api.IAudioStream|null|undefined} audioStream
+             * Command audio.
+             * @member {api.IAudio|null|undefined} audio
              * @memberof api.Command
              * @instance
              */
-            Command.prototype.audioStream = null;
+            Command.prototype.audio = null;
     
             /**
              * Command ref.
@@ -926,12 +926,12 @@
     
             /**
              * Command body.
-             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audioStream"|undefined} body
+             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|undefined} body
              * @memberof api.Command
              * @instance
              */
             Object.defineProperty(Command.prototype, "body", {
-                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock", "hasCap", "pid1Config", "metrics", "bootStatus", "readMeta", "writeMeta", "appendMeta", "audioStream"]),
+                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock", "hasCap", "pid1Config", "metrics", "bootStatus", "readMeta", "writeMeta", "appendMeta", "audio"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
     
@@ -1149,8 +1149,8 @@
                     $root.api.WriteMeta.encode(message.writeMeta, writer.uint32(/* id 361, wireType 2 =*/2890).fork()).ldelim();
                 if (message.appendMeta != null && message.hasOwnProperty("appendMeta"))
                     $root.api.AppendMeta.encode(message.appendMeta, writer.uint32(/* id 362, wireType 2 =*/2898).fork()).ldelim();
-                if (message.audioStream != null && message.hasOwnProperty("audioStream"))
-                    $root.api.AudioStream.encode(message.audioStream, writer.uint32(/* id 363, wireType 2 =*/2906).fork()).ldelim();
+                if (message.audio != null && message.hasOwnProperty("audio"))
+                    $root.api.Audio.encode(message.audio, writer.uint32(/* id 363, wireType 2 =*/2906).fork()).ldelim();
                 if (message.ref != null && message.hasOwnProperty("ref"))
                     writer.uint32(/* id 1000, wireType 2 =*/8002).string(message.ref);
                 return writer;
@@ -1473,7 +1473,7 @@
                         message.appendMeta = $root.api.AppendMeta.decode(reader, reader.uint32());
                         break;
                     case 363:
-                        message.audioStream = $root.api.AudioStream.decode(reader, reader.uint32());
+                        message.audio = $root.api.Audio.decode(reader, reader.uint32());
                         break;
                     case 1000:
                         message.ref = reader.string();
@@ -2429,14 +2429,14 @@
                             return "appendMeta." + error;
                     }
                 }
-                if (message.audioStream != null && message.hasOwnProperty("audioStream")) {
+                if (message.audio != null && message.hasOwnProperty("audio")) {
                     if (properties.body === 1)
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.api.AudioStream.verify(message.audioStream);
+                        var error = $root.api.Audio.verify(message.audio);
                         if (error)
-                            return "audioStream." + error;
+                            return "audio." + error;
                     }
                 }
                 if (message.ref != null && message.hasOwnProperty("ref"))
@@ -2910,10 +2910,10 @@
                         throw TypeError(".api.Command.appendMeta: object expected");
                     message.appendMeta = $root.api.AppendMeta.fromObject(object.appendMeta);
                 }
-                if (object.audioStream != null) {
-                    if (typeof object.audioStream !== "object")
-                        throw TypeError(".api.Command.audioStream: object expected");
-                    message.audioStream = $root.api.AudioStream.fromObject(object.audioStream);
+                if (object.audio != null) {
+                    if (typeof object.audio !== "object")
+                        throw TypeError(".api.Command.audio: object expected");
+                    message.audio = $root.api.Audio.fromObject(object.audio);
                 }
                 if (object.ref != null)
                     message.ref = String(object.ref);
@@ -3407,10 +3407,10 @@
                     if (options.oneofs)
                         object.body = "appendMeta";
                 }
-                if (message.audioStream != null && message.hasOwnProperty("audioStream")) {
-                    object.audioStream = $root.api.AudioStream.toObject(message.audioStream, options);
+                if (message.audio != null && message.hasOwnProperty("audio")) {
+                    object.audio = $root.api.Audio.toObject(message.audio, options);
                     if (options.oneofs)
-                        object.body = "audioStream";
+                        object.body = "audio";
                 }
                 if (message.ref != null && message.hasOwnProperty("ref"))
                     object.ref = message.ref;
@@ -3431,24 +3431,25 @@
             return Command;
         })();
     
-        api.AudioStream = (function() {
+        api.Audio = (function() {
     
             /**
-             * Properties of an AudioStream.
+             * Properties of an Audio.
              * @memberof api
-             * @interface IAudioStream
-             * @property {Array.<number>|null} [data] AudioStream data
+             * @interface IAudio
+             * @property {Array.<number>|null} [data] Audio data
+             * @property {boolean|null} [isRunning] Audio isRunning
              */
     
             /**
-             * Constructs a new AudioStream.
+             * Constructs a new Audio.
              * @memberof api
-             * @classdesc Represents an AudioStream.
-             * @implements IAudioStream
+             * @classdesc Represents an Audio.
+             * @implements IAudio
              * @constructor
-             * @param {api.IAudioStream=} [properties] Properties to set
+             * @param {api.IAudio=} [properties] Properties to set
              */
-            function AudioStream(properties) {
+            function Audio(properties) {
                 this.data = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
@@ -3457,35 +3458,43 @@
             }
     
             /**
-             * AudioStream data.
+             * Audio data.
              * @member {Array.<number>} data
-             * @memberof api.AudioStream
+             * @memberof api.Audio
              * @instance
              */
-            AudioStream.prototype.data = $util.emptyArray;
+            Audio.prototype.data = $util.emptyArray;
     
             /**
-             * Creates a new AudioStream instance using the specified properties.
-             * @function create
-             * @memberof api.AudioStream
-             * @static
-             * @param {api.IAudioStream=} [properties] Properties to set
-             * @returns {api.AudioStream} AudioStream instance
+             * Audio isRunning.
+             * @member {boolean} isRunning
+             * @memberof api.Audio
+             * @instance
              */
-            AudioStream.create = function create(properties) {
-                return new AudioStream(properties);
+            Audio.prototype.isRunning = false;
+    
+            /**
+             * Creates a new Audio instance using the specified properties.
+             * @function create
+             * @memberof api.Audio
+             * @static
+             * @param {api.IAudio=} [properties] Properties to set
+             * @returns {api.Audio} Audio instance
+             */
+            Audio.create = function create(properties) {
+                return new Audio(properties);
             };
     
             /**
-             * Encodes the specified AudioStream message. Does not implicitly {@link api.AudioStream.verify|verify} messages.
+             * Encodes the specified Audio message. Does not implicitly {@link api.Audio.verify|verify} messages.
              * @function encode
-             * @memberof api.AudioStream
+             * @memberof api.Audio
              * @static
-             * @param {api.IAudioStream} message AudioStream message or plain object to encode
+             * @param {api.IAudio} message Audio message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            AudioStream.encode = function encode(message, writer) {
+            Audio.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.data != null && message.data.length) {
@@ -3494,37 +3503,39 @@
                         writer.int32(message.data[i]);
                     writer.ldelim();
                 }
+                if (message.isRunning != null && message.hasOwnProperty("isRunning"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).bool(message.isRunning);
                 return writer;
             };
     
             /**
-             * Encodes the specified AudioStream message, length delimited. Does not implicitly {@link api.AudioStream.verify|verify} messages.
+             * Encodes the specified Audio message, length delimited. Does not implicitly {@link api.Audio.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof api.AudioStream
+             * @memberof api.Audio
              * @static
-             * @param {api.IAudioStream} message AudioStream message or plain object to encode
+             * @param {api.IAudio} message Audio message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            AudioStream.encodeDelimited = function encodeDelimited(message, writer) {
+            Audio.encodeDelimited = function encodeDelimited(message, writer) {
                 return this.encode(message, writer).ldelim();
             };
     
             /**
-             * Decodes an AudioStream message from the specified reader or buffer.
+             * Decodes an Audio message from the specified reader or buffer.
              * @function decode
-             * @memberof api.AudioStream
+             * @memberof api.Audio
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {api.AudioStream} AudioStream
+             * @returns {api.Audio} Audio
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            AudioStream.decode = function decode(reader, length) {
+            Audio.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.AudioStream();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Audio();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -3538,6 +3549,9 @@
                         } else
                             message.data.push(reader.int32());
                         break;
+                    case 2:
+                        message.isRunning = reader.bool();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -3547,30 +3561,30 @@
             };
     
             /**
-             * Decodes an AudioStream message from the specified reader or buffer, length delimited.
+             * Decodes an Audio message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof api.AudioStream
+             * @memberof api.Audio
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {api.AudioStream} AudioStream
+             * @returns {api.Audio} Audio
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            AudioStream.decodeDelimited = function decodeDelimited(reader) {
+            Audio.decodeDelimited = function decodeDelimited(reader) {
                 if (!(reader instanceof $Reader))
                     reader = new $Reader(reader);
                 return this.decode(reader, reader.uint32());
             };
     
             /**
-             * Verifies an AudioStream message.
+             * Verifies an Audio message.
              * @function verify
-             * @memberof api.AudioStream
+             * @memberof api.Audio
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            AudioStream.verify = function verify(message) {
+            Audio.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.data != null && message.hasOwnProperty("data")) {
@@ -3580,66 +3594,75 @@
                         if (!$util.isInteger(message.data[i]))
                             return "data: integer[] expected";
                 }
+                if (message.isRunning != null && message.hasOwnProperty("isRunning"))
+                    if (typeof message.isRunning !== "boolean")
+                        return "isRunning: boolean expected";
                 return null;
             };
     
             /**
-             * Creates an AudioStream message from a plain object. Also converts values to their respective internal types.
+             * Creates an Audio message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof api.AudioStream
+             * @memberof api.Audio
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {api.AudioStream} AudioStream
+             * @returns {api.Audio} Audio
              */
-            AudioStream.fromObject = function fromObject(object) {
-                if (object instanceof $root.api.AudioStream)
+            Audio.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.Audio)
                     return object;
-                var message = new $root.api.AudioStream();
+                var message = new $root.api.Audio();
                 if (object.data) {
                     if (!Array.isArray(object.data))
-                        throw TypeError(".api.AudioStream.data: array expected");
+                        throw TypeError(".api.Audio.data: array expected");
                     message.data = [];
                     for (var i = 0; i < object.data.length; ++i)
                         message.data[i] = object.data[i] | 0;
                 }
+                if (object.isRunning != null)
+                    message.isRunning = Boolean(object.isRunning);
                 return message;
             };
     
             /**
-             * Creates a plain object from an AudioStream message. Also converts values to other types if specified.
+             * Creates a plain object from an Audio message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof api.AudioStream
+             * @memberof api.Audio
              * @static
-             * @param {api.AudioStream} message AudioStream
+             * @param {api.Audio} message Audio
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
-            AudioStream.toObject = function toObject(message, options) {
+            Audio.toObject = function toObject(message, options) {
                 if (!options)
                     options = {};
                 var object = {};
                 if (options.arrays || options.defaults)
                     object.data = [];
+                if (options.defaults)
+                    object.isRunning = false;
                 if (message.data && message.data.length) {
                     object.data = [];
                     for (var j = 0; j < message.data.length; ++j)
                         object.data[j] = message.data[j];
                 }
+                if (message.isRunning != null && message.hasOwnProperty("isRunning"))
+                    object.isRunning = message.isRunning;
                 return object;
             };
     
             /**
-             * Converts this AudioStream to JSON.
+             * Converts this Audio to JSON.
              * @function toJSON
-             * @memberof api.AudioStream
+             * @memberof api.Audio
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
-            AudioStream.prototype.toJSON = function toJSON() {
+            Audio.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
     
-            return AudioStream;
+            return Audio;
         })();
     
         api.ReadMeta = (function() {
