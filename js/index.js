@@ -90,8 +90,8 @@
              * @property {api.IOTLinkFile|null} [otLinkFile] Command otLinkFile
              * @property {api.IOTCursor|null} [otNewCursor] Command otNewCursor
              * @property {api.IOTCursor|null} [otDeleteCursor] Command otDeleteCursor
-             * @property {api.IOTFetch|null} [otFetchOps] Command otFetchOps
-             * @property {api.IOTPacket|null} [otFetchResponse] Command otFetchResponse
+             * @property {api.IOTFetchRequest|null} [otFetchRequest] Command otFetchRequest
+             * @property {api.IOTFetchResponse|null} [otFetchResponse] Command otFetchResponse
              * @property {api.IFlush|null} [flush] Command flush
              * @property {api.IDebug|null} [debug] Command debug
              * @property {api.IStartVCR|null} [startVCR] Command startVCR
@@ -620,16 +620,16 @@
             Command.prototype.otDeleteCursor = null;
     
             /**
-             * Command otFetchOps.
-             * @member {api.IOTFetch|null|undefined} otFetchOps
+             * Command otFetchRequest.
+             * @member {api.IOTFetchRequest|null|undefined} otFetchRequest
              * @memberof api.Command
              * @instance
              */
-            Command.prototype.otFetchOps = null;
+            Command.prototype.otFetchRequest = null;
     
             /**
              * Command otFetchResponse.
-             * @member {api.IOTPacket|null|undefined} otFetchResponse
+             * @member {api.IOTFetchResponse|null|undefined} otFetchResponse
              * @memberof api.Command
              * @instance
              */
@@ -944,12 +944,12 @@
     
             /**
              * Command body.
-             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchOps"|"otFetchResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|undefined} body
+             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|undefined} body
              * @memberof api.Command
              * @instance
              */
             Object.defineProperty(Command.prototype, "body", {
-                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "otFetchOps", "otFetchResponse", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock", "hasCap", "pid1Config", "metrics", "bootStatus", "readMeta", "writeMeta", "appendMeta", "audio"]),
+                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "otFetchRequest", "otFetchResponse", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock", "hasCap", "pid1Config", "metrics", "bootStatus", "readMeta", "writeMeta", "appendMeta", "audio"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
     
@@ -1095,10 +1095,10 @@
                     $root.api.OTCursor.encode(message.otNewCursor, writer.uint32(/* id 223, wireType 2 =*/1786).fork()).ldelim();
                 if (message.otDeleteCursor != null && message.hasOwnProperty("otDeleteCursor"))
                     $root.api.OTCursor.encode(message.otDeleteCursor, writer.uint32(/* id 224, wireType 2 =*/1794).fork()).ldelim();
-                if (message.otFetchOps != null && message.hasOwnProperty("otFetchOps"))
-                    $root.api.OTFetch.encode(message.otFetchOps, writer.uint32(/* id 225, wireType 2 =*/1802).fork()).ldelim();
+                if (message.otFetchRequest != null && message.hasOwnProperty("otFetchRequest"))
+                    $root.api.OTFetchRequest.encode(message.otFetchRequest, writer.uint32(/* id 225, wireType 2 =*/1802).fork()).ldelim();
                 if (message.otFetchResponse != null && message.hasOwnProperty("otFetchResponse"))
-                    $root.api.OTPacket.encode(message.otFetchResponse, writer.uint32(/* id 226, wireType 2 =*/1810).fork()).ldelim();
+                    $root.api.OTFetchResponse.encode(message.otFetchResponse, writer.uint32(/* id 226, wireType 2 =*/1810).fork()).ldelim();
                 if (message.debug != null && message.hasOwnProperty("debug"))
                     $root.api.Debug.encode(message.debug, writer.uint32(/* id 230, wireType 2 =*/1842).fork()).ldelim();
                 if (message.startVCR != null && message.hasOwnProperty("startVCR"))
@@ -1387,10 +1387,10 @@
                         message.otDeleteCursor = $root.api.OTCursor.decode(reader, reader.uint32());
                         break;
                     case 225:
-                        message.otFetchOps = $root.api.OTFetch.decode(reader, reader.uint32());
+                        message.otFetchRequest = $root.api.OTFetchRequest.decode(reader, reader.uint32());
                         break;
                     case 226:
-                        message.otFetchResponse = $root.api.OTPacket.decode(reader, reader.uint32());
+                        message.otFetchResponse = $root.api.OTFetchResponse.decode(reader, reader.uint32());
                         break;
                     case 251:
                         message.flush = $root.api.Flush.decode(reader, reader.uint32());
@@ -2100,14 +2100,14 @@
                             return "otDeleteCursor." + error;
                     }
                 }
-                if (message.otFetchOps != null && message.hasOwnProperty("otFetchOps")) {
+                if (message.otFetchRequest != null && message.hasOwnProperty("otFetchRequest")) {
                     if (properties.body === 1)
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.api.OTFetch.verify(message.otFetchOps);
+                        var error = $root.api.OTFetchRequest.verify(message.otFetchRequest);
                         if (error)
-                            return "otFetchOps." + error;
+                            return "otFetchRequest." + error;
                     }
                 }
                 if (message.otFetchResponse != null && message.hasOwnProperty("otFetchResponse")) {
@@ -2115,7 +2115,7 @@
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.api.OTPacket.verify(message.otFetchResponse);
+                        var error = $root.api.OTFetchResponse.verify(message.otFetchResponse);
                         if (error)
                             return "otFetchResponse." + error;
                     }
@@ -2781,15 +2781,15 @@
                         throw TypeError(".api.Command.otDeleteCursor: object expected");
                     message.otDeleteCursor = $root.api.OTCursor.fromObject(object.otDeleteCursor);
                 }
-                if (object.otFetchOps != null) {
-                    if (typeof object.otFetchOps !== "object")
-                        throw TypeError(".api.Command.otFetchOps: object expected");
-                    message.otFetchOps = $root.api.OTFetch.fromObject(object.otFetchOps);
+                if (object.otFetchRequest != null) {
+                    if (typeof object.otFetchRequest !== "object")
+                        throw TypeError(".api.Command.otFetchRequest: object expected");
+                    message.otFetchRequest = $root.api.OTFetchRequest.fromObject(object.otFetchRequest);
                 }
                 if (object.otFetchResponse != null) {
                     if (typeof object.otFetchResponse !== "object")
                         throw TypeError(".api.Command.otFetchResponse: object expected");
-                    message.otFetchResponse = $root.api.OTPacket.fromObject(object.otFetchResponse);
+                    message.otFetchResponse = $root.api.OTFetchResponse.fromObject(object.otFetchResponse);
                 }
                 if (object.flush != null) {
                     if (typeof object.flush !== "object")
@@ -3285,13 +3285,13 @@
                     if (options.oneofs)
                         object.body = "otDeleteCursor";
                 }
-                if (message.otFetchOps != null && message.hasOwnProperty("otFetchOps")) {
-                    object.otFetchOps = $root.api.OTFetch.toObject(message.otFetchOps, options);
+                if (message.otFetchRequest != null && message.hasOwnProperty("otFetchRequest")) {
+                    object.otFetchRequest = $root.api.OTFetchRequest.toObject(message.otFetchRequest, options);
                     if (options.oneofs)
-                        object.body = "otFetchOps";
+                        object.body = "otFetchRequest";
                 }
                 if (message.otFetchResponse != null && message.hasOwnProperty("otFetchResponse")) {
-                    object.otFetchResponse = $root.api.OTPacket.toObject(message.otFetchResponse, options);
+                    object.otFetchResponse = $root.api.OTFetchResponse.toObject(message.otFetchResponse, options);
                     if (options.oneofs)
                         object.body = "otFetchResponse";
                 }
@@ -15824,25 +15824,25 @@
             return PortOpen;
         })();
     
-        api.OTFetch = (function() {
+        api.OTFetchRequest = (function() {
     
             /**
-             * Properties of a OTFetch.
+             * Properties of a OTFetchRequest.
              * @memberof api
-             * @interface IOTFetch
-             * @property {number|null} [versionFrom] OTFetch versionFrom
-             * @property {number|null} [versionTo] OTFetch versionTo
+             * @interface IOTFetchRequest
+             * @property {number|null} [versionFrom] OTFetchRequest versionFrom
+             * @property {number|null} [versionTo] OTFetchRequest versionTo
              */
     
             /**
-             * Constructs a new OTFetch.
+             * Constructs a new OTFetchRequest.
              * @memberof api
-             * @classdesc Represents a OTFetch.
-             * @implements IOTFetch
+             * @classdesc Represents a OTFetchRequest.
+             * @implements IOTFetchRequest
              * @constructor
-             * @param {api.IOTFetch=} [properties] Properties to set
+             * @param {api.IOTFetchRequest=} [properties] Properties to set
              */
-            function OTFetch(properties) {
+            function OTFetchRequest(properties) {
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -15850,43 +15850,43 @@
             }
     
             /**
-             * OTFetch versionFrom.
+             * OTFetchRequest versionFrom.
              * @member {number} versionFrom
-             * @memberof api.OTFetch
+             * @memberof api.OTFetchRequest
              * @instance
              */
-            OTFetch.prototype.versionFrom = 0;
+            OTFetchRequest.prototype.versionFrom = 0;
     
             /**
-             * OTFetch versionTo.
+             * OTFetchRequest versionTo.
              * @member {number} versionTo
-             * @memberof api.OTFetch
+             * @memberof api.OTFetchRequest
              * @instance
              */
-            OTFetch.prototype.versionTo = 0;
+            OTFetchRequest.prototype.versionTo = 0;
     
             /**
-             * Creates a new OTFetch instance using the specified properties.
+             * Creates a new OTFetchRequest instance using the specified properties.
              * @function create
-             * @memberof api.OTFetch
+             * @memberof api.OTFetchRequest
              * @static
-             * @param {api.IOTFetch=} [properties] Properties to set
-             * @returns {api.OTFetch} OTFetch instance
+             * @param {api.IOTFetchRequest=} [properties] Properties to set
+             * @returns {api.OTFetchRequest} OTFetchRequest instance
              */
-            OTFetch.create = function create(properties) {
-                return new OTFetch(properties);
+            OTFetchRequest.create = function create(properties) {
+                return new OTFetchRequest(properties);
             };
     
             /**
-             * Encodes the specified OTFetch message. Does not implicitly {@link api.OTFetch.verify|verify} messages.
+             * Encodes the specified OTFetchRequest message. Does not implicitly {@link api.OTFetchRequest.verify|verify} messages.
              * @function encode
-             * @memberof api.OTFetch
+             * @memberof api.OTFetchRequest
              * @static
-             * @param {api.IOTFetch} message OTFetch message or plain object to encode
+             * @param {api.IOTFetchRequest} message OTFetchRequest message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            OTFetch.encode = function encode(message, writer) {
+            OTFetchRequest.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
                 if (message.versionFrom != null && message.hasOwnProperty("versionFrom"))
@@ -15897,33 +15897,33 @@
             };
     
             /**
-             * Encodes the specified OTFetch message, length delimited. Does not implicitly {@link api.OTFetch.verify|verify} messages.
+             * Encodes the specified OTFetchRequest message, length delimited. Does not implicitly {@link api.OTFetchRequest.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof api.OTFetch
+             * @memberof api.OTFetchRequest
              * @static
-             * @param {api.IOTFetch} message OTFetch message or plain object to encode
+             * @param {api.IOTFetchRequest} message OTFetchRequest message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            OTFetch.encodeDelimited = function encodeDelimited(message, writer) {
+            OTFetchRequest.encodeDelimited = function encodeDelimited(message, writer) {
                 return this.encode(message, writer).ldelim();
             };
     
             /**
-             * Decodes a OTFetch message from the specified reader or buffer.
+             * Decodes a OTFetchRequest message from the specified reader or buffer.
              * @function decode
-             * @memberof api.OTFetch
+             * @memberof api.OTFetchRequest
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {api.OTFetch} OTFetch
+             * @returns {api.OTFetchRequest} OTFetchRequest
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            OTFetch.decode = function decode(reader, length) {
+            OTFetchRequest.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.OTFetch();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.OTFetchRequest();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -15942,30 +15942,30 @@
             };
     
             /**
-             * Decodes a OTFetch message from the specified reader or buffer, length delimited.
+             * Decodes a OTFetchRequest message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof api.OTFetch
+             * @memberof api.OTFetchRequest
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {api.OTFetch} OTFetch
+             * @returns {api.OTFetchRequest} OTFetchRequest
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            OTFetch.decodeDelimited = function decodeDelimited(reader) {
+            OTFetchRequest.decodeDelimited = function decodeDelimited(reader) {
                 if (!(reader instanceof $Reader))
                     reader = new $Reader(reader);
                 return this.decode(reader, reader.uint32());
             };
     
             /**
-             * Verifies a OTFetch message.
+             * Verifies a OTFetchRequest message.
              * @function verify
-             * @memberof api.OTFetch
+             * @memberof api.OTFetchRequest
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            OTFetch.verify = function verify(message) {
+            OTFetchRequest.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 if (message.versionFrom != null && message.hasOwnProperty("versionFrom"))
@@ -15978,17 +15978,17 @@
             };
     
             /**
-             * Creates a OTFetch message from a plain object. Also converts values to their respective internal types.
+             * Creates a OTFetchRequest message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof api.OTFetch
+             * @memberof api.OTFetchRequest
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {api.OTFetch} OTFetch
+             * @returns {api.OTFetchRequest} OTFetchRequest
              */
-            OTFetch.fromObject = function fromObject(object) {
-                if (object instanceof $root.api.OTFetch)
+            OTFetchRequest.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.OTFetchRequest)
                     return object;
-                var message = new $root.api.OTFetch();
+                var message = new $root.api.OTFetchRequest();
                 if (object.versionFrom != null)
                     message.versionFrom = object.versionFrom >>> 0;
                 if (object.versionTo != null)
@@ -15997,15 +15997,15 @@
             };
     
             /**
-             * Creates a plain object from a OTFetch message. Also converts values to other types if specified.
+             * Creates a plain object from a OTFetchRequest message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof api.OTFetch
+             * @memberof api.OTFetchRequest
              * @static
-             * @param {api.OTFetch} message OTFetch
+             * @param {api.OTFetchRequest} message OTFetchRequest
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
-            OTFetch.toObject = function toObject(message, options) {
+            OTFetchRequest.toObject = function toObject(message, options) {
                 if (!options)
                     options = {};
                 var object = {};
@@ -16021,17 +16021,225 @@
             };
     
             /**
-             * Converts this OTFetch to JSON.
+             * Converts this OTFetchRequest to JSON.
              * @function toJSON
-             * @memberof api.OTFetch
+             * @memberof api.OTFetchRequest
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
-            OTFetch.prototype.toJSON = function toJSON() {
+            OTFetchRequest.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
     
-            return OTFetch;
+            return OTFetchRequest;
+        })();
+    
+        api.OTFetchResponse = (function() {
+    
+            /**
+             * Properties of a OTFetchResponse.
+             * @memberof api
+             * @interface IOTFetchResponse
+             * @property {Array.<api.IOTPacket>|null} [packets] OTFetchResponse packets
+             */
+    
+            /**
+             * Constructs a new OTFetchResponse.
+             * @memberof api
+             * @classdesc Represents a OTFetchResponse.
+             * @implements IOTFetchResponse
+             * @constructor
+             * @param {api.IOTFetchResponse=} [properties] Properties to set
+             */
+            function OTFetchResponse(properties) {
+                this.packets = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * OTFetchResponse packets.
+             * @member {Array.<api.IOTPacket>} packets
+             * @memberof api.OTFetchResponse
+             * @instance
+             */
+            OTFetchResponse.prototype.packets = $util.emptyArray;
+    
+            /**
+             * Creates a new OTFetchResponse instance using the specified properties.
+             * @function create
+             * @memberof api.OTFetchResponse
+             * @static
+             * @param {api.IOTFetchResponse=} [properties] Properties to set
+             * @returns {api.OTFetchResponse} OTFetchResponse instance
+             */
+            OTFetchResponse.create = function create(properties) {
+                return new OTFetchResponse(properties);
+            };
+    
+            /**
+             * Encodes the specified OTFetchResponse message. Does not implicitly {@link api.OTFetchResponse.verify|verify} messages.
+             * @function encode
+             * @memberof api.OTFetchResponse
+             * @static
+             * @param {api.IOTFetchResponse} message OTFetchResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            OTFetchResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.packets != null && message.packets.length)
+                    for (var i = 0; i < message.packets.length; ++i)
+                        $root.api.OTPacket.encode(message.packets[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified OTFetchResponse message, length delimited. Does not implicitly {@link api.OTFetchResponse.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.OTFetchResponse
+             * @static
+             * @param {api.IOTFetchResponse} message OTFetchResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            OTFetchResponse.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a OTFetchResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.OTFetchResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.OTFetchResponse} OTFetchResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            OTFetchResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.OTFetchResponse();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.packets && message.packets.length))
+                            message.packets = [];
+                        message.packets.push($root.api.OTPacket.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a OTFetchResponse message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.OTFetchResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.OTFetchResponse} OTFetchResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            OTFetchResponse.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a OTFetchResponse message.
+             * @function verify
+             * @memberof api.OTFetchResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            OTFetchResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.packets != null && message.hasOwnProperty("packets")) {
+                    if (!Array.isArray(message.packets))
+                        return "packets: array expected";
+                    for (var i = 0; i < message.packets.length; ++i) {
+                        var error = $root.api.OTPacket.verify(message.packets[i]);
+                        if (error)
+                            return "packets." + error;
+                    }
+                }
+                return null;
+            };
+    
+            /**
+             * Creates a OTFetchResponse message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.OTFetchResponse
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.OTFetchResponse} OTFetchResponse
+             */
+            OTFetchResponse.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.OTFetchResponse)
+                    return object;
+                var message = new $root.api.OTFetchResponse();
+                if (object.packets) {
+                    if (!Array.isArray(object.packets))
+                        throw TypeError(".api.OTFetchResponse.packets: array expected");
+                    message.packets = [];
+                    for (var i = 0; i < object.packets.length; ++i) {
+                        if (typeof object.packets[i] !== "object")
+                            throw TypeError(".api.OTFetchResponse.packets: object expected");
+                        message.packets[i] = $root.api.OTPacket.fromObject(object.packets[i]);
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a OTFetchResponse message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.OTFetchResponse
+             * @static
+             * @param {api.OTFetchResponse} message OTFetchResponse
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            OTFetchResponse.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.packets = [];
+                if (message.packets && message.packets.length) {
+                    object.packets = [];
+                    for (var j = 0; j < message.packets.length; ++j)
+                        object.packets[j] = $root.api.OTPacket.toObject(message.packets[j], options);
+                }
+                return object;
+            };
+    
+            /**
+             * Converts this OTFetchResponse to JSON.
+             * @function toJSON
+             * @memberof api.OTFetchResponse
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            OTFetchResponse.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return OTFetchResponse;
         })();
     
         api.OTPacket = (function() {
