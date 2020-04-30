@@ -90,6 +90,8 @@
              * @property {api.IOTLinkFile|null} [otLinkFile] Command otLinkFile
              * @property {api.IOTCursor|null} [otNewCursor] Command otNewCursor
              * @property {api.IOTCursor|null} [otDeleteCursor] Command otDeleteCursor
+             * @property {api.IOTFetch|null} [otFetchOps] Command otFetchOps
+             * @property {api.IOTPacket|null} [otFetchResponse] Command otFetchResponse
              * @property {api.IFlush|null} [flush] Command flush
              * @property {api.IDebug|null} [debug] Command debug
              * @property {api.IStartVCR|null} [startVCR] Command startVCR
@@ -618,6 +620,22 @@
             Command.prototype.otDeleteCursor = null;
     
             /**
+             * Command otFetchOps.
+             * @member {api.IOTFetch|null|undefined} otFetchOps
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.otFetchOps = null;
+    
+            /**
+             * Command otFetchResponse.
+             * @member {api.IOTPacket|null|undefined} otFetchResponse
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.otFetchResponse = null;
+    
+            /**
              * Command flush.
              * @member {api.IFlush|null|undefined} flush
              * @memberof api.Command
@@ -926,12 +944,12 @@
     
             /**
              * Command body.
-             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|undefined} body
+             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchOps"|"otFetchResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|undefined} body
              * @memberof api.Command
              * @instance
              */
             Object.defineProperty(Command.prototype, "body", {
-                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock", "hasCap", "pid1Config", "metrics", "bootStatus", "readMeta", "writeMeta", "appendMeta", "audio"]),
+                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "otFetchOps", "otFetchResponse", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock", "hasCap", "pid1Config", "metrics", "bootStatus", "readMeta", "writeMeta", "appendMeta", "audio"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
     
@@ -1077,6 +1095,10 @@
                     $root.api.OTCursor.encode(message.otNewCursor, writer.uint32(/* id 223, wireType 2 =*/1786).fork()).ldelim();
                 if (message.otDeleteCursor != null && message.hasOwnProperty("otDeleteCursor"))
                     $root.api.OTCursor.encode(message.otDeleteCursor, writer.uint32(/* id 224, wireType 2 =*/1794).fork()).ldelim();
+                if (message.otFetchOps != null && message.hasOwnProperty("otFetchOps"))
+                    $root.api.OTFetch.encode(message.otFetchOps, writer.uint32(/* id 225, wireType 2 =*/1802).fork()).ldelim();
+                if (message.otFetchResponse != null && message.hasOwnProperty("otFetchResponse"))
+                    $root.api.OTPacket.encode(message.otFetchResponse, writer.uint32(/* id 226, wireType 2 =*/1810).fork()).ldelim();
                 if (message.debug != null && message.hasOwnProperty("debug"))
                     $root.api.Debug.encode(message.debug, writer.uint32(/* id 230, wireType 2 =*/1842).fork()).ldelim();
                 if (message.startVCR != null && message.hasOwnProperty("startVCR"))
@@ -1363,6 +1385,12 @@
                         break;
                     case 224:
                         message.otDeleteCursor = $root.api.OTCursor.decode(reader, reader.uint32());
+                        break;
+                    case 225:
+                        message.otFetchOps = $root.api.OTFetch.decode(reader, reader.uint32());
+                        break;
+                    case 226:
+                        message.otFetchResponse = $root.api.OTPacket.decode(reader, reader.uint32());
                         break;
                     case 251:
                         message.flush = $root.api.Flush.decode(reader, reader.uint32());
@@ -2072,6 +2100,26 @@
                             return "otDeleteCursor." + error;
                     }
                 }
+                if (message.otFetchOps != null && message.hasOwnProperty("otFetchOps")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.OTFetch.verify(message.otFetchOps);
+                        if (error)
+                            return "otFetchOps." + error;
+                    }
+                }
+                if (message.otFetchResponse != null && message.hasOwnProperty("otFetchResponse")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.OTPacket.verify(message.otFetchResponse);
+                        if (error)
+                            return "otFetchResponse." + error;
+                    }
+                }
                 if (message.flush != null && message.hasOwnProperty("flush")) {
                     if (properties.body === 1)
                         return "body: multiple values";
@@ -2733,6 +2781,16 @@
                         throw TypeError(".api.Command.otDeleteCursor: object expected");
                     message.otDeleteCursor = $root.api.OTCursor.fromObject(object.otDeleteCursor);
                 }
+                if (object.otFetchOps != null) {
+                    if (typeof object.otFetchOps !== "object")
+                        throw TypeError(".api.Command.otFetchOps: object expected");
+                    message.otFetchOps = $root.api.OTFetch.fromObject(object.otFetchOps);
+                }
+                if (object.otFetchResponse != null) {
+                    if (typeof object.otFetchResponse !== "object")
+                        throw TypeError(".api.Command.otFetchResponse: object expected");
+                    message.otFetchResponse = $root.api.OTPacket.fromObject(object.otFetchResponse);
+                }
                 if (object.flush != null) {
                     if (typeof object.flush !== "object")
                         throw TypeError(".api.Command.flush: object expected");
@@ -3226,6 +3284,16 @@
                     object.otDeleteCursor = $root.api.OTCursor.toObject(message.otDeleteCursor, options);
                     if (options.oneofs)
                         object.body = "otDeleteCursor";
+                }
+                if (message.otFetchOps != null && message.hasOwnProperty("otFetchOps")) {
+                    object.otFetchOps = $root.api.OTFetch.toObject(message.otFetchOps, options);
+                    if (options.oneofs)
+                        object.body = "otFetchOps";
+                }
+                if (message.otFetchResponse != null && message.hasOwnProperty("otFetchResponse")) {
+                    object.otFetchResponse = $root.api.OTPacket.toObject(message.otFetchResponse, options);
+                    if (options.oneofs)
+                        object.body = "otFetchResponse";
                 }
                 if (message.debug != null && message.hasOwnProperty("debug")) {
                     object.debug = $root.api.Debug.toObject(message.debug, options);
@@ -15754,6 +15822,216 @@
             };
     
             return PortOpen;
+        })();
+    
+        api.OTFetch = (function() {
+    
+            /**
+             * Properties of a OTFetch.
+             * @memberof api
+             * @interface IOTFetch
+             * @property {number|null} [versionFrom] OTFetch versionFrom
+             * @property {number|null} [versionTo] OTFetch versionTo
+             */
+    
+            /**
+             * Constructs a new OTFetch.
+             * @memberof api
+             * @classdesc Represents a OTFetch.
+             * @implements IOTFetch
+             * @constructor
+             * @param {api.IOTFetch=} [properties] Properties to set
+             */
+            function OTFetch(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * OTFetch versionFrom.
+             * @member {number} versionFrom
+             * @memberof api.OTFetch
+             * @instance
+             */
+            OTFetch.prototype.versionFrom = 0;
+    
+            /**
+             * OTFetch versionTo.
+             * @member {number} versionTo
+             * @memberof api.OTFetch
+             * @instance
+             */
+            OTFetch.prototype.versionTo = 0;
+    
+            /**
+             * Creates a new OTFetch instance using the specified properties.
+             * @function create
+             * @memberof api.OTFetch
+             * @static
+             * @param {api.IOTFetch=} [properties] Properties to set
+             * @returns {api.OTFetch} OTFetch instance
+             */
+            OTFetch.create = function create(properties) {
+                return new OTFetch(properties);
+            };
+    
+            /**
+             * Encodes the specified OTFetch message. Does not implicitly {@link api.OTFetch.verify|verify} messages.
+             * @function encode
+             * @memberof api.OTFetch
+             * @static
+             * @param {api.IOTFetch} message OTFetch message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            OTFetch.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.versionFrom != null && message.hasOwnProperty("versionFrom"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.versionFrom);
+                if (message.versionTo != null && message.hasOwnProperty("versionTo"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.versionTo);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified OTFetch message, length delimited. Does not implicitly {@link api.OTFetch.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.OTFetch
+             * @static
+             * @param {api.IOTFetch} message OTFetch message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            OTFetch.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a OTFetch message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.OTFetch
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.OTFetch} OTFetch
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            OTFetch.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.OTFetch();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.versionFrom = reader.uint32();
+                        break;
+                    case 2:
+                        message.versionTo = reader.uint32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a OTFetch message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.OTFetch
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.OTFetch} OTFetch
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            OTFetch.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a OTFetch message.
+             * @function verify
+             * @memberof api.OTFetch
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            OTFetch.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.versionFrom != null && message.hasOwnProperty("versionFrom"))
+                    if (!$util.isInteger(message.versionFrom))
+                        return "versionFrom: integer expected";
+                if (message.versionTo != null && message.hasOwnProperty("versionTo"))
+                    if (!$util.isInteger(message.versionTo))
+                        return "versionTo: integer expected";
+                return null;
+            };
+    
+            /**
+             * Creates a OTFetch message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.OTFetch
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.OTFetch} OTFetch
+             */
+            OTFetch.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.OTFetch)
+                    return object;
+                var message = new $root.api.OTFetch();
+                if (object.versionFrom != null)
+                    message.versionFrom = object.versionFrom >>> 0;
+                if (object.versionTo != null)
+                    message.versionTo = object.versionTo >>> 0;
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a OTFetch message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.OTFetch
+             * @static
+             * @param {api.OTFetch} message OTFetch
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            OTFetch.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.versionFrom = 0;
+                    object.versionTo = 0;
+                }
+                if (message.versionFrom != null && message.hasOwnProperty("versionFrom"))
+                    object.versionFrom = message.versionFrom;
+                if (message.versionTo != null && message.hasOwnProperty("versionTo"))
+                    object.versionTo = message.versionTo;
+                return object;
+            };
+    
+            /**
+             * Converts this OTFetch to JSON.
+             * @function toJSON
+             * @memberof api.OTFetch
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            OTFetch.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return OTFetch;
         })();
     
         api.OTPacket = (function() {

@@ -99,6 +99,8 @@ message Command {
     OTLinkFile otLinkFile = 222;
     OTCursor otNewCursor = 223;
     OTCursor otDeleteCursor = 224;
+    OTFetch otFetchOps = 225;
+    OTPacket otFetchResponse = 226;
     Flush flush = 251;
 
     Debug debug = 230;
@@ -463,6 +465,11 @@ message PortOpen {
   bool forwarded = 1;
   uint32 port = 2;
   string address = 3;
+}
+
+message OTFetch {
+  uint32 versionFrom = 1;
+  uint32 versionTo = 2;
 }
 
 message OTPacket {

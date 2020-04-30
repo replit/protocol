@@ -182,6 +182,12 @@ export namespace api {
         /** Command otDeleteCursor */
         otDeleteCursor?: (api.IOTCursor|null);
 
+        /** Command otFetchOps */
+        otFetchOps?: (api.IOTFetch|null);
+
+        /** Command otFetchResponse */
+        otFetchResponse?: (api.IOTPacket|null);
+
         /** Command flush */
         flush?: (api.IFlush|null);
 
@@ -483,6 +489,12 @@ export namespace api {
         /** Command otDeleteCursor. */
         public otDeleteCursor?: (api.IOTCursor|null);
 
+        /** Command otFetchOps. */
+        public otFetchOps?: (api.IOTFetch|null);
+
+        /** Command otFetchResponse. */
+        public otFetchResponse?: (api.IOTPacket|null);
+
         /** Command flush. */
         public flush?: (api.IFlush|null);
 
@@ -598,7 +610,7 @@ export namespace api {
         public ref: string;
 
         /** Command body. */
-        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio");
+        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchOps"|"otFetchResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio");
 
         /**
          * Creates a new Command instance using the specified properties.
@@ -6202,6 +6214,102 @@ export namespace api {
 
         /**
          * Converts this PortOpen to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a OTFetch. */
+    interface IOTFetch {
+
+        /** OTFetch versionFrom */
+        versionFrom?: (number|null);
+
+        /** OTFetch versionTo */
+        versionTo?: (number|null);
+    }
+
+    /** Represents a OTFetch. */
+    class OTFetch implements IOTFetch {
+
+        /**
+         * Constructs a new OTFetch.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: api.IOTFetch);
+
+        /** OTFetch versionFrom. */
+        public versionFrom: number;
+
+        /** OTFetch versionTo. */
+        public versionTo: number;
+
+        /**
+         * Creates a new OTFetch instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns OTFetch instance
+         */
+        public static create(properties?: api.IOTFetch): api.OTFetch;
+
+        /**
+         * Encodes the specified OTFetch message. Does not implicitly {@link api.OTFetch.verify|verify} messages.
+         * @param message OTFetch message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.IOTFetch, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified OTFetch message, length delimited. Does not implicitly {@link api.OTFetch.verify|verify} messages.
+         * @param message OTFetch message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.IOTFetch, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a OTFetch message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns OTFetch
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.OTFetch;
+
+        /**
+         * Decodes a OTFetch message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns OTFetch
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.OTFetch;
+
+        /**
+         * Verifies a OTFetch message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a OTFetch message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns OTFetch
+         */
+        public static fromObject(object: { [k: string]: any }): api.OTFetch;
+
+        /**
+         * Creates a plain object from a OTFetch message. Also converts values to other types if specified.
+         * @param message OTFetch
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.OTFetch, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this OTFetch to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
