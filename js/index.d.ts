@@ -798,7 +798,7 @@ export namespace api {
         data?: (number[]|null);
 
         /** Audio2 timestamp */
-        timestamp?: (number|Long|null);
+        timestamp?: (number|null);
     }
 
     /** Represents an Audio2. */
@@ -814,7 +814,7 @@ export namespace api {
         public data: number[];
 
         /** Audio2 timestamp. */
-        public timestamp: (number|Long);
+        public timestamp: number;
 
         /**
          * Creates a new Audio2 instance using the specified properties.

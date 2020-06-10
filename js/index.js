@@ -3819,7 +3819,7 @@
              * @memberof api
              * @interface IAudio2
              * @property {Array.<number>|null} [data] Audio2 data
-             * @property {number|Long|null} [timestamp] Audio2 timestamp
+             * @property {number|null} [timestamp] Audio2 timestamp
              */
     
             /**
@@ -3848,11 +3848,11 @@
     
             /**
              * Audio2 timestamp.
-             * @member {number|Long} timestamp
+             * @member {number} timestamp
              * @memberof api.Audio2
              * @instance
              */
-            Audio2.prototype.timestamp = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+            Audio2.prototype.timestamp = 0;
     
             /**
              * Creates a new Audio2 instance using the specified properties.
@@ -3885,7 +3885,7 @@
                     writer.ldelim();
                 }
                 if (message.timestamp != null && message.hasOwnProperty("timestamp"))
-                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.timestamp);
+                    writer.uint32(/* id 2, wireType 1 =*/17).double(message.timestamp);
                 return writer;
             };
     
@@ -3931,7 +3931,7 @@
                             message.data.push(reader.sint32());
                         break;
                     case 2:
-                        message.timestamp = reader.int64();
+                        message.timestamp = reader.double();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -3976,8 +3976,8 @@
                             return "data: integer[] expected";
                 }
                 if (message.timestamp != null && message.hasOwnProperty("timestamp"))
-                    if (!$util.isInteger(message.timestamp) && !(message.timestamp && $util.isInteger(message.timestamp.low) && $util.isInteger(message.timestamp.high)))
-                        return "timestamp: integer|Long expected";
+                    if (typeof message.timestamp !== "number")
+                        return "timestamp: number expected";
                 return null;
             };
     
@@ -4001,14 +4001,7 @@
                         message.data[i] = object.data[i] | 0;
                 }
                 if (object.timestamp != null)
-                    if ($util.Long)
-                        (message.timestamp = $util.Long.fromValue(object.timestamp)).unsigned = false;
-                    else if (typeof object.timestamp === "string")
-                        message.timestamp = parseInt(object.timestamp, 10);
-                    else if (typeof object.timestamp === "number")
-                        message.timestamp = object.timestamp;
-                    else if (typeof object.timestamp === "object")
-                        message.timestamp = new $util.LongBits(object.timestamp.low >>> 0, object.timestamp.high >>> 0).toNumber();
+                    message.timestamp = Number(object.timestamp);
                 return message;
             };
     
@@ -4028,21 +4021,14 @@
                 if (options.arrays || options.defaults)
                     object.data = [];
                 if (options.defaults)
-                    if ($util.Long) {
-                        var long = new $util.Long(0, 0, false);
-                        object.timestamp = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
-                    } else
-                        object.timestamp = options.longs === String ? "0" : 0;
+                    object.timestamp = 0;
                 if (message.data && message.data.length) {
                     object.data = [];
                     for (var j = 0; j < message.data.length; ++j)
                         object.data[j] = message.data[j];
                 }
                 if (message.timestamp != null && message.hasOwnProperty("timestamp"))
-                    if (typeof message.timestamp === "number")
-                        object.timestamp = options.longs === String ? String(message.timestamp) : message.timestamp;
-                    else
-                        object.timestamp = options.longs === String ? $util.Long.prototype.toString.call(message.timestamp) : options.longs === Number ? new $util.LongBits(message.timestamp.low >>> 0, message.timestamp.high >>> 0).toNumber() : message.timestamp;
+                    object.timestamp = options.json && !isFinite(message.timestamp) ? String(message.timestamp) : message.timestamp;
                 return object;
             };
     
