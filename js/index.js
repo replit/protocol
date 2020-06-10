@@ -129,6 +129,7 @@
              * @property {api.IWriteMeta|null} [writeMeta] Command writeMeta
              * @property {api.IAppendMeta|null} [appendMeta] Command appendMeta
              * @property {api.IAudio|null} [audio] Command audio
+             * @property {api.IAudio2|null} [audio2] Command audio2
              * @property {string|null} [ref] Command ref
              */
     
@@ -932,6 +933,14 @@
             Command.prototype.audio = null;
     
             /**
+             * Command audio2.
+             * @member {api.IAudio2|null|undefined} audio2
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.audio2 = null;
+    
+            /**
              * Command ref.
              * @member {string} ref
              * @memberof api.Command
@@ -944,12 +953,12 @@
     
             /**
              * Command body.
-             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|undefined} body
+             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"audio2"|undefined} body
              * @memberof api.Command
              * @instance
              */
             Object.defineProperty(Command.prototype, "body", {
-                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "otFetchRequest", "otFetchResponse", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock", "hasCap", "pid1Config", "metrics", "bootStatus", "readMeta", "writeMeta", "appendMeta", "audio"]),
+                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "otFetchRequest", "otFetchResponse", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock", "hasCap", "pid1Config", "metrics", "bootStatus", "readMeta", "writeMeta", "appendMeta", "audio", "audio2"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
     
@@ -1173,6 +1182,8 @@
                     $root.api.AppendMeta.encode(message.appendMeta, writer.uint32(/* id 362, wireType 2 =*/2898).fork()).ldelim();
                 if (message.audio != null && message.hasOwnProperty("audio"))
                     $root.api.Audio.encode(message.audio, writer.uint32(/* id 363, wireType 2 =*/2906).fork()).ldelim();
+                if (message.audio2 != null && message.hasOwnProperty("audio2"))
+                    $root.api.Audio2.encode(message.audio2, writer.uint32(/* id 364, wireType 2 =*/2914).fork()).ldelim();
                 if (message.ref != null && message.hasOwnProperty("ref"))
                     writer.uint32(/* id 1000, wireType 2 =*/8002).string(message.ref);
                 return writer;
@@ -1502,6 +1513,9 @@
                         break;
                     case 363:
                         message.audio = $root.api.Audio.decode(reader, reader.uint32());
+                        break;
+                    case 364:
+                        message.audio2 = $root.api.Audio2.decode(reader, reader.uint32());
                         break;
                     case 1000:
                         message.ref = reader.string();
@@ -2487,6 +2501,16 @@
                             return "audio." + error;
                     }
                 }
+                if (message.audio2 != null && message.hasOwnProperty("audio2")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.Audio2.verify(message.audio2);
+                        if (error)
+                            return "audio2." + error;
+                    }
+                }
                 if (message.ref != null && message.hasOwnProperty("ref"))
                     if (!$util.isString(message.ref))
                         return "ref: string expected";
@@ -2972,6 +2996,11 @@
                     if (typeof object.audio !== "object")
                         throw TypeError(".api.Command.audio: object expected");
                     message.audio = $root.api.Audio.fromObject(object.audio);
+                }
+                if (object.audio2 != null) {
+                    if (typeof object.audio2 !== "object")
+                        throw TypeError(".api.Command.audio2: object expected");
+                    message.audio2 = $root.api.Audio2.fromObject(object.audio2);
                 }
                 if (object.ref != null)
                     message.ref = String(object.ref);
@@ -3480,6 +3509,11 @@
                     if (options.oneofs)
                         object.body = "audio";
                 }
+                if (message.audio2 != null && message.hasOwnProperty("audio2")) {
+                    object.audio2 = $root.api.Audio2.toObject(message.audio2, options);
+                    if (options.oneofs)
+                        object.body = "audio2";
+                }
                 if (message.ref != null && message.hasOwnProperty("ref"))
                     object.ref = message.ref;
                 return object;
@@ -3708,6 +3742,254 @@
             };
     
             return Audio;
+        })();
+    
+        api.Audio2 = (function() {
+    
+            /**
+             * Properties of an Audio2.
+             * @memberof api
+             * @interface IAudio2
+             * @property {Array.<number>|null} [data] Audio2 data
+             * @property {number|Long|null} [timestamp] Audio2 timestamp
+             */
+    
+            /**
+             * Constructs a new Audio2.
+             * @memberof api
+             * @classdesc Represents an Audio2.
+             * @implements IAudio2
+             * @constructor
+             * @param {api.IAudio2=} [properties] Properties to set
+             */
+            function Audio2(properties) {
+                this.data = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * Audio2 data.
+             * @member {Array.<number>} data
+             * @memberof api.Audio2
+             * @instance
+             */
+            Audio2.prototype.data = $util.emptyArray;
+    
+            /**
+             * Audio2 timestamp.
+             * @member {number|Long} timestamp
+             * @memberof api.Audio2
+             * @instance
+             */
+            Audio2.prototype.timestamp = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+    
+            /**
+             * Creates a new Audio2 instance using the specified properties.
+             * @function create
+             * @memberof api.Audio2
+             * @static
+             * @param {api.IAudio2=} [properties] Properties to set
+             * @returns {api.Audio2} Audio2 instance
+             */
+            Audio2.create = function create(properties) {
+                return new Audio2(properties);
+            };
+    
+            /**
+             * Encodes the specified Audio2 message. Does not implicitly {@link api.Audio2.verify|verify} messages.
+             * @function encode
+             * @memberof api.Audio2
+             * @static
+             * @param {api.IAudio2} message Audio2 message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Audio2.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.data != null && message.data.length) {
+                    writer.uint32(/* id 1, wireType 2 =*/10).fork();
+                    for (var i = 0; i < message.data.length; ++i)
+                        writer.sint32(message.data[i]);
+                    writer.ldelim();
+                }
+                if (message.timestamp != null && message.hasOwnProperty("timestamp"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.timestamp);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified Audio2 message, length delimited. Does not implicitly {@link api.Audio2.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.Audio2
+             * @static
+             * @param {api.IAudio2} message Audio2 message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Audio2.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes an Audio2 message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.Audio2
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.Audio2} Audio2
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Audio2.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Audio2();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.data && message.data.length))
+                            message.data = [];
+                        if ((tag & 7) === 2) {
+                            var end2 = reader.uint32() + reader.pos;
+                            while (reader.pos < end2)
+                                message.data.push(reader.sint32());
+                        } else
+                            message.data.push(reader.sint32());
+                        break;
+                    case 2:
+                        message.timestamp = reader.int64();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes an Audio2 message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.Audio2
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.Audio2} Audio2
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Audio2.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies an Audio2 message.
+             * @function verify
+             * @memberof api.Audio2
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Audio2.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.data != null && message.hasOwnProperty("data")) {
+                    if (!Array.isArray(message.data))
+                        return "data: array expected";
+                    for (var i = 0; i < message.data.length; ++i)
+                        if (!$util.isInteger(message.data[i]))
+                            return "data: integer[] expected";
+                }
+                if (message.timestamp != null && message.hasOwnProperty("timestamp"))
+                    if (!$util.isInteger(message.timestamp) && !(message.timestamp && $util.isInteger(message.timestamp.low) && $util.isInteger(message.timestamp.high)))
+                        return "timestamp: integer|Long expected";
+                return null;
+            };
+    
+            /**
+             * Creates an Audio2 message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.Audio2
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.Audio2} Audio2
+             */
+            Audio2.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.Audio2)
+                    return object;
+                var message = new $root.api.Audio2();
+                if (object.data) {
+                    if (!Array.isArray(object.data))
+                        throw TypeError(".api.Audio2.data: array expected");
+                    message.data = [];
+                    for (var i = 0; i < object.data.length; ++i)
+                        message.data[i] = object.data[i] | 0;
+                }
+                if (object.timestamp != null)
+                    if ($util.Long)
+                        (message.timestamp = $util.Long.fromValue(object.timestamp)).unsigned = false;
+                    else if (typeof object.timestamp === "string")
+                        message.timestamp = parseInt(object.timestamp, 10);
+                    else if (typeof object.timestamp === "number")
+                        message.timestamp = object.timestamp;
+                    else if (typeof object.timestamp === "object")
+                        message.timestamp = new $util.LongBits(object.timestamp.low >>> 0, object.timestamp.high >>> 0).toNumber();
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from an Audio2 message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.Audio2
+             * @static
+             * @param {api.Audio2} message Audio2
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Audio2.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.data = [];
+                if (options.defaults)
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.timestamp = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.timestamp = options.longs === String ? "0" : 0;
+                if (message.data && message.data.length) {
+                    object.data = [];
+                    for (var j = 0; j < message.data.length; ++j)
+                        object.data[j] = message.data[j];
+                }
+                if (message.timestamp != null && message.hasOwnProperty("timestamp"))
+                    if (typeof message.timestamp === "number")
+                        object.timestamp = options.longs === String ? String(message.timestamp) : message.timestamp;
+                    else
+                        object.timestamp = options.longs === String ? $util.Long.prototype.toString.call(message.timestamp) : options.longs === Number ? new $util.LongBits(message.timestamp.low >>> 0, message.timestamp.high >>> 0).toNumber() : message.timestamp;
+                return object;
+            };
+    
+            /**
+             * Converts this Audio2 to JSON.
+             * @function toJSON
+             * @memberof api.Audio2
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Audio2.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return Audio2;
         })();
     
         api.ReadMeta = (function() {

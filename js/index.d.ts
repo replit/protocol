@@ -299,6 +299,9 @@ export namespace api {
         /** Command audio */
         audio?: (api.IAudio|null);
 
+        /** Command audio2 */
+        audio2?: (api.IAudio2|null);
+
         /** Command ref */
         ref?: (string|null);
     }
@@ -606,11 +609,14 @@ export namespace api {
         /** Command audio. */
         public audio?: (api.IAudio|null);
 
+        /** Command audio2. */
+        public audio2?: (api.IAudio2|null);
+
         /** Command ref. */
         public ref: string;
 
         /** Command body. */
-        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio");
+        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"audio2");
 
         /**
          * Creates a new Command instance using the specified properties.
@@ -768,6 +774,102 @@ export namespace api {
 
         /**
          * Converts this Audio to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an Audio2. */
+    interface IAudio2 {
+
+        /** Audio2 data */
+        data?: (number[]|null);
+
+        /** Audio2 timestamp */
+        timestamp?: (number|Long|null);
+    }
+
+    /** Represents an Audio2. */
+    class Audio2 implements IAudio2 {
+
+        /**
+         * Constructs a new Audio2.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: api.IAudio2);
+
+        /** Audio2 data. */
+        public data: number[];
+
+        /** Audio2 timestamp. */
+        public timestamp: (number|Long);
+
+        /**
+         * Creates a new Audio2 instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns Audio2 instance
+         */
+        public static create(properties?: api.IAudio2): api.Audio2;
+
+        /**
+         * Encodes the specified Audio2 message. Does not implicitly {@link api.Audio2.verify|verify} messages.
+         * @param message Audio2 message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.IAudio2, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified Audio2 message, length delimited. Does not implicitly {@link api.Audio2.verify|verify} messages.
+         * @param message Audio2 message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.IAudio2, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an Audio2 message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns Audio2
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.Audio2;
+
+        /**
+         * Decodes an Audio2 message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns Audio2
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.Audio2;
+
+        /**
+         * Verifies an Audio2 message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an Audio2 message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns Audio2
+         */
+        public static fromObject(object: { [k: string]: any }): api.Audio2;
+
+        /**
+         * Creates a plain object from an Audio2 message. Also converts values to other types if specified.
+         * @param message Audio2
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.Audio2, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this Audio2 to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
