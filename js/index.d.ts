@@ -299,6 +299,12 @@ export namespace api {
         /** Command audio */
         audio?: (api.IAudio|null);
 
+        /** Command pprofRequest */
+        pprofRequest?: (api.IPprofRequest|null);
+
+        /** Command pprofResponse */
+        pprofResponse?: (api.IPprofResponse|null);
+
         /** Command audio2 */
         audio2?: (api.IAudio2|null);
 
@@ -609,6 +615,12 @@ export namespace api {
         /** Command audio. */
         public audio?: (api.IAudio|null);
 
+        /** Command pprofRequest. */
+        public pprofRequest?: (api.IPprofRequest|null);
+
+        /** Command pprofResponse. */
+        public pprofResponse?: (api.IPprofResponse|null);
+
         /** Command audio2. */
         public audio2?: (api.IAudio2|null);
 
@@ -616,7 +628,7 @@ export namespace api {
         public ref: string;
 
         /** Command body. */
-        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"audio2");
+        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2");
 
         /**
          * Creates a new Command instance using the specified properties.
@@ -6518,6 +6530,9 @@ export namespace api {
 
         /** OTPacket crc32 */
         crc32?: (number|null);
+
+        /** OTPacket committed */
+        committed?: (google.protobuf.ITimestamp|null);
     }
 
     /** Represents a OTPacket. */
@@ -6537,6 +6552,9 @@ export namespace api {
 
         /** OTPacket crc32. */
         public crc32: number;
+
+        /** OTPacket committed. */
+        public committed?: (google.protobuf.ITimestamp|null);
 
         /**
          * Creates a new OTPacket instance using the specified properties.
@@ -8638,5 +8656,784 @@ export namespace api {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a PprofRequest. */
+    interface IPprofRequest {
+
+        /** PprofRequest id */
+        id?: (string|null);
+
+        /** PprofRequest pprofCpuProfileRequest */
+        pprofCpuProfileRequest?: (api.IPprofCpuProfileRequest|null);
+
+        /** PprofRequest pprofHeapProfileRequest */
+        pprofHeapProfileRequest?: (api.IPprofHeapProfileRequest|null);
+
+        /** PprofRequest pprofAllocsProfileRequest */
+        pprofAllocsProfileRequest?: (api.IPprofAllocsProfileRequest|null);
+
+        /** PprofRequest pprofBlockProfileRequest */
+        pprofBlockProfileRequest?: (api.IPprofBlockProfileRequest|null);
+
+        /** PprofRequest pprofMutexProfileRequest */
+        pprofMutexProfileRequest?: (api.IPprofMutexProfileRequest|null);
+    }
+
+    /** Represents a PprofRequest. */
+    class PprofRequest implements IPprofRequest {
+
+        /**
+         * Constructs a new PprofRequest.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: api.IPprofRequest);
+
+        /** PprofRequest id. */
+        public id: string;
+
+        /** PprofRequest pprofCpuProfileRequest. */
+        public pprofCpuProfileRequest?: (api.IPprofCpuProfileRequest|null);
+
+        /** PprofRequest pprofHeapProfileRequest. */
+        public pprofHeapProfileRequest?: (api.IPprofHeapProfileRequest|null);
+
+        /** PprofRequest pprofAllocsProfileRequest. */
+        public pprofAllocsProfileRequest?: (api.IPprofAllocsProfileRequest|null);
+
+        /** PprofRequest pprofBlockProfileRequest. */
+        public pprofBlockProfileRequest?: (api.IPprofBlockProfileRequest|null);
+
+        /** PprofRequest pprofMutexProfileRequest. */
+        public pprofMutexProfileRequest?: (api.IPprofMutexProfileRequest|null);
+
+        /** PprofRequest body. */
+        public body?: ("pprofCpuProfileRequest"|"pprofHeapProfileRequest"|"pprofAllocsProfileRequest"|"pprofBlockProfileRequest"|"pprofMutexProfileRequest");
+
+        /**
+         * Creates a new PprofRequest instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns PprofRequest instance
+         */
+        public static create(properties?: api.IPprofRequest): api.PprofRequest;
+
+        /**
+         * Encodes the specified PprofRequest message. Does not implicitly {@link api.PprofRequest.verify|verify} messages.
+         * @param message PprofRequest message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.IPprofRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified PprofRequest message, length delimited. Does not implicitly {@link api.PprofRequest.verify|verify} messages.
+         * @param message PprofRequest message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.IPprofRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a PprofRequest message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns PprofRequest
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.PprofRequest;
+
+        /**
+         * Decodes a PprofRequest message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns PprofRequest
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.PprofRequest;
+
+        /**
+         * Verifies a PprofRequest message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a PprofRequest message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PprofRequest
+         */
+        public static fromObject(object: { [k: string]: any }): api.PprofRequest;
+
+        /**
+         * Creates a plain object from a PprofRequest message. Also converts values to other types if specified.
+         * @param message PprofRequest
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.PprofRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PprofRequest to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a PprofAllocsProfileRequest. */
+    interface IPprofAllocsProfileRequest {
+
+        /** PprofAllocsProfileRequest debug */
+        debug?: (boolean|null);
+    }
+
+    /** Represents a PprofAllocsProfileRequest. */
+    class PprofAllocsProfileRequest implements IPprofAllocsProfileRequest {
+
+        /**
+         * Constructs a new PprofAllocsProfileRequest.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: api.IPprofAllocsProfileRequest);
+
+        /** PprofAllocsProfileRequest debug. */
+        public debug: boolean;
+
+        /**
+         * Creates a new PprofAllocsProfileRequest instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns PprofAllocsProfileRequest instance
+         */
+        public static create(properties?: api.IPprofAllocsProfileRequest): api.PprofAllocsProfileRequest;
+
+        /**
+         * Encodes the specified PprofAllocsProfileRequest message. Does not implicitly {@link api.PprofAllocsProfileRequest.verify|verify} messages.
+         * @param message PprofAllocsProfileRequest message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.IPprofAllocsProfileRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified PprofAllocsProfileRequest message, length delimited. Does not implicitly {@link api.PprofAllocsProfileRequest.verify|verify} messages.
+         * @param message PprofAllocsProfileRequest message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.IPprofAllocsProfileRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a PprofAllocsProfileRequest message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns PprofAllocsProfileRequest
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.PprofAllocsProfileRequest;
+
+        /**
+         * Decodes a PprofAllocsProfileRequest message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns PprofAllocsProfileRequest
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.PprofAllocsProfileRequest;
+
+        /**
+         * Verifies a PprofAllocsProfileRequest message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a PprofAllocsProfileRequest message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PprofAllocsProfileRequest
+         */
+        public static fromObject(object: { [k: string]: any }): api.PprofAllocsProfileRequest;
+
+        /**
+         * Creates a plain object from a PprofAllocsProfileRequest message. Also converts values to other types if specified.
+         * @param message PprofAllocsProfileRequest
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.PprofAllocsProfileRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PprofAllocsProfileRequest to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a PprofBlockProfileRequest. */
+    interface IPprofBlockProfileRequest {
+
+        /** PprofBlockProfileRequest debug */
+        debug?: (boolean|null);
+    }
+
+    /** Represents a PprofBlockProfileRequest. */
+    class PprofBlockProfileRequest implements IPprofBlockProfileRequest {
+
+        /**
+         * Constructs a new PprofBlockProfileRequest.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: api.IPprofBlockProfileRequest);
+
+        /** PprofBlockProfileRequest debug. */
+        public debug: boolean;
+
+        /**
+         * Creates a new PprofBlockProfileRequest instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns PprofBlockProfileRequest instance
+         */
+        public static create(properties?: api.IPprofBlockProfileRequest): api.PprofBlockProfileRequest;
+
+        /**
+         * Encodes the specified PprofBlockProfileRequest message. Does not implicitly {@link api.PprofBlockProfileRequest.verify|verify} messages.
+         * @param message PprofBlockProfileRequest message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.IPprofBlockProfileRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified PprofBlockProfileRequest message, length delimited. Does not implicitly {@link api.PprofBlockProfileRequest.verify|verify} messages.
+         * @param message PprofBlockProfileRequest message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.IPprofBlockProfileRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a PprofBlockProfileRequest message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns PprofBlockProfileRequest
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.PprofBlockProfileRequest;
+
+        /**
+         * Decodes a PprofBlockProfileRequest message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns PprofBlockProfileRequest
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.PprofBlockProfileRequest;
+
+        /**
+         * Verifies a PprofBlockProfileRequest message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a PprofBlockProfileRequest message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PprofBlockProfileRequest
+         */
+        public static fromObject(object: { [k: string]: any }): api.PprofBlockProfileRequest;
+
+        /**
+         * Creates a plain object from a PprofBlockProfileRequest message. Also converts values to other types if specified.
+         * @param message PprofBlockProfileRequest
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.PprofBlockProfileRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PprofBlockProfileRequest to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a PprofCpuProfileRequest. */
+    interface IPprofCpuProfileRequest {
+
+        /** PprofCpuProfileRequest seconds */
+        seconds?: (number|Long|null);
+    }
+
+    /** Represents a PprofCpuProfileRequest. */
+    class PprofCpuProfileRequest implements IPprofCpuProfileRequest {
+
+        /**
+         * Constructs a new PprofCpuProfileRequest.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: api.IPprofCpuProfileRequest);
+
+        /** PprofCpuProfileRequest seconds. */
+        public seconds: (number|Long);
+
+        /**
+         * Creates a new PprofCpuProfileRequest instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns PprofCpuProfileRequest instance
+         */
+        public static create(properties?: api.IPprofCpuProfileRequest): api.PprofCpuProfileRequest;
+
+        /**
+         * Encodes the specified PprofCpuProfileRequest message. Does not implicitly {@link api.PprofCpuProfileRequest.verify|verify} messages.
+         * @param message PprofCpuProfileRequest message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.IPprofCpuProfileRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified PprofCpuProfileRequest message, length delimited. Does not implicitly {@link api.PprofCpuProfileRequest.verify|verify} messages.
+         * @param message PprofCpuProfileRequest message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.IPprofCpuProfileRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a PprofCpuProfileRequest message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns PprofCpuProfileRequest
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.PprofCpuProfileRequest;
+
+        /**
+         * Decodes a PprofCpuProfileRequest message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns PprofCpuProfileRequest
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.PprofCpuProfileRequest;
+
+        /**
+         * Verifies a PprofCpuProfileRequest message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a PprofCpuProfileRequest message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PprofCpuProfileRequest
+         */
+        public static fromObject(object: { [k: string]: any }): api.PprofCpuProfileRequest;
+
+        /**
+         * Creates a plain object from a PprofCpuProfileRequest message. Also converts values to other types if specified.
+         * @param message PprofCpuProfileRequest
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.PprofCpuProfileRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PprofCpuProfileRequest to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a PprofHeapProfileRequest. */
+    interface IPprofHeapProfileRequest {
+
+        /** PprofHeapProfileRequest gc */
+        gc?: (boolean|null);
+
+        /** PprofHeapProfileRequest debug */
+        debug?: (boolean|null);
+    }
+
+    /** Represents a PprofHeapProfileRequest. */
+    class PprofHeapProfileRequest implements IPprofHeapProfileRequest {
+
+        /**
+         * Constructs a new PprofHeapProfileRequest.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: api.IPprofHeapProfileRequest);
+
+        /** PprofHeapProfileRequest gc. */
+        public gc: boolean;
+
+        /** PprofHeapProfileRequest debug. */
+        public debug: boolean;
+
+        /**
+         * Creates a new PprofHeapProfileRequest instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns PprofHeapProfileRequest instance
+         */
+        public static create(properties?: api.IPprofHeapProfileRequest): api.PprofHeapProfileRequest;
+
+        /**
+         * Encodes the specified PprofHeapProfileRequest message. Does not implicitly {@link api.PprofHeapProfileRequest.verify|verify} messages.
+         * @param message PprofHeapProfileRequest message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.IPprofHeapProfileRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified PprofHeapProfileRequest message, length delimited. Does not implicitly {@link api.PprofHeapProfileRequest.verify|verify} messages.
+         * @param message PprofHeapProfileRequest message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.IPprofHeapProfileRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a PprofHeapProfileRequest message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns PprofHeapProfileRequest
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.PprofHeapProfileRequest;
+
+        /**
+         * Decodes a PprofHeapProfileRequest message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns PprofHeapProfileRequest
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.PprofHeapProfileRequest;
+
+        /**
+         * Verifies a PprofHeapProfileRequest message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a PprofHeapProfileRequest message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PprofHeapProfileRequest
+         */
+        public static fromObject(object: { [k: string]: any }): api.PprofHeapProfileRequest;
+
+        /**
+         * Creates a plain object from a PprofHeapProfileRequest message. Also converts values to other types if specified.
+         * @param message PprofHeapProfileRequest
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.PprofHeapProfileRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PprofHeapProfileRequest to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a PprofMutexProfileRequest. */
+    interface IPprofMutexProfileRequest {
+
+        /** PprofMutexProfileRequest debug */
+        debug?: (boolean|null);
+    }
+
+    /** Represents a PprofMutexProfileRequest. */
+    class PprofMutexProfileRequest implements IPprofMutexProfileRequest {
+
+        /**
+         * Constructs a new PprofMutexProfileRequest.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: api.IPprofMutexProfileRequest);
+
+        /** PprofMutexProfileRequest debug. */
+        public debug: boolean;
+
+        /**
+         * Creates a new PprofMutexProfileRequest instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns PprofMutexProfileRequest instance
+         */
+        public static create(properties?: api.IPprofMutexProfileRequest): api.PprofMutexProfileRequest;
+
+        /**
+         * Encodes the specified PprofMutexProfileRequest message. Does not implicitly {@link api.PprofMutexProfileRequest.verify|verify} messages.
+         * @param message PprofMutexProfileRequest message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.IPprofMutexProfileRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified PprofMutexProfileRequest message, length delimited. Does not implicitly {@link api.PprofMutexProfileRequest.verify|verify} messages.
+         * @param message PprofMutexProfileRequest message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.IPprofMutexProfileRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a PprofMutexProfileRequest message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns PprofMutexProfileRequest
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.PprofMutexProfileRequest;
+
+        /**
+         * Decodes a PprofMutexProfileRequest message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns PprofMutexProfileRequest
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.PprofMutexProfileRequest;
+
+        /**
+         * Verifies a PprofMutexProfileRequest message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a PprofMutexProfileRequest message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PprofMutexProfileRequest
+         */
+        public static fromObject(object: { [k: string]: any }): api.PprofMutexProfileRequest;
+
+        /**
+         * Creates a plain object from a PprofMutexProfileRequest message. Also converts values to other types if specified.
+         * @param message PprofMutexProfileRequest
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.PprofMutexProfileRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PprofMutexProfileRequest to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a PprofResponse. */
+    interface IPprofResponse {
+
+        /** PprofResponse id */
+        id?: (string|null);
+
+        /** PprofResponse profile */
+        profile?: (Uint8Array|null);
+    }
+
+    /** Represents a PprofResponse. */
+    class PprofResponse implements IPprofResponse {
+
+        /**
+         * Constructs a new PprofResponse.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: api.IPprofResponse);
+
+        /** PprofResponse id. */
+        public id: string;
+
+        /** PprofResponse profile. */
+        public profile: Uint8Array;
+
+        /**
+         * Creates a new PprofResponse instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns PprofResponse instance
+         */
+        public static create(properties?: api.IPprofResponse): api.PprofResponse;
+
+        /**
+         * Encodes the specified PprofResponse message. Does not implicitly {@link api.PprofResponse.verify|verify} messages.
+         * @param message PprofResponse message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.IPprofResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified PprofResponse message, length delimited. Does not implicitly {@link api.PprofResponse.verify|verify} messages.
+         * @param message PprofResponse message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.IPprofResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a PprofResponse message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns PprofResponse
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.PprofResponse;
+
+        /**
+         * Decodes a PprofResponse message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns PprofResponse
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.PprofResponse;
+
+        /**
+         * Verifies a PprofResponse message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a PprofResponse message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns PprofResponse
+         */
+        public static fromObject(object: { [k: string]: any }): api.PprofResponse;
+
+        /**
+         * Creates a plain object from a PprofResponse message. Also converts values to other types if specified.
+         * @param message PprofResponse
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.PprofResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this PprofResponse to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+}
+
+/** Namespace google. */
+export namespace google {
+
+    /** Namespace protobuf. */
+    namespace protobuf {
+
+        /** Properties of a Timestamp. */
+        interface ITimestamp {
+
+            /** Timestamp seconds */
+            seconds?: (number|Long|null);
+
+            /** Timestamp nanos */
+            nanos?: (number|null);
+        }
+
+        /** Represents a Timestamp. */
+        class Timestamp implements ITimestamp {
+
+            /**
+             * Constructs a new Timestamp.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: google.protobuf.ITimestamp);
+
+            /** Timestamp seconds. */
+            public seconds: (number|Long);
+
+            /** Timestamp nanos. */
+            public nanos: number;
+
+            /**
+             * Creates a new Timestamp instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Timestamp instance
+             */
+            public static create(properties?: google.protobuf.ITimestamp): google.protobuf.Timestamp;
+
+            /**
+             * Encodes the specified Timestamp message. Does not implicitly {@link google.protobuf.Timestamp.verify|verify} messages.
+             * @param message Timestamp message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: google.protobuf.ITimestamp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified Timestamp message, length delimited. Does not implicitly {@link google.protobuf.Timestamp.verify|verify} messages.
+             * @param message Timestamp message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: google.protobuf.ITimestamp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Timestamp message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Timestamp
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): google.protobuf.Timestamp;
+
+            /**
+             * Decodes a Timestamp message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns Timestamp
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): google.protobuf.Timestamp;
+
+            /**
+             * Verifies a Timestamp message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a Timestamp message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns Timestamp
+             */
+            public static fromObject(object: { [k: string]: any }): google.protobuf.Timestamp;
+
+            /**
+             * Creates a plain object from a Timestamp message. Also converts values to other types if specified.
+             * @param message Timestamp
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: google.protobuf.Timestamp, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this Timestamp to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
     }
 }
