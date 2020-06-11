@@ -3,7 +3,6 @@ syntax = "proto3";
 import "google/protobuf/timestamp.proto";
 
 package api;
-option go_package = "/api";
 
 message Command {
   reserved 250, 252, 253, 254, 255;
