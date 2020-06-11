@@ -176,7 +176,7 @@ message Audio { repeated int32 data = 1; }
 
 message Audio2 {
   repeated sint32 data = 1;
-  double timestamp = 2;
+  int64 samples = 2;
 }
 
 message ReadMeta {
