@@ -1,6 +1,9 @@
 syntax = "proto3";
 
+import "google/protobuf/timestamp.proto";
+
 package api;
+option go_package = "/api";
 
 message Command {
   reserved 250, 252, 253, 254, 255;
@@ -158,12 +161,23 @@ message Command {
 
     // audio
     Audio audio = 363;
+
+
+    PprofRequest pprofRequest = 364;
+    PprofResponse pprofResponse = 365;
+
+    Audio2 audio2 = 366;
   }
 
   string ref = 1000;
 }
 
 message Audio { repeated int32 data = 1; }
+
+message Audio2 {
+  repeated sint32 data = 1;
+  int64 samples = 2;
+}
 
 message ReadMeta {
   string key = 1;
@@ -180,7 +194,6 @@ message AppendMeta {
   string key = 1;
   bytes data = 2;
 }
-
 
 message BootStatus {
   enum Stage {
@@ -204,6 +217,7 @@ message BootStatus {
 message Pid1Config {
   string cwd = 1;
   string language = 2;
+  map<string, string> env = 3;
 }
 
 message FSLock { string name = 1; }
@@ -229,7 +243,10 @@ message FileEvent {
 
 message Flush {}
 
-message OTLinkFile { File file = 1; }
+message OTLinkFile {
+  File file = 1;
+  bool highConsistency = 2;
+}
 
 message Auth {
   string token = 1;
@@ -480,6 +497,7 @@ message OTPacket {
   uint32 version = 1;
   repeated OTRuneTransformOp ops = 2;
   uint32 crc32 = 3;
+  google.protobuf.Timestamp committed = 4;
 }
 
 message OTRuneTransformOp {
@@ -568,6 +586,41 @@ message PackageCacheSave {}
 
 message ChatScrollback { repeated ChatMessage scrollback = 1; }
 
-message Metrics {
-  repeated bytes prometheusMetricFamilies = 1;
+message Metrics { repeated bytes prometheusMetricFamilies = 1; }
+
+message PprofRequest {
+  string id = 1;
+  oneof body {
+    PprofCpuProfileRequest pprofCpuProfileRequest = 2;
+    PprofHeapProfileRequest pprofHeapProfileRequest = 3;
+    PprofAllocsProfileRequest pprofAllocsProfileRequest = 4;
+    PprofBlockProfileRequest pprofBlockProfileRequest = 5;
+    PprofMutexProfileRequest pprofMutexProfileRequest = 6;
+  }
+}
+
+message PprofAllocsProfileRequest {
+  bool debug = 1;
+}
+
+message PprofBlockProfileRequest {
+  bool debug = 1;
+}
+
+message PprofCpuProfileRequest {
+  int64 seconds = 1;
+}
+
+message PprofHeapProfileRequest {
+  bool gc = 1;
+  bool debug = 2;
+}
+
+message PprofMutexProfileRequest {
+  bool debug = 1;
+}
+
+message PprofResponse {
+  string id = 1;
+  bytes profile = 2;
 }

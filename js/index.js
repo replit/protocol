@@ -129,6 +129,9 @@
              * @property {api.IWriteMeta|null} [writeMeta] Command writeMeta
              * @property {api.IAppendMeta|null} [appendMeta] Command appendMeta
              * @property {api.IAudio|null} [audio] Command audio
+             * @property {api.IPprofRequest|null} [pprofRequest] Command pprofRequest
+             * @property {api.IPprofResponse|null} [pprofResponse] Command pprofResponse
+             * @property {api.IAudio2|null} [audio2] Command audio2
              * @property {string|null} [ref] Command ref
              */
     
@@ -932,6 +935,30 @@
             Command.prototype.audio = null;
     
             /**
+             * Command pprofRequest.
+             * @member {api.IPprofRequest|null|undefined} pprofRequest
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.pprofRequest = null;
+    
+            /**
+             * Command pprofResponse.
+             * @member {api.IPprofResponse|null|undefined} pprofResponse
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.pprofResponse = null;
+    
+            /**
+             * Command audio2.
+             * @member {api.IAudio2|null|undefined} audio2
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.audio2 = null;
+    
+            /**
              * Command ref.
              * @member {string} ref
              * @memberof api.Command
@@ -944,12 +971,12 @@
     
             /**
              * Command body.
-             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|undefined} body
+             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|undefined} body
              * @memberof api.Command
              * @instance
              */
             Object.defineProperty(Command.prototype, "body", {
-                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "otFetchRequest", "otFetchResponse", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock", "hasCap", "pid1Config", "metrics", "bootStatus", "readMeta", "writeMeta", "appendMeta", "audio"]),
+                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "otFetchRequest", "otFetchResponse", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock", "hasCap", "pid1Config", "metrics", "bootStatus", "readMeta", "writeMeta", "appendMeta", "audio", "pprofRequest", "pprofResponse", "audio2"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
     
@@ -1173,6 +1200,12 @@
                     $root.api.AppendMeta.encode(message.appendMeta, writer.uint32(/* id 362, wireType 2 =*/2898).fork()).ldelim();
                 if (message.audio != null && message.hasOwnProperty("audio"))
                     $root.api.Audio.encode(message.audio, writer.uint32(/* id 363, wireType 2 =*/2906).fork()).ldelim();
+                if (message.pprofRequest != null && message.hasOwnProperty("pprofRequest"))
+                    $root.api.PprofRequest.encode(message.pprofRequest, writer.uint32(/* id 364, wireType 2 =*/2914).fork()).ldelim();
+                if (message.pprofResponse != null && message.hasOwnProperty("pprofResponse"))
+                    $root.api.PprofResponse.encode(message.pprofResponse, writer.uint32(/* id 365, wireType 2 =*/2922).fork()).ldelim();
+                if (message.audio2 != null && message.hasOwnProperty("audio2"))
+                    $root.api.Audio2.encode(message.audio2, writer.uint32(/* id 366, wireType 2 =*/2930).fork()).ldelim();
                 if (message.ref != null && message.hasOwnProperty("ref"))
                     writer.uint32(/* id 1000, wireType 2 =*/8002).string(message.ref);
                 return writer;
@@ -1502,6 +1535,15 @@
                         break;
                     case 363:
                         message.audio = $root.api.Audio.decode(reader, reader.uint32());
+                        break;
+                    case 364:
+                        message.pprofRequest = $root.api.PprofRequest.decode(reader, reader.uint32());
+                        break;
+                    case 365:
+                        message.pprofResponse = $root.api.PprofResponse.decode(reader, reader.uint32());
+                        break;
+                    case 366:
+                        message.audio2 = $root.api.Audio2.decode(reader, reader.uint32());
                         break;
                     case 1000:
                         message.ref = reader.string();
@@ -2487,6 +2529,36 @@
                             return "audio." + error;
                     }
                 }
+                if (message.pprofRequest != null && message.hasOwnProperty("pprofRequest")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.PprofRequest.verify(message.pprofRequest);
+                        if (error)
+                            return "pprofRequest." + error;
+                    }
+                }
+                if (message.pprofResponse != null && message.hasOwnProperty("pprofResponse")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.PprofResponse.verify(message.pprofResponse);
+                        if (error)
+                            return "pprofResponse." + error;
+                    }
+                }
+                if (message.audio2 != null && message.hasOwnProperty("audio2")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.Audio2.verify(message.audio2);
+                        if (error)
+                            return "audio2." + error;
+                    }
+                }
                 if (message.ref != null && message.hasOwnProperty("ref"))
                     if (!$util.isString(message.ref))
                         return "ref: string expected";
@@ -2972,6 +3044,21 @@
                     if (typeof object.audio !== "object")
                         throw TypeError(".api.Command.audio: object expected");
                     message.audio = $root.api.Audio.fromObject(object.audio);
+                }
+                if (object.pprofRequest != null) {
+                    if (typeof object.pprofRequest !== "object")
+                        throw TypeError(".api.Command.pprofRequest: object expected");
+                    message.pprofRequest = $root.api.PprofRequest.fromObject(object.pprofRequest);
+                }
+                if (object.pprofResponse != null) {
+                    if (typeof object.pprofResponse !== "object")
+                        throw TypeError(".api.Command.pprofResponse: object expected");
+                    message.pprofResponse = $root.api.PprofResponse.fromObject(object.pprofResponse);
+                }
+                if (object.audio2 != null) {
+                    if (typeof object.audio2 !== "object")
+                        throw TypeError(".api.Command.audio2: object expected");
+                    message.audio2 = $root.api.Audio2.fromObject(object.audio2);
                 }
                 if (object.ref != null)
                     message.ref = String(object.ref);
@@ -3480,6 +3567,21 @@
                     if (options.oneofs)
                         object.body = "audio";
                 }
+                if (message.pprofRequest != null && message.hasOwnProperty("pprofRequest")) {
+                    object.pprofRequest = $root.api.PprofRequest.toObject(message.pprofRequest, options);
+                    if (options.oneofs)
+                        object.body = "pprofRequest";
+                }
+                if (message.pprofResponse != null && message.hasOwnProperty("pprofResponse")) {
+                    object.pprofResponse = $root.api.PprofResponse.toObject(message.pprofResponse, options);
+                    if (options.oneofs)
+                        object.body = "pprofResponse";
+                }
+                if (message.audio2 != null && message.hasOwnProperty("audio2")) {
+                    object.audio2 = $root.api.Audio2.toObject(message.audio2, options);
+                    if (options.oneofs)
+                        object.body = "audio2";
+                }
                 if (message.ref != null && message.hasOwnProperty("ref"))
                     object.ref = message.ref;
                 return object;
@@ -3708,6 +3810,254 @@
             };
     
             return Audio;
+        })();
+    
+        api.Audio2 = (function() {
+    
+            /**
+             * Properties of an Audio2.
+             * @memberof api
+             * @interface IAudio2
+             * @property {Array.<number>|null} [data] Audio2 data
+             * @property {number|Long|null} [samples] Audio2 samples
+             */
+    
+            /**
+             * Constructs a new Audio2.
+             * @memberof api
+             * @classdesc Represents an Audio2.
+             * @implements IAudio2
+             * @constructor
+             * @param {api.IAudio2=} [properties] Properties to set
+             */
+            function Audio2(properties) {
+                this.data = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * Audio2 data.
+             * @member {Array.<number>} data
+             * @memberof api.Audio2
+             * @instance
+             */
+            Audio2.prototype.data = $util.emptyArray;
+    
+            /**
+             * Audio2 samples.
+             * @member {number|Long} samples
+             * @memberof api.Audio2
+             * @instance
+             */
+            Audio2.prototype.samples = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+    
+            /**
+             * Creates a new Audio2 instance using the specified properties.
+             * @function create
+             * @memberof api.Audio2
+             * @static
+             * @param {api.IAudio2=} [properties] Properties to set
+             * @returns {api.Audio2} Audio2 instance
+             */
+            Audio2.create = function create(properties) {
+                return new Audio2(properties);
+            };
+    
+            /**
+             * Encodes the specified Audio2 message. Does not implicitly {@link api.Audio2.verify|verify} messages.
+             * @function encode
+             * @memberof api.Audio2
+             * @static
+             * @param {api.IAudio2} message Audio2 message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Audio2.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.data != null && message.data.length) {
+                    writer.uint32(/* id 1, wireType 2 =*/10).fork();
+                    for (var i = 0; i < message.data.length; ++i)
+                        writer.sint32(message.data[i]);
+                    writer.ldelim();
+                }
+                if (message.samples != null && message.hasOwnProperty("samples"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.samples);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified Audio2 message, length delimited. Does not implicitly {@link api.Audio2.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.Audio2
+             * @static
+             * @param {api.IAudio2} message Audio2 message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Audio2.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes an Audio2 message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.Audio2
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.Audio2} Audio2
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Audio2.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Audio2();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (!(message.data && message.data.length))
+                            message.data = [];
+                        if ((tag & 7) === 2) {
+                            var end2 = reader.uint32() + reader.pos;
+                            while (reader.pos < end2)
+                                message.data.push(reader.sint32());
+                        } else
+                            message.data.push(reader.sint32());
+                        break;
+                    case 2:
+                        message.samples = reader.int64();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes an Audio2 message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.Audio2
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.Audio2} Audio2
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Audio2.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies an Audio2 message.
+             * @function verify
+             * @memberof api.Audio2
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Audio2.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.data != null && message.hasOwnProperty("data")) {
+                    if (!Array.isArray(message.data))
+                        return "data: array expected";
+                    for (var i = 0; i < message.data.length; ++i)
+                        if (!$util.isInteger(message.data[i]))
+                            return "data: integer[] expected";
+                }
+                if (message.samples != null && message.hasOwnProperty("samples"))
+                    if (!$util.isInteger(message.samples) && !(message.samples && $util.isInteger(message.samples.low) && $util.isInteger(message.samples.high)))
+                        return "samples: integer|Long expected";
+                return null;
+            };
+    
+            /**
+             * Creates an Audio2 message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.Audio2
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.Audio2} Audio2
+             */
+            Audio2.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.Audio2)
+                    return object;
+                var message = new $root.api.Audio2();
+                if (object.data) {
+                    if (!Array.isArray(object.data))
+                        throw TypeError(".api.Audio2.data: array expected");
+                    message.data = [];
+                    for (var i = 0; i < object.data.length; ++i)
+                        message.data[i] = object.data[i] | 0;
+                }
+                if (object.samples != null)
+                    if ($util.Long)
+                        (message.samples = $util.Long.fromValue(object.samples)).unsigned = false;
+                    else if (typeof object.samples === "string")
+                        message.samples = parseInt(object.samples, 10);
+                    else if (typeof object.samples === "number")
+                        message.samples = object.samples;
+                    else if (typeof object.samples === "object")
+                        message.samples = new $util.LongBits(object.samples.low >>> 0, object.samples.high >>> 0).toNumber();
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from an Audio2 message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.Audio2
+             * @static
+             * @param {api.Audio2} message Audio2
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Audio2.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.data = [];
+                if (options.defaults)
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.samples = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.samples = options.longs === String ? "0" : 0;
+                if (message.data && message.data.length) {
+                    object.data = [];
+                    for (var j = 0; j < message.data.length; ++j)
+                        object.data[j] = message.data[j];
+                }
+                if (message.samples != null && message.hasOwnProperty("samples"))
+                    if (typeof message.samples === "number")
+                        object.samples = options.longs === String ? String(message.samples) : message.samples;
+                    else
+                        object.samples = options.longs === String ? $util.Long.prototype.toString.call(message.samples) : options.longs === Number ? new $util.LongBits(message.samples.low >>> 0, message.samples.high >>> 0).toNumber() : message.samples;
+                return object;
+            };
+    
+            /**
+             * Converts this Audio2 to JSON.
+             * @function toJSON
+             * @memberof api.Audio2
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Audio2.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return Audio2;
         })();
     
         api.ReadMeta = (function() {
@@ -4691,6 +5041,7 @@
              * @interface IPid1Config
              * @property {string|null} [cwd] Pid1Config cwd
              * @property {string|null} [language] Pid1Config language
+             * @property {Object.<string,string>|null} [env] Pid1Config env
              */
     
             /**
@@ -4702,6 +5053,7 @@
              * @param {api.IPid1Config=} [properties] Properties to set
              */
             function Pid1Config(properties) {
+                this.env = {};
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -4723,6 +5075,14 @@
              * @instance
              */
             Pid1Config.prototype.language = "";
+    
+            /**
+             * Pid1Config env.
+             * @member {Object.<string,string>} env
+             * @memberof api.Pid1Config
+             * @instance
+             */
+            Pid1Config.prototype.env = $util.emptyObject;
     
             /**
              * Creates a new Pid1Config instance using the specified properties.
@@ -4752,6 +5112,9 @@
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.cwd);
                 if (message.language != null && message.hasOwnProperty("language"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.language);
+                if (message.env != null && message.hasOwnProperty("env"))
+                    for (var keys = Object.keys(message.env), i = 0; i < keys.length; ++i)
+                        writer.uint32(/* id 3, wireType 2 =*/26).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.env[keys[i]]).ldelim();
                 return writer;
             };
     
@@ -4782,7 +5145,7 @@
             Pid1Config.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Pid1Config();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Pid1Config(), key;
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -4791,6 +5154,14 @@
                         break;
                     case 2:
                         message.language = reader.string();
+                        break;
+                    case 3:
+                        reader.skip().pos++;
+                        if (message.env === $util.emptyObject)
+                            message.env = {};
+                        key = reader.string();
+                        reader.pos++;
+                        message.env[key] = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -4833,6 +5204,14 @@
                 if (message.language != null && message.hasOwnProperty("language"))
                     if (!$util.isString(message.language))
                         return "language: string expected";
+                if (message.env != null && message.hasOwnProperty("env")) {
+                    if (!$util.isObject(message.env))
+                        return "env: object expected";
+                    var key = Object.keys(message.env);
+                    for (var i = 0; i < key.length; ++i)
+                        if (!$util.isString(message.env[key[i]]))
+                            return "env: string{k:string} expected";
+                }
                 return null;
             };
     
@@ -4852,6 +5231,13 @@
                     message.cwd = String(object.cwd);
                 if (object.language != null)
                     message.language = String(object.language);
+                if (object.env) {
+                    if (typeof object.env !== "object")
+                        throw TypeError(".api.Pid1Config.env: object expected");
+                    message.env = {};
+                    for (var keys = Object.keys(object.env), i = 0; i < keys.length; ++i)
+                        message.env[keys[i]] = String(object.env[keys[i]]);
+                }
                 return message;
             };
     
@@ -4868,6 +5254,8 @@
                 if (!options)
                     options = {};
                 var object = {};
+                if (options.objects || options.defaults)
+                    object.env = {};
                 if (options.defaults) {
                     object.cwd = "";
                     object.language = "";
@@ -4876,6 +5264,12 @@
                     object.cwd = message.cwd;
                 if (message.language != null && message.hasOwnProperty("language"))
                     object.language = message.language;
+                var keys2;
+                if (message.env && (keys2 = Object.keys(message.env)).length) {
+                    object.env = {};
+                    for (var j = 0; j < keys2.length; ++j)
+                        object.env[keys2[j]] = message.env[keys2[j]];
+                }
                 return object;
             };
     
@@ -5898,6 +6292,7 @@
              * @memberof api
              * @interface IOTLinkFile
              * @property {api.IFile|null} [file] OTLinkFile file
+             * @property {boolean|null} [highConsistency] OTLinkFile highConsistency
              */
     
             /**
@@ -5922,6 +6317,14 @@
              * @instance
              */
             OTLinkFile.prototype.file = null;
+    
+            /**
+             * OTLinkFile highConsistency.
+             * @member {boolean} highConsistency
+             * @memberof api.OTLinkFile
+             * @instance
+             */
+            OTLinkFile.prototype.highConsistency = false;
     
             /**
              * Creates a new OTLinkFile instance using the specified properties.
@@ -5949,6 +6352,8 @@
                     writer = $Writer.create();
                 if (message.file != null && message.hasOwnProperty("file"))
                     $root.api.File.encode(message.file, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.highConsistency != null && message.hasOwnProperty("highConsistency"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).bool(message.highConsistency);
                 return writer;
             };
     
@@ -5985,6 +6390,9 @@
                     switch (tag >>> 3) {
                     case 1:
                         message.file = $root.api.File.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.highConsistency = reader.bool();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -6026,6 +6434,9 @@
                     if (error)
                         return "file." + error;
                 }
+                if (message.highConsistency != null && message.hasOwnProperty("highConsistency"))
+                    if (typeof message.highConsistency !== "boolean")
+                        return "highConsistency: boolean expected";
                 return null;
             };
     
@@ -6046,6 +6457,8 @@
                         throw TypeError(".api.OTLinkFile.file: object expected");
                     message.file = $root.api.File.fromObject(object.file);
                 }
+                if (object.highConsistency != null)
+                    message.highConsistency = Boolean(object.highConsistency);
                 return message;
             };
     
@@ -6062,10 +6475,14 @@
                 if (!options)
                     options = {};
                 var object = {};
-                if (options.defaults)
+                if (options.defaults) {
                     object.file = null;
+                    object.highConsistency = false;
+                }
                 if (message.file != null && message.hasOwnProperty("file"))
                     object.file = $root.api.File.toObject(message.file, options);
+                if (message.highConsistency != null && message.hasOwnProperty("highConsistency"))
+                    object.highConsistency = message.highConsistency;
                 return object;
             };
     
@@ -16251,6 +16668,7 @@
              * @property {number|null} [version] OTPacket version
              * @property {Array.<api.IOTRuneTransformOp>|null} [ops] OTPacket ops
              * @property {number|null} [crc32] OTPacket crc32
+             * @property {google.protobuf.ITimestamp|null} [committed] OTPacket committed
              */
     
             /**
@@ -16294,6 +16712,14 @@
             OTPacket.prototype.crc32 = 0;
     
             /**
+             * OTPacket committed.
+             * @member {google.protobuf.ITimestamp|null|undefined} committed
+             * @memberof api.OTPacket
+             * @instance
+             */
+            OTPacket.prototype.committed = null;
+    
+            /**
              * Creates a new OTPacket instance using the specified properties.
              * @function create
              * @memberof api.OTPacket
@@ -16324,6 +16750,8 @@
                         $root.api.OTRuneTransformOp.encode(message.ops[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 if (message.crc32 != null && message.hasOwnProperty("crc32"))
                     writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.crc32);
+                if (message.committed != null && message.hasOwnProperty("committed"))
+                    $root.google.protobuf.Timestamp.encode(message.committed, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 return writer;
             };
     
@@ -16368,6 +16796,9 @@
                         break;
                     case 3:
                         message.crc32 = reader.uint32();
+                        break;
+                    case 4:
+                        message.committed = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -16419,6 +16850,11 @@
                 if (message.crc32 != null && message.hasOwnProperty("crc32"))
                     if (!$util.isInteger(message.crc32))
                         return "crc32: integer expected";
+                if (message.committed != null && message.hasOwnProperty("committed")) {
+                    var error = $root.google.protobuf.Timestamp.verify(message.committed);
+                    if (error)
+                        return "committed." + error;
+                }
                 return null;
             };
     
@@ -16448,6 +16884,11 @@
                 }
                 if (object.crc32 != null)
                     message.crc32 = object.crc32 >>> 0;
+                if (object.committed != null) {
+                    if (typeof object.committed !== "object")
+                        throw TypeError(".api.OTPacket.committed: object expected");
+                    message.committed = $root.google.protobuf.Timestamp.fromObject(object.committed);
+                }
                 return message;
             };
     
@@ -16469,6 +16910,7 @@
                 if (options.defaults) {
                     object.version = 0;
                     object.crc32 = 0;
+                    object.committed = null;
                 }
                 if (message.version != null && message.hasOwnProperty("version"))
                     object.version = message.version;
@@ -16479,6 +16921,8 @@
                 }
                 if (message.crc32 != null && message.hasOwnProperty("crc32"))
                     object.crc32 = message.crc32;
+                if (message.committed != null && message.hasOwnProperty("committed"))
+                    object.committed = $root.google.protobuf.Timestamp.toObject(message.committed, options);
                 return object;
             };
     
@@ -21215,7 +21659,1816 @@
             return Metrics;
         })();
     
+        api.PprofRequest = (function() {
+    
+            /**
+             * Properties of a PprofRequest.
+             * @memberof api
+             * @interface IPprofRequest
+             * @property {string|null} [id] PprofRequest id
+             * @property {api.IPprofCpuProfileRequest|null} [pprofCpuProfileRequest] PprofRequest pprofCpuProfileRequest
+             * @property {api.IPprofHeapProfileRequest|null} [pprofHeapProfileRequest] PprofRequest pprofHeapProfileRequest
+             * @property {api.IPprofAllocsProfileRequest|null} [pprofAllocsProfileRequest] PprofRequest pprofAllocsProfileRequest
+             * @property {api.IPprofBlockProfileRequest|null} [pprofBlockProfileRequest] PprofRequest pprofBlockProfileRequest
+             * @property {api.IPprofMutexProfileRequest|null} [pprofMutexProfileRequest] PprofRequest pprofMutexProfileRequest
+             */
+    
+            /**
+             * Constructs a new PprofRequest.
+             * @memberof api
+             * @classdesc Represents a PprofRequest.
+             * @implements IPprofRequest
+             * @constructor
+             * @param {api.IPprofRequest=} [properties] Properties to set
+             */
+            function PprofRequest(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * PprofRequest id.
+             * @member {string} id
+             * @memberof api.PprofRequest
+             * @instance
+             */
+            PprofRequest.prototype.id = "";
+    
+            /**
+             * PprofRequest pprofCpuProfileRequest.
+             * @member {api.IPprofCpuProfileRequest|null|undefined} pprofCpuProfileRequest
+             * @memberof api.PprofRequest
+             * @instance
+             */
+            PprofRequest.prototype.pprofCpuProfileRequest = null;
+    
+            /**
+             * PprofRequest pprofHeapProfileRequest.
+             * @member {api.IPprofHeapProfileRequest|null|undefined} pprofHeapProfileRequest
+             * @memberof api.PprofRequest
+             * @instance
+             */
+            PprofRequest.prototype.pprofHeapProfileRequest = null;
+    
+            /**
+             * PprofRequest pprofAllocsProfileRequest.
+             * @member {api.IPprofAllocsProfileRequest|null|undefined} pprofAllocsProfileRequest
+             * @memberof api.PprofRequest
+             * @instance
+             */
+            PprofRequest.prototype.pprofAllocsProfileRequest = null;
+    
+            /**
+             * PprofRequest pprofBlockProfileRequest.
+             * @member {api.IPprofBlockProfileRequest|null|undefined} pprofBlockProfileRequest
+             * @memberof api.PprofRequest
+             * @instance
+             */
+            PprofRequest.prototype.pprofBlockProfileRequest = null;
+    
+            /**
+             * PprofRequest pprofMutexProfileRequest.
+             * @member {api.IPprofMutexProfileRequest|null|undefined} pprofMutexProfileRequest
+             * @memberof api.PprofRequest
+             * @instance
+             */
+            PprofRequest.prototype.pprofMutexProfileRequest = null;
+    
+            // OneOf field names bound to virtual getters and setters
+            var $oneOfFields;
+    
+            /**
+             * PprofRequest body.
+             * @member {"pprofCpuProfileRequest"|"pprofHeapProfileRequest"|"pprofAllocsProfileRequest"|"pprofBlockProfileRequest"|"pprofMutexProfileRequest"|undefined} body
+             * @memberof api.PprofRequest
+             * @instance
+             */
+            Object.defineProperty(PprofRequest.prototype, "body", {
+                get: $util.oneOfGetter($oneOfFields = ["pprofCpuProfileRequest", "pprofHeapProfileRequest", "pprofAllocsProfileRequest", "pprofBlockProfileRequest", "pprofMutexProfileRequest"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+    
+            /**
+             * Creates a new PprofRequest instance using the specified properties.
+             * @function create
+             * @memberof api.PprofRequest
+             * @static
+             * @param {api.IPprofRequest=} [properties] Properties to set
+             * @returns {api.PprofRequest} PprofRequest instance
+             */
+            PprofRequest.create = function create(properties) {
+                return new PprofRequest(properties);
+            };
+    
+            /**
+             * Encodes the specified PprofRequest message. Does not implicitly {@link api.PprofRequest.verify|verify} messages.
+             * @function encode
+             * @memberof api.PprofRequest
+             * @static
+             * @param {api.IPprofRequest} message PprofRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            PprofRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                if (message.pprofCpuProfileRequest != null && message.hasOwnProperty("pprofCpuProfileRequest"))
+                    $root.api.PprofCpuProfileRequest.encode(message.pprofCpuProfileRequest, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.pprofHeapProfileRequest != null && message.hasOwnProperty("pprofHeapProfileRequest"))
+                    $root.api.PprofHeapProfileRequest.encode(message.pprofHeapProfileRequest, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.pprofAllocsProfileRequest != null && message.hasOwnProperty("pprofAllocsProfileRequest"))
+                    $root.api.PprofAllocsProfileRequest.encode(message.pprofAllocsProfileRequest, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.pprofBlockProfileRequest != null && message.hasOwnProperty("pprofBlockProfileRequest"))
+                    $root.api.PprofBlockProfileRequest.encode(message.pprofBlockProfileRequest, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                if (message.pprofMutexProfileRequest != null && message.hasOwnProperty("pprofMutexProfileRequest"))
+                    $root.api.PprofMutexProfileRequest.encode(message.pprofMutexProfileRequest, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified PprofRequest message, length delimited. Does not implicitly {@link api.PprofRequest.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.PprofRequest
+             * @static
+             * @param {api.IPprofRequest} message PprofRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            PprofRequest.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a PprofRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.PprofRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.PprofRequest} PprofRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            PprofRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.PprofRequest();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = reader.string();
+                        break;
+                    case 2:
+                        message.pprofCpuProfileRequest = $root.api.PprofCpuProfileRequest.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.pprofHeapProfileRequest = $root.api.PprofHeapProfileRequest.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        message.pprofAllocsProfileRequest = $root.api.PprofAllocsProfileRequest.decode(reader, reader.uint32());
+                        break;
+                    case 5:
+                        message.pprofBlockProfileRequest = $root.api.PprofBlockProfileRequest.decode(reader, reader.uint32());
+                        break;
+                    case 6:
+                        message.pprofMutexProfileRequest = $root.api.PprofMutexProfileRequest.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a PprofRequest message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.PprofRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.PprofRequest} PprofRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            PprofRequest.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a PprofRequest message.
+             * @function verify
+             * @memberof api.PprofRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            PprofRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                var properties = {};
+                if (message.id != null && message.hasOwnProperty("id"))
+                    if (!$util.isString(message.id))
+                        return "id: string expected";
+                if (message.pprofCpuProfileRequest != null && message.hasOwnProperty("pprofCpuProfileRequest")) {
+                    properties.body = 1;
+                    {
+                        var error = $root.api.PprofCpuProfileRequest.verify(message.pprofCpuProfileRequest);
+                        if (error)
+                            return "pprofCpuProfileRequest." + error;
+                    }
+                }
+                if (message.pprofHeapProfileRequest != null && message.hasOwnProperty("pprofHeapProfileRequest")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.PprofHeapProfileRequest.verify(message.pprofHeapProfileRequest);
+                        if (error)
+                            return "pprofHeapProfileRequest." + error;
+                    }
+                }
+                if (message.pprofAllocsProfileRequest != null && message.hasOwnProperty("pprofAllocsProfileRequest")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.PprofAllocsProfileRequest.verify(message.pprofAllocsProfileRequest);
+                        if (error)
+                            return "pprofAllocsProfileRequest." + error;
+                    }
+                }
+                if (message.pprofBlockProfileRequest != null && message.hasOwnProperty("pprofBlockProfileRequest")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.PprofBlockProfileRequest.verify(message.pprofBlockProfileRequest);
+                        if (error)
+                            return "pprofBlockProfileRequest." + error;
+                    }
+                }
+                if (message.pprofMutexProfileRequest != null && message.hasOwnProperty("pprofMutexProfileRequest")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.PprofMutexProfileRequest.verify(message.pprofMutexProfileRequest);
+                        if (error)
+                            return "pprofMutexProfileRequest." + error;
+                    }
+                }
+                return null;
+            };
+    
+            /**
+             * Creates a PprofRequest message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.PprofRequest
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.PprofRequest} PprofRequest
+             */
+            PprofRequest.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.PprofRequest)
+                    return object;
+                var message = new $root.api.PprofRequest();
+                if (object.id != null)
+                    message.id = String(object.id);
+                if (object.pprofCpuProfileRequest != null) {
+                    if (typeof object.pprofCpuProfileRequest !== "object")
+                        throw TypeError(".api.PprofRequest.pprofCpuProfileRequest: object expected");
+                    message.pprofCpuProfileRequest = $root.api.PprofCpuProfileRequest.fromObject(object.pprofCpuProfileRequest);
+                }
+                if (object.pprofHeapProfileRequest != null) {
+                    if (typeof object.pprofHeapProfileRequest !== "object")
+                        throw TypeError(".api.PprofRequest.pprofHeapProfileRequest: object expected");
+                    message.pprofHeapProfileRequest = $root.api.PprofHeapProfileRequest.fromObject(object.pprofHeapProfileRequest);
+                }
+                if (object.pprofAllocsProfileRequest != null) {
+                    if (typeof object.pprofAllocsProfileRequest !== "object")
+                        throw TypeError(".api.PprofRequest.pprofAllocsProfileRequest: object expected");
+                    message.pprofAllocsProfileRequest = $root.api.PprofAllocsProfileRequest.fromObject(object.pprofAllocsProfileRequest);
+                }
+                if (object.pprofBlockProfileRequest != null) {
+                    if (typeof object.pprofBlockProfileRequest !== "object")
+                        throw TypeError(".api.PprofRequest.pprofBlockProfileRequest: object expected");
+                    message.pprofBlockProfileRequest = $root.api.PprofBlockProfileRequest.fromObject(object.pprofBlockProfileRequest);
+                }
+                if (object.pprofMutexProfileRequest != null) {
+                    if (typeof object.pprofMutexProfileRequest !== "object")
+                        throw TypeError(".api.PprofRequest.pprofMutexProfileRequest: object expected");
+                    message.pprofMutexProfileRequest = $root.api.PprofMutexProfileRequest.fromObject(object.pprofMutexProfileRequest);
+                }
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a PprofRequest message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.PprofRequest
+             * @static
+             * @param {api.PprofRequest} message PprofRequest
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            PprofRequest.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    object.id = "";
+                if (message.id != null && message.hasOwnProperty("id"))
+                    object.id = message.id;
+                if (message.pprofCpuProfileRequest != null && message.hasOwnProperty("pprofCpuProfileRequest")) {
+                    object.pprofCpuProfileRequest = $root.api.PprofCpuProfileRequest.toObject(message.pprofCpuProfileRequest, options);
+                    if (options.oneofs)
+                        object.body = "pprofCpuProfileRequest";
+                }
+                if (message.pprofHeapProfileRequest != null && message.hasOwnProperty("pprofHeapProfileRequest")) {
+                    object.pprofHeapProfileRequest = $root.api.PprofHeapProfileRequest.toObject(message.pprofHeapProfileRequest, options);
+                    if (options.oneofs)
+                        object.body = "pprofHeapProfileRequest";
+                }
+                if (message.pprofAllocsProfileRequest != null && message.hasOwnProperty("pprofAllocsProfileRequest")) {
+                    object.pprofAllocsProfileRequest = $root.api.PprofAllocsProfileRequest.toObject(message.pprofAllocsProfileRequest, options);
+                    if (options.oneofs)
+                        object.body = "pprofAllocsProfileRequest";
+                }
+                if (message.pprofBlockProfileRequest != null && message.hasOwnProperty("pprofBlockProfileRequest")) {
+                    object.pprofBlockProfileRequest = $root.api.PprofBlockProfileRequest.toObject(message.pprofBlockProfileRequest, options);
+                    if (options.oneofs)
+                        object.body = "pprofBlockProfileRequest";
+                }
+                if (message.pprofMutexProfileRequest != null && message.hasOwnProperty("pprofMutexProfileRequest")) {
+                    object.pprofMutexProfileRequest = $root.api.PprofMutexProfileRequest.toObject(message.pprofMutexProfileRequest, options);
+                    if (options.oneofs)
+                        object.body = "pprofMutexProfileRequest";
+                }
+                return object;
+            };
+    
+            /**
+             * Converts this PprofRequest to JSON.
+             * @function toJSON
+             * @memberof api.PprofRequest
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            PprofRequest.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return PprofRequest;
+        })();
+    
+        api.PprofAllocsProfileRequest = (function() {
+    
+            /**
+             * Properties of a PprofAllocsProfileRequest.
+             * @memberof api
+             * @interface IPprofAllocsProfileRequest
+             * @property {boolean|null} [debug] PprofAllocsProfileRequest debug
+             */
+    
+            /**
+             * Constructs a new PprofAllocsProfileRequest.
+             * @memberof api
+             * @classdesc Represents a PprofAllocsProfileRequest.
+             * @implements IPprofAllocsProfileRequest
+             * @constructor
+             * @param {api.IPprofAllocsProfileRequest=} [properties] Properties to set
+             */
+            function PprofAllocsProfileRequest(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * PprofAllocsProfileRequest debug.
+             * @member {boolean} debug
+             * @memberof api.PprofAllocsProfileRequest
+             * @instance
+             */
+            PprofAllocsProfileRequest.prototype.debug = false;
+    
+            /**
+             * Creates a new PprofAllocsProfileRequest instance using the specified properties.
+             * @function create
+             * @memberof api.PprofAllocsProfileRequest
+             * @static
+             * @param {api.IPprofAllocsProfileRequest=} [properties] Properties to set
+             * @returns {api.PprofAllocsProfileRequest} PprofAllocsProfileRequest instance
+             */
+            PprofAllocsProfileRequest.create = function create(properties) {
+                return new PprofAllocsProfileRequest(properties);
+            };
+    
+            /**
+             * Encodes the specified PprofAllocsProfileRequest message. Does not implicitly {@link api.PprofAllocsProfileRequest.verify|verify} messages.
+             * @function encode
+             * @memberof api.PprofAllocsProfileRequest
+             * @static
+             * @param {api.IPprofAllocsProfileRequest} message PprofAllocsProfileRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            PprofAllocsProfileRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.debug != null && message.hasOwnProperty("debug"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).bool(message.debug);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified PprofAllocsProfileRequest message, length delimited. Does not implicitly {@link api.PprofAllocsProfileRequest.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.PprofAllocsProfileRequest
+             * @static
+             * @param {api.IPprofAllocsProfileRequest} message PprofAllocsProfileRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            PprofAllocsProfileRequest.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a PprofAllocsProfileRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.PprofAllocsProfileRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.PprofAllocsProfileRequest} PprofAllocsProfileRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            PprofAllocsProfileRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.PprofAllocsProfileRequest();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.debug = reader.bool();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a PprofAllocsProfileRequest message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.PprofAllocsProfileRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.PprofAllocsProfileRequest} PprofAllocsProfileRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            PprofAllocsProfileRequest.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a PprofAllocsProfileRequest message.
+             * @function verify
+             * @memberof api.PprofAllocsProfileRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            PprofAllocsProfileRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.debug != null && message.hasOwnProperty("debug"))
+                    if (typeof message.debug !== "boolean")
+                        return "debug: boolean expected";
+                return null;
+            };
+    
+            /**
+             * Creates a PprofAllocsProfileRequest message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.PprofAllocsProfileRequest
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.PprofAllocsProfileRequest} PprofAllocsProfileRequest
+             */
+            PprofAllocsProfileRequest.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.PprofAllocsProfileRequest)
+                    return object;
+                var message = new $root.api.PprofAllocsProfileRequest();
+                if (object.debug != null)
+                    message.debug = Boolean(object.debug);
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a PprofAllocsProfileRequest message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.PprofAllocsProfileRequest
+             * @static
+             * @param {api.PprofAllocsProfileRequest} message PprofAllocsProfileRequest
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            PprofAllocsProfileRequest.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    object.debug = false;
+                if (message.debug != null && message.hasOwnProperty("debug"))
+                    object.debug = message.debug;
+                return object;
+            };
+    
+            /**
+             * Converts this PprofAllocsProfileRequest to JSON.
+             * @function toJSON
+             * @memberof api.PprofAllocsProfileRequest
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            PprofAllocsProfileRequest.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return PprofAllocsProfileRequest;
+        })();
+    
+        api.PprofBlockProfileRequest = (function() {
+    
+            /**
+             * Properties of a PprofBlockProfileRequest.
+             * @memberof api
+             * @interface IPprofBlockProfileRequest
+             * @property {boolean|null} [debug] PprofBlockProfileRequest debug
+             */
+    
+            /**
+             * Constructs a new PprofBlockProfileRequest.
+             * @memberof api
+             * @classdesc Represents a PprofBlockProfileRequest.
+             * @implements IPprofBlockProfileRequest
+             * @constructor
+             * @param {api.IPprofBlockProfileRequest=} [properties] Properties to set
+             */
+            function PprofBlockProfileRequest(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * PprofBlockProfileRequest debug.
+             * @member {boolean} debug
+             * @memberof api.PprofBlockProfileRequest
+             * @instance
+             */
+            PprofBlockProfileRequest.prototype.debug = false;
+    
+            /**
+             * Creates a new PprofBlockProfileRequest instance using the specified properties.
+             * @function create
+             * @memberof api.PprofBlockProfileRequest
+             * @static
+             * @param {api.IPprofBlockProfileRequest=} [properties] Properties to set
+             * @returns {api.PprofBlockProfileRequest} PprofBlockProfileRequest instance
+             */
+            PprofBlockProfileRequest.create = function create(properties) {
+                return new PprofBlockProfileRequest(properties);
+            };
+    
+            /**
+             * Encodes the specified PprofBlockProfileRequest message. Does not implicitly {@link api.PprofBlockProfileRequest.verify|verify} messages.
+             * @function encode
+             * @memberof api.PprofBlockProfileRequest
+             * @static
+             * @param {api.IPprofBlockProfileRequest} message PprofBlockProfileRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            PprofBlockProfileRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.debug != null && message.hasOwnProperty("debug"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).bool(message.debug);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified PprofBlockProfileRequest message, length delimited. Does not implicitly {@link api.PprofBlockProfileRequest.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.PprofBlockProfileRequest
+             * @static
+             * @param {api.IPprofBlockProfileRequest} message PprofBlockProfileRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            PprofBlockProfileRequest.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a PprofBlockProfileRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.PprofBlockProfileRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.PprofBlockProfileRequest} PprofBlockProfileRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            PprofBlockProfileRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.PprofBlockProfileRequest();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.debug = reader.bool();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a PprofBlockProfileRequest message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.PprofBlockProfileRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.PprofBlockProfileRequest} PprofBlockProfileRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            PprofBlockProfileRequest.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a PprofBlockProfileRequest message.
+             * @function verify
+             * @memberof api.PprofBlockProfileRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            PprofBlockProfileRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.debug != null && message.hasOwnProperty("debug"))
+                    if (typeof message.debug !== "boolean")
+                        return "debug: boolean expected";
+                return null;
+            };
+    
+            /**
+             * Creates a PprofBlockProfileRequest message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.PprofBlockProfileRequest
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.PprofBlockProfileRequest} PprofBlockProfileRequest
+             */
+            PprofBlockProfileRequest.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.PprofBlockProfileRequest)
+                    return object;
+                var message = new $root.api.PprofBlockProfileRequest();
+                if (object.debug != null)
+                    message.debug = Boolean(object.debug);
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a PprofBlockProfileRequest message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.PprofBlockProfileRequest
+             * @static
+             * @param {api.PprofBlockProfileRequest} message PprofBlockProfileRequest
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            PprofBlockProfileRequest.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    object.debug = false;
+                if (message.debug != null && message.hasOwnProperty("debug"))
+                    object.debug = message.debug;
+                return object;
+            };
+    
+            /**
+             * Converts this PprofBlockProfileRequest to JSON.
+             * @function toJSON
+             * @memberof api.PprofBlockProfileRequest
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            PprofBlockProfileRequest.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return PprofBlockProfileRequest;
+        })();
+    
+        api.PprofCpuProfileRequest = (function() {
+    
+            /**
+             * Properties of a PprofCpuProfileRequest.
+             * @memberof api
+             * @interface IPprofCpuProfileRequest
+             * @property {number|Long|null} [seconds] PprofCpuProfileRequest seconds
+             */
+    
+            /**
+             * Constructs a new PprofCpuProfileRequest.
+             * @memberof api
+             * @classdesc Represents a PprofCpuProfileRequest.
+             * @implements IPprofCpuProfileRequest
+             * @constructor
+             * @param {api.IPprofCpuProfileRequest=} [properties] Properties to set
+             */
+            function PprofCpuProfileRequest(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * PprofCpuProfileRequest seconds.
+             * @member {number|Long} seconds
+             * @memberof api.PprofCpuProfileRequest
+             * @instance
+             */
+            PprofCpuProfileRequest.prototype.seconds = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+    
+            /**
+             * Creates a new PprofCpuProfileRequest instance using the specified properties.
+             * @function create
+             * @memberof api.PprofCpuProfileRequest
+             * @static
+             * @param {api.IPprofCpuProfileRequest=} [properties] Properties to set
+             * @returns {api.PprofCpuProfileRequest} PprofCpuProfileRequest instance
+             */
+            PprofCpuProfileRequest.create = function create(properties) {
+                return new PprofCpuProfileRequest(properties);
+            };
+    
+            /**
+             * Encodes the specified PprofCpuProfileRequest message. Does not implicitly {@link api.PprofCpuProfileRequest.verify|verify} messages.
+             * @function encode
+             * @memberof api.PprofCpuProfileRequest
+             * @static
+             * @param {api.IPprofCpuProfileRequest} message PprofCpuProfileRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            PprofCpuProfileRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.seconds != null && message.hasOwnProperty("seconds"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).int64(message.seconds);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified PprofCpuProfileRequest message, length delimited. Does not implicitly {@link api.PprofCpuProfileRequest.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.PprofCpuProfileRequest
+             * @static
+             * @param {api.IPprofCpuProfileRequest} message PprofCpuProfileRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            PprofCpuProfileRequest.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a PprofCpuProfileRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.PprofCpuProfileRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.PprofCpuProfileRequest} PprofCpuProfileRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            PprofCpuProfileRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.PprofCpuProfileRequest();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.seconds = reader.int64();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a PprofCpuProfileRequest message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.PprofCpuProfileRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.PprofCpuProfileRequest} PprofCpuProfileRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            PprofCpuProfileRequest.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a PprofCpuProfileRequest message.
+             * @function verify
+             * @memberof api.PprofCpuProfileRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            PprofCpuProfileRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.seconds != null && message.hasOwnProperty("seconds"))
+                    if (!$util.isInteger(message.seconds) && !(message.seconds && $util.isInteger(message.seconds.low) && $util.isInteger(message.seconds.high)))
+                        return "seconds: integer|Long expected";
+                return null;
+            };
+    
+            /**
+             * Creates a PprofCpuProfileRequest message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.PprofCpuProfileRequest
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.PprofCpuProfileRequest} PprofCpuProfileRequest
+             */
+            PprofCpuProfileRequest.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.PprofCpuProfileRequest)
+                    return object;
+                var message = new $root.api.PprofCpuProfileRequest();
+                if (object.seconds != null)
+                    if ($util.Long)
+                        (message.seconds = $util.Long.fromValue(object.seconds)).unsigned = false;
+                    else if (typeof object.seconds === "string")
+                        message.seconds = parseInt(object.seconds, 10);
+                    else if (typeof object.seconds === "number")
+                        message.seconds = object.seconds;
+                    else if (typeof object.seconds === "object")
+                        message.seconds = new $util.LongBits(object.seconds.low >>> 0, object.seconds.high >>> 0).toNumber();
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a PprofCpuProfileRequest message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.PprofCpuProfileRequest
+             * @static
+             * @param {api.PprofCpuProfileRequest} message PprofCpuProfileRequest
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            PprofCpuProfileRequest.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.seconds = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.seconds = options.longs === String ? "0" : 0;
+                if (message.seconds != null && message.hasOwnProperty("seconds"))
+                    if (typeof message.seconds === "number")
+                        object.seconds = options.longs === String ? String(message.seconds) : message.seconds;
+                    else
+                        object.seconds = options.longs === String ? $util.Long.prototype.toString.call(message.seconds) : options.longs === Number ? new $util.LongBits(message.seconds.low >>> 0, message.seconds.high >>> 0).toNumber() : message.seconds;
+                return object;
+            };
+    
+            /**
+             * Converts this PprofCpuProfileRequest to JSON.
+             * @function toJSON
+             * @memberof api.PprofCpuProfileRequest
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            PprofCpuProfileRequest.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return PprofCpuProfileRequest;
+        })();
+    
+        api.PprofHeapProfileRequest = (function() {
+    
+            /**
+             * Properties of a PprofHeapProfileRequest.
+             * @memberof api
+             * @interface IPprofHeapProfileRequest
+             * @property {boolean|null} [gc] PprofHeapProfileRequest gc
+             * @property {boolean|null} [debug] PprofHeapProfileRequest debug
+             */
+    
+            /**
+             * Constructs a new PprofHeapProfileRequest.
+             * @memberof api
+             * @classdesc Represents a PprofHeapProfileRequest.
+             * @implements IPprofHeapProfileRequest
+             * @constructor
+             * @param {api.IPprofHeapProfileRequest=} [properties] Properties to set
+             */
+            function PprofHeapProfileRequest(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * PprofHeapProfileRequest gc.
+             * @member {boolean} gc
+             * @memberof api.PprofHeapProfileRequest
+             * @instance
+             */
+            PprofHeapProfileRequest.prototype.gc = false;
+    
+            /**
+             * PprofHeapProfileRequest debug.
+             * @member {boolean} debug
+             * @memberof api.PprofHeapProfileRequest
+             * @instance
+             */
+            PprofHeapProfileRequest.prototype.debug = false;
+    
+            /**
+             * Creates a new PprofHeapProfileRequest instance using the specified properties.
+             * @function create
+             * @memberof api.PprofHeapProfileRequest
+             * @static
+             * @param {api.IPprofHeapProfileRequest=} [properties] Properties to set
+             * @returns {api.PprofHeapProfileRequest} PprofHeapProfileRequest instance
+             */
+            PprofHeapProfileRequest.create = function create(properties) {
+                return new PprofHeapProfileRequest(properties);
+            };
+    
+            /**
+             * Encodes the specified PprofHeapProfileRequest message. Does not implicitly {@link api.PprofHeapProfileRequest.verify|verify} messages.
+             * @function encode
+             * @memberof api.PprofHeapProfileRequest
+             * @static
+             * @param {api.IPprofHeapProfileRequest} message PprofHeapProfileRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            PprofHeapProfileRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.gc != null && message.hasOwnProperty("gc"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).bool(message.gc);
+                if (message.debug != null && message.hasOwnProperty("debug"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).bool(message.debug);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified PprofHeapProfileRequest message, length delimited. Does not implicitly {@link api.PprofHeapProfileRequest.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.PprofHeapProfileRequest
+             * @static
+             * @param {api.IPprofHeapProfileRequest} message PprofHeapProfileRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            PprofHeapProfileRequest.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a PprofHeapProfileRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.PprofHeapProfileRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.PprofHeapProfileRequest} PprofHeapProfileRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            PprofHeapProfileRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.PprofHeapProfileRequest();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.gc = reader.bool();
+                        break;
+                    case 2:
+                        message.debug = reader.bool();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a PprofHeapProfileRequest message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.PprofHeapProfileRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.PprofHeapProfileRequest} PprofHeapProfileRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            PprofHeapProfileRequest.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a PprofHeapProfileRequest message.
+             * @function verify
+             * @memberof api.PprofHeapProfileRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            PprofHeapProfileRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.gc != null && message.hasOwnProperty("gc"))
+                    if (typeof message.gc !== "boolean")
+                        return "gc: boolean expected";
+                if (message.debug != null && message.hasOwnProperty("debug"))
+                    if (typeof message.debug !== "boolean")
+                        return "debug: boolean expected";
+                return null;
+            };
+    
+            /**
+             * Creates a PprofHeapProfileRequest message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.PprofHeapProfileRequest
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.PprofHeapProfileRequest} PprofHeapProfileRequest
+             */
+            PprofHeapProfileRequest.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.PprofHeapProfileRequest)
+                    return object;
+                var message = new $root.api.PprofHeapProfileRequest();
+                if (object.gc != null)
+                    message.gc = Boolean(object.gc);
+                if (object.debug != null)
+                    message.debug = Boolean(object.debug);
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a PprofHeapProfileRequest message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.PprofHeapProfileRequest
+             * @static
+             * @param {api.PprofHeapProfileRequest} message PprofHeapProfileRequest
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            PprofHeapProfileRequest.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.gc = false;
+                    object.debug = false;
+                }
+                if (message.gc != null && message.hasOwnProperty("gc"))
+                    object.gc = message.gc;
+                if (message.debug != null && message.hasOwnProperty("debug"))
+                    object.debug = message.debug;
+                return object;
+            };
+    
+            /**
+             * Converts this PprofHeapProfileRequest to JSON.
+             * @function toJSON
+             * @memberof api.PprofHeapProfileRequest
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            PprofHeapProfileRequest.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return PprofHeapProfileRequest;
+        })();
+    
+        api.PprofMutexProfileRequest = (function() {
+    
+            /**
+             * Properties of a PprofMutexProfileRequest.
+             * @memberof api
+             * @interface IPprofMutexProfileRequest
+             * @property {boolean|null} [debug] PprofMutexProfileRequest debug
+             */
+    
+            /**
+             * Constructs a new PprofMutexProfileRequest.
+             * @memberof api
+             * @classdesc Represents a PprofMutexProfileRequest.
+             * @implements IPprofMutexProfileRequest
+             * @constructor
+             * @param {api.IPprofMutexProfileRequest=} [properties] Properties to set
+             */
+            function PprofMutexProfileRequest(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * PprofMutexProfileRequest debug.
+             * @member {boolean} debug
+             * @memberof api.PprofMutexProfileRequest
+             * @instance
+             */
+            PprofMutexProfileRequest.prototype.debug = false;
+    
+            /**
+             * Creates a new PprofMutexProfileRequest instance using the specified properties.
+             * @function create
+             * @memberof api.PprofMutexProfileRequest
+             * @static
+             * @param {api.IPprofMutexProfileRequest=} [properties] Properties to set
+             * @returns {api.PprofMutexProfileRequest} PprofMutexProfileRequest instance
+             */
+            PprofMutexProfileRequest.create = function create(properties) {
+                return new PprofMutexProfileRequest(properties);
+            };
+    
+            /**
+             * Encodes the specified PprofMutexProfileRequest message. Does not implicitly {@link api.PprofMutexProfileRequest.verify|verify} messages.
+             * @function encode
+             * @memberof api.PprofMutexProfileRequest
+             * @static
+             * @param {api.IPprofMutexProfileRequest} message PprofMutexProfileRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            PprofMutexProfileRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.debug != null && message.hasOwnProperty("debug"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).bool(message.debug);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified PprofMutexProfileRequest message, length delimited. Does not implicitly {@link api.PprofMutexProfileRequest.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.PprofMutexProfileRequest
+             * @static
+             * @param {api.IPprofMutexProfileRequest} message PprofMutexProfileRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            PprofMutexProfileRequest.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a PprofMutexProfileRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.PprofMutexProfileRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.PprofMutexProfileRequest} PprofMutexProfileRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            PprofMutexProfileRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.PprofMutexProfileRequest();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.debug = reader.bool();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a PprofMutexProfileRequest message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.PprofMutexProfileRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.PprofMutexProfileRequest} PprofMutexProfileRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            PprofMutexProfileRequest.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a PprofMutexProfileRequest message.
+             * @function verify
+             * @memberof api.PprofMutexProfileRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            PprofMutexProfileRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.debug != null && message.hasOwnProperty("debug"))
+                    if (typeof message.debug !== "boolean")
+                        return "debug: boolean expected";
+                return null;
+            };
+    
+            /**
+             * Creates a PprofMutexProfileRequest message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.PprofMutexProfileRequest
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.PprofMutexProfileRequest} PprofMutexProfileRequest
+             */
+            PprofMutexProfileRequest.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.PprofMutexProfileRequest)
+                    return object;
+                var message = new $root.api.PprofMutexProfileRequest();
+                if (object.debug != null)
+                    message.debug = Boolean(object.debug);
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a PprofMutexProfileRequest message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.PprofMutexProfileRequest
+             * @static
+             * @param {api.PprofMutexProfileRequest} message PprofMutexProfileRequest
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            PprofMutexProfileRequest.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    object.debug = false;
+                if (message.debug != null && message.hasOwnProperty("debug"))
+                    object.debug = message.debug;
+                return object;
+            };
+    
+            /**
+             * Converts this PprofMutexProfileRequest to JSON.
+             * @function toJSON
+             * @memberof api.PprofMutexProfileRequest
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            PprofMutexProfileRequest.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return PprofMutexProfileRequest;
+        })();
+    
+        api.PprofResponse = (function() {
+    
+            /**
+             * Properties of a PprofResponse.
+             * @memberof api
+             * @interface IPprofResponse
+             * @property {string|null} [id] PprofResponse id
+             * @property {Uint8Array|null} [profile] PprofResponse profile
+             */
+    
+            /**
+             * Constructs a new PprofResponse.
+             * @memberof api
+             * @classdesc Represents a PprofResponse.
+             * @implements IPprofResponse
+             * @constructor
+             * @param {api.IPprofResponse=} [properties] Properties to set
+             */
+            function PprofResponse(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * PprofResponse id.
+             * @member {string} id
+             * @memberof api.PprofResponse
+             * @instance
+             */
+            PprofResponse.prototype.id = "";
+    
+            /**
+             * PprofResponse profile.
+             * @member {Uint8Array} profile
+             * @memberof api.PprofResponse
+             * @instance
+             */
+            PprofResponse.prototype.profile = $util.newBuffer([]);
+    
+            /**
+             * Creates a new PprofResponse instance using the specified properties.
+             * @function create
+             * @memberof api.PprofResponse
+             * @static
+             * @param {api.IPprofResponse=} [properties] Properties to set
+             * @returns {api.PprofResponse} PprofResponse instance
+             */
+            PprofResponse.create = function create(properties) {
+                return new PprofResponse(properties);
+            };
+    
+            /**
+             * Encodes the specified PprofResponse message. Does not implicitly {@link api.PprofResponse.verify|verify} messages.
+             * @function encode
+             * @memberof api.PprofResponse
+             * @static
+             * @param {api.IPprofResponse} message PprofResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            PprofResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && message.hasOwnProperty("id"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                if (message.profile != null && message.hasOwnProperty("profile"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.profile);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified PprofResponse message, length delimited. Does not implicitly {@link api.PprofResponse.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.PprofResponse
+             * @static
+             * @param {api.IPprofResponse} message PprofResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            PprofResponse.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a PprofResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.PprofResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.PprofResponse} PprofResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            PprofResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.PprofResponse();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = reader.string();
+                        break;
+                    case 2:
+                        message.profile = reader.bytes();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a PprofResponse message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.PprofResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.PprofResponse} PprofResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            PprofResponse.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a PprofResponse message.
+             * @function verify
+             * @memberof api.PprofResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            PprofResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.id != null && message.hasOwnProperty("id"))
+                    if (!$util.isString(message.id))
+                        return "id: string expected";
+                if (message.profile != null && message.hasOwnProperty("profile"))
+                    if (!(message.profile && typeof message.profile.length === "number" || $util.isString(message.profile)))
+                        return "profile: buffer expected";
+                return null;
+            };
+    
+            /**
+             * Creates a PprofResponse message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.PprofResponse
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.PprofResponse} PprofResponse
+             */
+            PprofResponse.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.PprofResponse)
+                    return object;
+                var message = new $root.api.PprofResponse();
+                if (object.id != null)
+                    message.id = String(object.id);
+                if (object.profile != null)
+                    if (typeof object.profile === "string")
+                        $util.base64.decode(object.profile, message.profile = $util.newBuffer($util.base64.length(object.profile)), 0);
+                    else if (object.profile.length)
+                        message.profile = object.profile;
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a PprofResponse message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.PprofResponse
+             * @static
+             * @param {api.PprofResponse} message PprofResponse
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            PprofResponse.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.id = "";
+                    if (options.bytes === String)
+                        object.profile = "";
+                    else {
+                        object.profile = [];
+                        if (options.bytes !== Array)
+                            object.profile = $util.newBuffer(object.profile);
+                    }
+                }
+                if (message.id != null && message.hasOwnProperty("id"))
+                    object.id = message.id;
+                if (message.profile != null && message.hasOwnProperty("profile"))
+                    object.profile = options.bytes === String ? $util.base64.encode(message.profile, 0, message.profile.length) : options.bytes === Array ? Array.prototype.slice.call(message.profile) : message.profile;
+                return object;
+            };
+    
+            /**
+             * Converts this PprofResponse to JSON.
+             * @function toJSON
+             * @memberof api.PprofResponse
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            PprofResponse.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return PprofResponse;
+        })();
+    
         return api;
+    })();
+    
+    $root.google = (function() {
+    
+        /**
+         * Namespace google.
+         * @exports google
+         * @namespace
+         */
+        var google = {};
+    
+        google.protobuf = (function() {
+    
+            /**
+             * Namespace protobuf.
+             * @memberof google
+             * @namespace
+             */
+            var protobuf = {};
+    
+            protobuf.Timestamp = (function() {
+    
+                /**
+                 * Properties of a Timestamp.
+                 * @memberof google.protobuf
+                 * @interface ITimestamp
+                 * @property {number|Long|null} [seconds] Timestamp seconds
+                 * @property {number|null} [nanos] Timestamp nanos
+                 */
+    
+                /**
+                 * Constructs a new Timestamp.
+                 * @memberof google.protobuf
+                 * @classdesc Represents a Timestamp.
+                 * @implements ITimestamp
+                 * @constructor
+                 * @param {google.protobuf.ITimestamp=} [properties] Properties to set
+                 */
+                function Timestamp(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * Timestamp seconds.
+                 * @member {number|Long} seconds
+                 * @memberof google.protobuf.Timestamp
+                 * @instance
+                 */
+                Timestamp.prototype.seconds = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+    
+                /**
+                 * Timestamp nanos.
+                 * @member {number} nanos
+                 * @memberof google.protobuf.Timestamp
+                 * @instance
+                 */
+                Timestamp.prototype.nanos = 0;
+    
+                /**
+                 * Creates a new Timestamp instance using the specified properties.
+                 * @function create
+                 * @memberof google.protobuf.Timestamp
+                 * @static
+                 * @param {google.protobuf.ITimestamp=} [properties] Properties to set
+                 * @returns {google.protobuf.Timestamp} Timestamp instance
+                 */
+                Timestamp.create = function create(properties) {
+                    return new Timestamp(properties);
+                };
+    
+                /**
+                 * Encodes the specified Timestamp message. Does not implicitly {@link google.protobuf.Timestamp.verify|verify} messages.
+                 * @function encode
+                 * @memberof google.protobuf.Timestamp
+                 * @static
+                 * @param {google.protobuf.ITimestamp} message Timestamp message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Timestamp.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.seconds != null && message.hasOwnProperty("seconds"))
+                        writer.uint32(/* id 1, wireType 0 =*/8).int64(message.seconds);
+                    if (message.nanos != null && message.hasOwnProperty("nanos"))
+                        writer.uint32(/* id 2, wireType 0 =*/16).int32(message.nanos);
+                    return writer;
+                };
+    
+                /**
+                 * Encodes the specified Timestamp message, length delimited. Does not implicitly {@link google.protobuf.Timestamp.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof google.protobuf.Timestamp
+                 * @static
+                 * @param {google.protobuf.ITimestamp} message Timestamp message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Timestamp.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+    
+                /**
+                 * Decodes a Timestamp message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof google.protobuf.Timestamp
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {google.protobuf.Timestamp} Timestamp
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Timestamp.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.google.protobuf.Timestamp();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.seconds = reader.int64();
+                            break;
+                        case 2:
+                            message.nanos = reader.int32();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Decodes a Timestamp message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof google.protobuf.Timestamp
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {google.protobuf.Timestamp} Timestamp
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Timestamp.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+    
+                /**
+                 * Verifies a Timestamp message.
+                 * @function verify
+                 * @memberof google.protobuf.Timestamp
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                Timestamp.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.seconds != null && message.hasOwnProperty("seconds"))
+                        if (!$util.isInteger(message.seconds) && !(message.seconds && $util.isInteger(message.seconds.low) && $util.isInteger(message.seconds.high)))
+                            return "seconds: integer|Long expected";
+                    if (message.nanos != null && message.hasOwnProperty("nanos"))
+                        if (!$util.isInteger(message.nanos))
+                            return "nanos: integer expected";
+                    return null;
+                };
+    
+                /**
+                 * Creates a Timestamp message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof google.protobuf.Timestamp
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {google.protobuf.Timestamp} Timestamp
+                 */
+                Timestamp.fromObject = function fromObject(object) {
+                    if (object instanceof $root.google.protobuf.Timestamp)
+                        return object;
+                    var message = new $root.google.protobuf.Timestamp();
+                    if (object.seconds != null)
+                        if ($util.Long)
+                            (message.seconds = $util.Long.fromValue(object.seconds)).unsigned = false;
+                        else if (typeof object.seconds === "string")
+                            message.seconds = parseInt(object.seconds, 10);
+                        else if (typeof object.seconds === "number")
+                            message.seconds = object.seconds;
+                        else if (typeof object.seconds === "object")
+                            message.seconds = new $util.LongBits(object.seconds.low >>> 0, object.seconds.high >>> 0).toNumber();
+                    if (object.nanos != null)
+                        message.nanos = object.nanos | 0;
+                    return message;
+                };
+    
+                /**
+                 * Creates a plain object from a Timestamp message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof google.protobuf.Timestamp
+                 * @static
+                 * @param {google.protobuf.Timestamp} message Timestamp
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                Timestamp.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.defaults) {
+                        if ($util.Long) {
+                            var long = new $util.Long(0, 0, false);
+                            object.seconds = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                        } else
+                            object.seconds = options.longs === String ? "0" : 0;
+                        object.nanos = 0;
+                    }
+                    if (message.seconds != null && message.hasOwnProperty("seconds"))
+                        if (typeof message.seconds === "number")
+                            object.seconds = options.longs === String ? String(message.seconds) : message.seconds;
+                        else
+                            object.seconds = options.longs === String ? $util.Long.prototype.toString.call(message.seconds) : options.longs === Number ? new $util.LongBits(message.seconds.low >>> 0, message.seconds.high >>> 0).toNumber() : message.seconds;
+                    if (message.nanos != null && message.hasOwnProperty("nanos"))
+                        object.nanos = message.nanos;
+                    return object;
+                };
+    
+                /**
+                 * Converts this Timestamp to JSON.
+                 * @function toJSON
+                 * @memberof google.protobuf.Timestamp
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                Timestamp.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+    
+                return Timestamp;
+            })();
+    
+            return protobuf;
+        })();
+    
+        return google;
     })();
 
     return $root;
