@@ -4,6 +4,7 @@ bump-%:
 	SEMVER_NEW_TAG="v$${SEMVER_NEW_TAG}" && \
 	echo "new version: $${SEMVER_NEW_TAG}" && \
 	cd js && npm version $${SEMVER_NEW_TAG} && \
+	git add . && \
 	git commit -am "[$(*)] Bump version to $${SEMVER_NEW_TAG}" && \
 	git tag $${SEMVER_NEW_TAG}
 
