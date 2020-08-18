@@ -246,6 +246,7 @@ message Flush {}
 message OTLinkFile {
   File file = 1;
   bool highConsistency = 2;
+  bool useModTime = 3;
 }
 
 message Auth {
