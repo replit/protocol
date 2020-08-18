@@ -6293,6 +6293,7 @@
              * @interface IOTLinkFile
              * @property {api.IFile|null} [file] OTLinkFile file
              * @property {boolean|null} [highConsistency] OTLinkFile highConsistency
+             * @property {boolean|null} [useModTime] OTLinkFile useModTime
              */
     
             /**
@@ -6327,6 +6328,14 @@
             OTLinkFile.prototype.highConsistency = false;
     
             /**
+             * OTLinkFile useModTime.
+             * @member {boolean} useModTime
+             * @memberof api.OTLinkFile
+             * @instance
+             */
+            OTLinkFile.prototype.useModTime = false;
+    
+            /**
              * Creates a new OTLinkFile instance using the specified properties.
              * @function create
              * @memberof api.OTLinkFile
@@ -6354,6 +6363,8 @@
                     $root.api.File.encode(message.file, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.highConsistency != null && message.hasOwnProperty("highConsistency"))
                     writer.uint32(/* id 2, wireType 0 =*/16).bool(message.highConsistency);
+                if (message.useModTime != null && message.hasOwnProperty("useModTime"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).bool(message.useModTime);
                 return writer;
             };
     
@@ -6393,6 +6404,9 @@
                         break;
                     case 2:
                         message.highConsistency = reader.bool();
+                        break;
+                    case 3:
+                        message.useModTime = reader.bool();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -6437,6 +6451,9 @@
                 if (message.highConsistency != null && message.hasOwnProperty("highConsistency"))
                     if (typeof message.highConsistency !== "boolean")
                         return "highConsistency: boolean expected";
+                if (message.useModTime != null && message.hasOwnProperty("useModTime"))
+                    if (typeof message.useModTime !== "boolean")
+                        return "useModTime: boolean expected";
                 return null;
             };
     
@@ -6459,6 +6476,8 @@
                 }
                 if (object.highConsistency != null)
                     message.highConsistency = Boolean(object.highConsistency);
+                if (object.useModTime != null)
+                    message.useModTime = Boolean(object.useModTime);
                 return message;
             };
     
@@ -6478,11 +6497,14 @@
                 if (options.defaults) {
                     object.file = null;
                     object.highConsistency = false;
+                    object.useModTime = false;
                 }
                 if (message.file != null && message.hasOwnProperty("file"))
                     object.file = $root.api.File.toObject(message.file, options);
                 if (message.highConsistency != null && message.hasOwnProperty("highConsistency"))
                     object.highConsistency = message.highConsistency;
+                if (message.useModTime != null && message.hasOwnProperty("useModTime"))
+                    object.useModTime = message.useModTime;
                 return object;
             };
     

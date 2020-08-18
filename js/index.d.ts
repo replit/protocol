@@ -1868,6 +1868,9 @@ export namespace api {
 
         /** OTLinkFile highConsistency */
         highConsistency?: (boolean|null);
+
+        /** OTLinkFile useModTime */
+        useModTime?: (boolean|null);
     }
 
     /** Represents a OTLinkFile. */
@@ -1884,6 +1887,9 @@ export namespace api {
 
         /** OTLinkFile highConsistency. */
         public highConsistency: boolean;
+
+        /** OTLinkFile useModTime. */
+        public useModTime: boolean;
 
         /**
          * Creates a new OTLinkFile instance using the specified properties.
