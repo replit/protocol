@@ -6540,6 +6540,9 @@ export namespace api {
     /** Properties of a OTPacket. */
     interface IOTPacket {
 
+        /** OTPacket spookyVersion */
+        spookyVersion?: (number|null);
+
         /** OTPacket version */
         version?: (number|null);
 
@@ -6561,6 +6564,9 @@ export namespace api {
          * @param [properties] Properties to set
          */
         constructor(properties?: api.IOTPacket);
+
+        /** OTPacket spookyVersion. */
+        public spookyVersion: number;
 
         /** OTPacket version. */
         public version: number;

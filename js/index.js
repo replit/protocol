@@ -16687,6 +16687,7 @@
              * Properties of a OTPacket.
              * @memberof api
              * @interface IOTPacket
+             * @property {number|null} [spookyVersion] OTPacket spookyVersion
              * @property {number|null} [version] OTPacket version
              * @property {Array.<api.IOTRuneTransformOp>|null} [ops] OTPacket ops
              * @property {number|null} [crc32] OTPacket crc32
@@ -16708,6 +16709,14 @@
                         if (properties[keys[i]] != null)
                             this[keys[i]] = properties[keys[i]];
             }
+    
+            /**
+             * OTPacket spookyVersion.
+             * @member {number} spookyVersion
+             * @memberof api.OTPacket
+             * @instance
+             */
+            OTPacket.prototype.spookyVersion = 0;
     
             /**
              * OTPacket version.
@@ -16765,8 +16774,8 @@
             OTPacket.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.version != null && message.hasOwnProperty("version"))
-                    writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.version);
+                if (message.spookyVersion != null && message.hasOwnProperty("spookyVersion"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.spookyVersion);
                 if (message.ops != null && message.ops.length)
                     for (var i = 0; i < message.ops.length; ++i)
                         $root.api.OTRuneTransformOp.encode(message.ops[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
@@ -16774,6 +16783,8 @@
                     writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.crc32);
                 if (message.committed != null && message.hasOwnProperty("committed"))
                     $root.google.protobuf.Timestamp.encode(message.committed, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+                if (message.version != null && message.hasOwnProperty("version"))
+                    writer.uint32(/* id 5, wireType 0 =*/40).uint32(message.version);
                 return writer;
             };
     
@@ -16809,6 +16820,9 @@
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
+                        message.spookyVersion = reader.uint32();
+                        break;
+                    case 5:
                         message.version = reader.uint32();
                         break;
                     case 2:
@@ -16857,6 +16871,9 @@
             OTPacket.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
+                if (message.spookyVersion != null && message.hasOwnProperty("spookyVersion"))
+                    if (!$util.isInteger(message.spookyVersion))
+                        return "spookyVersion: integer expected";
                 if (message.version != null && message.hasOwnProperty("version"))
                     if (!$util.isInteger(message.version))
                         return "version: integer expected";
@@ -16892,6 +16909,8 @@
                 if (object instanceof $root.api.OTPacket)
                     return object;
                 var message = new $root.api.OTPacket();
+                if (object.spookyVersion != null)
+                    message.spookyVersion = object.spookyVersion >>> 0;
                 if (object.version != null)
                     message.version = object.version >>> 0;
                 if (object.ops) {
@@ -16930,12 +16949,13 @@
                 if (options.arrays || options.defaults)
                     object.ops = [];
                 if (options.defaults) {
-                    object.version = 0;
+                    object.spookyVersion = 0;
                     object.crc32 = 0;
                     object.committed = null;
+                    object.version = 0;
                 }
-                if (message.version != null && message.hasOwnProperty("version"))
-                    object.version = message.version;
+                if (message.spookyVersion != null && message.hasOwnProperty("spookyVersion"))
+                    object.spookyVersion = message.spookyVersion;
                 if (message.ops && message.ops.length) {
                     object.ops = [];
                     for (var j = 0; j < message.ops.length; ++j)
@@ -16945,6 +16965,8 @@
                     object.crc32 = message.crc32;
                 if (message.committed != null && message.hasOwnProperty("committed"))
                     object.committed = $root.google.protobuf.Timestamp.toObject(message.committed, options);
+                if (message.version != null && message.hasOwnProperty("version"))
+                    object.version = message.version;
                 return object;
             };
     

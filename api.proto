@@ -495,7 +495,16 @@ message OTFetchResponse {
 }
 
 message OTPacket {
-  uint32 version = 1;
+  // so here's the deal. Once uppon a time `spookyVersion` was `version` and things
+  // worked okay. Then one day someone came along and decided our handling of
+  // version 0 was all kinds of messed up. Sending a version that already existed
+  // never transformed the packet by that particular version. It was as if
+  // `version` was treated as `version + 1`. This could not stand and thus the
+  // great rift of versions was created. `version` does the right thing and
+  // `spookyVersion` maintains backwards compatibility.
+  uint32 spookyVersion = 1;
+  uint32 version = 5;
+
   repeated OTRuneTransformOp ops = 2;
   uint32 crc32 = 3;
   google.protobuf.Timestamp committed = 4;
