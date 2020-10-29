@@ -32,6 +32,8 @@ message Command {
     PortOpen portOpen = 10;
     Toast toast = 11;
 
+    Redirect redirect = 12;
+
     // service specific messages
 
     RunMain runMain = 16;
@@ -419,6 +421,11 @@ message File {
 message Clear {}
 
 message Toast { string text = 1; }
+
+// Redirect indicates that a client should attempt to connect through another
+// URL. This is needed since most browser WebSockets implementations do not
+// support following standard HTTP redirects.
+message Redirect { string url = 1; }
 
 message RunMain {}
 

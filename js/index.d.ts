@@ -32,6 +32,9 @@ export namespace api {
         /** Command toast */
         toast?: (api.IToast|null);
 
+        /** Command redirect */
+        redirect?: (api.IRedirect|null);
+
         /** Command runMain */
         runMain?: (api.IRunMain|null);
 
@@ -348,6 +351,9 @@ export namespace api {
         /** Command toast. */
         public toast?: (api.IToast|null);
 
+        /** Command redirect. */
+        public redirect?: (api.IRedirect|null);
+
         /** Command runMain. */
         public runMain?: (api.IRunMain|null);
 
@@ -628,7 +634,7 @@ export namespace api {
         public ref: string;
 
         /** Command body. */
-        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2");
+        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2");
 
         /**
          * Creates a new Command instance using the specified properties.
@@ -5619,6 +5625,96 @@ export namespace api {
 
         /**
          * Converts this Toast to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a Redirect. */
+    interface IRedirect {
+
+        /** Redirect url */
+        url?: (string|null);
+    }
+
+    /** Represents a Redirect. */
+    class Redirect implements IRedirect {
+
+        /**
+         * Constructs a new Redirect.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: api.IRedirect);
+
+        /** Redirect url. */
+        public url: string;
+
+        /**
+         * Creates a new Redirect instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns Redirect instance
+         */
+        public static create(properties?: api.IRedirect): api.Redirect;
+
+        /**
+         * Encodes the specified Redirect message. Does not implicitly {@link api.Redirect.verify|verify} messages.
+         * @param message Redirect message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.IRedirect, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified Redirect message, length delimited. Does not implicitly {@link api.Redirect.verify|verify} messages.
+         * @param message Redirect message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.IRedirect, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a Redirect message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns Redirect
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.Redirect;
+
+        /**
+         * Decodes a Redirect message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns Redirect
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.Redirect;
+
+        /**
+         * Verifies a Redirect message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a Redirect message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns Redirect
+         */
+        public static fromObject(object: { [k: string]: any }): api.Redirect;
+
+        /**
+         * Creates a plain object from a Redirect message. Also converts values to other types if specified.
+         * @param message Redirect
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.Redirect, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this Redirect to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
