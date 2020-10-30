@@ -16692,6 +16692,7 @@
              * @property {Array.<api.IOTRuneTransformOp>|null} [ops] OTPacket ops
              * @property {number|null} [crc32] OTPacket crc32
              * @property {google.protobuf.ITimestamp|null} [committed] OTPacket committed
+             * @property {number|null} [nonce] OTPacket nonce
              */
     
             /**
@@ -16751,6 +16752,14 @@
             OTPacket.prototype.committed = null;
     
             /**
+             * OTPacket nonce.
+             * @member {number} nonce
+             * @memberof api.OTPacket
+             * @instance
+             */
+            OTPacket.prototype.nonce = 0;
+    
+            /**
              * Creates a new OTPacket instance using the specified properties.
              * @function create
              * @memberof api.OTPacket
@@ -16785,6 +16794,8 @@
                     $root.google.protobuf.Timestamp.encode(message.committed, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
                 if (message.version != null && message.hasOwnProperty("version"))
                     writer.uint32(/* id 5, wireType 0 =*/40).uint32(message.version);
+                if (message.nonce != null && message.hasOwnProperty("nonce"))
+                    writer.uint32(/* id 6, wireType 0 =*/48).uint32(message.nonce);
                 return writer;
             };
     
@@ -16835,6 +16846,9 @@
                         break;
                     case 4:
                         message.committed = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                        break;
+                    case 6:
+                        message.nonce = reader.uint32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -16894,6 +16908,9 @@
                     if (error)
                         return "committed." + error;
                 }
+                if (message.nonce != null && message.hasOwnProperty("nonce"))
+                    if (!$util.isInteger(message.nonce))
+                        return "nonce: integer expected";
                 return null;
             };
     
@@ -16930,6 +16947,8 @@
                         throw TypeError(".api.OTPacket.committed: object expected");
                     message.committed = $root.google.protobuf.Timestamp.fromObject(object.committed);
                 }
+                if (object.nonce != null)
+                    message.nonce = object.nonce >>> 0;
                 return message;
             };
     
@@ -16953,6 +16972,7 @@
                     object.crc32 = 0;
                     object.committed = null;
                     object.version = 0;
+                    object.nonce = 0;
                 }
                 if (message.spookyVersion != null && message.hasOwnProperty("spookyVersion"))
                     object.spookyVersion = message.spookyVersion;
@@ -16967,6 +16987,8 @@
                     object.committed = $root.google.protobuf.Timestamp.toObject(message.committed, options);
                 if (message.version != null && message.hasOwnProperty("version"))
                     object.version = message.version;
+                if (message.nonce != null && message.hasOwnProperty("nonce"))
+                    object.nonce = message.nonce;
                 return object;
             };
     

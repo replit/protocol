@@ -6554,6 +6554,9 @@ export namespace api {
 
         /** OTPacket committed */
         committed?: (google.protobuf.ITimestamp|null);
+
+        /** OTPacket nonce */
+        nonce?: (number|null);
     }
 
     /** Represents a OTPacket. */
@@ -6579,6 +6582,9 @@ export namespace api {
 
         /** OTPacket committed. */
         public committed?: (google.protobuf.ITimestamp|null);
+
+        /** OTPacket nonce. */
+        public nonce: number;
 
         /**
          * Creates a new OTPacket instance using the specified properties.
