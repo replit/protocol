@@ -167,6 +167,9 @@ message Command {
     PprofResponse pprofResponse = 365;
 
     Audio2 audio2 = 366;
+
+    // used to set set tty settings for "test" mode
+    bool testMode = 367;
   }
 
   string ref = 1000;
