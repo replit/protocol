@@ -5,31 +5,74 @@ import "google/protobuf/timestamp.proto";
 package api;
 option go_package = "/api";
 
+// This is the structure of all sent and received messages. It provides a reusable interface
+// for both the client and container to use.
 message Command {
   reserved 250, 252, 253, 254, 255;
 
-  // channel and session act as namespaces with 0 being global.
-  // both session and channel must match for a client to receive a command.
+  // Used to determine the channel's id which originally sent or should receive the command.
+  // A global channel with id `0` always exists which is used to create/close channels and
+  // receive global commands (relating to the container generally).
   int32 channel = 1;
 
+  // Used internally to determine some routing stuff. Setting this doesn't do anything so
+  // it's best to set this to `0`. The table below can also be ignored as it's only there
+  // for reference.
+  // 
   // < 0 : all user sessions except abs(id)
   //   0 : all user sessions
   //   1 : internal message to conman
   // > 1 : user session with given id
   int32 session = 2;
 
+  // Used to store the actual data for a specific command which is being sent or received.
+  // 
+  // If an unexpected command is sent to the container there is a multitude of things that
+  // may happen. An unexpected command sent from the global channel (with id `0`) is likely
+  // to kill the container.
   oneof body {
     // global messages
-    // these should always be on channel 0
 
+    // Used to either create a new channel or attach to an existing channel. A channel with
+    // the name set to `""`, which is the same as having it unset, is called an anonymous
+    // channel. Anonymous channels cannot be attached to, unlike named channels.
+    // 
+    // This command is only ever used on the global channel (with id `0`).
     OpenChannel openChan = 3;
+    // Used to determine whether a channel was or wasn't successfully created. This will
+    // contain the state of the channels creation, along with it's id or an error if there
+    // were any problems.
+    // 
+    // This command is only ever used on the global channel (with id `0`).
     OpenChannelRes openChanRes = 4;
 
+    // Used to either close a channel or diconnect from an attached channel. The channel which
+    // is being effected should have its id provided. Note that if the global channel (with
+    // id `0`) is provided, nothing will happen.
+    // 
+    // This command is only ever used on the global channel (with id `0`).
     CloseChannel closeChan = 5;
+    // Used to determine whether a channel was or wasn't successfully closed or disconnected.
+    // This will contain the state of the channels closure or disconnection, and whether
+    // nothing happened.
+    // 
+    // This command is only ever used on the global channel (with id `0`).
     CloseChannelRes closeChanRes = 6;
 
+    // Used to notify the client about current state of the container. This is usually
+    // received along with the response of service commands.
+    // 
+    // This command is only ever used on the global channel (with id `0`).
     ContainerState containerState = 9;
+    // Used to notify the client about the current address and port which the container is
+    // listening on. This is received when the container listens on the network.
+    // 
+    // This command is only ever used on the global channel (with id `0`).
     PortOpen portOpen = 10;
+    // Used to "send lil notifications to the client", this includes things such as human
+    // readable wanings.
+    // 
+    // This command is only ever used on the global channel (with id `0`).
     Toast toast = 11;
 
     Redirect redirect = 12;
@@ -43,13 +86,16 @@ message Command {
     string result = 21;
     string input = 22;
     string output = 23;
+    // Used to signify that a command executed unsuccessfully.
     string error = 24;
 
     SaneTerm saneTerm = 26;
     ResizeTerm resizeTerm = 27;
 
+    // Used to signify the state of the command's execution.
     State state = 28;
 
+    // Used to signify that a command executed successfully.
     OK ok = 30;
 
     File persist = 31;
@@ -174,6 +220,8 @@ message Command {
     PTYConfig PTYConfig = 367;
   }
 
+  // Used to give a command a *unique* (depending on the usage) reference which can be used
+  // to separate its response(s) from other incoming responses.
   string ref = 1000;
 }
 
@@ -423,6 +471,10 @@ message File {
 
 message Clear {}
 
+// Used to "send lil notifications to the client", this includes things such as human
+// readable wanings.
+// 
+// This command is only ever used on the global channel (with id `0`).
 message Toast { string text = 1; }
 
 // Redirect indicates that a client should attempt to connect through another
@@ -436,66 +488,120 @@ message Redirect {
 
 message RunMain {}
 
+// Used to either create a new channel or attach to an existing channel. A channel with
+// the name set to `""`, which is the same as having it unset, is called an anonymous
+// channel. Anonymous channels cannot be attached to, unlike named channels.
+// 
+// This command is only ever used on the global channel (with id `0`).
 message OpenChannel {
+  // Used to specify which service is being opened on the channel. Each individual
+  // channel talks to its own service in the container.
+  // 
+  // A list of default services can be found [here](http://protodoc.turbio.repl.co/services).
   string service = 1;
+  // Used to specify the name to give the channel, this should be unique or set to `""`
+  // if the name should be unset.
   string name = 2;
 
+  // Used to specify whether the channel should be created or attached to. An option
+  // to try and attach to an existing channel before creating a new one also exists.
   enum Action {
     CREATE = 0;
     ATTACH = 1;
     ATTACH_OR_CREATE = 2;
   }
+  // Used to specify whether the channel should be created or attached to. An option
+  // to try and attach to an existing channel before creating a new one also exists.
   Action action = 3;
 
+  // Used to specify an id which we would prefer the channel to have.
   int32 id = 4;
 }
 
+// Used to determine whether a channel was or wasn't successfully created. This will
+// contain the state of the channels creation, along with it's id or an error if there
+// were any problems.
+// 
+// This command is only ever used on the global channel (with id `0`).
 message OpenChannelRes {
+  // The id which the channel was given by the container.
   int32 id = 1;
 
+  // Whether the channel was successfully created, attached, or if an error occurred.
   enum State {
     CREATED = 0;
     ATTACHED = 1;
     ERROR = 2;
   }
+  // Whether the channel was successfully created, attached, or if an error occurred.
   State state = 2;
 
+  // The error message if an error occurred.
   string error = 3;
 }
 
+// Used to either close a channel or diconnect from an attached channel. The channel which
+// is being effected should have its id provided. Note that if the global channel (with
+// id `0`) is provided, nothing will happen.
+// 
+// This command is only ever used on the global channel (with id `0`).
 message CloseChannel {
+  // Used to specify the id of the channel which we would like to close or diconnect,
   int32 id = 1;
 
+  // Used to specify whether the channel should be closed or disconnected.
   enum Action {
     DISCONNECT = 0;
     TRY_CLOSE = 1;
     CLOSE = 2;
   }
+  // Used to specify whether the channel should be closed or disconnected.
   Action action = 2;
 }
 
+// Used to determine whether a channel was or wasn't successfully closed or disconnected.
+// This will contain the state of the channels closure or disconnection, and whether
+// nothing happened.
+// 
+// This command is only ever used on the global channel (with id `0`).
 message CloseChannelRes {
+  // The id of the channel that was attempted to close or disconnect.
   int32 id = 1;
 
+  // Whether the channel was closed, diconnected, or nothing happened.
   enum Status {
     DISCONNECT = 0;
     CLOSE = 1;
     NOTHING = 2;
   }
+  // Whether the channel was closed, diconnected, or nothing happened.
   Status status = 2;
 }
 
+// Used to notify the client about current state of the container. This is usually
+// received along with the response of service commands.
+// 
+// This command is only ever used on the global channel (with id `0`).
 message ContainerState {
+  // Whether the container is currently sleeping (no activity), or is ready.
   enum State {
     SLEEP = 0;
     READY = 1;
   }
+  // Whether the container is currently sleeping (no activity), or is ready.
   State state = 1;
 }
 
+// Used to notify the client about the current address and port which the container is
+// listening on. This is received when the container listens on the network.
+// 
+// This command is only ever used on the global channel (with id `0`).
 message PortOpen {
+  // Whether the port was forwarded.
   bool forwarded = 1;
+  // The port which the container is listening on.
   uint32 port = 2;
+  // The address which the container is listening on.
   string address = 3;
 }
 
