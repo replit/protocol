@@ -32,6 +32,8 @@ message Command {
     PortOpen portOpen = 10;
     Toast toast = 11;
 
+    Redirect redirect = 12;
+
     // service specific messages
 
     RunMain runMain = 16;
@@ -167,6 +169,9 @@ message Command {
     PprofResponse pprofResponse = 365;
 
     Audio2 audio2 = 366;
+
+    // used to set configure pty settings 
+    PTYConfig PTYConfig = 367;
   }
 
   string ref = 1000;
@@ -420,6 +425,15 @@ message Clear {}
 
 message Toast { string text = 1; }
 
+// Redirect indicates that a client should attempt to connect through another
+// URL. This is needed since most browser WebSockets implementations do not
+// support following standard HTTP redirects.
+message Redirect {
+  // The URL to try again. If empty, the negotiation to figure out the URL for
+  // a repl needs to start from scratch.
+  string url = 1;
+}
+
 message RunMain {}
 
 message OpenChannel {
@@ -635,4 +649,13 @@ message PprofMutexProfileRequest {
 message PprofResponse {
   string id = 1;
   bytes profile = 2;
+}
+
+// Message used to configure PTY
+message PTYConfig {
+  // Whether "PipeMode" should be enabled or not
+  // PipeMode is the equivelent of stty raw icrnl isig -echo. 
+  // This is designed for comparing and output - the output 
+  // should be as close as possible to its original state.  
+  bool pipeMode = 1;
 }

@@ -40,6 +40,7 @@
              * @property {api.IContainerState|null} [containerState] Command containerState
              * @property {api.IPortOpen|null} [portOpen] Command portOpen
              * @property {api.IToast|null} [toast] Command toast
+             * @property {api.IRedirect|null} [redirect] Command redirect
              * @property {api.IRunMain|null} [runMain] Command runMain
              * @property {api.IClear|null} [clear] Command clear
              * @property {string|null} ["eval"] Command eval
@@ -132,6 +133,7 @@
              * @property {api.IPprofRequest|null} [pprofRequest] Command pprofRequest
              * @property {api.IPprofResponse|null} [pprofResponse] Command pprofResponse
              * @property {api.IAudio2|null} [audio2] Command audio2
+             * @property {api.IPTYConfig|null} [PTYConfig] Command PTYConfig
              * @property {string|null} [ref] Command ref
              */
     
@@ -221,6 +223,14 @@
              * @instance
              */
             Command.prototype.toast = null;
+    
+            /**
+             * Command redirect.
+             * @member {api.IRedirect|null|undefined} redirect
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.redirect = null;
     
             /**
              * Command runMain.
@@ -959,6 +969,14 @@
             Command.prototype.audio2 = null;
     
             /**
+             * Command PTYConfig.
+             * @member {api.IPTYConfig|null|undefined} PTYConfig
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.PTYConfig = null;
+    
+            /**
              * Command ref.
              * @member {string} ref
              * @memberof api.Command
@@ -971,12 +989,12 @@
     
             /**
              * Command body.
-             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|undefined} body
+             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig"|undefined} body
              * @memberof api.Command
              * @instance
              */
             Object.defineProperty(Command.prototype, "body", {
-                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "otFetchRequest", "otFetchResponse", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock", "hasCap", "pid1Config", "metrics", "bootStatus", "readMeta", "writeMeta", "appendMeta", "audio", "pprofRequest", "pprofResponse", "audio2"]),
+                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "redirect", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "otFetchRequest", "otFetchResponse", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock", "hasCap", "pid1Config", "metrics", "bootStatus", "readMeta", "writeMeta", "appendMeta", "audio", "pprofRequest", "pprofResponse", "audio2", "PTYConfig"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
     
@@ -1022,6 +1040,8 @@
                     $root.api.PortOpen.encode(message.portOpen, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
                 if (message.toast != null && message.hasOwnProperty("toast"))
                     $root.api.Toast.encode(message.toast, writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
+                if (message.redirect != null && message.hasOwnProperty("redirect"))
+                    $root.api.Redirect.encode(message.redirect, writer.uint32(/* id 12, wireType 2 =*/98).fork()).ldelim();
                 if (message.runMain != null && message.hasOwnProperty("runMain"))
                     $root.api.RunMain.encode(message.runMain, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
                 if (message.clear != null && message.hasOwnProperty("clear"))
@@ -1206,6 +1226,8 @@
                     $root.api.PprofResponse.encode(message.pprofResponse, writer.uint32(/* id 365, wireType 2 =*/2922).fork()).ldelim();
                 if (message.audio2 != null && message.hasOwnProperty("audio2"))
                     $root.api.Audio2.encode(message.audio2, writer.uint32(/* id 366, wireType 2 =*/2930).fork()).ldelim();
+                if (message.PTYConfig != null && message.hasOwnProperty("PTYConfig"))
+                    $root.api.PTYConfig.encode(message.PTYConfig, writer.uint32(/* id 367, wireType 2 =*/2938).fork()).ldelim();
                 if (message.ref != null && message.hasOwnProperty("ref"))
                     writer.uint32(/* id 1000, wireType 2 =*/8002).string(message.ref);
                 return writer;
@@ -1268,6 +1290,9 @@
                         break;
                     case 11:
                         message.toast = $root.api.Toast.decode(reader, reader.uint32());
+                        break;
+                    case 12:
+                        message.redirect = $root.api.Redirect.decode(reader, reader.uint32());
                         break;
                     case 16:
                         message.runMain = $root.api.RunMain.decode(reader, reader.uint32());
@@ -1545,6 +1570,9 @@
                     case 366:
                         message.audio2 = $root.api.Audio2.decode(reader, reader.uint32());
                         break;
+                    case 367:
+                        message.PTYConfig = $root.api.PTYConfig.decode(reader, reader.uint32());
+                        break;
                     case 1000:
                         message.ref = reader.string();
                         break;
@@ -1656,6 +1684,16 @@
                         var error = $root.api.Toast.verify(message.toast);
                         if (error)
                             return "toast." + error;
+                    }
+                }
+                if (message.redirect != null && message.hasOwnProperty("redirect")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.Redirect.verify(message.redirect);
+                        if (error)
+                            return "redirect." + error;
                     }
                 }
                 if (message.runMain != null && message.hasOwnProperty("runMain")) {
@@ -2559,6 +2597,16 @@
                             return "audio2." + error;
                     }
                 }
+                if (message.PTYConfig != null && message.hasOwnProperty("PTYConfig")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.PTYConfig.verify(message.PTYConfig);
+                        if (error)
+                            return "PTYConfig." + error;
+                    }
+                }
                 if (message.ref != null && message.hasOwnProperty("ref"))
                     if (!$util.isString(message.ref))
                         return "ref: string expected";
@@ -2615,6 +2663,11 @@
                     if (typeof object.toast !== "object")
                         throw TypeError(".api.Command.toast: object expected");
                     message.toast = $root.api.Toast.fromObject(object.toast);
+                }
+                if (object.redirect != null) {
+                    if (typeof object.redirect !== "object")
+                        throw TypeError(".api.Command.redirect: object expected");
+                    message.redirect = $root.api.Redirect.fromObject(object.redirect);
                 }
                 if (object.runMain != null) {
                     if (typeof object.runMain !== "object")
@@ -3060,6 +3113,11 @@
                         throw TypeError(".api.Command.audio2: object expected");
                     message.audio2 = $root.api.Audio2.fromObject(object.audio2);
                 }
+                if (object.PTYConfig != null) {
+                    if (typeof object.PTYConfig !== "object")
+                        throw TypeError(".api.Command.PTYConfig: object expected");
+                    message.PTYConfig = $root.api.PTYConfig.fromObject(object.PTYConfig);
+                }
                 if (object.ref != null)
                     message.ref = String(object.ref);
                 return message;
@@ -3121,6 +3179,11 @@
                     object.toast = $root.api.Toast.toObject(message.toast, options);
                     if (options.oneofs)
                         object.body = "toast";
+                }
+                if (message.redirect != null && message.hasOwnProperty("redirect")) {
+                    object.redirect = $root.api.Redirect.toObject(message.redirect, options);
+                    if (options.oneofs)
+                        object.body = "redirect";
                 }
                 if (message.runMain != null && message.hasOwnProperty("runMain")) {
                     object.runMain = $root.api.RunMain.toObject(message.runMain, options);
@@ -3581,6 +3644,11 @@
                     object.audio2 = $root.api.Audio2.toObject(message.audio2, options);
                     if (options.oneofs)
                         object.body = "audio2";
+                }
+                if (message.PTYConfig != null && message.hasOwnProperty("PTYConfig")) {
+                    object.PTYConfig = $root.api.PTYConfig.toObject(message.PTYConfig, options);
+                    if (options.oneofs)
+                        object.body = "PTYConfig";
                 }
                 if (message.ref != null && message.hasOwnProperty("ref"))
                     object.ref = message.ref;
@@ -14615,6 +14683,193 @@
             return Toast;
         })();
     
+        api.Redirect = (function() {
+    
+            /**
+             * Properties of a Redirect.
+             * @memberof api
+             * @interface IRedirect
+             * @property {string|null} [url] Redirect url
+             */
+    
+            /**
+             * Constructs a new Redirect.
+             * @memberof api
+             * @classdesc Represents a Redirect.
+             * @implements IRedirect
+             * @constructor
+             * @param {api.IRedirect=} [properties] Properties to set
+             */
+            function Redirect(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * Redirect url.
+             * @member {string} url
+             * @memberof api.Redirect
+             * @instance
+             */
+            Redirect.prototype.url = "";
+    
+            /**
+             * Creates a new Redirect instance using the specified properties.
+             * @function create
+             * @memberof api.Redirect
+             * @static
+             * @param {api.IRedirect=} [properties] Properties to set
+             * @returns {api.Redirect} Redirect instance
+             */
+            Redirect.create = function create(properties) {
+                return new Redirect(properties);
+            };
+    
+            /**
+             * Encodes the specified Redirect message. Does not implicitly {@link api.Redirect.verify|verify} messages.
+             * @function encode
+             * @memberof api.Redirect
+             * @static
+             * @param {api.IRedirect} message Redirect message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Redirect.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.url != null && message.hasOwnProperty("url"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.url);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified Redirect message, length delimited. Does not implicitly {@link api.Redirect.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.Redirect
+             * @static
+             * @param {api.IRedirect} message Redirect message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Redirect.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a Redirect message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.Redirect
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.Redirect} Redirect
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Redirect.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Redirect();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.url = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a Redirect message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.Redirect
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.Redirect} Redirect
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Redirect.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a Redirect message.
+             * @function verify
+             * @memberof api.Redirect
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Redirect.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.url != null && message.hasOwnProperty("url"))
+                    if (!$util.isString(message.url))
+                        return "url: string expected";
+                return null;
+            };
+    
+            /**
+             * Creates a Redirect message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.Redirect
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.Redirect} Redirect
+             */
+            Redirect.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.Redirect)
+                    return object;
+                var message = new $root.api.Redirect();
+                if (object.url != null)
+                    message.url = String(object.url);
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a Redirect message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.Redirect
+             * @static
+             * @param {api.Redirect} message Redirect
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Redirect.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    object.url = "";
+                if (message.url != null && message.hasOwnProperty("url"))
+                    object.url = message.url;
+                return object;
+            };
+    
+            /**
+             * Converts this Redirect to JSON.
+             * @function toJSON
+             * @memberof api.Redirect
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Redirect.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return Redirect;
+        })();
+    
         api.RunMain = (function() {
     
             /**
@@ -23284,6 +23539,193 @@
             };
     
             return PprofResponse;
+        })();
+    
+        api.PTYConfig = (function() {
+    
+            /**
+             * Properties of a PTYConfig.
+             * @memberof api
+             * @interface IPTYConfig
+             * @property {boolean|null} [pipeMode] PTYConfig pipeMode
+             */
+    
+            /**
+             * Constructs a new PTYConfig.
+             * @memberof api
+             * @classdesc Represents a PTYConfig.
+             * @implements IPTYConfig
+             * @constructor
+             * @param {api.IPTYConfig=} [properties] Properties to set
+             */
+            function PTYConfig(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * PTYConfig pipeMode.
+             * @member {boolean} pipeMode
+             * @memberof api.PTYConfig
+             * @instance
+             */
+            PTYConfig.prototype.pipeMode = false;
+    
+            /**
+             * Creates a new PTYConfig instance using the specified properties.
+             * @function create
+             * @memberof api.PTYConfig
+             * @static
+             * @param {api.IPTYConfig=} [properties] Properties to set
+             * @returns {api.PTYConfig} PTYConfig instance
+             */
+            PTYConfig.create = function create(properties) {
+                return new PTYConfig(properties);
+            };
+    
+            /**
+             * Encodes the specified PTYConfig message. Does not implicitly {@link api.PTYConfig.verify|verify} messages.
+             * @function encode
+             * @memberof api.PTYConfig
+             * @static
+             * @param {api.IPTYConfig} message PTYConfig message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            PTYConfig.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.pipeMode != null && message.hasOwnProperty("pipeMode"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).bool(message.pipeMode);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified PTYConfig message, length delimited. Does not implicitly {@link api.PTYConfig.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.PTYConfig
+             * @static
+             * @param {api.IPTYConfig} message PTYConfig message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            PTYConfig.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a PTYConfig message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.PTYConfig
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.PTYConfig} PTYConfig
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            PTYConfig.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.PTYConfig();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.pipeMode = reader.bool();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a PTYConfig message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.PTYConfig
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.PTYConfig} PTYConfig
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            PTYConfig.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a PTYConfig message.
+             * @function verify
+             * @memberof api.PTYConfig
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            PTYConfig.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.pipeMode != null && message.hasOwnProperty("pipeMode"))
+                    if (typeof message.pipeMode !== "boolean")
+                        return "pipeMode: boolean expected";
+                return null;
+            };
+    
+            /**
+             * Creates a PTYConfig message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.PTYConfig
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.PTYConfig} PTYConfig
+             */
+            PTYConfig.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.PTYConfig)
+                    return object;
+                var message = new $root.api.PTYConfig();
+                if (object.pipeMode != null)
+                    message.pipeMode = Boolean(object.pipeMode);
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a PTYConfig message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.PTYConfig
+             * @static
+             * @param {api.PTYConfig} message PTYConfig
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            PTYConfig.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    object.pipeMode = false;
+                if (message.pipeMode != null && message.hasOwnProperty("pipeMode"))
+                    object.pipeMode = message.pipeMode;
+                return object;
+            };
+    
+            /**
+             * Converts this PTYConfig to JSON.
+             * @function toJSON
+             * @memberof api.PTYConfig
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            PTYConfig.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return PTYConfig;
         })();
     
         return api;
