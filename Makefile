@@ -27,7 +27,14 @@ build-go: clean-go
 	protoc api.proto --go_out=./go
 publish-go:
 	VERSION=$$(git tag | sort -r --version-sort | head -n1) && \
+	[ -d .git/refs/remotes/protocol-go ] || git remote add -f protocol-go git@github.com:replit/protocol-go.git && \
+	rm -rf ./go-release/
 	git subtree split --prefix=go -b go-release && \
-	git push git@github.com:replit/protocol-go.git go-release:master && \
-	git push git@github.com:replit/protocol-go.git HEAD:refs/tags/$${VERSION} && \
+	git worktree add --checkout ./go-release/ go-release && \
+	(cd ./go-release/ && \
+		git pull --rebase protocol-go master && \
+		git push protocol-go go-release:master && \
+		git push protocol-go HEAD:refs/tags/$${VERSION}) && \
+	rm -rf ./go-release/ && \
+	git worktree remove -f go-release && \
 	git branch -D go-release
