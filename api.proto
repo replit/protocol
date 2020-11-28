@@ -80,22 +80,54 @@ message Command {
     // service specific messages
 
     RunMain runMain = 16;
+    // Service specific:
+    // - ["shellrun"] and ["shellrun2"]: Stops the running process and starts up another
+    //   shell. This should only be used when the service's state is `running`.
+    // - ["interp2"]: Used to kill the current [prybar] instance and starts another one.
+    // 
+    // ["shellrun"]: http://protodoc.turbio.repl.co/services/#shellrun
+    // ["shellrun2"]: http://protodoc.turbio.repl.co/services/#shellrun2
+    // ["interp2"]: http://protodoc.turbio.repl.co/services/#interp2
+    // [prybar]: https://github.com/replit/prybar/
     Clear clear = 17;
 
+    // DEPRECATED: Please use ["interp2"]!
+    // 
+    // This command is only ever used by an ["eval"] service channel.
+    // 
+    // ["eval"]: http://protodoc.turbio.repl.co/services/#eval
+    // ["interp2"]: http://protodoc.turbio.repl.co/services/#interp2
     string eval = 20;
+    // DEPRECATED: Please use "result"!
+    // 
+    // This command is only ever used by an ["eval"] service channel.
+    // 
+    // ["eval"]: http://protodoc.turbio.repl.co/services/#eval
     string result = 21;
+    // Used to send input to a running serive.
+    // 
+    // This command is used by many services.
     string input = 22;
+    // Used to return output from a running servive.
+    // 
+    // This command is used by many services.
     string output = 23;
-    // Used to signify that a command executed unsuccessfully.
+    // Used to signify that a command executed unsuccessfully, containing an error message.
+    // 
+    // This command is used by many services.
     string error = 24;
 
     SaneTerm saneTerm = 26;
     ResizeTerm resizeTerm = 27;
 
-    // Used to signify the state of the command's execution.
+    // Used to signify the state of the service.
+    // 
+    // This command is used by many services.
     State state = 28;
 
-    // Used to signify that a command executed successfully.
+    // Used to signify that the service completed the action successfully.
+    // 
+    // This command is used by many services.
     OK ok = 30;
 
     File persist = 31;
@@ -185,7 +217,14 @@ message Command {
 
     PackageCacheSave packageCacheSave = 289;
 
+    // Used to send a chat message to all listening clients. This chat message will be pushed
+    // onto the 100 message long scrollback.
+    // 
+    // This command is only ever used by a ["chat"] service channel.
     ChatMessage chatMessage = 310;
+    // Used to send a chat event containing a users typing status to all listening clients.
+    // 
+    // This command is only ever used by a ["chat"] service channel.
     ChatTyping chatTyping = 311;
     ChatScrollback chatScrollback = 312;
 
@@ -394,6 +433,9 @@ message Hello {
 
 message Goodbye {}
 
+// Used to signify the state of the service.
+// 
+// This command is used by many services.
 enum State {
   Stopped = 0;
   Running = 1;
@@ -450,6 +492,9 @@ message LintResult {
   string type = 4;
 }
 
+// Used to signify that the service completed the action successfully.
+// 
+// This command is used by many services.
 message OK {}
 
 message Move {
@@ -469,6 +514,15 @@ message File {
   bytes content = 3;
 }
 
+// Service specific:
+// - ["shellrun"] and ["shellrun2"]: Stops the running process and starts up another
+//   shell. This should only be used when the service's state is `running`.
+// - ["interp2"]: Used to kill the current [prybar] instance and starts another one.
+// 
+// ["shellrun"]: http://protodoc.turbio.repl.co/services/#shellrun
+// ["shellrun2"]: http://protodoc.turbio.repl.co/services/#shellrun2
+// ["interp2"]: http://protodoc.turbio.repl.co/services/#interp2
+// [prybar]: https://github.com/replit/prybar/
 message Clear {}
 
 // Used to "send lil notifications to the client", this includes things such as human
