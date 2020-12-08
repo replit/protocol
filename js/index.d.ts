@@ -12,34 +12,34 @@ export namespace api {
         session?: (number|null);
 
         /** Command openChan */
-        openChan?: (api.IOpenChannel|null);
+        openChan?: (api.OpenChannel|null);
 
         /** Command openChanRes */
-        openChanRes?: (api.IOpenChannelRes|null);
+        openChanRes?: (api.OpenChannelRes|null);
 
         /** Command closeChan */
-        closeChan?: (api.ICloseChannel|null);
+        closeChan?: (api.CloseChannel|null);
 
         /** Command closeChanRes */
-        closeChanRes?: (api.ICloseChannelRes|null);
+        closeChanRes?: (api.CloseChannelRes|null);
 
         /** Command containerState */
-        containerState?: (api.IContainerState|null);
+        containerState?: (api.ContainerState|null);
 
         /** Command portOpen */
-        portOpen?: (api.IPortOpen|null);
+        portOpen?: (api.PortOpen|null);
 
         /** Command toast */
-        toast?: (api.IToast|null);
+        toast?: (api.Toast|null);
 
         /** Command redirect */
-        redirect?: (api.IRedirect|null);
+        redirect?: (api.Redirect|null);
 
         /** Command runMain */
-        runMain?: (api.IRunMain|null);
+        runMain?: (api.RunMain|null);
 
         /** Command clear */
-        clear?: (api.IClear|null);
+        clear?: (api.Clear|null);
 
         /** Command eval */
         "eval"?: (string|null);
@@ -57,269 +57,269 @@ export namespace api {
         error?: (string|null);
 
         /** Command saneTerm */
-        saneTerm?: (api.ISaneTerm|null);
+        saneTerm?: (api.SaneTerm|null);
 
         /** Command resizeTerm */
-        resizeTerm?: (api.IResizeTerm|null);
+        resizeTerm?: (api.ResizeTerm|null);
 
         /** Command state */
         state?: (api.State|null);
 
         /** Command ok */
-        ok?: (api.IOK|null);
+        ok?: (api.OK|null);
 
         /** Command persist */
-        persist?: (api.IFile|null);
+        persist?: (api.File|null);
 
         /** Command persistMirror */
-        persistMirror?: (api.IFile|null);
+        persistMirror?: (api.File|null);
 
         /** Command write */
-        write?: (api.IFile|null);
+        write?: (api.File|null);
 
         /** Command remove */
-        remove?: (api.IFile|null);
+        remove?: (api.File|null);
 
         /** Command move */
-        move?: (api.IMove|null);
+        move?: (api.Move|null);
 
         /** Command tryRemove */
-        tryRemove?: (api.IFile|null);
+        tryRemove?: (api.File|null);
 
         /** Command mkdir */
-        mkdir?: (api.IFile|null);
+        mkdir?: (api.File|null);
 
         /** Command read */
-        read?: (api.IFile|null);
+        read?: (api.File|null);
 
         /** Command readdir */
-        readdir?: (api.IFile|null);
+        readdir?: (api.File|null);
 
         /** Command files */
-        files?: (api.IFiles|null);
+        files?: (api.Files|null);
 
         /** Command file */
-        file?: (api.IFile|null);
+        file?: (api.File|null);
 
         /** Command checkChanges */
-        checkChanges?: (api.ICheckChanges|null);
+        checkChanges?: (api.CheckChanges|null);
 
         /** Command changedFiles */
-        changedFiles?: (api.IFiles|null);
+        changedFiles?: (api.Files|null);
 
         /** Command lintResults */
-        lintResults?: (api.ILintResults|null);
+        lintResults?: (api.LintResults|null);
 
         /** Command runContainedTest */
-        runContainedTest?: (api.IContainedTest|null);
+        runContainedTest?: (api.ContainedTest|null);
 
         /** Command testResult */
-        testResult?: (api.ITestResult|null);
+        testResult?: (api.TestResult|null);
 
         /** Command debuggerStart */
         debuggerStart?: (string|null);
 
         /** Command debuggerStep */
-        debuggerStep?: (api.IRunMain|null);
+        debuggerStep?: (api.RunMain|null);
 
         /** Command debuggerStatus */
-        debuggerStatus?: (api.IDebugStatus|null);
+        debuggerStatus?: (api.DebugStatus|null);
 
         /** Command ensurePackages */
-        ensurePackages?: (api.IEnsurePackages|null);
+        ensurePackages?: (api.EnsurePackages|null);
 
         /** Command ping */
-        ping?: (api.IPing|null);
+        ping?: (api.Ping|null);
 
         /** Command pong */
-        pong?: (api.IPong|null);
+        pong?: (api.Pong|null);
 
         /** Command hello */
-        hello?: (api.IHello|null);
+        hello?: (api.Hello|null);
 
         /** Command goodbye */
-        goodbye?: (api.IGoodbye|null);
+        goodbye?: (api.Goodbye|null);
 
         /** Command hint */
-        hint?: (api.IHint|null);
+        hint?: (api.Hint|null);
 
         /** Command connect */
-        connect?: (api.IConnect|null);
+        connect?: (api.Connect|null);
 
         /** Command send */
-        send?: (api.ISend|null);
+        send?: (api.Send|null);
 
         /** Command recv */
-        recv?: (api.IRecv|null);
+        recv?: (api.Recv|null);
 
         /** Command disconnect */
-        disconnect?: (api.IDisconnect|null);
+        disconnect?: (api.Disconnect|null);
 
         /** Command fileAuthReq */
-        fileAuthReq?: (api.IFileAuthReq|null);
+        fileAuthReq?: (api.FileAuthReq|null);
 
         /** Command fileAuthRes */
-        fileAuthRes?: (api.IFileAuthRes|null);
+        fileAuthRes?: (api.FileAuthRes|null);
 
         /** Command mutliFileAuthRes */
-        mutliFileAuthRes?: (api.IMultiFileAuthRes|null);
+        mutliFileAuthRes?: (api.MultiFileAuthRes|null);
 
         /** Command listObjects */
-        listObjects?: (api.IListObjects|null);
+        listObjects?: (api.ListObjects|null);
 
         /** Command listObjectsResp */
-        listObjectsResp?: (api.IListObjectsResp|null);
+        listObjectsResp?: (api.ListObjectsResp|null);
 
         /** Command ot */
-        ot?: (api.IOTPacket|null);
+        ot?: (api.OTPacket|null);
 
         /** Command otstatus */
-        otstatus?: (api.IOTStatus|null);
+        otstatus?: (api.OTStatus|null);
 
         /** Command otLinkFile */
-        otLinkFile?: (api.IOTLinkFile|null);
+        otLinkFile?: (api.OTLinkFile|null);
 
         /** Command otNewCursor */
-        otNewCursor?: (api.IOTCursor|null);
+        otNewCursor?: (api.OTCursor|null);
 
         /** Command otDeleteCursor */
-        otDeleteCursor?: (api.IOTCursor|null);
+        otDeleteCursor?: (api.OTCursor|null);
 
         /** Command otFetchRequest */
-        otFetchRequest?: (api.IOTFetchRequest|null);
+        otFetchRequest?: (api.OTFetchRequest|null);
 
         /** Command otFetchResponse */
-        otFetchResponse?: (api.IOTFetchResponse|null);
+        otFetchResponse?: (api.OTFetchResponse|null);
 
         /** Command flush */
-        flush?: (api.IFlush|null);
+        flush?: (api.Flush|null);
 
         /** Command debug */
-        debug?: (api.IDebug|null);
+        debug?: (api.Debug|null);
 
         /** Command startVCR */
-        startVCR?: (api.IStartVCR|null);
+        startVCR?: (api.StartVCR|null);
 
         /** Command readVCR */
-        readVCR?: (api.IReadVCR|null);
+        readVCR?: (api.ReadVCR|null);
 
         /** Command VCRLog */
-        VCRLog?: (api.IVCRLog|null);
+        VCRLog?: (api.VCRLog|null);
 
         /** Command auth */
-        auth?: (api.IAuth|null);
+        auth?: (api.Auth|null);
 
         /** Command execInfo */
-        execInfo?: (api.IExecInfo|null);
+        execInfo?: (api.ExecInfo|null);
 
         /** Command subscribeFile */
-        subscribeFile?: (api.ISubscribeFile|null);
+        subscribeFile?: (api.SubscribeFile|null);
 
         /** Command fileEvent */
-        fileEvent?: (api.IFileEvent|null);
+        fileEvent?: (api.FileEvent|null);
 
         /** Command roster */
-        roster?: (api.IRoster|null);
+        roster?: (api.Roster|null);
 
         /** Command join */
-        join?: (api.IUser|null);
+        join?: (api.User|null);
 
         /** Command part */
-        part?: (api.IUser|null);
+        part?: (api.User|null);
 
         /** Command exec */
-        exec?: (api.IExec|null);
+        exec?: (api.Exec|null);
 
         /** Command packageSearch */
-        packageSearch?: (api.IPackageSearch|null);
+        packageSearch?: (api.PackageSearch|null);
 
         /** Command packageSearchResp */
-        packageSearchResp?: (api.IPackageSearchResp|null);
+        packageSearchResp?: (api.PackageSearchResp|null);
 
         /** Command packageInfo */
-        packageInfo?: (api.IPackageInfo|null);
+        packageInfo?: (api.PackageInfo|null);
 
         /** Command packageInfoResp */
-        packageInfoResp?: (api.IPackageInfoResp|null);
+        packageInfoResp?: (api.PackageInfoResp|null);
 
         /** Command packageAdd */
-        packageAdd?: (api.IPackageAdd|null);
+        packageAdd?: (api.PackageAdd|null);
 
         /** Command packageRemove */
-        packageRemove?: (api.IPackageRemove|null);
+        packageRemove?: (api.PackageRemove|null);
 
         /** Command packageInstall */
-        packageInstall?: (api.IPackageInstall|null);
+        packageInstall?: (api.PackageInstall|null);
 
         /** Command packageListSpecfile */
-        packageListSpecfile?: (api.IPackageListSpecfile|null);
+        packageListSpecfile?: (api.PackageListSpecfile|null);
 
         /** Command packageListSpecfileResp */
-        packageListSpecfileResp?: (api.IPackageListSpecfileResp|null);
+        packageListSpecfileResp?: (api.PackageListSpecfileResp|null);
 
         /** Command packageCacheSave */
-        packageCacheSave?: (api.IPackageCacheSave|null);
+        packageCacheSave?: (api.PackageCacheSave|null);
 
         /** Command chatMessage */
-        chatMessage?: (api.IChatMessage|null);
+        chatMessage?: (api.ChatMessage|null);
 
         /** Command chatTyping */
-        chatTyping?: (api.IChatTyping|null);
+        chatTyping?: (api.ChatTyping|null);
 
         /** Command chatScrollback */
-        chatScrollback?: (api.IChatScrollback|null);
+        chatScrollback?: (api.ChatScrollback|null);
 
         /** Command fsSnapshot */
-        fsSnapshot?: (api.IFSSnapshot|null);
+        fsSnapshot?: (api.FSSnapshot|null);
 
         /** Command fsTakeLock */
-        fsTakeLock?: (api.IFSLock|null);
+        fsTakeLock?: (api.FSLock|null);
 
         /** Command fsReleaseLock */
-        fsReleaseLock?: (api.IFSLock|null);
+        fsReleaseLock?: (api.FSLock|null);
 
         /** Command hasCap */
         hasCap?: (boolean|null);
 
         /** Command pid1Config */
-        pid1Config?: (api.IPid1Config|null);
+        pid1Config?: (api.Pid1Config|null);
 
         /** Command metrics */
-        metrics?: (api.IMetrics|null);
+        metrics?: (api.Metrics|null);
 
         /** Command bootStatus */
-        bootStatus?: (api.IBootStatus|null);
+        bootStatus?: (api.BootStatus|null);
 
         /** Command readMeta */
-        readMeta?: (api.IReadMeta|null);
+        readMeta?: (api.ReadMeta|null);
 
         /** Command writeMeta */
-        writeMeta?: (api.IWriteMeta|null);
+        writeMeta?: (api.WriteMeta|null);
 
         /** Command appendMeta */
-        appendMeta?: (api.IAppendMeta|null);
+        appendMeta?: (api.AppendMeta|null);
 
         /** Command audio */
-        audio?: (api.IAudio|null);
+        audio?: (api.Audio|null);
 
         /** Command pprofRequest */
-        pprofRequest?: (api.IPprofRequest|null);
+        pprofRequest?: (api.PprofRequest|null);
 
         /** Command pprofResponse */
-        pprofResponse?: (api.IPprofResponse|null);
+        pprofResponse?: (api.PprofResponse|null);
 
         /** Command audio2 */
-        audio2?: (api.IAudio2|null);
+        audio2?: (api.Audio2|null);
 
         /** Command PTYConfig */
-        PTYConfig?: (api.IPTYConfig|null);
+        PTYConfig?: (api.PTYConfig|null);
 
         /** Command ref */
         ref?: (string|null);
     }
 
     /** Represents a Command. */
-    class Command implements ICommand {
+    class Command {
 
         /**
          * Constructs a new Command.
@@ -334,34 +334,34 @@ export namespace api {
         public session: number;
 
         /** Command openChan. */
-        public openChan?: (api.IOpenChannel|null);
+        public openChan?: (api.OpenChannel|null);
 
         /** Command openChanRes. */
-        public openChanRes?: (api.IOpenChannelRes|null);
+        public openChanRes?: (api.OpenChannelRes|null);
 
         /** Command closeChan. */
-        public closeChan?: (api.ICloseChannel|null);
+        public closeChan?: (api.CloseChannel|null);
 
         /** Command closeChanRes. */
-        public closeChanRes?: (api.ICloseChannelRes|null);
+        public closeChanRes?: (api.CloseChannelRes|null);
 
         /** Command containerState. */
-        public containerState?: (api.IContainerState|null);
+        public containerState?: (api.ContainerState|null);
 
         /** Command portOpen. */
-        public portOpen?: (api.IPortOpen|null);
+        public portOpen?: (api.PortOpen|null);
 
         /** Command toast. */
-        public toast?: (api.IToast|null);
+        public toast?: (api.Toast|null);
 
         /** Command redirect. */
-        public redirect?: (api.IRedirect|null);
+        public redirect?: (api.Redirect|null);
 
         /** Command runMain. */
-        public runMain?: (api.IRunMain|null);
+        public runMain?: (api.RunMain|null);
 
         /** Command clear. */
-        public clear?: (api.IClear|null);
+        public clear?: (api.Clear|null);
 
         /** Command eval. */
         public eval: string;
@@ -379,262 +379,262 @@ export namespace api {
         public error: string;
 
         /** Command saneTerm. */
-        public saneTerm?: (api.ISaneTerm|null);
+        public saneTerm?: (api.SaneTerm|null);
 
         /** Command resizeTerm. */
-        public resizeTerm?: (api.IResizeTerm|null);
+        public resizeTerm?: (api.ResizeTerm|null);
 
         /** Command state. */
         public state: api.State;
 
         /** Command ok. */
-        public ok?: (api.IOK|null);
+        public ok?: (api.OK|null);
 
         /** Command persist. */
-        public persist?: (api.IFile|null);
+        public persist?: (api.File|null);
 
         /** Command persistMirror. */
-        public persistMirror?: (api.IFile|null);
+        public persistMirror?: (api.File|null);
 
         /** Command write. */
-        public write?: (api.IFile|null);
+        public write?: (api.File|null);
 
         /** Command remove. */
-        public remove?: (api.IFile|null);
+        public remove?: (api.File|null);
 
         /** Command move. */
-        public move?: (api.IMove|null);
+        public move?: (api.Move|null);
 
         /** Command tryRemove. */
-        public tryRemove?: (api.IFile|null);
+        public tryRemove?: (api.File|null);
 
         /** Command mkdir. */
-        public mkdir?: (api.IFile|null);
+        public mkdir?: (api.File|null);
 
         /** Command read. */
-        public read?: (api.IFile|null);
+        public read?: (api.File|null);
 
         /** Command readdir. */
-        public readdir?: (api.IFile|null);
+        public readdir?: (api.File|null);
 
         /** Command files. */
-        public files?: (api.IFiles|null);
+        public files?: (api.Files|null);
 
         /** Command file. */
-        public file?: (api.IFile|null);
+        public file?: (api.File|null);
 
         /** Command checkChanges. */
-        public checkChanges?: (api.ICheckChanges|null);
+        public checkChanges?: (api.CheckChanges|null);
 
         /** Command changedFiles. */
-        public changedFiles?: (api.IFiles|null);
+        public changedFiles?: (api.Files|null);
 
         /** Command lintResults. */
-        public lintResults?: (api.ILintResults|null);
+        public lintResults?: (api.LintResults|null);
 
         /** Command runContainedTest. */
-        public runContainedTest?: (api.IContainedTest|null);
+        public runContainedTest?: (api.ContainedTest|null);
 
         /** Command testResult. */
-        public testResult?: (api.ITestResult|null);
+        public testResult?: (api.TestResult|null);
 
         /** Command debuggerStart. */
         public debuggerStart: string;
 
         /** Command debuggerStep. */
-        public debuggerStep?: (api.IRunMain|null);
+        public debuggerStep?: (api.RunMain|null);
 
         /** Command debuggerStatus. */
-        public debuggerStatus?: (api.IDebugStatus|null);
+        public debuggerStatus?: (api.DebugStatus|null);
 
         /** Command ensurePackages. */
-        public ensurePackages?: (api.IEnsurePackages|null);
+        public ensurePackages?: (api.EnsurePackages|null);
 
         /** Command ping. */
-        public ping?: (api.IPing|null);
+        public ping?: (api.Ping|null);
 
         /** Command pong. */
-        public pong?: (api.IPong|null);
+        public pong?: (api.Pong|null);
 
         /** Command hello. */
-        public hello?: (api.IHello|null);
+        public hello?: (api.Hello|null);
 
         /** Command goodbye. */
-        public goodbye?: (api.IGoodbye|null);
+        public goodbye?: (api.Goodbye|null);
 
         /** Command hint. */
-        public hint?: (api.IHint|null);
+        public hint?: (api.Hint|null);
 
         /** Command connect. */
-        public connect?: (api.IConnect|null);
+        public connect?: (api.Connect|null);
 
         /** Command send. */
-        public send?: (api.ISend|null);
+        public send?: (api.Send|null);
 
         /** Command recv. */
-        public recv?: (api.IRecv|null);
+        public recv?: (api.Recv|null);
 
         /** Command disconnect. */
-        public disconnect?: (api.IDisconnect|null);
+        public disconnect?: (api.Disconnect|null);
 
         /** Command fileAuthReq. */
-        public fileAuthReq?: (api.IFileAuthReq|null);
+        public fileAuthReq?: (api.FileAuthReq|null);
 
         /** Command fileAuthRes. */
-        public fileAuthRes?: (api.IFileAuthRes|null);
+        public fileAuthRes?: (api.FileAuthRes|null);
 
         /** Command mutliFileAuthRes. */
-        public mutliFileAuthRes?: (api.IMultiFileAuthRes|null);
+        public mutliFileAuthRes?: (api.MultiFileAuthRes|null);
 
         /** Command listObjects. */
-        public listObjects?: (api.IListObjects|null);
+        public listObjects?: (api.ListObjects|null);
 
         /** Command listObjectsResp. */
-        public listObjectsResp?: (api.IListObjectsResp|null);
+        public listObjectsResp?: (api.ListObjectsResp|null);
 
         /** Command ot. */
-        public ot?: (api.IOTPacket|null);
+        public ot?: (api.OTPacket|null);
 
         /** Command otstatus. */
-        public otstatus?: (api.IOTStatus|null);
+        public otstatus?: (api.OTStatus|null);
 
         /** Command otLinkFile. */
-        public otLinkFile?: (api.IOTLinkFile|null);
+        public otLinkFile?: (api.OTLinkFile|null);
 
         /** Command otNewCursor. */
-        public otNewCursor?: (api.IOTCursor|null);
+        public otNewCursor?: (api.OTCursor|null);
 
         /** Command otDeleteCursor. */
-        public otDeleteCursor?: (api.IOTCursor|null);
+        public otDeleteCursor?: (api.OTCursor|null);
 
         /** Command otFetchRequest. */
-        public otFetchRequest?: (api.IOTFetchRequest|null);
+        public otFetchRequest?: (api.OTFetchRequest|null);
 
         /** Command otFetchResponse. */
-        public otFetchResponse?: (api.IOTFetchResponse|null);
+        public otFetchResponse?: (api.OTFetchResponse|null);
 
         /** Command flush. */
-        public flush?: (api.IFlush|null);
+        public flush?: (api.Flush|null);
 
         /** Command debug. */
-        public debug?: (api.IDebug|null);
+        public debug?: (api.Debug|null);
 
         /** Command startVCR. */
-        public startVCR?: (api.IStartVCR|null);
+        public startVCR?: (api.StartVCR|null);
 
         /** Command readVCR. */
-        public readVCR?: (api.IReadVCR|null);
+        public readVCR?: (api.ReadVCR|null);
 
         /** Command VCRLog. */
-        public VCRLog?: (api.IVCRLog|null);
+        public VCRLog?: (api.VCRLog|null);
 
         /** Command auth. */
-        public auth?: (api.IAuth|null);
+        public auth?: (api.Auth|null);
 
         /** Command execInfo. */
-        public execInfo?: (api.IExecInfo|null);
+        public execInfo?: (api.ExecInfo|null);
 
         /** Command subscribeFile. */
-        public subscribeFile?: (api.ISubscribeFile|null);
+        public subscribeFile?: (api.SubscribeFile|null);
 
         /** Command fileEvent. */
-        public fileEvent?: (api.IFileEvent|null);
+        public fileEvent?: (api.FileEvent|null);
 
         /** Command roster. */
-        public roster?: (api.IRoster|null);
+        public roster?: (api.Roster|null);
 
         /** Command join. */
-        public join?: (api.IUser|null);
+        public join?: (api.User|null);
 
         /** Command part. */
-        public part?: (api.IUser|null);
+        public part?: (api.User|null);
 
         /** Command exec. */
-        public exec?: (api.IExec|null);
+        public exec?: (api.Exec|null);
 
         /** Command packageSearch. */
-        public packageSearch?: (api.IPackageSearch|null);
+        public packageSearch?: (api.PackageSearch|null);
 
         /** Command packageSearchResp. */
-        public packageSearchResp?: (api.IPackageSearchResp|null);
+        public packageSearchResp?: (api.PackageSearchResp|null);
 
         /** Command packageInfo. */
-        public packageInfo?: (api.IPackageInfo|null);
+        public packageInfo?: (api.PackageInfo|null);
 
         /** Command packageInfoResp. */
-        public packageInfoResp?: (api.IPackageInfoResp|null);
+        public packageInfoResp?: (api.PackageInfoResp|null);
 
         /** Command packageAdd. */
-        public packageAdd?: (api.IPackageAdd|null);
+        public packageAdd?: (api.PackageAdd|null);
 
         /** Command packageRemove. */
-        public packageRemove?: (api.IPackageRemove|null);
+        public packageRemove?: (api.PackageRemove|null);
 
         /** Command packageInstall. */
-        public packageInstall?: (api.IPackageInstall|null);
+        public packageInstall?: (api.PackageInstall|null);
 
         /** Command packageListSpecfile. */
-        public packageListSpecfile?: (api.IPackageListSpecfile|null);
+        public packageListSpecfile?: (api.PackageListSpecfile|null);
 
         /** Command packageListSpecfileResp. */
-        public packageListSpecfileResp?: (api.IPackageListSpecfileResp|null);
+        public packageListSpecfileResp?: (api.PackageListSpecfileResp|null);
 
         /** Command packageCacheSave. */
-        public packageCacheSave?: (api.IPackageCacheSave|null);
+        public packageCacheSave?: (api.PackageCacheSave|null);
 
         /** Command chatMessage. */
-        public chatMessage?: (api.IChatMessage|null);
+        public chatMessage?: (api.ChatMessage|null);
 
         /** Command chatTyping. */
-        public chatTyping?: (api.IChatTyping|null);
+        public chatTyping?: (api.ChatTyping|null);
 
         /** Command chatScrollback. */
-        public chatScrollback?: (api.IChatScrollback|null);
+        public chatScrollback?: (api.ChatScrollback|null);
 
         /** Command fsSnapshot. */
-        public fsSnapshot?: (api.IFSSnapshot|null);
+        public fsSnapshot?: (api.FSSnapshot|null);
 
         /** Command fsTakeLock. */
-        public fsTakeLock?: (api.IFSLock|null);
+        public fsTakeLock?: (api.FSLock|null);
 
         /** Command fsReleaseLock. */
-        public fsReleaseLock?: (api.IFSLock|null);
+        public fsReleaseLock?: (api.FSLock|null);
 
         /** Command hasCap. */
         public hasCap: boolean;
 
         /** Command pid1Config. */
-        public pid1Config?: (api.IPid1Config|null);
+        public pid1Config?: (api.Pid1Config|null);
 
         /** Command metrics. */
-        public metrics?: (api.IMetrics|null);
+        public metrics?: (api.Metrics|null);
 
         /** Command bootStatus. */
-        public bootStatus?: (api.IBootStatus|null);
+        public bootStatus?: (api.BootStatus|null);
 
         /** Command readMeta. */
-        public readMeta?: (api.IReadMeta|null);
+        public readMeta?: (api.ReadMeta|null);
 
         /** Command writeMeta. */
-        public writeMeta?: (api.IWriteMeta|null);
+        public writeMeta?: (api.WriteMeta|null);
 
         /** Command appendMeta. */
-        public appendMeta?: (api.IAppendMeta|null);
+        public appendMeta?: (api.AppendMeta|null);
 
         /** Command audio. */
-        public audio?: (api.IAudio|null);
+        public audio?: (api.Audio|null);
 
         /** Command pprofRequest. */
-        public pprofRequest?: (api.IPprofRequest|null);
+        public pprofRequest?: (api.PprofRequest|null);
 
         /** Command pprofResponse. */
-        public pprofResponse?: (api.IPprofResponse|null);
+        public pprofResponse?: (api.PprofResponse|null);
 
         /** Command audio2. */
-        public audio2?: (api.IAudio2|null);
+        public audio2?: (api.Audio2|null);
 
         /** Command PTYConfig. */
-        public PTYConfig?: (api.IPTYConfig|null);
+        public PTYConfig?: (api.PTYConfig|null);
 
         /** Command ref. */
         public ref: string;
@@ -655,7 +655,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.ICommand, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.Command, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified Command message, length delimited. Does not implicitly {@link api.Command.verify|verify} messages.
@@ -663,7 +663,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.ICommand, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.Command, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Command message from the specified reader or buffer.
@@ -721,7 +721,7 @@ export namespace api {
     }
 
     /** Represents an Audio. */
-    class Audio implements IAudio {
+    class Audio {
 
         /**
          * Constructs a new Audio.
@@ -745,7 +745,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IAudio, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.Audio, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified Audio message, length delimited. Does not implicitly {@link api.Audio.verify|verify} messages.
@@ -753,7 +753,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IAudio, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.Audio, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes an Audio message from the specified reader or buffer.
@@ -810,11 +810,11 @@ export namespace api {
         data?: (number[]|null);
 
         /** Audio2 samples */
-        samples?: (number|Long|null);
+        samples?: (number|null);
     }
 
     /** Represents an Audio2. */
-    class Audio2 implements IAudio2 {
+    class Audio2 {
 
         /**
          * Constructs a new Audio2.
@@ -826,7 +826,7 @@ export namespace api {
         public data: number[];
 
         /** Audio2 samples. */
-        public samples: (number|Long);
+        public samples: number;
 
         /**
          * Creates a new Audio2 instance using the specified properties.
@@ -841,7 +841,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IAudio2, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.Audio2, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified Audio2 message, length delimited. Does not implicitly {@link api.Audio2.verify|verify} messages.
@@ -849,7 +849,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IAudio2, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.Audio2, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes an Audio2 message from the specified reader or buffer.
@@ -913,7 +913,7 @@ export namespace api {
     }
 
     /** Represents a ReadMeta. */
-    class ReadMeta implements IReadMeta {
+    class ReadMeta {
 
         /**
          * Constructs a new ReadMeta.
@@ -943,7 +943,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IReadMeta, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.ReadMeta, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified ReadMeta message, length delimited. Does not implicitly {@link api.ReadMeta.verify|verify} messages.
@@ -951,7 +951,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IReadMeta, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.ReadMeta, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a ReadMeta message from the specified reader or buffer.
@@ -1012,7 +1012,7 @@ export namespace api {
     }
 
     /** Represents a WriteMeta. */
-    class WriteMeta implements IWriteMeta {
+    class WriteMeta {
 
         /**
          * Constructs a new WriteMeta.
@@ -1039,7 +1039,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IWriteMeta, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.WriteMeta, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified WriteMeta message, length delimited. Does not implicitly {@link api.WriteMeta.verify|verify} messages.
@@ -1047,7 +1047,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IWriteMeta, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.WriteMeta, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a WriteMeta message from the specified reader or buffer.
@@ -1108,7 +1108,7 @@ export namespace api {
     }
 
     /** Represents an AppendMeta. */
-    class AppendMeta implements IAppendMeta {
+    class AppendMeta {
 
         /**
          * Constructs a new AppendMeta.
@@ -1135,7 +1135,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IAppendMeta, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.AppendMeta, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified AppendMeta message, length delimited. Does not implicitly {@link api.AppendMeta.verify|verify} messages.
@@ -1143,7 +1143,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IAppendMeta, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.AppendMeta, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes an AppendMeta message from the specified reader or buffer.
@@ -1207,7 +1207,7 @@ export namespace api {
     }
 
     /** Represents a BootStatus. */
-    class BootStatus implements IBootStatus {
+    class BootStatus {
 
         /**
          * Constructs a new BootStatus.
@@ -1237,7 +1237,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IBootStatus, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.BootStatus, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified BootStatus message, length delimited. Does not implicitly {@link api.BootStatus.verify|verify} messages.
@@ -1245,7 +1245,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IBootStatus, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.BootStatus, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a BootStatus message from the specified reader or buffer.
@@ -1323,7 +1323,7 @@ export namespace api {
     }
 
     /** Represents a Pid1Config. */
-    class Pid1Config implements IPid1Config {
+    class Pid1Config {
 
         /**
          * Constructs a new Pid1Config.
@@ -1353,7 +1353,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPid1Config, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.Pid1Config, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified Pid1Config message, length delimited. Does not implicitly {@link api.Pid1Config.verify|verify} messages.
@@ -1361,7 +1361,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPid1Config, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.Pid1Config, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Pid1Config message from the specified reader or buffer.
@@ -1419,7 +1419,7 @@ export namespace api {
     }
 
     /** Represents a FSLock. */
-    class FSLock implements IFSLock {
+    class FSLock {
 
         /**
          * Constructs a new FSLock.
@@ -1443,7 +1443,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IFSLock, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.FSLock, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified FSLock message, length delimited. Does not implicitly {@link api.FSLock.verify|verify} messages.
@@ -1451,7 +1451,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IFSLock, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.FSLock, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a FSLock message from the specified reader or buffer.
@@ -1506,7 +1506,7 @@ export namespace api {
     }
 
     /** Represents a FSSnapshot. */
-    class FSSnapshot implements IFSSnapshot {
+    class FSSnapshot {
 
         /**
          * Constructs a new FSSnapshot.
@@ -1527,7 +1527,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IFSSnapshot, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.FSSnapshot, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified FSSnapshot message, length delimited. Does not implicitly {@link api.FSSnapshot.verify|verify} messages.
@@ -1535,7 +1535,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IFSSnapshot, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.FSSnapshot, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a FSSnapshot message from the specified reader or buffer.
@@ -1589,11 +1589,11 @@ export namespace api {
     interface ISubscribeFile {
 
         /** SubscribeFile files */
-        files?: (api.IFile[]|null);
+        files?: (api.File[]|null);
     }
 
     /** Represents a SubscribeFile. */
-    class SubscribeFile implements ISubscribeFile {
+    class SubscribeFile {
 
         /**
          * Constructs a new SubscribeFile.
@@ -1602,7 +1602,7 @@ export namespace api {
         constructor(properties?: api.ISubscribeFile);
 
         /** SubscribeFile files. */
-        public files: api.IFile[];
+        public files: api.File[];
 
         /**
          * Creates a new SubscribeFile instance using the specified properties.
@@ -1617,7 +1617,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.ISubscribeFile, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.SubscribeFile, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified SubscribeFile message, length delimited. Does not implicitly {@link api.SubscribeFile.verify|verify} messages.
@@ -1625,7 +1625,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.ISubscribeFile, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.SubscribeFile, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a SubscribeFile message from the specified reader or buffer.
@@ -1679,17 +1679,17 @@ export namespace api {
     interface IFileEvent {
 
         /** FileEvent file */
-        file?: (api.IFile|null);
+        file?: (api.File|null);
 
         /** FileEvent dest */
-        dest?: (api.IFile|null);
+        dest?: (api.File|null);
 
         /** FileEvent op */
         op?: (api.FileEvent.Op|null);
     }
 
     /** Represents a FileEvent. */
-    class FileEvent implements IFileEvent {
+    class FileEvent {
 
         /**
          * Constructs a new FileEvent.
@@ -1698,10 +1698,10 @@ export namespace api {
         constructor(properties?: api.IFileEvent);
 
         /** FileEvent file. */
-        public file?: (api.IFile|null);
+        public file?: (api.File|null);
 
         /** FileEvent dest. */
-        public dest?: (api.IFile|null);
+        public dest?: (api.File|null);
 
         /** FileEvent op. */
         public op: api.FileEvent.Op;
@@ -1719,7 +1719,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IFileEvent, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.FileEvent, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified FileEvent message, length delimited. Does not implicitly {@link api.FileEvent.verify|verify} messages.
@@ -1727,7 +1727,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IFileEvent, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.FileEvent, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a FileEvent message from the specified reader or buffer.
@@ -1793,7 +1793,7 @@ export namespace api {
     }
 
     /** Represents a Flush. */
-    class Flush implements IFlush {
+    class Flush {
 
         /**
          * Constructs a new Flush.
@@ -1814,7 +1814,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IFlush, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.Flush, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified Flush message, length delimited. Does not implicitly {@link api.Flush.verify|verify} messages.
@@ -1822,7 +1822,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IFlush, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.Flush, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Flush message from the specified reader or buffer.
@@ -1876,7 +1876,7 @@ export namespace api {
     interface IOTLinkFile {
 
         /** OTLinkFile file */
-        file?: (api.IFile|null);
+        file?: (api.File|null);
 
         /** OTLinkFile highConsistency */
         highConsistency?: (boolean|null);
@@ -1886,7 +1886,7 @@ export namespace api {
     }
 
     /** Represents a OTLinkFile. */
-    class OTLinkFile implements IOTLinkFile {
+    class OTLinkFile {
 
         /**
          * Constructs a new OTLinkFile.
@@ -1895,7 +1895,7 @@ export namespace api {
         constructor(properties?: api.IOTLinkFile);
 
         /** OTLinkFile file. */
-        public file?: (api.IFile|null);
+        public file?: (api.File|null);
 
         /** OTLinkFile highConsistency. */
         public highConsistency: boolean;
@@ -1916,7 +1916,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IOTLinkFile, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.OTLinkFile, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified OTLinkFile message, length delimited. Does not implicitly {@link api.OTLinkFile.verify|verify} messages.
@@ -1924,7 +1924,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IOTLinkFile, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.OTLinkFile, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a OTLinkFile message from the specified reader or buffer.
@@ -1985,7 +1985,7 @@ export namespace api {
     }
 
     /** Represents an Auth. */
-    class Auth implements IAuth {
+    class Auth {
 
         /**
          * Constructs a new Auth.
@@ -2012,7 +2012,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IAuth, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.Auth, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified Auth message, length delimited. Does not implicitly {@link api.Auth.verify|verify} messages.
@@ -2020,7 +2020,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IAuth, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.Auth, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes an Auth message from the specified reader or buffer.
@@ -2074,20 +2074,20 @@ export namespace api {
     interface IVCREntry {
 
         /** VCREntry timestamp */
-        timestamp?: (number|Long|null);
+        timestamp?: (number|null);
 
         /** VCREntry direction */
         direction?: (api.VCREntry.Direction|null);
 
         /** VCREntry command */
-        command?: (api.ICommand|null);
+        command?: (api.Command|null);
 
         /** VCREntry uid */
         uid?: (string|null);
     }
 
     /** Represents a VCREntry. */
-    class VCREntry implements IVCREntry {
+    class VCREntry {
 
         /**
          * Constructs a new VCREntry.
@@ -2096,13 +2096,13 @@ export namespace api {
         constructor(properties?: api.IVCREntry);
 
         /** VCREntry timestamp. */
-        public timestamp: (number|Long);
+        public timestamp: number;
 
         /** VCREntry direction. */
         public direction: api.VCREntry.Direction;
 
         /** VCREntry command. */
-        public command?: (api.ICommand|null);
+        public command?: (api.Command|null);
 
         /** VCREntry uid. */
         public uid: string;
@@ -2120,7 +2120,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IVCREntry, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.VCREntry, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified VCREntry message, length delimited. Does not implicitly {@link api.VCREntry.verify|verify} messages.
@@ -2128,7 +2128,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IVCREntry, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.VCREntry, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a VCREntry message from the specified reader or buffer.
@@ -2192,7 +2192,7 @@ export namespace api {
     }
 
     /** Represents a StartVCR. */
-    class StartVCR implements IStartVCR {
+    class StartVCR {
 
         /**
          * Constructs a new StartVCR.
@@ -2213,7 +2213,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IStartVCR, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.StartVCR, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified StartVCR message, length delimited. Does not implicitly {@link api.StartVCR.verify|verify} messages.
@@ -2221,7 +2221,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IStartVCR, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.StartVCR, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a StartVCR message from the specified reader or buffer.
@@ -2276,7 +2276,7 @@ export namespace api {
     }
 
     /** Represents a ReadVCR. */
-    class ReadVCR implements IReadVCR {
+    class ReadVCR {
 
         /**
          * Constructs a new ReadVCR.
@@ -2297,7 +2297,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IReadVCR, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.ReadVCR, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified ReadVCR message, length delimited. Does not implicitly {@link api.ReadVCR.verify|verify} messages.
@@ -2305,7 +2305,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IReadVCR, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.ReadVCR, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a ReadVCR message from the specified reader or buffer.
@@ -2359,14 +2359,14 @@ export namespace api {
     interface IVCRLog {
 
         /** VCRLog log */
-        log?: (api.IVCREntry[]|null);
+        log?: (api.VCREntry[]|null);
 
         /** VCRLog logfile */
-        logfile?: (api.IFile|null);
+        logfile?: (api.File|null);
     }
 
     /** Represents a VCRLog. */
-    class VCRLog implements IVCRLog {
+    class VCRLog {
 
         /**
          * Constructs a new VCRLog.
@@ -2375,10 +2375,10 @@ export namespace api {
         constructor(properties?: api.IVCRLog);
 
         /** VCRLog log. */
-        public log: api.IVCREntry[];
+        public log: api.VCREntry[];
 
         /** VCRLog logfile. */
-        public logfile?: (api.IFile|null);
+        public logfile?: (api.File|null);
 
         /**
          * Creates a new VCRLog instance using the specified properties.
@@ -2393,7 +2393,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IVCRLog, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.VCRLog, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified VCRLog message, length delimited. Does not implicitly {@link api.VCRLog.verify|verify} messages.
@@ -2401,7 +2401,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IVCRLog, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.VCRLog, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a VCRLog message from the specified reader or buffer.
@@ -2462,7 +2462,7 @@ export namespace api {
     }
 
     /** Represents an ExecInfo. */
-    class ExecInfo implements IExecInfo {
+    class ExecInfo {
 
         /**
          * Constructs a new ExecInfo.
@@ -2489,7 +2489,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IExecInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.ExecInfo, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified ExecInfo message, length delimited. Does not implicitly {@link api.ExecInfo.verify|verify} messages.
@@ -2497,7 +2497,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IExecInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.ExecInfo, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes an ExecInfo message from the specified reader or buffer.
@@ -2555,7 +2555,7 @@ export namespace api {
     }
 
     /** Represents a Debug. */
-    class Debug implements IDebug {
+    class Debug {
 
         /**
          * Constructs a new Debug.
@@ -2579,7 +2579,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IDebug, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.Debug, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified Debug message, length delimited. Does not implicitly {@link api.Debug.verify|verify} messages.
@@ -2587,7 +2587,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IDebug, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.Debug, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Debug message from the specified reader or buffer.
@@ -2649,14 +2649,14 @@ export namespace api {
     interface IFileAuthReq {
 
         /** FileAuthReq file */
-        file?: (api.IFile|null);
+        file?: (api.File|null);
 
         /** FileAuthReq method */
         method?: (api.FileAuthMethod|null);
     }
 
     /** Represents a FileAuthReq. */
-    class FileAuthReq implements IFileAuthReq {
+    class FileAuthReq {
 
         /**
          * Constructs a new FileAuthReq.
@@ -2665,7 +2665,7 @@ export namespace api {
         constructor(properties?: api.IFileAuthReq);
 
         /** FileAuthReq file. */
-        public file?: (api.IFile|null);
+        public file?: (api.File|null);
 
         /** FileAuthReq method. */
         public method: api.FileAuthMethod;
@@ -2683,7 +2683,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IFileAuthReq, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.FileAuthReq, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified FileAuthReq message, length delimited. Does not implicitly {@link api.FileAuthReq.verify|verify} messages.
@@ -2691,7 +2691,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IFileAuthReq, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.FileAuthReq, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a FileAuthReq message from the specified reader or buffer.
@@ -2745,17 +2745,17 @@ export namespace api {
     interface IMultiFileAuthRes {
 
         /** MultiFileAuthRes put */
-        put?: (api.IFileAuthRes|null);
+        put?: (api.FileAuthRes|null);
 
         /** MultiFileAuthRes del */
-        del?: (api.IFileAuthRes|null);
+        del?: (api.FileAuthRes|null);
 
         /** MultiFileAuthRes get */
-        get?: (api.IFileAuthRes|null);
+        get?: (api.FileAuthRes|null);
     }
 
     /** Represents a MultiFileAuthRes. */
-    class MultiFileAuthRes implements IMultiFileAuthRes {
+    class MultiFileAuthRes {
 
         /**
          * Constructs a new MultiFileAuthRes.
@@ -2764,13 +2764,13 @@ export namespace api {
         constructor(properties?: api.IMultiFileAuthRes);
 
         /** MultiFileAuthRes put. */
-        public put?: (api.IFileAuthRes|null);
+        public put?: (api.FileAuthRes|null);
 
         /** MultiFileAuthRes del. */
-        public del?: (api.IFileAuthRes|null);
+        public del?: (api.FileAuthRes|null);
 
         /** MultiFileAuthRes get. */
-        public get?: (api.IFileAuthRes|null);
+        public get?: (api.FileAuthRes|null);
 
         /**
          * Creates a new MultiFileAuthRes instance using the specified properties.
@@ -2785,7 +2785,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IMultiFileAuthRes, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.MultiFileAuthRes, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified MultiFileAuthRes message, length delimited. Does not implicitly {@link api.MultiFileAuthRes.verify|verify} messages.
@@ -2793,7 +2793,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IMultiFileAuthRes, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.MultiFileAuthRes, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a MultiFileAuthRes message from the specified reader or buffer.
@@ -2847,7 +2847,7 @@ export namespace api {
     interface IFileAuthRes {
 
         /** FileAuthRes file */
-        file?: (api.IFile|null);
+        file?: (api.File|null);
 
         /** FileAuthRes url */
         url?: (string|null);
@@ -2856,14 +2856,14 @@ export namespace api {
         method?: (api.FileAuthMethod|null);
 
         /** FileAuthRes expire */
-        expire?: (number|Long|null);
+        expire?: (number|null);
 
         /** FileAuthRes error */
         error?: (string|null);
     }
 
     /** Represents a FileAuthRes. */
-    class FileAuthRes implements IFileAuthRes {
+    class FileAuthRes {
 
         /**
          * Constructs a new FileAuthRes.
@@ -2872,7 +2872,7 @@ export namespace api {
         constructor(properties?: api.IFileAuthRes);
 
         /** FileAuthRes file. */
-        public file?: (api.IFile|null);
+        public file?: (api.File|null);
 
         /** FileAuthRes url. */
         public url: string;
@@ -2881,7 +2881,7 @@ export namespace api {
         public method: api.FileAuthMethod;
 
         /** FileAuthRes expire. */
-        public expire: (number|Long);
+        public expire: number;
 
         /** FileAuthRes error. */
         public error: string;
@@ -2899,7 +2899,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IFileAuthRes, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.FileAuthRes, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified FileAuthRes message, length delimited. Does not implicitly {@link api.FileAuthRes.verify|verify} messages.
@@ -2907,7 +2907,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IFileAuthRes, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.FileAuthRes, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a FileAuthRes message from the specified reader or buffer.
@@ -2965,7 +2965,7 @@ export namespace api {
     }
 
     /** Represents a ListObjects. */
-    class ListObjects implements IListObjects {
+    class ListObjects {
 
         /**
          * Constructs a new ListObjects.
@@ -2989,7 +2989,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IListObjects, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.ListObjects, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified ListObjects message, length delimited. Does not implicitly {@link api.ListObjects.verify|verify} messages.
@@ -2997,7 +2997,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IListObjects, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.ListObjects, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a ListObjects message from the specified reader or buffer.
@@ -3055,7 +3055,7 @@ export namespace api {
     }
 
     /** Represents a ListObjectsResp. */
-    class ListObjectsResp implements IListObjectsResp {
+    class ListObjectsResp {
 
         /**
          * Constructs a new ListObjectsResp.
@@ -3079,7 +3079,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IListObjectsResp, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.ListObjectsResp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified ListObjectsResp message, length delimited. Does not implicitly {@link api.ListObjectsResp.verify|verify} messages.
@@ -3087,7 +3087,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IListObjectsResp, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.ListObjectsResp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a ListObjectsResp message from the specified reader or buffer.
@@ -3145,7 +3145,7 @@ export namespace api {
     }
 
     /** Represents a Disconnect. */
-    class Disconnect implements IDisconnect {
+    class Disconnect {
 
         /**
          * Constructs a new Disconnect.
@@ -3169,7 +3169,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IDisconnect, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.Disconnect, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified Disconnect message, length delimited. Does not implicitly {@link api.Disconnect.verify|verify} messages.
@@ -3177,7 +3177,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IDisconnect, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.Disconnect, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Disconnect message from the specified reader or buffer.
@@ -3235,7 +3235,7 @@ export namespace api {
     }
 
     /** Represents a Send. */
-    class Send implements ISend {
+    class Send {
 
         /**
          * Constructs a new Send.
@@ -3259,7 +3259,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.ISend, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.Send, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified Send message, length delimited. Does not implicitly {@link api.Send.verify|verify} messages.
@@ -3267,7 +3267,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.ISend, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.Send, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Send message from the specified reader or buffer.
@@ -3325,7 +3325,7 @@ export namespace api {
     }
 
     /** Represents a Recv. */
-    class Recv implements IRecv {
+    class Recv {
 
         /**
          * Constructs a new Recv.
@@ -3349,7 +3349,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IRecv, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.Recv, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified Recv message, length delimited. Does not implicitly {@link api.Recv.verify|verify} messages.
@@ -3357,7 +3357,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IRecv, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.Recv, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Recv message from the specified reader or buffer.
@@ -3418,7 +3418,7 @@ export namespace api {
     }
 
     /** Represents a Connect. */
-    class Connect implements IConnect {
+    class Connect {
 
         /**
          * Constructs a new Connect.
@@ -3445,7 +3445,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IConnect, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.Connect, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified Connect message, length delimited. Does not implicitly {@link api.Connect.verify|verify} messages.
@@ -3453,7 +3453,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IConnect, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.Connect, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Connect message from the specified reader or buffer.
@@ -3511,7 +3511,7 @@ export namespace api {
     }
 
     /** Represents a Hint. */
-    class Hint implements IHint {
+    class Hint {
 
         /**
          * Constructs a new Hint.
@@ -3535,7 +3535,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IHint, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.Hint, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified Hint message, length delimited. Does not implicitly {@link api.Hint.verify|verify} messages.
@@ -3543,7 +3543,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IHint, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.Hint, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Hint message from the specified reader or buffer.
@@ -3598,7 +3598,7 @@ export namespace api {
     }
 
     /** Represents a Ping. */
-    class Ping implements IPing {
+    class Ping {
 
         /**
          * Constructs a new Ping.
@@ -3619,7 +3619,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPing, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.Ping, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified Ping message, length delimited. Does not implicitly {@link api.Ping.verify|verify} messages.
@@ -3627,7 +3627,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPing, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.Ping, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Ping message from the specified reader or buffer.
@@ -3682,7 +3682,7 @@ export namespace api {
     }
 
     /** Represents a Pong. */
-    class Pong implements IPong {
+    class Pong {
 
         /**
          * Constructs a new Pong.
@@ -3703,7 +3703,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPong, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.Pong, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified Pong message, length delimited. Does not implicitly {@link api.Pong.verify|verify} messages.
@@ -3711,7 +3711,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPong, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.Pong, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Pong message from the specified reader or buffer.
@@ -3775,7 +3775,7 @@ export namespace api {
     }
 
     /** Represents a Hello. */
-    class Hello implements IHello {
+    class Hello {
 
         /**
          * Constructs a new Hello.
@@ -3805,7 +3805,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IHello, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.Hello, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified Hello message, length delimited. Does not implicitly {@link api.Hello.verify|verify} messages.
@@ -3813,7 +3813,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IHello, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.Hello, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Hello message from the specified reader or buffer.
@@ -3868,7 +3868,7 @@ export namespace api {
     }
 
     /** Represents a Goodbye. */
-    class Goodbye implements IGoodbye {
+    class Goodbye {
 
         /**
          * Constructs a new Goodbye.
@@ -3889,7 +3889,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IGoodbye, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.Goodbye, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified Goodbye message, length delimited. Does not implicitly {@link api.Goodbye.verify|verify} messages.
@@ -3897,7 +3897,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IGoodbye, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.Goodbye, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Goodbye message from the specified reader or buffer.
@@ -3958,7 +3958,7 @@ export namespace api {
     }
 
     /** Represents a CheckChanges. */
-    class CheckChanges implements ICheckChanges {
+    class CheckChanges {
 
         /**
          * Constructs a new CheckChanges.
@@ -3979,7 +3979,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.ICheckChanges, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.CheckChanges, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified CheckChanges message, length delimited. Does not implicitly {@link api.CheckChanges.verify|verify} messages.
@@ -3987,7 +3987,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.ICheckChanges, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.CheckChanges, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a CheckChanges message from the specified reader or buffer.
@@ -4044,11 +4044,11 @@ export namespace api {
         install?: (boolean|null);
 
         /** EnsurePackages file */
-        file?: (api.IFile|null);
+        file?: (api.File|null);
     }
 
     /** Represents an EnsurePackages. */
-    class EnsurePackages implements IEnsurePackages {
+    class EnsurePackages {
 
         /**
          * Constructs a new EnsurePackages.
@@ -4060,7 +4060,7 @@ export namespace api {
         public install: boolean;
 
         /** EnsurePackages file. */
-        public file?: (api.IFile|null);
+        public file?: (api.File|null);
 
         /**
          * Creates a new EnsurePackages instance using the specified properties.
@@ -4075,7 +4075,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IEnsurePackages, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.EnsurePackages, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified EnsurePackages message, length delimited. Does not implicitly {@link api.EnsurePackages.verify|verify} messages.
@@ -4083,7 +4083,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IEnsurePackages, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.EnsurePackages, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes an EnsurePackages message from the specified reader or buffer.
@@ -4138,7 +4138,7 @@ export namespace api {
     }
 
     /** Represents a Start. */
-    class Start implements IStart {
+    class Start {
 
         /**
          * Constructs a new Start.
@@ -4159,7 +4159,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IStart, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.Start, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified Start message, length delimited. Does not implicitly {@link api.Start.verify|verify} messages.
@@ -4167,7 +4167,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IStart, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.Start, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Start message from the specified reader or buffer.
@@ -4224,11 +4224,11 @@ export namespace api {
         done?: (boolean|null);
 
         /** DebugStatus stack */
-        stack?: (api.IStackFrame[]|null);
+        stack?: (api.StackFrame[]|null);
     }
 
     /** Represents a DebugStatus. */
-    class DebugStatus implements IDebugStatus {
+    class DebugStatus {
 
         /**
          * Constructs a new DebugStatus.
@@ -4240,7 +4240,7 @@ export namespace api {
         public done: boolean;
 
         /** DebugStatus stack. */
-        public stack: api.IStackFrame[];
+        public stack: api.StackFrame[];
 
         /**
          * Creates a new DebugStatus instance using the specified properties.
@@ -4255,7 +4255,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IDebugStatus, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.DebugStatus, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified DebugStatus message, length delimited. Does not implicitly {@link api.DebugStatus.verify|verify} messages.
@@ -4263,7 +4263,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IDebugStatus, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.DebugStatus, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a DebugStatus message from the specified reader or buffer.
@@ -4324,7 +4324,7 @@ export namespace api {
     }
 
     /** Represents a StackFrame. */
-    class StackFrame implements IStackFrame {
+    class StackFrame {
 
         /**
          * Constructs a new StackFrame.
@@ -4351,7 +4351,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IStackFrame, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.StackFrame, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified StackFrame message, length delimited. Does not implicitly {@link api.StackFrame.verify|verify} messages.
@@ -4359,7 +4359,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IStackFrame, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.StackFrame, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a StackFrame message from the specified reader or buffer.
@@ -4413,14 +4413,14 @@ export namespace api {
     interface IContainedTest {
 
         /** ContainedTest suite */
-        suite?: (api.IFile|null);
+        suite?: (api.File|null);
 
         /** ContainedTest project */
-        project?: (api.IFile[]|null);
+        project?: (api.File[]|null);
     }
 
     /** Represents a ContainedTest. */
-    class ContainedTest implements IContainedTest {
+    class ContainedTest {
 
         /**
          * Constructs a new ContainedTest.
@@ -4429,10 +4429,10 @@ export namespace api {
         constructor(properties?: api.IContainedTest);
 
         /** ContainedTest suite. */
-        public suite?: (api.IFile|null);
+        public suite?: (api.File|null);
 
         /** ContainedTest project. */
-        public project: api.IFile[];
+        public project: api.File[];
 
         /**
          * Creates a new ContainedTest instance using the specified properties.
@@ -4447,7 +4447,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IContainedTest, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.ContainedTest, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified ContainedTest message, length delimited. Does not implicitly {@link api.ContainedTest.verify|verify} messages.
@@ -4455,7 +4455,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IContainedTest, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.ContainedTest, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a ContainedTest message from the specified reader or buffer.
@@ -4515,11 +4515,11 @@ export namespace api {
         stderr?: (string|null);
 
         /** TestResult fails */
-        fails?: (api.ITestFailure[]|null);
+        fails?: (api.TestFailure[]|null);
     }
 
     /** Represents a TestResult. */
-    class TestResult implements ITestResult {
+    class TestResult {
 
         /**
          * Constructs a new TestResult.
@@ -4534,7 +4534,7 @@ export namespace api {
         public stderr: string;
 
         /** TestResult fails. */
-        public fails: api.ITestFailure[];
+        public fails: api.TestFailure[];
 
         /**
          * Creates a new TestResult instance using the specified properties.
@@ -4549,7 +4549,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.ITestResult, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.TestResult, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified TestResult message, length delimited. Does not implicitly {@link api.TestResult.verify|verify} messages.
@@ -4557,7 +4557,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.ITestResult, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.TestResult, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a TestResult message from the specified reader or buffer.
@@ -4618,7 +4618,7 @@ export namespace api {
     }
 
     /** Represents a TestFailure. */
-    class TestFailure implements ITestFailure {
+    class TestFailure {
 
         /**
          * Constructs a new TestFailure.
@@ -4645,7 +4645,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.ITestFailure, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.TestFailure, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified TestFailure message, length delimited. Does not implicitly {@link api.TestFailure.verify|verify} messages.
@@ -4653,7 +4653,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.ITestFailure, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.TestFailure, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a TestFailure message from the specified reader or buffer.
@@ -4714,7 +4714,7 @@ export namespace api {
     }
 
     /** Represents a ResizeTerm. */
-    class ResizeTerm implements IResizeTerm {
+    class ResizeTerm {
 
         /**
          * Constructs a new ResizeTerm.
@@ -4741,7 +4741,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IResizeTerm, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.ResizeTerm, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified ResizeTerm message, length delimited. Does not implicitly {@link api.ResizeTerm.verify|verify} messages.
@@ -4749,7 +4749,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IResizeTerm, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.ResizeTerm, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a ResizeTerm message from the specified reader or buffer.
@@ -4804,7 +4804,7 @@ export namespace api {
     }
 
     /** Represents a SaneTerm. */
-    class SaneTerm implements ISaneTerm {
+    class SaneTerm {
 
         /**
          * Constructs a new SaneTerm.
@@ -4825,7 +4825,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.ISaneTerm, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.SaneTerm, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified SaneTerm message, length delimited. Does not implicitly {@link api.SaneTerm.verify|verify} messages.
@@ -4833,7 +4833,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.ISaneTerm, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.SaneTerm, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a SaneTerm message from the specified reader or buffer.
@@ -4887,11 +4887,11 @@ export namespace api {
     interface ILintResults {
 
         /** LintResults results */
-        results?: (api.ILintResult[]|null);
+        results?: (api.LintResult[]|null);
     }
 
     /** Represents a LintResults. */
-    class LintResults implements ILintResults {
+    class LintResults {
 
         /**
          * Constructs a new LintResults.
@@ -4900,7 +4900,7 @@ export namespace api {
         constructor(properties?: api.ILintResults);
 
         /** LintResults results. */
-        public results: api.ILintResult[];
+        public results: api.LintResult[];
 
         /**
          * Creates a new LintResults instance using the specified properties.
@@ -4915,7 +4915,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.ILintResults, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.LintResults, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified LintResults message, length delimited. Does not implicitly {@link api.LintResults.verify|verify} messages.
@@ -4923,7 +4923,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.ILintResults, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.LintResults, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a LintResults message from the specified reader or buffer.
@@ -4990,7 +4990,7 @@ export namespace api {
     }
 
     /** Represents a LintResult. */
-    class LintResult implements ILintResult {
+    class LintResult {
 
         /**
          * Constructs a new LintResult.
@@ -5023,7 +5023,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.ILintResult, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.LintResult, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified LintResult message, length delimited. Does not implicitly {@link api.LintResult.verify|verify} messages.
@@ -5031,7 +5031,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.ILintResult, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.LintResult, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a LintResult message from the specified reader or buffer.
@@ -5086,7 +5086,7 @@ export namespace api {
     }
 
     /** Represents a OK. */
-    class OK implements IOK {
+    class OK {
 
         /**
          * Constructs a new OK.
@@ -5107,7 +5107,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IOK, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.OK, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified OK message, length delimited. Does not implicitly {@link api.OK.verify|verify} messages.
@@ -5115,7 +5115,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IOK, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.OK, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a OK message from the specified reader or buffer.
@@ -5176,7 +5176,7 @@ export namespace api {
     }
 
     /** Represents a Move. */
-    class Move implements IMove {
+    class Move {
 
         /**
          * Constructs a new Move.
@@ -5203,7 +5203,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IMove, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.Move, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified Move message, length delimited. Does not implicitly {@link api.Move.verify|verify} messages.
@@ -5211,7 +5211,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IMove, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.Move, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Move message from the specified reader or buffer.
@@ -5265,11 +5265,11 @@ export namespace api {
     interface IFiles {
 
         /** Files files */
-        files?: (api.IFile[]|null);
+        files?: (api.File[]|null);
     }
 
     /** Represents a Files. */
-    class Files implements IFiles {
+    class Files {
 
         /**
          * Constructs a new Files.
@@ -5278,7 +5278,7 @@ export namespace api {
         constructor(properties?: api.IFiles);
 
         /** Files files. */
-        public files: api.IFile[];
+        public files: api.File[];
 
         /**
          * Creates a new Files instance using the specified properties.
@@ -5293,7 +5293,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IFiles, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.Files, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified Files message, length delimited. Does not implicitly {@link api.Files.verify|verify} messages.
@@ -5301,7 +5301,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IFiles, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.Files, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Files message from the specified reader or buffer.
@@ -5365,7 +5365,7 @@ export namespace api {
     }
 
     /** Represents a File. */
-    class File implements IFile {
+    class File {
 
         /**
          * Constructs a new File.
@@ -5395,7 +5395,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IFile, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.File, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified File message, length delimited. Does not implicitly {@link api.File.verify|verify} messages.
@@ -5403,7 +5403,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IFile, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.File, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a File message from the specified reader or buffer.
@@ -5467,7 +5467,7 @@ export namespace api {
     }
 
     /** Represents a Clear. */
-    class Clear implements IClear {
+    class Clear {
 
         /**
          * Constructs a new Clear.
@@ -5488,7 +5488,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IClear, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.Clear, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified Clear message, length delimited. Does not implicitly {@link api.Clear.verify|verify} messages.
@@ -5496,7 +5496,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IClear, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.Clear, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Clear message from the specified reader or buffer.
@@ -5554,7 +5554,7 @@ export namespace api {
     }
 
     /** Represents a Toast. */
-    class Toast implements IToast {
+    class Toast {
 
         /**
          * Constructs a new Toast.
@@ -5578,7 +5578,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IToast, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.Toast, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified Toast message, length delimited. Does not implicitly {@link api.Toast.verify|verify} messages.
@@ -5586,7 +5586,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IToast, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.Toast, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Toast message from the specified reader or buffer.
@@ -5644,7 +5644,7 @@ export namespace api {
     }
 
     /** Represents a Redirect. */
-    class Redirect implements IRedirect {
+    class Redirect {
 
         /**
          * Constructs a new Redirect.
@@ -5668,7 +5668,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IRedirect, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.Redirect, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified Redirect message, length delimited. Does not implicitly {@link api.Redirect.verify|verify} messages.
@@ -5676,7 +5676,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IRedirect, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.Redirect, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Redirect message from the specified reader or buffer.
@@ -5731,7 +5731,7 @@ export namespace api {
     }
 
     /** Represents a RunMain. */
-    class RunMain implements IRunMain {
+    class RunMain {
 
         /**
          * Constructs a new RunMain.
@@ -5752,7 +5752,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IRunMain, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.RunMain, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified RunMain message, length delimited. Does not implicitly {@link api.RunMain.verify|verify} messages.
@@ -5760,7 +5760,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IRunMain, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.RunMain, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a RunMain message from the specified reader or buffer.
@@ -5827,7 +5827,7 @@ export namespace api {
     }
 
     /** Represents an OpenChannel. */
-    class OpenChannel implements IOpenChannel {
+    class OpenChannel {
 
         /**
          * Constructs a new OpenChannel.
@@ -5860,7 +5860,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IOpenChannel, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.OpenChannel, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified OpenChannel message, length delimited. Does not implicitly {@link api.OpenChannel.verify|verify} messages.
@@ -5868,7 +5868,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IOpenChannel, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.OpenChannel, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes an OpenChannel message from the specified reader or buffer.
@@ -5942,7 +5942,7 @@ export namespace api {
     }
 
     /** Represents an OpenChannelRes. */
-    class OpenChannelRes implements IOpenChannelRes {
+    class OpenChannelRes {
 
         /**
          * Constructs a new OpenChannelRes.
@@ -5972,7 +5972,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IOpenChannelRes, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.OpenChannelRes, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified OpenChannelRes message, length delimited. Does not implicitly {@link api.OpenChannelRes.verify|verify} messages.
@@ -5980,7 +5980,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IOpenChannelRes, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.OpenChannelRes, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes an OpenChannelRes message from the specified reader or buffer.
@@ -6051,7 +6051,7 @@ export namespace api {
     }
 
     /** Represents a CloseChannel. */
-    class CloseChannel implements ICloseChannel {
+    class CloseChannel {
 
         /**
          * Constructs a new CloseChannel.
@@ -6078,7 +6078,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.ICloseChannel, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.CloseChannel, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified CloseChannel message, length delimited. Does not implicitly {@link api.CloseChannel.verify|verify} messages.
@@ -6086,7 +6086,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.ICloseChannel, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.CloseChannel, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a CloseChannel message from the specified reader or buffer.
@@ -6157,7 +6157,7 @@ export namespace api {
     }
 
     /** Represents a CloseChannelRes. */
-    class CloseChannelRes implements ICloseChannelRes {
+    class CloseChannelRes {
 
         /**
          * Constructs a new CloseChannelRes.
@@ -6184,7 +6184,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.ICloseChannelRes, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.CloseChannelRes, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified CloseChannelRes message, length delimited. Does not implicitly {@link api.CloseChannelRes.verify|verify} messages.
@@ -6192,7 +6192,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.ICloseChannelRes, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.CloseChannelRes, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a CloseChannelRes message from the specified reader or buffer.
@@ -6260,7 +6260,7 @@ export namespace api {
     }
 
     /** Represents a ContainerState. */
-    class ContainerState implements IContainerState {
+    class ContainerState {
 
         /**
          * Constructs a new ContainerState.
@@ -6284,7 +6284,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IContainerState, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.ContainerState, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified ContainerState message, length delimited. Does not implicitly {@link api.ContainerState.verify|verify} messages.
@@ -6292,7 +6292,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IContainerState, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.ContainerState, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a ContainerState message from the specified reader or buffer.
@@ -6365,7 +6365,7 @@ export namespace api {
     }
 
     /** Represents a PortOpen. */
-    class PortOpen implements IPortOpen {
+    class PortOpen {
 
         /**
          * Constructs a new PortOpen.
@@ -6395,7 +6395,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPortOpen, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.PortOpen, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified PortOpen message, length delimited. Does not implicitly {@link api.PortOpen.verify|verify} messages.
@@ -6403,7 +6403,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPortOpen, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.PortOpen, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PortOpen message from the specified reader or buffer.
@@ -6464,7 +6464,7 @@ export namespace api {
     }
 
     /** Represents a OTFetchRequest. */
-    class OTFetchRequest implements IOTFetchRequest {
+    class OTFetchRequest {
 
         /**
          * Constructs a new OTFetchRequest.
@@ -6491,7 +6491,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IOTFetchRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.OTFetchRequest, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified OTFetchRequest message, length delimited. Does not implicitly {@link api.OTFetchRequest.verify|verify} messages.
@@ -6499,7 +6499,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IOTFetchRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.OTFetchRequest, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a OTFetchRequest message from the specified reader or buffer.
@@ -6553,11 +6553,11 @@ export namespace api {
     interface IOTFetchResponse {
 
         /** OTFetchResponse packets */
-        packets?: (api.IOTPacket[]|null);
+        packets?: (api.OTPacket[]|null);
     }
 
     /** Represents a OTFetchResponse. */
-    class OTFetchResponse implements IOTFetchResponse {
+    class OTFetchResponse {
 
         /**
          * Constructs a new OTFetchResponse.
@@ -6566,7 +6566,7 @@ export namespace api {
         constructor(properties?: api.IOTFetchResponse);
 
         /** OTFetchResponse packets. */
-        public packets: api.IOTPacket[];
+        public packets: api.OTPacket[];
 
         /**
          * Creates a new OTFetchResponse instance using the specified properties.
@@ -6581,7 +6581,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IOTFetchResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.OTFetchResponse, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified OTFetchResponse message, length delimited. Does not implicitly {@link api.OTFetchResponse.verify|verify} messages.
@@ -6589,7 +6589,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IOTFetchResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.OTFetchResponse, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a OTFetchResponse message from the specified reader or buffer.
@@ -6649,20 +6649,20 @@ export namespace api {
         version?: (number|null);
 
         /** OTPacket ops */
-        ops?: (api.IOTRuneTransformOp[]|null);
+        ops?: (api.OTRuneTransformOp[]|null);
 
         /** OTPacket crc32 */
         crc32?: (number|null);
 
         /** OTPacket committed */
-        committed?: (google.protobuf.ITimestamp|null);
+        committed?: (google.protobuf.Timestamp|null);
 
         /** OTPacket nonce */
         nonce?: (number|null);
     }
 
     /** Represents a OTPacket. */
-    class OTPacket implements IOTPacket {
+    class OTPacket {
 
         /**
          * Constructs a new OTPacket.
@@ -6677,13 +6677,13 @@ export namespace api {
         public version: number;
 
         /** OTPacket ops. */
-        public ops: api.IOTRuneTransformOp[];
+        public ops: api.OTRuneTransformOp[];
 
         /** OTPacket crc32. */
         public crc32: number;
 
         /** OTPacket committed. */
-        public committed?: (google.protobuf.ITimestamp|null);
+        public committed?: (google.protobuf.Timestamp|null);
 
         /** OTPacket nonce. */
         public nonce: number;
@@ -6701,7 +6701,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IOTPacket, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.OTPacket, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified OTPacket message, length delimited. Does not implicitly {@link api.OTPacket.verify|verify} messages.
@@ -6709,7 +6709,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IOTPacket, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.OTPacket, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a OTPacket message from the specified reader or buffer.
@@ -6773,7 +6773,7 @@ export namespace api {
     }
 
     /** Represents a OTRuneTransformOp. */
-    class OTRuneTransformOp implements IOTRuneTransformOp {
+    class OTRuneTransformOp {
 
         /**
          * Constructs a new OTRuneTransformOp.
@@ -6806,7 +6806,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IOTRuneTransformOp, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.OTRuneTransformOp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified OTRuneTransformOp message, length delimited. Does not implicitly {@link api.OTRuneTransformOp.verify|verify} messages.
@@ -6814,7 +6814,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IOTRuneTransformOp, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.OTRuneTransformOp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a OTRuneTransformOp message from the specified reader or buffer.
@@ -6874,14 +6874,14 @@ export namespace api {
         version?: (number|null);
 
         /** OTStatus linkedFile */
-        linkedFile?: (api.IFile|null);
+        linkedFile?: (api.File|null);
 
         /** OTStatus cursors */
-        cursors?: (api.IOTCursor[]|null);
+        cursors?: (api.OTCursor[]|null);
     }
 
     /** Represents a OTStatus. */
-    class OTStatus implements IOTStatus {
+    class OTStatus {
 
         /**
          * Constructs a new OTStatus.
@@ -6896,10 +6896,10 @@ export namespace api {
         public version: number;
 
         /** OTStatus linkedFile. */
-        public linkedFile?: (api.IFile|null);
+        public linkedFile?: (api.File|null);
 
         /** OTStatus cursors. */
-        public cursors: api.IOTCursor[];
+        public cursors: api.OTCursor[];
 
         /**
          * Creates a new OTStatus instance using the specified properties.
@@ -6914,7 +6914,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IOTStatus, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.OTStatus, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified OTStatus message, length delimited. Does not implicitly {@link api.OTStatus.verify|verify} messages.
@@ -6922,7 +6922,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IOTStatus, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.OTStatus, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a OTStatus message from the specified reader or buffer.
@@ -6985,14 +6985,14 @@ export namespace api {
         selectionEnd?: (number|null);
 
         /** OTCursor user */
-        user?: (api.IUser|null);
+        user?: (api.User|null);
 
         /** OTCursor id */
         id?: (string|null);
     }
 
     /** Represents a OTCursor. */
-    class OTCursor implements IOTCursor {
+    class OTCursor {
 
         /**
          * Constructs a new OTCursor.
@@ -7010,7 +7010,7 @@ export namespace api {
         public selectionEnd: number;
 
         /** OTCursor user. */
-        public user?: (api.IUser|null);
+        public user?: (api.User|null);
 
         /** OTCursor id. */
         public id: string;
@@ -7028,7 +7028,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IOTCursor, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.OTCursor, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified OTCursor message, length delimited. Does not implicitly {@link api.OTCursor.verify|verify} messages.
@@ -7036,7 +7036,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IOTCursor, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.OTCursor, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a OTCursor message from the specified reader or buffer.
@@ -7097,7 +7097,7 @@ export namespace api {
     }
 
     /** Represents a ChatMessage. */
-    class ChatMessage implements IChatMessage {
+    class ChatMessage {
 
         /**
          * Constructs a new ChatMessage.
@@ -7124,7 +7124,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IChatMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.ChatMessage, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified ChatMessage message, length delimited. Does not implicitly {@link api.ChatMessage.verify|verify} messages.
@@ -7132,7 +7132,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IChatMessage, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.ChatMessage, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a ChatMessage message from the specified reader or buffer.
@@ -7193,7 +7193,7 @@ export namespace api {
     }
 
     /** Represents a ChatTyping. */
-    class ChatTyping implements IChatTyping {
+    class ChatTyping {
 
         /**
          * Constructs a new ChatTyping.
@@ -7220,7 +7220,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IChatTyping, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.ChatTyping, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified ChatTyping message, length delimited. Does not implicitly {@link api.ChatTyping.verify|verify} messages.
@@ -7228,7 +7228,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IChatTyping, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.ChatTyping, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a ChatTyping message from the specified reader or buffer.
@@ -7295,7 +7295,7 @@ export namespace api {
     }
 
     /** Represents a User. */
-    class User implements IUser {
+    class User {
 
         /**
          * Constructs a new User.
@@ -7328,7 +7328,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IUser, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.User, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified User message, length delimited. Does not implicitly {@link api.User.verify|verify} messages.
@@ -7336,7 +7336,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IUser, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.User, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a User message from the specified reader or buffer.
@@ -7390,11 +7390,11 @@ export namespace api {
     interface IRoster {
 
         /** Roster user */
-        user?: (api.IUser[]|null);
+        user?: (api.User[]|null);
     }
 
     /** Represents a Roster. */
-    class Roster implements IRoster {
+    class Roster {
 
         /**
          * Constructs a new Roster.
@@ -7403,7 +7403,7 @@ export namespace api {
         constructor(properties?: api.IRoster);
 
         /** Roster user. */
-        public user: api.IUser[];
+        public user: api.User[];
 
         /**
          * Creates a new Roster instance using the specified properties.
@@ -7418,7 +7418,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IRoster, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.Roster, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified Roster message, length delimited. Does not implicitly {@link api.Roster.verify|verify} messages.
@@ -7426,7 +7426,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IRoster, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.Roster, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Roster message from the specified reader or buffer.
@@ -7490,7 +7490,7 @@ export namespace api {
     }
 
     /** Represents an Exec. */
-    class Exec implements IExec {
+    class Exec {
 
         /**
          * Constructs a new Exec.
@@ -7520,7 +7520,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IExec, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.Exec, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified Exec message, length delimited. Does not implicitly {@link api.Exec.verify|verify} messages.
@@ -7528,7 +7528,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IExec, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.Exec, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes an Exec message from the specified reader or buffer.
@@ -7612,11 +7612,11 @@ export namespace api {
         license?: (string|null);
 
         /** Package dependencies */
-        dependencies?: (api.IPackage[]|null);
+        dependencies?: (api.Package[]|null);
     }
 
     /** Represents a Package. */
-    class Package implements IPackage {
+    class Package {
 
         /**
          * Constructs a new Package.
@@ -7655,7 +7655,7 @@ export namespace api {
         public license: string;
 
         /** Package dependencies. */
-        public dependencies: api.IPackage[];
+        public dependencies: api.Package[];
 
         /**
          * Creates a new Package instance using the specified properties.
@@ -7670,7 +7670,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPackage, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.Package, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified Package message, length delimited. Does not implicitly {@link api.Package.verify|verify} messages.
@@ -7678,7 +7678,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPackage, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.Package, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Package message from the specified reader or buffer.
@@ -7736,7 +7736,7 @@ export namespace api {
     }
 
     /** Represents a PackageSearch. */
-    class PackageSearch implements IPackageSearch {
+    class PackageSearch {
 
         /**
          * Constructs a new PackageSearch.
@@ -7760,7 +7760,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPackageSearch, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.PackageSearch, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified PackageSearch message, length delimited. Does not implicitly {@link api.PackageSearch.verify|verify} messages.
@@ -7768,7 +7768,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPackageSearch, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.PackageSearch, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PackageSearch message from the specified reader or buffer.
@@ -7822,11 +7822,11 @@ export namespace api {
     interface IPackageSearchResp {
 
         /** PackageSearchResp results */
-        results?: (api.IPackage[]|null);
+        results?: (api.Package[]|null);
     }
 
     /** Represents a PackageSearchResp. */
-    class PackageSearchResp implements IPackageSearchResp {
+    class PackageSearchResp {
 
         /**
          * Constructs a new PackageSearchResp.
@@ -7835,7 +7835,7 @@ export namespace api {
         constructor(properties?: api.IPackageSearchResp);
 
         /** PackageSearchResp results. */
-        public results: api.IPackage[];
+        public results: api.Package[];
 
         /**
          * Creates a new PackageSearchResp instance using the specified properties.
@@ -7850,7 +7850,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPackageSearchResp, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.PackageSearchResp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified PackageSearchResp message, length delimited. Does not implicitly {@link api.PackageSearchResp.verify|verify} messages.
@@ -7858,7 +7858,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPackageSearchResp, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.PackageSearchResp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PackageSearchResp message from the specified reader or buffer.
@@ -7912,11 +7912,11 @@ export namespace api {
     interface IPackageInfo {
 
         /** PackageInfo pkg */
-        pkg?: (api.IPackage|null);
+        pkg?: (api.Package|null);
     }
 
     /** Represents a PackageInfo. */
-    class PackageInfo implements IPackageInfo {
+    class PackageInfo {
 
         /**
          * Constructs a new PackageInfo.
@@ -7925,7 +7925,7 @@ export namespace api {
         constructor(properties?: api.IPackageInfo);
 
         /** PackageInfo pkg. */
-        public pkg?: (api.IPackage|null);
+        public pkg?: (api.Package|null);
 
         /**
          * Creates a new PackageInfo instance using the specified properties.
@@ -7940,7 +7940,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPackageInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.PackageInfo, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified PackageInfo message, length delimited. Does not implicitly {@link api.PackageInfo.verify|verify} messages.
@@ -7948,7 +7948,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPackageInfo, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.PackageInfo, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PackageInfo message from the specified reader or buffer.
@@ -8002,11 +8002,11 @@ export namespace api {
     interface IPackageInfoResp {
 
         /** PackageInfoResp pkg */
-        pkg?: (api.IPackage|null);
+        pkg?: (api.Package|null);
     }
 
     /** Represents a PackageInfoResp. */
-    class PackageInfoResp implements IPackageInfoResp {
+    class PackageInfoResp {
 
         /**
          * Constructs a new PackageInfoResp.
@@ -8015,7 +8015,7 @@ export namespace api {
         constructor(properties?: api.IPackageInfoResp);
 
         /** PackageInfoResp pkg. */
-        public pkg?: (api.IPackage|null);
+        public pkg?: (api.Package|null);
 
         /**
          * Creates a new PackageInfoResp instance using the specified properties.
@@ -8030,7 +8030,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPackageInfoResp, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.PackageInfoResp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified PackageInfoResp message, length delimited. Does not implicitly {@link api.PackageInfoResp.verify|verify} messages.
@@ -8038,7 +8038,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPackageInfoResp, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.PackageInfoResp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PackageInfoResp message from the specified reader or buffer.
@@ -8092,11 +8092,11 @@ export namespace api {
     interface IPackageAdd {
 
         /** PackageAdd pkgs */
-        pkgs?: (api.IPackage[]|null);
+        pkgs?: (api.Package[]|null);
     }
 
     /** Represents a PackageAdd. */
-    class PackageAdd implements IPackageAdd {
+    class PackageAdd {
 
         /**
          * Constructs a new PackageAdd.
@@ -8105,7 +8105,7 @@ export namespace api {
         constructor(properties?: api.IPackageAdd);
 
         /** PackageAdd pkgs. */
-        public pkgs: api.IPackage[];
+        public pkgs: api.Package[];
 
         /**
          * Creates a new PackageAdd instance using the specified properties.
@@ -8120,7 +8120,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPackageAdd, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.PackageAdd, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified PackageAdd message, length delimited. Does not implicitly {@link api.PackageAdd.verify|verify} messages.
@@ -8128,7 +8128,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPackageAdd, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.PackageAdd, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PackageAdd message from the specified reader or buffer.
@@ -8182,11 +8182,11 @@ export namespace api {
     interface IPackageRemove {
 
         /** PackageRemove pkgs */
-        pkgs?: (api.IPackage[]|null);
+        pkgs?: (api.Package[]|null);
     }
 
     /** Represents a PackageRemove. */
-    class PackageRemove implements IPackageRemove {
+    class PackageRemove {
 
         /**
          * Constructs a new PackageRemove.
@@ -8195,7 +8195,7 @@ export namespace api {
         constructor(properties?: api.IPackageRemove);
 
         /** PackageRemove pkgs. */
-        public pkgs: api.IPackage[];
+        public pkgs: api.Package[];
 
         /**
          * Creates a new PackageRemove instance using the specified properties.
@@ -8210,7 +8210,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPackageRemove, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.PackageRemove, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified PackageRemove message, length delimited. Does not implicitly {@link api.PackageRemove.verify|verify} messages.
@@ -8218,7 +8218,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPackageRemove, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.PackageRemove, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PackageRemove message from the specified reader or buffer.
@@ -8273,7 +8273,7 @@ export namespace api {
     }
 
     /** Represents a PackageInstall. */
-    class PackageInstall implements IPackageInstall {
+    class PackageInstall {
 
         /**
          * Constructs a new PackageInstall.
@@ -8294,7 +8294,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPackageInstall, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.PackageInstall, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified PackageInstall message, length delimited. Does not implicitly {@link api.PackageInstall.verify|verify} messages.
@@ -8302,7 +8302,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPackageInstall, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.PackageInstall, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PackageInstall message from the specified reader or buffer.
@@ -8357,7 +8357,7 @@ export namespace api {
     }
 
     /** Represents a PackageListSpecfile. */
-    class PackageListSpecfile implements IPackageListSpecfile {
+    class PackageListSpecfile {
 
         /**
          * Constructs a new PackageListSpecfile.
@@ -8378,7 +8378,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPackageListSpecfile, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.PackageListSpecfile, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified PackageListSpecfile message, length delimited. Does not implicitly {@link api.PackageListSpecfile.verify|verify} messages.
@@ -8386,7 +8386,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPackageListSpecfile, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.PackageListSpecfile, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PackageListSpecfile message from the specified reader or buffer.
@@ -8440,11 +8440,11 @@ export namespace api {
     interface IPackageListSpecfileResp {
 
         /** PackageListSpecfileResp pkgs */
-        pkgs?: (api.IPackage[]|null);
+        pkgs?: (api.Package[]|null);
     }
 
     /** Represents a PackageListSpecfileResp. */
-    class PackageListSpecfileResp implements IPackageListSpecfileResp {
+    class PackageListSpecfileResp {
 
         /**
          * Constructs a new PackageListSpecfileResp.
@@ -8453,7 +8453,7 @@ export namespace api {
         constructor(properties?: api.IPackageListSpecfileResp);
 
         /** PackageListSpecfileResp pkgs. */
-        public pkgs: api.IPackage[];
+        public pkgs: api.Package[];
 
         /**
          * Creates a new PackageListSpecfileResp instance using the specified properties.
@@ -8468,7 +8468,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPackageListSpecfileResp, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.PackageListSpecfileResp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified PackageListSpecfileResp message, length delimited. Does not implicitly {@link api.PackageListSpecfileResp.verify|verify} messages.
@@ -8476,7 +8476,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPackageListSpecfileResp, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.PackageListSpecfileResp, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PackageListSpecfileResp message from the specified reader or buffer.
@@ -8531,7 +8531,7 @@ export namespace api {
     }
 
     /** Represents a PackageCacheSave. */
-    class PackageCacheSave implements IPackageCacheSave {
+    class PackageCacheSave {
 
         /**
          * Constructs a new PackageCacheSave.
@@ -8552,7 +8552,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPackageCacheSave, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.PackageCacheSave, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified PackageCacheSave message, length delimited. Does not implicitly {@link api.PackageCacheSave.verify|verify} messages.
@@ -8560,7 +8560,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPackageCacheSave, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.PackageCacheSave, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PackageCacheSave message from the specified reader or buffer.
@@ -8614,11 +8614,11 @@ export namespace api {
     interface IChatScrollback {
 
         /** ChatScrollback scrollback */
-        scrollback?: (api.IChatMessage[]|null);
+        scrollback?: (api.ChatMessage[]|null);
     }
 
     /** Represents a ChatScrollback. */
-    class ChatScrollback implements IChatScrollback {
+    class ChatScrollback {
 
         /**
          * Constructs a new ChatScrollback.
@@ -8627,7 +8627,7 @@ export namespace api {
         constructor(properties?: api.IChatScrollback);
 
         /** ChatScrollback scrollback. */
-        public scrollback: api.IChatMessage[];
+        public scrollback: api.ChatMessage[];
 
         /**
          * Creates a new ChatScrollback instance using the specified properties.
@@ -8642,7 +8642,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IChatScrollback, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.ChatScrollback, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified ChatScrollback message, length delimited. Does not implicitly {@link api.ChatScrollback.verify|verify} messages.
@@ -8650,7 +8650,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IChatScrollback, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.ChatScrollback, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a ChatScrollback message from the specified reader or buffer.
@@ -8708,7 +8708,7 @@ export namespace api {
     }
 
     /** Represents a Metrics. */
-    class Metrics implements IMetrics {
+    class Metrics {
 
         /**
          * Constructs a new Metrics.
@@ -8732,7 +8732,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IMetrics, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.Metrics, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified Metrics message, length delimited. Does not implicitly {@link api.Metrics.verify|verify} messages.
@@ -8740,7 +8740,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IMetrics, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.Metrics, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Metrics message from the specified reader or buffer.
@@ -8797,23 +8797,23 @@ export namespace api {
         id?: (string|null);
 
         /** PprofRequest pprofCpuProfileRequest */
-        pprofCpuProfileRequest?: (api.IPprofCpuProfileRequest|null);
+        pprofCpuProfileRequest?: (api.PprofCpuProfileRequest|null);
 
         /** PprofRequest pprofHeapProfileRequest */
-        pprofHeapProfileRequest?: (api.IPprofHeapProfileRequest|null);
+        pprofHeapProfileRequest?: (api.PprofHeapProfileRequest|null);
 
         /** PprofRequest pprofAllocsProfileRequest */
-        pprofAllocsProfileRequest?: (api.IPprofAllocsProfileRequest|null);
+        pprofAllocsProfileRequest?: (api.PprofAllocsProfileRequest|null);
 
         /** PprofRequest pprofBlockProfileRequest */
-        pprofBlockProfileRequest?: (api.IPprofBlockProfileRequest|null);
+        pprofBlockProfileRequest?: (api.PprofBlockProfileRequest|null);
 
         /** PprofRequest pprofMutexProfileRequest */
-        pprofMutexProfileRequest?: (api.IPprofMutexProfileRequest|null);
+        pprofMutexProfileRequest?: (api.PprofMutexProfileRequest|null);
     }
 
     /** Represents a PprofRequest. */
-    class PprofRequest implements IPprofRequest {
+    class PprofRequest {
 
         /**
          * Constructs a new PprofRequest.
@@ -8825,19 +8825,19 @@ export namespace api {
         public id: string;
 
         /** PprofRequest pprofCpuProfileRequest. */
-        public pprofCpuProfileRequest?: (api.IPprofCpuProfileRequest|null);
+        public pprofCpuProfileRequest?: (api.PprofCpuProfileRequest|null);
 
         /** PprofRequest pprofHeapProfileRequest. */
-        public pprofHeapProfileRequest?: (api.IPprofHeapProfileRequest|null);
+        public pprofHeapProfileRequest?: (api.PprofHeapProfileRequest|null);
 
         /** PprofRequest pprofAllocsProfileRequest. */
-        public pprofAllocsProfileRequest?: (api.IPprofAllocsProfileRequest|null);
+        public pprofAllocsProfileRequest?: (api.PprofAllocsProfileRequest|null);
 
         /** PprofRequest pprofBlockProfileRequest. */
-        public pprofBlockProfileRequest?: (api.IPprofBlockProfileRequest|null);
+        public pprofBlockProfileRequest?: (api.PprofBlockProfileRequest|null);
 
         /** PprofRequest pprofMutexProfileRequest. */
-        public pprofMutexProfileRequest?: (api.IPprofMutexProfileRequest|null);
+        public pprofMutexProfileRequest?: (api.PprofMutexProfileRequest|null);
 
         /** PprofRequest body. */
         public body?: ("pprofCpuProfileRequest"|"pprofHeapProfileRequest"|"pprofAllocsProfileRequest"|"pprofBlockProfileRequest"|"pprofMutexProfileRequest");
@@ -8855,7 +8855,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPprofRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.PprofRequest, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified PprofRequest message, length delimited. Does not implicitly {@link api.PprofRequest.verify|verify} messages.
@@ -8863,7 +8863,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPprofRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.PprofRequest, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PprofRequest message from the specified reader or buffer.
@@ -8921,7 +8921,7 @@ export namespace api {
     }
 
     /** Represents a PprofAllocsProfileRequest. */
-    class PprofAllocsProfileRequest implements IPprofAllocsProfileRequest {
+    class PprofAllocsProfileRequest {
 
         /**
          * Constructs a new PprofAllocsProfileRequest.
@@ -8945,7 +8945,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPprofAllocsProfileRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.PprofAllocsProfileRequest, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified PprofAllocsProfileRequest message, length delimited. Does not implicitly {@link api.PprofAllocsProfileRequest.verify|verify} messages.
@@ -8953,7 +8953,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPprofAllocsProfileRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.PprofAllocsProfileRequest, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PprofAllocsProfileRequest message from the specified reader or buffer.
@@ -9011,7 +9011,7 @@ export namespace api {
     }
 
     /** Represents a PprofBlockProfileRequest. */
-    class PprofBlockProfileRequest implements IPprofBlockProfileRequest {
+    class PprofBlockProfileRequest {
 
         /**
          * Constructs a new PprofBlockProfileRequest.
@@ -9035,7 +9035,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPprofBlockProfileRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.PprofBlockProfileRequest, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified PprofBlockProfileRequest message, length delimited. Does not implicitly {@link api.PprofBlockProfileRequest.verify|verify} messages.
@@ -9043,7 +9043,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPprofBlockProfileRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.PprofBlockProfileRequest, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PprofBlockProfileRequest message from the specified reader or buffer.
@@ -9097,11 +9097,11 @@ export namespace api {
     interface IPprofCpuProfileRequest {
 
         /** PprofCpuProfileRequest seconds */
-        seconds?: (number|Long|null);
+        seconds?: (number|null);
     }
 
     /** Represents a PprofCpuProfileRequest. */
-    class PprofCpuProfileRequest implements IPprofCpuProfileRequest {
+    class PprofCpuProfileRequest {
 
         /**
          * Constructs a new PprofCpuProfileRequest.
@@ -9110,7 +9110,7 @@ export namespace api {
         constructor(properties?: api.IPprofCpuProfileRequest);
 
         /** PprofCpuProfileRequest seconds. */
-        public seconds: (number|Long);
+        public seconds: number;
 
         /**
          * Creates a new PprofCpuProfileRequest instance using the specified properties.
@@ -9125,7 +9125,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPprofCpuProfileRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.PprofCpuProfileRequest, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified PprofCpuProfileRequest message, length delimited. Does not implicitly {@link api.PprofCpuProfileRequest.verify|verify} messages.
@@ -9133,7 +9133,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPprofCpuProfileRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.PprofCpuProfileRequest, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PprofCpuProfileRequest message from the specified reader or buffer.
@@ -9194,7 +9194,7 @@ export namespace api {
     }
 
     /** Represents a PprofHeapProfileRequest. */
-    class PprofHeapProfileRequest implements IPprofHeapProfileRequest {
+    class PprofHeapProfileRequest {
 
         /**
          * Constructs a new PprofHeapProfileRequest.
@@ -9221,7 +9221,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPprofHeapProfileRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.PprofHeapProfileRequest, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified PprofHeapProfileRequest message, length delimited. Does not implicitly {@link api.PprofHeapProfileRequest.verify|verify} messages.
@@ -9229,7 +9229,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPprofHeapProfileRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.PprofHeapProfileRequest, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PprofHeapProfileRequest message from the specified reader or buffer.
@@ -9287,7 +9287,7 @@ export namespace api {
     }
 
     /** Represents a PprofMutexProfileRequest. */
-    class PprofMutexProfileRequest implements IPprofMutexProfileRequest {
+    class PprofMutexProfileRequest {
 
         /**
          * Constructs a new PprofMutexProfileRequest.
@@ -9311,7 +9311,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPprofMutexProfileRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.PprofMutexProfileRequest, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified PprofMutexProfileRequest message, length delimited. Does not implicitly {@link api.PprofMutexProfileRequest.verify|verify} messages.
@@ -9319,7 +9319,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPprofMutexProfileRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.PprofMutexProfileRequest, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PprofMutexProfileRequest message from the specified reader or buffer.
@@ -9380,7 +9380,7 @@ export namespace api {
     }
 
     /** Represents a PprofResponse. */
-    class PprofResponse implements IPprofResponse {
+    class PprofResponse {
 
         /**
          * Constructs a new PprofResponse.
@@ -9407,7 +9407,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPprofResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.PprofResponse, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified PprofResponse message, length delimited. Does not implicitly {@link api.PprofResponse.verify|verify} messages.
@@ -9415,7 +9415,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPprofResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.PprofResponse, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PprofResponse message from the specified reader or buffer.
@@ -9473,7 +9473,7 @@ export namespace api {
     }
 
     /** Represents a PTYConfig. */
-    class PTYConfig implements IPTYConfig {
+    class PTYConfig {
 
         /**
          * Constructs a new PTYConfig.
@@ -9497,7 +9497,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IPTYConfig, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.PTYConfig, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Encodes the specified PTYConfig message, length delimited. Does not implicitly {@link api.PTYConfig.verify|verify} messages.
@@ -9505,7 +9505,7 @@ export namespace api {
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IPTYConfig, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.PTYConfig, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a PTYConfig message from the specified reader or buffer.
@@ -9566,14 +9566,14 @@ export namespace google {
         interface ITimestamp {
 
             /** Timestamp seconds */
-            seconds?: (number|Long|null);
+            seconds?: (number|null);
 
             /** Timestamp nanos */
             nanos?: (number|null);
         }
 
         /** Represents a Timestamp. */
-        class Timestamp implements ITimestamp {
+        class Timestamp {
 
             /**
              * Constructs a new Timestamp.
@@ -9582,7 +9582,7 @@ export namespace google {
             constructor(properties?: google.protobuf.ITimestamp);
 
             /** Timestamp seconds. */
-            public seconds: (number|Long);
+            public seconds: number;
 
             /** Timestamp nanos. */
             public nanos: number;
@@ -9600,7 +9600,7 @@ export namespace google {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: google.protobuf.ITimestamp, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encode(message: google.protobuf.Timestamp, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Encodes the specified Timestamp message, length delimited. Does not implicitly {@link google.protobuf.Timestamp.verify|verify} messages.
@@ -9608,7 +9608,7 @@ export namespace google {
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: google.protobuf.ITimestamp, writer?: $protobuf.Writer): $protobuf.Writer;
+            public static encodeDelimited(message: google.protobuf.Timestamp, writer?: $protobuf.Writer): $protobuf.Writer;
 
             /**
              * Decodes a Timestamp message from the specified reader or buffer.
