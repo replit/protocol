@@ -109,7 +109,7 @@ declare var npm$namespace$api: {|
 /**
  * Properties of a Command.
  */
-declare type api$ICommand = {
+declare type api$ICommand = {|
   /**
    * Command channel
    */
@@ -629,7 +629,7 @@ declare type api$ICommand = {
    * Command ref
    */
   ref?: string | null,
-};
+|};
 
 /**
  * Represents a Command.
@@ -1361,12 +1361,12 @@ declare class api$Command {
 /**
  * Properties of an Audio.
  */
-declare type api$IAudio = {
+declare type api$IAudio = {|
   /**
    * Audio data
    */
   data?: number[] | null,
-};
+|};
 
 /**
  * Represents an Audio.
@@ -1477,7 +1477,7 @@ declare class api$Audio {
 /**
  * Properties of an Audio2.
  */
-declare type api$IAudio2 = {
+declare type api$IAudio2 = {|
   /**
    * Audio2 data
    */
@@ -1487,7 +1487,7 @@ declare type api$IAudio2 = {
    * Audio2 samples
    */
   samples?: number | null,
-};
+|};
 
 /**
  * Represents an Audio2.
@@ -1603,7 +1603,7 @@ declare class api$Audio2 {
 /**
  * Properties of a ReadMeta.
  */
-declare type api$IReadMeta = {
+declare type api$IReadMeta = {|
   /**
    * ReadMeta key
    */
@@ -1618,7 +1618,7 @@ declare type api$IReadMeta = {
    * ReadMeta data
    */
   data?: Uint8Array | null,
-};
+|};
 
 /**
  * Represents a ReadMeta.
@@ -1739,7 +1739,7 @@ declare class api$ReadMeta {
 /**
  * Properties of a WriteMeta.
  */
-declare type api$IWriteMeta = {
+declare type api$IWriteMeta = {|
   /**
    * WriteMeta key
    */
@@ -1749,7 +1749,7 @@ declare type api$IWriteMeta = {
    * WriteMeta data
    */
   data?: Uint8Array | null,
-};
+|};
 
 /**
  * Represents a WriteMeta.
@@ -1865,7 +1865,7 @@ declare class api$WriteMeta {
 /**
  * Properties of an AppendMeta.
  */
-declare type api$IAppendMeta = {
+declare type api$IAppendMeta = {|
   /**
    * AppendMeta key
    */
@@ -1875,7 +1875,7 @@ declare type api$IAppendMeta = {
    * AppendMeta data
    */
   data?: Uint8Array | null,
-};
+|};
 
 /**
  * Represents an AppendMeta.
@@ -1991,7 +1991,7 @@ declare class api$AppendMeta {
 /**
  * Properties of a BootStatus.
  */
-declare type api$IBootStatus = {
+declare type api$IBootStatus = {|
   /**
    * BootStatus stage
    */
@@ -2006,7 +2006,7 @@ declare type api$IBootStatus = {
    * BootStatus total
    */
   total?: number | null,
-};
+|};
 
 /**
  * Represents a BootStatus.
@@ -2145,7 +2145,7 @@ declare var api$BootStatus$Stage: {|
 /**
  * Properties of a Pid1Config.
  */
-declare type api$IPid1Config = {
+declare type api$IPid1Config = {|
   /**
    * Pid1Config cwd
    */
@@ -2162,7 +2162,7 @@ declare type api$IPid1Config = {
   env?: {
     [k: string]: string,
   } | null,
-};
+|};
 
 /**
  * Represents a Pid1Config.
@@ -2285,12 +2285,12 @@ declare class api$Pid1Config {
 /**
  * Properties of a FSLock.
  */
-declare type api$IFSLock = {
+declare type api$IFSLock = {|
   /**
    * FSLock name
    */
   name?: string | null,
-};
+|};
 
 /**
  * Represents a FSLock.
@@ -2401,7 +2401,7 @@ declare class api$FSLock {
 /**
  * Properties of a FSSnapshot.
  */
-declare type api$IFSSnapshot = {};
+declare type api$IFSSnapshot = {||};
 
 /**
  * Represents a FSSnapshot.
@@ -2507,12 +2507,12 @@ declare class api$FSSnapshot {
 /**
  * Properties of a SubscribeFile.
  */
-declare type api$ISubscribeFile = {
+declare type api$ISubscribeFile = {|
   /**
    * SubscribeFile files
    */
   files?: api$File[] | null,
-};
+|};
 
 /**
  * Represents a SubscribeFile.
@@ -2625,7 +2625,7 @@ declare class api$SubscribeFile {
 /**
  * Properties of a FileEvent.
  */
-declare type api$IFileEvent = {
+declare type api$IFileEvent = {|
   /**
    * FileEvent file
    */
@@ -2640,7 +2640,7 @@ declare type api$IFileEvent = {
    * FileEvent op
    */
   op?: $Values<typeof api$FileEvent$Op> | null,
-};
+|};
 
 /**
  * Represents a FileEvent.
@@ -2776,7 +2776,7 @@ declare var api$FileEvent$Op: {|
 /**
  * Properties of a Flush.
  */
-declare type api$IFlush = {};
+declare type api$IFlush = {||};
 
 /**
  * Represents a Flush.
@@ -2882,7 +2882,7 @@ declare class api$Flush {
 /**
  * Properties of a OTLinkFile.
  */
-declare type api$IOTLinkFile = {
+declare type api$IOTLinkFile = {|
   /**
    * OTLinkFile file
    */
@@ -2897,7 +2897,7 @@ declare type api$IOTLinkFile = {
    * OTLinkFile useModTime
    */
   useModTime?: boolean | null,
-};
+|};
 
 /**
  * Represents a OTLinkFile.
@@ -3018,7 +3018,7 @@ declare class api$OTLinkFile {
 /**
  * Properties of an Auth.
  */
-declare type api$IAuth = {
+declare type api$IAuth = {|
   /**
    * Auth token
    */
@@ -3028,7 +3028,7 @@ declare type api$IAuth = {
    * Auth containerID
    */
   containerID?: string | null,
-};
+|};
 
 /**
  * Represents an Auth.
@@ -3141,7 +3141,7 @@ declare class api$Auth {
 /**
  * Properties of a VCREntry.
  */
-declare type api$IVCREntry = {
+declare type api$IVCREntry = {|
   /**
    * VCREntry timestamp
    */
@@ -3161,7 +3161,7 @@ declare type api$IVCREntry = {
    * VCREntry uid
    */
   uid?: string | null,
-};
+|};
 
 /**
  * Represents a VCREntry.
@@ -3300,7 +3300,7 @@ declare var api$VCREntry$Direction: {|
 /**
  * Properties of a StartVCR.
  */
-declare type api$IStartVCR = {};
+declare type api$IStartVCR = {||};
 
 /**
  * Represents a StartVCR.
@@ -3406,7 +3406,7 @@ declare class api$StartVCR {
 /**
  * Properties of a ReadVCR.
  */
-declare type api$IReadVCR = {};
+declare type api$IReadVCR = {||};
 
 /**
  * Represents a ReadVCR.
@@ -3512,7 +3512,7 @@ declare class api$ReadVCR {
 /**
  * Properties of a VCRLog.
  */
-declare type api$IVCRLog = {
+declare type api$IVCRLog = {|
   /**
    * VCRLog log
    */
@@ -3522,7 +3522,7 @@ declare type api$IVCRLog = {
    * VCRLog logfile
    */
   logfile?: api$File | null,
-};
+|};
 
 /**
  * Represents a VCRLog.
@@ -3638,7 +3638,7 @@ declare class api$VCRLog {
 /**
  * Properties of an ExecInfo.
  */
-declare type api$IExecInfo = {
+declare type api$IExecInfo = {|
   /**
    * ExecInfo command
    */
@@ -3648,7 +3648,7 @@ declare type api$IExecInfo = {
    * ExecInfo reason
    */
   reason?: string | null,
-};
+|};
 
 /**
  * Represents an ExecInfo.
@@ -3764,12 +3764,12 @@ declare class api$ExecInfo {
 /**
  * Properties of a Debug.
  */
-declare type api$IDebug = {
+declare type api$IDebug = {|
   /**
    * Debug text
    */
   text?: string | null,
-};
+|};
 
 /**
  * Represents a Debug.
@@ -3891,7 +3891,7 @@ declare var api$FileAuthMethod: {|
 /**
  * Properties of a FileAuthReq.
  */
-declare type api$IFileAuthReq = {
+declare type api$IFileAuthReq = {|
   /**
    * FileAuthReq file
    */
@@ -3901,7 +3901,7 @@ declare type api$IFileAuthReq = {
    * FileAuthReq method
    */
   method?: $Values<typeof api$FileAuthMethod> | null,
-};
+|};
 
 /**
  * Represents a FileAuthReq.
@@ -4019,7 +4019,7 @@ declare class api$FileAuthReq {
 /**
  * Properties of a MultiFileAuthRes.
  */
-declare type api$IMultiFileAuthRes = {
+declare type api$IMultiFileAuthRes = {|
   /**
    * MultiFileAuthRes put
    */
@@ -4034,7 +4034,7 @@ declare type api$IMultiFileAuthRes = {
    * MultiFileAuthRes get
    */
   get?: api$FileAuthRes | null,
-};
+|};
 
 /**
  * Represents a MultiFileAuthRes.
@@ -4157,7 +4157,7 @@ declare class api$MultiFileAuthRes {
 /**
  * Properties of a FileAuthRes.
  */
-declare type api$IFileAuthRes = {
+declare type api$IFileAuthRes = {|
   /**
    * FileAuthRes file
    */
@@ -4182,7 +4182,7 @@ declare type api$IFileAuthRes = {
    * FileAuthRes error
    */
   error?: string | null,
-};
+|};
 
 /**
  * Represents a FileAuthRes.
@@ -4315,12 +4315,12 @@ declare class api$FileAuthRes {
 /**
  * Properties of a ListObjects.
  */
-declare type api$IListObjects = {
+declare type api$IListObjects = {|
   /**
    * ListObjects prefix
    */
   prefix?: string | null,
-};
+|};
 
 /**
  * Represents a ListObjects.
@@ -4433,12 +4433,12 @@ declare class api$ListObjects {
 /**
  * Properties of a ListObjectsResp.
  */
-declare type api$IListObjectsResp = {
+declare type api$IListObjectsResp = {|
   /**
    * ListObjectsResp objects
    */
   objects?: string[] | null,
-};
+|};
 
 /**
  * Represents a ListObjectsResp.
@@ -4551,12 +4551,12 @@ declare class api$ListObjectsResp {
 /**
  * Properties of a Disconnect.
  */
-declare type api$IDisconnect = {
+declare type api$IDisconnect = {|
   /**
    * Disconnect error
    */
   error?: string | null,
-};
+|};
 
 /**
  * Represents a Disconnect.
@@ -4667,12 +4667,12 @@ declare class api$Disconnect {
 /**
  * Properties of a Send.
  */
-declare type api$ISend = {
+declare type api$ISend = {|
   /**
    * Send buff
    */
   buff?: Uint8Array | null,
-};
+|};
 
 /**
  * Represents a Send.
@@ -4780,12 +4780,12 @@ declare class api$Send {
 /**
  * Properties of a Recv.
  */
-declare type api$IRecv = {
+declare type api$IRecv = {|
   /**
    * Recv buff
    */
   buff?: Uint8Array | null,
-};
+|};
 
 /**
  * Represents a Recv.
@@ -4893,7 +4893,7 @@ declare class api$Recv {
 /**
  * Properties of a Connect.
  */
-declare type api$IConnect = {
+declare type api$IConnect = {|
   /**
    * Connect proto
    */
@@ -4903,7 +4903,7 @@ declare type api$IConnect = {
    * Connect addr
    */
   addr?: string | null,
-};
+|};
 
 /**
  * Represents a Connect.
@@ -5019,12 +5019,12 @@ declare class api$Connect {
 /**
  * Properties of a Hint.
  */
-declare type api$IHint = {
+declare type api$IHint = {|
   /**
    * Hint text
    */
   text?: string | null,
-};
+|};
 
 /**
  * Represents a Hint.
@@ -5132,7 +5132,7 @@ declare class api$Hint {
 /**
  * Properties of a Ping.
  */
-declare type api$IPing = {};
+declare type api$IPing = {||};
 
 /**
  * Represents a Ping.
@@ -5235,7 +5235,7 @@ declare class api$Ping {
 /**
  * Properties of a Pong.
  */
-declare type api$IPong = {};
+declare type api$IPong = {||};
 
 /**
  * Represents a Pong.
@@ -5338,7 +5338,7 @@ declare class api$Pong {
 /**
  * Properties of a Hello.
  */
-declare type api$IHello = {
+declare type api$IHello = {|
   /**
    * Hello userid
    */
@@ -5353,7 +5353,7 @@ declare type api$IHello = {
    * Hello token
    */
   token?: string | null,
-};
+|};
 
 /**
  * Represents a Hello.
@@ -5474,7 +5474,7 @@ declare class api$Hello {
 /**
  * Properties of a Goodbye.
  */
-declare type api$IGoodbye = {};
+declare type api$IGoodbye = {||};
 
 /**
  * Represents a Goodbye.
@@ -5589,7 +5589,7 @@ declare var api$State: {|
 /**
  * Properties of a CheckChanges.
  */
-declare type api$ICheckChanges = {};
+declare type api$ICheckChanges = {||};
 
 /**
  * Represents a CheckChanges.
@@ -5697,7 +5697,7 @@ declare class api$CheckChanges {
 /**
  * Properties of an EnsurePackages.
  */
-declare type api$IEnsurePackages = {
+declare type api$IEnsurePackages = {|
   /**
    * EnsurePackages install
    */
@@ -5707,7 +5707,7 @@ declare type api$IEnsurePackages = {
    * EnsurePackages file
    */
   file?: api$File | null,
-};
+|};
 
 /**
  * Represents an EnsurePackages.
@@ -5825,7 +5825,7 @@ declare class api$EnsurePackages {
 /**
  * Properties of a Start.
  */
-declare type api$IStart = {};
+declare type api$IStart = {||};
 
 /**
  * Represents a Start.
@@ -5931,7 +5931,7 @@ declare class api$Start {
 /**
  * Properties of a DebugStatus.
  */
-declare type api$IDebugStatus = {
+declare type api$IDebugStatus = {|
   /**
    * DebugStatus done
    */
@@ -5941,7 +5941,7 @@ declare type api$IDebugStatus = {
    * DebugStatus stack
    */
   stack?: api$StackFrame[] | null,
-};
+|};
 
 /**
  * Represents a DebugStatus.
@@ -6059,7 +6059,7 @@ declare class api$DebugStatus {
 /**
  * Properties of a StackFrame.
  */
-declare type api$IStackFrame = {
+declare type api$IStackFrame = {|
   /**
    * StackFrame function
    */
@@ -6069,7 +6069,7 @@ declare type api$IStackFrame = {
    * StackFrame line
    */
   line?: number | null,
-};
+|};
 
 /**
  * Represents a StackFrame.
@@ -6185,7 +6185,7 @@ declare class api$StackFrame {
 /**
  * Properties of a ContainedTest.
  */
-declare type api$IContainedTest = {
+declare type api$IContainedTest = {|
   /**
    * ContainedTest suite
    */
@@ -6195,7 +6195,7 @@ declare type api$IContainedTest = {
    * ContainedTest project
    */
   project?: api$File[] | null,
-};
+|};
 
 /**
  * Represents a ContainedTest.
@@ -6313,7 +6313,7 @@ declare class api$ContainedTest {
 /**
  * Properties of a TestResult.
  */
-declare type api$ITestResult = {
+declare type api$ITestResult = {|
   /**
    * TestResult passed
    */
@@ -6328,7 +6328,7 @@ declare type api$ITestResult = {
    * TestResult fails
    */
   fails?: api$TestFailure[] | null,
-};
+|};
 
 /**
  * Represents a TestResult.
@@ -6449,7 +6449,7 @@ declare class api$TestResult {
 /**
  * Properties of a TestFailure.
  */
-declare type api$ITestFailure = {
+declare type api$ITestFailure = {|
   /**
    * TestFailure name
    */
@@ -6459,7 +6459,7 @@ declare type api$ITestFailure = {
    * TestFailure trace
    */
   trace?: string | null,
-};
+|};
 
 /**
  * Represents a TestFailure.
@@ -6577,7 +6577,7 @@ declare class api$TestFailure {
 /**
  * Properties of a ResizeTerm.
  */
-declare type api$IResizeTerm = {
+declare type api$IResizeTerm = {|
   /**
    * ResizeTerm rows
    */
@@ -6587,7 +6587,7 @@ declare type api$IResizeTerm = {
    * ResizeTerm cols
    */
   cols?: number | null,
-};
+|};
 
 /**
  * Represents a ResizeTerm.
@@ -6703,7 +6703,7 @@ declare class api$ResizeTerm {
 /**
  * Properties of a SaneTerm.
  */
-declare type api$ISaneTerm = {};
+declare type api$ISaneTerm = {||};
 
 /**
  * Represents a SaneTerm.
@@ -6809,12 +6809,12 @@ declare class api$SaneTerm {
 /**
  * Properties of a LintResults.
  */
-declare type api$ILintResults = {
+declare type api$ILintResults = {|
   /**
    * LintResults results
    */
   results?: api$LintResult[] | null,
-};
+|};
 
 /**
  * Represents a LintResults.
@@ -6927,7 +6927,7 @@ declare class api$LintResults {
 /**
  * Properties of a LintResult.
  */
-declare type api$ILintResult = {
+declare type api$ILintResult = {|
   /**
    * LintResult text
    */
@@ -6947,7 +6947,7 @@ declare type api$ILintResult = {
    * LintResult type
    */
   type?: string | null,
-};
+|};
 
 /**
  * Represents a LintResult.
@@ -7073,7 +7073,7 @@ declare class api$LintResult {
 /**
  * Properties of a OK.
  */
-declare type api$IOK = {};
+declare type api$IOK = {||};
 
 /**
  * Represents a OK.
@@ -7173,7 +7173,7 @@ declare class api$OK {
 /**
  * Properties of a Move.
  */
-declare type api$IMove = {
+declare type api$IMove = {|
   /**
    * Move oldPath
    */
@@ -7183,7 +7183,7 @@ declare type api$IMove = {
    * Move newPath
    */
   newPath?: string | null,
-};
+|};
 
 /**
  * Represents a Move.
@@ -7296,12 +7296,12 @@ declare class api$Move {
 /**
  * Properties of a Files.
  */
-declare type api$IFiles = {
+declare type api$IFiles = {|
   /**
    * Files files
    */
   files?: api$File[] | null,
-};
+|};
 
 /**
  * Represents a Files.
@@ -7412,7 +7412,7 @@ declare class api$Files {
 /**
  * Properties of a File.
  */
-declare type api$IFile = {
+declare type api$IFile = {|
   /**
    * File path
    */
@@ -7427,7 +7427,7 @@ declare type api$IFile = {
    * File content
    */
   content?: Uint8Array | null,
-};
+|};
 
 /**
  * Represents a File.
@@ -7558,7 +7558,7 @@ declare var api$File$Type: {|
 /**
  * Properties of a Clear.
  */
-declare type api$IClear = {};
+declare type api$IClear = {||};
 
 /**
  * Represents a Clear.
@@ -7664,12 +7664,12 @@ declare class api$Clear {
 /**
  * Properties of a Toast.
  */
-declare type api$IToast = {
+declare type api$IToast = {|
   /**
    * Toast text
    */
   text?: string | null,
-};
+|};
 
 /**
  * Represents a Toast.
@@ -7780,12 +7780,12 @@ declare class api$Toast {
 /**
  * Properties of a Redirect.
  */
-declare type api$IRedirect = {
+declare type api$IRedirect = {|
   /**
    * Redirect url
    */
   url?: string | null,
-};
+|};
 
 /**
  * Represents a Redirect.
@@ -7896,7 +7896,7 @@ declare class api$Redirect {
 /**
  * Properties of a RunMain.
  */
-declare type api$IRunMain = {};
+declare type api$IRunMain = {||};
 
 /**
  * Represents a RunMain.
@@ -8002,7 +8002,7 @@ declare class api$RunMain {
 /**
  * Properties of an OpenChannel.
  */
-declare type api$IOpenChannel = {
+declare type api$IOpenChannel = {|
   /**
    * OpenChannel service
    */
@@ -8022,7 +8022,7 @@ declare type api$IOpenChannel = {
    * OpenChannel id
    */
   id?: number | null,
-};
+|};
 
 /**
  * Represents an OpenChannel.
@@ -8164,7 +8164,7 @@ declare var api$OpenChannel$Action: {|
 /**
  * Properties of an OpenChannelRes.
  */
-declare type api$IOpenChannelRes = {
+declare type api$IOpenChannelRes = {|
   /**
    * OpenChannelRes id
    */
@@ -8179,7 +8179,7 @@ declare type api$IOpenChannelRes = {
    * OpenChannelRes error
    */
   error?: string | null,
-};
+|};
 
 /**
  * Represents an OpenChannelRes.
@@ -8316,7 +8316,7 @@ declare var api$OpenChannelRes$State: {|
 /**
  * Properties of a CloseChannel.
  */
-declare type api$ICloseChannel = {
+declare type api$ICloseChannel = {|
   /**
    * CloseChannel id
    */
@@ -8326,7 +8326,7 @@ declare type api$ICloseChannel = {
    * CloseChannel action
    */
   action?: $Values<typeof api$CloseChannel$Action> | null,
-};
+|};
 
 /**
  * Represents a CloseChannel.
@@ -8458,7 +8458,7 @@ declare var api$CloseChannel$Action: {|
 /**
  * Properties of a CloseChannelRes.
  */
-declare type api$ICloseChannelRes = {
+declare type api$ICloseChannelRes = {|
   /**
    * CloseChannelRes id
    */
@@ -8468,7 +8468,7 @@ declare type api$ICloseChannelRes = {
    * CloseChannelRes status
    */
   status?: $Values<typeof api$CloseChannelRes$Status> | null,
-};
+|};
 
 /**
  * Represents a CloseChannelRes.
@@ -8600,12 +8600,12 @@ declare var api$CloseChannelRes$Status: {|
 /**
  * Properties of a ContainerState.
  */
-declare type api$IContainerState = {
+declare type api$IContainerState = {|
   /**
    * ContainerState state
    */
   state?: $Values<typeof api$ContainerState$State> | null,
-};
+|};
 
 /**
  * Represents a ContainerState.
@@ -8731,7 +8731,7 @@ declare var api$ContainerState$State: {|
 /**
  * Properties of a PortOpen.
  */
-declare type api$IPortOpen = {
+declare type api$IPortOpen = {|
   /**
    * PortOpen forwarded
    */
@@ -8746,7 +8746,7 @@ declare type api$IPortOpen = {
    * PortOpen address
    */
   address?: string | null,
-};
+|};
 
 /**
  * Represents a PortOpen.
@@ -8867,7 +8867,7 @@ declare class api$PortOpen {
 /**
  * Properties of a OTFetchRequest.
  */
-declare type api$IOTFetchRequest = {
+declare type api$IOTFetchRequest = {|
   /**
    * OTFetchRequest versionFrom
    */
@@ -8877,7 +8877,7 @@ declare type api$IOTFetchRequest = {
    * OTFetchRequest versionTo
    */
   versionTo?: number | null,
-};
+|};
 
 /**
  * Represents a OTFetchRequest.
@@ -8995,12 +8995,12 @@ declare class api$OTFetchRequest {
 /**
  * Properties of a OTFetchResponse.
  */
-declare type api$IOTFetchResponse = {
+declare type api$IOTFetchResponse = {|
   /**
    * OTFetchResponse packets
    */
   packets?: api$OTPacket[] | null,
-};
+|};
 
 /**
  * Represents a OTFetchResponse.
@@ -9113,7 +9113,7 @@ declare class api$OTFetchResponse {
 /**
  * Properties of a OTPacket.
  */
-declare type api$IOTPacket = {
+declare type api$IOTPacket = {|
   /**
    * OTPacket spookyVersion
    */
@@ -9143,7 +9143,7 @@ declare type api$IOTPacket = {
    * OTPacket nonce
    */
   nonce?: number | null,
-};
+|};
 
 /**
  * Represents a OTPacket.
@@ -9279,7 +9279,7 @@ declare class api$OTPacket {
 /**
  * Properties of a OTRuneTransformOp.
  */
-declare type api$IOTRuneTransformOp = {
+declare type api$IOTRuneTransformOp = {|
   /**
    * OTRuneTransformOp skip
    */
@@ -9294,7 +9294,7 @@ declare type api$IOTRuneTransformOp = {
    * OTRuneTransformOp insert
    */
   insert?: string | null,
-};
+|};
 
 /**
  * Represents a OTRuneTransformOp.
@@ -9422,7 +9422,7 @@ declare class api$OTRuneTransformOp {
 /**
  * Properties of a OTStatus.
  */
-declare type api$IOTStatus = {
+declare type api$IOTStatus = {|
   /**
    * OTStatus contents
    */
@@ -9442,7 +9442,7 @@ declare type api$IOTStatus = {
    * OTStatus cursors
    */
   cursors?: api$OTCursor[] | null,
-};
+|};
 
 /**
  * Represents a OTStatus.
@@ -9568,7 +9568,7 @@ declare class api$OTStatus {
 /**
  * Properties of a OTCursor.
  */
-declare type api$IOTCursor = {
+declare type api$IOTCursor = {|
   /**
    * OTCursor position
    */
@@ -9593,7 +9593,7 @@ declare type api$IOTCursor = {
    * OTCursor id
    */
   id?: string | null,
-};
+|};
 
 /**
  * Represents a OTCursor.
@@ -9724,7 +9724,7 @@ declare class api$OTCursor {
 /**
  * Properties of a ChatMessage.
  */
-declare type api$IChatMessage = {
+declare type api$IChatMessage = {|
   /**
    * ChatMessage username
    */
@@ -9734,7 +9734,7 @@ declare type api$IChatMessage = {
    * ChatMessage text
    */
   text?: string | null,
-};
+|};
 
 /**
  * Represents a ChatMessage.
@@ -9852,7 +9852,7 @@ declare class api$ChatMessage {
 /**
  * Properties of a ChatTyping.
  */
-declare type api$IChatTyping = {
+declare type api$IChatTyping = {|
   /**
    * ChatTyping username
    */
@@ -9862,7 +9862,7 @@ declare type api$IChatTyping = {
    * ChatTyping typing
    */
   typing?: boolean | null,
-};
+|};
 
 /**
  * Represents a ChatTyping.
@@ -9978,7 +9978,7 @@ declare class api$ChatTyping {
 /**
  * Properties of a User.
  */
-declare type api$IUser = {
+declare type api$IUser = {|
   /**
    * User id
    */
@@ -9998,7 +9998,7 @@ declare type api$IUser = {
    * User session
    */
   session?: number | null,
-};
+|};
 
 /**
  * Represents a User.
@@ -10121,12 +10121,12 @@ declare class api$User {
 /**
  * Properties of a Roster.
  */
-declare type api$IRoster = {
+declare type api$IRoster = {|
   /**
    * Roster user
    */
   user?: api$User[] | null,
-};
+|};
 
 /**
  * Represents a Roster.
@@ -10237,7 +10237,7 @@ declare class api$Roster {
 /**
  * Properties of an Exec.
  */
-declare type api$IExec = {
+declare type api$IExec = {|
   /**
    * Exec args
    */
@@ -10254,7 +10254,7 @@ declare type api$IExec = {
    * Exec blocking
    */
   blocking?: boolean | null,
-};
+|};
 
 /**
  * Represents an Exec.
@@ -10374,7 +10374,7 @@ declare class api$Exec {
 /**
  * Properties of a Package.
  */
-declare type api$IPackage = {
+declare type api$IPackage = {|
   /**
    * Package name
    */
@@ -10429,7 +10429,7 @@ declare type api$IPackage = {
    * Package dependencies
    */
   dependencies?: api$Package[] | null,
-};
+|};
 
 /**
  * Represents a Package.
@@ -10590,12 +10590,12 @@ declare class api$Package {
 /**
  * Properties of a PackageSearch.
  */
-declare type api$IPackageSearch = {
+declare type api$IPackageSearch = {|
   /**
    * PackageSearch query
    */
   query?: string | null,
-};
+|};
 
 /**
  * Represents a PackageSearch.
@@ -10708,12 +10708,12 @@ declare class api$PackageSearch {
 /**
  * Properties of a PackageSearchResp.
  */
-declare type api$IPackageSearchResp = {
+declare type api$IPackageSearchResp = {|
   /**
    * PackageSearchResp results
    */
   results?: api$Package[] | null,
-};
+|};
 
 /**
  * Represents a PackageSearchResp.
@@ -10826,12 +10826,12 @@ declare class api$PackageSearchResp {
 /**
  * Properties of a PackageInfo.
  */
-declare type api$IPackageInfo = {
+declare type api$IPackageInfo = {|
   /**
    * PackageInfo pkg
    */
   pkg?: api$Package | null,
-};
+|};
 
 /**
  * Represents a PackageInfo.
@@ -10944,12 +10944,12 @@ declare class api$PackageInfo {
 /**
  * Properties of a PackageInfoResp.
  */
-declare type api$IPackageInfoResp = {
+declare type api$IPackageInfoResp = {|
   /**
    * PackageInfoResp pkg
    */
   pkg?: api$Package | null,
-};
+|};
 
 /**
  * Represents a PackageInfoResp.
@@ -11062,12 +11062,12 @@ declare class api$PackageInfoResp {
 /**
  * Properties of a PackageAdd.
  */
-declare type api$IPackageAdd = {
+declare type api$IPackageAdd = {|
   /**
    * PackageAdd pkgs
    */
   pkgs?: api$Package[] | null,
-};
+|};
 
 /**
  * Represents a PackageAdd.
@@ -11178,12 +11178,12 @@ declare class api$PackageAdd {
 /**
  * Properties of a PackageRemove.
  */
-declare type api$IPackageRemove = {
+declare type api$IPackageRemove = {|
   /**
    * PackageRemove pkgs
    */
   pkgs?: api$Package[] | null,
-};
+|};
 
 /**
  * Represents a PackageRemove.
@@ -11296,7 +11296,7 @@ declare class api$PackageRemove {
 /**
  * Properties of a PackageInstall.
  */
-declare type api$IPackageInstall = {};
+declare type api$IPackageInstall = {||};
 
 /**
  * Represents a PackageInstall.
@@ -11404,7 +11404,7 @@ declare class api$PackageInstall {
 /**
  * Properties of a PackageListSpecfile.
  */
-declare type api$IPackageListSpecfile = {};
+declare type api$IPackageListSpecfile = {||};
 
 /**
  * Represents a PackageListSpecfile.
@@ -11512,12 +11512,12 @@ declare class api$PackageListSpecfile {
 /**
  * Properties of a PackageListSpecfileResp.
  */
-declare type api$IPackageListSpecfileResp = {
+declare type api$IPackageListSpecfileResp = {|
   /**
    * PackageListSpecfileResp pkgs
    */
   pkgs?: api$Package[] | null,
-};
+|};
 
 /**
  * Represents a PackageListSpecfileResp.
@@ -11632,7 +11632,7 @@ declare class api$PackageListSpecfileResp {
 /**
  * Properties of a PackageCacheSave.
  */
-declare type api$IPackageCacheSave = {};
+declare type api$IPackageCacheSave = {||};
 
 /**
  * Represents a PackageCacheSave.
@@ -11740,12 +11740,12 @@ declare class api$PackageCacheSave {
 /**
  * Properties of a ChatScrollback.
  */
-declare type api$IChatScrollback = {
+declare type api$IChatScrollback = {|
   /**
    * ChatScrollback scrollback
    */
   scrollback?: api$ChatMessage[] | null,
-};
+|};
 
 /**
  * Represents a ChatScrollback.
@@ -11858,12 +11858,12 @@ declare class api$ChatScrollback {
 /**
  * Properties of a Metrics.
  */
-declare type api$IMetrics = {
+declare type api$IMetrics = {|
   /**
    * Metrics prometheusMetricFamilies
    */
   prometheusMetricFamilies?: Uint8Array[] | null,
-};
+|};
 
 /**
  * Represents a Metrics.
@@ -11974,7 +11974,7 @@ declare class api$Metrics {
 /**
  * Properties of a PprofRequest.
  */
-declare type api$IPprofRequest = {
+declare type api$IPprofRequest = {|
   /**
    * PprofRequest id
    */
@@ -12004,7 +12004,7 @@ declare type api$IPprofRequest = {
    * PprofRequest pprofMutexProfileRequest
    */
   pprofMutexProfileRequest?: api$PprofMutexProfileRequest | null,
-};
+|};
 
 /**
  * Represents a PprofRequest.
@@ -12152,12 +12152,12 @@ declare class api$PprofRequest {
 /**
  * Properties of a PprofAllocsProfileRequest.
  */
-declare type api$IPprofAllocsProfileRequest = {
+declare type api$IPprofAllocsProfileRequest = {|
   /**
    * PprofAllocsProfileRequest debug
    */
   debug?: boolean | null,
-};
+|};
 
 /**
  * Represents a PprofAllocsProfileRequest.
@@ -12272,12 +12272,12 @@ declare class api$PprofAllocsProfileRequest {
 /**
  * Properties of a PprofBlockProfileRequest.
  */
-declare type api$IPprofBlockProfileRequest = {
+declare type api$IPprofBlockProfileRequest = {|
   /**
    * PprofBlockProfileRequest debug
    */
   debug?: boolean | null,
-};
+|};
 
 /**
  * Represents a PprofBlockProfileRequest.
@@ -12392,12 +12392,12 @@ declare class api$PprofBlockProfileRequest {
 /**
  * Properties of a PprofCpuProfileRequest.
  */
-declare type api$IPprofCpuProfileRequest = {
+declare type api$IPprofCpuProfileRequest = {|
   /**
    * PprofCpuProfileRequest seconds
    */
   seconds?: number | null,
-};
+|};
 
 /**
  * Represents a PprofCpuProfileRequest.
@@ -12512,7 +12512,7 @@ declare class api$PprofCpuProfileRequest {
 /**
  * Properties of a PprofHeapProfileRequest.
  */
-declare type api$IPprofHeapProfileRequest = {
+declare type api$IPprofHeapProfileRequest = {|
   /**
    * PprofHeapProfileRequest gc
    */
@@ -12522,7 +12522,7 @@ declare type api$IPprofHeapProfileRequest = {
    * PprofHeapProfileRequest debug
    */
   debug?: boolean | null,
-};
+|};
 
 /**
  * Represents a PprofHeapProfileRequest.
@@ -12642,12 +12642,12 @@ declare class api$PprofHeapProfileRequest {
 /**
  * Properties of a PprofMutexProfileRequest.
  */
-declare type api$IPprofMutexProfileRequest = {
+declare type api$IPprofMutexProfileRequest = {|
   /**
    * PprofMutexProfileRequest debug
    */
   debug?: boolean | null,
-};
+|};
 
 /**
  * Represents a PprofMutexProfileRequest.
@@ -12762,7 +12762,7 @@ declare class api$PprofMutexProfileRequest {
 /**
  * Properties of a PprofResponse.
  */
-declare type api$IPprofResponse = {
+declare type api$IPprofResponse = {|
   /**
    * PprofResponse id
    */
@@ -12772,7 +12772,7 @@ declare type api$IPprofResponse = {
    * PprofResponse profile
    */
   profile?: Uint8Array | null,
-};
+|};
 
 /**
  * Represents a PprofResponse.
@@ -12890,12 +12890,12 @@ declare class api$PprofResponse {
 /**
  * Properties of a PTYConfig.
  */
-declare type api$IPTYConfig = {
+declare type api$IPTYConfig = {|
   /**
    * PTYConfig pipeMode
    */
   pipeMode?: boolean | null,
-};
+|};
 
 /**
  * Represents a PTYConfig.
@@ -13015,7 +13015,7 @@ declare var npm$namespace$google$protobuf: {|
 /**
  * Properties of a Timestamp.
  */
-declare type google$protobuf$ITimestamp = {
+declare type google$protobuf$ITimestamp = {|
   /**
    * Timestamp seconds
    */
@@ -13025,7 +13025,7 @@ declare type google$protobuf$ITimestamp = {
    * Timestamp nanos
    */
   nanos?: number | null,
-};
+|};
 
 /**
  * Represents a Timestamp.

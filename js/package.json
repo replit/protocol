@@ -7,7 +7,7 @@
   "author": "faris@repl.it",
   "license": "MIT",
   "scripts": {
-    "prepublishOnly": "pbjs --force-number --force-message -t static-module -w default -o index.js ../api.proto && ./tools/fixup.js < index.js > .index.js && mv .index.js index.js && pbts -o index.d.ts index.js && flowgen --interface-records --no-inexact --add-flow-header index.d.ts"
+    "prepublishOnly": "pbjs --force-number --force-message -t static-module -w default -o index.js ../api.proto && ./tools/jsdoc.js < index.js > .index.js && mv .index.js index.js && pbts -o index.d.ts index.js && flowgen --interface-records --no-inexact --add-flow-header index.d.ts && ./tools/flow.js < export.flow.js > .export.flow.js && mv .export.flow.js export.flow.js"
   },
   "dependencies": {
     "protobufjs": "^6.10.2"
