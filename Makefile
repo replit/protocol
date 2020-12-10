@@ -25,16 +25,11 @@ clean-go:
 	rm -rf go/api.pb.go
 build-go: clean-go
 	protoc api.proto --go_out=./go
-publish-go:
-	VERSION=$$(git tag | sort -r --version-sort | head -n1) && \
-	[ -d .git/refs/remotes/protocol-go ] || git remote add -f protocol-go git@github.com:replit/protocol-go.git && \
-	rm -rf ./go-release/
-	git subtree split --prefix=go -b go-release && \
-	git worktree add --checkout ./go-release/ go-release && \
-	(cd ./go-release/ && \
-		git pull --rebase protocol-go master && \
-		git push protocol-go go-release:master && \
-		git push protocol-go HEAD:refs/tags/$${VERSION}) && \
-	rm -rf ./go-release/ && \
-	git worktree remove -f go-release && \
-	git branch -D go-release
+publish-go: .git/refs/remotes/protocol-go/master
+	git fetch protocol-go master && \
+	VERSION="$$(git describe --tags)" && \
+	COMMIT="$$(git show --no-patch --format=%B "$${VERSION}" | git commit-tree "$${VERSION}:go/" -p FETCH_HEAD)" && \
+	git push protocol-go "$${COMMIT}:master" "$${COMMIT}:refs/tags/$${VERSION}"
+.git/refs/remotes/protocol-go/master:
+	git remote add -f protocol-go git@github.com:replit/protocol-go.git
+	git fetch protocol-go master
