@@ -325,7 +325,7 @@ export namespace api {
          * Constructs a new Command.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.ICommand);
+        private constructor(properties?: api.ICommand);
 
         /** Command channel. */
         public channel: number;
@@ -727,7 +727,7 @@ export namespace api {
          * Constructs a new Audio.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IAudio);
+        private constructor(properties?: api.IAudio);
 
         /** Audio data. */
         public data: number[];
@@ -820,7 +820,7 @@ export namespace api {
          * Constructs a new Audio2.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IAudio2);
+        private constructor(properties?: api.IAudio2);
 
         /** Audio2 data. */
         public data: number[];
@@ -919,7 +919,7 @@ export namespace api {
          * Constructs a new ReadMeta.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IReadMeta);
+        private constructor(properties?: api.IReadMeta);
 
         /** ReadMeta key. */
         public key: string;
@@ -1018,7 +1018,7 @@ export namespace api {
          * Constructs a new WriteMeta.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IWriteMeta);
+        private constructor(properties?: api.IWriteMeta);
 
         /** WriteMeta key. */
         public key: string;
@@ -1114,7 +1114,7 @@ export namespace api {
          * Constructs a new AppendMeta.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IAppendMeta);
+        private constructor(properties?: api.IAppendMeta);
 
         /** AppendMeta key. */
         public key: string;
@@ -1213,7 +1213,7 @@ export namespace api {
          * Constructs a new BootStatus.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IBootStatus);
+        private constructor(properties?: api.IBootStatus);
 
         /** BootStatus stage. */
         public stage: api.BootStatus.Stage;
@@ -1329,7 +1329,7 @@ export namespace api {
          * Constructs a new Pid1Config.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPid1Config);
+        private constructor(properties?: api.IPid1Config);
 
         /** Pid1Config cwd. */
         public cwd: string;
@@ -1425,7 +1425,7 @@ export namespace api {
          * Constructs a new FSLock.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IFSLock);
+        private constructor(properties?: api.IFSLock);
 
         /** FSLock name. */
         public name: string;
@@ -1512,7 +1512,7 @@ export namespace api {
          * Constructs a new FSSnapshot.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IFSSnapshot);
+        private constructor(properties?: api.IFSSnapshot);
 
         /**
          * Creates a new FSSnapshot instance using the specified properties.
@@ -1599,7 +1599,7 @@ export namespace api {
          * Constructs a new SubscribeFile.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.ISubscribeFile);
+        private constructor(properties?: api.ISubscribeFile);
 
         /** SubscribeFile files. */
         public files: api.File[];
@@ -1695,7 +1695,7 @@ export namespace api {
          * Constructs a new FileEvent.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IFileEvent);
+        private constructor(properties?: api.IFileEvent);
 
         /** FileEvent file. */
         public file?: (api.File|null);
@@ -1799,7 +1799,7 @@ export namespace api {
          * Constructs a new Flush.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IFlush);
+        private constructor(properties?: api.IFlush);
 
         /**
          * Creates a new Flush instance using the specified properties.
@@ -1892,7 +1892,7 @@ export namespace api {
          * Constructs a new OTLinkFile.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IOTLinkFile);
+        private constructor(properties?: api.IOTLinkFile);
 
         /** OTLinkFile file. */
         public file?: (api.File|null);
@@ -1991,7 +1991,7 @@ export namespace api {
          * Constructs a new Auth.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IAuth);
+        private constructor(properties?: api.IAuth);
 
         /** Auth token. */
         public token: string;
@@ -2093,7 +2093,7 @@ export namespace api {
          * Constructs a new VCREntry.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IVCREntry);
+        private constructor(properties?: api.IVCREntry);
 
         /** VCREntry timestamp. */
         public timestamp: number;
@@ -2198,7 +2198,7 @@ export namespace api {
          * Constructs a new StartVCR.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IStartVCR);
+        private constructor(properties?: api.IStartVCR);
 
         /**
          * Creates a new StartVCR instance using the specified properties.
@@ -2282,7 +2282,7 @@ export namespace api {
          * Constructs a new ReadVCR.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IReadVCR);
+        private constructor(properties?: api.IReadVCR);
 
         /**
          * Creates a new ReadVCR instance using the specified properties.
@@ -2372,7 +2372,7 @@ export namespace api {
          * Constructs a new VCRLog.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IVCRLog);
+        private constructor(properties?: api.IVCRLog);
 
         /** VCRLog log. */
         public log: api.VCREntry[];
@@ -2468,7 +2468,7 @@ export namespace api {
          * Constructs a new ExecInfo.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IExecInfo);
+        private constructor(properties?: api.IExecInfo);
 
         /** ExecInfo command. */
         public command: string[];
@@ -2561,7 +2561,7 @@ export namespace api {
          * Constructs a new Debug.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IDebug);
+        private constructor(properties?: api.IDebug);
 
         /** Debug text. */
         public text: string;
@@ -2662,7 +2662,7 @@ export namespace api {
          * Constructs a new FileAuthReq.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IFileAuthReq);
+        private constructor(properties?: api.IFileAuthReq);
 
         /** FileAuthReq file. */
         public file?: (api.File|null);
@@ -2761,7 +2761,7 @@ export namespace api {
          * Constructs a new MultiFileAuthRes.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IMultiFileAuthRes);
+        private constructor(properties?: api.IMultiFileAuthRes);
 
         /** MultiFileAuthRes put. */
         public put?: (api.FileAuthRes|null);
@@ -2869,7 +2869,7 @@ export namespace api {
          * Constructs a new FileAuthRes.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IFileAuthRes);
+        private constructor(properties?: api.IFileAuthRes);
 
         /** FileAuthRes file. */
         public file?: (api.File|null);
@@ -2971,7 +2971,7 @@ export namespace api {
          * Constructs a new ListObjects.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IListObjects);
+        private constructor(properties?: api.IListObjects);
 
         /** ListObjects prefix. */
         public prefix: string;
@@ -3061,7 +3061,7 @@ export namespace api {
          * Constructs a new ListObjectsResp.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IListObjectsResp);
+        private constructor(properties?: api.IListObjectsResp);
 
         /** ListObjectsResp objects. */
         public objects: string[];
@@ -3151,7 +3151,7 @@ export namespace api {
          * Constructs a new Disconnect.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IDisconnect);
+        private constructor(properties?: api.IDisconnect);
 
         /** Disconnect error. */
         public error: string;
@@ -3241,7 +3241,7 @@ export namespace api {
          * Constructs a new Send.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.ISend);
+        private constructor(properties?: api.ISend);
 
         /** Send buff. */
         public buff: Uint8Array;
@@ -3331,7 +3331,7 @@ export namespace api {
          * Constructs a new Recv.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IRecv);
+        private constructor(properties?: api.IRecv);
 
         /** Recv buff. */
         public buff: Uint8Array;
@@ -3424,7 +3424,7 @@ export namespace api {
          * Constructs a new Connect.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IConnect);
+        private constructor(properties?: api.IConnect);
 
         /** Connect proto. */
         public proto: string;
@@ -3517,7 +3517,7 @@ export namespace api {
          * Constructs a new Hint.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IHint);
+        private constructor(properties?: api.IHint);
 
         /** Hint text. */
         public text: string;
@@ -3604,7 +3604,7 @@ export namespace api {
          * Constructs a new Ping.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPing);
+        private constructor(properties?: api.IPing);
 
         /**
          * Creates a new Ping instance using the specified properties.
@@ -3688,7 +3688,7 @@ export namespace api {
          * Constructs a new Pong.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPong);
+        private constructor(properties?: api.IPong);
 
         /**
          * Creates a new Pong instance using the specified properties.
@@ -3781,7 +3781,7 @@ export namespace api {
          * Constructs a new Hello.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IHello);
+        private constructor(properties?: api.IHello);
 
         /** Hello userid. */
         public userid: number;
@@ -3874,7 +3874,7 @@ export namespace api {
          * Constructs a new Goodbye.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IGoodbye);
+        private constructor(properties?: api.IGoodbye);
 
         /**
          * Creates a new Goodbye instance using the specified properties.
@@ -3964,7 +3964,7 @@ export namespace api {
          * Constructs a new CheckChanges.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.ICheckChanges);
+        private constructor(properties?: api.ICheckChanges);
 
         /**
          * Creates a new CheckChanges instance using the specified properties.
@@ -4054,7 +4054,7 @@ export namespace api {
          * Constructs a new EnsurePackages.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IEnsurePackages);
+        private constructor(properties?: api.IEnsurePackages);
 
         /** EnsurePackages install. */
         public install: boolean;
@@ -4144,7 +4144,7 @@ export namespace api {
          * Constructs a new Start.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IStart);
+        private constructor(properties?: api.IStart);
 
         /**
          * Creates a new Start instance using the specified properties.
@@ -4234,7 +4234,7 @@ export namespace api {
          * Constructs a new DebugStatus.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IDebugStatus);
+        private constructor(properties?: api.IDebugStatus);
 
         /** DebugStatus done. */
         public done: boolean;
@@ -4330,7 +4330,7 @@ export namespace api {
          * Constructs a new StackFrame.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IStackFrame);
+        private constructor(properties?: api.IStackFrame);
 
         /** StackFrame function. */
         public function: string;
@@ -4426,7 +4426,7 @@ export namespace api {
          * Constructs a new ContainedTest.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IContainedTest);
+        private constructor(properties?: api.IContainedTest);
 
         /** ContainedTest suite. */
         public suite?: (api.File|null);
@@ -4525,7 +4525,7 @@ export namespace api {
          * Constructs a new TestResult.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.ITestResult);
+        private constructor(properties?: api.ITestResult);
 
         /** TestResult passed. */
         public passed: boolean;
@@ -4624,7 +4624,7 @@ export namespace api {
          * Constructs a new TestFailure.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.ITestFailure);
+        private constructor(properties?: api.ITestFailure);
 
         /** TestFailure name. */
         public name: string;
@@ -4720,7 +4720,7 @@ export namespace api {
          * Constructs a new ResizeTerm.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IResizeTerm);
+        private constructor(properties?: api.IResizeTerm);
 
         /** ResizeTerm rows. */
         public rows: number;
@@ -4810,7 +4810,7 @@ export namespace api {
          * Constructs a new SaneTerm.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.ISaneTerm);
+        private constructor(properties?: api.ISaneTerm);
 
         /**
          * Creates a new SaneTerm instance using the specified properties.
@@ -4897,7 +4897,7 @@ export namespace api {
          * Constructs a new LintResults.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.ILintResults);
+        private constructor(properties?: api.ILintResults);
 
         /** LintResults results. */
         public results: api.LintResult[];
@@ -4996,7 +4996,7 @@ export namespace api {
          * Constructs a new LintResult.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.ILintResult);
+        private constructor(properties?: api.ILintResult);
 
         /** LintResult text. */
         public text: string;
@@ -5092,7 +5092,7 @@ export namespace api {
          * Constructs a new OK.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IOK);
+        private constructor(properties?: api.IOK);
 
         /**
          * Creates a new OK instance using the specified properties.
@@ -5182,7 +5182,7 @@ export namespace api {
          * Constructs a new Move.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IMove);
+        private constructor(properties?: api.IMove);
 
         /** Move oldPath. */
         public oldPath: string;
@@ -5275,7 +5275,7 @@ export namespace api {
          * Constructs a new Files.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IFiles);
+        private constructor(properties?: api.IFiles);
 
         /** Files files. */
         public files: api.File[];
@@ -5371,7 +5371,7 @@ export namespace api {
          * Constructs a new File.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IFile);
+        private constructor(properties?: api.IFile);
 
         /** File path. */
         public path: string;
@@ -5473,7 +5473,7 @@ export namespace api {
          * Constructs a new Clear.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IClear);
+        private constructor(properties?: api.IClear);
 
         /**
          * Creates a new Clear instance using the specified properties.
@@ -5560,7 +5560,7 @@ export namespace api {
          * Constructs a new Toast.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IToast);
+        private constructor(properties?: api.IToast);
 
         /** Toast text. */
         public text: string;
@@ -5650,7 +5650,7 @@ export namespace api {
          * Constructs a new Redirect.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IRedirect);
+        private constructor(properties?: api.IRedirect);
 
         /** Redirect url. */
         public url: string;
@@ -5737,7 +5737,7 @@ export namespace api {
          * Constructs a new RunMain.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IRunMain);
+        private constructor(properties?: api.IRunMain);
 
         /**
          * Creates a new RunMain instance using the specified properties.
@@ -5833,7 +5833,7 @@ export namespace api {
          * Constructs a new OpenChannel.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IOpenChannel);
+        private constructor(properties?: api.IOpenChannel);
 
         /** OpenChannel service. */
         public service: string;
@@ -5948,7 +5948,7 @@ export namespace api {
          * Constructs a new OpenChannelRes.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IOpenChannelRes);
+        private constructor(properties?: api.IOpenChannelRes);
 
         /** OpenChannelRes id. */
         public id: number;
@@ -6057,7 +6057,7 @@ export namespace api {
          * Constructs a new CloseChannel.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.ICloseChannel);
+        private constructor(properties?: api.ICloseChannel);
 
         /** CloseChannel id. */
         public id: number;
@@ -6163,7 +6163,7 @@ export namespace api {
          * Constructs a new CloseChannelRes.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.ICloseChannelRes);
+        private constructor(properties?: api.ICloseChannelRes);
 
         /** CloseChannelRes id. */
         public id: number;
@@ -6266,7 +6266,7 @@ export namespace api {
          * Constructs a new ContainerState.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IContainerState);
+        private constructor(properties?: api.IContainerState);
 
         /** ContainerState state. */
         public state: api.ContainerState.State;
@@ -6371,7 +6371,7 @@ export namespace api {
          * Constructs a new PortOpen.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPortOpen);
+        private constructor(properties?: api.IPortOpen);
 
         /** PortOpen forwarded. */
         public forwarded: boolean;
@@ -6470,7 +6470,7 @@ export namespace api {
          * Constructs a new OTFetchRequest.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IOTFetchRequest);
+        private constructor(properties?: api.IOTFetchRequest);
 
         /** OTFetchRequest versionFrom. */
         public versionFrom: number;
@@ -6563,7 +6563,7 @@ export namespace api {
          * Constructs a new OTFetchResponse.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IOTFetchResponse);
+        private constructor(properties?: api.IOTFetchResponse);
 
         /** OTFetchResponse packets. */
         public packets: api.OTPacket[];
@@ -6668,7 +6668,7 @@ export namespace api {
          * Constructs a new OTPacket.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IOTPacket);
+        private constructor(properties?: api.IOTPacket);
 
         /** OTPacket spookyVersion. */
         public spookyVersion: number;
@@ -6779,7 +6779,7 @@ export namespace api {
          * Constructs a new OTRuneTransformOp.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IOTRuneTransformOp);
+        private constructor(properties?: api.IOTRuneTransformOp);
 
         /** OTRuneTransformOp skip. */
         public skip: number;
@@ -6887,7 +6887,7 @@ export namespace api {
          * Constructs a new OTStatus.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IOTStatus);
+        private constructor(properties?: api.IOTStatus);
 
         /** OTStatus contents. */
         public contents: string;
@@ -6998,7 +6998,7 @@ export namespace api {
          * Constructs a new OTCursor.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IOTCursor);
+        private constructor(properties?: api.IOTCursor);
 
         /** OTCursor position. */
         public position: number;
@@ -7103,7 +7103,7 @@ export namespace api {
          * Constructs a new ChatMessage.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IChatMessage);
+        private constructor(properties?: api.IChatMessage);
 
         /** ChatMessage username. */
         public username: string;
@@ -7199,7 +7199,7 @@ export namespace api {
          * Constructs a new ChatTyping.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IChatTyping);
+        private constructor(properties?: api.IChatTyping);
 
         /** ChatTyping username. */
         public username: string;
@@ -7301,7 +7301,7 @@ export namespace api {
          * Constructs a new User.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IUser);
+        private constructor(properties?: api.IUser);
 
         /** User id. */
         public id: number;
@@ -7400,7 +7400,7 @@ export namespace api {
          * Constructs a new Roster.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IRoster);
+        private constructor(properties?: api.IRoster);
 
         /** Roster user. */
         public user: api.User[];
@@ -7496,7 +7496,7 @@ export namespace api {
          * Constructs a new Exec.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IExec);
+        private constructor(properties?: api.IExec);
 
         /** Exec args. */
         public args: string[];
@@ -7622,7 +7622,7 @@ export namespace api {
          * Constructs a new Package.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPackage);
+        private constructor(properties?: api.IPackage);
 
         /** Package name. */
         public name: string;
@@ -7742,7 +7742,7 @@ export namespace api {
          * Constructs a new PackageSearch.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPackageSearch);
+        private constructor(properties?: api.IPackageSearch);
 
         /** PackageSearch query. */
         public query: string;
@@ -7832,7 +7832,7 @@ export namespace api {
          * Constructs a new PackageSearchResp.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPackageSearchResp);
+        private constructor(properties?: api.IPackageSearchResp);
 
         /** PackageSearchResp results. */
         public results: api.Package[];
@@ -7922,7 +7922,7 @@ export namespace api {
          * Constructs a new PackageInfo.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPackageInfo);
+        private constructor(properties?: api.IPackageInfo);
 
         /** PackageInfo pkg. */
         public pkg?: (api.Package|null);
@@ -8012,7 +8012,7 @@ export namespace api {
          * Constructs a new PackageInfoResp.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPackageInfoResp);
+        private constructor(properties?: api.IPackageInfoResp);
 
         /** PackageInfoResp pkg. */
         public pkg?: (api.Package|null);
@@ -8102,7 +8102,7 @@ export namespace api {
          * Constructs a new PackageAdd.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPackageAdd);
+        private constructor(properties?: api.IPackageAdd);
 
         /** PackageAdd pkgs. */
         public pkgs: api.Package[];
@@ -8192,7 +8192,7 @@ export namespace api {
          * Constructs a new PackageRemove.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPackageRemove);
+        private constructor(properties?: api.IPackageRemove);
 
         /** PackageRemove pkgs. */
         public pkgs: api.Package[];
@@ -8279,7 +8279,7 @@ export namespace api {
          * Constructs a new PackageInstall.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPackageInstall);
+        private constructor(properties?: api.IPackageInstall);
 
         /**
          * Creates a new PackageInstall instance using the specified properties.
@@ -8363,7 +8363,7 @@ export namespace api {
          * Constructs a new PackageListSpecfile.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPackageListSpecfile);
+        private constructor(properties?: api.IPackageListSpecfile);
 
         /**
          * Creates a new PackageListSpecfile instance using the specified properties.
@@ -8450,7 +8450,7 @@ export namespace api {
          * Constructs a new PackageListSpecfileResp.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPackageListSpecfileResp);
+        private constructor(properties?: api.IPackageListSpecfileResp);
 
         /** PackageListSpecfileResp pkgs. */
         public pkgs: api.Package[];
@@ -8537,7 +8537,7 @@ export namespace api {
          * Constructs a new PackageCacheSave.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPackageCacheSave);
+        private constructor(properties?: api.IPackageCacheSave);
 
         /**
          * Creates a new PackageCacheSave instance using the specified properties.
@@ -8624,7 +8624,7 @@ export namespace api {
          * Constructs a new ChatScrollback.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IChatScrollback);
+        private constructor(properties?: api.IChatScrollback);
 
         /** ChatScrollback scrollback. */
         public scrollback: api.ChatMessage[];
@@ -8714,7 +8714,7 @@ export namespace api {
          * Constructs a new Metrics.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IMetrics);
+        private constructor(properties?: api.IMetrics);
 
         /** Metrics prometheusMetricFamilies. */
         public prometheusMetricFamilies: Uint8Array[];
@@ -8819,7 +8819,7 @@ export namespace api {
          * Constructs a new PprofRequest.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPprofRequest);
+        private constructor(properties?: api.IPprofRequest);
 
         /** PprofRequest id. */
         public id: string;
@@ -8927,7 +8927,7 @@ export namespace api {
          * Constructs a new PprofAllocsProfileRequest.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPprofAllocsProfileRequest);
+        private constructor(properties?: api.IPprofAllocsProfileRequest);
 
         /** PprofAllocsProfileRequest debug. */
         public debug: boolean;
@@ -9017,7 +9017,7 @@ export namespace api {
          * Constructs a new PprofBlockProfileRequest.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPprofBlockProfileRequest);
+        private constructor(properties?: api.IPprofBlockProfileRequest);
 
         /** PprofBlockProfileRequest debug. */
         public debug: boolean;
@@ -9107,7 +9107,7 @@ export namespace api {
          * Constructs a new PprofCpuProfileRequest.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPprofCpuProfileRequest);
+        private constructor(properties?: api.IPprofCpuProfileRequest);
 
         /** PprofCpuProfileRequest seconds. */
         public seconds: number;
@@ -9200,7 +9200,7 @@ export namespace api {
          * Constructs a new PprofHeapProfileRequest.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPprofHeapProfileRequest);
+        private constructor(properties?: api.IPprofHeapProfileRequest);
 
         /** PprofHeapProfileRequest gc. */
         public gc: boolean;
@@ -9293,7 +9293,7 @@ export namespace api {
          * Constructs a new PprofMutexProfileRequest.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPprofMutexProfileRequest);
+        private constructor(properties?: api.IPprofMutexProfileRequest);
 
         /** PprofMutexProfileRequest debug. */
         public debug: boolean;
@@ -9386,7 +9386,7 @@ export namespace api {
          * Constructs a new PprofResponse.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPprofResponse);
+        private constructor(properties?: api.IPprofResponse);
 
         /** PprofResponse id. */
         public id: string;
@@ -9479,7 +9479,7 @@ export namespace api {
          * Constructs a new PTYConfig.
          * @param [properties] Properties to set
          */
-        constructor(properties?: api.IPTYConfig);
+        private constructor(properties?: api.IPTYConfig);
 
         /** PTYConfig pipeMode. */
         public pipeMode: boolean;
@@ -9579,7 +9579,7 @@ export namespace google {
              * Constructs a new Timestamp.
              * @param [properties] Properties to set
              */
-            constructor(properties?: google.protobuf.ITimestamp);
+            private constructor(properties?: google.protobuf.ITimestamp);
 
             /** Timestamp seconds. */
             public seconds: number;

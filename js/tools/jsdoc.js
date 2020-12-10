@@ -138,7 +138,25 @@ exports.main = function (args /*: string[] */) {
   }
   chunks.push(stdinBuffer.slice(lastIndex));
 
-  fs.writeSync(1, chunks.join(''));
+  // Finally, replace all `.create()` `new` invocations with a `.fromObject()`.
+  // This is needed because protobufjs does not validate properties or create
+  // instance objects when creating message types through `new`, but does so
+  // through `.fromObject()`. Now, the downside of requiring people calling
+  // `.fromObject()` is that it imposes no requirements on the type of its
+  // argument (just that it's an object!), whereas `.create()` does require
+  // that the argument is an interface.
+  //
+  // So this brings us the best of both worlds: `.create()` still has the right
+  // types and creates fully reified objects, with the correct types all across
+  // the board.
+  const finalSource = chunks
+    .join('')
+    .replace(
+      /return new (\S+)\(/g,
+      (match, className) => `return ${className}.fromObject(`,
+    );
+
+  fs.writeSync(1, finalSource);
 };
 
 exports.main(process.argv);

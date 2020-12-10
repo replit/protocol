@@ -1006,7 +1006,7 @@
              * @returns {api.Command} Command instance
              */
             Command.create = function create(properties) {
-                return new Command(properties);
+                return Command.fromObject(properties);
             };
     
             /**
@@ -3709,7 +3709,7 @@
              * @returns {api.Audio} Audio instance
              */
             Audio.create = function create(properties) {
-                return new Audio(properties);
+                return Audio.fromObject(properties);
             };
     
             /**
@@ -3928,7 +3928,7 @@
              * @returns {api.Audio2} Audio2 instance
              */
             Audio2.create = function create(properties) {
-                return new Audio2(properties);
+                return Audio2.fromObject(properties);
             };
     
             /**
@@ -4183,7 +4183,7 @@
              * @returns {api.ReadMeta} ReadMeta instance
              */
             ReadMeta.create = function create(properties) {
-                return new ReadMeta(properties);
+                return ReadMeta.fromObject(properties);
             };
     
             /**
@@ -4414,7 +4414,7 @@
              * @returns {api.WriteMeta} WriteMeta instance
              */
             WriteMeta.create = function create(properties) {
-                return new WriteMeta(properties);
+                return WriteMeta.fromObject(properties);
             };
     
             /**
@@ -4632,7 +4632,7 @@
              * @returns {api.AppendMeta} AppendMeta instance
              */
             AppendMeta.create = function create(properties) {
-                return new AppendMeta(properties);
+                return AppendMeta.fromObject(properties);
             };
     
             /**
@@ -4859,7 +4859,7 @@
              * @returns {api.BootStatus} BootStatus instance
              */
             BootStatus.create = function create(properties) {
-                return new BootStatus(properties);
+                return BootStatus.fromObject(properties);
             };
     
             /**
@@ -5153,7 +5153,7 @@
              * @returns {api.Pid1Config} Pid1Config instance
              */
             Pid1Config.create = function create(properties) {
-                return new Pid1Config(properties);
+                return Pid1Config.fromObject(properties);
             };
     
             /**
@@ -5401,7 +5401,7 @@
              * @returns {api.FSLock} FSLock instance
              */
             FSLock.create = function create(properties) {
-                return new FSLock(properties);
+                return FSLock.fromObject(properties);
             };
     
             /**
@@ -5578,7 +5578,7 @@
              * @returns {api.FSSnapshot} FSSnapshot instance
              */
             FSSnapshot.create = function create(properties) {
-                return new FSSnapshot(properties);
+                return FSSnapshot.fromObject(properties);
             };
     
             /**
@@ -5676,7 +5676,7 @@
             FSSnapshot.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.FSSnapshot)
                     return object;
-                return new $root.api.FSSnapshot();
+                return $root.api.FSSnapshot.fromObject();
             };
     
             /**
@@ -5747,7 +5747,7 @@
              * @returns {api.SubscribeFile} SubscribeFile instance
              */
             SubscribeFile.create = function create(properties) {
-                return new SubscribeFile(properties);
+                return SubscribeFile.fromObject(properties);
             };
     
             /**
@@ -5971,7 +5971,7 @@
              * @returns {api.FileEvent} FileEvent instance
              */
             FileEvent.create = function create(properties) {
-                return new FileEvent(properties);
+                return FileEvent.fromObject(properties);
             };
     
             /**
@@ -6226,7 +6226,7 @@
              * @returns {api.Flush} Flush instance
              */
             Flush.create = function create(properties) {
-                return new Flush(properties);
+                return Flush.fromObject(properties);
             };
     
             /**
@@ -6324,7 +6324,7 @@
             Flush.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.Flush)
                     return object;
-                return new $root.api.Flush();
+                return $root.api.Flush.fromObject();
             };
     
             /**
@@ -6412,7 +6412,7 @@
              * @returns {api.OTLinkFile} OTLinkFile instance
              */
             OTLinkFile.create = function create(properties) {
-                return new OTLinkFile(properties);
+                return OTLinkFile.fromObject(properties);
             };
     
             /**
@@ -6639,7 +6639,7 @@
              * @returns {api.Auth} Auth instance
              */
             Auth.create = function create(properties) {
-                return new Auth(properties);
+                return Auth.fromObject(properties);
             };
     
             /**
@@ -6866,7 +6866,7 @@
              * @returns {api.VCREntry} VCREntry instance
              */
             VCREntry.create = function create(properties) {
-                return new VCREntry(properties);
+                return VCREntry.fromObject(properties);
             };
     
             /**
@@ -7129,7 +7129,7 @@
              * @returns {api.StartVCR} StartVCR instance
              */
             StartVCR.create = function create(properties) {
-                return new StartVCR(properties);
+                return StartVCR.fromObject(properties);
             };
     
             /**
@@ -7227,7 +7227,7 @@
             StartVCR.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.StartVCR)
                     return object;
-                return new $root.api.StartVCR();
+                return $root.api.StartVCR.fromObject();
             };
     
             /**
@@ -7288,7 +7288,7 @@
              * @returns {api.ReadVCR} ReadVCR instance
              */
             ReadVCR.create = function create(properties) {
-                return new ReadVCR(properties);
+                return ReadVCR.fromObject(properties);
             };
     
             /**
@@ -7386,7 +7386,7 @@
             ReadVCR.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.ReadVCR)
                     return object;
-                return new $root.api.ReadVCR();
+                return $root.api.ReadVCR.fromObject();
             };
     
             /**
@@ -7466,7 +7466,7 @@
              * @returns {api.VCRLog} VCRLog instance
              */
             VCRLog.create = function create(properties) {
-                return new VCRLog(properties);
+                return VCRLog.fromObject(properties);
             };
     
             /**
@@ -7701,7 +7701,7 @@
              * @returns {api.ExecInfo} ExecInfo instance
              */
             ExecInfo.create = function create(properties) {
-                return new ExecInfo(properties);
+                return ExecInfo.fromObject(properties);
             };
     
             /**
@@ -7916,7 +7916,7 @@
              * @returns {api.Debug} Debug instance
              */
             Debug.create = function create(properties) {
-                return new Debug(properties);
+                return Debug.fromObject(properties);
             };
     
             /**
@@ -8129,7 +8129,7 @@
              * @returns {api.FileAuthReq} FileAuthReq instance
              */
             FileAuthReq.create = function create(properties) {
-                return new FileAuthReq(properties);
+                return FileAuthReq.fromObject(properties);
             };
     
             /**
@@ -8375,7 +8375,7 @@
              * @returns {api.MultiFileAuthRes} MultiFileAuthRes instance
              */
             MultiFileAuthRes.create = function create(properties) {
-                return new MultiFileAuthRes(properties);
+                return MultiFileAuthRes.fromObject(properties);
             };
     
             /**
@@ -8639,7 +8639,7 @@
              * @returns {api.FileAuthRes} FileAuthRes instance
              */
             FileAuthRes.create = function create(properties) {
-                return new FileAuthRes(properties);
+                return FileAuthRes.fromObject(properties);
             };
     
             /**
@@ -8920,7 +8920,7 @@
              * @returns {api.ListObjects} ListObjects instance
              */
             ListObjects.create = function create(properties) {
-                return new ListObjects(properties);
+                return ListObjects.fromObject(properties);
             };
     
             /**
@@ -9107,7 +9107,7 @@
              * @returns {api.ListObjectsResp} ListObjectsResp instance
              */
             ListObjectsResp.create = function create(properties) {
-                return new ListObjectsResp(properties);
+                return ListObjectsResp.fromObject(properties);
             };
     
             /**
@@ -9308,7 +9308,7 @@
              * @returns {api.Disconnect} Disconnect instance
              */
             Disconnect.create = function create(properties) {
-                return new Disconnect(properties);
+                return Disconnect.fromObject(properties);
             };
     
             /**
@@ -9494,7 +9494,7 @@
              * @returns {api.Send} Send instance
              */
             Send.create = function create(properties) {
-                return new Send(properties);
+                return Send.fromObject(properties);
             };
     
             /**
@@ -9689,7 +9689,7 @@
              * @returns {api.Recv} Recv instance
              */
             Recv.create = function create(properties) {
-                return new Recv(properties);
+                return Recv.fromObject(properties);
             };
     
             /**
@@ -9893,7 +9893,7 @@
              * @returns {api.Connect} Connect instance
              */
             Connect.create = function create(properties) {
-                return new Connect(properties);
+                return Connect.fromObject(properties);
             };
     
             /**
@@ -10093,7 +10093,7 @@
              * @returns {api.Hint} Hint instance
              */
             Hint.create = function create(properties) {
-                return new Hint(properties);
+                return Hint.fromObject(properties);
             };
     
             /**
@@ -10270,7 +10270,7 @@
              * @returns {api.Ping} Ping instance
              */
             Ping.create = function create(properties) {
-                return new Ping(properties);
+                return Ping.fromObject(properties);
             };
     
             /**
@@ -10368,7 +10368,7 @@
             Ping.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.Ping)
                     return object;
-                return new $root.api.Ping();
+                return $root.api.Ping.fromObject();
             };
     
             /**
@@ -10429,7 +10429,7 @@
              * @returns {api.Pong} Pong instance
              */
             Pong.create = function create(properties) {
-                return new Pong(properties);
+                return Pong.fromObject(properties);
             };
     
             /**
@@ -10527,7 +10527,7 @@
             Pong.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.Pong)
                     return object;
-                return new $root.api.Pong();
+                return $root.api.Pong.fromObject();
             };
     
             /**
@@ -10615,7 +10615,7 @@
              * @returns {api.Hello} Hello instance
              */
             Hello.create = function create(properties) {
-                return new Hello(properties);
+                return Hello.fromObject(properties);
             };
     
             /**
@@ -10819,7 +10819,7 @@
              * @returns {api.Goodbye} Goodbye instance
              */
             Goodbye.create = function create(properties) {
-                return new Goodbye(properties);
+                return Goodbye.fromObject(properties);
             };
     
             /**
@@ -10917,7 +10917,7 @@
             Goodbye.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.Goodbye)
                     return object;
-                return new $root.api.Goodbye();
+                return $root.api.Goodbye.fromObject();
             };
     
             /**
@@ -10992,7 +10992,7 @@
              * @returns {api.CheckChanges} CheckChanges instance
              */
             CheckChanges.create = function create(properties) {
-                return new CheckChanges(properties);
+                return CheckChanges.fromObject(properties);
             };
     
             /**
@@ -11090,7 +11090,7 @@
             CheckChanges.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.CheckChanges)
                     return object;
-                return new $root.api.CheckChanges();
+                return $root.api.CheckChanges.fromObject();
             };
     
             /**
@@ -11169,7 +11169,7 @@
              * @returns {api.EnsurePackages} EnsurePackages instance
              */
             EnsurePackages.create = function create(properties) {
-                return new EnsurePackages(properties);
+                return EnsurePackages.fromObject(properties);
             };
     
             /**
@@ -11365,7 +11365,7 @@
              * @returns {api.Start} Start instance
              */
             Start.create = function create(properties) {
-                return new Start(properties);
+                return Start.fromObject(properties);
             };
     
             /**
@@ -11463,7 +11463,7 @@
             Start.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.Start)
                     return object;
-                return new $root.api.Start();
+                return $root.api.Start.fromObject();
             };
     
             /**
@@ -11543,7 +11543,7 @@
              * @returns {api.DebugStatus} DebugStatus instance
              */
             DebugStatus.create = function create(properties) {
-                return new DebugStatus(properties);
+                return DebugStatus.fromObject(properties);
             };
     
             /**
@@ -11772,7 +11772,7 @@
              * @returns {api.StackFrame} StackFrame instance
              */
             StackFrame.create = function create(properties) {
-                return new StackFrame(properties);
+                return StackFrame.fromObject(properties);
             };
     
             /**
@@ -11982,7 +11982,7 @@
              * @returns {api.ContainedTest} ContainedTest instance
              */
             ContainedTest.create = function create(properties) {
-                return new ContainedTest(properties);
+                return ContainedTest.fromObject(properties);
             };
     
             /**
@@ -12226,7 +12226,7 @@
              * @returns {api.TestResult} TestResult instance
              */
             TestResult.create = function create(properties) {
-                return new TestResult(properties);
+                return TestResult.fromObject(properties);
             };
     
             /**
@@ -12469,7 +12469,7 @@
              * @returns {api.TestFailure} TestFailure instance
              */
             TestFailure.create = function create(properties) {
-                return new TestFailure(properties);
+                return TestFailure.fromObject(properties);
             };
     
             /**
@@ -12678,7 +12678,7 @@
              * @returns {api.ResizeTerm} ResizeTerm instance
              */
             ResizeTerm.create = function create(properties) {
-                return new ResizeTerm(properties);
+                return ResizeTerm.fromObject(properties);
             };
     
             /**
@@ -12869,7 +12869,7 @@
              * @returns {api.SaneTerm} SaneTerm instance
              */
             SaneTerm.create = function create(properties) {
-                return new SaneTerm(properties);
+                return SaneTerm.fromObject(properties);
             };
     
             /**
@@ -12967,7 +12967,7 @@
             SaneTerm.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.SaneTerm)
                     return object;
-                return new $root.api.SaneTerm();
+                return $root.api.SaneTerm.fromObject();
             };
     
             /**
@@ -13038,7 +13038,7 @@
              * @returns {api.LintResults} LintResults instance
              */
             LintResults.create = function create(properties) {
-                return new LintResults(properties);
+                return LintResults.fromObject(properties);
             };
     
             /**
@@ -13271,7 +13271,7 @@
              * @returns {api.LintResult} LintResult instance
              */
             LintResult.create = function create(properties) {
-                return new LintResult(properties);
+                return LintResult.fromObject(properties);
             };
     
             /**
@@ -13488,7 +13488,7 @@
              * @returns {api.OK} OK instance
              */
             OK.create = function create(properties) {
-                return new OK(properties);
+                return OK.fromObject(properties);
             };
     
             /**
@@ -13586,7 +13586,7 @@
             OK.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.OK)
                     return object;
-                return new $root.api.OK();
+                return $root.api.OK.fromObject();
             };
     
             /**
@@ -13665,7 +13665,7 @@
              * @returns {api.Move} Move instance
              */
             Move.create = function create(properties) {
-                return new Move(properties);
+                return Move.fromObject(properties);
             };
     
             /**
@@ -13866,7 +13866,7 @@
              * @returns {api.Files} Files instance
              */
             Files.create = function create(properties) {
-                return new Files(properties);
+                return Files.fromObject(properties);
             };
     
             /**
@@ -14090,7 +14090,7 @@
              * @returns {api.File} File instance
              */
             File.create = function create(properties) {
-                return new File(properties);
+                return File.fromObject(properties);
             };
     
             /**
@@ -14330,7 +14330,7 @@
              * @returns {api.Clear} Clear instance
              */
             Clear.create = function create(properties) {
-                return new Clear(properties);
+                return Clear.fromObject(properties);
             };
     
             /**
@@ -14428,7 +14428,7 @@
             Clear.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.Clear)
                     return object;
-                return new $root.api.Clear();
+                return $root.api.Clear.fromObject();
             };
     
             /**
@@ -14498,7 +14498,7 @@
              * @returns {api.Toast} Toast instance
              */
             Toast.create = function create(properties) {
-                return new Toast(properties);
+                return Toast.fromObject(properties);
             };
     
             /**
@@ -14684,7 +14684,7 @@
              * @returns {api.Redirect} Redirect instance
              */
             Redirect.create = function create(properties) {
-                return new Redirect(properties);
+                return Redirect.fromObject(properties);
             };
     
             /**
@@ -14861,7 +14861,7 @@
              * @returns {api.RunMain} RunMain instance
              */
             RunMain.create = function create(properties) {
-                return new RunMain(properties);
+                return RunMain.fromObject(properties);
             };
     
             /**
@@ -14959,7 +14959,7 @@
             RunMain.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.RunMain)
                     return object;
-                return new $root.api.RunMain();
+                return $root.api.RunMain.fromObject();
             };
     
             /**
@@ -15056,7 +15056,7 @@
              * @returns {api.OpenChannel} OpenChannel instance
              */
             OpenChannel.create = function create(properties) {
-                return new OpenChannel(properties);
+                return OpenChannel.fromObject(properties);
             };
     
             /**
@@ -15334,7 +15334,7 @@
              * @returns {api.OpenChannelRes} OpenChannelRes instance
              */
             OpenChannelRes.create = function create(properties) {
-                return new OpenChannelRes(properties);
+                return OpenChannelRes.fromObject(properties);
             };
     
             /**
@@ -15590,7 +15590,7 @@
              * @returns {api.CloseChannel} CloseChannel instance
              */
             CloseChannel.create = function create(properties) {
-                return new CloseChannel(properties);
+                return CloseChannel.fromObject(properties);
             };
     
             /**
@@ -15833,7 +15833,7 @@
              * @returns {api.CloseChannelRes} CloseChannelRes instance
              */
             CloseChannelRes.create = function create(properties) {
-                return new CloseChannelRes(properties);
+                return CloseChannelRes.fromObject(properties);
             };
     
             /**
@@ -16067,7 +16067,7 @@
              * @returns {api.ContainerState} ContainerState instance
              */
             ContainerState.create = function create(properties) {
-                return new ContainerState(properties);
+                return ContainerState.fromObject(properties);
             };
     
             /**
@@ -16298,7 +16298,7 @@
              * @returns {api.PortOpen} PortOpen instance
              */
             PortOpen.create = function create(properties) {
-                return new PortOpen(properties);
+                return PortOpen.fromObject(properties);
             };
     
             /**
@@ -16520,7 +16520,7 @@
              * @returns {api.OTFetchRequest} OTFetchRequest instance
              */
             OTFetchRequest.create = function create(properties) {
-                return new OTFetchRequest(properties);
+                return OTFetchRequest.fromObject(properties);
             };
     
             /**
@@ -16721,7 +16721,7 @@
              * @returns {api.OTFetchResponse} OTFetchResponse instance
              */
             OTFetchResponse.create = function create(properties) {
-                return new OTFetchResponse(properties);
+                return OTFetchResponse.fromObject(properties);
             };
     
             /**
@@ -16973,7 +16973,7 @@
              * @returns {api.OTPacket} OTPacket instance
              */
             OTPacket.create = function create(properties) {
-                return new OTPacket(properties);
+                return OTPacket.fromObject(properties);
             };
     
             /**
@@ -17283,7 +17283,7 @@
              * @returns {api.OTRuneTransformOp} OTRuneTransformOp instance
              */
             OTRuneTransformOp.create = function create(properties) {
-                return new OTRuneTransformOp(properties);
+                return OTRuneTransformOp.fromObject(properties);
             };
     
             /**
@@ -17539,7 +17539,7 @@
              * @returns {api.OTStatus} OTStatus instance
              */
             OTStatus.create = function create(properties) {
-                return new OTStatus(properties);
+                return OTStatus.fromObject(properties);
             };
     
             /**
@@ -17827,7 +17827,7 @@
              * @returns {api.OTCursor} OTCursor instance
              */
             OTCursor.create = function create(properties) {
-                return new OTCursor(properties);
+                return OTCursor.fromObject(properties);
             };
     
             /**
@@ -18080,7 +18080,7 @@
              * @returns {api.ChatMessage} ChatMessage instance
              */
             ChatMessage.create = function create(properties) {
-                return new ChatMessage(properties);
+                return ChatMessage.fromObject(properties);
             };
     
             /**
@@ -18289,7 +18289,7 @@
              * @returns {api.ChatTyping} ChatTyping instance
              */
             ChatTyping.create = function create(properties) {
-                return new ChatTyping(properties);
+                return ChatTyping.fromObject(properties);
             };
     
             /**
@@ -18517,7 +18517,7 @@
              * @returns {api.User} User instance
              */
             User.create = function create(properties) {
-                return new User(properties);
+                return User.fromObject(properties);
             };
     
             /**
@@ -18760,7 +18760,7 @@
              * @returns {api.Roster} Roster instance
              */
             Roster.create = function create(properties) {
-                return new Roster(properties);
+                return Roster.fromObject(properties);
             };
     
             /**
@@ -18986,7 +18986,7 @@
              * @returns {api.Exec} Exec instance
              */
             Exec.create = function create(properties) {
-                return new Exec(properties);
+                return Exec.fromObject(properties);
             };
     
             /**
@@ -19340,7 +19340,7 @@
              * @returns {api.Package} Package instance
              */
             Package.create = function create(properties) {
-                return new Package(properties);
+                return Package.fromObject(properties);
             };
     
             /**
@@ -19678,7 +19678,7 @@
              * @returns {api.PackageSearch} PackageSearch instance
              */
             PackageSearch.create = function create(properties) {
-                return new PackageSearch(properties);
+                return PackageSearch.fromObject(properties);
             };
     
             /**
@@ -19865,7 +19865,7 @@
              * @returns {api.PackageSearchResp} PackageSearchResp instance
              */
             PackageSearchResp.create = function create(properties) {
-                return new PackageSearchResp(properties);
+                return PackageSearchResp.fromObject(properties);
             };
     
             /**
@@ -20071,7 +20071,7 @@
              * @returns {api.PackageInfo} PackageInfo instance
              */
             PackageInfo.create = function create(properties) {
-                return new PackageInfo(properties);
+                return PackageInfo.fromObject(properties);
             };
     
             /**
@@ -20262,7 +20262,7 @@
              * @returns {api.PackageInfoResp} PackageInfoResp instance
              */
             PackageInfoResp.create = function create(properties) {
-                return new PackageInfoResp(properties);
+                return PackageInfoResp.fromObject(properties);
             };
     
             /**
@@ -20454,7 +20454,7 @@
              * @returns {api.PackageAdd} PackageAdd instance
              */
             PackageAdd.create = function create(properties) {
-                return new PackageAdd(properties);
+                return PackageAdd.fromObject(properties);
             };
     
             /**
@@ -20661,7 +20661,7 @@
              * @returns {api.PackageRemove} PackageRemove instance
              */
             PackageRemove.create = function create(properties) {
-                return new PackageRemove(properties);
+                return PackageRemove.fromObject(properties);
             };
     
             /**
@@ -20858,7 +20858,7 @@
              * @returns {api.PackageInstall} PackageInstall instance
              */
             PackageInstall.create = function create(properties) {
-                return new PackageInstall(properties);
+                return PackageInstall.fromObject(properties);
             };
     
             /**
@@ -20956,7 +20956,7 @@
             PackageInstall.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.PackageInstall)
                     return object;
-                return new $root.api.PackageInstall();
+                return $root.api.PackageInstall.fromObject();
             };
     
             /**
@@ -21017,7 +21017,7 @@
              * @returns {api.PackageListSpecfile} PackageListSpecfile instance
              */
             PackageListSpecfile.create = function create(properties) {
-                return new PackageListSpecfile(properties);
+                return PackageListSpecfile.fromObject(properties);
             };
     
             /**
@@ -21115,7 +21115,7 @@
             PackageListSpecfile.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.PackageListSpecfile)
                     return object;
-                return new $root.api.PackageListSpecfile();
+                return $root.api.PackageListSpecfile.fromObject();
             };
     
             /**
@@ -21186,7 +21186,7 @@
              * @returns {api.PackageListSpecfileResp} PackageListSpecfileResp instance
              */
             PackageListSpecfileResp.create = function create(properties) {
-                return new PackageListSpecfileResp(properties);
+                return PackageListSpecfileResp.fromObject(properties);
             };
     
             /**
@@ -21383,7 +21383,7 @@
              * @returns {api.PackageCacheSave} PackageCacheSave instance
              */
             PackageCacheSave.create = function create(properties) {
-                return new PackageCacheSave(properties);
+                return PackageCacheSave.fromObject(properties);
             };
     
             /**
@@ -21481,7 +21481,7 @@
             PackageCacheSave.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.PackageCacheSave)
                     return object;
-                return new $root.api.PackageCacheSave();
+                return $root.api.PackageCacheSave.fromObject();
             };
     
             /**
@@ -21552,7 +21552,7 @@
              * @returns {api.ChatScrollback} ChatScrollback instance
              */
             ChatScrollback.create = function create(properties) {
-                return new ChatScrollback(properties);
+                return ChatScrollback.fromObject(properties);
             };
     
             /**
@@ -21759,7 +21759,7 @@
              * @returns {api.Metrics} Metrics instance
              */
             Metrics.create = function create(properties) {
-                return new Metrics(properties);
+                return Metrics.fromObject(properties);
             };
     
             /**
@@ -22022,7 +22022,7 @@
              * @returns {api.PprofRequest} PprofRequest instance
              */
             PprofRequest.create = function create(properties) {
-                return new PprofRequest(properties);
+                return PprofRequest.fromObject(properties);
             };
     
             /**
@@ -22332,7 +22332,7 @@
              * @returns {api.PprofAllocsProfileRequest} PprofAllocsProfileRequest instance
              */
             PprofAllocsProfileRequest.create = function create(properties) {
-                return new PprofAllocsProfileRequest(properties);
+                return PprofAllocsProfileRequest.fromObject(properties);
             };
     
             /**
@@ -22518,7 +22518,7 @@
              * @returns {api.PprofBlockProfileRequest} PprofBlockProfileRequest instance
              */
             PprofBlockProfileRequest.create = function create(properties) {
-                return new PprofBlockProfileRequest(properties);
+                return PprofBlockProfileRequest.fromObject(properties);
             };
     
             /**
@@ -22704,7 +22704,7 @@
              * @returns {api.PprofCpuProfileRequest} PprofCpuProfileRequest instance
              */
             PprofCpuProfileRequest.create = function create(properties) {
-                return new PprofCpuProfileRequest(properties);
+                return PprofCpuProfileRequest.fromObject(properties);
             };
     
             /**
@@ -22913,7 +22913,7 @@
              * @returns {api.PprofHeapProfileRequest} PprofHeapProfileRequest instance
              */
             PprofHeapProfileRequest.create = function create(properties) {
-                return new PprofHeapProfileRequest(properties);
+                return PprofHeapProfileRequest.fromObject(properties);
             };
     
             /**
@@ -23113,7 +23113,7 @@
              * @returns {api.PprofMutexProfileRequest} PprofMutexProfileRequest instance
              */
             PprofMutexProfileRequest.create = function create(properties) {
-                return new PprofMutexProfileRequest(properties);
+                return PprofMutexProfileRequest.fromObject(properties);
             };
     
             /**
@@ -23308,7 +23308,7 @@
              * @returns {api.PprofResponse} PprofResponse instance
              */
             PprofResponse.create = function create(properties) {
-                return new PprofResponse(properties);
+                return PprofResponse.fromObject(properties);
             };
     
             /**
@@ -23517,7 +23517,7 @@
              * @returns {api.PTYConfig} PTYConfig instance
              */
             PTYConfig.create = function create(properties) {
-                return new PTYConfig(properties);
+                return PTYConfig.fromObject(properties);
             };
     
             /**
@@ -23733,7 +23733,7 @@
                  * @returns {google.protobuf.Timestamp} Timestamp instance
                  */
                 Timestamp.create = function create(properties) {
-                    return new Timestamp(properties);
+                    return Timestamp.fromObject(properties);
                 };
     
                 /**
