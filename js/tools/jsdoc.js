@@ -12,10 +12,13 @@ const fs = require('fs');
 const commentRegex = new RegExp('/\\*\\*([^*]|\\*[^/])*\\*/', 'smg');
 
 // The regex that matches an `@interface` JSDoc line.
-const interfaceRegex = new RegExp('@interface\\s+(\\S+)', 'g');
+const interfaceRegex = new RegExp('@interface\\s+(\\S+)\\s*');
 
 // The regex that matches an `@implements` JSDoc line.
 const implementsRegex = new RegExp('.*@implements\\b.+\n');
+
+// The regex that matches a `@memberof` JSDoc line.
+const memberofRegex = new RegExp('@memberof\\s+(.*)\\s*');
 
 // The regex that matches a `@property` JSDoc line.
 const propertyRegex = new RegExp('@property\\s+\\{([^}]+)\\}', 'g');
@@ -109,15 +112,20 @@ exports.main = function (args /*: string[] */) {
 
   const interfaces /*: Set<string> */ = new Set();
   while (true) {
-    const match = interfaceRegex.exec(stdinBuffer);
+    const match = commentRegex.exec(stdinBuffer);
     if (match === null) {
       break;
     }
-    interfaces.add(match[1]);
+    const jsDoc = match[0];
+    const memberofMatch = memberofRegex.exec(jsDoc);
+    const interfaceMatch = interfaceRegex.exec(jsDoc);
+    if (memberofMatch === null || interfaceMatch === null) {
+      continue;
+    }
+    interfaces.add(`${memberofMatch[1]}.${interfaceMatch[1]}`);
   }
 
   const chunks = [];
-
   let lastIndex = 0;
   while (true) {
     const match = commentRegex.exec(stdinBuffer);

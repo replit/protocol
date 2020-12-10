@@ -33,107 +33,107 @@
              * @interface ICommand
              * @property {number|null} [channel] Command channel
              * @property {number|null} [session] Command session
-             * @property {api.OpenChannel|null} [openChan] Command openChan
-             * @property {api.OpenChannelRes|null} [openChanRes] Command openChanRes
-             * @property {api.CloseChannel|null} [closeChan] Command closeChan
-             * @property {api.CloseChannelRes|null} [closeChanRes] Command closeChanRes
-             * @property {api.ContainerState|null} [containerState] Command containerState
-             * @property {api.PortOpen|null} [portOpen] Command portOpen
-             * @property {api.Toast|null} [toast] Command toast
-             * @property {api.Redirect|null} [redirect] Command redirect
-             * @property {api.RunMain|null} [runMain] Command runMain
-             * @property {api.Clear|null} [clear] Command clear
+             * @property {api.OpenChannel|api.IOpenChannel|null} [openChan] Command openChan
+             * @property {api.OpenChannelRes|api.IOpenChannelRes|null} [openChanRes] Command openChanRes
+             * @property {api.CloseChannel|api.ICloseChannel|null} [closeChan] Command closeChan
+             * @property {api.CloseChannelRes|api.ICloseChannelRes|null} [closeChanRes] Command closeChanRes
+             * @property {api.ContainerState|api.IContainerState|null} [containerState] Command containerState
+             * @property {api.PortOpen|api.IPortOpen|null} [portOpen] Command portOpen
+             * @property {api.Toast|api.IToast|null} [toast] Command toast
+             * @property {api.Redirect|api.IRedirect|null} [redirect] Command redirect
+             * @property {api.RunMain|api.IRunMain|null} [runMain] Command runMain
+             * @property {api.Clear|api.IClear|null} [clear] Command clear
              * @property {string|null} ["eval"] Command eval
              * @property {string|null} [result] Command result
              * @property {string|null} [input] Command input
              * @property {string|null} [output] Command output
              * @property {string|null} [error] Command error
-             * @property {api.SaneTerm|null} [saneTerm] Command saneTerm
-             * @property {api.ResizeTerm|null} [resizeTerm] Command resizeTerm
+             * @property {api.SaneTerm|api.ISaneTerm|null} [saneTerm] Command saneTerm
+             * @property {api.ResizeTerm|api.IResizeTerm|null} [resizeTerm] Command resizeTerm
              * @property {api.State|null} [state] Command state
-             * @property {api.OK|null} [ok] Command ok
-             * @property {api.File|null} [persist] Command persist
-             * @property {api.File|null} [persistMirror] Command persistMirror
-             * @property {api.File|null} [write] Command write
-             * @property {api.File|null} [remove] Command remove
-             * @property {api.Move|null} [move] Command move
-             * @property {api.File|null} [tryRemove] Command tryRemove
-             * @property {api.File|null} [mkdir] Command mkdir
-             * @property {api.File|null} [read] Command read
-             * @property {api.File|null} [readdir] Command readdir
-             * @property {api.Files|null} [files] Command files
-             * @property {api.File|null} [file] Command file
-             * @property {api.CheckChanges|null} [checkChanges] Command checkChanges
-             * @property {api.Files|null} [changedFiles] Command changedFiles
-             * @property {api.LintResults|null} [lintResults] Command lintResults
-             * @property {api.ContainedTest|null} [runContainedTest] Command runContainedTest
-             * @property {api.TestResult|null} [testResult] Command testResult
+             * @property {api.OK|api.IOK|null} [ok] Command ok
+             * @property {api.File|api.IFile|null} [persist] Command persist
+             * @property {api.File|api.IFile|null} [persistMirror] Command persistMirror
+             * @property {api.File|api.IFile|null} [write] Command write
+             * @property {api.File|api.IFile|null} [remove] Command remove
+             * @property {api.Move|api.IMove|null} [move] Command move
+             * @property {api.File|api.IFile|null} [tryRemove] Command tryRemove
+             * @property {api.File|api.IFile|null} [mkdir] Command mkdir
+             * @property {api.File|api.IFile|null} [read] Command read
+             * @property {api.File|api.IFile|null} [readdir] Command readdir
+             * @property {api.Files|api.IFiles|null} [files] Command files
+             * @property {api.File|api.IFile|null} [file] Command file
+             * @property {api.CheckChanges|api.ICheckChanges|null} [checkChanges] Command checkChanges
+             * @property {api.Files|api.IFiles|null} [changedFiles] Command changedFiles
+             * @property {api.LintResults|api.ILintResults|null} [lintResults] Command lintResults
+             * @property {api.ContainedTest|api.IContainedTest|null} [runContainedTest] Command runContainedTest
+             * @property {api.TestResult|api.ITestResult|null} [testResult] Command testResult
              * @property {string|null} [debuggerStart] Command debuggerStart
-             * @property {api.RunMain|null} [debuggerStep] Command debuggerStep
-             * @property {api.DebugStatus|null} [debuggerStatus] Command debuggerStatus
-             * @property {api.EnsurePackages|null} [ensurePackages] Command ensurePackages
-             * @property {api.Ping|null} [ping] Command ping
-             * @property {api.Pong|null} [pong] Command pong
-             * @property {api.Hello|null} [hello] Command hello
-             * @property {api.Goodbye|null} [goodbye] Command goodbye
-             * @property {api.Hint|null} [hint] Command hint
-             * @property {api.Connect|null} [connect] Command connect
-             * @property {api.Send|null} [send] Command send
-             * @property {api.Recv|null} [recv] Command recv
-             * @property {api.Disconnect|null} [disconnect] Command disconnect
-             * @property {api.FileAuthReq|null} [fileAuthReq] Command fileAuthReq
-             * @property {api.FileAuthRes|null} [fileAuthRes] Command fileAuthRes
-             * @property {api.MultiFileAuthRes|null} [mutliFileAuthRes] Command mutliFileAuthRes
-             * @property {api.ListObjects|null} [listObjects] Command listObjects
-             * @property {api.ListObjectsResp|null} [listObjectsResp] Command listObjectsResp
-             * @property {api.OTPacket|null} [ot] Command ot
-             * @property {api.OTStatus|null} [otstatus] Command otstatus
-             * @property {api.OTLinkFile|null} [otLinkFile] Command otLinkFile
-             * @property {api.OTCursor|null} [otNewCursor] Command otNewCursor
-             * @property {api.OTCursor|null} [otDeleteCursor] Command otDeleteCursor
-             * @property {api.OTFetchRequest|null} [otFetchRequest] Command otFetchRequest
-             * @property {api.OTFetchResponse|null} [otFetchResponse] Command otFetchResponse
-             * @property {api.Flush|null} [flush] Command flush
-             * @property {api.Debug|null} [debug] Command debug
-             * @property {api.StartVCR|null} [startVCR] Command startVCR
-             * @property {api.ReadVCR|null} [readVCR] Command readVCR
-             * @property {api.VCRLog|null} [VCRLog] Command VCRLog
-             * @property {api.Auth|null} [auth] Command auth
-             * @property {api.ExecInfo|null} [execInfo] Command execInfo
-             * @property {api.SubscribeFile|null} [subscribeFile] Command subscribeFile
-             * @property {api.FileEvent|null} [fileEvent] Command fileEvent
-             * @property {api.Roster|null} [roster] Command roster
-             * @property {api.User|null} [join] Command join
-             * @property {api.User|null} [part] Command part
-             * @property {api.Exec|null} [exec] Command exec
-             * @property {api.PackageSearch|null} [packageSearch] Command packageSearch
-             * @property {api.PackageSearchResp|null} [packageSearchResp] Command packageSearchResp
-             * @property {api.PackageInfo|null} [packageInfo] Command packageInfo
-             * @property {api.PackageInfoResp|null} [packageInfoResp] Command packageInfoResp
-             * @property {api.PackageAdd|null} [packageAdd] Command packageAdd
-             * @property {api.PackageRemove|null} [packageRemove] Command packageRemove
-             * @property {api.PackageInstall|null} [packageInstall] Command packageInstall
-             * @property {api.PackageListSpecfile|null} [packageListSpecfile] Command packageListSpecfile
-             * @property {api.PackageListSpecfileResp|null} [packageListSpecfileResp] Command packageListSpecfileResp
-             * @property {api.PackageCacheSave|null} [packageCacheSave] Command packageCacheSave
-             * @property {api.ChatMessage|null} [chatMessage] Command chatMessage
-             * @property {api.ChatTyping|null} [chatTyping] Command chatTyping
-             * @property {api.ChatScrollback|null} [chatScrollback] Command chatScrollback
-             * @property {api.FSSnapshot|null} [fsSnapshot] Command fsSnapshot
-             * @property {api.FSLock|null} [fsTakeLock] Command fsTakeLock
-             * @property {api.FSLock|null} [fsReleaseLock] Command fsReleaseLock
+             * @property {api.RunMain|api.IRunMain|null} [debuggerStep] Command debuggerStep
+             * @property {api.DebugStatus|api.IDebugStatus|null} [debuggerStatus] Command debuggerStatus
+             * @property {api.EnsurePackages|api.IEnsurePackages|null} [ensurePackages] Command ensurePackages
+             * @property {api.Ping|api.IPing|null} [ping] Command ping
+             * @property {api.Pong|api.IPong|null} [pong] Command pong
+             * @property {api.Hello|api.IHello|null} [hello] Command hello
+             * @property {api.Goodbye|api.IGoodbye|null} [goodbye] Command goodbye
+             * @property {api.Hint|api.IHint|null} [hint] Command hint
+             * @property {api.Connect|api.IConnect|null} [connect] Command connect
+             * @property {api.Send|api.ISend|null} [send] Command send
+             * @property {api.Recv|api.IRecv|null} [recv] Command recv
+             * @property {api.Disconnect|api.IDisconnect|null} [disconnect] Command disconnect
+             * @property {api.FileAuthReq|api.IFileAuthReq|null} [fileAuthReq] Command fileAuthReq
+             * @property {api.FileAuthRes|api.IFileAuthRes|null} [fileAuthRes] Command fileAuthRes
+             * @property {api.MultiFileAuthRes|api.IMultiFileAuthRes|null} [mutliFileAuthRes] Command mutliFileAuthRes
+             * @property {api.ListObjects|api.IListObjects|null} [listObjects] Command listObjects
+             * @property {api.ListObjectsResp|api.IListObjectsResp|null} [listObjectsResp] Command listObjectsResp
+             * @property {api.OTPacket|api.IOTPacket|null} [ot] Command ot
+             * @property {api.OTStatus|api.IOTStatus|null} [otstatus] Command otstatus
+             * @property {api.OTLinkFile|api.IOTLinkFile|null} [otLinkFile] Command otLinkFile
+             * @property {api.OTCursor|api.IOTCursor|null} [otNewCursor] Command otNewCursor
+             * @property {api.OTCursor|api.IOTCursor|null} [otDeleteCursor] Command otDeleteCursor
+             * @property {api.OTFetchRequest|api.IOTFetchRequest|null} [otFetchRequest] Command otFetchRequest
+             * @property {api.OTFetchResponse|api.IOTFetchResponse|null} [otFetchResponse] Command otFetchResponse
+             * @property {api.Flush|api.IFlush|null} [flush] Command flush
+             * @property {api.Debug|api.IDebug|null} [debug] Command debug
+             * @property {api.StartVCR|api.IStartVCR|null} [startVCR] Command startVCR
+             * @property {api.ReadVCR|api.IReadVCR|null} [readVCR] Command readVCR
+             * @property {api.VCRLog|api.IVCRLog|null} [VCRLog] Command VCRLog
+             * @property {api.Auth|api.IAuth|null} [auth] Command auth
+             * @property {api.ExecInfo|api.IExecInfo|null} [execInfo] Command execInfo
+             * @property {api.SubscribeFile|api.ISubscribeFile|null} [subscribeFile] Command subscribeFile
+             * @property {api.FileEvent|api.IFileEvent|null} [fileEvent] Command fileEvent
+             * @property {api.Roster|api.IRoster|null} [roster] Command roster
+             * @property {api.User|api.IUser|null} [join] Command join
+             * @property {api.User|api.IUser|null} [part] Command part
+             * @property {api.Exec|api.IExec|null} [exec] Command exec
+             * @property {api.PackageSearch|api.IPackageSearch|null} [packageSearch] Command packageSearch
+             * @property {api.PackageSearchResp|api.IPackageSearchResp|null} [packageSearchResp] Command packageSearchResp
+             * @property {api.PackageInfo|api.IPackageInfo|null} [packageInfo] Command packageInfo
+             * @property {api.PackageInfoResp|api.IPackageInfoResp|null} [packageInfoResp] Command packageInfoResp
+             * @property {api.PackageAdd|api.IPackageAdd|null} [packageAdd] Command packageAdd
+             * @property {api.PackageRemove|api.IPackageRemove|null} [packageRemove] Command packageRemove
+             * @property {api.PackageInstall|api.IPackageInstall|null} [packageInstall] Command packageInstall
+             * @property {api.PackageListSpecfile|api.IPackageListSpecfile|null} [packageListSpecfile] Command packageListSpecfile
+             * @property {api.PackageListSpecfileResp|api.IPackageListSpecfileResp|null} [packageListSpecfileResp] Command packageListSpecfileResp
+             * @property {api.PackageCacheSave|api.IPackageCacheSave|null} [packageCacheSave] Command packageCacheSave
+             * @property {api.ChatMessage|api.IChatMessage|null} [chatMessage] Command chatMessage
+             * @property {api.ChatTyping|api.IChatTyping|null} [chatTyping] Command chatTyping
+             * @property {api.ChatScrollback|api.IChatScrollback|null} [chatScrollback] Command chatScrollback
+             * @property {api.FSSnapshot|api.IFSSnapshot|null} [fsSnapshot] Command fsSnapshot
+             * @property {api.FSLock|api.IFSLock|null} [fsTakeLock] Command fsTakeLock
+             * @property {api.FSLock|api.IFSLock|null} [fsReleaseLock] Command fsReleaseLock
              * @property {boolean|null} [hasCap] Command hasCap
-             * @property {api.Pid1Config|null} [pid1Config] Command pid1Config
-             * @property {api.Metrics|null} [metrics] Command metrics
-             * @property {api.BootStatus|null} [bootStatus] Command bootStatus
-             * @property {api.ReadMeta|null} [readMeta] Command readMeta
-             * @property {api.WriteMeta|null} [writeMeta] Command writeMeta
-             * @property {api.AppendMeta|null} [appendMeta] Command appendMeta
-             * @property {api.Audio|null} [audio] Command audio
-             * @property {api.PprofRequest|null} [pprofRequest] Command pprofRequest
-             * @property {api.PprofResponse|null} [pprofResponse] Command pprofResponse
-             * @property {api.Audio2|null} [audio2] Command audio2
-             * @property {api.PTYConfig|null} [PTYConfig] Command PTYConfig
+             * @property {api.Pid1Config|api.IPid1Config|null} [pid1Config] Command pid1Config
+             * @property {api.Metrics|api.IMetrics|null} [metrics] Command metrics
+             * @property {api.BootStatus|api.IBootStatus|null} [bootStatus] Command bootStatus
+             * @property {api.ReadMeta|api.IReadMeta|null} [readMeta] Command readMeta
+             * @property {api.WriteMeta|api.IWriteMeta|null} [writeMeta] Command writeMeta
+             * @property {api.AppendMeta|api.IAppendMeta|null} [appendMeta] Command appendMeta
+             * @property {api.Audio|api.IAudio|null} [audio] Command audio
+             * @property {api.PprofRequest|api.IPprofRequest|null} [pprofRequest] Command pprofRequest
+             * @property {api.PprofResponse|api.IPprofResponse|null} [pprofResponse] Command pprofResponse
+             * @property {api.Audio2|api.IAudio2|null} [audio2] Command audio2
+             * @property {api.PTYConfig|api.IPTYConfig|null} [PTYConfig] Command PTYConfig
              * @property {string|null} [ref] Command ref
              */
     
@@ -5712,7 +5712,7 @@
              * Properties of a SubscribeFile.
              * @memberof api
              * @interface ISubscribeFile
-             * @property {Array.<api.File>|null} [files] SubscribeFile files
+             * @property {Array.<api.File|api.IFile>|null} [files] SubscribeFile files
              */
     
             /**
@@ -5919,8 +5919,8 @@
              * Properties of a FileEvent.
              * @memberof api
              * @interface IFileEvent
-             * @property {api.File|null} [file] FileEvent file
-             * @property {api.File|null} [dest] FileEvent dest
+             * @property {api.File|api.IFile|null} [file] FileEvent file
+             * @property {api.File|api.IFile|null} [dest] FileEvent dest
              * @property {api.FileEvent.Op|null} [op] FileEvent op
              */
     
@@ -6360,7 +6360,7 @@
              * Properties of a OTLinkFile.
              * @memberof api
              * @interface IOTLinkFile
-             * @property {api.File|null} [file] OTLinkFile file
+             * @property {api.File|api.IFile|null} [file] OTLinkFile file
              * @property {boolean|null} [highConsistency] OTLinkFile highConsistency
              * @property {boolean|null} [useModTime] OTLinkFile useModTime
              */
@@ -6807,7 +6807,7 @@
              * @interface IVCREntry
              * @property {number|null} [timestamp] VCREntry timestamp
              * @property {api.VCREntry.Direction|null} [direction] VCREntry direction
-             * @property {api.Command|null} [command] VCREntry command
+             * @property {api.Command|api.ICommand|null} [command] VCREntry command
              * @property {string|null} [uid] VCREntry uid
              */
     
@@ -7422,8 +7422,8 @@
              * Properties of a VCRLog.
              * @memberof api
              * @interface IVCRLog
-             * @property {Array.<api.VCREntry>|null} [log] VCRLog log
-             * @property {api.File|null} [logfile] VCRLog logfile
+             * @property {Array.<api.VCREntry|api.IVCREntry>|null} [log] VCRLog log
+             * @property {api.File|api.IFile|null} [logfile] VCRLog logfile
              */
     
             /**
@@ -8086,7 +8086,7 @@
              * Properties of a FileAuthReq.
              * @memberof api
              * @interface IFileAuthReq
-             * @property {api.File|null} [file] FileAuthReq file
+             * @property {api.File|api.IFile|null} [file] FileAuthReq file
              * @property {api.FileAuthMethod|null} [method] FileAuthReq method
              */
     
@@ -8323,9 +8323,9 @@
              * Properties of a MultiFileAuthRes.
              * @memberof api
              * @interface IMultiFileAuthRes
-             * @property {api.FileAuthRes|null} [put] MultiFileAuthRes put
-             * @property {api.FileAuthRes|null} [del] MultiFileAuthRes del
-             * @property {api.FileAuthRes|null} [get] MultiFileAuthRes get
+             * @property {api.FileAuthRes|api.IFileAuthRes|null} [put] MultiFileAuthRes put
+             * @property {api.FileAuthRes|api.IFileAuthRes|null} [del] MultiFileAuthRes del
+             * @property {api.FileAuthRes|api.IFileAuthRes|null} [get] MultiFileAuthRes get
              */
     
             /**
@@ -8569,7 +8569,7 @@
              * Properties of a FileAuthRes.
              * @memberof api
              * @interface IFileAuthRes
-             * @property {api.File|null} [file] FileAuthRes file
+             * @property {api.File|api.IFile|null} [file] FileAuthRes file
              * @property {string|null} [url] FileAuthRes url
              * @property {api.FileAuthMethod|null} [method] FileAuthRes method
              * @property {number|null} [expire] FileAuthRes expire
@@ -11127,7 +11127,7 @@
              * @memberof api
              * @interface IEnsurePackages
              * @property {boolean|null} [install] EnsurePackages install
-             * @property {api.File|null} [file] EnsurePackages file
+             * @property {api.File|api.IFile|null} [file] EnsurePackages file
              */
     
             /**
@@ -11500,7 +11500,7 @@
              * @memberof api
              * @interface IDebugStatus
              * @property {boolean|null} [done] DebugStatus done
-             * @property {Array.<api.StackFrame>|null} [stack] DebugStatus stack
+             * @property {Array.<api.StackFrame|api.IStackFrame>|null} [stack] DebugStatus stack
              */
     
             /**
@@ -11938,8 +11938,8 @@
              * Properties of a ContainedTest.
              * @memberof api
              * @interface IContainedTest
-             * @property {api.File|null} [suite] ContainedTest suite
-             * @property {Array.<api.File>|null} [project] ContainedTest project
+             * @property {api.File|api.IFile|null} [suite] ContainedTest suite
+             * @property {Array.<api.File|api.IFile>|null} [project] ContainedTest project
              */
     
             /**
@@ -12175,7 +12175,7 @@
              * @interface ITestResult
              * @property {boolean|null} [passed] TestResult passed
              * @property {string|null} [stderr] TestResult stderr
-             * @property {Array.<api.TestFailure>|null} [fails] TestResult fails
+             * @property {Array.<api.TestFailure|api.ITestFailure>|null} [fails] TestResult fails
              */
     
             /**
@@ -13003,7 +13003,7 @@
              * Properties of a LintResults.
              * @memberof api
              * @interface ILintResults
-             * @property {Array.<api.LintResult>|null} [results] LintResults results
+             * @property {Array.<api.LintResult|api.ILintResult>|null} [results] LintResults results
              */
     
             /**
@@ -13831,7 +13831,7 @@
              * Properties of a Files.
              * @memberof api
              * @interface IFiles
-             * @property {Array.<api.File>|null} [files] Files files
+             * @property {Array.<api.File|api.IFile>|null} [files] Files files
              */
     
             /**
@@ -16686,7 +16686,7 @@
              * Properties of a OTFetchResponse.
              * @memberof api
              * @interface IOTFetchResponse
-             * @property {Array.<api.OTPacket>|null} [packets] OTFetchResponse packets
+             * @property {Array.<api.OTPacket|api.IOTPacket>|null} [packets] OTFetchResponse packets
              */
     
             /**
@@ -16895,9 +16895,9 @@
              * @interface IOTPacket
              * @property {number|null} [spookyVersion] OTPacket spookyVersion
              * @property {number|null} [version] OTPacket version
-             * @property {Array.<api.OTRuneTransformOp>|null} [ops] OTPacket ops
+             * @property {Array.<api.OTRuneTransformOp|api.IOTRuneTransformOp>|null} [ops] OTPacket ops
              * @property {number|null} [crc32] OTPacket crc32
-             * @property {google.protobuf.Timestamp|null} [committed] OTPacket committed
+             * @property {google.protobuf.Timestamp|google.protobuf.ITimestamp|null} [committed] OTPacket committed
              * @property {number|null} [nonce] OTPacket nonce
              */
     
@@ -17479,8 +17479,8 @@
              * @interface IOTStatus
              * @property {string|null} [contents] OTStatus contents
              * @property {number|null} [version] OTStatus version
-             * @property {api.File|null} [linkedFile] OTStatus linkedFile
-             * @property {Array.<api.OTCursor>|null} [cursors] OTStatus cursors
+             * @property {api.File|api.IFile|null} [linkedFile] OTStatus linkedFile
+             * @property {Array.<api.OTCursor|api.IOTCursor>|null} [cursors] OTStatus cursors
              */
     
             /**
@@ -17760,7 +17760,7 @@
              * @property {number|null} [position] OTCursor position
              * @property {number|null} [selectionStart] OTCursor selectionStart
              * @property {number|null} [selectionEnd] OTCursor selectionEnd
-             * @property {api.User|null} [user] OTCursor user
+             * @property {api.User|api.IUser|null} [user] OTCursor user
              * @property {string|null} [id] OTCursor id
              */
     
@@ -18725,7 +18725,7 @@
              * Properties of a Roster.
              * @memberof api
              * @interface IRoster
-             * @property {Array.<api.User>|null} [user] Roster user
+             * @property {Array.<api.User|api.IUser>|null} [user] Roster user
              */
     
             /**
@@ -19225,7 +19225,7 @@
              * @property {string|null} [bugTrackerURL] Package bugTrackerURL
              * @property {string|null} [author] Package author
              * @property {string|null} [license] Package license
-             * @property {Array.<api.Package>|null} [dependencies] Package dependencies
+             * @property {Array.<api.Package|api.IPackage>|null} [dependencies] Package dependencies
              */
     
             /**
@@ -19830,7 +19830,7 @@
              * Properties of a PackageSearchResp.
              * @memberof api
              * @interface IPackageSearchResp
-             * @property {Array.<api.Package>|null} [results] PackageSearchResp results
+             * @property {Array.<api.Package|api.IPackage>|null} [results] PackageSearchResp results
              */
     
             /**
@@ -20037,7 +20037,7 @@
              * Properties of a PackageInfo.
              * @memberof api
              * @interface IPackageInfo
-             * @property {api.Package|null} [pkg] PackageInfo pkg
+             * @property {api.Package|api.IPackage|null} [pkg] PackageInfo pkg
              */
     
             /**
@@ -20228,7 +20228,7 @@
              * Properties of a PackageInfoResp.
              * @memberof api
              * @interface IPackageInfoResp
-             * @property {api.Package|null} [pkg] PackageInfoResp pkg
+             * @property {api.Package|api.IPackage|null} [pkg] PackageInfoResp pkg
              */
     
             /**
@@ -20419,7 +20419,7 @@
              * Properties of a PackageAdd.
              * @memberof api
              * @interface IPackageAdd
-             * @property {Array.<api.Package>|null} [pkgs] PackageAdd pkgs
+             * @property {Array.<api.Package|api.IPackage>|null} [pkgs] PackageAdd pkgs
              */
     
             /**
@@ -20626,7 +20626,7 @@
              * Properties of a PackageRemove.
              * @memberof api
              * @interface IPackageRemove
-             * @property {Array.<api.Package>|null} [pkgs] PackageRemove pkgs
+             * @property {Array.<api.Package|api.IPackage>|null} [pkgs] PackageRemove pkgs
              */
     
             /**
@@ -21151,7 +21151,7 @@
              * Properties of a PackageListSpecfileResp.
              * @memberof api
              * @interface IPackageListSpecfileResp
-             * @property {Array.<api.Package>|null} [pkgs] PackageListSpecfileResp pkgs
+             * @property {Array.<api.Package|api.IPackage>|null} [pkgs] PackageListSpecfileResp pkgs
              */
     
             /**
@@ -21517,7 +21517,7 @@
              * Properties of a ChatScrollback.
              * @memberof api
              * @interface IChatScrollback
-             * @property {Array.<api.ChatMessage>|null} [scrollback] ChatScrollback scrollback
+             * @property {Array.<api.ChatMessage|api.IChatMessage>|null} [scrollback] ChatScrollback scrollback
              */
     
             /**
@@ -21930,11 +21930,11 @@
              * @memberof api
              * @interface IPprofRequest
              * @property {string|null} [id] PprofRequest id
-             * @property {api.PprofCpuProfileRequest|null} [pprofCpuProfileRequest] PprofRequest pprofCpuProfileRequest
-             * @property {api.PprofHeapProfileRequest|null} [pprofHeapProfileRequest] PprofRequest pprofHeapProfileRequest
-             * @property {api.PprofAllocsProfileRequest|null} [pprofAllocsProfileRequest] PprofRequest pprofAllocsProfileRequest
-             * @property {api.PprofBlockProfileRequest|null} [pprofBlockProfileRequest] PprofRequest pprofBlockProfileRequest
-             * @property {api.PprofMutexProfileRequest|null} [pprofMutexProfileRequest] PprofRequest pprofMutexProfileRequest
+             * @property {api.PprofCpuProfileRequest|api.IPprofCpuProfileRequest|null} [pprofCpuProfileRequest] PprofRequest pprofCpuProfileRequest
+             * @property {api.PprofHeapProfileRequest|api.IPprofHeapProfileRequest|null} [pprofHeapProfileRequest] PprofRequest pprofHeapProfileRequest
+             * @property {api.PprofAllocsProfileRequest|api.IPprofAllocsProfileRequest|null} [pprofAllocsProfileRequest] PprofRequest pprofAllocsProfileRequest
+             * @property {api.PprofBlockProfileRequest|api.IPprofBlockProfileRequest|null} [pprofBlockProfileRequest] PprofRequest pprofBlockProfileRequest
+             * @property {api.PprofMutexProfileRequest|api.IPprofMutexProfileRequest|null} [pprofMutexProfileRequest] PprofRequest pprofMutexProfileRequest
              */
     
             /**

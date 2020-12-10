@@ -123,52 +123,52 @@ declare type api$ICommand = {|
   /**
    * Command openChan
    */
-  openChan?: api$OpenChannel | null,
+  openChan?: api$OpenChannel | api$IOpenChannel | null,
 
   /**
    * Command openChanRes
    */
-  openChanRes?: api$OpenChannelRes | null,
+  openChanRes?: api$OpenChannelRes | api$IOpenChannelRes | null,
 
   /**
    * Command closeChan
    */
-  closeChan?: api$CloseChannel | null,
+  closeChan?: api$CloseChannel | api$ICloseChannel | null,
 
   /**
    * Command closeChanRes
    */
-  closeChanRes?: api$CloseChannelRes | null,
+  closeChanRes?: api$CloseChannelRes | api$ICloseChannelRes | null,
 
   /**
    * Command containerState
    */
-  containerState?: api$ContainerState | null,
+  containerState?: api$ContainerState | api$IContainerState | null,
 
   /**
    * Command portOpen
    */
-  portOpen?: api$PortOpen | null,
+  portOpen?: api$PortOpen | api$IPortOpen | null,
 
   /**
    * Command toast
    */
-  toast?: api$Toast | null,
+  toast?: api$Toast | api$IToast | null,
 
   /**
    * Command redirect
    */
-  redirect?: api$Redirect | null,
+  redirect?: api$Redirect | api$IRedirect | null,
 
   /**
    * Command runMain
    */
-  runMain?: api$RunMain | null,
+  runMain?: api$RunMain | api$IRunMain | null,
 
   /**
    * Command clear
    */
-  clear?: api$Clear | null,
+  clear?: api$Clear | api$IClear | null,
 
   /**
    * Command eval
@@ -198,12 +198,12 @@ declare type api$ICommand = {|
   /**
    * Command saneTerm
    */
-  saneTerm?: api$SaneTerm | null,
+  saneTerm?: api$SaneTerm | api$ISaneTerm | null,
 
   /**
    * Command resizeTerm
    */
-  resizeTerm?: api$ResizeTerm | null,
+  resizeTerm?: api$ResizeTerm | api$IResizeTerm | null,
 
   /**
    * Command state
@@ -213,87 +213,87 @@ declare type api$ICommand = {|
   /**
    * Command ok
    */
-  ok?: api$OK | null,
+  ok?: api$OK | api$IOK | null,
 
   /**
    * Command persist
    */
-  persist?: api$File | null,
+  persist?: api$File | api$IFile | null,
 
   /**
    * Command persistMirror
    */
-  persistMirror?: api$File | null,
+  persistMirror?: api$File | api$IFile | null,
 
   /**
    * Command write
    */
-  write?: api$File | null,
+  write?: api$File | api$IFile | null,
 
   /**
    * Command remove
    */
-  remove?: api$File | null,
+  remove?: api$File | api$IFile | null,
 
   /**
    * Command move
    */
-  move?: api$Move | null,
+  move?: api$Move | api$IMove | null,
 
   /**
    * Command tryRemove
    */
-  tryRemove?: api$File | null,
+  tryRemove?: api$File | api$IFile | null,
 
   /**
    * Command mkdir
    */
-  mkdir?: api$File | null,
+  mkdir?: api$File | api$IFile | null,
 
   /**
    * Command read
    */
-  read?: api$File | null,
+  read?: api$File | api$IFile | null,
 
   /**
    * Command readdir
    */
-  readdir?: api$File | null,
+  readdir?: api$File | api$IFile | null,
 
   /**
    * Command files
    */
-  files?: api$Files | null,
+  files?: api$Files | api$IFiles | null,
 
   /**
    * Command file
    */
-  file?: api$File | null,
+  file?: api$File | api$IFile | null,
 
   /**
    * Command checkChanges
    */
-  checkChanges?: api$CheckChanges | null,
+  checkChanges?: api$CheckChanges | api$ICheckChanges | null,
 
   /**
    * Command changedFiles
    */
-  changedFiles?: api$Files | null,
+  changedFiles?: api$Files | api$IFiles | null,
 
   /**
    * Command lintResults
    */
-  lintResults?: api$LintResults | null,
+  lintResults?: api$LintResults | api$ILintResults | null,
 
   /**
    * Command runContainedTest
    */
-  runContainedTest?: api$ContainedTest | null,
+  runContainedTest?: api$ContainedTest | api$IContainedTest | null,
 
   /**
    * Command testResult
    */
-  testResult?: api$TestResult | null,
+  testResult?: api$TestResult | api$ITestResult | null,
 
   /**
    * Command debuggerStart
@@ -303,267 +303,273 @@ declare type api$ICommand = {|
   /**
    * Command debuggerStep
    */
-  debuggerStep?: api$RunMain | null,
+  debuggerStep?: api$RunMain | api$IRunMain | null,
 
   /**
    * Command debuggerStatus
    */
-  debuggerStatus?: api$DebugStatus | null,
+  debuggerStatus?: api$DebugStatus | api$IDebugStatus | null,
 
   /**
    * Command ensurePackages
    */
-  ensurePackages?: api$EnsurePackages | null,
+  ensurePackages?: api$EnsurePackages | api$IEnsurePackages | null,
 
   /**
    * Command ping
    */
-  ping?: api$Ping | null,
+  ping?: api$Ping | api$IPing | null,
 
   /**
    * Command pong
    */
-  pong?: api$Pong | null,
+  pong?: api$Pong | api$IPong | null,
 
   /**
    * Command hello
    */
-  hello?: api$Hello | null,
+  hello?: api$Hello | api$IHello | null,
 
   /**
    * Command goodbye
    */
-  goodbye?: api$Goodbye | null,
+  goodbye?: api$Goodbye | api$IGoodbye | null,
 
   /**
    * Command hint
    */
-  hint?: api$Hint | null,
+  hint?: api$Hint | api$IHint | null,
 
   /**
    * Command connect
    */
-  connect?: api$Connect | null,
+  connect?: api$Connect | api$IConnect | null,
 
   /**
    * Command send
    */
-  send?: api$Send | null,
+  send?: api$Send | api$ISend | null,
 
   /**
    * Command recv
    */
-  recv?: api$Recv | null,
+  recv?: api$Recv | api$IRecv | null,
 
   /**
    * Command disconnect
    */
-  disconnect?: api$Disconnect | null,
+  disconnect?: api$Disconnect | api$IDisconnect | null,
 
   /**
    * Command fileAuthReq
    */
-  fileAuthReq?: api$FileAuthReq | null,
+  fileAuthReq?: api$FileAuthReq | api$IFileAuthReq | null,
 
   /**
    * Command fileAuthRes
    */
-  fileAuthRes?: api$FileAuthRes | null,
+  fileAuthRes?: api$FileAuthRes | api$IFileAuthRes | null,
 
   /**
    * Command mutliFileAuthRes
    */
-  mutliFileAuthRes?: api$MultiFileAuthRes | null,
+  mutliFileAuthRes?: api$MultiFileAuthRes | api$IMultiFileAuthRes | null,
 
   /**
    * Command listObjects
    */
-  listObjects?: api$ListObjects | null,
+  listObjects?: api$ListObjects | api$IListObjects | null,
 
   /**
    * Command listObjectsResp
    */
-  listObjectsResp?: api$ListObjectsResp | null,
+  listObjectsResp?: api$ListObjectsResp | api$IListObjectsResp | null,
 
   /**
    * Command ot
    */
-  ot?: api$OTPacket | null,
+  ot?: api$OTPacket | api$IOTPacket | null,
 
   /**
    * Command otstatus
    */
-  otstatus?: api$OTStatus | null,
+  otstatus?: api$OTStatus | api$IOTStatus | null,
 
   /**
    * Command otLinkFile
    */
-  otLinkFile?: api$OTLinkFile | null,
+  otLinkFile?: api$OTLinkFile | api$IOTLinkFile | null,
 
   /**
    * Command otNewCursor
    */
-  otNewCursor?: api$OTCursor | null,
+  otNewCursor?: api$OTCursor | api$IOTCursor | null,
 
   /**
    * Command otDeleteCursor
    */
-  otDeleteCursor?: api$OTCursor | null,
+  otDeleteCursor?: api$OTCursor | api$IOTCursor | null,
 
   /**
    * Command otFetchRequest
    */
-  otFetchRequest?: api$OTFetchRequest | null,
+  otFetchRequest?: api$OTFetchRequest | api$IOTFetchRequest | null,
 
   /**
    * Command otFetchResponse
    */
-  otFetchResponse?: api$OTFetchResponse | null,
+  otFetchResponse?: api$OTFetchResponse | api$IOTFetchResponse | null,
 
   /**
    * Command flush
    */
-  flush?: api$Flush | null,
+  flush?: api$Flush | api$IFlush | null,
 
   /**
    * Command debug
    */
-  debug?: api$Debug | null,
+  debug?: api$Debug | api$IDebug | null,
 
   /**
    * Command startVCR
    */
-  startVCR?: api$StartVCR | null,
+  startVCR?: api$StartVCR | api$IStartVCR | null,
 
   /**
    * Command readVCR
    */
-  readVCR?: api$ReadVCR | null,
+  readVCR?: api$ReadVCR | api$IReadVCR | null,
 
   /**
    * Command VCRLog
    */
-  VCRLog?: api$VCRLog | null,
+  VCRLog?: api$VCRLog | api$IVCRLog | null,
 
   /**
    * Command auth
    */
-  auth?: api$Auth | null,
+  auth?: api$Auth | api$IAuth | null,
 
   /**
    * Command execInfo
    */
-  execInfo?: api$ExecInfo | null,
+  execInfo?: api$ExecInfo | api$IExecInfo | null,
 
   /**
    * Command subscribeFile
    */
-  subscribeFile?: api$SubscribeFile | null,
+  subscribeFile?: api$SubscribeFile | api$ISubscribeFile | null,
 
   /**
    * Command fileEvent
    */
-  fileEvent?: api$FileEvent | null,
+  fileEvent?: api$FileEvent | api$IFileEvent | null,
 
   /**
    * Command roster
    */
-  roster?: api$Roster | null,
+  roster?: api$Roster | api$IRoster | null,
 
   /**
    * Command join
    */
-  join?: api$User | null,
+  join?: api$User | api$IUser | null,
 
   /**
    * Command part
    */
-  part?: api$User | null,
+  part?: api$User | api$IUser | null,
 
   /**
    * Command exec
    */
-  exec?: api$Exec | null,
+  exec?: api$Exec | api$IExec | null,
 
   /**
    * Command packageSearch
    */
-  packageSearch?: api$PackageSearch | null,
+  packageSearch?: api$PackageSearch | api$IPackageSearch | null,
 
   /**
    * Command packageSearchResp
    */
-  packageSearchResp?: api$PackageSearchResp | null,
+  packageSearchResp?: api$PackageSearchResp | api$IPackageSearchResp | null,
 
   /**
    * Command packageInfo
    */
-  packageInfo?: api$PackageInfo | null,
+  packageInfo?: api$PackageInfo | api$IPackageInfo | null,
 
   /**
    * Command packageInfoResp
    */
-  packageInfoResp?: api$PackageInfoResp | null,
+  packageInfoResp?: api$PackageInfoResp | api$IPackageInfoResp | null,
 
   /**
    * Command packageAdd
    */
-  packageAdd?: api$PackageAdd | null,
+  packageAdd?: api$PackageAdd | api$IPackageAdd | null,
 
   /**
    * Command packageRemove
    */
-  packageRemove?: api$PackageRemove | null,
+  packageRemove?: api$PackageRemove | api$IPackageRemove | null,
 
   /**
    * Command packageInstall
    */
-  packageInstall?: api$PackageInstall | null,
+  packageInstall?: api$PackageInstall | api$IPackageInstall | null,
 
   /**
    * Command packageListSpecfile
    */
-  packageListSpecfile?: api$PackageListSpecfile | null,
+  packageListSpecfile?:
+    | api$PackageListSpecfile
+    | api$IPackageListSpecfile
+    | null,
 
   /**
    * Command packageListSpecfileResp
    */
-  packageListSpecfileResp?: api$PackageListSpecfileResp | null,
+  packageListSpecfileResp?:
+    | api$PackageListSpecfileResp
+    | api$IPackageListSpecfileResp
+    | null,
 
   /**
    * Command packageCacheSave
    */
-  packageCacheSave?: api$PackageCacheSave | null,
+  packageCacheSave?: api$PackageCacheSave | api$IPackageCacheSave | null,
 
   /**
    * Command chatMessage
    */
-  chatMessage?: api$ChatMessage | null,
+  chatMessage?: api$ChatMessage | api$IChatMessage | null,
 
   /**
    * Command chatTyping
    */
-  chatTyping?: api$ChatTyping | null,
+  chatTyping?: api$ChatTyping | api$IChatTyping | null,
 
   /**
    * Command chatScrollback
    */
-  chatScrollback?: api$ChatScrollback | null,
+  chatScrollback?: api$ChatScrollback | api$IChatScrollback | null,
 
   /**
    * Command fsSnapshot
    */
-  fsSnapshot?: api$FSSnapshot | null,
+  fsSnapshot?: api$FSSnapshot | api$IFSSnapshot | null,
 
   /**
    * Command fsTakeLock
    */
-  fsTakeLock?: api$FSLock | null,
+  fsTakeLock?: api$FSLock | api$IFSLock | null,
 
   /**
    * Command fsReleaseLock
    */
-  fsReleaseLock?: api$FSLock | null,
+  fsReleaseLock?: api$FSLock | api$IFSLock | null,
 
   /**
    * Command hasCap
@@ -573,57 +579,57 @@ declare type api$ICommand = {|
   /**
    * Command pid1Config
    */
-  pid1Config?: api$Pid1Config | null,
+  pid1Config?: api$Pid1Config | api$IPid1Config | null,
 
   /**
    * Command metrics
    */
-  metrics?: api$Metrics | null,
+  metrics?: api$Metrics | api$IMetrics | null,
 
   /**
    * Command bootStatus
    */
-  bootStatus?: api$BootStatus | null,
+  bootStatus?: api$BootStatus | api$IBootStatus | null,
 
   /**
    * Command readMeta
    */
-  readMeta?: api$ReadMeta | null,
+  readMeta?: api$ReadMeta | api$IReadMeta | null,
 
   /**
    * Command writeMeta
    */
-  writeMeta?: api$WriteMeta | null,
+  writeMeta?: api$WriteMeta | api$IWriteMeta | null,
 
   /**
    * Command appendMeta
    */
-  appendMeta?: api$AppendMeta | null,
+  appendMeta?: api$AppendMeta | api$IAppendMeta | null,
 
   /**
    * Command audio
    */
-  audio?: api$Audio | null,
+  audio?: api$Audio | api$IAudio | null,
 
   /**
    * Command pprofRequest
    */
-  pprofRequest?: api$PprofRequest | null,
+  pprofRequest?: api$PprofRequest | api$IPprofRequest | null,
 
   /**
    * Command pprofResponse
    */
-  pprofResponse?: api$PprofResponse | null,
+  pprofResponse?: api$PprofResponse | api$IPprofResponse | null,
 
   /**
    * Command audio2
    */
-  audio2?: api$Audio2 | null,
+  audio2?: api$Audio2 | api$IAudio2 | null,
 
   /**
    * Command PTYConfig
    */
-  PTYConfig?: api$PTYConfig | null,
+  PTYConfig?: api$PTYConfig | api$IPTYConfig | null,
 
   /**
    * Command ref
@@ -2511,7 +2517,7 @@ declare type api$ISubscribeFile = {|
   /**
    * SubscribeFile files
    */
-  files?: api$File[] | null,
+  files?: (api$File | api$IFile)[] | null,
 |};
 
 /**
@@ -2629,12 +2635,12 @@ declare type api$IFileEvent = {|
   /**
    * FileEvent file
    */
-  file?: api$File | null,
+  file?: api$File | api$IFile | null,
 
   /**
    * FileEvent dest
    */
-  dest?: api$File | null,
+  dest?: api$File | api$IFile | null,
 
   /**
    * FileEvent op
@@ -2886,7 +2892,7 @@ declare type api$IOTLinkFile = {|
   /**
    * OTLinkFile file
    */
-  file?: api$File | null,
+  file?: api$File | api$IFile | null,
 
   /**
    * OTLinkFile highConsistency
@@ -3155,7 +3161,7 @@ declare type api$IVCREntry = {|
   /**
    * VCREntry command
    */
-  command?: api$Command | null,
+  command?: api$Command | api$ICommand | null,
 
   /**
    * VCREntry uid
@@ -3516,12 +3522,12 @@ declare type api$IVCRLog = {|
   /**
    * VCRLog log
    */
-  log?: api$VCREntry[] | null,
+  log?: (api$VCREntry | api$IVCREntry)[] | null,
 
   /**
    * VCRLog logfile
    */
-  logfile?: api$File | null,
+  logfile?: api$File | api$IFile | null,
 |};
 
 /**
@@ -3895,7 +3901,7 @@ declare type api$IFileAuthReq = {|
   /**
    * FileAuthReq file
    */
-  file?: api$File | null,
+  file?: api$File | api$IFile | null,
 
   /**
    * FileAuthReq method
@@ -4023,17 +4029,17 @@ declare type api$IMultiFileAuthRes = {|
   /**
    * MultiFileAuthRes put
    */
-  put?: api$FileAuthRes | null,
+  put?: api$FileAuthRes | api$IFileAuthRes | null,
 
   /**
    * MultiFileAuthRes del
    */
-  del?: api$FileAuthRes | null,
+  del?: api$FileAuthRes | api$IFileAuthRes | null,
 
   /**
    * MultiFileAuthRes get
    */
-  get?: api$FileAuthRes | null,
+  get?: api$FileAuthRes | api$IFileAuthRes | null,
 |};
 
 /**
@@ -4161,7 +4167,7 @@ declare type api$IFileAuthRes = {|
   /**
    * FileAuthRes file
    */
-  file?: api$File | null,
+  file?: api$File | api$IFile | null,
 
   /**
    * FileAuthRes url
@@ -5706,7 +5712,7 @@ declare type api$IEnsurePackages = {|
   /**
    * EnsurePackages file
    */
-  file?: api$File | null,
+  file?: api$File | api$IFile | null,
 |};
 
 /**
@@ -5940,7 +5946,7 @@ declare type api$IDebugStatus = {|
   /**
    * DebugStatus stack
    */
-  stack?: api$StackFrame[] | null,
+  stack?: (api$StackFrame | api$IStackFrame)[] | null,
 |};
 
 /**
@@ -6189,12 +6195,12 @@ declare type api$IContainedTest = {|
   /**
    * ContainedTest suite
    */
-  suite?: api$File | null,
+  suite?: api$File | api$IFile | null,
 
   /**
    * ContainedTest project
    */
-  project?: api$File[] | null,
+  project?: (api$File | api$IFile)[] | null,
 |};
 
 /**
@@ -6327,7 +6333,7 @@ declare type api$ITestResult = {|
   /**
    * TestResult fails
    */
-  fails?: api$TestFailure[] | null,
+  fails?: (api$TestFailure | api$ITestFailure)[] | null,
 |};
 
 /**
@@ -6813,7 +6819,7 @@ declare type api$ILintResults = {|
   /**
    * LintResults results
    */
-  results?: api$LintResult[] | null,
+  results?: (api$LintResult | api$ILintResult)[] | null,
 |};
 
 /**
@@ -7300,7 +7306,7 @@ declare type api$IFiles = {|
   /**
    * Files files
    */
-  files?: api$File[] | null,
+  files?: (api$File | api$IFile)[] | null,
 |};
 
 /**
@@ -8999,7 +9005,7 @@ declare type api$IOTFetchResponse = {|
   /**
    * OTFetchResponse packets
    */
-  packets?: api$OTPacket[] | null,
+  packets?: (api$OTPacket | api$IOTPacket)[] | null,
 |};
 
 /**
@@ -9127,7 +9133,7 @@ declare type api$IOTPacket = {|
   /**
    * OTPacket ops
    */
-  ops?: api$OTRuneTransformOp[] | null,
+  ops?: (api$OTRuneTransformOp | api$IOTRuneTransformOp)[] | null,
 
   /**
    * OTPacket crc32
@@ -9137,7 +9143,7 @@ declare type api$IOTPacket = {|
   /**
    * OTPacket committed
    */
-  committed?: google$protobuf$Timestamp | null,
+  committed?: google$protobuf$Timestamp | google$protobuf$ITimestamp | null,
 
   /**
    * OTPacket nonce
@@ -9436,12 +9442,12 @@ declare type api$IOTStatus = {|
   /**
    * OTStatus linkedFile
    */
-  linkedFile?: api$File | null,
+  linkedFile?: api$File | api$IFile | null,
 
   /**
    * OTStatus cursors
    */
-  cursors?: api$OTCursor[] | null,
+  cursors?: (api$OTCursor | api$IOTCursor)[] | null,
 |};
 
 /**
@@ -9587,7 +9593,7 @@ declare type api$IOTCursor = {|
   /**
    * OTCursor user
    */
-  user?: api$User | null,
+  user?: api$User | api$IUser | null,
 
   /**
    * OTCursor id
@@ -10125,7 +10131,7 @@ declare type api$IRoster = {|
   /**
    * Roster user
    */
-  user?: api$User[] | null,
+  user?: (api$User | api$IUser)[] | null,
 |};
 
 /**
@@ -10428,7 +10434,7 @@ declare type api$IPackage = {|
   /**
    * Package dependencies
    */
-  dependencies?: api$Package[] | null,
+  dependencies?: (api$Package | api$IPackage)[] | null,
 |};
 
 /**
@@ -10712,7 +10718,7 @@ declare type api$IPackageSearchResp = {|
   /**
    * PackageSearchResp results
    */
-  results?: api$Package[] | null,
+  results?: (api$Package | api$IPackage)[] | null,
 |};
 
 /**
@@ -10830,7 +10836,7 @@ declare type api$IPackageInfo = {|
   /**
    * PackageInfo pkg
    */
-  pkg?: api$Package | null,
+  pkg?: api$Package | api$IPackage | null,
 |};
 
 /**
@@ -10948,7 +10954,7 @@ declare type api$IPackageInfoResp = {|
   /**
    * PackageInfoResp pkg
    */
-  pkg?: api$Package | null,
+  pkg?: api$Package | api$IPackage | null,
 |};
 
 /**
@@ -11066,7 +11072,7 @@ declare type api$IPackageAdd = {|
   /**
    * PackageAdd pkgs
    */
-  pkgs?: api$Package[] | null,
+  pkgs?: (api$Package | api$IPackage)[] | null,
 |};
 
 /**
@@ -11182,7 +11188,7 @@ declare type api$IPackageRemove = {|
   /**
    * PackageRemove pkgs
    */
-  pkgs?: api$Package[] | null,
+  pkgs?: (api$Package | api$IPackage)[] | null,
 |};
 
 /**
@@ -11516,7 +11522,7 @@ declare type api$IPackageListSpecfileResp = {|
   /**
    * PackageListSpecfileResp pkgs
    */
-  pkgs?: api$Package[] | null,
+  pkgs?: (api$Package | api$IPackage)[] | null,
 |};
 
 /**
@@ -11744,7 +11750,7 @@ declare type api$IChatScrollback = {|
   /**
    * ChatScrollback scrollback
    */
-  scrollback?: api$ChatMessage[] | null,
+  scrollback?: (api$ChatMessage | api$IChatMessage)[] | null,
 |};
 
 /**
@@ -11983,27 +11989,42 @@ declare type api$IPprofRequest = {|
   /**
    * PprofRequest pprofCpuProfileRequest
    */
-  pprofCpuProfileRequest?: api$PprofCpuProfileRequest | null,
+  pprofCpuProfileRequest?:
+    | api$PprofCpuProfileRequest
+    | api$IPprofCpuProfileRequest
+    | null,
 
   /**
    * PprofRequest pprofHeapProfileRequest
    */
-  pprofHeapProfileRequest?: api$PprofHeapProfileRequest | null,
+  pprofHeapProfileRequest?:
+    | api$PprofHeapProfileRequest
+    | api$IPprofHeapProfileRequest
+    | null,
 
   /**
    * PprofRequest pprofAllocsProfileRequest
    */
-  pprofAllocsProfileRequest?: api$PprofAllocsProfileRequest | null,
+  pprofAllocsProfileRequest?:
+    | api$PprofAllocsProfileRequest
+    | api$IPprofAllocsProfileRequest
+    | null,
 
   /**
    * PprofRequest pprofBlockProfileRequest
    */
-  pprofBlockProfileRequest?: api$PprofBlockProfileRequest | null,
+  pprofBlockProfileRequest?:
+    | api$PprofBlockProfileRequest
+    | api$IPprofBlockProfileRequest
+    | null,
 
   /**
    * PprofRequest pprofMutexProfileRequest
    */
-  pprofMutexProfileRequest?: api$PprofMutexProfileRequest | null,
+  pprofMutexProfileRequest?:
+    | api$PprofMutexProfileRequest
+    | api$IPprofMutexProfileRequest
+    | null,
 |};
 
 /**
