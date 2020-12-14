@@ -5676,7 +5676,7 @@
             FSSnapshot.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.FSSnapshot)
                     return object;
-                return $root.api.FSSnapshot.fromObject();
+                return new $root.api.FSSnapshot();
             };
     
             /**
@@ -6324,7 +6324,7 @@
             Flush.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.Flush)
                     return object;
-                return $root.api.Flush.fromObject();
+                return new $root.api.Flush();
             };
     
             /**
@@ -7227,7 +7227,7 @@
             StartVCR.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.StartVCR)
                     return object;
-                return $root.api.StartVCR.fromObject();
+                return new $root.api.StartVCR();
             };
     
             /**
@@ -7386,7 +7386,7 @@
             ReadVCR.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.ReadVCR)
                     return object;
-                return $root.api.ReadVCR.fromObject();
+                return new $root.api.ReadVCR();
             };
     
             /**
@@ -10368,7 +10368,7 @@
             Ping.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.Ping)
                     return object;
-                return $root.api.Ping.fromObject();
+                return new $root.api.Ping();
             };
     
             /**
@@ -10527,7 +10527,7 @@
             Pong.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.Pong)
                     return object;
-                return $root.api.Pong.fromObject();
+                return new $root.api.Pong();
             };
     
             /**
@@ -10917,7 +10917,7 @@
             Goodbye.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.Goodbye)
                     return object;
-                return $root.api.Goodbye.fromObject();
+                return new $root.api.Goodbye();
             };
     
             /**
@@ -11090,7 +11090,7 @@
             CheckChanges.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.CheckChanges)
                     return object;
-                return $root.api.CheckChanges.fromObject();
+                return new $root.api.CheckChanges();
             };
     
             /**
@@ -11463,7 +11463,7 @@
             Start.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.Start)
                     return object;
-                return $root.api.Start.fromObject();
+                return new $root.api.Start();
             };
     
             /**
@@ -12967,7 +12967,7 @@
             SaneTerm.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.SaneTerm)
                     return object;
-                return $root.api.SaneTerm.fromObject();
+                return new $root.api.SaneTerm();
             };
     
             /**
@@ -13586,7 +13586,7 @@
             OK.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.OK)
                     return object;
-                return $root.api.OK.fromObject();
+                return new $root.api.OK();
             };
     
             /**
@@ -14428,7 +14428,7 @@
             Clear.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.Clear)
                     return object;
-                return $root.api.Clear.fromObject();
+                return new $root.api.Clear();
             };
     
             /**
@@ -14959,7 +14959,7 @@
             RunMain.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.RunMain)
                     return object;
-                return $root.api.RunMain.fromObject();
+                return new $root.api.RunMain();
             };
     
             /**
@@ -20956,7 +20956,7 @@
             PackageInstall.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.PackageInstall)
                     return object;
-                return $root.api.PackageInstall.fromObject();
+                return new $root.api.PackageInstall();
             };
     
             /**
@@ -21115,7 +21115,7 @@
             PackageListSpecfile.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.PackageListSpecfile)
                     return object;
-                return $root.api.PackageListSpecfile.fromObject();
+                return new $root.api.PackageListSpecfile();
             };
     
             /**
@@ -21481,7 +21481,7 @@
             PackageCacheSave.fromObject = function fromObject(object) {
                 if (object instanceof $root.api.PackageCacheSave)
                     return object;
-                return $root.api.PackageCacheSave.fromObject();
+                return new $root.api.PackageCacheSave();
             };
     
             /**

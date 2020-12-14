@@ -152,8 +152,9 @@ exports.main = function (args /*: string[] */) {
   const finalSource = chunks
     .join('')
     .replace(
-      /return new (\S+)\(/g,
-      (match, className) => `return ${className}.fromObject(`,
+      /(function create\(properties\)\s+{\n\s*)return new (\S+)(\(.*;\n\s*};)/gm,
+      (match, prelude, className, postlude) =>
+        `${prelude}return ${className}.fromObject${postlude}`,
     );
 
   fs.writeSync(1, finalSource);
