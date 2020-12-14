@@ -33,107 +33,107 @@
              * @interface ICommand
              * @property {number|null} [channel] Command channel
              * @property {number|null} [session] Command session
-             * @property {api.IOpenChannel|null} [openChan] Command openChan
-             * @property {api.IOpenChannelRes|null} [openChanRes] Command openChanRes
-             * @property {api.ICloseChannel|null} [closeChan] Command closeChan
-             * @property {api.ICloseChannelRes|null} [closeChanRes] Command closeChanRes
-             * @property {api.IContainerState|null} [containerState] Command containerState
-             * @property {api.IPortOpen|null} [portOpen] Command portOpen
-             * @property {api.IToast|null} [toast] Command toast
-             * @property {api.IRedirect|null} [redirect] Command redirect
-             * @property {api.IRunMain|null} [runMain] Command runMain
-             * @property {api.IClear|null} [clear] Command clear
+             * @property {api.OpenChannel|api.IOpenChannel|null} [openChan] Command openChan
+             * @property {api.OpenChannelRes|api.IOpenChannelRes|null} [openChanRes] Command openChanRes
+             * @property {api.CloseChannel|api.ICloseChannel|null} [closeChan] Command closeChan
+             * @property {api.CloseChannelRes|api.ICloseChannelRes|null} [closeChanRes] Command closeChanRes
+             * @property {api.ContainerState|api.IContainerState|null} [containerState] Command containerState
+             * @property {api.PortOpen|api.IPortOpen|null} [portOpen] Command portOpen
+             * @property {api.Toast|api.IToast|null} [toast] Command toast
+             * @property {api.Redirect|api.IRedirect|null} [redirect] Command redirect
+             * @property {api.RunMain|api.IRunMain|null} [runMain] Command runMain
+             * @property {api.Clear|api.IClear|null} [clear] Command clear
              * @property {string|null} ["eval"] Command eval
              * @property {string|null} [result] Command result
              * @property {string|null} [input] Command input
              * @property {string|null} [output] Command output
              * @property {string|null} [error] Command error
-             * @property {api.ISaneTerm|null} [saneTerm] Command saneTerm
-             * @property {api.IResizeTerm|null} [resizeTerm] Command resizeTerm
+             * @property {api.SaneTerm|api.ISaneTerm|null} [saneTerm] Command saneTerm
+             * @property {api.ResizeTerm|api.IResizeTerm|null} [resizeTerm] Command resizeTerm
              * @property {api.State|null} [state] Command state
-             * @property {api.IOK|null} [ok] Command ok
-             * @property {api.IFile|null} [persist] Command persist
-             * @property {api.IFile|null} [persistMirror] Command persistMirror
-             * @property {api.IFile|null} [write] Command write
-             * @property {api.IFile|null} [remove] Command remove
-             * @property {api.IMove|null} [move] Command move
-             * @property {api.IFile|null} [tryRemove] Command tryRemove
-             * @property {api.IFile|null} [mkdir] Command mkdir
-             * @property {api.IFile|null} [read] Command read
-             * @property {api.IFile|null} [readdir] Command readdir
-             * @property {api.IFiles|null} [files] Command files
-             * @property {api.IFile|null} [file] Command file
-             * @property {api.ICheckChanges|null} [checkChanges] Command checkChanges
-             * @property {api.IFiles|null} [changedFiles] Command changedFiles
-             * @property {api.ILintResults|null} [lintResults] Command lintResults
-             * @property {api.IContainedTest|null} [runContainedTest] Command runContainedTest
-             * @property {api.ITestResult|null} [testResult] Command testResult
+             * @property {api.OK|api.IOK|null} [ok] Command ok
+             * @property {api.File|api.IFile|null} [persist] Command persist
+             * @property {api.File|api.IFile|null} [persistMirror] Command persistMirror
+             * @property {api.File|api.IFile|null} [write] Command write
+             * @property {api.File|api.IFile|null} [remove] Command remove
+             * @property {api.Move|api.IMove|null} [move] Command move
+             * @property {api.File|api.IFile|null} [tryRemove] Command tryRemove
+             * @property {api.File|api.IFile|null} [mkdir] Command mkdir
+             * @property {api.File|api.IFile|null} [read] Command read
+             * @property {api.File|api.IFile|null} [readdir] Command readdir
+             * @property {api.Files|api.IFiles|null} [files] Command files
+             * @property {api.File|api.IFile|null} [file] Command file
+             * @property {api.CheckChanges|api.ICheckChanges|null} [checkChanges] Command checkChanges
+             * @property {api.Files|api.IFiles|null} [changedFiles] Command changedFiles
+             * @property {api.LintResults|api.ILintResults|null} [lintResults] Command lintResults
+             * @property {api.ContainedTest|api.IContainedTest|null} [runContainedTest] Command runContainedTest
+             * @property {api.TestResult|api.ITestResult|null} [testResult] Command testResult
              * @property {string|null} [debuggerStart] Command debuggerStart
-             * @property {api.IRunMain|null} [debuggerStep] Command debuggerStep
-             * @property {api.IDebugStatus|null} [debuggerStatus] Command debuggerStatus
-             * @property {api.IEnsurePackages|null} [ensurePackages] Command ensurePackages
-             * @property {api.IPing|null} [ping] Command ping
-             * @property {api.IPong|null} [pong] Command pong
-             * @property {api.IHello|null} [hello] Command hello
-             * @property {api.IGoodbye|null} [goodbye] Command goodbye
-             * @property {api.IHint|null} [hint] Command hint
-             * @property {api.IConnect|null} [connect] Command connect
-             * @property {api.ISend|null} [send] Command send
-             * @property {api.IRecv|null} [recv] Command recv
-             * @property {api.IDisconnect|null} [disconnect] Command disconnect
-             * @property {api.IFileAuthReq|null} [fileAuthReq] Command fileAuthReq
-             * @property {api.IFileAuthRes|null} [fileAuthRes] Command fileAuthRes
-             * @property {api.IMultiFileAuthRes|null} [mutliFileAuthRes] Command mutliFileAuthRes
-             * @property {api.IListObjects|null} [listObjects] Command listObjects
-             * @property {api.IListObjectsResp|null} [listObjectsResp] Command listObjectsResp
-             * @property {api.IOTPacket|null} [ot] Command ot
-             * @property {api.IOTStatus|null} [otstatus] Command otstatus
-             * @property {api.IOTLinkFile|null} [otLinkFile] Command otLinkFile
-             * @property {api.IOTCursor|null} [otNewCursor] Command otNewCursor
-             * @property {api.IOTCursor|null} [otDeleteCursor] Command otDeleteCursor
-             * @property {api.IOTFetchRequest|null} [otFetchRequest] Command otFetchRequest
-             * @property {api.IOTFetchResponse|null} [otFetchResponse] Command otFetchResponse
-             * @property {api.IFlush|null} [flush] Command flush
-             * @property {api.IDebug|null} [debug] Command debug
-             * @property {api.IStartVCR|null} [startVCR] Command startVCR
-             * @property {api.IReadVCR|null} [readVCR] Command readVCR
-             * @property {api.IVCRLog|null} [VCRLog] Command VCRLog
-             * @property {api.IAuth|null} [auth] Command auth
-             * @property {api.IExecInfo|null} [execInfo] Command execInfo
-             * @property {api.ISubscribeFile|null} [subscribeFile] Command subscribeFile
-             * @property {api.IFileEvent|null} [fileEvent] Command fileEvent
-             * @property {api.IRoster|null} [roster] Command roster
-             * @property {api.IUser|null} [join] Command join
-             * @property {api.IUser|null} [part] Command part
-             * @property {api.IExec|null} [exec] Command exec
-             * @property {api.IPackageSearch|null} [packageSearch] Command packageSearch
-             * @property {api.IPackageSearchResp|null} [packageSearchResp] Command packageSearchResp
-             * @property {api.IPackageInfo|null} [packageInfo] Command packageInfo
-             * @property {api.IPackageInfoResp|null} [packageInfoResp] Command packageInfoResp
-             * @property {api.IPackageAdd|null} [packageAdd] Command packageAdd
-             * @property {api.IPackageRemove|null} [packageRemove] Command packageRemove
-             * @property {api.IPackageInstall|null} [packageInstall] Command packageInstall
-             * @property {api.IPackageListSpecfile|null} [packageListSpecfile] Command packageListSpecfile
-             * @property {api.IPackageListSpecfileResp|null} [packageListSpecfileResp] Command packageListSpecfileResp
-             * @property {api.IPackageCacheSave|null} [packageCacheSave] Command packageCacheSave
-             * @property {api.IChatMessage|null} [chatMessage] Command chatMessage
-             * @property {api.IChatTyping|null} [chatTyping] Command chatTyping
-             * @property {api.IChatScrollback|null} [chatScrollback] Command chatScrollback
-             * @property {api.IFSSnapshot|null} [fsSnapshot] Command fsSnapshot
-             * @property {api.IFSLock|null} [fsTakeLock] Command fsTakeLock
-             * @property {api.IFSLock|null} [fsReleaseLock] Command fsReleaseLock
+             * @property {api.RunMain|api.IRunMain|null} [debuggerStep] Command debuggerStep
+             * @property {api.DebugStatus|api.IDebugStatus|null} [debuggerStatus] Command debuggerStatus
+             * @property {api.EnsurePackages|api.IEnsurePackages|null} [ensurePackages] Command ensurePackages
+             * @property {api.Ping|api.IPing|null} [ping] Command ping
+             * @property {api.Pong|api.IPong|null} [pong] Command pong
+             * @property {api.Hello|api.IHello|null} [hello] Command hello
+             * @property {api.Goodbye|api.IGoodbye|null} [goodbye] Command goodbye
+             * @property {api.Hint|api.IHint|null} [hint] Command hint
+             * @property {api.Connect|api.IConnect|null} [connect] Command connect
+             * @property {api.Send|api.ISend|null} [send] Command send
+             * @property {api.Recv|api.IRecv|null} [recv] Command recv
+             * @property {api.Disconnect|api.IDisconnect|null} [disconnect] Command disconnect
+             * @property {api.FileAuthReq|api.IFileAuthReq|null} [fileAuthReq] Command fileAuthReq
+             * @property {api.FileAuthRes|api.IFileAuthRes|null} [fileAuthRes] Command fileAuthRes
+             * @property {api.MultiFileAuthRes|api.IMultiFileAuthRes|null} [mutliFileAuthRes] Command mutliFileAuthRes
+             * @property {api.ListObjects|api.IListObjects|null} [listObjects] Command listObjects
+             * @property {api.ListObjectsResp|api.IListObjectsResp|null} [listObjectsResp] Command listObjectsResp
+             * @property {api.OTPacket|api.IOTPacket|null} [ot] Command ot
+             * @property {api.OTStatus|api.IOTStatus|null} [otstatus] Command otstatus
+             * @property {api.OTLinkFile|api.IOTLinkFile|null} [otLinkFile] Command otLinkFile
+             * @property {api.OTCursor|api.IOTCursor|null} [otNewCursor] Command otNewCursor
+             * @property {api.OTCursor|api.IOTCursor|null} [otDeleteCursor] Command otDeleteCursor
+             * @property {api.OTFetchRequest|api.IOTFetchRequest|null} [otFetchRequest] Command otFetchRequest
+             * @property {api.OTFetchResponse|api.IOTFetchResponse|null} [otFetchResponse] Command otFetchResponse
+             * @property {api.Flush|api.IFlush|null} [flush] Command flush
+             * @property {api.Debug|api.IDebug|null} [debug] Command debug
+             * @property {api.StartVCR|api.IStartVCR|null} [startVCR] Command startVCR
+             * @property {api.ReadVCR|api.IReadVCR|null} [readVCR] Command readVCR
+             * @property {api.VCRLog|api.IVCRLog|null} [VCRLog] Command VCRLog
+             * @property {api.Auth|api.IAuth|null} [auth] Command auth
+             * @property {api.ExecInfo|api.IExecInfo|null} [execInfo] Command execInfo
+             * @property {api.SubscribeFile|api.ISubscribeFile|null} [subscribeFile] Command subscribeFile
+             * @property {api.FileEvent|api.IFileEvent|null} [fileEvent] Command fileEvent
+             * @property {api.Roster|api.IRoster|null} [roster] Command roster
+             * @property {api.User|api.IUser|null} [join] Command join
+             * @property {api.User|api.IUser|null} [part] Command part
+             * @property {api.Exec|api.IExec|null} [exec] Command exec
+             * @property {api.PackageSearch|api.IPackageSearch|null} [packageSearch] Command packageSearch
+             * @property {api.PackageSearchResp|api.IPackageSearchResp|null} [packageSearchResp] Command packageSearchResp
+             * @property {api.PackageInfo|api.IPackageInfo|null} [packageInfo] Command packageInfo
+             * @property {api.PackageInfoResp|api.IPackageInfoResp|null} [packageInfoResp] Command packageInfoResp
+             * @property {api.PackageAdd|api.IPackageAdd|null} [packageAdd] Command packageAdd
+             * @property {api.PackageRemove|api.IPackageRemove|null} [packageRemove] Command packageRemove
+             * @property {api.PackageInstall|api.IPackageInstall|null} [packageInstall] Command packageInstall
+             * @property {api.PackageListSpecfile|api.IPackageListSpecfile|null} [packageListSpecfile] Command packageListSpecfile
+             * @property {api.PackageListSpecfileResp|api.IPackageListSpecfileResp|null} [packageListSpecfileResp] Command packageListSpecfileResp
+             * @property {api.PackageCacheSave|api.IPackageCacheSave|null} [packageCacheSave] Command packageCacheSave
+             * @property {api.ChatMessage|api.IChatMessage|null} [chatMessage] Command chatMessage
+             * @property {api.ChatTyping|api.IChatTyping|null} [chatTyping] Command chatTyping
+             * @property {api.ChatScrollback|api.IChatScrollback|null} [chatScrollback] Command chatScrollback
+             * @property {api.FSSnapshot|api.IFSSnapshot|null} [fsSnapshot] Command fsSnapshot
+             * @property {api.FSLock|api.IFSLock|null} [fsTakeLock] Command fsTakeLock
+             * @property {api.FSLock|api.IFSLock|null} [fsReleaseLock] Command fsReleaseLock
              * @property {boolean|null} [hasCap] Command hasCap
-             * @property {api.IPid1Config|null} [pid1Config] Command pid1Config
-             * @property {api.IMetrics|null} [metrics] Command metrics
-             * @property {api.IBootStatus|null} [bootStatus] Command bootStatus
-             * @property {api.IReadMeta|null} [readMeta] Command readMeta
-             * @property {api.IWriteMeta|null} [writeMeta] Command writeMeta
-             * @property {api.IAppendMeta|null} [appendMeta] Command appendMeta
-             * @property {api.IAudio|null} [audio] Command audio
-             * @property {api.IPprofRequest|null} [pprofRequest] Command pprofRequest
-             * @property {api.IPprofResponse|null} [pprofResponse] Command pprofResponse
-             * @property {api.IAudio2|null} [audio2] Command audio2
-             * @property {api.IPTYConfig|null} [PTYConfig] Command PTYConfig
+             * @property {api.Pid1Config|api.IPid1Config|null} [pid1Config] Command pid1Config
+             * @property {api.Metrics|api.IMetrics|null} [metrics] Command metrics
+             * @property {api.BootStatus|api.IBootStatus|null} [bootStatus] Command bootStatus
+             * @property {api.ReadMeta|api.IReadMeta|null} [readMeta] Command readMeta
+             * @property {api.WriteMeta|api.IWriteMeta|null} [writeMeta] Command writeMeta
+             * @property {api.AppendMeta|api.IAppendMeta|null} [appendMeta] Command appendMeta
+             * @property {api.Audio|api.IAudio|null} [audio] Command audio
+             * @property {api.PprofRequest|api.IPprofRequest|null} [pprofRequest] Command pprofRequest
+             * @property {api.PprofResponse|api.IPprofResponse|null} [pprofResponse] Command pprofResponse
+             * @property {api.Audio2|api.IAudio2|null} [audio2] Command audio2
+             * @property {api.PTYConfig|api.IPTYConfig|null} [PTYConfig] Command PTYConfig
              * @property {string|null} [ref] Command ref
              */
     
@@ -141,7 +141,6 @@
              * Constructs a new Command.
              * @memberof api
              * @classdesc Represents a Command.
-             * @implements ICommand
              * @constructor
              * @param {api.ICommand=} [properties] Properties to set
              */
@@ -170,7 +169,7 @@
     
             /**
              * Command openChan.
-             * @member {api.IOpenChannel|null|undefined} openChan
+             * @member {api.OpenChannel|null|undefined} openChan
              * @memberof api.Command
              * @instance
              */
@@ -178,7 +177,7 @@
     
             /**
              * Command openChanRes.
-             * @member {api.IOpenChannelRes|null|undefined} openChanRes
+             * @member {api.OpenChannelRes|null|undefined} openChanRes
              * @memberof api.Command
              * @instance
              */
@@ -186,7 +185,7 @@
     
             /**
              * Command closeChan.
-             * @member {api.ICloseChannel|null|undefined} closeChan
+             * @member {api.CloseChannel|null|undefined} closeChan
              * @memberof api.Command
              * @instance
              */
@@ -194,7 +193,7 @@
     
             /**
              * Command closeChanRes.
-             * @member {api.ICloseChannelRes|null|undefined} closeChanRes
+             * @member {api.CloseChannelRes|null|undefined} closeChanRes
              * @memberof api.Command
              * @instance
              */
@@ -202,7 +201,7 @@
     
             /**
              * Command containerState.
-             * @member {api.IContainerState|null|undefined} containerState
+             * @member {api.ContainerState|null|undefined} containerState
              * @memberof api.Command
              * @instance
              */
@@ -210,7 +209,7 @@
     
             /**
              * Command portOpen.
-             * @member {api.IPortOpen|null|undefined} portOpen
+             * @member {api.PortOpen|null|undefined} portOpen
              * @memberof api.Command
              * @instance
              */
@@ -218,7 +217,7 @@
     
             /**
              * Command toast.
-             * @member {api.IToast|null|undefined} toast
+             * @member {api.Toast|null|undefined} toast
              * @memberof api.Command
              * @instance
              */
@@ -226,7 +225,7 @@
     
             /**
              * Command redirect.
-             * @member {api.IRedirect|null|undefined} redirect
+             * @member {api.Redirect|null|undefined} redirect
              * @memberof api.Command
              * @instance
              */
@@ -234,7 +233,7 @@
     
             /**
              * Command runMain.
-             * @member {api.IRunMain|null|undefined} runMain
+             * @member {api.RunMain|null|undefined} runMain
              * @memberof api.Command
              * @instance
              */
@@ -242,7 +241,7 @@
     
             /**
              * Command clear.
-             * @member {api.IClear|null|undefined} clear
+             * @member {api.Clear|null|undefined} clear
              * @memberof api.Command
              * @instance
              */
@@ -290,7 +289,7 @@
     
             /**
              * Command saneTerm.
-             * @member {api.ISaneTerm|null|undefined} saneTerm
+             * @member {api.SaneTerm|null|undefined} saneTerm
              * @memberof api.Command
              * @instance
              */
@@ -298,7 +297,7 @@
     
             /**
              * Command resizeTerm.
-             * @member {api.IResizeTerm|null|undefined} resizeTerm
+             * @member {api.ResizeTerm|null|undefined} resizeTerm
              * @memberof api.Command
              * @instance
              */
@@ -314,7 +313,7 @@
     
             /**
              * Command ok.
-             * @member {api.IOK|null|undefined} ok
+             * @member {api.OK|null|undefined} ok
              * @memberof api.Command
              * @instance
              */
@@ -322,7 +321,7 @@
     
             /**
              * Command persist.
-             * @member {api.IFile|null|undefined} persist
+             * @member {api.File|null|undefined} persist
              * @memberof api.Command
              * @instance
              */
@@ -330,7 +329,7 @@
     
             /**
              * Command persistMirror.
-             * @member {api.IFile|null|undefined} persistMirror
+             * @member {api.File|null|undefined} persistMirror
              * @memberof api.Command
              * @instance
              */
@@ -338,7 +337,7 @@
     
             /**
              * Command write.
-             * @member {api.IFile|null|undefined} write
+             * @member {api.File|null|undefined} write
              * @memberof api.Command
              * @instance
              */
@@ -346,7 +345,7 @@
     
             /**
              * Command remove.
-             * @member {api.IFile|null|undefined} remove
+             * @member {api.File|null|undefined} remove
              * @memberof api.Command
              * @instance
              */
@@ -354,7 +353,7 @@
     
             /**
              * Command move.
-             * @member {api.IMove|null|undefined} move
+             * @member {api.Move|null|undefined} move
              * @memberof api.Command
              * @instance
              */
@@ -362,7 +361,7 @@
     
             /**
              * Command tryRemove.
-             * @member {api.IFile|null|undefined} tryRemove
+             * @member {api.File|null|undefined} tryRemove
              * @memberof api.Command
              * @instance
              */
@@ -370,7 +369,7 @@
     
             /**
              * Command mkdir.
-             * @member {api.IFile|null|undefined} mkdir
+             * @member {api.File|null|undefined} mkdir
              * @memberof api.Command
              * @instance
              */
@@ -378,7 +377,7 @@
     
             /**
              * Command read.
-             * @member {api.IFile|null|undefined} read
+             * @member {api.File|null|undefined} read
              * @memberof api.Command
              * @instance
              */
@@ -386,7 +385,7 @@
     
             /**
              * Command readdir.
-             * @member {api.IFile|null|undefined} readdir
+             * @member {api.File|null|undefined} readdir
              * @memberof api.Command
              * @instance
              */
@@ -394,7 +393,7 @@
     
             /**
              * Command files.
-             * @member {api.IFiles|null|undefined} files
+             * @member {api.Files|null|undefined} files
              * @memberof api.Command
              * @instance
              */
@@ -402,7 +401,7 @@
     
             /**
              * Command file.
-             * @member {api.IFile|null|undefined} file
+             * @member {api.File|null|undefined} file
              * @memberof api.Command
              * @instance
              */
@@ -410,7 +409,7 @@
     
             /**
              * Command checkChanges.
-             * @member {api.ICheckChanges|null|undefined} checkChanges
+             * @member {api.CheckChanges|null|undefined} checkChanges
              * @memberof api.Command
              * @instance
              */
@@ -418,7 +417,7 @@
     
             /**
              * Command changedFiles.
-             * @member {api.IFiles|null|undefined} changedFiles
+             * @member {api.Files|null|undefined} changedFiles
              * @memberof api.Command
              * @instance
              */
@@ -426,7 +425,7 @@
     
             /**
              * Command lintResults.
-             * @member {api.ILintResults|null|undefined} lintResults
+             * @member {api.LintResults|null|undefined} lintResults
              * @memberof api.Command
              * @instance
              */
@@ -434,7 +433,7 @@
     
             /**
              * Command runContainedTest.
-             * @member {api.IContainedTest|null|undefined} runContainedTest
+             * @member {api.ContainedTest|null|undefined} runContainedTest
              * @memberof api.Command
              * @instance
              */
@@ -442,7 +441,7 @@
     
             /**
              * Command testResult.
-             * @member {api.ITestResult|null|undefined} testResult
+             * @member {api.TestResult|null|undefined} testResult
              * @memberof api.Command
              * @instance
              */
@@ -458,7 +457,7 @@
     
             /**
              * Command debuggerStep.
-             * @member {api.IRunMain|null|undefined} debuggerStep
+             * @member {api.RunMain|null|undefined} debuggerStep
              * @memberof api.Command
              * @instance
              */
@@ -466,7 +465,7 @@
     
             /**
              * Command debuggerStatus.
-             * @member {api.IDebugStatus|null|undefined} debuggerStatus
+             * @member {api.DebugStatus|null|undefined} debuggerStatus
              * @memberof api.Command
              * @instance
              */
@@ -474,7 +473,7 @@
     
             /**
              * Command ensurePackages.
-             * @member {api.IEnsurePackages|null|undefined} ensurePackages
+             * @member {api.EnsurePackages|null|undefined} ensurePackages
              * @memberof api.Command
              * @instance
              */
@@ -482,7 +481,7 @@
     
             /**
              * Command ping.
-             * @member {api.IPing|null|undefined} ping
+             * @member {api.Ping|null|undefined} ping
              * @memberof api.Command
              * @instance
              */
@@ -490,7 +489,7 @@
     
             /**
              * Command pong.
-             * @member {api.IPong|null|undefined} pong
+             * @member {api.Pong|null|undefined} pong
              * @memberof api.Command
              * @instance
              */
@@ -498,7 +497,7 @@
     
             /**
              * Command hello.
-             * @member {api.IHello|null|undefined} hello
+             * @member {api.Hello|null|undefined} hello
              * @memberof api.Command
              * @instance
              */
@@ -506,7 +505,7 @@
     
             /**
              * Command goodbye.
-             * @member {api.IGoodbye|null|undefined} goodbye
+             * @member {api.Goodbye|null|undefined} goodbye
              * @memberof api.Command
              * @instance
              */
@@ -514,7 +513,7 @@
     
             /**
              * Command hint.
-             * @member {api.IHint|null|undefined} hint
+             * @member {api.Hint|null|undefined} hint
              * @memberof api.Command
              * @instance
              */
@@ -522,7 +521,7 @@
     
             /**
              * Command connect.
-             * @member {api.IConnect|null|undefined} connect
+             * @member {api.Connect|null|undefined} connect
              * @memberof api.Command
              * @instance
              */
@@ -530,7 +529,7 @@
     
             /**
              * Command send.
-             * @member {api.ISend|null|undefined} send
+             * @member {api.Send|null|undefined} send
              * @memberof api.Command
              * @instance
              */
@@ -538,7 +537,7 @@
     
             /**
              * Command recv.
-             * @member {api.IRecv|null|undefined} recv
+             * @member {api.Recv|null|undefined} recv
              * @memberof api.Command
              * @instance
              */
@@ -546,7 +545,7 @@
     
             /**
              * Command disconnect.
-             * @member {api.IDisconnect|null|undefined} disconnect
+             * @member {api.Disconnect|null|undefined} disconnect
              * @memberof api.Command
              * @instance
              */
@@ -554,7 +553,7 @@
     
             /**
              * Command fileAuthReq.
-             * @member {api.IFileAuthReq|null|undefined} fileAuthReq
+             * @member {api.FileAuthReq|null|undefined} fileAuthReq
              * @memberof api.Command
              * @instance
              */
@@ -562,7 +561,7 @@
     
             /**
              * Command fileAuthRes.
-             * @member {api.IFileAuthRes|null|undefined} fileAuthRes
+             * @member {api.FileAuthRes|null|undefined} fileAuthRes
              * @memberof api.Command
              * @instance
              */
@@ -570,7 +569,7 @@
     
             /**
              * Command mutliFileAuthRes.
-             * @member {api.IMultiFileAuthRes|null|undefined} mutliFileAuthRes
+             * @member {api.MultiFileAuthRes|null|undefined} mutliFileAuthRes
              * @memberof api.Command
              * @instance
              */
@@ -578,7 +577,7 @@
     
             /**
              * Command listObjects.
-             * @member {api.IListObjects|null|undefined} listObjects
+             * @member {api.ListObjects|null|undefined} listObjects
              * @memberof api.Command
              * @instance
              */
@@ -586,7 +585,7 @@
     
             /**
              * Command listObjectsResp.
-             * @member {api.IListObjectsResp|null|undefined} listObjectsResp
+             * @member {api.ListObjectsResp|null|undefined} listObjectsResp
              * @memberof api.Command
              * @instance
              */
@@ -594,7 +593,7 @@
     
             /**
              * Command ot.
-             * @member {api.IOTPacket|null|undefined} ot
+             * @member {api.OTPacket|null|undefined} ot
              * @memberof api.Command
              * @instance
              */
@@ -602,7 +601,7 @@
     
             /**
              * Command otstatus.
-             * @member {api.IOTStatus|null|undefined} otstatus
+             * @member {api.OTStatus|null|undefined} otstatus
              * @memberof api.Command
              * @instance
              */
@@ -610,7 +609,7 @@
     
             /**
              * Command otLinkFile.
-             * @member {api.IOTLinkFile|null|undefined} otLinkFile
+             * @member {api.OTLinkFile|null|undefined} otLinkFile
              * @memberof api.Command
              * @instance
              */
@@ -618,7 +617,7 @@
     
             /**
              * Command otNewCursor.
-             * @member {api.IOTCursor|null|undefined} otNewCursor
+             * @member {api.OTCursor|null|undefined} otNewCursor
              * @memberof api.Command
              * @instance
              */
@@ -626,7 +625,7 @@
     
             /**
              * Command otDeleteCursor.
-             * @member {api.IOTCursor|null|undefined} otDeleteCursor
+             * @member {api.OTCursor|null|undefined} otDeleteCursor
              * @memberof api.Command
              * @instance
              */
@@ -634,7 +633,7 @@
     
             /**
              * Command otFetchRequest.
-             * @member {api.IOTFetchRequest|null|undefined} otFetchRequest
+             * @member {api.OTFetchRequest|null|undefined} otFetchRequest
              * @memberof api.Command
              * @instance
              */
@@ -642,7 +641,7 @@
     
             /**
              * Command otFetchResponse.
-             * @member {api.IOTFetchResponse|null|undefined} otFetchResponse
+             * @member {api.OTFetchResponse|null|undefined} otFetchResponse
              * @memberof api.Command
              * @instance
              */
@@ -650,7 +649,7 @@
     
             /**
              * Command flush.
-             * @member {api.IFlush|null|undefined} flush
+             * @member {api.Flush|null|undefined} flush
              * @memberof api.Command
              * @instance
              */
@@ -658,7 +657,7 @@
     
             /**
              * Command debug.
-             * @member {api.IDebug|null|undefined} debug
+             * @member {api.Debug|null|undefined} debug
              * @memberof api.Command
              * @instance
              */
@@ -666,7 +665,7 @@
     
             /**
              * Command startVCR.
-             * @member {api.IStartVCR|null|undefined} startVCR
+             * @member {api.StartVCR|null|undefined} startVCR
              * @memberof api.Command
              * @instance
              */
@@ -674,7 +673,7 @@
     
             /**
              * Command readVCR.
-             * @member {api.IReadVCR|null|undefined} readVCR
+             * @member {api.ReadVCR|null|undefined} readVCR
              * @memberof api.Command
              * @instance
              */
@@ -682,7 +681,7 @@
     
             /**
              * Command VCRLog.
-             * @member {api.IVCRLog|null|undefined} VCRLog
+             * @member {api.VCRLog|null|undefined} VCRLog
              * @memberof api.Command
              * @instance
              */
@@ -690,7 +689,7 @@
     
             /**
              * Command auth.
-             * @member {api.IAuth|null|undefined} auth
+             * @member {api.Auth|null|undefined} auth
              * @memberof api.Command
              * @instance
              */
@@ -698,7 +697,7 @@
     
             /**
              * Command execInfo.
-             * @member {api.IExecInfo|null|undefined} execInfo
+             * @member {api.ExecInfo|null|undefined} execInfo
              * @memberof api.Command
              * @instance
              */
@@ -706,7 +705,7 @@
     
             /**
              * Command subscribeFile.
-             * @member {api.ISubscribeFile|null|undefined} subscribeFile
+             * @member {api.SubscribeFile|null|undefined} subscribeFile
              * @memberof api.Command
              * @instance
              */
@@ -714,7 +713,7 @@
     
             /**
              * Command fileEvent.
-             * @member {api.IFileEvent|null|undefined} fileEvent
+             * @member {api.FileEvent|null|undefined} fileEvent
              * @memberof api.Command
              * @instance
              */
@@ -722,7 +721,7 @@
     
             /**
              * Command roster.
-             * @member {api.IRoster|null|undefined} roster
+             * @member {api.Roster|null|undefined} roster
              * @memberof api.Command
              * @instance
              */
@@ -730,7 +729,7 @@
     
             /**
              * Command join.
-             * @member {api.IUser|null|undefined} join
+             * @member {api.User|null|undefined} join
              * @memberof api.Command
              * @instance
              */
@@ -738,7 +737,7 @@
     
             /**
              * Command part.
-             * @member {api.IUser|null|undefined} part
+             * @member {api.User|null|undefined} part
              * @memberof api.Command
              * @instance
              */
@@ -746,7 +745,7 @@
     
             /**
              * Command exec.
-             * @member {api.IExec|null|undefined} exec
+             * @member {api.Exec|null|undefined} exec
              * @memberof api.Command
              * @instance
              */
@@ -754,7 +753,7 @@
     
             /**
              * Command packageSearch.
-             * @member {api.IPackageSearch|null|undefined} packageSearch
+             * @member {api.PackageSearch|null|undefined} packageSearch
              * @memberof api.Command
              * @instance
              */
@@ -762,7 +761,7 @@
     
             /**
              * Command packageSearchResp.
-             * @member {api.IPackageSearchResp|null|undefined} packageSearchResp
+             * @member {api.PackageSearchResp|null|undefined} packageSearchResp
              * @memberof api.Command
              * @instance
              */
@@ -770,7 +769,7 @@
     
             /**
              * Command packageInfo.
-             * @member {api.IPackageInfo|null|undefined} packageInfo
+             * @member {api.PackageInfo|null|undefined} packageInfo
              * @memberof api.Command
              * @instance
              */
@@ -778,7 +777,7 @@
     
             /**
              * Command packageInfoResp.
-             * @member {api.IPackageInfoResp|null|undefined} packageInfoResp
+             * @member {api.PackageInfoResp|null|undefined} packageInfoResp
              * @memberof api.Command
              * @instance
              */
@@ -786,7 +785,7 @@
     
             /**
              * Command packageAdd.
-             * @member {api.IPackageAdd|null|undefined} packageAdd
+             * @member {api.PackageAdd|null|undefined} packageAdd
              * @memberof api.Command
              * @instance
              */
@@ -794,7 +793,7 @@
     
             /**
              * Command packageRemove.
-             * @member {api.IPackageRemove|null|undefined} packageRemove
+             * @member {api.PackageRemove|null|undefined} packageRemove
              * @memberof api.Command
              * @instance
              */
@@ -802,7 +801,7 @@
     
             /**
              * Command packageInstall.
-             * @member {api.IPackageInstall|null|undefined} packageInstall
+             * @member {api.PackageInstall|null|undefined} packageInstall
              * @memberof api.Command
              * @instance
              */
@@ -810,7 +809,7 @@
     
             /**
              * Command packageListSpecfile.
-             * @member {api.IPackageListSpecfile|null|undefined} packageListSpecfile
+             * @member {api.PackageListSpecfile|null|undefined} packageListSpecfile
              * @memberof api.Command
              * @instance
              */
@@ -818,7 +817,7 @@
     
             /**
              * Command packageListSpecfileResp.
-             * @member {api.IPackageListSpecfileResp|null|undefined} packageListSpecfileResp
+             * @member {api.PackageListSpecfileResp|null|undefined} packageListSpecfileResp
              * @memberof api.Command
              * @instance
              */
@@ -826,7 +825,7 @@
     
             /**
              * Command packageCacheSave.
-             * @member {api.IPackageCacheSave|null|undefined} packageCacheSave
+             * @member {api.PackageCacheSave|null|undefined} packageCacheSave
              * @memberof api.Command
              * @instance
              */
@@ -834,7 +833,7 @@
     
             /**
              * Command chatMessage.
-             * @member {api.IChatMessage|null|undefined} chatMessage
+             * @member {api.ChatMessage|null|undefined} chatMessage
              * @memberof api.Command
              * @instance
              */
@@ -842,7 +841,7 @@
     
             /**
              * Command chatTyping.
-             * @member {api.IChatTyping|null|undefined} chatTyping
+             * @member {api.ChatTyping|null|undefined} chatTyping
              * @memberof api.Command
              * @instance
              */
@@ -850,7 +849,7 @@
     
             /**
              * Command chatScrollback.
-             * @member {api.IChatScrollback|null|undefined} chatScrollback
+             * @member {api.ChatScrollback|null|undefined} chatScrollback
              * @memberof api.Command
              * @instance
              */
@@ -858,7 +857,7 @@
     
             /**
              * Command fsSnapshot.
-             * @member {api.IFSSnapshot|null|undefined} fsSnapshot
+             * @member {api.FSSnapshot|null|undefined} fsSnapshot
              * @memberof api.Command
              * @instance
              */
@@ -866,7 +865,7 @@
     
             /**
              * Command fsTakeLock.
-             * @member {api.IFSLock|null|undefined} fsTakeLock
+             * @member {api.FSLock|null|undefined} fsTakeLock
              * @memberof api.Command
              * @instance
              */
@@ -874,7 +873,7 @@
     
             /**
              * Command fsReleaseLock.
-             * @member {api.IFSLock|null|undefined} fsReleaseLock
+             * @member {api.FSLock|null|undefined} fsReleaseLock
              * @memberof api.Command
              * @instance
              */
@@ -890,7 +889,7 @@
     
             /**
              * Command pid1Config.
-             * @member {api.IPid1Config|null|undefined} pid1Config
+             * @member {api.Pid1Config|null|undefined} pid1Config
              * @memberof api.Command
              * @instance
              */
@@ -898,7 +897,7 @@
     
             /**
              * Command metrics.
-             * @member {api.IMetrics|null|undefined} metrics
+             * @member {api.Metrics|null|undefined} metrics
              * @memberof api.Command
              * @instance
              */
@@ -906,7 +905,7 @@
     
             /**
              * Command bootStatus.
-             * @member {api.IBootStatus|null|undefined} bootStatus
+             * @member {api.BootStatus|null|undefined} bootStatus
              * @memberof api.Command
              * @instance
              */
@@ -914,7 +913,7 @@
     
             /**
              * Command readMeta.
-             * @member {api.IReadMeta|null|undefined} readMeta
+             * @member {api.ReadMeta|null|undefined} readMeta
              * @memberof api.Command
              * @instance
              */
@@ -922,7 +921,7 @@
     
             /**
              * Command writeMeta.
-             * @member {api.IWriteMeta|null|undefined} writeMeta
+             * @member {api.WriteMeta|null|undefined} writeMeta
              * @memberof api.Command
              * @instance
              */
@@ -930,7 +929,7 @@
     
             /**
              * Command appendMeta.
-             * @member {api.IAppendMeta|null|undefined} appendMeta
+             * @member {api.AppendMeta|null|undefined} appendMeta
              * @memberof api.Command
              * @instance
              */
@@ -938,7 +937,7 @@
     
             /**
              * Command audio.
-             * @member {api.IAudio|null|undefined} audio
+             * @member {api.Audio|null|undefined} audio
              * @memberof api.Command
              * @instance
              */
@@ -946,7 +945,7 @@
     
             /**
              * Command pprofRequest.
-             * @member {api.IPprofRequest|null|undefined} pprofRequest
+             * @member {api.PprofRequest|null|undefined} pprofRequest
              * @memberof api.Command
              * @instance
              */
@@ -954,7 +953,7 @@
     
             /**
              * Command pprofResponse.
-             * @member {api.IPprofResponse|null|undefined} pprofResponse
+             * @member {api.PprofResponse|null|undefined} pprofResponse
              * @memberof api.Command
              * @instance
              */
@@ -962,7 +961,7 @@
     
             /**
              * Command audio2.
-             * @member {api.IAudio2|null|undefined} audio2
+             * @member {api.Audio2|null|undefined} audio2
              * @memberof api.Command
              * @instance
              */
@@ -970,7 +969,7 @@
     
             /**
              * Command PTYConfig.
-             * @member {api.IPTYConfig|null|undefined} PTYConfig
+             * @member {api.PTYConfig|null|undefined} PTYConfig
              * @memberof api.Command
              * @instance
              */
@@ -1007,7 +1006,7 @@
              * @returns {api.Command} Command instance
              */
             Command.create = function create(properties) {
-                return new Command(properties);
+                return Command.fromObject(properties);
             };
     
             /**
@@ -1015,220 +1014,220 @@
              * @function encode
              * @memberof api.Command
              * @static
-             * @param {api.ICommand} message Command message or plain object to encode
+             * @param {api.Command} message Command message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             Command.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.channel != null && message.hasOwnProperty("channel"))
+                if (message.channel != null && Object.hasOwnProperty.call(message, "channel"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int32(message.channel);
-                if (message.session != null && message.hasOwnProperty("session"))
+                if (message.session != null && Object.hasOwnProperty.call(message, "session"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int32(message.session);
-                if (message.openChan != null && message.hasOwnProperty("openChan"))
+                if (message.openChan != null && Object.hasOwnProperty.call(message, "openChan"))
                     $root.api.OpenChannel.encode(message.openChan, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.openChanRes != null && message.hasOwnProperty("openChanRes"))
+                if (message.openChanRes != null && Object.hasOwnProperty.call(message, "openChanRes"))
                     $root.api.OpenChannelRes.encode(message.openChanRes, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                if (message.closeChan != null && message.hasOwnProperty("closeChan"))
+                if (message.closeChan != null && Object.hasOwnProperty.call(message, "closeChan"))
                     $root.api.CloseChannel.encode(message.closeChan, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-                if (message.closeChanRes != null && message.hasOwnProperty("closeChanRes"))
+                if (message.closeChanRes != null && Object.hasOwnProperty.call(message, "closeChanRes"))
                     $root.api.CloseChannelRes.encode(message.closeChanRes, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
-                if (message.containerState != null && message.hasOwnProperty("containerState"))
+                if (message.containerState != null && Object.hasOwnProperty.call(message, "containerState"))
                     $root.api.ContainerState.encode(message.containerState, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
-                if (message.portOpen != null && message.hasOwnProperty("portOpen"))
+                if (message.portOpen != null && Object.hasOwnProperty.call(message, "portOpen"))
                     $root.api.PortOpen.encode(message.portOpen, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
-                if (message.toast != null && message.hasOwnProperty("toast"))
+                if (message.toast != null && Object.hasOwnProperty.call(message, "toast"))
                     $root.api.Toast.encode(message.toast, writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
-                if (message.redirect != null && message.hasOwnProperty("redirect"))
+                if (message.redirect != null && Object.hasOwnProperty.call(message, "redirect"))
                     $root.api.Redirect.encode(message.redirect, writer.uint32(/* id 12, wireType 2 =*/98).fork()).ldelim();
-                if (message.runMain != null && message.hasOwnProperty("runMain"))
+                if (message.runMain != null && Object.hasOwnProperty.call(message, "runMain"))
                     $root.api.RunMain.encode(message.runMain, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
-                if (message.clear != null && message.hasOwnProperty("clear"))
+                if (message.clear != null && Object.hasOwnProperty.call(message, "clear"))
                     $root.api.Clear.encode(message.clear, writer.uint32(/* id 17, wireType 2 =*/138).fork()).ldelim();
-                if (message["eval"] != null && message.hasOwnProperty("eval"))
+                if (message["eval"] != null && Object.hasOwnProperty.call(message, "eval"))
                     writer.uint32(/* id 20, wireType 2 =*/162).string(message["eval"]);
-                if (message.result != null && message.hasOwnProperty("result"))
+                if (message.result != null && Object.hasOwnProperty.call(message, "result"))
                     writer.uint32(/* id 21, wireType 2 =*/170).string(message.result);
-                if (message.input != null && message.hasOwnProperty("input"))
+                if (message.input != null && Object.hasOwnProperty.call(message, "input"))
                     writer.uint32(/* id 22, wireType 2 =*/178).string(message.input);
-                if (message.output != null && message.hasOwnProperty("output"))
+                if (message.output != null && Object.hasOwnProperty.call(message, "output"))
                     writer.uint32(/* id 23, wireType 2 =*/186).string(message.output);
-                if (message.error != null && message.hasOwnProperty("error"))
+                if (message.error != null && Object.hasOwnProperty.call(message, "error"))
                     writer.uint32(/* id 24, wireType 2 =*/194).string(message.error);
-                if (message.saneTerm != null && message.hasOwnProperty("saneTerm"))
+                if (message.saneTerm != null && Object.hasOwnProperty.call(message, "saneTerm"))
                     $root.api.SaneTerm.encode(message.saneTerm, writer.uint32(/* id 26, wireType 2 =*/210).fork()).ldelim();
-                if (message.resizeTerm != null && message.hasOwnProperty("resizeTerm"))
+                if (message.resizeTerm != null && Object.hasOwnProperty.call(message, "resizeTerm"))
                     $root.api.ResizeTerm.encode(message.resizeTerm, writer.uint32(/* id 27, wireType 2 =*/218).fork()).ldelim();
-                if (message.state != null && message.hasOwnProperty("state"))
+                if (message.state != null && Object.hasOwnProperty.call(message, "state"))
                     writer.uint32(/* id 28, wireType 0 =*/224).int32(message.state);
-                if (message.ok != null && message.hasOwnProperty("ok"))
+                if (message.ok != null && Object.hasOwnProperty.call(message, "ok"))
                     $root.api.OK.encode(message.ok, writer.uint32(/* id 30, wireType 2 =*/242).fork()).ldelim();
-                if (message.persist != null && message.hasOwnProperty("persist"))
+                if (message.persist != null && Object.hasOwnProperty.call(message, "persist"))
                     $root.api.File.encode(message.persist, writer.uint32(/* id 31, wireType 2 =*/250).fork()).ldelim();
-                if (message.write != null && message.hasOwnProperty("write"))
+                if (message.write != null && Object.hasOwnProperty.call(message, "write"))
                     $root.api.File.encode(message.write, writer.uint32(/* id 32, wireType 2 =*/258).fork()).ldelim();
-                if (message.remove != null && message.hasOwnProperty("remove"))
+                if (message.remove != null && Object.hasOwnProperty.call(message, "remove"))
                     $root.api.File.encode(message.remove, writer.uint32(/* id 33, wireType 2 =*/266).fork()).ldelim();
-                if (message.move != null && message.hasOwnProperty("move"))
+                if (message.move != null && Object.hasOwnProperty.call(message, "move"))
                     $root.api.Move.encode(message.move, writer.uint32(/* id 34, wireType 2 =*/274).fork()).ldelim();
-                if (message.read != null && message.hasOwnProperty("read"))
+                if (message.read != null && Object.hasOwnProperty.call(message, "read"))
                     $root.api.File.encode(message.read, writer.uint32(/* id 35, wireType 2 =*/282).fork()).ldelim();
-                if (message.tryRemove != null && message.hasOwnProperty("tryRemove"))
+                if (message.tryRemove != null && Object.hasOwnProperty.call(message, "tryRemove"))
                     $root.api.File.encode(message.tryRemove, writer.uint32(/* id 36, wireType 2 =*/290).fork()).ldelim();
-                if (message.readdir != null && message.hasOwnProperty("readdir"))
+                if (message.readdir != null && Object.hasOwnProperty.call(message, "readdir"))
                     $root.api.File.encode(message.readdir, writer.uint32(/* id 37, wireType 2 =*/298).fork()).ldelim();
-                if (message.files != null && message.hasOwnProperty("files"))
+                if (message.files != null && Object.hasOwnProperty.call(message, "files"))
                     $root.api.Files.encode(message.files, writer.uint32(/* id 38, wireType 2 =*/306).fork()).ldelim();
-                if (message.mkdir != null && message.hasOwnProperty("mkdir"))
+                if (message.mkdir != null && Object.hasOwnProperty.call(message, "mkdir"))
                     $root.api.File.encode(message.mkdir, writer.uint32(/* id 39, wireType 2 =*/314).fork()).ldelim();
-                if (message.file != null && message.hasOwnProperty("file"))
+                if (message.file != null && Object.hasOwnProperty.call(message, "file"))
                     $root.api.File.encode(message.file, writer.uint32(/* id 40, wireType 2 =*/322).fork()).ldelim();
-                if (message.persistMirror != null && message.hasOwnProperty("persistMirror"))
+                if (message.persistMirror != null && Object.hasOwnProperty.call(message, "persistMirror"))
                     $root.api.File.encode(message.persistMirror, writer.uint32(/* id 41, wireType 2 =*/330).fork()).ldelim();
-                if (message.checkChanges != null && message.hasOwnProperty("checkChanges"))
+                if (message.checkChanges != null && Object.hasOwnProperty.call(message, "checkChanges"))
                     $root.api.CheckChanges.encode(message.checkChanges, writer.uint32(/* id 42, wireType 2 =*/338).fork()).ldelim();
-                if (message.changedFiles != null && message.hasOwnProperty("changedFiles"))
+                if (message.changedFiles != null && Object.hasOwnProperty.call(message, "changedFiles"))
                     $root.api.Files.encode(message.changedFiles, writer.uint32(/* id 43, wireType 2 =*/346).fork()).ldelim();
-                if (message.lintResults != null && message.hasOwnProperty("lintResults"))
+                if (message.lintResults != null && Object.hasOwnProperty.call(message, "lintResults"))
                     $root.api.LintResults.encode(message.lintResults, writer.uint32(/* id 44, wireType 2 =*/354).fork()).ldelim();
-                if (message.runContainedTest != null && message.hasOwnProperty("runContainedTest"))
+                if (message.runContainedTest != null && Object.hasOwnProperty.call(message, "runContainedTest"))
                     $root.api.ContainedTest.encode(message.runContainedTest, writer.uint32(/* id 70, wireType 2 =*/562).fork()).ldelim();
-                if (message.testResult != null && message.hasOwnProperty("testResult"))
+                if (message.testResult != null && Object.hasOwnProperty.call(message, "testResult"))
                     $root.api.TestResult.encode(message.testResult, writer.uint32(/* id 71, wireType 2 =*/570).fork()).ldelim();
-                if (message.debuggerStart != null && message.hasOwnProperty("debuggerStart"))
+                if (message.debuggerStart != null && Object.hasOwnProperty.call(message, "debuggerStart"))
                     writer.uint32(/* id 90, wireType 2 =*/722).string(message.debuggerStart);
-                if (message.debuggerStep != null && message.hasOwnProperty("debuggerStep"))
+                if (message.debuggerStep != null && Object.hasOwnProperty.call(message, "debuggerStep"))
                     $root.api.RunMain.encode(message.debuggerStep, writer.uint32(/* id 91, wireType 2 =*/730).fork()).ldelim();
-                if (message.debuggerStatus != null && message.hasOwnProperty("debuggerStatus"))
+                if (message.debuggerStatus != null && Object.hasOwnProperty.call(message, "debuggerStatus"))
                     $root.api.DebugStatus.encode(message.debuggerStatus, writer.uint32(/* id 92, wireType 2 =*/738).fork()).ldelim();
-                if (message.ensurePackages != null && message.hasOwnProperty("ensurePackages"))
+                if (message.ensurePackages != null && Object.hasOwnProperty.call(message, "ensurePackages"))
                     $root.api.EnsurePackages.encode(message.ensurePackages, writer.uint32(/* id 100, wireType 2 =*/802).fork()).ldelim();
-                if (message.ping != null && message.hasOwnProperty("ping"))
+                if (message.ping != null && Object.hasOwnProperty.call(message, "ping"))
                     $root.api.Ping.encode(message.ping, writer.uint32(/* id 120, wireType 2 =*/962).fork()).ldelim();
-                if (message.pong != null && message.hasOwnProperty("pong"))
+                if (message.pong != null && Object.hasOwnProperty.call(message, "pong"))
                     $root.api.Pong.encode(message.pong, writer.uint32(/* id 121, wireType 2 =*/970).fork()).ldelim();
-                if (message.hello != null && message.hasOwnProperty("hello"))
+                if (message.hello != null && Object.hasOwnProperty.call(message, "hello"))
                     $root.api.Hello.encode(message.hello, writer.uint32(/* id 122, wireType 2 =*/978).fork()).ldelim();
-                if (message.goodbye != null && message.hasOwnProperty("goodbye"))
+                if (message.goodbye != null && Object.hasOwnProperty.call(message, "goodbye"))
                     $root.api.Goodbye.encode(message.goodbye, writer.uint32(/* id 123, wireType 2 =*/986).fork()).ldelim();
-                if (message.hint != null && message.hasOwnProperty("hint"))
+                if (message.hint != null && Object.hasOwnProperty.call(message, "hint"))
                     $root.api.Hint.encode(message.hint, writer.uint32(/* id 130, wireType 2 =*/1042).fork()).ldelim();
-                if (message.connect != null && message.hasOwnProperty("connect"))
+                if (message.connect != null && Object.hasOwnProperty.call(message, "connect"))
                     $root.api.Connect.encode(message.connect, writer.uint32(/* id 150, wireType 2 =*/1202).fork()).ldelim();
-                if (message.send != null && message.hasOwnProperty("send"))
+                if (message.send != null && Object.hasOwnProperty.call(message, "send"))
                     $root.api.Send.encode(message.send, writer.uint32(/* id 151, wireType 2 =*/1210).fork()).ldelim();
-                if (message.recv != null && message.hasOwnProperty("recv"))
+                if (message.recv != null && Object.hasOwnProperty.call(message, "recv"))
                     $root.api.Recv.encode(message.recv, writer.uint32(/* id 152, wireType 2 =*/1218).fork()).ldelim();
-                if (message.disconnect != null && message.hasOwnProperty("disconnect"))
+                if (message.disconnect != null && Object.hasOwnProperty.call(message, "disconnect"))
                     $root.api.Disconnect.encode(message.disconnect, writer.uint32(/* id 153, wireType 2 =*/1226).fork()).ldelim();
-                if (message.fileAuthReq != null && message.hasOwnProperty("fileAuthReq"))
+                if (message.fileAuthReq != null && Object.hasOwnProperty.call(message, "fileAuthReq"))
                     $root.api.FileAuthReq.encode(message.fileAuthReq, writer.uint32(/* id 200, wireType 2 =*/1602).fork()).ldelim();
-                if (message.fileAuthRes != null && message.hasOwnProperty("fileAuthRes"))
+                if (message.fileAuthRes != null && Object.hasOwnProperty.call(message, "fileAuthRes"))
                     $root.api.FileAuthRes.encode(message.fileAuthRes, writer.uint32(/* id 201, wireType 2 =*/1610).fork()).ldelim();
-                if (message.mutliFileAuthRes != null && message.hasOwnProperty("mutliFileAuthRes"))
+                if (message.mutliFileAuthRes != null && Object.hasOwnProperty.call(message, "mutliFileAuthRes"))
                     $root.api.MultiFileAuthRes.encode(message.mutliFileAuthRes, writer.uint32(/* id 202, wireType 2 =*/1618).fork()).ldelim();
-                if (message.listObjects != null && message.hasOwnProperty("listObjects"))
+                if (message.listObjects != null && Object.hasOwnProperty.call(message, "listObjects"))
                     $root.api.ListObjects.encode(message.listObjects, writer.uint32(/* id 205, wireType 2 =*/1642).fork()).ldelim();
-                if (message.listObjectsResp != null && message.hasOwnProperty("listObjectsResp"))
+                if (message.listObjectsResp != null && Object.hasOwnProperty.call(message, "listObjectsResp"))
                     $root.api.ListObjectsResp.encode(message.listObjectsResp, writer.uint32(/* id 206, wireType 2 =*/1650).fork()).ldelim();
-                if (message.ot != null && message.hasOwnProperty("ot"))
+                if (message.ot != null && Object.hasOwnProperty.call(message, "ot"))
                     $root.api.OTPacket.encode(message.ot, writer.uint32(/* id 220, wireType 2 =*/1762).fork()).ldelim();
-                if (message.otstatus != null && message.hasOwnProperty("otstatus"))
+                if (message.otstatus != null && Object.hasOwnProperty.call(message, "otstatus"))
                     $root.api.OTStatus.encode(message.otstatus, writer.uint32(/* id 221, wireType 2 =*/1770).fork()).ldelim();
-                if (message.otLinkFile != null && message.hasOwnProperty("otLinkFile"))
+                if (message.otLinkFile != null && Object.hasOwnProperty.call(message, "otLinkFile"))
                     $root.api.OTLinkFile.encode(message.otLinkFile, writer.uint32(/* id 222, wireType 2 =*/1778).fork()).ldelim();
-                if (message.otNewCursor != null && message.hasOwnProperty("otNewCursor"))
+                if (message.otNewCursor != null && Object.hasOwnProperty.call(message, "otNewCursor"))
                     $root.api.OTCursor.encode(message.otNewCursor, writer.uint32(/* id 223, wireType 2 =*/1786).fork()).ldelim();
-                if (message.otDeleteCursor != null && message.hasOwnProperty("otDeleteCursor"))
+                if (message.otDeleteCursor != null && Object.hasOwnProperty.call(message, "otDeleteCursor"))
                     $root.api.OTCursor.encode(message.otDeleteCursor, writer.uint32(/* id 224, wireType 2 =*/1794).fork()).ldelim();
-                if (message.otFetchRequest != null && message.hasOwnProperty("otFetchRequest"))
+                if (message.otFetchRequest != null && Object.hasOwnProperty.call(message, "otFetchRequest"))
                     $root.api.OTFetchRequest.encode(message.otFetchRequest, writer.uint32(/* id 225, wireType 2 =*/1802).fork()).ldelim();
-                if (message.otFetchResponse != null && message.hasOwnProperty("otFetchResponse"))
+                if (message.otFetchResponse != null && Object.hasOwnProperty.call(message, "otFetchResponse"))
                     $root.api.OTFetchResponse.encode(message.otFetchResponse, writer.uint32(/* id 226, wireType 2 =*/1810).fork()).ldelim();
-                if (message.debug != null && message.hasOwnProperty("debug"))
+                if (message.debug != null && Object.hasOwnProperty.call(message, "debug"))
                     $root.api.Debug.encode(message.debug, writer.uint32(/* id 230, wireType 2 =*/1842).fork()).ldelim();
-                if (message.startVCR != null && message.hasOwnProperty("startVCR"))
+                if (message.startVCR != null && Object.hasOwnProperty.call(message, "startVCR"))
                     $root.api.StartVCR.encode(message.startVCR, writer.uint32(/* id 231, wireType 2 =*/1850).fork()).ldelim();
-                if (message.readVCR != null && message.hasOwnProperty("readVCR"))
+                if (message.readVCR != null && Object.hasOwnProperty.call(message, "readVCR"))
                     $root.api.ReadVCR.encode(message.readVCR, writer.uint32(/* id 232, wireType 2 =*/1858).fork()).ldelim();
-                if (message.VCRLog != null && message.hasOwnProperty("VCRLog"))
+                if (message.VCRLog != null && Object.hasOwnProperty.call(message, "VCRLog"))
                     $root.api.VCRLog.encode(message.VCRLog, writer.uint32(/* id 233, wireType 2 =*/1866).fork()).ldelim();
-                if (message.auth != null && message.hasOwnProperty("auth"))
+                if (message.auth != null && Object.hasOwnProperty.call(message, "auth"))
                     $root.api.Auth.encode(message.auth, writer.uint32(/* id 235, wireType 2 =*/1882).fork()).ldelim();
-                if (message.execInfo != null && message.hasOwnProperty("execInfo"))
+                if (message.execInfo != null && Object.hasOwnProperty.call(message, "execInfo"))
                     $root.api.ExecInfo.encode(message.execInfo, writer.uint32(/* id 240, wireType 2 =*/1922).fork()).ldelim();
-                if (message.flush != null && message.hasOwnProperty("flush"))
+                if (message.flush != null && Object.hasOwnProperty.call(message, "flush"))
                     $root.api.Flush.encode(message.flush, writer.uint32(/* id 251, wireType 2 =*/2010).fork()).ldelim();
-                if (message.subscribeFile != null && message.hasOwnProperty("subscribeFile"))
+                if (message.subscribeFile != null && Object.hasOwnProperty.call(message, "subscribeFile"))
                     $root.api.SubscribeFile.encode(message.subscribeFile, writer.uint32(/* id 256, wireType 2 =*/2050).fork()).ldelim();
-                if (message.fileEvent != null && message.hasOwnProperty("fileEvent"))
+                if (message.fileEvent != null && Object.hasOwnProperty.call(message, "fileEvent"))
                     $root.api.FileEvent.encode(message.fileEvent, writer.uint32(/* id 257, wireType 2 =*/2058).fork()).ldelim();
-                if (message.roster != null && message.hasOwnProperty("roster"))
+                if (message.roster != null && Object.hasOwnProperty.call(message, "roster"))
                     $root.api.Roster.encode(message.roster, writer.uint32(/* id 260, wireType 2 =*/2082).fork()).ldelim();
-                if (message.join != null && message.hasOwnProperty("join"))
+                if (message.join != null && Object.hasOwnProperty.call(message, "join"))
                     $root.api.User.encode(message.join, writer.uint32(/* id 261, wireType 2 =*/2090).fork()).ldelim();
-                if (message.part != null && message.hasOwnProperty("part"))
+                if (message.part != null && Object.hasOwnProperty.call(message, "part"))
                     $root.api.User.encode(message.part, writer.uint32(/* id 262, wireType 2 =*/2098).fork()).ldelim();
-                if (message.exec != null && message.hasOwnProperty("exec"))
+                if (message.exec != null && Object.hasOwnProperty.call(message, "exec"))
                     $root.api.Exec.encode(message.exec, writer.uint32(/* id 270, wireType 2 =*/2162).fork()).ldelim();
-                if (message.packageSearch != null && message.hasOwnProperty("packageSearch"))
+                if (message.packageSearch != null && Object.hasOwnProperty.call(message, "packageSearch"))
                     $root.api.PackageSearch.encode(message.packageSearch, writer.uint32(/* id 280, wireType 2 =*/2242).fork()).ldelim();
-                if (message.packageSearchResp != null && message.hasOwnProperty("packageSearchResp"))
+                if (message.packageSearchResp != null && Object.hasOwnProperty.call(message, "packageSearchResp"))
                     $root.api.PackageSearchResp.encode(message.packageSearchResp, writer.uint32(/* id 281, wireType 2 =*/2250).fork()).ldelim();
-                if (message.packageInfo != null && message.hasOwnProperty("packageInfo"))
+                if (message.packageInfo != null && Object.hasOwnProperty.call(message, "packageInfo"))
                     $root.api.PackageInfo.encode(message.packageInfo, writer.uint32(/* id 282, wireType 2 =*/2258).fork()).ldelim();
-                if (message.packageInfoResp != null && message.hasOwnProperty("packageInfoResp"))
+                if (message.packageInfoResp != null && Object.hasOwnProperty.call(message, "packageInfoResp"))
                     $root.api.PackageInfoResp.encode(message.packageInfoResp, writer.uint32(/* id 283, wireType 2 =*/2266).fork()).ldelim();
-                if (message.packageAdd != null && message.hasOwnProperty("packageAdd"))
+                if (message.packageAdd != null && Object.hasOwnProperty.call(message, "packageAdd"))
                     $root.api.PackageAdd.encode(message.packageAdd, writer.uint32(/* id 284, wireType 2 =*/2274).fork()).ldelim();
-                if (message.packageRemove != null && message.hasOwnProperty("packageRemove"))
+                if (message.packageRemove != null && Object.hasOwnProperty.call(message, "packageRemove"))
                     $root.api.PackageRemove.encode(message.packageRemove, writer.uint32(/* id 285, wireType 2 =*/2282).fork()).ldelim();
-                if (message.packageInstall != null && message.hasOwnProperty("packageInstall"))
+                if (message.packageInstall != null && Object.hasOwnProperty.call(message, "packageInstall"))
                     $root.api.PackageInstall.encode(message.packageInstall, writer.uint32(/* id 286, wireType 2 =*/2290).fork()).ldelim();
-                if (message.packageListSpecfile != null && message.hasOwnProperty("packageListSpecfile"))
+                if (message.packageListSpecfile != null && Object.hasOwnProperty.call(message, "packageListSpecfile"))
                     $root.api.PackageListSpecfile.encode(message.packageListSpecfile, writer.uint32(/* id 287, wireType 2 =*/2298).fork()).ldelim();
-                if (message.packageListSpecfileResp != null && message.hasOwnProperty("packageListSpecfileResp"))
+                if (message.packageListSpecfileResp != null && Object.hasOwnProperty.call(message, "packageListSpecfileResp"))
                     $root.api.PackageListSpecfileResp.encode(message.packageListSpecfileResp, writer.uint32(/* id 288, wireType 2 =*/2306).fork()).ldelim();
-                if (message.packageCacheSave != null && message.hasOwnProperty("packageCacheSave"))
+                if (message.packageCacheSave != null && Object.hasOwnProperty.call(message, "packageCacheSave"))
                     $root.api.PackageCacheSave.encode(message.packageCacheSave, writer.uint32(/* id 289, wireType 2 =*/2314).fork()).ldelim();
-                if (message.chatMessage != null && message.hasOwnProperty("chatMessage"))
+                if (message.chatMessage != null && Object.hasOwnProperty.call(message, "chatMessage"))
                     $root.api.ChatMessage.encode(message.chatMessage, writer.uint32(/* id 310, wireType 2 =*/2482).fork()).ldelim();
-                if (message.chatTyping != null && message.hasOwnProperty("chatTyping"))
+                if (message.chatTyping != null && Object.hasOwnProperty.call(message, "chatTyping"))
                     $root.api.ChatTyping.encode(message.chatTyping, writer.uint32(/* id 311, wireType 2 =*/2490).fork()).ldelim();
-                if (message.chatScrollback != null && message.hasOwnProperty("chatScrollback"))
+                if (message.chatScrollback != null && Object.hasOwnProperty.call(message, "chatScrollback"))
                     $root.api.ChatScrollback.encode(message.chatScrollback, writer.uint32(/* id 312, wireType 2 =*/2498).fork()).ldelim();
-                if (message.fsSnapshot != null && message.hasOwnProperty("fsSnapshot"))
+                if (message.fsSnapshot != null && Object.hasOwnProperty.call(message, "fsSnapshot"))
                     $root.api.FSSnapshot.encode(message.fsSnapshot, writer.uint32(/* id 330, wireType 2 =*/2642).fork()).ldelim();
-                if (message.fsTakeLock != null && message.hasOwnProperty("fsTakeLock"))
+                if (message.fsTakeLock != null && Object.hasOwnProperty.call(message, "fsTakeLock"))
                     $root.api.FSLock.encode(message.fsTakeLock, writer.uint32(/* id 331, wireType 2 =*/2650).fork()).ldelim();
-                if (message.fsReleaseLock != null && message.hasOwnProperty("fsReleaseLock"))
+                if (message.fsReleaseLock != null && Object.hasOwnProperty.call(message, "fsReleaseLock"))
                     $root.api.FSLock.encode(message.fsReleaseLock, writer.uint32(/* id 332, wireType 2 =*/2658).fork()).ldelim();
-                if (message.hasCap != null && message.hasOwnProperty("hasCap"))
+                if (message.hasCap != null && Object.hasOwnProperty.call(message, "hasCap"))
                     writer.uint32(/* id 335, wireType 0 =*/2680).bool(message.hasCap);
-                if (message.pid1Config != null && message.hasOwnProperty("pid1Config"))
+                if (message.pid1Config != null && Object.hasOwnProperty.call(message, "pid1Config"))
                     $root.api.Pid1Config.encode(message.pid1Config, writer.uint32(/* id 340, wireType 2 =*/2722).fork()).ldelim();
-                if (message.metrics != null && message.hasOwnProperty("metrics"))
+                if (message.metrics != null && Object.hasOwnProperty.call(message, "metrics"))
                     $root.api.Metrics.encode(message.metrics, writer.uint32(/* id 350, wireType 2 =*/2802).fork()).ldelim();
-                if (message.bootStatus != null && message.hasOwnProperty("bootStatus"))
+                if (message.bootStatus != null && Object.hasOwnProperty.call(message, "bootStatus"))
                     $root.api.BootStatus.encode(message.bootStatus, writer.uint32(/* id 351, wireType 2 =*/2810).fork()).ldelim();
-                if (message.readMeta != null && message.hasOwnProperty("readMeta"))
+                if (message.readMeta != null && Object.hasOwnProperty.call(message, "readMeta"))
                     $root.api.ReadMeta.encode(message.readMeta, writer.uint32(/* id 360, wireType 2 =*/2882).fork()).ldelim();
-                if (message.writeMeta != null && message.hasOwnProperty("writeMeta"))
+                if (message.writeMeta != null && Object.hasOwnProperty.call(message, "writeMeta"))
                     $root.api.WriteMeta.encode(message.writeMeta, writer.uint32(/* id 361, wireType 2 =*/2890).fork()).ldelim();
-                if (message.appendMeta != null && message.hasOwnProperty("appendMeta"))
+                if (message.appendMeta != null && Object.hasOwnProperty.call(message, "appendMeta"))
                     $root.api.AppendMeta.encode(message.appendMeta, writer.uint32(/* id 362, wireType 2 =*/2898).fork()).ldelim();
-                if (message.audio != null && message.hasOwnProperty("audio"))
+                if (message.audio != null && Object.hasOwnProperty.call(message, "audio"))
                     $root.api.Audio.encode(message.audio, writer.uint32(/* id 363, wireType 2 =*/2906).fork()).ldelim();
-                if (message.pprofRequest != null && message.hasOwnProperty("pprofRequest"))
+                if (message.pprofRequest != null && Object.hasOwnProperty.call(message, "pprofRequest"))
                     $root.api.PprofRequest.encode(message.pprofRequest, writer.uint32(/* id 364, wireType 2 =*/2914).fork()).ldelim();
-                if (message.pprofResponse != null && message.hasOwnProperty("pprofResponse"))
+                if (message.pprofResponse != null && Object.hasOwnProperty.call(message, "pprofResponse"))
                     $root.api.PprofResponse.encode(message.pprofResponse, writer.uint32(/* id 365, wireType 2 =*/2922).fork()).ldelim();
-                if (message.audio2 != null && message.hasOwnProperty("audio2"))
+                if (message.audio2 != null && Object.hasOwnProperty.call(message, "audio2"))
                     $root.api.Audio2.encode(message.audio2, writer.uint32(/* id 366, wireType 2 =*/2930).fork()).ldelim();
-                if (message.PTYConfig != null && message.hasOwnProperty("PTYConfig"))
+                if (message.PTYConfig != null && Object.hasOwnProperty.call(message, "PTYConfig"))
                     $root.api.PTYConfig.encode(message.PTYConfig, writer.uint32(/* id 367, wireType 2 =*/2938).fork()).ldelim();
-                if (message.ref != null && message.hasOwnProperty("ref"))
+                if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
                     writer.uint32(/* id 1000, wireType 2 =*/8002).string(message.ref);
                 return writer;
             };
@@ -1238,7 +1237,7 @@
              * @function encodeDelimited
              * @memberof api.Command
              * @static
-             * @param {api.ICommand} message Command message or plain object to encode
+             * @param {api.Command} message Command message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -3682,7 +3681,6 @@
              * Constructs a new Audio.
              * @memberof api
              * @classdesc Represents an Audio.
-             * @implements IAudio
              * @constructor
              * @param {api.IAudio=} [properties] Properties to set
              */
@@ -3711,7 +3709,7 @@
              * @returns {api.Audio} Audio instance
              */
             Audio.create = function create(properties) {
-                return new Audio(properties);
+                return Audio.fromObject(properties);
             };
     
             /**
@@ -3719,7 +3717,7 @@
              * @function encode
              * @memberof api.Audio
              * @static
-             * @param {api.IAudio} message Audio message or plain object to encode
+             * @param {api.Audio} message Audio message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -3740,7 +3738,7 @@
              * @function encodeDelimited
              * @memberof api.Audio
              * @static
-             * @param {api.IAudio} message Audio message or plain object to encode
+             * @param {api.Audio} message Audio message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -3887,14 +3885,13 @@
              * @memberof api
              * @interface IAudio2
              * @property {Array.<number>|null} [data] Audio2 data
-             * @property {number|Long|null} [samples] Audio2 samples
+             * @property {number|null} [samples] Audio2 samples
              */
     
             /**
              * Constructs a new Audio2.
              * @memberof api
              * @classdesc Represents an Audio2.
-             * @implements IAudio2
              * @constructor
              * @param {api.IAudio2=} [properties] Properties to set
              */
@@ -3916,7 +3913,7 @@
     
             /**
              * Audio2 samples.
-             * @member {number|Long} samples
+             * @member {number} samples
              * @memberof api.Audio2
              * @instance
              */
@@ -3931,7 +3928,7 @@
              * @returns {api.Audio2} Audio2 instance
              */
             Audio2.create = function create(properties) {
-                return new Audio2(properties);
+                return Audio2.fromObject(properties);
             };
     
             /**
@@ -3939,7 +3936,7 @@
              * @function encode
              * @memberof api.Audio2
              * @static
-             * @param {api.IAudio2} message Audio2 message or plain object to encode
+             * @param {api.Audio2} message Audio2 message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -3952,7 +3949,7 @@
                         writer.sint32(message.data[i]);
                     writer.ldelim();
                 }
-                if (message.samples != null && message.hasOwnProperty("samples"))
+                if (message.samples != null && Object.hasOwnProperty.call(message, "samples"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int64(message.samples);
                 return writer;
             };
@@ -3962,7 +3959,7 @@
              * @function encodeDelimited
              * @memberof api.Audio2
              * @static
-             * @param {api.IAudio2} message Audio2 message or plain object to encode
+             * @param {api.Audio2} message Audio2 message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -4143,7 +4140,6 @@
              * Constructs a new ReadMeta.
              * @memberof api
              * @classdesc Represents a ReadMeta.
-             * @implements IReadMeta
              * @constructor
              * @param {api.IReadMeta=} [properties] Properties to set
              */
@@ -4187,7 +4183,7 @@
              * @returns {api.ReadMeta} ReadMeta instance
              */
             ReadMeta.create = function create(properties) {
-                return new ReadMeta(properties);
+                return ReadMeta.fromObject(properties);
             };
     
             /**
@@ -4195,18 +4191,18 @@
              * @function encode
              * @memberof api.ReadMeta
              * @static
-             * @param {api.IReadMeta} message ReadMeta message or plain object to encode
+             * @param {api.ReadMeta} message ReadMeta message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             ReadMeta.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.key != null && message.hasOwnProperty("key"))
+                if (message.key != null && Object.hasOwnProperty.call(message, "key"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.key);
-                if (message.exists != null && message.hasOwnProperty("exists"))
+                if (message.exists != null && Object.hasOwnProperty.call(message, "exists"))
                     writer.uint32(/* id 2, wireType 0 =*/16).bool(message.exists);
-                if (message.data != null && message.hasOwnProperty("data"))
+                if (message.data != null && Object.hasOwnProperty.call(message, "data"))
                     writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.data);
                 return writer;
             };
@@ -4216,7 +4212,7 @@
              * @function encodeDelimited
              * @memberof api.ReadMeta
              * @static
-             * @param {api.IReadMeta} message ReadMeta message or plain object to encode
+             * @param {api.ReadMeta} message ReadMeta message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -4383,7 +4379,6 @@
              * Constructs a new WriteMeta.
              * @memberof api
              * @classdesc Represents a WriteMeta.
-             * @implements IWriteMeta
              * @constructor
              * @param {api.IWriteMeta=} [properties] Properties to set
              */
@@ -4419,7 +4414,7 @@
              * @returns {api.WriteMeta} WriteMeta instance
              */
             WriteMeta.create = function create(properties) {
-                return new WriteMeta(properties);
+                return WriteMeta.fromObject(properties);
             };
     
             /**
@@ -4427,16 +4422,16 @@
              * @function encode
              * @memberof api.WriteMeta
              * @static
-             * @param {api.IWriteMeta} message WriteMeta message or plain object to encode
+             * @param {api.WriteMeta} message WriteMeta message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             WriteMeta.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.key != null && message.hasOwnProperty("key"))
+                if (message.key != null && Object.hasOwnProperty.call(message, "key"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.key);
-                if (message.data != null && message.hasOwnProperty("data"))
+                if (message.data != null && Object.hasOwnProperty.call(message, "data"))
                     writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.data);
                 return writer;
             };
@@ -4446,7 +4441,7 @@
              * @function encodeDelimited
              * @memberof api.WriteMeta
              * @static
-             * @param {api.IWriteMeta} message WriteMeta message or plain object to encode
+             * @param {api.WriteMeta} message WriteMeta message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -4602,7 +4597,6 @@
              * Constructs a new AppendMeta.
              * @memberof api
              * @classdesc Represents an AppendMeta.
-             * @implements IAppendMeta
              * @constructor
              * @param {api.IAppendMeta=} [properties] Properties to set
              */
@@ -4638,7 +4632,7 @@
              * @returns {api.AppendMeta} AppendMeta instance
              */
             AppendMeta.create = function create(properties) {
-                return new AppendMeta(properties);
+                return AppendMeta.fromObject(properties);
             };
     
             /**
@@ -4646,16 +4640,16 @@
              * @function encode
              * @memberof api.AppendMeta
              * @static
-             * @param {api.IAppendMeta} message AppendMeta message or plain object to encode
+             * @param {api.AppendMeta} message AppendMeta message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             AppendMeta.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.key != null && message.hasOwnProperty("key"))
+                if (message.key != null && Object.hasOwnProperty.call(message, "key"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.key);
-                if (message.data != null && message.hasOwnProperty("data"))
+                if (message.data != null && Object.hasOwnProperty.call(message, "data"))
                     writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.data);
                 return writer;
             };
@@ -4665,7 +4659,7 @@
              * @function encodeDelimited
              * @memberof api.AppendMeta
              * @static
-             * @param {api.IAppendMeta} message AppendMeta message or plain object to encode
+             * @param {api.AppendMeta} message AppendMeta message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -4822,7 +4816,6 @@
              * Constructs a new BootStatus.
              * @memberof api
              * @classdesc Represents a BootStatus.
-             * @implements IBootStatus
              * @constructor
              * @param {api.IBootStatus=} [properties] Properties to set
              */
@@ -4866,7 +4859,7 @@
              * @returns {api.BootStatus} BootStatus instance
              */
             BootStatus.create = function create(properties) {
-                return new BootStatus(properties);
+                return BootStatus.fromObject(properties);
             };
     
             /**
@@ -4874,18 +4867,18 @@
              * @function encode
              * @memberof api.BootStatus
              * @static
-             * @param {api.IBootStatus} message BootStatus message or plain object to encode
+             * @param {api.BootStatus} message BootStatus message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             BootStatus.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.stage != null && message.hasOwnProperty("stage"))
+                if (message.stage != null && Object.hasOwnProperty.call(message, "stage"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int32(message.stage);
-                if (message.progress != null && message.hasOwnProperty("progress"))
+                if (message.progress != null && Object.hasOwnProperty.call(message, "progress"))
                     writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.progress);
-                if (message.total != null && message.hasOwnProperty("total"))
+                if (message.total != null && Object.hasOwnProperty.call(message, "total"))
                     writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.total);
                 return writer;
             };
@@ -4895,7 +4888,7 @@
              * @function encodeDelimited
              * @memberof api.BootStatus
              * @static
-             * @param {api.IBootStatus} message BootStatus message or plain object to encode
+             * @param {api.BootStatus} message BootStatus message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -5077,7 +5070,7 @@
             /**
              * Stage enum.
              * @name api.BootStatus.Stage
-             * @enum {string}
+             * @enum {number}
              * @property {number} HANDSHAKE=0 HANDSHAKE value
              * @property {number} ACQUIRING=3 ACQUIRING value
              * @property {number} COMPLETE=4 COMPLETE value
@@ -5116,7 +5109,6 @@
              * Constructs a new Pid1Config.
              * @memberof api
              * @classdesc Represents a Pid1Config.
-             * @implements IPid1Config
              * @constructor
              * @param {api.IPid1Config=} [properties] Properties to set
              */
@@ -5161,7 +5153,7 @@
              * @returns {api.Pid1Config} Pid1Config instance
              */
             Pid1Config.create = function create(properties) {
-                return new Pid1Config(properties);
+                return Pid1Config.fromObject(properties);
             };
     
             /**
@@ -5169,18 +5161,18 @@
              * @function encode
              * @memberof api.Pid1Config
              * @static
-             * @param {api.IPid1Config} message Pid1Config message or plain object to encode
+             * @param {api.Pid1Config} message Pid1Config message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             Pid1Config.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.cwd != null && message.hasOwnProperty("cwd"))
+                if (message.cwd != null && Object.hasOwnProperty.call(message, "cwd"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.cwd);
-                if (message.language != null && message.hasOwnProperty("language"))
+                if (message.language != null && Object.hasOwnProperty.call(message, "language"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.language);
-                if (message.env != null && message.hasOwnProperty("env"))
+                if (message.env != null && Object.hasOwnProperty.call(message, "env"))
                     for (var keys = Object.keys(message.env), i = 0; i < keys.length; ++i)
                         writer.uint32(/* id 3, wireType 2 =*/26).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.env[keys[i]]).ldelim();
                 return writer;
@@ -5191,7 +5183,7 @@
              * @function encodeDelimited
              * @memberof api.Pid1Config
              * @static
-             * @param {api.IPid1Config} message Pid1Config message or plain object to encode
+             * @param {api.Pid1Config} message Pid1Config message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -5213,7 +5205,7 @@
             Pid1Config.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Pid1Config(), key;
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Pid1Config(), key, value;
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -5224,12 +5216,26 @@
                         message.language = reader.string();
                         break;
                     case 3:
-                        reader.skip().pos++;
                         if (message.env === $util.emptyObject)
                             message.env = {};
-                        key = reader.string();
-                        reader.pos++;
-                        message.env[key] = reader.string();
+                        var end2 = reader.uint32() + reader.pos;
+                        key = "";
+                        value = "";
+                        while (reader.pos < end2) {
+                            var tag2 = reader.uint32();
+                            switch (tag2 >>> 3) {
+                            case 1:
+                                key = reader.string();
+                                break;
+                            case 2:
+                                value = reader.string();
+                                break;
+                            default:
+                                reader.skipType(tag2 & 7);
+                                break;
+                            }
+                        }
+                        message.env[key] = value;
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -5368,7 +5374,6 @@
              * Constructs a new FSLock.
              * @memberof api
              * @classdesc Represents a FSLock.
-             * @implements IFSLock
              * @constructor
              * @param {api.IFSLock=} [properties] Properties to set
              */
@@ -5396,7 +5401,7 @@
              * @returns {api.FSLock} FSLock instance
              */
             FSLock.create = function create(properties) {
-                return new FSLock(properties);
+                return FSLock.fromObject(properties);
             };
     
             /**
@@ -5404,14 +5409,14 @@
              * @function encode
              * @memberof api.FSLock
              * @static
-             * @param {api.IFSLock} message FSLock message or plain object to encode
+             * @param {api.FSLock} message FSLock message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             FSLock.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.name != null && message.hasOwnProperty("name"))
+                if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
                 return writer;
             };
@@ -5421,7 +5426,7 @@
              * @function encodeDelimited
              * @memberof api.FSLock
              * @static
-             * @param {api.IFSLock} message FSLock message or plain object to encode
+             * @param {api.FSLock} message FSLock message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -5554,7 +5559,6 @@
              * Constructs a new FSSnapshot.
              * @memberof api
              * @classdesc Represents a FSSnapshot.
-             * @implements IFSSnapshot
              * @constructor
              * @param {api.IFSSnapshot=} [properties] Properties to set
              */
@@ -5574,7 +5578,7 @@
              * @returns {api.FSSnapshot} FSSnapshot instance
              */
             FSSnapshot.create = function create(properties) {
-                return new FSSnapshot(properties);
+                return FSSnapshot.fromObject(properties);
             };
     
             /**
@@ -5582,7 +5586,7 @@
              * @function encode
              * @memberof api.FSSnapshot
              * @static
-             * @param {api.IFSSnapshot} message FSSnapshot message or plain object to encode
+             * @param {api.FSSnapshot} message FSSnapshot message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -5597,7 +5601,7 @@
              * @function encodeDelimited
              * @memberof api.FSSnapshot
              * @static
-             * @param {api.IFSSnapshot} message FSSnapshot message or plain object to encode
+             * @param {api.FSSnapshot} message FSSnapshot message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -5708,14 +5712,13 @@
              * Properties of a SubscribeFile.
              * @memberof api
              * @interface ISubscribeFile
-             * @property {Array.<api.IFile>|null} [files] SubscribeFile files
+             * @property {Array.<api.File|api.IFile>|null} [files] SubscribeFile files
              */
     
             /**
              * Constructs a new SubscribeFile.
              * @memberof api
              * @classdesc Represents a SubscribeFile.
-             * @implements ISubscribeFile
              * @constructor
              * @param {api.ISubscribeFile=} [properties] Properties to set
              */
@@ -5729,7 +5732,7 @@
     
             /**
              * SubscribeFile files.
-             * @member {Array.<api.IFile>} files
+             * @member {Array.<api.File>} files
              * @memberof api.SubscribeFile
              * @instance
              */
@@ -5744,7 +5747,7 @@
              * @returns {api.SubscribeFile} SubscribeFile instance
              */
             SubscribeFile.create = function create(properties) {
-                return new SubscribeFile(properties);
+                return SubscribeFile.fromObject(properties);
             };
     
             /**
@@ -5752,7 +5755,7 @@
              * @function encode
              * @memberof api.SubscribeFile
              * @static
-             * @param {api.ISubscribeFile} message SubscribeFile message or plain object to encode
+             * @param {api.SubscribeFile} message SubscribeFile message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -5770,7 +5773,7 @@
              * @function encodeDelimited
              * @memberof api.SubscribeFile
              * @static
-             * @param {api.ISubscribeFile} message SubscribeFile message or plain object to encode
+             * @param {api.SubscribeFile} message SubscribeFile message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -5916,8 +5919,8 @@
              * Properties of a FileEvent.
              * @memberof api
              * @interface IFileEvent
-             * @property {api.IFile|null} [file] FileEvent file
-             * @property {api.IFile|null} [dest] FileEvent dest
+             * @property {api.File|api.IFile|null} [file] FileEvent file
+             * @property {api.File|api.IFile|null} [dest] FileEvent dest
              * @property {api.FileEvent.Op|null} [op] FileEvent op
              */
     
@@ -5925,7 +5928,6 @@
              * Constructs a new FileEvent.
              * @memberof api
              * @classdesc Represents a FileEvent.
-             * @implements IFileEvent
              * @constructor
              * @param {api.IFileEvent=} [properties] Properties to set
              */
@@ -5938,7 +5940,7 @@
     
             /**
              * FileEvent file.
-             * @member {api.IFile|null|undefined} file
+             * @member {api.File|null|undefined} file
              * @memberof api.FileEvent
              * @instance
              */
@@ -5946,7 +5948,7 @@
     
             /**
              * FileEvent dest.
-             * @member {api.IFile|null|undefined} dest
+             * @member {api.File|null|undefined} dest
              * @memberof api.FileEvent
              * @instance
              */
@@ -5969,7 +5971,7 @@
              * @returns {api.FileEvent} FileEvent instance
              */
             FileEvent.create = function create(properties) {
-                return new FileEvent(properties);
+                return FileEvent.fromObject(properties);
             };
     
             /**
@@ -5977,18 +5979,18 @@
              * @function encode
              * @memberof api.FileEvent
              * @static
-             * @param {api.IFileEvent} message FileEvent message or plain object to encode
+             * @param {api.FileEvent} message FileEvent message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             FileEvent.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.file != null && message.hasOwnProperty("file"))
+                if (message.file != null && Object.hasOwnProperty.call(message, "file"))
                     $root.api.File.encode(message.file, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.op != null && message.hasOwnProperty("op"))
+                if (message.op != null && Object.hasOwnProperty.call(message, "op"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int32(message.op);
-                if (message.dest != null && message.hasOwnProperty("dest"))
+                if (message.dest != null && Object.hasOwnProperty.call(message, "dest"))
                     $root.api.File.encode(message.dest, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 return writer;
             };
@@ -5998,7 +6000,7 @@
              * @function encodeDelimited
              * @memberof api.FileEvent
              * @static
-             * @param {api.IFileEvent} message FileEvent message or plain object to encode
+             * @param {api.FileEvent} message FileEvent message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -6175,7 +6177,7 @@
             /**
              * Op enum.
              * @name api.FileEvent.Op
-             * @enum {string}
+             * @enum {number}
              * @property {number} Create=0 Create value
              * @property {number} Move=1 Move value
              * @property {number} Remove=2 Remove value
@@ -6205,7 +6207,6 @@
              * Constructs a new Flush.
              * @memberof api
              * @classdesc Represents a Flush.
-             * @implements IFlush
              * @constructor
              * @param {api.IFlush=} [properties] Properties to set
              */
@@ -6225,7 +6226,7 @@
              * @returns {api.Flush} Flush instance
              */
             Flush.create = function create(properties) {
-                return new Flush(properties);
+                return Flush.fromObject(properties);
             };
     
             /**
@@ -6233,7 +6234,7 @@
              * @function encode
              * @memberof api.Flush
              * @static
-             * @param {api.IFlush} message Flush message or plain object to encode
+             * @param {api.Flush} message Flush message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -6248,7 +6249,7 @@
              * @function encodeDelimited
              * @memberof api.Flush
              * @static
-             * @param {api.IFlush} message Flush message or plain object to encode
+             * @param {api.Flush} message Flush message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -6359,7 +6360,7 @@
              * Properties of a OTLinkFile.
              * @memberof api
              * @interface IOTLinkFile
-             * @property {api.IFile|null} [file] OTLinkFile file
+             * @property {api.File|api.IFile|null} [file] OTLinkFile file
              * @property {boolean|null} [highConsistency] OTLinkFile highConsistency
              * @property {boolean|null} [useModTime] OTLinkFile useModTime
              */
@@ -6368,7 +6369,6 @@
              * Constructs a new OTLinkFile.
              * @memberof api
              * @classdesc Represents a OTLinkFile.
-             * @implements IOTLinkFile
              * @constructor
              * @param {api.IOTLinkFile=} [properties] Properties to set
              */
@@ -6381,7 +6381,7 @@
     
             /**
              * OTLinkFile file.
-             * @member {api.IFile|null|undefined} file
+             * @member {api.File|null|undefined} file
              * @memberof api.OTLinkFile
              * @instance
              */
@@ -6412,7 +6412,7 @@
              * @returns {api.OTLinkFile} OTLinkFile instance
              */
             OTLinkFile.create = function create(properties) {
-                return new OTLinkFile(properties);
+                return OTLinkFile.fromObject(properties);
             };
     
             /**
@@ -6420,18 +6420,18 @@
              * @function encode
              * @memberof api.OTLinkFile
              * @static
-             * @param {api.IOTLinkFile} message OTLinkFile message or plain object to encode
+             * @param {api.OTLinkFile} message OTLinkFile message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             OTLinkFile.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.file != null && message.hasOwnProperty("file"))
+                if (message.file != null && Object.hasOwnProperty.call(message, "file"))
                     $root.api.File.encode(message.file, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.highConsistency != null && message.hasOwnProperty("highConsistency"))
+                if (message.highConsistency != null && Object.hasOwnProperty.call(message, "highConsistency"))
                     writer.uint32(/* id 2, wireType 0 =*/16).bool(message.highConsistency);
-                if (message.useModTime != null && message.hasOwnProperty("useModTime"))
+                if (message.useModTime != null && Object.hasOwnProperty.call(message, "useModTime"))
                     writer.uint32(/* id 3, wireType 0 =*/24).bool(message.useModTime);
                 return writer;
             };
@@ -6441,7 +6441,7 @@
              * @function encodeDelimited
              * @memberof api.OTLinkFile
              * @static
-             * @param {api.IOTLinkFile} message OTLinkFile message or plain object to encode
+             * @param {api.OTLinkFile} message OTLinkFile message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -6604,7 +6604,6 @@
              * Constructs a new Auth.
              * @memberof api
              * @classdesc Represents an Auth.
-             * @implements IAuth
              * @constructor
              * @param {api.IAuth=} [properties] Properties to set
              */
@@ -6640,7 +6639,7 @@
              * @returns {api.Auth} Auth instance
              */
             Auth.create = function create(properties) {
-                return new Auth(properties);
+                return Auth.fromObject(properties);
             };
     
             /**
@@ -6648,16 +6647,16 @@
              * @function encode
              * @memberof api.Auth
              * @static
-             * @param {api.IAuth} message Auth message or plain object to encode
+             * @param {api.Auth} message Auth message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             Auth.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.token != null && message.hasOwnProperty("token"))
+                if (message.token != null && Object.hasOwnProperty.call(message, "token"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.token);
-                if (message.containerID != null && message.hasOwnProperty("containerID"))
+                if (message.containerID != null && Object.hasOwnProperty.call(message, "containerID"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.containerID);
                 return writer;
             };
@@ -6667,7 +6666,7 @@
              * @function encodeDelimited
              * @memberof api.Auth
              * @static
-             * @param {api.IAuth} message Auth message or plain object to encode
+             * @param {api.Auth} message Auth message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -6806,9 +6805,9 @@
              * Properties of a VCREntry.
              * @memberof api
              * @interface IVCREntry
-             * @property {number|Long|null} [timestamp] VCREntry timestamp
+             * @property {number|null} [timestamp] VCREntry timestamp
              * @property {api.VCREntry.Direction|null} [direction] VCREntry direction
-             * @property {api.ICommand|null} [command] VCREntry command
+             * @property {api.Command|api.ICommand|null} [command] VCREntry command
              * @property {string|null} [uid] VCREntry uid
              */
     
@@ -6816,7 +6815,6 @@
              * Constructs a new VCREntry.
              * @memberof api
              * @classdesc Represents a VCREntry.
-             * @implements IVCREntry
              * @constructor
              * @param {api.IVCREntry=} [properties] Properties to set
              */
@@ -6829,7 +6827,7 @@
     
             /**
              * VCREntry timestamp.
-             * @member {number|Long} timestamp
+             * @member {number} timestamp
              * @memberof api.VCREntry
              * @instance
              */
@@ -6845,7 +6843,7 @@
     
             /**
              * VCREntry command.
-             * @member {api.ICommand|null|undefined} command
+             * @member {api.Command|null|undefined} command
              * @memberof api.VCREntry
              * @instance
              */
@@ -6868,7 +6866,7 @@
              * @returns {api.VCREntry} VCREntry instance
              */
             VCREntry.create = function create(properties) {
-                return new VCREntry(properties);
+                return VCREntry.fromObject(properties);
             };
     
             /**
@@ -6876,20 +6874,20 @@
              * @function encode
              * @memberof api.VCREntry
              * @static
-             * @param {api.IVCREntry} message VCREntry message or plain object to encode
+             * @param {api.VCREntry} message VCREntry message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             VCREntry.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.timestamp != null && message.hasOwnProperty("timestamp"))
+                if (message.timestamp != null && Object.hasOwnProperty.call(message, "timestamp"))
                     writer.uint32(/* id 1, wireType 0 =*/8).uint64(message.timestamp);
-                if (message.direction != null && message.hasOwnProperty("direction"))
+                if (message.direction != null && Object.hasOwnProperty.call(message, "direction"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int32(message.direction);
-                if (message.command != null && message.hasOwnProperty("command"))
+                if (message.command != null && Object.hasOwnProperty.call(message, "command"))
                     $root.api.Command.encode(message.command, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.uid != null && message.hasOwnProperty("uid"))
+                if (message.uid != null && Object.hasOwnProperty.call(message, "uid"))
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.uid);
                 return writer;
             };
@@ -6899,7 +6897,7 @@
              * @function encodeDelimited
              * @memberof api.VCREntry
              * @static
-             * @param {api.IVCREntry} message VCREntry message or plain object to encode
+             * @param {api.VCREntry} message VCREntry message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -7086,7 +7084,7 @@
             /**
              * Direction enum.
              * @name api.VCREntry.Direction
-             * @enum {string}
+             * @enum {number}
              * @property {number} IN=0 IN value
              * @property {number} OUT=1 OUT value
              */
@@ -7112,7 +7110,6 @@
              * Constructs a new StartVCR.
              * @memberof api
              * @classdesc Represents a StartVCR.
-             * @implements IStartVCR
              * @constructor
              * @param {api.IStartVCR=} [properties] Properties to set
              */
@@ -7132,7 +7129,7 @@
              * @returns {api.StartVCR} StartVCR instance
              */
             StartVCR.create = function create(properties) {
-                return new StartVCR(properties);
+                return StartVCR.fromObject(properties);
             };
     
             /**
@@ -7140,7 +7137,7 @@
              * @function encode
              * @memberof api.StartVCR
              * @static
-             * @param {api.IStartVCR} message StartVCR message or plain object to encode
+             * @param {api.StartVCR} message StartVCR message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -7155,7 +7152,7 @@
              * @function encodeDelimited
              * @memberof api.StartVCR
              * @static
-             * @param {api.IStartVCR} message StartVCR message or plain object to encode
+             * @param {api.StartVCR} message StartVCR message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -7272,7 +7269,6 @@
              * Constructs a new ReadVCR.
              * @memberof api
              * @classdesc Represents a ReadVCR.
-             * @implements IReadVCR
              * @constructor
              * @param {api.IReadVCR=} [properties] Properties to set
              */
@@ -7292,7 +7288,7 @@
              * @returns {api.ReadVCR} ReadVCR instance
              */
             ReadVCR.create = function create(properties) {
-                return new ReadVCR(properties);
+                return ReadVCR.fromObject(properties);
             };
     
             /**
@@ -7300,7 +7296,7 @@
              * @function encode
              * @memberof api.ReadVCR
              * @static
-             * @param {api.IReadVCR} message ReadVCR message or plain object to encode
+             * @param {api.ReadVCR} message ReadVCR message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -7315,7 +7311,7 @@
              * @function encodeDelimited
              * @memberof api.ReadVCR
              * @static
-             * @param {api.IReadVCR} message ReadVCR message or plain object to encode
+             * @param {api.ReadVCR} message ReadVCR message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -7426,15 +7422,14 @@
              * Properties of a VCRLog.
              * @memberof api
              * @interface IVCRLog
-             * @property {Array.<api.IVCREntry>|null} [log] VCRLog log
-             * @property {api.IFile|null} [logfile] VCRLog logfile
+             * @property {Array.<api.VCREntry|api.IVCREntry>|null} [log] VCRLog log
+             * @property {api.File|api.IFile|null} [logfile] VCRLog logfile
              */
     
             /**
              * Constructs a new VCRLog.
              * @memberof api
              * @classdesc Represents a VCRLog.
-             * @implements IVCRLog
              * @constructor
              * @param {api.IVCRLog=} [properties] Properties to set
              */
@@ -7448,7 +7443,7 @@
     
             /**
              * VCRLog log.
-             * @member {Array.<api.IVCREntry>} log
+             * @member {Array.<api.VCREntry>} log
              * @memberof api.VCRLog
              * @instance
              */
@@ -7456,7 +7451,7 @@
     
             /**
              * VCRLog logfile.
-             * @member {api.IFile|null|undefined} logfile
+             * @member {api.File|null|undefined} logfile
              * @memberof api.VCRLog
              * @instance
              */
@@ -7471,7 +7466,7 @@
              * @returns {api.VCRLog} VCRLog instance
              */
             VCRLog.create = function create(properties) {
-                return new VCRLog(properties);
+                return VCRLog.fromObject(properties);
             };
     
             /**
@@ -7479,7 +7474,7 @@
              * @function encode
              * @memberof api.VCRLog
              * @static
-             * @param {api.IVCRLog} message VCRLog message or plain object to encode
+             * @param {api.VCRLog} message VCRLog message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -7489,7 +7484,7 @@
                 if (message.log != null && message.log.length)
                     for (var i = 0; i < message.log.length; ++i)
                         $root.api.VCREntry.encode(message.log[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.logfile != null && message.hasOwnProperty("logfile"))
+                if (message.logfile != null && Object.hasOwnProperty.call(message, "logfile"))
                     $root.api.File.encode(message.logfile, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 return writer;
             };
@@ -7499,7 +7494,7 @@
              * @function encodeDelimited
              * @memberof api.VCRLog
              * @static
-             * @param {api.IVCRLog} message VCRLog message or plain object to encode
+             * @param {api.VCRLog} message VCRLog message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -7670,7 +7665,6 @@
              * Constructs a new ExecInfo.
              * @memberof api
              * @classdesc Represents an ExecInfo.
-             * @implements IExecInfo
              * @constructor
              * @param {api.IExecInfo=} [properties] Properties to set
              */
@@ -7707,7 +7701,7 @@
              * @returns {api.ExecInfo} ExecInfo instance
              */
             ExecInfo.create = function create(properties) {
-                return new ExecInfo(properties);
+                return ExecInfo.fromObject(properties);
             };
     
             /**
@@ -7715,7 +7709,7 @@
              * @function encode
              * @memberof api.ExecInfo
              * @static
-             * @param {api.IExecInfo} message ExecInfo message or plain object to encode
+             * @param {api.ExecInfo} message ExecInfo message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -7725,7 +7719,7 @@
                 if (message.command != null && message.command.length)
                     for (var i = 0; i < message.command.length; ++i)
                         writer.uint32(/* id 1, wireType 2 =*/10).string(message.command[i]);
-                if (message.reason != null && message.hasOwnProperty("reason"))
+                if (message.reason != null && Object.hasOwnProperty.call(message, "reason"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.reason);
                 return writer;
             };
@@ -7735,7 +7729,7 @@
              * @function encodeDelimited
              * @memberof api.ExecInfo
              * @static
-             * @param {api.IExecInfo} message ExecInfo message or plain object to encode
+             * @param {api.ExecInfo} message ExecInfo message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -7895,7 +7889,6 @@
              * Constructs a new Debug.
              * @memberof api
              * @classdesc Represents a Debug.
-             * @implements IDebug
              * @constructor
              * @param {api.IDebug=} [properties] Properties to set
              */
@@ -7923,7 +7916,7 @@
              * @returns {api.Debug} Debug instance
              */
             Debug.create = function create(properties) {
-                return new Debug(properties);
+                return Debug.fromObject(properties);
             };
     
             /**
@@ -7931,14 +7924,14 @@
              * @function encode
              * @memberof api.Debug
              * @static
-             * @param {api.IDebug} message Debug message or plain object to encode
+             * @param {api.Debug} message Debug message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             Debug.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.text != null && message.hasOwnProperty("text"))
+                if (message.text != null && Object.hasOwnProperty.call(message, "text"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.text);
                 return writer;
             };
@@ -7948,7 +7941,7 @@
              * @function encodeDelimited
              * @memberof api.Debug
              * @static
-             * @param {api.IDebug} message Debug message or plain object to encode
+             * @param {api.Debug} message Debug message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -8072,7 +8065,7 @@
         /**
          * FileAuthMethod enum.
          * @name api.FileAuthMethod
-         * @enum {string}
+         * @enum {number}
          * @property {number} GET=0 GET value
          * @property {number} HEAD=1 HEAD value
          * @property {number} PUT=2 PUT value
@@ -8093,7 +8086,7 @@
              * Properties of a FileAuthReq.
              * @memberof api
              * @interface IFileAuthReq
-             * @property {api.IFile|null} [file] FileAuthReq file
+             * @property {api.File|api.IFile|null} [file] FileAuthReq file
              * @property {api.FileAuthMethod|null} [method] FileAuthReq method
              */
     
@@ -8101,7 +8094,6 @@
              * Constructs a new FileAuthReq.
              * @memberof api
              * @classdesc Represents a FileAuthReq.
-             * @implements IFileAuthReq
              * @constructor
              * @param {api.IFileAuthReq=} [properties] Properties to set
              */
@@ -8114,7 +8106,7 @@
     
             /**
              * FileAuthReq file.
-             * @member {api.IFile|null|undefined} file
+             * @member {api.File|null|undefined} file
              * @memberof api.FileAuthReq
              * @instance
              */
@@ -8137,7 +8129,7 @@
              * @returns {api.FileAuthReq} FileAuthReq instance
              */
             FileAuthReq.create = function create(properties) {
-                return new FileAuthReq(properties);
+                return FileAuthReq.fromObject(properties);
             };
     
             /**
@@ -8145,16 +8137,16 @@
              * @function encode
              * @memberof api.FileAuthReq
              * @static
-             * @param {api.IFileAuthReq} message FileAuthReq message or plain object to encode
+             * @param {api.FileAuthReq} message FileAuthReq message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             FileAuthReq.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.file != null && message.hasOwnProperty("file"))
+                if (message.file != null && Object.hasOwnProperty.call(message, "file"))
                     $root.api.File.encode(message.file, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.method != null && message.hasOwnProperty("method"))
+                if (message.method != null && Object.hasOwnProperty.call(message, "method"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int32(message.method);
                 return writer;
             };
@@ -8164,7 +8156,7 @@
              * @function encodeDelimited
              * @memberof api.FileAuthReq
              * @static
-             * @param {api.IFileAuthReq} message FileAuthReq message or plain object to encode
+             * @param {api.FileAuthReq} message FileAuthReq message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -8331,16 +8323,15 @@
              * Properties of a MultiFileAuthRes.
              * @memberof api
              * @interface IMultiFileAuthRes
-             * @property {api.IFileAuthRes|null} [put] MultiFileAuthRes put
-             * @property {api.IFileAuthRes|null} [del] MultiFileAuthRes del
-             * @property {api.IFileAuthRes|null} [get] MultiFileAuthRes get
+             * @property {api.FileAuthRes|api.IFileAuthRes|null} [put] MultiFileAuthRes put
+             * @property {api.FileAuthRes|api.IFileAuthRes|null} [del] MultiFileAuthRes del
+             * @property {api.FileAuthRes|api.IFileAuthRes|null} [get] MultiFileAuthRes get
              */
     
             /**
              * Constructs a new MultiFileAuthRes.
              * @memberof api
              * @classdesc Represents a MultiFileAuthRes.
-             * @implements IMultiFileAuthRes
              * @constructor
              * @param {api.IMultiFileAuthRes=} [properties] Properties to set
              */
@@ -8353,7 +8344,7 @@
     
             /**
              * MultiFileAuthRes put.
-             * @member {api.IFileAuthRes|null|undefined} put
+             * @member {api.FileAuthRes|null|undefined} put
              * @memberof api.MultiFileAuthRes
              * @instance
              */
@@ -8361,7 +8352,7 @@
     
             /**
              * MultiFileAuthRes del.
-             * @member {api.IFileAuthRes|null|undefined} del
+             * @member {api.FileAuthRes|null|undefined} del
              * @memberof api.MultiFileAuthRes
              * @instance
              */
@@ -8369,7 +8360,7 @@
     
             /**
              * MultiFileAuthRes get.
-             * @member {api.IFileAuthRes|null|undefined} get
+             * @member {api.FileAuthRes|null|undefined} get
              * @memberof api.MultiFileAuthRes
              * @instance
              */
@@ -8384,7 +8375,7 @@
              * @returns {api.MultiFileAuthRes} MultiFileAuthRes instance
              */
             MultiFileAuthRes.create = function create(properties) {
-                return new MultiFileAuthRes(properties);
+                return MultiFileAuthRes.fromObject(properties);
             };
     
             /**
@@ -8392,18 +8383,18 @@
              * @function encode
              * @memberof api.MultiFileAuthRes
              * @static
-             * @param {api.IMultiFileAuthRes} message MultiFileAuthRes message or plain object to encode
+             * @param {api.MultiFileAuthRes} message MultiFileAuthRes message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             MultiFileAuthRes.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.put != null && message.hasOwnProperty("put"))
+                if (message.put != null && Object.hasOwnProperty.call(message, "put"))
                     $root.api.FileAuthRes.encode(message.put, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.del != null && message.hasOwnProperty("del"))
+                if (message.del != null && Object.hasOwnProperty.call(message, "del"))
                     $root.api.FileAuthRes.encode(message.del, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.get != null && message.hasOwnProperty("get"))
+                if (message.get != null && Object.hasOwnProperty.call(message, "get"))
                     $root.api.FileAuthRes.encode(message.get, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 return writer;
             };
@@ -8413,7 +8404,7 @@
              * @function encodeDelimited
              * @memberof api.MultiFileAuthRes
              * @static
-             * @param {api.IMultiFileAuthRes} message MultiFileAuthRes message or plain object to encode
+             * @param {api.MultiFileAuthRes} message MultiFileAuthRes message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -8578,10 +8569,10 @@
              * Properties of a FileAuthRes.
              * @memberof api
              * @interface IFileAuthRes
-             * @property {api.IFile|null} [file] FileAuthRes file
+             * @property {api.File|api.IFile|null} [file] FileAuthRes file
              * @property {string|null} [url] FileAuthRes url
              * @property {api.FileAuthMethod|null} [method] FileAuthRes method
-             * @property {number|Long|null} [expire] FileAuthRes expire
+             * @property {number|null} [expire] FileAuthRes expire
              * @property {string|null} [error] FileAuthRes error
              */
     
@@ -8589,7 +8580,6 @@
              * Constructs a new FileAuthRes.
              * @memberof api
              * @classdesc Represents a FileAuthRes.
-             * @implements IFileAuthRes
              * @constructor
              * @param {api.IFileAuthRes=} [properties] Properties to set
              */
@@ -8602,7 +8592,7 @@
     
             /**
              * FileAuthRes file.
-             * @member {api.IFile|null|undefined} file
+             * @member {api.File|null|undefined} file
              * @memberof api.FileAuthRes
              * @instance
              */
@@ -8626,7 +8616,7 @@
     
             /**
              * FileAuthRes expire.
-             * @member {number|Long} expire
+             * @member {number} expire
              * @memberof api.FileAuthRes
              * @instance
              */
@@ -8649,7 +8639,7 @@
              * @returns {api.FileAuthRes} FileAuthRes instance
              */
             FileAuthRes.create = function create(properties) {
-                return new FileAuthRes(properties);
+                return FileAuthRes.fromObject(properties);
             };
     
             /**
@@ -8657,22 +8647,22 @@
              * @function encode
              * @memberof api.FileAuthRes
              * @static
-             * @param {api.IFileAuthRes} message FileAuthRes message or plain object to encode
+             * @param {api.FileAuthRes} message FileAuthRes message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             FileAuthRes.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.file != null && message.hasOwnProperty("file"))
+                if (message.file != null && Object.hasOwnProperty.call(message, "file"))
                     $root.api.File.encode(message.file, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-                if (message.url != null && message.hasOwnProperty("url"))
+                if (message.url != null && Object.hasOwnProperty.call(message, "url"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.url);
-                if (message.method != null && message.hasOwnProperty("method"))
+                if (message.method != null && Object.hasOwnProperty.call(message, "method"))
                     writer.uint32(/* id 3, wireType 0 =*/24).int32(message.method);
-                if (message.expire != null && message.hasOwnProperty("expire"))
+                if (message.expire != null && Object.hasOwnProperty.call(message, "expire"))
                     writer.uint32(/* id 4, wireType 0 =*/32).int64(message.expire);
-                if (message.error != null && message.hasOwnProperty("error"))
+                if (message.error != null && Object.hasOwnProperty.call(message, "error"))
                     writer.uint32(/* id 5, wireType 2 =*/42).string(message.error);
                 return writer;
             };
@@ -8682,7 +8672,7 @@
              * @function encodeDelimited
              * @memberof api.FileAuthRes
              * @static
-             * @param {api.IFileAuthRes} message FileAuthRes message or plain object to encode
+             * @param {api.FileAuthRes} message FileAuthRes message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -8903,7 +8893,6 @@
              * Constructs a new ListObjects.
              * @memberof api
              * @classdesc Represents a ListObjects.
-             * @implements IListObjects
              * @constructor
              * @param {api.IListObjects=} [properties] Properties to set
              */
@@ -8931,7 +8920,7 @@
              * @returns {api.ListObjects} ListObjects instance
              */
             ListObjects.create = function create(properties) {
-                return new ListObjects(properties);
+                return ListObjects.fromObject(properties);
             };
     
             /**
@@ -8939,14 +8928,14 @@
              * @function encode
              * @memberof api.ListObjects
              * @static
-             * @param {api.IListObjects} message ListObjects message or plain object to encode
+             * @param {api.ListObjects} message ListObjects message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             ListObjects.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.prefix != null && message.hasOwnProperty("prefix"))
+                if (message.prefix != null && Object.hasOwnProperty.call(message, "prefix"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.prefix);
                 return writer;
             };
@@ -8956,7 +8945,7 @@
              * @function encodeDelimited
              * @memberof api.ListObjects
              * @static
-             * @param {api.IListObjects} message ListObjects message or plain object to encode
+             * @param {api.ListObjects} message ListObjects message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -9090,7 +9079,6 @@
              * Constructs a new ListObjectsResp.
              * @memberof api
              * @classdesc Represents a ListObjectsResp.
-             * @implements IListObjectsResp
              * @constructor
              * @param {api.IListObjectsResp=} [properties] Properties to set
              */
@@ -9119,7 +9107,7 @@
              * @returns {api.ListObjectsResp} ListObjectsResp instance
              */
             ListObjectsResp.create = function create(properties) {
-                return new ListObjectsResp(properties);
+                return ListObjectsResp.fromObject(properties);
             };
     
             /**
@@ -9127,7 +9115,7 @@
              * @function encode
              * @memberof api.ListObjectsResp
              * @static
-             * @param {api.IListObjectsResp} message ListObjectsResp message or plain object to encode
+             * @param {api.ListObjectsResp} message ListObjectsResp message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -9145,7 +9133,7 @@
              * @function encodeDelimited
              * @memberof api.ListObjectsResp
              * @static
-             * @param {api.IListObjectsResp} message ListObjectsResp message or plain object to encode
+             * @param {api.ListObjectsResp} message ListObjectsResp message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -9293,7 +9281,6 @@
              * Constructs a new Disconnect.
              * @memberof api
              * @classdesc Represents a Disconnect.
-             * @implements IDisconnect
              * @constructor
              * @param {api.IDisconnect=} [properties] Properties to set
              */
@@ -9321,7 +9308,7 @@
              * @returns {api.Disconnect} Disconnect instance
              */
             Disconnect.create = function create(properties) {
-                return new Disconnect(properties);
+                return Disconnect.fromObject(properties);
             };
     
             /**
@@ -9329,14 +9316,14 @@
              * @function encode
              * @memberof api.Disconnect
              * @static
-             * @param {api.IDisconnect} message Disconnect message or plain object to encode
+             * @param {api.Disconnect} message Disconnect message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             Disconnect.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.error != null && message.hasOwnProperty("error"))
+                if (message.error != null && Object.hasOwnProperty.call(message, "error"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.error);
                 return writer;
             };
@@ -9346,7 +9333,7 @@
              * @function encodeDelimited
              * @memberof api.Disconnect
              * @static
-             * @param {api.IDisconnect} message Disconnect message or plain object to encode
+             * @param {api.Disconnect} message Disconnect message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -9480,7 +9467,6 @@
              * Constructs a new Send.
              * @memberof api
              * @classdesc Represents a Send.
-             * @implements ISend
              * @constructor
              * @param {api.ISend=} [properties] Properties to set
              */
@@ -9508,7 +9494,7 @@
              * @returns {api.Send} Send instance
              */
             Send.create = function create(properties) {
-                return new Send(properties);
+                return Send.fromObject(properties);
             };
     
             /**
@@ -9516,14 +9502,14 @@
              * @function encode
              * @memberof api.Send
              * @static
-             * @param {api.ISend} message Send message or plain object to encode
+             * @param {api.Send} message Send message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             Send.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.buff != null && message.hasOwnProperty("buff"))
+                if (message.buff != null && Object.hasOwnProperty.call(message, "buff"))
                     writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.buff);
                 return writer;
             };
@@ -9533,7 +9519,7 @@
              * @function encodeDelimited
              * @memberof api.Send
              * @static
-             * @param {api.ISend} message Send message or plain object to encode
+             * @param {api.Send} message Send message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -9676,7 +9662,6 @@
              * Constructs a new Recv.
              * @memberof api
              * @classdesc Represents a Recv.
-             * @implements IRecv
              * @constructor
              * @param {api.IRecv=} [properties] Properties to set
              */
@@ -9704,7 +9689,7 @@
              * @returns {api.Recv} Recv instance
              */
             Recv.create = function create(properties) {
-                return new Recv(properties);
+                return Recv.fromObject(properties);
             };
     
             /**
@@ -9712,14 +9697,14 @@
              * @function encode
              * @memberof api.Recv
              * @static
-             * @param {api.IRecv} message Recv message or plain object to encode
+             * @param {api.Recv} message Recv message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             Recv.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.buff != null && message.hasOwnProperty("buff"))
+                if (message.buff != null && Object.hasOwnProperty.call(message, "buff"))
                     writer.uint32(/* id 1, wireType 2 =*/10).bytes(message.buff);
                 return writer;
             };
@@ -9729,7 +9714,7 @@
              * @function encodeDelimited
              * @memberof api.Recv
              * @static
-             * @param {api.IRecv} message Recv message or plain object to encode
+             * @param {api.Recv} message Recv message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -9873,7 +9858,6 @@
              * Constructs a new Connect.
              * @memberof api
              * @classdesc Represents a Connect.
-             * @implements IConnect
              * @constructor
              * @param {api.IConnect=} [properties] Properties to set
              */
@@ -9909,7 +9893,7 @@
              * @returns {api.Connect} Connect instance
              */
             Connect.create = function create(properties) {
-                return new Connect(properties);
+                return Connect.fromObject(properties);
             };
     
             /**
@@ -9917,16 +9901,16 @@
              * @function encode
              * @memberof api.Connect
              * @static
-             * @param {api.IConnect} message Connect message or plain object to encode
+             * @param {api.Connect} message Connect message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             Connect.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.proto != null && message.hasOwnProperty("proto"))
+                if (message.proto != null && Object.hasOwnProperty.call(message, "proto"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.proto);
-                if (message.addr != null && message.hasOwnProperty("addr"))
+                if (message.addr != null && Object.hasOwnProperty.call(message, "addr"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.addr);
                 return writer;
             };
@@ -9936,7 +9920,7 @@
              * @function encodeDelimited
              * @memberof api.Connect
              * @static
-             * @param {api.IConnect} message Connect message or plain object to encode
+             * @param {api.Connect} message Connect message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -10082,7 +10066,6 @@
              * Constructs a new Hint.
              * @memberof api
              * @classdesc Represents a Hint.
-             * @implements IHint
              * @constructor
              * @param {api.IHint=} [properties] Properties to set
              */
@@ -10110,7 +10093,7 @@
              * @returns {api.Hint} Hint instance
              */
             Hint.create = function create(properties) {
-                return new Hint(properties);
+                return Hint.fromObject(properties);
             };
     
             /**
@@ -10118,14 +10101,14 @@
              * @function encode
              * @memberof api.Hint
              * @static
-             * @param {api.IHint} message Hint message or plain object to encode
+             * @param {api.Hint} message Hint message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             Hint.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.text != null && message.hasOwnProperty("text"))
+                if (message.text != null && Object.hasOwnProperty.call(message, "text"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.text);
                 return writer;
             };
@@ -10135,7 +10118,7 @@
              * @function encodeDelimited
              * @memberof api.Hint
              * @static
-             * @param {api.IHint} message Hint message or plain object to encode
+             * @param {api.Hint} message Hint message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -10268,7 +10251,6 @@
              * Constructs a new Ping.
              * @memberof api
              * @classdesc Represents a Ping.
-             * @implements IPing
              * @constructor
              * @param {api.IPing=} [properties] Properties to set
              */
@@ -10288,7 +10270,7 @@
              * @returns {api.Ping} Ping instance
              */
             Ping.create = function create(properties) {
-                return new Ping(properties);
+                return Ping.fromObject(properties);
             };
     
             /**
@@ -10296,7 +10278,7 @@
              * @function encode
              * @memberof api.Ping
              * @static
-             * @param {api.IPing} message Ping message or plain object to encode
+             * @param {api.Ping} message Ping message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -10311,7 +10293,7 @@
              * @function encodeDelimited
              * @memberof api.Ping
              * @static
-             * @param {api.IPing} message Ping message or plain object to encode
+             * @param {api.Ping} message Ping message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -10428,7 +10410,6 @@
              * Constructs a new Pong.
              * @memberof api
              * @classdesc Represents a Pong.
-             * @implements IPong
              * @constructor
              * @param {api.IPong=} [properties] Properties to set
              */
@@ -10448,7 +10429,7 @@
              * @returns {api.Pong} Pong instance
              */
             Pong.create = function create(properties) {
-                return new Pong(properties);
+                return Pong.fromObject(properties);
             };
     
             /**
@@ -10456,7 +10437,7 @@
              * @function encode
              * @memberof api.Pong
              * @static
-             * @param {api.IPong} message Pong message or plain object to encode
+             * @param {api.Pong} message Pong message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -10471,7 +10452,7 @@
              * @function encodeDelimited
              * @memberof api.Pong
              * @static
-             * @param {api.IPong} message Pong message or plain object to encode
+             * @param {api.Pong} message Pong message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -10591,7 +10572,6 @@
              * Constructs a new Hello.
              * @memberof api
              * @classdesc Represents a Hello.
-             * @implements IHello
              * @constructor
              * @param {api.IHello=} [properties] Properties to set
              */
@@ -10635,7 +10615,7 @@
              * @returns {api.Hello} Hello instance
              */
             Hello.create = function create(properties) {
-                return new Hello(properties);
+                return Hello.fromObject(properties);
             };
     
             /**
@@ -10643,18 +10623,18 @@
              * @function encode
              * @memberof api.Hello
              * @static
-             * @param {api.IHello} message Hello message or plain object to encode
+             * @param {api.Hello} message Hello message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             Hello.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.userid != null && message.hasOwnProperty("userid"))
+                if (message.userid != null && Object.hasOwnProperty.call(message, "userid"))
                     writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.userid);
-                if (message.username != null && message.hasOwnProperty("username"))
+                if (message.username != null && Object.hasOwnProperty.call(message, "username"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.username);
-                if (message.token != null && message.hasOwnProperty("token"))
+                if (message.token != null && Object.hasOwnProperty.call(message, "token"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.token);
                 return writer;
             };
@@ -10664,7 +10644,7 @@
              * @function encodeDelimited
              * @memberof api.Hello
              * @static
-             * @param {api.IHello} message Hello message or plain object to encode
+             * @param {api.Hello} message Hello message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -10820,7 +10800,6 @@
              * Constructs a new Goodbye.
              * @memberof api
              * @classdesc Represents a Goodbye.
-             * @implements IGoodbye
              * @constructor
              * @param {api.IGoodbye=} [properties] Properties to set
              */
@@ -10840,7 +10819,7 @@
              * @returns {api.Goodbye} Goodbye instance
              */
             Goodbye.create = function create(properties) {
-                return new Goodbye(properties);
+                return Goodbye.fromObject(properties);
             };
     
             /**
@@ -10848,7 +10827,7 @@
              * @function encode
              * @memberof api.Goodbye
              * @static
-             * @param {api.IGoodbye} message Goodbye message or plain object to encode
+             * @param {api.Goodbye} message Goodbye message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -10863,7 +10842,7 @@
              * @function encodeDelimited
              * @memberof api.Goodbye
              * @static
-             * @param {api.IGoodbye} message Goodbye message or plain object to encode
+             * @param {api.Goodbye} message Goodbye message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -10971,7 +10950,7 @@
         /**
          * State enum.
          * @name api.State
-         * @enum {string}
+         * @enum {number}
          * @property {number} Stopped=0 Stopped value
          * @property {number} Running=1 Running value
          */
@@ -10994,7 +10973,6 @@
              * Constructs a new CheckChanges.
              * @memberof api
              * @classdesc Represents a CheckChanges.
-             * @implements ICheckChanges
              * @constructor
              * @param {api.ICheckChanges=} [properties] Properties to set
              */
@@ -11014,7 +10992,7 @@
              * @returns {api.CheckChanges} CheckChanges instance
              */
             CheckChanges.create = function create(properties) {
-                return new CheckChanges(properties);
+                return CheckChanges.fromObject(properties);
             };
     
             /**
@@ -11022,7 +11000,7 @@
              * @function encode
              * @memberof api.CheckChanges
              * @static
-             * @param {api.ICheckChanges} message CheckChanges message or plain object to encode
+             * @param {api.CheckChanges} message CheckChanges message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -11037,7 +11015,7 @@
              * @function encodeDelimited
              * @memberof api.CheckChanges
              * @static
-             * @param {api.ICheckChanges} message CheckChanges message or plain object to encode
+             * @param {api.CheckChanges} message CheckChanges message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -11149,14 +11127,13 @@
              * @memberof api
              * @interface IEnsurePackages
              * @property {boolean|null} [install] EnsurePackages install
-             * @property {api.IFile|null} [file] EnsurePackages file
+             * @property {api.File|api.IFile|null} [file] EnsurePackages file
              */
     
             /**
              * Constructs a new EnsurePackages.
              * @memberof api
              * @classdesc Represents an EnsurePackages.
-             * @implements IEnsurePackages
              * @constructor
              * @param {api.IEnsurePackages=} [properties] Properties to set
              */
@@ -11177,7 +11154,7 @@
     
             /**
              * EnsurePackages file.
-             * @member {api.IFile|null|undefined} file
+             * @member {api.File|null|undefined} file
              * @memberof api.EnsurePackages
              * @instance
              */
@@ -11192,7 +11169,7 @@
              * @returns {api.EnsurePackages} EnsurePackages instance
              */
             EnsurePackages.create = function create(properties) {
-                return new EnsurePackages(properties);
+                return EnsurePackages.fromObject(properties);
             };
     
             /**
@@ -11200,16 +11177,16 @@
              * @function encode
              * @memberof api.EnsurePackages
              * @static
-             * @param {api.IEnsurePackages} message EnsurePackages message or plain object to encode
+             * @param {api.EnsurePackages} message EnsurePackages message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             EnsurePackages.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.install != null && message.hasOwnProperty("install"))
+                if (message.install != null && Object.hasOwnProperty.call(message, "install"))
                     writer.uint32(/* id 1, wireType 0 =*/8).bool(message.install);
-                if (message.file != null && message.hasOwnProperty("file"))
+                if (message.file != null && Object.hasOwnProperty.call(message, "file"))
                     $root.api.File.encode(message.file, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 return writer;
             };
@@ -11219,7 +11196,7 @@
              * @function encodeDelimited
              * @memberof api.EnsurePackages
              * @static
-             * @param {api.IEnsurePackages} message EnsurePackages message or plain object to encode
+             * @param {api.EnsurePackages} message EnsurePackages message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -11369,7 +11346,6 @@
              * Constructs a new Start.
              * @memberof api
              * @classdesc Represents a Start.
-             * @implements IStart
              * @constructor
              * @param {api.IStart=} [properties] Properties to set
              */
@@ -11389,7 +11365,7 @@
              * @returns {api.Start} Start instance
              */
             Start.create = function create(properties) {
-                return new Start(properties);
+                return Start.fromObject(properties);
             };
     
             /**
@@ -11397,7 +11373,7 @@
              * @function encode
              * @memberof api.Start
              * @static
-             * @param {api.IStart} message Start message or plain object to encode
+             * @param {api.Start} message Start message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -11412,7 +11388,7 @@
              * @function encodeDelimited
              * @memberof api.Start
              * @static
-             * @param {api.IStart} message Start message or plain object to encode
+             * @param {api.Start} message Start message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -11524,14 +11500,13 @@
              * @memberof api
              * @interface IDebugStatus
              * @property {boolean|null} [done] DebugStatus done
-             * @property {Array.<api.IStackFrame>|null} [stack] DebugStatus stack
+             * @property {Array.<api.StackFrame|api.IStackFrame>|null} [stack] DebugStatus stack
              */
     
             /**
              * Constructs a new DebugStatus.
              * @memberof api
              * @classdesc Represents a DebugStatus.
-             * @implements IDebugStatus
              * @constructor
              * @param {api.IDebugStatus=} [properties] Properties to set
              */
@@ -11553,7 +11528,7 @@
     
             /**
              * DebugStatus stack.
-             * @member {Array.<api.IStackFrame>} stack
+             * @member {Array.<api.StackFrame>} stack
              * @memberof api.DebugStatus
              * @instance
              */
@@ -11568,7 +11543,7 @@
              * @returns {api.DebugStatus} DebugStatus instance
              */
             DebugStatus.create = function create(properties) {
-                return new DebugStatus(properties);
+                return DebugStatus.fromObject(properties);
             };
     
             /**
@@ -11576,14 +11551,14 @@
              * @function encode
              * @memberof api.DebugStatus
              * @static
-             * @param {api.IDebugStatus} message DebugStatus message or plain object to encode
+             * @param {api.DebugStatus} message DebugStatus message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             DebugStatus.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.done != null && message.hasOwnProperty("done"))
+                if (message.done != null && Object.hasOwnProperty.call(message, "done"))
                     writer.uint32(/* id 1, wireType 0 =*/8).bool(message.done);
                 if (message.stack != null && message.stack.length)
                     for (var i = 0; i < message.stack.length; ++i)
@@ -11596,7 +11571,7 @@
              * @function encodeDelimited
              * @memberof api.DebugStatus
              * @static
-             * @param {api.IDebugStatus} message DebugStatus message or plain object to encode
+             * @param {api.DebugStatus} message DebugStatus message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -11762,7 +11737,6 @@
              * Constructs a new StackFrame.
              * @memberof api
              * @classdesc Represents a StackFrame.
-             * @implements IStackFrame
              * @constructor
              * @param {api.IStackFrame=} [properties] Properties to set
              */
@@ -11798,7 +11772,7 @@
              * @returns {api.StackFrame} StackFrame instance
              */
             StackFrame.create = function create(properties) {
-                return new StackFrame(properties);
+                return StackFrame.fromObject(properties);
             };
     
             /**
@@ -11806,16 +11780,16 @@
              * @function encode
              * @memberof api.StackFrame
              * @static
-             * @param {api.IStackFrame} message StackFrame message or plain object to encode
+             * @param {api.StackFrame} message StackFrame message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             StackFrame.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message["function"] != null && message.hasOwnProperty("function"))
+                if (message["function"] != null && Object.hasOwnProperty.call(message, "function"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message["function"]);
-                if (message.line != null && message.hasOwnProperty("line"))
+                if (message.line != null && Object.hasOwnProperty.call(message, "line"))
                     writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.line);
                 return writer;
             };
@@ -11825,7 +11799,7 @@
              * @function encodeDelimited
              * @memberof api.StackFrame
              * @static
-             * @param {api.IStackFrame} message StackFrame message or plain object to encode
+             * @param {api.StackFrame} message StackFrame message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -11964,15 +11938,14 @@
              * Properties of a ContainedTest.
              * @memberof api
              * @interface IContainedTest
-             * @property {api.IFile|null} [suite] ContainedTest suite
-             * @property {Array.<api.IFile>|null} [project] ContainedTest project
+             * @property {api.File|api.IFile|null} [suite] ContainedTest suite
+             * @property {Array.<api.File|api.IFile>|null} [project] ContainedTest project
              */
     
             /**
              * Constructs a new ContainedTest.
              * @memberof api
              * @classdesc Represents a ContainedTest.
-             * @implements IContainedTest
              * @constructor
              * @param {api.IContainedTest=} [properties] Properties to set
              */
@@ -11986,7 +11959,7 @@
     
             /**
              * ContainedTest suite.
-             * @member {api.IFile|null|undefined} suite
+             * @member {api.File|null|undefined} suite
              * @memberof api.ContainedTest
              * @instance
              */
@@ -11994,7 +11967,7 @@
     
             /**
              * ContainedTest project.
-             * @member {Array.<api.IFile>} project
+             * @member {Array.<api.File>} project
              * @memberof api.ContainedTest
              * @instance
              */
@@ -12009,7 +11982,7 @@
              * @returns {api.ContainedTest} ContainedTest instance
              */
             ContainedTest.create = function create(properties) {
-                return new ContainedTest(properties);
+                return ContainedTest.fromObject(properties);
             };
     
             /**
@@ -12017,14 +11990,14 @@
              * @function encode
              * @memberof api.ContainedTest
              * @static
-             * @param {api.IContainedTest} message ContainedTest message or plain object to encode
+             * @param {api.ContainedTest} message ContainedTest message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             ContainedTest.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.suite != null && message.hasOwnProperty("suite"))
+                if (message.suite != null && Object.hasOwnProperty.call(message, "suite"))
                     $root.api.File.encode(message.suite, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.project != null && message.project.length)
                     for (var i = 0; i < message.project.length; ++i)
@@ -12037,7 +12010,7 @@
              * @function encodeDelimited
              * @memberof api.ContainedTest
              * @static
-             * @param {api.IContainedTest} message ContainedTest message or plain object to encode
+             * @param {api.ContainedTest} message ContainedTest message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -12202,14 +12175,13 @@
              * @interface ITestResult
              * @property {boolean|null} [passed] TestResult passed
              * @property {string|null} [stderr] TestResult stderr
-             * @property {Array.<api.ITestFailure>|null} [fails] TestResult fails
+             * @property {Array.<api.TestFailure|api.ITestFailure>|null} [fails] TestResult fails
              */
     
             /**
              * Constructs a new TestResult.
              * @memberof api
              * @classdesc Represents a TestResult.
-             * @implements ITestResult
              * @constructor
              * @param {api.ITestResult=} [properties] Properties to set
              */
@@ -12239,7 +12211,7 @@
     
             /**
              * TestResult fails.
-             * @member {Array.<api.ITestFailure>} fails
+             * @member {Array.<api.TestFailure>} fails
              * @memberof api.TestResult
              * @instance
              */
@@ -12254,7 +12226,7 @@
              * @returns {api.TestResult} TestResult instance
              */
             TestResult.create = function create(properties) {
-                return new TestResult(properties);
+                return TestResult.fromObject(properties);
             };
     
             /**
@@ -12262,16 +12234,16 @@
              * @function encode
              * @memberof api.TestResult
              * @static
-             * @param {api.ITestResult} message TestResult message or plain object to encode
+             * @param {api.TestResult} message TestResult message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             TestResult.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.passed != null && message.hasOwnProperty("passed"))
+                if (message.passed != null && Object.hasOwnProperty.call(message, "passed"))
                     writer.uint32(/* id 1, wireType 0 =*/8).bool(message.passed);
-                if (message.stderr != null && message.hasOwnProperty("stderr"))
+                if (message.stderr != null && Object.hasOwnProperty.call(message, "stderr"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.stderr);
                 if (message.fails != null && message.fails.length)
                     for (var i = 0; i < message.fails.length; ++i)
@@ -12284,7 +12256,7 @@
              * @function encodeDelimited
              * @memberof api.TestResult
              * @static
-             * @param {api.ITestResult} message TestResult message or plain object to encode
+             * @param {api.TestResult} message TestResult message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -12462,7 +12434,6 @@
              * Constructs a new TestFailure.
              * @memberof api
              * @classdesc Represents a TestFailure.
-             * @implements ITestFailure
              * @constructor
              * @param {api.ITestFailure=} [properties] Properties to set
              */
@@ -12498,7 +12469,7 @@
              * @returns {api.TestFailure} TestFailure instance
              */
             TestFailure.create = function create(properties) {
-                return new TestFailure(properties);
+                return TestFailure.fromObject(properties);
             };
     
             /**
@@ -12506,16 +12477,16 @@
              * @function encode
              * @memberof api.TestFailure
              * @static
-             * @param {api.ITestFailure} message TestFailure message or plain object to encode
+             * @param {api.TestFailure} message TestFailure message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             TestFailure.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.name != null && message.hasOwnProperty("name"))
+                if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
-                if (message.trace != null && message.hasOwnProperty("trace"))
+                if (message.trace != null && Object.hasOwnProperty.call(message, "trace"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.trace);
                 return writer;
             };
@@ -12525,7 +12496,7 @@
              * @function encodeDelimited
              * @memberof api.TestFailure
              * @static
-             * @param {api.ITestFailure} message TestFailure message or plain object to encode
+             * @param {api.TestFailure} message TestFailure message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -12672,7 +12643,6 @@
              * Constructs a new ResizeTerm.
              * @memberof api
              * @classdesc Represents a ResizeTerm.
-             * @implements IResizeTerm
              * @constructor
              * @param {api.IResizeTerm=} [properties] Properties to set
              */
@@ -12708,7 +12678,7 @@
              * @returns {api.ResizeTerm} ResizeTerm instance
              */
             ResizeTerm.create = function create(properties) {
-                return new ResizeTerm(properties);
+                return ResizeTerm.fromObject(properties);
             };
     
             /**
@@ -12716,16 +12686,16 @@
              * @function encode
              * @memberof api.ResizeTerm
              * @static
-             * @param {api.IResizeTerm} message ResizeTerm message or plain object to encode
+             * @param {api.ResizeTerm} message ResizeTerm message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             ResizeTerm.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.rows != null && message.hasOwnProperty("rows"))
+                if (message.rows != null && Object.hasOwnProperty.call(message, "rows"))
                     writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.rows);
-                if (message.cols != null && message.hasOwnProperty("cols"))
+                if (message.cols != null && Object.hasOwnProperty.call(message, "cols"))
                     writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.cols);
                 return writer;
             };
@@ -12735,7 +12705,7 @@
              * @function encodeDelimited
              * @memberof api.ResizeTerm
              * @static
-             * @param {api.IResizeTerm} message ResizeTerm message or plain object to encode
+             * @param {api.ResizeTerm} message ResizeTerm message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -12880,7 +12850,6 @@
              * Constructs a new SaneTerm.
              * @memberof api
              * @classdesc Represents a SaneTerm.
-             * @implements ISaneTerm
              * @constructor
              * @param {api.ISaneTerm=} [properties] Properties to set
              */
@@ -12900,7 +12869,7 @@
              * @returns {api.SaneTerm} SaneTerm instance
              */
             SaneTerm.create = function create(properties) {
-                return new SaneTerm(properties);
+                return SaneTerm.fromObject(properties);
             };
     
             /**
@@ -12908,7 +12877,7 @@
              * @function encode
              * @memberof api.SaneTerm
              * @static
-             * @param {api.ISaneTerm} message SaneTerm message or plain object to encode
+             * @param {api.SaneTerm} message SaneTerm message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -12923,7 +12892,7 @@
              * @function encodeDelimited
              * @memberof api.SaneTerm
              * @static
-             * @param {api.ISaneTerm} message SaneTerm message or plain object to encode
+             * @param {api.SaneTerm} message SaneTerm message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -13034,14 +13003,13 @@
              * Properties of a LintResults.
              * @memberof api
              * @interface ILintResults
-             * @property {Array.<api.ILintResult>|null} [results] LintResults results
+             * @property {Array.<api.LintResult|api.ILintResult>|null} [results] LintResults results
              */
     
             /**
              * Constructs a new LintResults.
              * @memberof api
              * @classdesc Represents a LintResults.
-             * @implements ILintResults
              * @constructor
              * @param {api.ILintResults=} [properties] Properties to set
              */
@@ -13055,7 +13023,7 @@
     
             /**
              * LintResults results.
-             * @member {Array.<api.ILintResult>} results
+             * @member {Array.<api.LintResult>} results
              * @memberof api.LintResults
              * @instance
              */
@@ -13070,7 +13038,7 @@
              * @returns {api.LintResults} LintResults instance
              */
             LintResults.create = function create(properties) {
-                return new LintResults(properties);
+                return LintResults.fromObject(properties);
             };
     
             /**
@@ -13078,7 +13046,7 @@
              * @function encode
              * @memberof api.LintResults
              * @static
-             * @param {api.ILintResults} message LintResults message or plain object to encode
+             * @param {api.LintResults} message LintResults message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -13096,7 +13064,7 @@
              * @function encodeDelimited
              * @memberof api.LintResults
              * @static
-             * @param {api.ILintResults} message LintResults message or plain object to encode
+             * @param {api.LintResults} message LintResults message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -13252,7 +13220,6 @@
              * Constructs a new LintResult.
              * @memberof api
              * @classdesc Represents a LintResult.
-             * @implements ILintResult
              * @constructor
              * @param {api.ILintResult=} [properties] Properties to set
              */
@@ -13304,7 +13271,7 @@
              * @returns {api.LintResult} LintResult instance
              */
             LintResult.create = function create(properties) {
-                return new LintResult(properties);
+                return LintResult.fromObject(properties);
             };
     
             /**
@@ -13312,20 +13279,20 @@
              * @function encode
              * @memberof api.LintResult
              * @static
-             * @param {api.ILintResult} message LintResult message or plain object to encode
+             * @param {api.LintResult} message LintResult message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             LintResult.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.text != null && message.hasOwnProperty("text"))
+                if (message.text != null && Object.hasOwnProperty.call(message, "text"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.text);
-                if (message.row != null && message.hasOwnProperty("row"))
+                if (message.row != null && Object.hasOwnProperty.call(message, "row"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int32(message.row);
-                if (message.column != null && message.hasOwnProperty("column"))
+                if (message.column != null && Object.hasOwnProperty.call(message, "column"))
                     writer.uint32(/* id 3, wireType 0 =*/24).int32(message.column);
-                if (message.type != null && message.hasOwnProperty("type"))
+                if (message.type != null && Object.hasOwnProperty.call(message, "type"))
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.type);
                 return writer;
             };
@@ -13335,7 +13302,7 @@
              * @function encodeDelimited
              * @memberof api.LintResult
              * @static
-             * @param {api.ILintResult} message LintResult message or plain object to encode
+             * @param {api.LintResult} message LintResult message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -13502,7 +13469,6 @@
              * Constructs a new OK.
              * @memberof api
              * @classdesc Represents a OK.
-             * @implements IOK
              * @constructor
              * @param {api.IOK=} [properties] Properties to set
              */
@@ -13522,7 +13488,7 @@
              * @returns {api.OK} OK instance
              */
             OK.create = function create(properties) {
-                return new OK(properties);
+                return OK.fromObject(properties);
             };
     
             /**
@@ -13530,7 +13496,7 @@
              * @function encode
              * @memberof api.OK
              * @static
-             * @param {api.IOK} message OK message or plain object to encode
+             * @param {api.OK} message OK message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -13545,7 +13511,7 @@
              * @function encodeDelimited
              * @memberof api.OK
              * @static
-             * @param {api.IOK} message OK message or plain object to encode
+             * @param {api.OK} message OK message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -13664,7 +13630,6 @@
              * Constructs a new Move.
              * @memberof api
              * @classdesc Represents a Move.
-             * @implements IMove
              * @constructor
              * @param {api.IMove=} [properties] Properties to set
              */
@@ -13700,7 +13665,7 @@
              * @returns {api.Move} Move instance
              */
             Move.create = function create(properties) {
-                return new Move(properties);
+                return Move.fromObject(properties);
             };
     
             /**
@@ -13708,16 +13673,16 @@
              * @function encode
              * @memberof api.Move
              * @static
-             * @param {api.IMove} message Move message or plain object to encode
+             * @param {api.Move} message Move message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             Move.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.oldPath != null && message.hasOwnProperty("oldPath"))
+                if (message.oldPath != null && Object.hasOwnProperty.call(message, "oldPath"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.oldPath);
-                if (message.newPath != null && message.hasOwnProperty("newPath"))
+                if (message.newPath != null && Object.hasOwnProperty.call(message, "newPath"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.newPath);
                 return writer;
             };
@@ -13727,7 +13692,7 @@
              * @function encodeDelimited
              * @memberof api.Move
              * @static
-             * @param {api.IMove} message Move message or plain object to encode
+             * @param {api.Move} message Move message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -13866,14 +13831,13 @@
              * Properties of a Files.
              * @memberof api
              * @interface IFiles
-             * @property {Array.<api.IFile>|null} [files] Files files
+             * @property {Array.<api.File|api.IFile>|null} [files] Files files
              */
     
             /**
              * Constructs a new Files.
              * @memberof api
              * @classdesc Represents a Files.
-             * @implements IFiles
              * @constructor
              * @param {api.IFiles=} [properties] Properties to set
              */
@@ -13887,7 +13851,7 @@
     
             /**
              * Files files.
-             * @member {Array.<api.IFile>} files
+             * @member {Array.<api.File>} files
              * @memberof api.Files
              * @instance
              */
@@ -13902,7 +13866,7 @@
              * @returns {api.Files} Files instance
              */
             Files.create = function create(properties) {
-                return new Files(properties);
+                return Files.fromObject(properties);
             };
     
             /**
@@ -13910,7 +13874,7 @@
              * @function encode
              * @memberof api.Files
              * @static
-             * @param {api.IFiles} message Files message or plain object to encode
+             * @param {api.Files} message Files message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -13928,7 +13892,7 @@
              * @function encodeDelimited
              * @memberof api.Files
              * @static
-             * @param {api.IFiles} message Files message or plain object to encode
+             * @param {api.Files} message Files message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -14083,7 +14047,6 @@
              * Constructs a new File.
              * @memberof api
              * @classdesc Represents a File.
-             * @implements IFile
              * @constructor
              * @param {api.IFile=} [properties] Properties to set
              */
@@ -14127,7 +14090,7 @@
              * @returns {api.File} File instance
              */
             File.create = function create(properties) {
-                return new File(properties);
+                return File.fromObject(properties);
             };
     
             /**
@@ -14135,18 +14098,18 @@
              * @function encode
              * @memberof api.File
              * @static
-             * @param {api.IFile} message File message or plain object to encode
+             * @param {api.File} message File message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             File.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.path != null && message.hasOwnProperty("path"))
+                if (message.path != null && Object.hasOwnProperty.call(message, "path"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.path);
-                if (message.type != null && message.hasOwnProperty("type"))
+                if (message.type != null && Object.hasOwnProperty.call(message, "type"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int32(message.type);
-                if (message.content != null && message.hasOwnProperty("content"))
+                if (message.content != null && Object.hasOwnProperty.call(message, "content"))
                     writer.uint32(/* id 3, wireType 2 =*/26).bytes(message.content);
                 return writer;
             };
@@ -14156,7 +14119,7 @@
              * @function encodeDelimited
              * @memberof api.File
              * @static
-             * @param {api.IFile} message File message or plain object to encode
+             * @param {api.File} message File message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -14322,7 +14285,7 @@
             /**
              * Type enum.
              * @name api.File.Type
-             * @enum {string}
+             * @enum {number}
              * @property {number} REGULAR=0 REGULAR value
              * @property {number} DIRECTORY=1 DIRECTORY value
              */
@@ -14348,7 +14311,6 @@
              * Constructs a new Clear.
              * @memberof api
              * @classdesc Represents a Clear.
-             * @implements IClear
              * @constructor
              * @param {api.IClear=} [properties] Properties to set
              */
@@ -14368,7 +14330,7 @@
              * @returns {api.Clear} Clear instance
              */
             Clear.create = function create(properties) {
-                return new Clear(properties);
+                return Clear.fromObject(properties);
             };
     
             /**
@@ -14376,7 +14338,7 @@
              * @function encode
              * @memberof api.Clear
              * @static
-             * @param {api.IClear} message Clear message or plain object to encode
+             * @param {api.Clear} message Clear message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -14391,7 +14353,7 @@
              * @function encodeDelimited
              * @memberof api.Clear
              * @static
-             * @param {api.IClear} message Clear message or plain object to encode
+             * @param {api.Clear} message Clear message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -14509,7 +14471,6 @@
              * Constructs a new Toast.
              * @memberof api
              * @classdesc Represents a Toast.
-             * @implements IToast
              * @constructor
              * @param {api.IToast=} [properties] Properties to set
              */
@@ -14537,7 +14498,7 @@
              * @returns {api.Toast} Toast instance
              */
             Toast.create = function create(properties) {
-                return new Toast(properties);
+                return Toast.fromObject(properties);
             };
     
             /**
@@ -14545,14 +14506,14 @@
              * @function encode
              * @memberof api.Toast
              * @static
-             * @param {api.IToast} message Toast message or plain object to encode
+             * @param {api.Toast} message Toast message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             Toast.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.text != null && message.hasOwnProperty("text"))
+                if (message.text != null && Object.hasOwnProperty.call(message, "text"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.text);
                 return writer;
             };
@@ -14562,7 +14523,7 @@
              * @function encodeDelimited
              * @memberof api.Toast
              * @static
-             * @param {api.IToast} message Toast message or plain object to encode
+             * @param {api.Toast} message Toast message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -14696,7 +14657,6 @@
              * Constructs a new Redirect.
              * @memberof api
              * @classdesc Represents a Redirect.
-             * @implements IRedirect
              * @constructor
              * @param {api.IRedirect=} [properties] Properties to set
              */
@@ -14724,7 +14684,7 @@
              * @returns {api.Redirect} Redirect instance
              */
             Redirect.create = function create(properties) {
-                return new Redirect(properties);
+                return Redirect.fromObject(properties);
             };
     
             /**
@@ -14732,14 +14692,14 @@
              * @function encode
              * @memberof api.Redirect
              * @static
-             * @param {api.IRedirect} message Redirect message or plain object to encode
+             * @param {api.Redirect} message Redirect message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             Redirect.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.url != null && message.hasOwnProperty("url"))
+                if (message.url != null && Object.hasOwnProperty.call(message, "url"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.url);
                 return writer;
             };
@@ -14749,7 +14709,7 @@
              * @function encodeDelimited
              * @memberof api.Redirect
              * @static
-             * @param {api.IRedirect} message Redirect message or plain object to encode
+             * @param {api.Redirect} message Redirect message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -14882,7 +14842,6 @@
              * Constructs a new RunMain.
              * @memberof api
              * @classdesc Represents a RunMain.
-             * @implements IRunMain
              * @constructor
              * @param {api.IRunMain=} [properties] Properties to set
              */
@@ -14902,7 +14861,7 @@
              * @returns {api.RunMain} RunMain instance
              */
             RunMain.create = function create(properties) {
-                return new RunMain(properties);
+                return RunMain.fromObject(properties);
             };
     
             /**
@@ -14910,7 +14869,7 @@
              * @function encode
              * @memberof api.RunMain
              * @static
-             * @param {api.IRunMain} message RunMain message or plain object to encode
+             * @param {api.RunMain} message RunMain message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -14925,7 +14884,7 @@
              * @function encodeDelimited
              * @memberof api.RunMain
              * @static
-             * @param {api.IRunMain} message RunMain message or plain object to encode
+             * @param {api.RunMain} message RunMain message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -15046,7 +15005,6 @@
              * Constructs a new OpenChannel.
              * @memberof api
              * @classdesc Represents an OpenChannel.
-             * @implements IOpenChannel
              * @constructor
              * @param {api.IOpenChannel=} [properties] Properties to set
              */
@@ -15098,7 +15056,7 @@
              * @returns {api.OpenChannel} OpenChannel instance
              */
             OpenChannel.create = function create(properties) {
-                return new OpenChannel(properties);
+                return OpenChannel.fromObject(properties);
             };
     
             /**
@@ -15106,20 +15064,20 @@
              * @function encode
              * @memberof api.OpenChannel
              * @static
-             * @param {api.IOpenChannel} message OpenChannel message or plain object to encode
+             * @param {api.OpenChannel} message OpenChannel message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             OpenChannel.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.service != null && message.hasOwnProperty("service"))
+                if (message.service != null && Object.hasOwnProperty.call(message, "service"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.service);
-                if (message.name != null && message.hasOwnProperty("name"))
+                if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
-                if (message.action != null && message.hasOwnProperty("action"))
+                if (message.action != null && Object.hasOwnProperty.call(message, "action"))
                     writer.uint32(/* id 3, wireType 0 =*/24).int32(message.action);
-                if (message.id != null && message.hasOwnProperty("id"))
+                if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                     writer.uint32(/* id 4, wireType 0 =*/32).int32(message.id);
                 return writer;
             };
@@ -15129,7 +15087,7 @@
              * @function encodeDelimited
              * @memberof api.OpenChannel
              * @static
-             * @param {api.IOpenChannel} message OpenChannel message or plain object to encode
+             * @param {api.OpenChannel} message OpenChannel message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -15302,7 +15260,7 @@
             /**
              * Action enum.
              * @name api.OpenChannel.Action
-             * @enum {string}
+             * @enum {number}
              * @property {number} CREATE=0 CREATE value
              * @property {number} ATTACH=1 ATTACH value
              * @property {number} ATTACH_OR_CREATE=2 ATTACH_OR_CREATE value
@@ -15333,7 +15291,6 @@
              * Constructs a new OpenChannelRes.
              * @memberof api
              * @classdesc Represents an OpenChannelRes.
-             * @implements IOpenChannelRes
              * @constructor
              * @param {api.IOpenChannelRes=} [properties] Properties to set
              */
@@ -15377,7 +15334,7 @@
              * @returns {api.OpenChannelRes} OpenChannelRes instance
              */
             OpenChannelRes.create = function create(properties) {
-                return new OpenChannelRes(properties);
+                return OpenChannelRes.fromObject(properties);
             };
     
             /**
@@ -15385,18 +15342,18 @@
              * @function encode
              * @memberof api.OpenChannelRes
              * @static
-             * @param {api.IOpenChannelRes} message OpenChannelRes message or plain object to encode
+             * @param {api.OpenChannelRes} message OpenChannelRes message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             OpenChannelRes.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.id != null && message.hasOwnProperty("id"))
+                if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int32(message.id);
-                if (message.state != null && message.hasOwnProperty("state"))
+                if (message.state != null && Object.hasOwnProperty.call(message, "state"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int32(message.state);
-                if (message.error != null && message.hasOwnProperty("error"))
+                if (message.error != null && Object.hasOwnProperty.call(message, "error"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.error);
                 return writer;
             };
@@ -15406,7 +15363,7 @@
              * @function encodeDelimited
              * @memberof api.OpenChannelRes
              * @static
-             * @param {api.IOpenChannelRes} message OpenChannelRes message or plain object to encode
+             * @param {api.OpenChannelRes} message OpenChannelRes message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -15568,7 +15525,7 @@
             /**
              * State enum.
              * @name api.OpenChannelRes.State
-             * @enum {string}
+             * @enum {number}
              * @property {number} CREATED=0 CREATED value
              * @property {number} ATTACHED=1 ATTACHED value
              * @property {number} ERROR=2 ERROR value
@@ -15598,7 +15555,6 @@
              * Constructs a new CloseChannel.
              * @memberof api
              * @classdesc Represents a CloseChannel.
-             * @implements ICloseChannel
              * @constructor
              * @param {api.ICloseChannel=} [properties] Properties to set
              */
@@ -15634,7 +15590,7 @@
              * @returns {api.CloseChannel} CloseChannel instance
              */
             CloseChannel.create = function create(properties) {
-                return new CloseChannel(properties);
+                return CloseChannel.fromObject(properties);
             };
     
             /**
@@ -15642,16 +15598,16 @@
              * @function encode
              * @memberof api.CloseChannel
              * @static
-             * @param {api.ICloseChannel} message CloseChannel message or plain object to encode
+             * @param {api.CloseChannel} message CloseChannel message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             CloseChannel.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.id != null && message.hasOwnProperty("id"))
+                if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int32(message.id);
-                if (message.action != null && message.hasOwnProperty("action"))
+                if (message.action != null && Object.hasOwnProperty.call(message, "action"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int32(message.action);
                 return writer;
             };
@@ -15661,7 +15617,7 @@
              * @function encodeDelimited
              * @memberof api.CloseChannel
              * @static
-             * @param {api.ICloseChannel} message CloseChannel message or plain object to encode
+             * @param {api.CloseChannel} message CloseChannel message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -15812,7 +15768,7 @@
             /**
              * Action enum.
              * @name api.CloseChannel.Action
-             * @enum {string}
+             * @enum {number}
              * @property {number} DISCONNECT=0 DISCONNECT value
              * @property {number} TRY_CLOSE=1 TRY_CLOSE value
              * @property {number} CLOSE=2 CLOSE value
@@ -15842,7 +15798,6 @@
              * Constructs a new CloseChannelRes.
              * @memberof api
              * @classdesc Represents a CloseChannelRes.
-             * @implements ICloseChannelRes
              * @constructor
              * @param {api.ICloseChannelRes=} [properties] Properties to set
              */
@@ -15878,7 +15833,7 @@
              * @returns {api.CloseChannelRes} CloseChannelRes instance
              */
             CloseChannelRes.create = function create(properties) {
-                return new CloseChannelRes(properties);
+                return CloseChannelRes.fromObject(properties);
             };
     
             /**
@@ -15886,16 +15841,16 @@
              * @function encode
              * @memberof api.CloseChannelRes
              * @static
-             * @param {api.ICloseChannelRes} message CloseChannelRes message or plain object to encode
+             * @param {api.CloseChannelRes} message CloseChannelRes message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             CloseChannelRes.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.id != null && message.hasOwnProperty("id"))
+                if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int32(message.id);
-                if (message.status != null && message.hasOwnProperty("status"))
+                if (message.status != null && Object.hasOwnProperty.call(message, "status"))
                     writer.uint32(/* id 2, wireType 0 =*/16).int32(message.status);
                 return writer;
             };
@@ -15905,7 +15860,7 @@
              * @function encodeDelimited
              * @memberof api.CloseChannelRes
              * @static
-             * @param {api.ICloseChannelRes} message CloseChannelRes message or plain object to encode
+             * @param {api.CloseChannelRes} message CloseChannelRes message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -16056,7 +16011,7 @@
             /**
              * Status enum.
              * @name api.CloseChannelRes.Status
-             * @enum {string}
+             * @enum {number}
              * @property {number} DISCONNECT=0 DISCONNECT value
              * @property {number} CLOSE=1 CLOSE value
              * @property {number} NOTHING=2 NOTHING value
@@ -16085,7 +16040,6 @@
              * Constructs a new ContainerState.
              * @memberof api
              * @classdesc Represents a ContainerState.
-             * @implements IContainerState
              * @constructor
              * @param {api.IContainerState=} [properties] Properties to set
              */
@@ -16113,7 +16067,7 @@
              * @returns {api.ContainerState} ContainerState instance
              */
             ContainerState.create = function create(properties) {
-                return new ContainerState(properties);
+                return ContainerState.fromObject(properties);
             };
     
             /**
@@ -16121,14 +16075,14 @@
              * @function encode
              * @memberof api.ContainerState
              * @static
-             * @param {api.IContainerState} message ContainerState message or plain object to encode
+             * @param {api.ContainerState} message ContainerState message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             ContainerState.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.state != null && message.hasOwnProperty("state"))
+                if (message.state != null && Object.hasOwnProperty.call(message, "state"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int32(message.state);
                 return writer;
             };
@@ -16138,7 +16092,7 @@
              * @function encodeDelimited
              * @memberof api.ContainerState
              * @static
-             * @param {api.IContainerState} message ContainerState message or plain object to encode
+             * @param {api.ContainerState} message ContainerState message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -16272,7 +16226,7 @@
             /**
              * State enum.
              * @name api.ContainerState.State
-             * @enum {string}
+             * @enum {number}
              * @property {number} SLEEP=0 SLEEP value
              * @property {number} READY=1 READY value
              */
@@ -16301,7 +16255,6 @@
              * Constructs a new PortOpen.
              * @memberof api
              * @classdesc Represents a PortOpen.
-             * @implements IPortOpen
              * @constructor
              * @param {api.IPortOpen=} [properties] Properties to set
              */
@@ -16345,7 +16298,7 @@
              * @returns {api.PortOpen} PortOpen instance
              */
             PortOpen.create = function create(properties) {
-                return new PortOpen(properties);
+                return PortOpen.fromObject(properties);
             };
     
             /**
@@ -16353,18 +16306,18 @@
              * @function encode
              * @memberof api.PortOpen
              * @static
-             * @param {api.IPortOpen} message PortOpen message or plain object to encode
+             * @param {api.PortOpen} message PortOpen message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             PortOpen.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.forwarded != null && message.hasOwnProperty("forwarded"))
+                if (message.forwarded != null && Object.hasOwnProperty.call(message, "forwarded"))
                     writer.uint32(/* id 1, wireType 0 =*/8).bool(message.forwarded);
-                if (message.port != null && message.hasOwnProperty("port"))
+                if (message.port != null && Object.hasOwnProperty.call(message, "port"))
                     writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.port);
-                if (message.address != null && message.hasOwnProperty("address"))
+                if (message.address != null && Object.hasOwnProperty.call(message, "address"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.address);
                 return writer;
             };
@@ -16374,7 +16327,7 @@
              * @function encodeDelimited
              * @memberof api.PortOpen
              * @static
-             * @param {api.IPortOpen} message PortOpen message or plain object to encode
+             * @param {api.PortOpen} message PortOpen message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -16532,7 +16485,6 @@
              * Constructs a new OTFetchRequest.
              * @memberof api
              * @classdesc Represents a OTFetchRequest.
-             * @implements IOTFetchRequest
              * @constructor
              * @param {api.IOTFetchRequest=} [properties] Properties to set
              */
@@ -16568,7 +16520,7 @@
              * @returns {api.OTFetchRequest} OTFetchRequest instance
              */
             OTFetchRequest.create = function create(properties) {
-                return new OTFetchRequest(properties);
+                return OTFetchRequest.fromObject(properties);
             };
     
             /**
@@ -16576,16 +16528,16 @@
              * @function encode
              * @memberof api.OTFetchRequest
              * @static
-             * @param {api.IOTFetchRequest} message OTFetchRequest message or plain object to encode
+             * @param {api.OTFetchRequest} message OTFetchRequest message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             OTFetchRequest.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.versionFrom != null && message.hasOwnProperty("versionFrom"))
+                if (message.versionFrom != null && Object.hasOwnProperty.call(message, "versionFrom"))
                     writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.versionFrom);
-                if (message.versionTo != null && message.hasOwnProperty("versionTo"))
+                if (message.versionTo != null && Object.hasOwnProperty.call(message, "versionTo"))
                     writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.versionTo);
                 return writer;
             };
@@ -16595,7 +16547,7 @@
              * @function encodeDelimited
              * @memberof api.OTFetchRequest
              * @static
-             * @param {api.IOTFetchRequest} message OTFetchRequest message or plain object to encode
+             * @param {api.OTFetchRequest} message OTFetchRequest message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -16734,14 +16686,13 @@
              * Properties of a OTFetchResponse.
              * @memberof api
              * @interface IOTFetchResponse
-             * @property {Array.<api.IOTPacket>|null} [packets] OTFetchResponse packets
+             * @property {Array.<api.OTPacket|api.IOTPacket>|null} [packets] OTFetchResponse packets
              */
     
             /**
              * Constructs a new OTFetchResponse.
              * @memberof api
              * @classdesc Represents a OTFetchResponse.
-             * @implements IOTFetchResponse
              * @constructor
              * @param {api.IOTFetchResponse=} [properties] Properties to set
              */
@@ -16755,7 +16706,7 @@
     
             /**
              * OTFetchResponse packets.
-             * @member {Array.<api.IOTPacket>} packets
+             * @member {Array.<api.OTPacket>} packets
              * @memberof api.OTFetchResponse
              * @instance
              */
@@ -16770,7 +16721,7 @@
              * @returns {api.OTFetchResponse} OTFetchResponse instance
              */
             OTFetchResponse.create = function create(properties) {
-                return new OTFetchResponse(properties);
+                return OTFetchResponse.fromObject(properties);
             };
     
             /**
@@ -16778,7 +16729,7 @@
              * @function encode
              * @memberof api.OTFetchResponse
              * @static
-             * @param {api.IOTFetchResponse} message OTFetchResponse message or plain object to encode
+             * @param {api.OTFetchResponse} message OTFetchResponse message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -16796,7 +16747,7 @@
              * @function encodeDelimited
              * @memberof api.OTFetchResponse
              * @static
-             * @param {api.IOTFetchResponse} message OTFetchResponse message or plain object to encode
+             * @param {api.OTFetchResponse} message OTFetchResponse message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -16944,9 +16895,9 @@
              * @interface IOTPacket
              * @property {number|null} [spookyVersion] OTPacket spookyVersion
              * @property {number|null} [version] OTPacket version
-             * @property {Array.<api.IOTRuneTransformOp>|null} [ops] OTPacket ops
+             * @property {Array.<api.OTRuneTransformOp|api.IOTRuneTransformOp>|null} [ops] OTPacket ops
              * @property {number|null} [crc32] OTPacket crc32
-             * @property {google.protobuf.ITimestamp|null} [committed] OTPacket committed
+             * @property {google.protobuf.Timestamp|google.protobuf.ITimestamp|null} [committed] OTPacket committed
              * @property {number|null} [nonce] OTPacket nonce
              */
     
@@ -16954,7 +16905,6 @@
              * Constructs a new OTPacket.
              * @memberof api
              * @classdesc Represents a OTPacket.
-             * @implements IOTPacket
              * @constructor
              * @param {api.IOTPacket=} [properties] Properties to set
              */
@@ -16984,7 +16934,7 @@
     
             /**
              * OTPacket ops.
-             * @member {Array.<api.IOTRuneTransformOp>} ops
+             * @member {Array.<api.OTRuneTransformOp>} ops
              * @memberof api.OTPacket
              * @instance
              */
@@ -17000,7 +16950,7 @@
     
             /**
              * OTPacket committed.
-             * @member {google.protobuf.ITimestamp|null|undefined} committed
+             * @member {google.protobuf.Timestamp|null|undefined} committed
              * @memberof api.OTPacket
              * @instance
              */
@@ -17023,7 +16973,7 @@
              * @returns {api.OTPacket} OTPacket instance
              */
             OTPacket.create = function create(properties) {
-                return new OTPacket(properties);
+                return OTPacket.fromObject(properties);
             };
     
             /**
@@ -17031,25 +16981,25 @@
              * @function encode
              * @memberof api.OTPacket
              * @static
-             * @param {api.IOTPacket} message OTPacket message or plain object to encode
+             * @param {api.OTPacket} message OTPacket message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             OTPacket.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.spookyVersion != null && message.hasOwnProperty("spookyVersion"))
+                if (message.spookyVersion != null && Object.hasOwnProperty.call(message, "spookyVersion"))
                     writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.spookyVersion);
                 if (message.ops != null && message.ops.length)
                     for (var i = 0; i < message.ops.length; ++i)
                         $root.api.OTRuneTransformOp.encode(message.ops[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.crc32 != null && message.hasOwnProperty("crc32"))
+                if (message.crc32 != null && Object.hasOwnProperty.call(message, "crc32"))
                     writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.crc32);
-                if (message.committed != null && message.hasOwnProperty("committed"))
+                if (message.committed != null && Object.hasOwnProperty.call(message, "committed"))
                     $root.google.protobuf.Timestamp.encode(message.committed, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                if (message.version != null && message.hasOwnProperty("version"))
+                if (message.version != null && Object.hasOwnProperty.call(message, "version"))
                     writer.uint32(/* id 5, wireType 0 =*/40).uint32(message.version);
-                if (message.nonce != null && message.hasOwnProperty("nonce"))
+                if (message.nonce != null && Object.hasOwnProperty.call(message, "nonce"))
                     writer.uint32(/* id 6, wireType 0 =*/48).uint32(message.nonce);
                 return writer;
             };
@@ -17059,7 +17009,7 @@
              * @function encodeDelimited
              * @memberof api.OTPacket
              * @static
-             * @param {api.IOTPacket} message OTPacket message or plain object to encode
+             * @param {api.OTPacket} message OTPacket message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -17276,7 +17226,6 @@
              * Constructs a new OTRuneTransformOp.
              * @memberof api
              * @classdesc Represents a OTRuneTransformOp.
-             * @implements IOTRuneTransformOp
              * @constructor
              * @param {api.IOTRuneTransformOp=} [properties] Properties to set
              */
@@ -17334,7 +17283,7 @@
              * @returns {api.OTRuneTransformOp} OTRuneTransformOp instance
              */
             OTRuneTransformOp.create = function create(properties) {
-                return new OTRuneTransformOp(properties);
+                return OTRuneTransformOp.fromObject(properties);
             };
     
             /**
@@ -17342,18 +17291,18 @@
              * @function encode
              * @memberof api.OTRuneTransformOp
              * @static
-             * @param {api.IOTRuneTransformOp} message OTRuneTransformOp message or plain object to encode
+             * @param {api.OTRuneTransformOp} message OTRuneTransformOp message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             OTRuneTransformOp.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.skip != null && message.hasOwnProperty("skip"))
+                if (message.skip != null && Object.hasOwnProperty.call(message, "skip"))
                     writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.skip);
-                if (message["delete"] != null && message.hasOwnProperty("delete"))
+                if (message["delete"] != null && Object.hasOwnProperty.call(message, "delete"))
                     writer.uint32(/* id 2, wireType 0 =*/16).uint32(message["delete"]);
-                if (message.insert != null && message.hasOwnProperty("insert"))
+                if (message.insert != null && Object.hasOwnProperty.call(message, "insert"))
                     writer.uint32(/* id 3, wireType 2 =*/26).string(message.insert);
                 return writer;
             };
@@ -17363,7 +17312,7 @@
              * @function encodeDelimited
              * @memberof api.OTRuneTransformOp
              * @static
-             * @param {api.IOTRuneTransformOp} message OTRuneTransformOp message or plain object to encode
+             * @param {api.OTRuneTransformOp} message OTRuneTransformOp message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -17530,15 +17479,14 @@
              * @interface IOTStatus
              * @property {string|null} [contents] OTStatus contents
              * @property {number|null} [version] OTStatus version
-             * @property {api.IFile|null} [linkedFile] OTStatus linkedFile
-             * @property {Array.<api.IOTCursor>|null} [cursors] OTStatus cursors
+             * @property {api.File|api.IFile|null} [linkedFile] OTStatus linkedFile
+             * @property {Array.<api.OTCursor|api.IOTCursor>|null} [cursors] OTStatus cursors
              */
     
             /**
              * Constructs a new OTStatus.
              * @memberof api
              * @classdesc Represents a OTStatus.
-             * @implements IOTStatus
              * @constructor
              * @param {api.IOTStatus=} [properties] Properties to set
              */
@@ -17568,7 +17516,7 @@
     
             /**
              * OTStatus linkedFile.
-             * @member {api.IFile|null|undefined} linkedFile
+             * @member {api.File|null|undefined} linkedFile
              * @memberof api.OTStatus
              * @instance
              */
@@ -17576,7 +17524,7 @@
     
             /**
              * OTStatus cursors.
-             * @member {Array.<api.IOTCursor>} cursors
+             * @member {Array.<api.OTCursor>} cursors
              * @memberof api.OTStatus
              * @instance
              */
@@ -17591,7 +17539,7 @@
              * @returns {api.OTStatus} OTStatus instance
              */
             OTStatus.create = function create(properties) {
-                return new OTStatus(properties);
+                return OTStatus.fromObject(properties);
             };
     
             /**
@@ -17599,18 +17547,18 @@
              * @function encode
              * @memberof api.OTStatus
              * @static
-             * @param {api.IOTStatus} message OTStatus message or plain object to encode
+             * @param {api.OTStatus} message OTStatus message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             OTStatus.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.contents != null && message.hasOwnProperty("contents"))
+                if (message.contents != null && Object.hasOwnProperty.call(message, "contents"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.contents);
-                if (message.version != null && message.hasOwnProperty("version"))
+                if (message.version != null && Object.hasOwnProperty.call(message, "version"))
                     writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.version);
-                if (message.linkedFile != null && message.hasOwnProperty("linkedFile"))
+                if (message.linkedFile != null && Object.hasOwnProperty.call(message, "linkedFile"))
                     $root.api.File.encode(message.linkedFile, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.cursors != null && message.cursors.length)
                     for (var i = 0; i < message.cursors.length; ++i)
@@ -17623,7 +17571,7 @@
              * @function encodeDelimited
              * @memberof api.OTStatus
              * @static
-             * @param {api.IOTStatus} message OTStatus message or plain object to encode
+             * @param {api.OTStatus} message OTStatus message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -17812,7 +17760,7 @@
              * @property {number|null} [position] OTCursor position
              * @property {number|null} [selectionStart] OTCursor selectionStart
              * @property {number|null} [selectionEnd] OTCursor selectionEnd
-             * @property {api.IUser|null} [user] OTCursor user
+             * @property {api.User|api.IUser|null} [user] OTCursor user
              * @property {string|null} [id] OTCursor id
              */
     
@@ -17820,7 +17768,6 @@
              * Constructs a new OTCursor.
              * @memberof api
              * @classdesc Represents a OTCursor.
-             * @implements IOTCursor
              * @constructor
              * @param {api.IOTCursor=} [properties] Properties to set
              */
@@ -17857,7 +17804,7 @@
     
             /**
              * OTCursor user.
-             * @member {api.IUser|null|undefined} user
+             * @member {api.User|null|undefined} user
              * @memberof api.OTCursor
              * @instance
              */
@@ -17880,7 +17827,7 @@
              * @returns {api.OTCursor} OTCursor instance
              */
             OTCursor.create = function create(properties) {
-                return new OTCursor(properties);
+                return OTCursor.fromObject(properties);
             };
     
             /**
@@ -17888,22 +17835,22 @@
              * @function encode
              * @memberof api.OTCursor
              * @static
-             * @param {api.IOTCursor} message OTCursor message or plain object to encode
+             * @param {api.OTCursor} message OTCursor message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             OTCursor.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.position != null && message.hasOwnProperty("position"))
+                if (message.position != null && Object.hasOwnProperty.call(message, "position"))
                     writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.position);
-                if (message.selectionStart != null && message.hasOwnProperty("selectionStart"))
+                if (message.selectionStart != null && Object.hasOwnProperty.call(message, "selectionStart"))
                     writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.selectionStart);
-                if (message.selectionEnd != null && message.hasOwnProperty("selectionEnd"))
+                if (message.selectionEnd != null && Object.hasOwnProperty.call(message, "selectionEnd"))
                     writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.selectionEnd);
-                if (message.user != null && message.hasOwnProperty("user"))
+                if (message.user != null && Object.hasOwnProperty.call(message, "user"))
                     $root.api.User.encode(message.user, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                if (message.id != null && message.hasOwnProperty("id"))
+                if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                     writer.uint32(/* id 5, wireType 2 =*/42).string(message.id);
                 return writer;
             };
@@ -17913,7 +17860,7 @@
              * @function encodeDelimited
              * @memberof api.OTCursor
              * @static
-             * @param {api.IOTCursor} message OTCursor message or plain object to encode
+             * @param {api.OTCursor} message OTCursor message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -18098,7 +18045,6 @@
              * Constructs a new ChatMessage.
              * @memberof api
              * @classdesc Represents a ChatMessage.
-             * @implements IChatMessage
              * @constructor
              * @param {api.IChatMessage=} [properties] Properties to set
              */
@@ -18134,7 +18080,7 @@
              * @returns {api.ChatMessage} ChatMessage instance
              */
             ChatMessage.create = function create(properties) {
-                return new ChatMessage(properties);
+                return ChatMessage.fromObject(properties);
             };
     
             /**
@@ -18142,16 +18088,16 @@
              * @function encode
              * @memberof api.ChatMessage
              * @static
-             * @param {api.IChatMessage} message ChatMessage message or plain object to encode
+             * @param {api.ChatMessage} message ChatMessage message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             ChatMessage.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.username != null && message.hasOwnProperty("username"))
+                if (message.username != null && Object.hasOwnProperty.call(message, "username"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.username);
-                if (message.text != null && message.hasOwnProperty("text"))
+                if (message.text != null && Object.hasOwnProperty.call(message, "text"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.text);
                 return writer;
             };
@@ -18161,7 +18107,7 @@
              * @function encodeDelimited
              * @memberof api.ChatMessage
              * @static
-             * @param {api.IChatMessage} message ChatMessage message or plain object to encode
+             * @param {api.ChatMessage} message ChatMessage message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -18308,7 +18254,6 @@
              * Constructs a new ChatTyping.
              * @memberof api
              * @classdesc Represents a ChatTyping.
-             * @implements IChatTyping
              * @constructor
              * @param {api.IChatTyping=} [properties] Properties to set
              */
@@ -18344,7 +18289,7 @@
              * @returns {api.ChatTyping} ChatTyping instance
              */
             ChatTyping.create = function create(properties) {
-                return new ChatTyping(properties);
+                return ChatTyping.fromObject(properties);
             };
     
             /**
@@ -18352,16 +18297,16 @@
              * @function encode
              * @memberof api.ChatTyping
              * @static
-             * @param {api.IChatTyping} message ChatTyping message or plain object to encode
+             * @param {api.ChatTyping} message ChatTyping message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             ChatTyping.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.username != null && message.hasOwnProperty("username"))
+                if (message.username != null && Object.hasOwnProperty.call(message, "username"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.username);
-                if (message.typing != null && message.hasOwnProperty("typing"))
+                if (message.typing != null && Object.hasOwnProperty.call(message, "typing"))
                     writer.uint32(/* id 2, wireType 0 =*/16).bool(message.typing);
                 return writer;
             };
@@ -18371,7 +18316,7 @@
              * @function encodeDelimited
              * @memberof api.ChatTyping
              * @static
-             * @param {api.IChatTyping} message ChatTyping message or plain object to encode
+             * @param {api.ChatTyping} message ChatTyping message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -18520,7 +18465,6 @@
              * Constructs a new User.
              * @memberof api
              * @classdesc Represents a User.
-             * @implements IUser
              * @constructor
              * @param {api.IUser=} [properties] Properties to set
              */
@@ -18573,7 +18517,7 @@
              * @returns {api.User} User instance
              */
             User.create = function create(properties) {
-                return new User(properties);
+                return User.fromObject(properties);
             };
     
             /**
@@ -18581,21 +18525,21 @@
              * @function encode
              * @memberof api.User
              * @static
-             * @param {api.IUser} message User message or plain object to encode
+             * @param {api.User} message User message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             User.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.id != null && message.hasOwnProperty("id"))
+                if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                     writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.id);
-                if (message.name != null && message.hasOwnProperty("name"))
+                if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.name);
                 if (message.roles != null && message.roles.length)
                     for (var i = 0; i < message.roles.length; ++i)
                         writer.uint32(/* id 3, wireType 2 =*/26).string(message.roles[i]);
-                if (message.session != null && message.hasOwnProperty("session"))
+                if (message.session != null && Object.hasOwnProperty.call(message, "session"))
                     writer.uint32(/* id 4, wireType 0 =*/32).int32(message.session);
                 return writer;
             };
@@ -18605,7 +18549,7 @@
              * @function encodeDelimited
              * @memberof api.User
              * @static
-             * @param {api.IUser} message User message or plain object to encode
+             * @param {api.User} message User message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -18781,14 +18725,13 @@
              * Properties of a Roster.
              * @memberof api
              * @interface IRoster
-             * @property {Array.<api.IUser>|null} [user] Roster user
+             * @property {Array.<api.User|api.IUser>|null} [user] Roster user
              */
     
             /**
              * Constructs a new Roster.
              * @memberof api
              * @classdesc Represents a Roster.
-             * @implements IRoster
              * @constructor
              * @param {api.IRoster=} [properties] Properties to set
              */
@@ -18802,7 +18745,7 @@
     
             /**
              * Roster user.
-             * @member {Array.<api.IUser>} user
+             * @member {Array.<api.User>} user
              * @memberof api.Roster
              * @instance
              */
@@ -18817,7 +18760,7 @@
              * @returns {api.Roster} Roster instance
              */
             Roster.create = function create(properties) {
-                return new Roster(properties);
+                return Roster.fromObject(properties);
             };
     
             /**
@@ -18825,7 +18768,7 @@
              * @function encode
              * @memberof api.Roster
              * @static
-             * @param {api.IRoster} message Roster message or plain object to encode
+             * @param {api.Roster} message Roster message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -18843,7 +18786,7 @@
              * @function encodeDelimited
              * @memberof api.Roster
              * @static
-             * @param {api.IRoster} message Roster message or plain object to encode
+             * @param {api.Roster} message Roster message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -18998,7 +18941,6 @@
              * Constructs a new Exec.
              * @memberof api
              * @classdesc Represents an Exec.
-             * @implements IExec
              * @constructor
              * @param {api.IExec=} [properties] Properties to set
              */
@@ -19044,7 +18986,7 @@
              * @returns {api.Exec} Exec instance
              */
             Exec.create = function create(properties) {
-                return new Exec(properties);
+                return Exec.fromObject(properties);
             };
     
             /**
@@ -19052,7 +18994,7 @@
              * @function encode
              * @memberof api.Exec
              * @static
-             * @param {api.IExec} message Exec message or plain object to encode
+             * @param {api.Exec} message Exec message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -19062,10 +19004,10 @@
                 if (message.args != null && message.args.length)
                     for (var i = 0; i < message.args.length; ++i)
                         writer.uint32(/* id 1, wireType 2 =*/10).string(message.args[i]);
-                if (message.env != null && message.hasOwnProperty("env"))
+                if (message.env != null && Object.hasOwnProperty.call(message, "env"))
                     for (var keys = Object.keys(message.env), i = 0; i < keys.length; ++i)
                         writer.uint32(/* id 2, wireType 2 =*/18).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 2 =*/18).string(message.env[keys[i]]).ldelim();
-                if (message.blocking != null && message.hasOwnProperty("blocking"))
+                if (message.blocking != null && Object.hasOwnProperty.call(message, "blocking"))
                     writer.uint32(/* id 3, wireType 0 =*/24).bool(message.blocking);
                 return writer;
             };
@@ -19075,7 +19017,7 @@
              * @function encodeDelimited
              * @memberof api.Exec
              * @static
-             * @param {api.IExec} message Exec message or plain object to encode
+             * @param {api.Exec} message Exec message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -19097,7 +19039,7 @@
             Exec.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Exec(), key;
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Exec(), key, value;
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -19107,12 +19049,26 @@
                         message.args.push(reader.string());
                         break;
                     case 2:
-                        reader.skip().pos++;
                         if (message.env === $util.emptyObject)
                             message.env = {};
-                        key = reader.string();
-                        reader.pos++;
-                        message.env[key] = reader.string();
+                        var end2 = reader.uint32() + reader.pos;
+                        key = "";
+                        value = "";
+                        while (reader.pos < end2) {
+                            var tag2 = reader.uint32();
+                            switch (tag2 >>> 3) {
+                            case 1:
+                                key = reader.string();
+                                break;
+                            case 2:
+                                value = reader.string();
+                                break;
+                            default:
+                                reader.skipType(tag2 & 7);
+                                break;
+                            }
+                        }
+                        message.env[key] = value;
                         break;
                     case 3:
                         message.blocking = reader.bool();
@@ -19269,14 +19225,13 @@
              * @property {string|null} [bugTrackerURL] Package bugTrackerURL
              * @property {string|null} [author] Package author
              * @property {string|null} [license] Package license
-             * @property {Array.<api.IPackage>|null} [dependencies] Package dependencies
+             * @property {Array.<api.Package|api.IPackage>|null} [dependencies] Package dependencies
              */
     
             /**
              * Constructs a new Package.
              * @memberof api
              * @classdesc Represents a Package.
-             * @implements IPackage
              * @constructor
              * @param {api.IPackage=} [properties] Properties to set
              */
@@ -19370,7 +19325,7 @@
     
             /**
              * Package dependencies.
-             * @member {Array.<api.IPackage>} dependencies
+             * @member {Array.<api.Package>} dependencies
              * @memberof api.Package
              * @instance
              */
@@ -19385,7 +19340,7 @@
              * @returns {api.Package} Package instance
              */
             Package.create = function create(properties) {
-                return new Package(properties);
+                return Package.fromObject(properties);
             };
     
             /**
@@ -19393,32 +19348,32 @@
              * @function encode
              * @memberof api.Package
              * @static
-             * @param {api.IPackage} message Package message or plain object to encode
+             * @param {api.Package} message Package message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             Package.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.name != null && message.hasOwnProperty("name"))
+                if (message.name != null && Object.hasOwnProperty.call(message, "name"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
-                if (message.spec != null && message.hasOwnProperty("spec"))
+                if (message.spec != null && Object.hasOwnProperty.call(message, "spec"))
                     writer.uint32(/* id 2, wireType 2 =*/18).string(message.spec);
-                if (message.description != null && message.hasOwnProperty("description"))
+                if (message.description != null && Object.hasOwnProperty.call(message, "description"))
                     writer.uint32(/* id 10, wireType 2 =*/82).string(message.description);
-                if (message.version != null && message.hasOwnProperty("version"))
+                if (message.version != null && Object.hasOwnProperty.call(message, "version"))
                     writer.uint32(/* id 11, wireType 2 =*/90).string(message.version);
-                if (message.homepageURL != null && message.hasOwnProperty("homepageURL"))
+                if (message.homepageURL != null && Object.hasOwnProperty.call(message, "homepageURL"))
                     writer.uint32(/* id 12, wireType 2 =*/98).string(message.homepageURL);
-                if (message.documentationURL != null && message.hasOwnProperty("documentationURL"))
+                if (message.documentationURL != null && Object.hasOwnProperty.call(message, "documentationURL"))
                     writer.uint32(/* id 13, wireType 2 =*/106).string(message.documentationURL);
-                if (message.sourceCodeURL != null && message.hasOwnProperty("sourceCodeURL"))
+                if (message.sourceCodeURL != null && Object.hasOwnProperty.call(message, "sourceCodeURL"))
                     writer.uint32(/* id 14, wireType 2 =*/114).string(message.sourceCodeURL);
-                if (message.bugTrackerURL != null && message.hasOwnProperty("bugTrackerURL"))
+                if (message.bugTrackerURL != null && Object.hasOwnProperty.call(message, "bugTrackerURL"))
                     writer.uint32(/* id 15, wireType 2 =*/122).string(message.bugTrackerURL);
-                if (message.author != null && message.hasOwnProperty("author"))
+                if (message.author != null && Object.hasOwnProperty.call(message, "author"))
                     writer.uint32(/* id 16, wireType 2 =*/130).string(message.author);
-                if (message.license != null && message.hasOwnProperty("license"))
+                if (message.license != null && Object.hasOwnProperty.call(message, "license"))
                     writer.uint32(/* id 17, wireType 2 =*/138).string(message.license);
                 if (message.dependencies != null && message.dependencies.length)
                     for (var i = 0; i < message.dependencies.length; ++i)
@@ -19431,7 +19386,7 @@
              * @function encodeDelimited
              * @memberof api.Package
              * @static
-             * @param {api.IPackage} message Package message or plain object to encode
+             * @param {api.Package} message Package message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -19696,7 +19651,6 @@
              * Constructs a new PackageSearch.
              * @memberof api
              * @classdesc Represents a PackageSearch.
-             * @implements IPackageSearch
              * @constructor
              * @param {api.IPackageSearch=} [properties] Properties to set
              */
@@ -19724,7 +19678,7 @@
              * @returns {api.PackageSearch} PackageSearch instance
              */
             PackageSearch.create = function create(properties) {
-                return new PackageSearch(properties);
+                return PackageSearch.fromObject(properties);
             };
     
             /**
@@ -19732,14 +19686,14 @@
              * @function encode
              * @memberof api.PackageSearch
              * @static
-             * @param {api.IPackageSearch} message PackageSearch message or plain object to encode
+             * @param {api.PackageSearch} message PackageSearch message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             PackageSearch.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.query != null && message.hasOwnProperty("query"))
+                if (message.query != null && Object.hasOwnProperty.call(message, "query"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.query);
                 return writer;
             };
@@ -19749,7 +19703,7 @@
              * @function encodeDelimited
              * @memberof api.PackageSearch
              * @static
-             * @param {api.IPackageSearch} message PackageSearch message or plain object to encode
+             * @param {api.PackageSearch} message PackageSearch message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -19876,14 +19830,13 @@
              * Properties of a PackageSearchResp.
              * @memberof api
              * @interface IPackageSearchResp
-             * @property {Array.<api.IPackage>|null} [results] PackageSearchResp results
+             * @property {Array.<api.Package|api.IPackage>|null} [results] PackageSearchResp results
              */
     
             /**
              * Constructs a new PackageSearchResp.
              * @memberof api
              * @classdesc Represents a PackageSearchResp.
-             * @implements IPackageSearchResp
              * @constructor
              * @param {api.IPackageSearchResp=} [properties] Properties to set
              */
@@ -19897,7 +19850,7 @@
     
             /**
              * PackageSearchResp results.
-             * @member {Array.<api.IPackage>} results
+             * @member {Array.<api.Package>} results
              * @memberof api.PackageSearchResp
              * @instance
              */
@@ -19912,7 +19865,7 @@
              * @returns {api.PackageSearchResp} PackageSearchResp instance
              */
             PackageSearchResp.create = function create(properties) {
-                return new PackageSearchResp(properties);
+                return PackageSearchResp.fromObject(properties);
             };
     
             /**
@@ -19920,7 +19873,7 @@
              * @function encode
              * @memberof api.PackageSearchResp
              * @static
-             * @param {api.IPackageSearchResp} message PackageSearchResp message or plain object to encode
+             * @param {api.PackageSearchResp} message PackageSearchResp message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -19938,7 +19891,7 @@
              * @function encodeDelimited
              * @memberof api.PackageSearchResp
              * @static
-             * @param {api.IPackageSearchResp} message PackageSearchResp message or plain object to encode
+             * @param {api.PackageSearchResp} message PackageSearchResp message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -20084,14 +20037,13 @@
              * Properties of a PackageInfo.
              * @memberof api
              * @interface IPackageInfo
-             * @property {api.IPackage|null} [pkg] PackageInfo pkg
+             * @property {api.Package|api.IPackage|null} [pkg] PackageInfo pkg
              */
     
             /**
              * Constructs a new PackageInfo.
              * @memberof api
              * @classdesc Represents a PackageInfo.
-             * @implements IPackageInfo
              * @constructor
              * @param {api.IPackageInfo=} [properties] Properties to set
              */
@@ -20104,7 +20056,7 @@
     
             /**
              * PackageInfo pkg.
-             * @member {api.IPackage|null|undefined} pkg
+             * @member {api.Package|null|undefined} pkg
              * @memberof api.PackageInfo
              * @instance
              */
@@ -20119,7 +20071,7 @@
              * @returns {api.PackageInfo} PackageInfo instance
              */
             PackageInfo.create = function create(properties) {
-                return new PackageInfo(properties);
+                return PackageInfo.fromObject(properties);
             };
     
             /**
@@ -20127,14 +20079,14 @@
              * @function encode
              * @memberof api.PackageInfo
              * @static
-             * @param {api.IPackageInfo} message PackageInfo message or plain object to encode
+             * @param {api.PackageInfo} message PackageInfo message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             PackageInfo.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.pkg != null && message.hasOwnProperty("pkg"))
+                if (message.pkg != null && Object.hasOwnProperty.call(message, "pkg"))
                     $root.api.Package.encode(message.pkg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
@@ -20144,7 +20096,7 @@
              * @function encodeDelimited
              * @memberof api.PackageInfo
              * @static
-             * @param {api.IPackageInfo} message PackageInfo message or plain object to encode
+             * @param {api.PackageInfo} message PackageInfo message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -20276,14 +20228,13 @@
              * Properties of a PackageInfoResp.
              * @memberof api
              * @interface IPackageInfoResp
-             * @property {api.IPackage|null} [pkg] PackageInfoResp pkg
+             * @property {api.Package|api.IPackage|null} [pkg] PackageInfoResp pkg
              */
     
             /**
              * Constructs a new PackageInfoResp.
              * @memberof api
              * @classdesc Represents a PackageInfoResp.
-             * @implements IPackageInfoResp
              * @constructor
              * @param {api.IPackageInfoResp=} [properties] Properties to set
              */
@@ -20296,7 +20247,7 @@
     
             /**
              * PackageInfoResp pkg.
-             * @member {api.IPackage|null|undefined} pkg
+             * @member {api.Package|null|undefined} pkg
              * @memberof api.PackageInfoResp
              * @instance
              */
@@ -20311,7 +20262,7 @@
              * @returns {api.PackageInfoResp} PackageInfoResp instance
              */
             PackageInfoResp.create = function create(properties) {
-                return new PackageInfoResp(properties);
+                return PackageInfoResp.fromObject(properties);
             };
     
             /**
@@ -20319,14 +20270,14 @@
              * @function encode
              * @memberof api.PackageInfoResp
              * @static
-             * @param {api.IPackageInfoResp} message PackageInfoResp message or plain object to encode
+             * @param {api.PackageInfoResp} message PackageInfoResp message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             PackageInfoResp.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.pkg != null && message.hasOwnProperty("pkg"))
+                if (message.pkg != null && Object.hasOwnProperty.call(message, "pkg"))
                     $root.api.Package.encode(message.pkg, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 return writer;
             };
@@ -20336,7 +20287,7 @@
              * @function encodeDelimited
              * @memberof api.PackageInfoResp
              * @static
-             * @param {api.IPackageInfoResp} message PackageInfoResp message or plain object to encode
+             * @param {api.PackageInfoResp} message PackageInfoResp message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -20468,14 +20419,13 @@
              * Properties of a PackageAdd.
              * @memberof api
              * @interface IPackageAdd
-             * @property {Array.<api.IPackage>|null} [pkgs] PackageAdd pkgs
+             * @property {Array.<api.Package|api.IPackage>|null} [pkgs] PackageAdd pkgs
              */
     
             /**
              * Constructs a new PackageAdd.
              * @memberof api
              * @classdesc Represents a PackageAdd.
-             * @implements IPackageAdd
              * @constructor
              * @param {api.IPackageAdd=} [properties] Properties to set
              */
@@ -20489,7 +20439,7 @@
     
             /**
              * PackageAdd pkgs.
-             * @member {Array.<api.IPackage>} pkgs
+             * @member {Array.<api.Package>} pkgs
              * @memberof api.PackageAdd
              * @instance
              */
@@ -20504,7 +20454,7 @@
              * @returns {api.PackageAdd} PackageAdd instance
              */
             PackageAdd.create = function create(properties) {
-                return new PackageAdd(properties);
+                return PackageAdd.fromObject(properties);
             };
     
             /**
@@ -20512,7 +20462,7 @@
              * @function encode
              * @memberof api.PackageAdd
              * @static
-             * @param {api.IPackageAdd} message PackageAdd message or plain object to encode
+             * @param {api.PackageAdd} message PackageAdd message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -20530,7 +20480,7 @@
              * @function encodeDelimited
              * @memberof api.PackageAdd
              * @static
-             * @param {api.IPackageAdd} message PackageAdd message or plain object to encode
+             * @param {api.PackageAdd} message PackageAdd message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -20676,14 +20626,13 @@
              * Properties of a PackageRemove.
              * @memberof api
              * @interface IPackageRemove
-             * @property {Array.<api.IPackage>|null} [pkgs] PackageRemove pkgs
+             * @property {Array.<api.Package|api.IPackage>|null} [pkgs] PackageRemove pkgs
              */
     
             /**
              * Constructs a new PackageRemove.
              * @memberof api
              * @classdesc Represents a PackageRemove.
-             * @implements IPackageRemove
              * @constructor
              * @param {api.IPackageRemove=} [properties] Properties to set
              */
@@ -20697,7 +20646,7 @@
     
             /**
              * PackageRemove pkgs.
-             * @member {Array.<api.IPackage>} pkgs
+             * @member {Array.<api.Package>} pkgs
              * @memberof api.PackageRemove
              * @instance
              */
@@ -20712,7 +20661,7 @@
              * @returns {api.PackageRemove} PackageRemove instance
              */
             PackageRemove.create = function create(properties) {
-                return new PackageRemove(properties);
+                return PackageRemove.fromObject(properties);
             };
     
             /**
@@ -20720,7 +20669,7 @@
              * @function encode
              * @memberof api.PackageRemove
              * @static
-             * @param {api.IPackageRemove} message PackageRemove message or plain object to encode
+             * @param {api.PackageRemove} message PackageRemove message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -20738,7 +20687,7 @@
              * @function encodeDelimited
              * @memberof api.PackageRemove
              * @static
-             * @param {api.IPackageRemove} message PackageRemove message or plain object to encode
+             * @param {api.PackageRemove} message PackageRemove message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -20890,7 +20839,6 @@
              * Constructs a new PackageInstall.
              * @memberof api
              * @classdesc Represents a PackageInstall.
-             * @implements IPackageInstall
              * @constructor
              * @param {api.IPackageInstall=} [properties] Properties to set
              */
@@ -20910,7 +20858,7 @@
              * @returns {api.PackageInstall} PackageInstall instance
              */
             PackageInstall.create = function create(properties) {
-                return new PackageInstall(properties);
+                return PackageInstall.fromObject(properties);
             };
     
             /**
@@ -20918,7 +20866,7 @@
              * @function encode
              * @memberof api.PackageInstall
              * @static
-             * @param {api.IPackageInstall} message PackageInstall message or plain object to encode
+             * @param {api.PackageInstall} message PackageInstall message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -20933,7 +20881,7 @@
              * @function encodeDelimited
              * @memberof api.PackageInstall
              * @static
-             * @param {api.IPackageInstall} message PackageInstall message or plain object to encode
+             * @param {api.PackageInstall} message PackageInstall message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -21050,7 +20998,6 @@
              * Constructs a new PackageListSpecfile.
              * @memberof api
              * @classdesc Represents a PackageListSpecfile.
-             * @implements IPackageListSpecfile
              * @constructor
              * @param {api.IPackageListSpecfile=} [properties] Properties to set
              */
@@ -21070,7 +21017,7 @@
              * @returns {api.PackageListSpecfile} PackageListSpecfile instance
              */
             PackageListSpecfile.create = function create(properties) {
-                return new PackageListSpecfile(properties);
+                return PackageListSpecfile.fromObject(properties);
             };
     
             /**
@@ -21078,7 +21025,7 @@
              * @function encode
              * @memberof api.PackageListSpecfile
              * @static
-             * @param {api.IPackageListSpecfile} message PackageListSpecfile message or plain object to encode
+             * @param {api.PackageListSpecfile} message PackageListSpecfile message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -21093,7 +21040,7 @@
              * @function encodeDelimited
              * @memberof api.PackageListSpecfile
              * @static
-             * @param {api.IPackageListSpecfile} message PackageListSpecfile message or plain object to encode
+             * @param {api.PackageListSpecfile} message PackageListSpecfile message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -21204,14 +21151,13 @@
              * Properties of a PackageListSpecfileResp.
              * @memberof api
              * @interface IPackageListSpecfileResp
-             * @property {Array.<api.IPackage>|null} [pkgs] PackageListSpecfileResp pkgs
+             * @property {Array.<api.Package|api.IPackage>|null} [pkgs] PackageListSpecfileResp pkgs
              */
     
             /**
              * Constructs a new PackageListSpecfileResp.
              * @memberof api
              * @classdesc Represents a PackageListSpecfileResp.
-             * @implements IPackageListSpecfileResp
              * @constructor
              * @param {api.IPackageListSpecfileResp=} [properties] Properties to set
              */
@@ -21225,7 +21171,7 @@
     
             /**
              * PackageListSpecfileResp pkgs.
-             * @member {Array.<api.IPackage>} pkgs
+             * @member {Array.<api.Package>} pkgs
              * @memberof api.PackageListSpecfileResp
              * @instance
              */
@@ -21240,7 +21186,7 @@
              * @returns {api.PackageListSpecfileResp} PackageListSpecfileResp instance
              */
             PackageListSpecfileResp.create = function create(properties) {
-                return new PackageListSpecfileResp(properties);
+                return PackageListSpecfileResp.fromObject(properties);
             };
     
             /**
@@ -21248,7 +21194,7 @@
              * @function encode
              * @memberof api.PackageListSpecfileResp
              * @static
-             * @param {api.IPackageListSpecfileResp} message PackageListSpecfileResp message or plain object to encode
+             * @param {api.PackageListSpecfileResp} message PackageListSpecfileResp message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -21266,7 +21212,7 @@
              * @function encodeDelimited
              * @memberof api.PackageListSpecfileResp
              * @static
-             * @param {api.IPackageListSpecfileResp} message PackageListSpecfileResp message or plain object to encode
+             * @param {api.PackageListSpecfileResp} message PackageListSpecfileResp message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -21418,7 +21364,6 @@
              * Constructs a new PackageCacheSave.
              * @memberof api
              * @classdesc Represents a PackageCacheSave.
-             * @implements IPackageCacheSave
              * @constructor
              * @param {api.IPackageCacheSave=} [properties] Properties to set
              */
@@ -21438,7 +21383,7 @@
              * @returns {api.PackageCacheSave} PackageCacheSave instance
              */
             PackageCacheSave.create = function create(properties) {
-                return new PackageCacheSave(properties);
+                return PackageCacheSave.fromObject(properties);
             };
     
             /**
@@ -21446,7 +21391,7 @@
              * @function encode
              * @memberof api.PackageCacheSave
              * @static
-             * @param {api.IPackageCacheSave} message PackageCacheSave message or plain object to encode
+             * @param {api.PackageCacheSave} message PackageCacheSave message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -21461,7 +21406,7 @@
              * @function encodeDelimited
              * @memberof api.PackageCacheSave
              * @static
-             * @param {api.IPackageCacheSave} message PackageCacheSave message or plain object to encode
+             * @param {api.PackageCacheSave} message PackageCacheSave message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -21572,14 +21517,13 @@
              * Properties of a ChatScrollback.
              * @memberof api
              * @interface IChatScrollback
-             * @property {Array.<api.IChatMessage>|null} [scrollback] ChatScrollback scrollback
+             * @property {Array.<api.ChatMessage|api.IChatMessage>|null} [scrollback] ChatScrollback scrollback
              */
     
             /**
              * Constructs a new ChatScrollback.
              * @memberof api
              * @classdesc Represents a ChatScrollback.
-             * @implements IChatScrollback
              * @constructor
              * @param {api.IChatScrollback=} [properties] Properties to set
              */
@@ -21593,7 +21537,7 @@
     
             /**
              * ChatScrollback scrollback.
-             * @member {Array.<api.IChatMessage>} scrollback
+             * @member {Array.<api.ChatMessage>} scrollback
              * @memberof api.ChatScrollback
              * @instance
              */
@@ -21608,7 +21552,7 @@
              * @returns {api.ChatScrollback} ChatScrollback instance
              */
             ChatScrollback.create = function create(properties) {
-                return new ChatScrollback(properties);
+                return ChatScrollback.fromObject(properties);
             };
     
             /**
@@ -21616,7 +21560,7 @@
              * @function encode
              * @memberof api.ChatScrollback
              * @static
-             * @param {api.IChatScrollback} message ChatScrollback message or plain object to encode
+             * @param {api.ChatScrollback} message ChatScrollback message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -21634,7 +21578,7 @@
              * @function encodeDelimited
              * @memberof api.ChatScrollback
              * @static
-             * @param {api.IChatScrollback} message ChatScrollback message or plain object to encode
+             * @param {api.ChatScrollback} message ChatScrollback message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -21787,7 +21731,6 @@
              * Constructs a new Metrics.
              * @memberof api
              * @classdesc Represents a Metrics.
-             * @implements IMetrics
              * @constructor
              * @param {api.IMetrics=} [properties] Properties to set
              */
@@ -21816,7 +21759,7 @@
              * @returns {api.Metrics} Metrics instance
              */
             Metrics.create = function create(properties) {
-                return new Metrics(properties);
+                return Metrics.fromObject(properties);
             };
     
             /**
@@ -21824,7 +21767,7 @@
              * @function encode
              * @memberof api.Metrics
              * @static
-             * @param {api.IMetrics} message Metrics message or plain object to encode
+             * @param {api.Metrics} message Metrics message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -21842,7 +21785,7 @@
              * @function encodeDelimited
              * @memberof api.Metrics
              * @static
-             * @param {api.IMetrics} message Metrics message or plain object to encode
+             * @param {api.Metrics} message Metrics message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -21987,18 +21930,17 @@
              * @memberof api
              * @interface IPprofRequest
              * @property {string|null} [id] PprofRequest id
-             * @property {api.IPprofCpuProfileRequest|null} [pprofCpuProfileRequest] PprofRequest pprofCpuProfileRequest
-             * @property {api.IPprofHeapProfileRequest|null} [pprofHeapProfileRequest] PprofRequest pprofHeapProfileRequest
-             * @property {api.IPprofAllocsProfileRequest|null} [pprofAllocsProfileRequest] PprofRequest pprofAllocsProfileRequest
-             * @property {api.IPprofBlockProfileRequest|null} [pprofBlockProfileRequest] PprofRequest pprofBlockProfileRequest
-             * @property {api.IPprofMutexProfileRequest|null} [pprofMutexProfileRequest] PprofRequest pprofMutexProfileRequest
+             * @property {api.PprofCpuProfileRequest|api.IPprofCpuProfileRequest|null} [pprofCpuProfileRequest] PprofRequest pprofCpuProfileRequest
+             * @property {api.PprofHeapProfileRequest|api.IPprofHeapProfileRequest|null} [pprofHeapProfileRequest] PprofRequest pprofHeapProfileRequest
+             * @property {api.PprofAllocsProfileRequest|api.IPprofAllocsProfileRequest|null} [pprofAllocsProfileRequest] PprofRequest pprofAllocsProfileRequest
+             * @property {api.PprofBlockProfileRequest|api.IPprofBlockProfileRequest|null} [pprofBlockProfileRequest] PprofRequest pprofBlockProfileRequest
+             * @property {api.PprofMutexProfileRequest|api.IPprofMutexProfileRequest|null} [pprofMutexProfileRequest] PprofRequest pprofMutexProfileRequest
              */
     
             /**
              * Constructs a new PprofRequest.
              * @memberof api
              * @classdesc Represents a PprofRequest.
-             * @implements IPprofRequest
              * @constructor
              * @param {api.IPprofRequest=} [properties] Properties to set
              */
@@ -22019,7 +21961,7 @@
     
             /**
              * PprofRequest pprofCpuProfileRequest.
-             * @member {api.IPprofCpuProfileRequest|null|undefined} pprofCpuProfileRequest
+             * @member {api.PprofCpuProfileRequest|null|undefined} pprofCpuProfileRequest
              * @memberof api.PprofRequest
              * @instance
              */
@@ -22027,7 +21969,7 @@
     
             /**
              * PprofRequest pprofHeapProfileRequest.
-             * @member {api.IPprofHeapProfileRequest|null|undefined} pprofHeapProfileRequest
+             * @member {api.PprofHeapProfileRequest|null|undefined} pprofHeapProfileRequest
              * @memberof api.PprofRequest
              * @instance
              */
@@ -22035,7 +21977,7 @@
     
             /**
              * PprofRequest pprofAllocsProfileRequest.
-             * @member {api.IPprofAllocsProfileRequest|null|undefined} pprofAllocsProfileRequest
+             * @member {api.PprofAllocsProfileRequest|null|undefined} pprofAllocsProfileRequest
              * @memberof api.PprofRequest
              * @instance
              */
@@ -22043,7 +21985,7 @@
     
             /**
              * PprofRequest pprofBlockProfileRequest.
-             * @member {api.IPprofBlockProfileRequest|null|undefined} pprofBlockProfileRequest
+             * @member {api.PprofBlockProfileRequest|null|undefined} pprofBlockProfileRequest
              * @memberof api.PprofRequest
              * @instance
              */
@@ -22051,7 +21993,7 @@
     
             /**
              * PprofRequest pprofMutexProfileRequest.
-             * @member {api.IPprofMutexProfileRequest|null|undefined} pprofMutexProfileRequest
+             * @member {api.PprofMutexProfileRequest|null|undefined} pprofMutexProfileRequest
              * @memberof api.PprofRequest
              * @instance
              */
@@ -22080,7 +22022,7 @@
              * @returns {api.PprofRequest} PprofRequest instance
              */
             PprofRequest.create = function create(properties) {
-                return new PprofRequest(properties);
+                return PprofRequest.fromObject(properties);
             };
     
             /**
@@ -22088,24 +22030,24 @@
              * @function encode
              * @memberof api.PprofRequest
              * @static
-             * @param {api.IPprofRequest} message PprofRequest message or plain object to encode
+             * @param {api.PprofRequest} message PprofRequest message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             PprofRequest.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.id != null && message.hasOwnProperty("id"))
+                if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
-                if (message.pprofCpuProfileRequest != null && message.hasOwnProperty("pprofCpuProfileRequest"))
+                if (message.pprofCpuProfileRequest != null && Object.hasOwnProperty.call(message, "pprofCpuProfileRequest"))
                     $root.api.PprofCpuProfileRequest.encode(message.pprofCpuProfileRequest, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
-                if (message.pprofHeapProfileRequest != null && message.hasOwnProperty("pprofHeapProfileRequest"))
+                if (message.pprofHeapProfileRequest != null && Object.hasOwnProperty.call(message, "pprofHeapProfileRequest"))
                     $root.api.PprofHeapProfileRequest.encode(message.pprofHeapProfileRequest, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
-                if (message.pprofAllocsProfileRequest != null && message.hasOwnProperty("pprofAllocsProfileRequest"))
+                if (message.pprofAllocsProfileRequest != null && Object.hasOwnProperty.call(message, "pprofAllocsProfileRequest"))
                     $root.api.PprofAllocsProfileRequest.encode(message.pprofAllocsProfileRequest, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-                if (message.pprofBlockProfileRequest != null && message.hasOwnProperty("pprofBlockProfileRequest"))
+                if (message.pprofBlockProfileRequest != null && Object.hasOwnProperty.call(message, "pprofBlockProfileRequest"))
                     $root.api.PprofBlockProfileRequest.encode(message.pprofBlockProfileRequest, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
-                if (message.pprofMutexProfileRequest != null && message.hasOwnProperty("pprofMutexProfileRequest"))
+                if (message.pprofMutexProfileRequest != null && Object.hasOwnProperty.call(message, "pprofMutexProfileRequest"))
                     $root.api.PprofMutexProfileRequest.encode(message.pprofMutexProfileRequest, writer.uint32(/* id 6, wireType 2 =*/50).fork()).ldelim();
                 return writer;
             };
@@ -22115,7 +22057,7 @@
              * @function encodeDelimited
              * @memberof api.PprofRequest
              * @static
-             * @param {api.IPprofRequest} message PprofRequest message or plain object to encode
+             * @param {api.PprofRequest} message PprofRequest message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -22363,7 +22305,6 @@
              * Constructs a new PprofAllocsProfileRequest.
              * @memberof api
              * @classdesc Represents a PprofAllocsProfileRequest.
-             * @implements IPprofAllocsProfileRequest
              * @constructor
              * @param {api.IPprofAllocsProfileRequest=} [properties] Properties to set
              */
@@ -22391,7 +22332,7 @@
              * @returns {api.PprofAllocsProfileRequest} PprofAllocsProfileRequest instance
              */
             PprofAllocsProfileRequest.create = function create(properties) {
-                return new PprofAllocsProfileRequest(properties);
+                return PprofAllocsProfileRequest.fromObject(properties);
             };
     
             /**
@@ -22399,14 +22340,14 @@
              * @function encode
              * @memberof api.PprofAllocsProfileRequest
              * @static
-             * @param {api.IPprofAllocsProfileRequest} message PprofAllocsProfileRequest message or plain object to encode
+             * @param {api.PprofAllocsProfileRequest} message PprofAllocsProfileRequest message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             PprofAllocsProfileRequest.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.debug != null && message.hasOwnProperty("debug"))
+                if (message.debug != null && Object.hasOwnProperty.call(message, "debug"))
                     writer.uint32(/* id 1, wireType 0 =*/8).bool(message.debug);
                 return writer;
             };
@@ -22416,7 +22357,7 @@
              * @function encodeDelimited
              * @memberof api.PprofAllocsProfileRequest
              * @static
-             * @param {api.IPprofAllocsProfileRequest} message PprofAllocsProfileRequest message or plain object to encode
+             * @param {api.PprofAllocsProfileRequest} message PprofAllocsProfileRequest message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -22550,7 +22491,6 @@
              * Constructs a new PprofBlockProfileRequest.
              * @memberof api
              * @classdesc Represents a PprofBlockProfileRequest.
-             * @implements IPprofBlockProfileRequest
              * @constructor
              * @param {api.IPprofBlockProfileRequest=} [properties] Properties to set
              */
@@ -22578,7 +22518,7 @@
              * @returns {api.PprofBlockProfileRequest} PprofBlockProfileRequest instance
              */
             PprofBlockProfileRequest.create = function create(properties) {
-                return new PprofBlockProfileRequest(properties);
+                return PprofBlockProfileRequest.fromObject(properties);
             };
     
             /**
@@ -22586,14 +22526,14 @@
              * @function encode
              * @memberof api.PprofBlockProfileRequest
              * @static
-             * @param {api.IPprofBlockProfileRequest} message PprofBlockProfileRequest message or plain object to encode
+             * @param {api.PprofBlockProfileRequest} message PprofBlockProfileRequest message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             PprofBlockProfileRequest.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.debug != null && message.hasOwnProperty("debug"))
+                if (message.debug != null && Object.hasOwnProperty.call(message, "debug"))
                     writer.uint32(/* id 1, wireType 0 =*/8).bool(message.debug);
                 return writer;
             };
@@ -22603,7 +22543,7 @@
              * @function encodeDelimited
              * @memberof api.PprofBlockProfileRequest
              * @static
-             * @param {api.IPprofBlockProfileRequest} message PprofBlockProfileRequest message or plain object to encode
+             * @param {api.PprofBlockProfileRequest} message PprofBlockProfileRequest message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -22730,14 +22670,13 @@
              * Properties of a PprofCpuProfileRequest.
              * @memberof api
              * @interface IPprofCpuProfileRequest
-             * @property {number|Long|null} [seconds] PprofCpuProfileRequest seconds
+             * @property {number|null} [seconds] PprofCpuProfileRequest seconds
              */
     
             /**
              * Constructs a new PprofCpuProfileRequest.
              * @memberof api
              * @classdesc Represents a PprofCpuProfileRequest.
-             * @implements IPprofCpuProfileRequest
              * @constructor
              * @param {api.IPprofCpuProfileRequest=} [properties] Properties to set
              */
@@ -22750,7 +22689,7 @@
     
             /**
              * PprofCpuProfileRequest seconds.
-             * @member {number|Long} seconds
+             * @member {number} seconds
              * @memberof api.PprofCpuProfileRequest
              * @instance
              */
@@ -22765,7 +22704,7 @@
              * @returns {api.PprofCpuProfileRequest} PprofCpuProfileRequest instance
              */
             PprofCpuProfileRequest.create = function create(properties) {
-                return new PprofCpuProfileRequest(properties);
+                return PprofCpuProfileRequest.fromObject(properties);
             };
     
             /**
@@ -22773,14 +22712,14 @@
              * @function encode
              * @memberof api.PprofCpuProfileRequest
              * @static
-             * @param {api.IPprofCpuProfileRequest} message PprofCpuProfileRequest message or plain object to encode
+             * @param {api.PprofCpuProfileRequest} message PprofCpuProfileRequest message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             PprofCpuProfileRequest.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.seconds != null && message.hasOwnProperty("seconds"))
+                if (message.seconds != null && Object.hasOwnProperty.call(message, "seconds"))
                     writer.uint32(/* id 1, wireType 0 =*/8).int64(message.seconds);
                 return writer;
             };
@@ -22790,7 +22729,7 @@
              * @function encodeDelimited
              * @memberof api.PprofCpuProfileRequest
              * @static
-             * @param {api.IPprofCpuProfileRequest} message PprofCpuProfileRequest message or plain object to encode
+             * @param {api.PprofCpuProfileRequest} message PprofCpuProfileRequest message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -22939,7 +22878,6 @@
              * Constructs a new PprofHeapProfileRequest.
              * @memberof api
              * @classdesc Represents a PprofHeapProfileRequest.
-             * @implements IPprofHeapProfileRequest
              * @constructor
              * @param {api.IPprofHeapProfileRequest=} [properties] Properties to set
              */
@@ -22975,7 +22913,7 @@
              * @returns {api.PprofHeapProfileRequest} PprofHeapProfileRequest instance
              */
             PprofHeapProfileRequest.create = function create(properties) {
-                return new PprofHeapProfileRequest(properties);
+                return PprofHeapProfileRequest.fromObject(properties);
             };
     
             /**
@@ -22983,16 +22921,16 @@
              * @function encode
              * @memberof api.PprofHeapProfileRequest
              * @static
-             * @param {api.IPprofHeapProfileRequest} message PprofHeapProfileRequest message or plain object to encode
+             * @param {api.PprofHeapProfileRequest} message PprofHeapProfileRequest message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             PprofHeapProfileRequest.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.gc != null && message.hasOwnProperty("gc"))
+                if (message.gc != null && Object.hasOwnProperty.call(message, "gc"))
                     writer.uint32(/* id 1, wireType 0 =*/8).bool(message.gc);
-                if (message.debug != null && message.hasOwnProperty("debug"))
+                if (message.debug != null && Object.hasOwnProperty.call(message, "debug"))
                     writer.uint32(/* id 2, wireType 0 =*/16).bool(message.debug);
                 return writer;
             };
@@ -23002,7 +22940,7 @@
              * @function encodeDelimited
              * @memberof api.PprofHeapProfileRequest
              * @static
-             * @param {api.IPprofHeapProfileRequest} message PprofHeapProfileRequest message or plain object to encode
+             * @param {api.PprofHeapProfileRequest} message PprofHeapProfileRequest message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -23148,7 +23086,6 @@
              * Constructs a new PprofMutexProfileRequest.
              * @memberof api
              * @classdesc Represents a PprofMutexProfileRequest.
-             * @implements IPprofMutexProfileRequest
              * @constructor
              * @param {api.IPprofMutexProfileRequest=} [properties] Properties to set
              */
@@ -23176,7 +23113,7 @@
              * @returns {api.PprofMutexProfileRequest} PprofMutexProfileRequest instance
              */
             PprofMutexProfileRequest.create = function create(properties) {
-                return new PprofMutexProfileRequest(properties);
+                return PprofMutexProfileRequest.fromObject(properties);
             };
     
             /**
@@ -23184,14 +23121,14 @@
              * @function encode
              * @memberof api.PprofMutexProfileRequest
              * @static
-             * @param {api.IPprofMutexProfileRequest} message PprofMutexProfileRequest message or plain object to encode
+             * @param {api.PprofMutexProfileRequest} message PprofMutexProfileRequest message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             PprofMutexProfileRequest.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.debug != null && message.hasOwnProperty("debug"))
+                if (message.debug != null && Object.hasOwnProperty.call(message, "debug"))
                     writer.uint32(/* id 1, wireType 0 =*/8).bool(message.debug);
                 return writer;
             };
@@ -23201,7 +23138,7 @@
              * @function encodeDelimited
              * @memberof api.PprofMutexProfileRequest
              * @static
-             * @param {api.IPprofMutexProfileRequest} message PprofMutexProfileRequest message or plain object to encode
+             * @param {api.PprofMutexProfileRequest} message PprofMutexProfileRequest message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -23336,7 +23273,6 @@
              * Constructs a new PprofResponse.
              * @memberof api
              * @classdesc Represents a PprofResponse.
-             * @implements IPprofResponse
              * @constructor
              * @param {api.IPprofResponse=} [properties] Properties to set
              */
@@ -23372,7 +23308,7 @@
              * @returns {api.PprofResponse} PprofResponse instance
              */
             PprofResponse.create = function create(properties) {
-                return new PprofResponse(properties);
+                return PprofResponse.fromObject(properties);
             };
     
             /**
@@ -23380,16 +23316,16 @@
              * @function encode
              * @memberof api.PprofResponse
              * @static
-             * @param {api.IPprofResponse} message PprofResponse message or plain object to encode
+             * @param {api.PprofResponse} message PprofResponse message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             PprofResponse.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.id != null && message.hasOwnProperty("id"))
+                if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                     writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
-                if (message.profile != null && message.hasOwnProperty("profile"))
+                if (message.profile != null && Object.hasOwnProperty.call(message, "profile"))
                     writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.profile);
                 return writer;
             };
@@ -23399,7 +23335,7 @@
              * @function encodeDelimited
              * @memberof api.PprofResponse
              * @static
-             * @param {api.IPprofResponse} message PprofResponse message or plain object to encode
+             * @param {api.PprofResponse} message PprofResponse message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -23554,7 +23490,6 @@
              * Constructs a new PTYConfig.
              * @memberof api
              * @classdesc Represents a PTYConfig.
-             * @implements IPTYConfig
              * @constructor
              * @param {api.IPTYConfig=} [properties] Properties to set
              */
@@ -23582,7 +23517,7 @@
              * @returns {api.PTYConfig} PTYConfig instance
              */
             PTYConfig.create = function create(properties) {
-                return new PTYConfig(properties);
+                return PTYConfig.fromObject(properties);
             };
     
             /**
@@ -23590,14 +23525,14 @@
              * @function encode
              * @memberof api.PTYConfig
              * @static
-             * @param {api.IPTYConfig} message PTYConfig message or plain object to encode
+             * @param {api.PTYConfig} message PTYConfig message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             PTYConfig.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                if (message.pipeMode != null && message.hasOwnProperty("pipeMode"))
+                if (message.pipeMode != null && Object.hasOwnProperty.call(message, "pipeMode"))
                     writer.uint32(/* id 1, wireType 0 =*/8).bool(message.pipeMode);
                 return writer;
             };
@@ -23607,7 +23542,7 @@
              * @function encodeDelimited
              * @memberof api.PTYConfig
              * @static
-             * @param {api.IPTYConfig} message PTYConfig message or plain object to encode
+             * @param {api.PTYConfig} message PTYConfig message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -23755,7 +23690,7 @@
                  * Properties of a Timestamp.
                  * @memberof google.protobuf
                  * @interface ITimestamp
-                 * @property {number|Long|null} [seconds] Timestamp seconds
+                 * @property {number|null} [seconds] Timestamp seconds
                  * @property {number|null} [nanos] Timestamp nanos
                  */
     
@@ -23763,7 +23698,6 @@
                  * Constructs a new Timestamp.
                  * @memberof google.protobuf
                  * @classdesc Represents a Timestamp.
-                 * @implements ITimestamp
                  * @constructor
                  * @param {google.protobuf.ITimestamp=} [properties] Properties to set
                  */
@@ -23776,7 +23710,7 @@
     
                 /**
                  * Timestamp seconds.
-                 * @member {number|Long} seconds
+                 * @member {number} seconds
                  * @memberof google.protobuf.Timestamp
                  * @instance
                  */
@@ -23799,7 +23733,7 @@
                  * @returns {google.protobuf.Timestamp} Timestamp instance
                  */
                 Timestamp.create = function create(properties) {
-                    return new Timestamp(properties);
+                    return Timestamp.fromObject(properties);
                 };
     
                 /**
@@ -23807,16 +23741,16 @@
                  * @function encode
                  * @memberof google.protobuf.Timestamp
                  * @static
-                 * @param {google.protobuf.ITimestamp} message Timestamp message or plain object to encode
+                 * @param {google.protobuf.Timestamp} message Timestamp message or plain object to encode
                  * @param {$protobuf.Writer} [writer] Writer to encode to
                  * @returns {$protobuf.Writer} Writer
                  */
                 Timestamp.encode = function encode(message, writer) {
                     if (!writer)
                         writer = $Writer.create();
-                    if (message.seconds != null && message.hasOwnProperty("seconds"))
+                    if (message.seconds != null && Object.hasOwnProperty.call(message, "seconds"))
                         writer.uint32(/* id 1, wireType 0 =*/8).int64(message.seconds);
-                    if (message.nanos != null && message.hasOwnProperty("nanos"))
+                    if (message.nanos != null && Object.hasOwnProperty.call(message, "nanos"))
                         writer.uint32(/* id 2, wireType 0 =*/16).int32(message.nanos);
                     return writer;
                 };
@@ -23826,7 +23760,7 @@
                  * @function encodeDelimited
                  * @memberof google.protobuf.Timestamp
                  * @static
-                 * @param {google.protobuf.ITimestamp} message Timestamp message or plain object to encode
+                 * @param {google.protobuf.Timestamp} message Timestamp message or plain object to encode
                  * @param {$protobuf.Writer} [writer] Writer to encode to
                  * @returns {$protobuf.Writer} Writer
                  */

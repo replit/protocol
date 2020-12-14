@@ -14,7 +14,7 @@ build: build-go build-js
 publish: publish-go publish-js
 
 clean-js:
-	rm -f js/index.d.ts js/index.js
+	rm -f js/index.d.ts js/index.js js/export.flow.js
 build-js: clean-js
 	cd js && npm install && npm run prepublishOnly
 publish-js:
