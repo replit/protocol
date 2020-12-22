@@ -58,9 +58,11 @@ declare var npm$namespace$api: {|
   OK: typeof api$OK,
   Move: typeof api$Move,
   Files: typeof api$Files,
+  StatResult: typeof api$StatResult,
   Clear: typeof api$Clear,
   Toast: typeof api$Toast,
   Redirect: typeof api$Redirect,
+  IncRef: typeof api$IncRef,
   RunMain: typeof api$RunMain,
   PortOpen: typeof api$PortOpen,
   OTFetchRequest: typeof api$OTFetchRequest,
@@ -161,6 +163,11 @@ declare type api$ICommand = {|
   redirect?: api$Redirect | api$IRedirect | null,
 
   /**
+   * Command incRef
+   */
+  incRef?: api$IncRef | api$IIncRef | null,
+
+  /**
    * Command runMain
    */
   runMain?: api$RunMain | api$IRunMain | null,
@@ -249,6 +256,16 @@ declare type api$ICommand = {|
    * Command mkdir
    */
   mkdir?: api$File | api$IFile | null,
+
+  /**
+   * Command stat
+   */
+  stat?: api$File | api$IFile | null,
+
+  /**
+   * Command statRes
+   */
+  statRes?: api$StatResult | api$IStatResult | null,
 
   /**
    * Command read
@@ -698,6 +715,11 @@ declare class api$Command {
   redirect?: api$Redirect | null;
 
   /**
+   * Command incRef.
+   */
+  incRef?: api$IncRef | null;
+
+  /**
    * Command runMain.
    */
   runMain?: api$RunMain | null;
@@ -786,6 +808,16 @@ declare class api$Command {
    * Command mkdir.
    */
   mkdir?: api$File | null;
+
+  /**
+   * Command stat.
+   */
+  stat?: api$File | null;
+
+  /**
+   * Command statRes.
+   */
+  statRes?: api$StatResult | null;
 
   /**
    * Command read.
@@ -1179,6 +1211,7 @@ declare class api$Command {
     | "portOpen"
     | "toast"
     | "redirect"
+    | "incRef"
     | "runMain"
     | "clear"
     | "eval"
@@ -1197,6 +1230,8 @@ declare class api$Command {
     | "move"
     | "tryRemove"
     | "mkdir"
+    | "stat"
+    | "statRes"
     | "read"
     | "readdir"
     | "files"
@@ -2900,9 +2935,9 @@ declare type api$IOTLinkFile = {|
   highConsistency?: boolean | null,
 
   /**
-   * OTLinkFile useModTime
+   * OTLinkFile OBSOLETEUseModTime
    */
-  useModTime?: boolean | null,
+  OBSOLETEUseModTime?: boolean | null,
 |};
 
 /**
@@ -2926,9 +2961,9 @@ declare class api$OTLinkFile {
   highConsistency: boolean;
 
   /**
-   * OTLinkFile useModTime.
+   * OTLinkFile OBSOLETEUseModTime.
    */
-  useModTime: boolean;
+  OBSOLETEUseModTime: boolean;
 
   /**
    * Creates a new OTLinkFile instance using the specified properties.
@@ -7416,6 +7451,162 @@ declare class api$Files {
 }
 
 /**
+ * Properties of a StatResult.
+ */
+declare type api$IStatResult = {|
+  /**
+   * StatResult exists
+   */
+  exists?: boolean | null,
+
+  /**
+   * StatResult type
+   */
+  type?: $Values<typeof api$File$Type> | null,
+
+  /**
+   * StatResult size
+   */
+  size?: number | null,
+
+  /**
+   * StatResult fileMode
+   */
+  fileMode?: string | null,
+
+  /**
+   * StatResult modTime
+   */
+  modTime?: number | null,
+|};
+
+/**
+ * Represents a StatResult.
+ */
+declare class api$StatResult {
+  /**
+   * Constructs a new StatResult.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: api$IStatResult): this;
+
+  /**
+   * StatResult exists.
+   */
+  exists: boolean;
+
+  /**
+   * StatResult type.
+   */
+  type: $Values<typeof api$File$Type>;
+
+  /**
+   * StatResult size.
+   */
+  size: number;
+
+  /**
+   * StatResult fileMode.
+   */
+  fileMode: string;
+
+  /**
+   * StatResult modTime.
+   */
+  modTime: number;
+
+  /**
+   * Creates a new StatResult instance using the specified properties.
+   * @param [properties] Properties to set
+   * @returns StatResult instance
+   */
+  static create(properties?: api$IStatResult): api$StatResult;
+
+  /**
+   * Encodes the specified StatResult message. Does not implicitly {@link api.StatResult.verify|verify} messages.
+   * @param message StatResult message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encode(
+    message: api$StatResult,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Encodes the specified StatResult message, length delimited. Does not implicitly {@link api.StatResult.verify|verify} messages.
+   * @param message StatResult message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encodeDelimited(
+    message: api$StatResult,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Decodes a StatResult message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns StatResult
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): api$StatResult;
+
+  /**
+   * Decodes a StatResult message from the specified reader or buffer, length delimited.
+   * @param reader Reader or buffer to decode from
+   * @returns StatResult
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decodeDelimited(reader: $protobuf.Reader | Uint8Array): api$StatResult;
+
+  /**
+   * Verifies a StatResult message.
+   * @param message Plain object to verify
+   * @returns `null` if valid, otherwise the reason why it is not
+   */
+  static verify(message: {
+    [k: string]: any,
+  }): string | null;
+
+  /**
+   * Creates a StatResult message from a plain object. Also converts values to their respective internal types.
+   * @param object Plain object
+   * @returns StatResult
+   */
+  static fromObject(object: {
+    [k: string]: any,
+  }): api$StatResult;
+
+  /**
+   * Creates a plain object from a StatResult message. Also converts values to other types if specified.
+   * @param message StatResult
+   * @param [options] Conversion options
+   * @returns Plain object
+   */
+  static toObject(
+    message: api$StatResult,
+    options?: $protobuf.IConversionOptions
+  ): {
+    [k: string]: any,
+  };
+
+  /**
+   * Converts this StatResult to JSON.
+   * @returns JSON object
+   */
+  toJSON(): {
+    [k: string]: any,
+  };
+}
+
+/**
  * Properties of a File.
  */
 declare type api$IFile = {|
@@ -7892,6 +8083,112 @@ declare class api$Redirect {
 
   /**
    * Converts this Redirect to JSON.
+   * @returns JSON object
+   */
+  toJSON(): {
+    [k: string]: any,
+  };
+}
+
+/**
+ * Properties of an IncRef.
+ */
+declare type api$IIncRef = {||};
+
+/**
+ * Represents an IncRef.
+ */
+declare class api$IncRef {
+  /**
+   * Constructs a new IncRef.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: api$IIncRef): this;
+
+  /**
+   * Creates a new IncRef instance using the specified properties.
+   * @param [properties] Properties to set
+   * @returns IncRef instance
+   */
+  static create(properties?: api$IIncRef): api$IncRef;
+
+  /**
+   * Encodes the specified IncRef message. Does not implicitly {@link api.IncRef.verify|verify} messages.
+   * @param message IncRef message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encode(
+    message: api$IncRef,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Encodes the specified IncRef message, length delimited. Does not implicitly {@link api.IncRef.verify|verify} messages.
+   * @param message IncRef message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encodeDelimited(
+    message: api$IncRef,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Decodes an IncRef message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns IncRef
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): api$IncRef;
+
+  /**
+   * Decodes an IncRef message from the specified reader or buffer, length delimited.
+   * @param reader Reader or buffer to decode from
+   * @returns IncRef
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decodeDelimited(reader: $protobuf.Reader | Uint8Array): api$IncRef;
+
+  /**
+   * Verifies an IncRef message.
+   * @param message Plain object to verify
+   * @returns `null` if valid, otherwise the reason why it is not
+   */
+  static verify(message: {
+    [k: string]: any,
+  }): string | null;
+
+  /**
+   * Creates an IncRef message from a plain object. Also converts values to their respective internal types.
+   * @param object Plain object
+   * @returns IncRef
+   */
+  static fromObject(object: {
+    [k: string]: any,
+  }): api$IncRef;
+
+  /**
+   * Creates a plain object from an IncRef message. Also converts values to other types if specified.
+   * @param message IncRef
+   * @param [options] Conversion options
+   * @returns Plain object
+   */
+  static toObject(
+    message: api$IncRef,
+    options?: $protobuf.IConversionOptions
+  ): {
+    [k: string]: any,
+  };
+
+  /**
+   * Converts this IncRef to JSON.
    * @returns JSON object
    */
   toJSON(): {

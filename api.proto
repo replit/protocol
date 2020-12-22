@@ -34,6 +34,8 @@ message Command {
 
     Redirect redirect = 12;
 
+    IncRef incRef = 13;
+
     // service specific messages
 
     RunMain runMain = 16;
@@ -59,6 +61,8 @@ message Command {
     Move move = 34;
     File tryRemove = 36;
     File mkdir = 39;
+    File stat = 368;
+    StatResult statRes = 369;
 
     File read = 35;
     File readdir = 37;
@@ -251,7 +255,9 @@ message Flush {}
 message OTLinkFile {
   File file = 1;
   bool highConsistency = 2;
-  bool useModTime = 3;
+  // The service will now always consider modtime of the file when
+  // comparing history with disk content.
+  bool OBSOLETE_useModTime = 3 [deprecated = true];
 }
 
 message Auth {
@@ -411,6 +417,14 @@ message Move {
 
 message Files { repeated File files = 1; }
 
+message StatResult {
+  bool exists = 1;
+  File.Type type = 2;
+  int64 size = 3;
+  string fileMode = 4;
+  int64 modTime = 5;
+}
+
 message File {
   string path = 1;
   enum Type {
@@ -433,6 +447,8 @@ message Redirect {
   // a repl needs to start from scratch.
   string url = 1;
 }
+
+message IncRef {}
 
 message RunMain {}
 

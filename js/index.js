@@ -41,6 +41,7 @@
              * @property {api.PortOpen|api.IPortOpen|null} [portOpen] Command portOpen
              * @property {api.Toast|api.IToast|null} [toast] Command toast
              * @property {api.Redirect|api.IRedirect|null} [redirect] Command redirect
+             * @property {api.IncRef|api.IIncRef|null} [incRef] Command incRef
              * @property {api.RunMain|api.IRunMain|null} [runMain] Command runMain
              * @property {api.Clear|api.IClear|null} [clear] Command clear
              * @property {string|null} ["eval"] Command eval
@@ -59,6 +60,8 @@
              * @property {api.Move|api.IMove|null} [move] Command move
              * @property {api.File|api.IFile|null} [tryRemove] Command tryRemove
              * @property {api.File|api.IFile|null} [mkdir] Command mkdir
+             * @property {api.File|api.IFile|null} [stat] Command stat
+             * @property {api.StatResult|api.IStatResult|null} [statRes] Command statRes
              * @property {api.File|api.IFile|null} [read] Command read
              * @property {api.File|api.IFile|null} [readdir] Command readdir
              * @property {api.Files|api.IFiles|null} [files] Command files
@@ -232,6 +235,14 @@
             Command.prototype.redirect = null;
     
             /**
+             * Command incRef.
+             * @member {api.IncRef|null|undefined} incRef
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.incRef = null;
+    
+            /**
              * Command runMain.
              * @member {api.RunMain|null|undefined} runMain
              * @memberof api.Command
@@ -374,6 +385,22 @@
              * @instance
              */
             Command.prototype.mkdir = null;
+    
+            /**
+             * Command stat.
+             * @member {api.File|null|undefined} stat
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.stat = null;
+    
+            /**
+             * Command statRes.
+             * @member {api.StatResult|null|undefined} statRes
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.statRes = null;
     
             /**
              * Command read.
@@ -988,12 +1015,12 @@
     
             /**
              * Command body.
-             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig"|undefined} body
+             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"incRef"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig"|undefined} body
              * @memberof api.Command
              * @instance
              */
             Object.defineProperty(Command.prototype, "body", {
-                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "redirect", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "otFetchRequest", "otFetchResponse", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock", "hasCap", "pid1Config", "metrics", "bootStatus", "readMeta", "writeMeta", "appendMeta", "audio", "pprofRequest", "pprofResponse", "audio2", "PTYConfig"]),
+                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "redirect", "incRef", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "stat", "statRes", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "otFetchRequest", "otFetchResponse", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock", "hasCap", "pid1Config", "metrics", "bootStatus", "readMeta", "writeMeta", "appendMeta", "audio", "pprofRequest", "pprofResponse", "audio2", "PTYConfig"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
     
@@ -1041,6 +1068,8 @@
                     $root.api.Toast.encode(message.toast, writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
                 if (message.redirect != null && Object.hasOwnProperty.call(message, "redirect"))
                     $root.api.Redirect.encode(message.redirect, writer.uint32(/* id 12, wireType 2 =*/98).fork()).ldelim();
+                if (message.incRef != null && Object.hasOwnProperty.call(message, "incRef"))
+                    $root.api.IncRef.encode(message.incRef, writer.uint32(/* id 13, wireType 2 =*/106).fork()).ldelim();
                 if (message.runMain != null && Object.hasOwnProperty.call(message, "runMain"))
                     $root.api.RunMain.encode(message.runMain, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
                 if (message.clear != null && Object.hasOwnProperty.call(message, "clear"))
@@ -1227,6 +1256,10 @@
                     $root.api.Audio2.encode(message.audio2, writer.uint32(/* id 366, wireType 2 =*/2930).fork()).ldelim();
                 if (message.PTYConfig != null && Object.hasOwnProperty.call(message, "PTYConfig"))
                     $root.api.PTYConfig.encode(message.PTYConfig, writer.uint32(/* id 367, wireType 2 =*/2938).fork()).ldelim();
+                if (message.stat != null && Object.hasOwnProperty.call(message, "stat"))
+                    $root.api.File.encode(message.stat, writer.uint32(/* id 368, wireType 2 =*/2946).fork()).ldelim();
+                if (message.statRes != null && Object.hasOwnProperty.call(message, "statRes"))
+                    $root.api.StatResult.encode(message.statRes, writer.uint32(/* id 369, wireType 2 =*/2954).fork()).ldelim();
                 if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
                     writer.uint32(/* id 1000, wireType 2 =*/8002).string(message.ref);
                 return writer;
@@ -1293,6 +1326,9 @@
                     case 12:
                         message.redirect = $root.api.Redirect.decode(reader, reader.uint32());
                         break;
+                    case 13:
+                        message.incRef = $root.api.IncRef.decode(reader, reader.uint32());
+                        break;
                     case 16:
                         message.runMain = $root.api.RunMain.decode(reader, reader.uint32());
                         break;
@@ -1346,6 +1382,12 @@
                         break;
                     case 39:
                         message.mkdir = $root.api.File.decode(reader, reader.uint32());
+                        break;
+                    case 368:
+                        message.stat = $root.api.File.decode(reader, reader.uint32());
+                        break;
+                    case 369:
+                        message.statRes = $root.api.StatResult.decode(reader, reader.uint32());
                         break;
                     case 35:
                         message.read = $root.api.File.decode(reader, reader.uint32());
@@ -1695,6 +1737,16 @@
                             return "redirect." + error;
                     }
                 }
+                if (message.incRef != null && message.hasOwnProperty("incRef")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.IncRef.verify(message.incRef);
+                        if (error)
+                            return "incRef." + error;
+                    }
+                }
                 if (message.runMain != null && message.hasOwnProperty("runMain")) {
                     if (properties.body === 1)
                         return "body: multiple values";
@@ -1860,6 +1912,26 @@
                         var error = $root.api.File.verify(message.mkdir);
                         if (error)
                             return "mkdir." + error;
+                    }
+                }
+                if (message.stat != null && message.hasOwnProperty("stat")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.File.verify(message.stat);
+                        if (error)
+                            return "stat." + error;
+                    }
+                }
+                if (message.statRes != null && message.hasOwnProperty("statRes")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.StatResult.verify(message.statRes);
+                        if (error)
+                            return "statRes." + error;
                     }
                 }
                 if (message.read != null && message.hasOwnProperty("read")) {
@@ -2668,6 +2740,11 @@
                         throw TypeError(".api.Command.redirect: object expected");
                     message.redirect = $root.api.Redirect.fromObject(object.redirect);
                 }
+                if (object.incRef != null) {
+                    if (typeof object.incRef !== "object")
+                        throw TypeError(".api.Command.incRef: object expected");
+                    message.incRef = $root.api.IncRef.fromObject(object.incRef);
+                }
                 if (object.runMain != null) {
                     if (typeof object.runMain !== "object")
                         throw TypeError(".api.Command.runMain: object expected");
@@ -2747,6 +2824,16 @@
                     if (typeof object.mkdir !== "object")
                         throw TypeError(".api.Command.mkdir: object expected");
                     message.mkdir = $root.api.File.fromObject(object.mkdir);
+                }
+                if (object.stat != null) {
+                    if (typeof object.stat !== "object")
+                        throw TypeError(".api.Command.stat: object expected");
+                    message.stat = $root.api.File.fromObject(object.stat);
+                }
+                if (object.statRes != null) {
+                    if (typeof object.statRes !== "object")
+                        throw TypeError(".api.Command.statRes: object expected");
+                    message.statRes = $root.api.StatResult.fromObject(object.statRes);
                 }
                 if (object.read != null) {
                     if (typeof object.read !== "object")
@@ -3183,6 +3270,11 @@
                     object.redirect = $root.api.Redirect.toObject(message.redirect, options);
                     if (options.oneofs)
                         object.body = "redirect";
+                }
+                if (message.incRef != null && message.hasOwnProperty("incRef")) {
+                    object.incRef = $root.api.IncRef.toObject(message.incRef, options);
+                    if (options.oneofs)
+                        object.body = "incRef";
                 }
                 if (message.runMain != null && message.hasOwnProperty("runMain")) {
                     object.runMain = $root.api.RunMain.toObject(message.runMain, options);
@@ -3648,6 +3740,16 @@
                     object.PTYConfig = $root.api.PTYConfig.toObject(message.PTYConfig, options);
                     if (options.oneofs)
                         object.body = "PTYConfig";
+                }
+                if (message.stat != null && message.hasOwnProperty("stat")) {
+                    object.stat = $root.api.File.toObject(message.stat, options);
+                    if (options.oneofs)
+                        object.body = "stat";
+                }
+                if (message.statRes != null && message.hasOwnProperty("statRes")) {
+                    object.statRes = $root.api.StatResult.toObject(message.statRes, options);
+                    if (options.oneofs)
+                        object.body = "statRes";
                 }
                 if (message.ref != null && message.hasOwnProperty("ref"))
                     object.ref = message.ref;
@@ -6362,7 +6464,7 @@
              * @interface IOTLinkFile
              * @property {api.File|api.IFile|null} [file] OTLinkFile file
              * @property {boolean|null} [highConsistency] OTLinkFile highConsistency
-             * @property {boolean|null} [useModTime] OTLinkFile useModTime
+             * @property {boolean|null} [OBSOLETEUseModTime] OTLinkFile OBSOLETEUseModTime
              */
     
             /**
@@ -6396,12 +6498,12 @@
             OTLinkFile.prototype.highConsistency = false;
     
             /**
-             * OTLinkFile useModTime.
-             * @member {boolean} useModTime
+             * OTLinkFile OBSOLETEUseModTime.
+             * @member {boolean} OBSOLETEUseModTime
              * @memberof api.OTLinkFile
              * @instance
              */
-            OTLinkFile.prototype.useModTime = false;
+            OTLinkFile.prototype.OBSOLETEUseModTime = false;
     
             /**
              * Creates a new OTLinkFile instance using the specified properties.
@@ -6431,8 +6533,8 @@
                     $root.api.File.encode(message.file, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 if (message.highConsistency != null && Object.hasOwnProperty.call(message, "highConsistency"))
                     writer.uint32(/* id 2, wireType 0 =*/16).bool(message.highConsistency);
-                if (message.useModTime != null && Object.hasOwnProperty.call(message, "useModTime"))
-                    writer.uint32(/* id 3, wireType 0 =*/24).bool(message.useModTime);
+                if (message.OBSOLETEUseModTime != null && Object.hasOwnProperty.call(message, "OBSOLETEUseModTime"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).bool(message.OBSOLETEUseModTime);
                 return writer;
             };
     
@@ -6474,7 +6576,7 @@
                         message.highConsistency = reader.bool();
                         break;
                     case 3:
-                        message.useModTime = reader.bool();
+                        message.OBSOLETEUseModTime = reader.bool();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -6519,9 +6621,9 @@
                 if (message.highConsistency != null && message.hasOwnProperty("highConsistency"))
                     if (typeof message.highConsistency !== "boolean")
                         return "highConsistency: boolean expected";
-                if (message.useModTime != null && message.hasOwnProperty("useModTime"))
-                    if (typeof message.useModTime !== "boolean")
-                        return "useModTime: boolean expected";
+                if (message.OBSOLETEUseModTime != null && message.hasOwnProperty("OBSOLETEUseModTime"))
+                    if (typeof message.OBSOLETEUseModTime !== "boolean")
+                        return "OBSOLETEUseModTime: boolean expected";
                 return null;
             };
     
@@ -6544,8 +6646,8 @@
                 }
                 if (object.highConsistency != null)
                     message.highConsistency = Boolean(object.highConsistency);
-                if (object.useModTime != null)
-                    message.useModTime = Boolean(object.useModTime);
+                if (object.OBSOLETEUseModTime != null)
+                    message.OBSOLETEUseModTime = Boolean(object.OBSOLETEUseModTime);
                 return message;
             };
     
@@ -6565,14 +6667,14 @@
                 if (options.defaults) {
                     object.file = null;
                     object.highConsistency = false;
-                    object.useModTime = false;
+                    object.OBSOLETEUseModTime = false;
                 }
                 if (message.file != null && message.hasOwnProperty("file"))
                     object.file = $root.api.File.toObject(message.file, options);
                 if (message.highConsistency != null && message.hasOwnProperty("highConsistency"))
                     object.highConsistency = message.highConsistency;
-                if (message.useModTime != null && message.hasOwnProperty("useModTime"))
-                    object.useModTime = message.useModTime;
+                if (message.OBSOLETEUseModTime != null && message.hasOwnProperty("OBSOLETEUseModTime"))
+                    object.OBSOLETEUseModTime = message.OBSOLETEUseModTime;
                 return object;
             };
     
@@ -14032,6 +14134,322 @@
             return Files;
         })();
     
+        api.StatResult = (function() {
+    
+            /**
+             * Properties of a StatResult.
+             * @memberof api
+             * @interface IStatResult
+             * @property {boolean|null} [exists] StatResult exists
+             * @property {api.File.Type|null} [type] StatResult type
+             * @property {number|null} [size] StatResult size
+             * @property {string|null} [fileMode] StatResult fileMode
+             * @property {number|null} [modTime] StatResult modTime
+             */
+    
+            /**
+             * Constructs a new StatResult.
+             * @memberof api
+             * @classdesc Represents a StatResult.
+             * @constructor
+             * @param {api.IStatResult=} [properties] Properties to set
+             */
+            function StatResult(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * StatResult exists.
+             * @member {boolean} exists
+             * @memberof api.StatResult
+             * @instance
+             */
+            StatResult.prototype.exists = false;
+    
+            /**
+             * StatResult type.
+             * @member {api.File.Type} type
+             * @memberof api.StatResult
+             * @instance
+             */
+            StatResult.prototype.type = 0;
+    
+            /**
+             * StatResult size.
+             * @member {number} size
+             * @memberof api.StatResult
+             * @instance
+             */
+            StatResult.prototype.size = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+    
+            /**
+             * StatResult fileMode.
+             * @member {string} fileMode
+             * @memberof api.StatResult
+             * @instance
+             */
+            StatResult.prototype.fileMode = "";
+    
+            /**
+             * StatResult modTime.
+             * @member {number} modTime
+             * @memberof api.StatResult
+             * @instance
+             */
+            StatResult.prototype.modTime = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+    
+            /**
+             * Creates a new StatResult instance using the specified properties.
+             * @function create
+             * @memberof api.StatResult
+             * @static
+             * @param {api.IStatResult=} [properties] Properties to set
+             * @returns {api.StatResult} StatResult instance
+             */
+            StatResult.create = function create(properties) {
+                return StatResult.fromObject(properties);
+            };
+    
+            /**
+             * Encodes the specified StatResult message. Does not implicitly {@link api.StatResult.verify|verify} messages.
+             * @function encode
+             * @memberof api.StatResult
+             * @static
+             * @param {api.StatResult} message StatResult message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            StatResult.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.exists != null && Object.hasOwnProperty.call(message, "exists"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).bool(message.exists);
+                if (message.type != null && Object.hasOwnProperty.call(message, "type"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.type);
+                if (message.size != null && Object.hasOwnProperty.call(message, "size"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).int64(message.size);
+                if (message.fileMode != null && Object.hasOwnProperty.call(message, "fileMode"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.fileMode);
+                if (message.modTime != null && Object.hasOwnProperty.call(message, "modTime"))
+                    writer.uint32(/* id 5, wireType 0 =*/40).int64(message.modTime);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified StatResult message, length delimited. Does not implicitly {@link api.StatResult.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.StatResult
+             * @static
+             * @param {api.StatResult} message StatResult message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            StatResult.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a StatResult message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.StatResult
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.StatResult} StatResult
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            StatResult.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.StatResult();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.exists = reader.bool();
+                        break;
+                    case 2:
+                        message.type = reader.int32();
+                        break;
+                    case 3:
+                        message.size = reader.int64();
+                        break;
+                    case 4:
+                        message.fileMode = reader.string();
+                        break;
+                    case 5:
+                        message.modTime = reader.int64();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a StatResult message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.StatResult
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.StatResult} StatResult
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            StatResult.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a StatResult message.
+             * @function verify
+             * @memberof api.StatResult
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            StatResult.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.exists != null && message.hasOwnProperty("exists"))
+                    if (typeof message.exists !== "boolean")
+                        return "exists: boolean expected";
+                if (message.type != null && message.hasOwnProperty("type"))
+                    switch (message.type) {
+                    default:
+                        return "type: enum value expected";
+                    case 0:
+                    case 1:
+                        break;
+                    }
+                if (message.size != null && message.hasOwnProperty("size"))
+                    if (!$util.isInteger(message.size) && !(message.size && $util.isInteger(message.size.low) && $util.isInteger(message.size.high)))
+                        return "size: integer|Long expected";
+                if (message.fileMode != null && message.hasOwnProperty("fileMode"))
+                    if (!$util.isString(message.fileMode))
+                        return "fileMode: string expected";
+                if (message.modTime != null && message.hasOwnProperty("modTime"))
+                    if (!$util.isInteger(message.modTime) && !(message.modTime && $util.isInteger(message.modTime.low) && $util.isInteger(message.modTime.high)))
+                        return "modTime: integer|Long expected";
+                return null;
+            };
+    
+            /**
+             * Creates a StatResult message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.StatResult
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.StatResult} StatResult
+             */
+            StatResult.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.StatResult)
+                    return object;
+                var message = new $root.api.StatResult();
+                if (object.exists != null)
+                    message.exists = Boolean(object.exists);
+                switch (object.type) {
+                case "REGULAR":
+                case 0:
+                    message.type = 0;
+                    break;
+                case "DIRECTORY":
+                case 1:
+                    message.type = 1;
+                    break;
+                }
+                if (object.size != null)
+                    if ($util.Long)
+                        (message.size = $util.Long.fromValue(object.size)).unsigned = false;
+                    else if (typeof object.size === "string")
+                        message.size = parseInt(object.size, 10);
+                    else if (typeof object.size === "number")
+                        message.size = object.size;
+                    else if (typeof object.size === "object")
+                        message.size = new $util.LongBits(object.size.low >>> 0, object.size.high >>> 0).toNumber();
+                if (object.fileMode != null)
+                    message.fileMode = String(object.fileMode);
+                if (object.modTime != null)
+                    if ($util.Long)
+                        (message.modTime = $util.Long.fromValue(object.modTime)).unsigned = false;
+                    else if (typeof object.modTime === "string")
+                        message.modTime = parseInt(object.modTime, 10);
+                    else if (typeof object.modTime === "number")
+                        message.modTime = object.modTime;
+                    else if (typeof object.modTime === "object")
+                        message.modTime = new $util.LongBits(object.modTime.low >>> 0, object.modTime.high >>> 0).toNumber();
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a StatResult message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.StatResult
+             * @static
+             * @param {api.StatResult} message StatResult
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            StatResult.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.exists = false;
+                    object.type = options.enums === String ? "REGULAR" : 0;
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.size = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.size = options.longs === String ? "0" : 0;
+                    object.fileMode = "";
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.modTime = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.modTime = options.longs === String ? "0" : 0;
+                }
+                if (message.exists != null && message.hasOwnProperty("exists"))
+                    object.exists = message.exists;
+                if (message.type != null && message.hasOwnProperty("type"))
+                    object.type = options.enums === String ? $root.api.File.Type[message.type] : message.type;
+                if (message.size != null && message.hasOwnProperty("size"))
+                    if (typeof message.size === "number")
+                        object.size = options.longs === String ? String(message.size) : message.size;
+                    else
+                        object.size = options.longs === String ? $util.Long.prototype.toString.call(message.size) : options.longs === Number ? new $util.LongBits(message.size.low >>> 0, message.size.high >>> 0).toNumber() : message.size;
+                if (message.fileMode != null && message.hasOwnProperty("fileMode"))
+                    object.fileMode = message.fileMode;
+                if (message.modTime != null && message.hasOwnProperty("modTime"))
+                    if (typeof message.modTime === "number")
+                        object.modTime = options.longs === String ? String(message.modTime) : message.modTime;
+                    else
+                        object.modTime = options.longs === String ? $util.Long.prototype.toString.call(message.modTime) : options.longs === Number ? new $util.LongBits(message.modTime.low >>> 0, message.modTime.high >>> 0).toNumber() : message.modTime;
+                return object;
+            };
+    
+            /**
+             * Converts this StatResult to JSON.
+             * @function toJSON
+             * @memberof api.StatResult
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            StatResult.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return StatResult;
+        })();
+    
         api.File = (function() {
     
             /**
@@ -14828,6 +15246,165 @@
             };
     
             return Redirect;
+        })();
+    
+        api.IncRef = (function() {
+    
+            /**
+             * Properties of an IncRef.
+             * @memberof api
+             * @interface IIncRef
+             */
+    
+            /**
+             * Constructs a new IncRef.
+             * @memberof api
+             * @classdesc Represents an IncRef.
+             * @constructor
+             * @param {api.IIncRef=} [properties] Properties to set
+             */
+            function IncRef(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * Creates a new IncRef instance using the specified properties.
+             * @function create
+             * @memberof api.IncRef
+             * @static
+             * @param {api.IIncRef=} [properties] Properties to set
+             * @returns {api.IncRef} IncRef instance
+             */
+            IncRef.create = function create(properties) {
+                return IncRef.fromObject(properties);
+            };
+    
+            /**
+             * Encodes the specified IncRef message. Does not implicitly {@link api.IncRef.verify|verify} messages.
+             * @function encode
+             * @memberof api.IncRef
+             * @static
+             * @param {api.IncRef} message IncRef message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            IncRef.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified IncRef message, length delimited. Does not implicitly {@link api.IncRef.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.IncRef
+             * @static
+             * @param {api.IncRef} message IncRef message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            IncRef.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes an IncRef message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.IncRef
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.IncRef} IncRef
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            IncRef.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.IncRef();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes an IncRef message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.IncRef
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.IncRef} IncRef
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            IncRef.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies an IncRef message.
+             * @function verify
+             * @memberof api.IncRef
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            IncRef.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                return null;
+            };
+    
+            /**
+             * Creates an IncRef message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.IncRef
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.IncRef} IncRef
+             */
+            IncRef.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.IncRef)
+                    return object;
+                return new $root.api.IncRef();
+            };
+    
+            /**
+             * Creates a plain object from an IncRef message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.IncRef
+             * @static
+             * @param {api.IncRef} message IncRef
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            IncRef.toObject = function toObject() {
+                return {};
+            };
+    
+            /**
+             * Converts this IncRef to JSON.
+             * @function toJSON
+             * @memberof api.IncRef
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            IncRef.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return IncRef;
         })();
     
         api.RunMain = (function() {

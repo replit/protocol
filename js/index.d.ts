@@ -35,6 +35,9 @@ export namespace api {
         /** Command redirect */
         redirect?: (api.Redirect|api.IRedirect|null);
 
+        /** Command incRef */
+        incRef?: (api.IncRef|api.IIncRef|null);
+
         /** Command runMain */
         runMain?: (api.RunMain|api.IRunMain|null);
 
@@ -88,6 +91,12 @@ export namespace api {
 
         /** Command mkdir */
         mkdir?: (api.File|api.IFile|null);
+
+        /** Command stat */
+        stat?: (api.File|api.IFile|null);
+
+        /** Command statRes */
+        statRes?: (api.StatResult|api.IStatResult|null);
 
         /** Command read */
         read?: (api.File|api.IFile|null);
@@ -357,6 +366,9 @@ export namespace api {
         /** Command redirect. */
         public redirect?: (api.Redirect|null);
 
+        /** Command incRef. */
+        public incRef?: (api.IncRef|null);
+
         /** Command runMain. */
         public runMain?: (api.RunMain|null);
 
@@ -410,6 +422,12 @@ export namespace api {
 
         /** Command mkdir. */
         public mkdir?: (api.File|null);
+
+        /** Command stat. */
+        public stat?: (api.File|null);
+
+        /** Command statRes. */
+        public statRes?: (api.StatResult|null);
 
         /** Command read. */
         public read?: (api.File|null);
@@ -640,7 +658,7 @@ export namespace api {
         public ref: string;
 
         /** Command body. */
-        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig");
+        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"incRef"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig");
 
         /**
          * Creates a new Command instance using the specified properties.
@@ -1881,8 +1899,8 @@ export namespace api {
         /** OTLinkFile highConsistency */
         highConsistency?: (boolean|null);
 
-        /** OTLinkFile useModTime */
-        useModTime?: (boolean|null);
+        /** OTLinkFile OBSOLETEUseModTime */
+        OBSOLETEUseModTime?: (boolean|null);
     }
 
     /** Represents a OTLinkFile. */
@@ -1900,8 +1918,8 @@ export namespace api {
         /** OTLinkFile highConsistency. */
         public highConsistency: boolean;
 
-        /** OTLinkFile useModTime. */
-        public useModTime: boolean;
+        /** OTLinkFile OBSOLETEUseModTime. */
+        public OBSOLETEUseModTime: boolean;
 
         /**
          * Creates a new OTLinkFile instance using the specified properties.
@@ -5351,6 +5369,120 @@ export namespace api {
         public toJSON(): { [k: string]: any };
     }
 
+    /** Properties of a StatResult. */
+    interface IStatResult {
+
+        /** StatResult exists */
+        exists?: (boolean|null);
+
+        /** StatResult type */
+        type?: (api.File.Type|null);
+
+        /** StatResult size */
+        size?: (number|null);
+
+        /** StatResult fileMode */
+        fileMode?: (string|null);
+
+        /** StatResult modTime */
+        modTime?: (number|null);
+    }
+
+    /** Represents a StatResult. */
+    class StatResult {
+
+        /**
+         * Constructs a new StatResult.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IStatResult);
+
+        /** StatResult exists. */
+        public exists: boolean;
+
+        /** StatResult type. */
+        public type: api.File.Type;
+
+        /** StatResult size. */
+        public size: number;
+
+        /** StatResult fileMode. */
+        public fileMode: string;
+
+        /** StatResult modTime. */
+        public modTime: number;
+
+        /**
+         * Creates a new StatResult instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns StatResult instance
+         */
+        public static create(properties?: api.IStatResult): api.StatResult;
+
+        /**
+         * Encodes the specified StatResult message. Does not implicitly {@link api.StatResult.verify|verify} messages.
+         * @param message StatResult message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.StatResult, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified StatResult message, length delimited. Does not implicitly {@link api.StatResult.verify|verify} messages.
+         * @param message StatResult message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.StatResult, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a StatResult message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns StatResult
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.StatResult;
+
+        /**
+         * Decodes a StatResult message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns StatResult
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.StatResult;
+
+        /**
+         * Verifies a StatResult message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a StatResult message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns StatResult
+         */
+        public static fromObject(object: { [k: string]: any }): api.StatResult;
+
+        /**
+         * Creates a plain object from a StatResult message. Also converts values to other types if specified.
+         * @param message StatResult
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.StatResult, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this StatResult to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
     /** Properties of a File. */
     interface IFile {
 
@@ -5721,6 +5853,90 @@ export namespace api {
 
         /**
          * Converts this Redirect to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an IncRef. */
+    interface IIncRef {
+    }
+
+    /** Represents an IncRef. */
+    class IncRef {
+
+        /**
+         * Constructs a new IncRef.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IIncRef);
+
+        /**
+         * Creates a new IncRef instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns IncRef instance
+         */
+        public static create(properties?: api.IIncRef): api.IncRef;
+
+        /**
+         * Encodes the specified IncRef message. Does not implicitly {@link api.IncRef.verify|verify} messages.
+         * @param message IncRef message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.IncRef, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified IncRef message, length delimited. Does not implicitly {@link api.IncRef.verify|verify} messages.
+         * @param message IncRef message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.IncRef, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an IncRef message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns IncRef
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.IncRef;
+
+        /**
+         * Decodes an IncRef message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns IncRef
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.IncRef;
+
+        /**
+         * Verifies an IncRef message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an IncRef message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns IncRef
+         */
+        public static fromObject(object: { [k: string]: any }): api.IncRef;
+
+        /**
+         * Creates a plain object from an IncRef message. Also converts values to other types if specified.
+         * @param message IncRef
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.IncRef, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this IncRef to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
