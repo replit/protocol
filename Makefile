@@ -22,9 +22,9 @@ publish-js:
 
 
 clean-go:
-	rm -rf go/api.pb.go
+	rm -rf go/api.pb.go go/client.pb.go
 build-go: clean-go
-	protoc api.proto --go_out=./go
+	protoc api.proto client.proto --go_out=./go
 publish-go: .git/refs/remotes/protocol-go/master
 	git fetch protocol-go master && \
 	VERSION="$$(git describe --tags)" && \

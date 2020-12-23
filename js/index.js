@@ -24240,6 +24240,1809 @@
             return PTYConfig;
         })();
     
+        api.Repl = (function() {
+    
+            /**
+             * Properties of a Repl.
+             * @memberof api
+             * @interface IRepl
+             * @property {string|null} [id] Repl id
+             * @property {string|null} [language] Repl language
+             * @property {string|null} [bucket] Repl bucket
+             * @property {string|null} [slug] Repl slug
+             * @property {string|null} [user] Repl user
+             * @property {string|null} [sourceRepl] Repl sourceRepl
+             */
+    
+            /**
+             * Constructs a new Repl.
+             * @memberof api
+             * @classdesc Represents a Repl.
+             * @constructor
+             * @param {api.IRepl=} [properties] Properties to set
+             */
+            function Repl(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * Repl id.
+             * @member {string} id
+             * @memberof api.Repl
+             * @instance
+             */
+            Repl.prototype.id = "";
+    
+            /**
+             * Repl language.
+             * @member {string} language
+             * @memberof api.Repl
+             * @instance
+             */
+            Repl.prototype.language = "";
+    
+            /**
+             * Repl bucket.
+             * @member {string} bucket
+             * @memberof api.Repl
+             * @instance
+             */
+            Repl.prototype.bucket = "";
+    
+            /**
+             * Repl slug.
+             * @member {string} slug
+             * @memberof api.Repl
+             * @instance
+             */
+            Repl.prototype.slug = "";
+    
+            /**
+             * Repl user.
+             * @member {string} user
+             * @memberof api.Repl
+             * @instance
+             */
+            Repl.prototype.user = "";
+    
+            /**
+             * Repl sourceRepl.
+             * @member {string} sourceRepl
+             * @memberof api.Repl
+             * @instance
+             */
+            Repl.prototype.sourceRepl = "";
+    
+            /**
+             * Creates a new Repl instance using the specified properties.
+             * @function create
+             * @memberof api.Repl
+             * @static
+             * @param {api.IRepl=} [properties] Properties to set
+             * @returns {api.Repl} Repl instance
+             */
+            Repl.create = function create(properties) {
+                return Repl.fromObject(properties);
+            };
+    
+            /**
+             * Encodes the specified Repl message. Does not implicitly {@link api.Repl.verify|verify} messages.
+             * @function encode
+             * @memberof api.Repl
+             * @static
+             * @param {api.Repl} message Repl message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Repl.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && Object.hasOwnProperty.call(message, "id"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                if (message.language != null && Object.hasOwnProperty.call(message, "language"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.language);
+                if (message.bucket != null && Object.hasOwnProperty.call(message, "bucket"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.bucket);
+                if (message.slug != null && Object.hasOwnProperty.call(message, "slug"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.slug);
+                if (message.user != null && Object.hasOwnProperty.call(message, "user"))
+                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.user);
+                if (message.sourceRepl != null && Object.hasOwnProperty.call(message, "sourceRepl"))
+                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.sourceRepl);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified Repl message, length delimited. Does not implicitly {@link api.Repl.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.Repl
+             * @static
+             * @param {api.Repl} message Repl message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Repl.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a Repl message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.Repl
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.Repl} Repl
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Repl.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Repl();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = reader.string();
+                        break;
+                    case 2:
+                        message.language = reader.string();
+                        break;
+                    case 3:
+                        message.bucket = reader.string();
+                        break;
+                    case 4:
+                        message.slug = reader.string();
+                        break;
+                    case 5:
+                        message.user = reader.string();
+                        break;
+                    case 6:
+                        message.sourceRepl = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a Repl message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.Repl
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.Repl} Repl
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Repl.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a Repl message.
+             * @function verify
+             * @memberof api.Repl
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Repl.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.id != null && message.hasOwnProperty("id"))
+                    if (!$util.isString(message.id))
+                        return "id: string expected";
+                if (message.language != null && message.hasOwnProperty("language"))
+                    if (!$util.isString(message.language))
+                        return "language: string expected";
+                if (message.bucket != null && message.hasOwnProperty("bucket"))
+                    if (!$util.isString(message.bucket))
+                        return "bucket: string expected";
+                if (message.slug != null && message.hasOwnProperty("slug"))
+                    if (!$util.isString(message.slug))
+                        return "slug: string expected";
+                if (message.user != null && message.hasOwnProperty("user"))
+                    if (!$util.isString(message.user))
+                        return "user: string expected";
+                if (message.sourceRepl != null && message.hasOwnProperty("sourceRepl"))
+                    if (!$util.isString(message.sourceRepl))
+                        return "sourceRepl: string expected";
+                return null;
+            };
+    
+            /**
+             * Creates a Repl message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.Repl
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.Repl} Repl
+             */
+            Repl.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.Repl)
+                    return object;
+                var message = new $root.api.Repl();
+                if (object.id != null)
+                    message.id = String(object.id);
+                if (object.language != null)
+                    message.language = String(object.language);
+                if (object.bucket != null)
+                    message.bucket = String(object.bucket);
+                if (object.slug != null)
+                    message.slug = String(object.slug);
+                if (object.user != null)
+                    message.user = String(object.user);
+                if (object.sourceRepl != null)
+                    message.sourceRepl = String(object.sourceRepl);
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a Repl message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.Repl
+             * @static
+             * @param {api.Repl} message Repl
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Repl.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.id = "";
+                    object.language = "";
+                    object.bucket = "";
+                    object.slug = "";
+                    object.user = "";
+                    object.sourceRepl = "";
+                }
+                if (message.id != null && message.hasOwnProperty("id"))
+                    object.id = message.id;
+                if (message.language != null && message.hasOwnProperty("language"))
+                    object.language = message.language;
+                if (message.bucket != null && message.hasOwnProperty("bucket"))
+                    object.bucket = message.bucket;
+                if (message.slug != null && message.hasOwnProperty("slug"))
+                    object.slug = message.slug;
+                if (message.user != null && message.hasOwnProperty("user"))
+                    object.user = message.user;
+                if (message.sourceRepl != null && message.hasOwnProperty("sourceRepl"))
+                    object.sourceRepl = message.sourceRepl;
+                return object;
+            };
+    
+            /**
+             * Converts this Repl to JSON.
+             * @function toJSON
+             * @memberof api.Repl
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Repl.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return Repl;
+        })();
+    
+        api.ResourceLimits = (function() {
+    
+            /**
+             * Properties of a ResourceLimits.
+             * @memberof api
+             * @interface IResourceLimits
+             * @property {boolean|null} [net] ResourceLimits net
+             * @property {number|null} [memory] ResourceLimits memory
+             * @property {number|null} [threads] ResourceLimits threads
+             * @property {number|null} [shares] ResourceLimits shares
+             * @property {number|null} [disk] ResourceLimits disk
+             */
+    
+            /**
+             * Constructs a new ResourceLimits.
+             * @memberof api
+             * @classdesc Represents a ResourceLimits.
+             * @constructor
+             * @param {api.IResourceLimits=} [properties] Properties to set
+             */
+            function ResourceLimits(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * ResourceLimits net.
+             * @member {boolean} net
+             * @memberof api.ResourceLimits
+             * @instance
+             */
+            ResourceLimits.prototype.net = false;
+    
+            /**
+             * ResourceLimits memory.
+             * @member {number} memory
+             * @memberof api.ResourceLimits
+             * @instance
+             */
+            ResourceLimits.prototype.memory = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+    
+            /**
+             * ResourceLimits threads.
+             * @member {number} threads
+             * @memberof api.ResourceLimits
+             * @instance
+             */
+            ResourceLimits.prototype.threads = 0;
+    
+            /**
+             * ResourceLimits shares.
+             * @member {number} shares
+             * @memberof api.ResourceLimits
+             * @instance
+             */
+            ResourceLimits.prototype.shares = 0;
+    
+            /**
+             * ResourceLimits disk.
+             * @member {number} disk
+             * @memberof api.ResourceLimits
+             * @instance
+             */
+            ResourceLimits.prototype.disk = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+    
+            /**
+             * Creates a new ResourceLimits instance using the specified properties.
+             * @function create
+             * @memberof api.ResourceLimits
+             * @static
+             * @param {api.IResourceLimits=} [properties] Properties to set
+             * @returns {api.ResourceLimits} ResourceLimits instance
+             */
+            ResourceLimits.create = function create(properties) {
+                return ResourceLimits.fromObject(properties);
+            };
+    
+            /**
+             * Encodes the specified ResourceLimits message. Does not implicitly {@link api.ResourceLimits.verify|verify} messages.
+             * @function encode
+             * @memberof api.ResourceLimits
+             * @static
+             * @param {api.ResourceLimits} message ResourceLimits message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ResourceLimits.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.net != null && Object.hasOwnProperty.call(message, "net"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).bool(message.net);
+                if (message.memory != null && Object.hasOwnProperty.call(message, "memory"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.memory);
+                if (message.threads != null && Object.hasOwnProperty.call(message, "threads"))
+                    writer.uint32(/* id 3, wireType 1 =*/25).double(message.threads);
+                if (message.shares != null && Object.hasOwnProperty.call(message, "shares"))
+                    writer.uint32(/* id 4, wireType 1 =*/33).double(message.shares);
+                if (message.disk != null && Object.hasOwnProperty.call(message, "disk"))
+                    writer.uint32(/* id 5, wireType 0 =*/40).int64(message.disk);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified ResourceLimits message, length delimited. Does not implicitly {@link api.ResourceLimits.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.ResourceLimits
+             * @static
+             * @param {api.ResourceLimits} message ResourceLimits message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ResourceLimits.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a ResourceLimits message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.ResourceLimits
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.ResourceLimits} ResourceLimits
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ResourceLimits.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.ResourceLimits();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.net = reader.bool();
+                        break;
+                    case 2:
+                        message.memory = reader.int64();
+                        break;
+                    case 3:
+                        message.threads = reader.double();
+                        break;
+                    case 4:
+                        message.shares = reader.double();
+                        break;
+                    case 5:
+                        message.disk = reader.int64();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a ResourceLimits message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.ResourceLimits
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.ResourceLimits} ResourceLimits
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ResourceLimits.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a ResourceLimits message.
+             * @function verify
+             * @memberof api.ResourceLimits
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ResourceLimits.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.net != null && message.hasOwnProperty("net"))
+                    if (typeof message.net !== "boolean")
+                        return "net: boolean expected";
+                if (message.memory != null && message.hasOwnProperty("memory"))
+                    if (!$util.isInteger(message.memory) && !(message.memory && $util.isInteger(message.memory.low) && $util.isInteger(message.memory.high)))
+                        return "memory: integer|Long expected";
+                if (message.threads != null && message.hasOwnProperty("threads"))
+                    if (typeof message.threads !== "number")
+                        return "threads: number expected";
+                if (message.shares != null && message.hasOwnProperty("shares"))
+                    if (typeof message.shares !== "number")
+                        return "shares: number expected";
+                if (message.disk != null && message.hasOwnProperty("disk"))
+                    if (!$util.isInteger(message.disk) && !(message.disk && $util.isInteger(message.disk.low) && $util.isInteger(message.disk.high)))
+                        return "disk: integer|Long expected";
+                return null;
+            };
+    
+            /**
+             * Creates a ResourceLimits message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.ResourceLimits
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.ResourceLimits} ResourceLimits
+             */
+            ResourceLimits.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.ResourceLimits)
+                    return object;
+                var message = new $root.api.ResourceLimits();
+                if (object.net != null)
+                    message.net = Boolean(object.net);
+                if (object.memory != null)
+                    if ($util.Long)
+                        (message.memory = $util.Long.fromValue(object.memory)).unsigned = false;
+                    else if (typeof object.memory === "string")
+                        message.memory = parseInt(object.memory, 10);
+                    else if (typeof object.memory === "number")
+                        message.memory = object.memory;
+                    else if (typeof object.memory === "object")
+                        message.memory = new $util.LongBits(object.memory.low >>> 0, object.memory.high >>> 0).toNumber();
+                if (object.threads != null)
+                    message.threads = Number(object.threads);
+                if (object.shares != null)
+                    message.shares = Number(object.shares);
+                if (object.disk != null)
+                    if ($util.Long)
+                        (message.disk = $util.Long.fromValue(object.disk)).unsigned = false;
+                    else if (typeof object.disk === "string")
+                        message.disk = parseInt(object.disk, 10);
+                    else if (typeof object.disk === "number")
+                        message.disk = object.disk;
+                    else if (typeof object.disk === "object")
+                        message.disk = new $util.LongBits(object.disk.low >>> 0, object.disk.high >>> 0).toNumber();
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a ResourceLimits message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.ResourceLimits
+             * @static
+             * @param {api.ResourceLimits} message ResourceLimits
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            ResourceLimits.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.net = false;
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.memory = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.memory = options.longs === String ? "0" : 0;
+                    object.threads = 0;
+                    object.shares = 0;
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.disk = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.disk = options.longs === String ? "0" : 0;
+                }
+                if (message.net != null && message.hasOwnProperty("net"))
+                    object.net = message.net;
+                if (message.memory != null && message.hasOwnProperty("memory"))
+                    if (typeof message.memory === "number")
+                        object.memory = options.longs === String ? String(message.memory) : message.memory;
+                    else
+                        object.memory = options.longs === String ? $util.Long.prototype.toString.call(message.memory) : options.longs === Number ? new $util.LongBits(message.memory.low >>> 0, message.memory.high >>> 0).toNumber() : message.memory;
+                if (message.threads != null && message.hasOwnProperty("threads"))
+                    object.threads = options.json && !isFinite(message.threads) ? String(message.threads) : message.threads;
+                if (message.shares != null && message.hasOwnProperty("shares"))
+                    object.shares = options.json && !isFinite(message.shares) ? String(message.shares) : message.shares;
+                if (message.disk != null && message.hasOwnProperty("disk"))
+                    if (typeof message.disk === "number")
+                        object.disk = options.longs === String ? String(message.disk) : message.disk;
+                    else
+                        object.disk = options.longs === String ? $util.Long.prototype.toString.call(message.disk) : options.longs === Number ? new $util.LongBits(message.disk.low >>> 0, message.disk.high >>> 0).toNumber() : message.disk;
+                return object;
+            };
+    
+            /**
+             * Converts this ResourceLimits to JSON.
+             * @function toJSON
+             * @memberof api.ResourceLimits
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            ResourceLimits.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return ResourceLimits;
+        })();
+    
+        api.ReplToken = (function() {
+    
+            /**
+             * Properties of a ReplToken.
+             * @memberof api
+             * @interface IReplToken
+             * @property {google.protobuf.Timestamp|google.protobuf.ITimestamp|null} [iat] ReplToken iat
+             * @property {google.protobuf.Timestamp|google.protobuf.ITimestamp|null} [exp] ReplToken exp
+             * @property {string|null} [salt] ReplToken salt
+             * @property {string|null} [cluster] ReplToken cluster
+             * @property {api.ReplToken.Persistence|null} [persistence] ReplToken persistence
+             * @property {api.Repl|api.IRepl|null} [repl] ReplToken repl
+             * @property {api.ReplToken.ReplID|api.ReplToken.IReplID|null} [id] ReplToken id
+             * @property {api.ReplToken.ClassroomMetadata|api.ReplToken.IClassroomMetadata|null} [classroom] ReplToken classroom
+             * @property {api.ResourceLimits|api.IResourceLimits|null} [resourceLimits] ReplToken resourceLimits
+             * @property {api.ReplToken.WireFormat|null} [format] ReplToken format
+             * @property {api.ReplToken.Presenced|api.ReplToken.IPresenced|null} [presenced] ReplToken presenced
+             * @property {Array.<string>|null} [flags] ReplToken flags
+             */
+    
+            /**
+             * Constructs a new ReplToken.
+             * @memberof api
+             * @classdesc Represents a ReplToken.
+             * @constructor
+             * @param {api.IReplToken=} [properties] Properties to set
+             */
+            function ReplToken(properties) {
+                this.flags = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * ReplToken iat.
+             * @member {google.protobuf.Timestamp|null|undefined} iat
+             * @memberof api.ReplToken
+             * @instance
+             */
+            ReplToken.prototype.iat = null;
+    
+            /**
+             * ReplToken exp.
+             * @member {google.protobuf.Timestamp|null|undefined} exp
+             * @memberof api.ReplToken
+             * @instance
+             */
+            ReplToken.prototype.exp = null;
+    
+            /**
+             * ReplToken salt.
+             * @member {string} salt
+             * @memberof api.ReplToken
+             * @instance
+             */
+            ReplToken.prototype.salt = "";
+    
+            /**
+             * ReplToken cluster.
+             * @member {string} cluster
+             * @memberof api.ReplToken
+             * @instance
+             */
+            ReplToken.prototype.cluster = "";
+    
+            /**
+             * ReplToken persistence.
+             * @member {api.ReplToken.Persistence} persistence
+             * @memberof api.ReplToken
+             * @instance
+             */
+            ReplToken.prototype.persistence = 0;
+    
+            /**
+             * ReplToken repl.
+             * @member {api.Repl|null|undefined} repl
+             * @memberof api.ReplToken
+             * @instance
+             */
+            ReplToken.prototype.repl = null;
+    
+            /**
+             * ReplToken id.
+             * @member {api.ReplToken.ReplID|null|undefined} id
+             * @memberof api.ReplToken
+             * @instance
+             */
+            ReplToken.prototype.id = null;
+    
+            /**
+             * ReplToken classroom.
+             * @member {api.ReplToken.ClassroomMetadata|null|undefined} classroom
+             * @memberof api.ReplToken
+             * @instance
+             */
+            ReplToken.prototype.classroom = null;
+    
+            /**
+             * ReplToken resourceLimits.
+             * @member {api.ResourceLimits|null|undefined} resourceLimits
+             * @memberof api.ReplToken
+             * @instance
+             */
+            ReplToken.prototype.resourceLimits = null;
+    
+            /**
+             * ReplToken format.
+             * @member {api.ReplToken.WireFormat} format
+             * @memberof api.ReplToken
+             * @instance
+             */
+            ReplToken.prototype.format = 0;
+    
+            /**
+             * ReplToken presenced.
+             * @member {api.ReplToken.Presenced|null|undefined} presenced
+             * @memberof api.ReplToken
+             * @instance
+             */
+            ReplToken.prototype.presenced = null;
+    
+            /**
+             * ReplToken flags.
+             * @member {Array.<string>} flags
+             * @memberof api.ReplToken
+             * @instance
+             */
+            ReplToken.prototype.flags = $util.emptyArray;
+    
+            // OneOf field names bound to virtual getters and setters
+            var $oneOfFields;
+    
+            /**
+             * ReplToken metadata.
+             * @member {"repl"|"id"|"classroom"|undefined} metadata
+             * @memberof api.ReplToken
+             * @instance
+             */
+            Object.defineProperty(ReplToken.prototype, "metadata", {
+                get: $util.oneOfGetter($oneOfFields = ["repl", "id", "classroom"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+    
+            /**
+             * Creates a new ReplToken instance using the specified properties.
+             * @function create
+             * @memberof api.ReplToken
+             * @static
+             * @param {api.IReplToken=} [properties] Properties to set
+             * @returns {api.ReplToken} ReplToken instance
+             */
+            ReplToken.create = function create(properties) {
+                return ReplToken.fromObject(properties);
+            };
+    
+            /**
+             * Encodes the specified ReplToken message. Does not implicitly {@link api.ReplToken.verify|verify} messages.
+             * @function encode
+             * @memberof api.ReplToken
+             * @static
+             * @param {api.ReplToken} message ReplToken message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ReplToken.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.iat != null && Object.hasOwnProperty.call(message, "iat"))
+                    $root.google.protobuf.Timestamp.encode(message.iat, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.exp != null && Object.hasOwnProperty.call(message, "exp"))
+                    $root.google.protobuf.Timestamp.encode(message.exp, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.salt != null && Object.hasOwnProperty.call(message, "salt"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.salt);
+                if (message.cluster != null && Object.hasOwnProperty.call(message, "cluster"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.cluster);
+                if (message.persistence != null && Object.hasOwnProperty.call(message, "persistence"))
+                    writer.uint32(/* id 6, wireType 0 =*/48).int32(message.persistence);
+                if (message.repl != null && Object.hasOwnProperty.call(message, "repl"))
+                    $root.api.Repl.encode(message.repl, writer.uint32(/* id 7, wireType 2 =*/58).fork()).ldelim();
+                if (message.id != null && Object.hasOwnProperty.call(message, "id"))
+                    $root.api.ReplToken.ReplID.encode(message.id, writer.uint32(/* id 8, wireType 2 =*/66).fork()).ldelim();
+                if (message.classroom != null && Object.hasOwnProperty.call(message, "classroom"))
+                    $root.api.ReplToken.ClassroomMetadata.encode(message.classroom, writer.uint32(/* id 9, wireType 2 =*/74).fork()).ldelim();
+                if (message.resourceLimits != null && Object.hasOwnProperty.call(message, "resourceLimits"))
+                    $root.api.ResourceLimits.encode(message.resourceLimits, writer.uint32(/* id 10, wireType 2 =*/82).fork()).ldelim();
+                if (message.format != null && Object.hasOwnProperty.call(message, "format"))
+                    writer.uint32(/* id 12, wireType 0 =*/96).int32(message.format);
+                if (message.presenced != null && Object.hasOwnProperty.call(message, "presenced"))
+                    $root.api.ReplToken.Presenced.encode(message.presenced, writer.uint32(/* id 13, wireType 2 =*/106).fork()).ldelim();
+                if (message.flags != null && message.flags.length)
+                    for (var i = 0; i < message.flags.length; ++i)
+                        writer.uint32(/* id 14, wireType 2 =*/114).string(message.flags[i]);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified ReplToken message, length delimited. Does not implicitly {@link api.ReplToken.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.ReplToken
+             * @static
+             * @param {api.ReplToken} message ReplToken message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ReplToken.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a ReplToken message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.ReplToken
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.ReplToken} ReplToken
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ReplToken.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.ReplToken();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.iat = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.exp = $root.google.protobuf.Timestamp.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.salt = reader.string();
+                        break;
+                    case 4:
+                        message.cluster = reader.string();
+                        break;
+                    case 6:
+                        message.persistence = reader.int32();
+                        break;
+                    case 7:
+                        message.repl = $root.api.Repl.decode(reader, reader.uint32());
+                        break;
+                    case 8:
+                        message.id = $root.api.ReplToken.ReplID.decode(reader, reader.uint32());
+                        break;
+                    case 9:
+                        message.classroom = $root.api.ReplToken.ClassroomMetadata.decode(reader, reader.uint32());
+                        break;
+                    case 10:
+                        message.resourceLimits = $root.api.ResourceLimits.decode(reader, reader.uint32());
+                        break;
+                    case 12:
+                        message.format = reader.int32();
+                        break;
+                    case 13:
+                        message.presenced = $root.api.ReplToken.Presenced.decode(reader, reader.uint32());
+                        break;
+                    case 14:
+                        if (!(message.flags && message.flags.length))
+                            message.flags = [];
+                        message.flags.push(reader.string());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a ReplToken message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.ReplToken
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.ReplToken} ReplToken
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ReplToken.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a ReplToken message.
+             * @function verify
+             * @memberof api.ReplToken
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ReplToken.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                var properties = {};
+                if (message.iat != null && message.hasOwnProperty("iat")) {
+                    var error = $root.google.protobuf.Timestamp.verify(message.iat);
+                    if (error)
+                        return "iat." + error;
+                }
+                if (message.exp != null && message.hasOwnProperty("exp")) {
+                    var error = $root.google.protobuf.Timestamp.verify(message.exp);
+                    if (error)
+                        return "exp." + error;
+                }
+                if (message.salt != null && message.hasOwnProperty("salt"))
+                    if (!$util.isString(message.salt))
+                        return "salt: string expected";
+                if (message.cluster != null && message.hasOwnProperty("cluster"))
+                    if (!$util.isString(message.cluster))
+                        return "cluster: string expected";
+                if (message.persistence != null && message.hasOwnProperty("persistence"))
+                    switch (message.persistence) {
+                    default:
+                        return "persistence: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                        break;
+                    }
+                if (message.repl != null && message.hasOwnProperty("repl")) {
+                    properties.metadata = 1;
+                    {
+                        var error = $root.api.Repl.verify(message.repl);
+                        if (error)
+                            return "repl." + error;
+                    }
+                }
+                if (message.id != null && message.hasOwnProperty("id")) {
+                    if (properties.metadata === 1)
+                        return "metadata: multiple values";
+                    properties.metadata = 1;
+                    {
+                        var error = $root.api.ReplToken.ReplID.verify(message.id);
+                        if (error)
+                            return "id." + error;
+                    }
+                }
+                if (message.classroom != null && message.hasOwnProperty("classroom")) {
+                    if (properties.metadata === 1)
+                        return "metadata: multiple values";
+                    properties.metadata = 1;
+                    {
+                        var error = $root.api.ReplToken.ClassroomMetadata.verify(message.classroom);
+                        if (error)
+                            return "classroom." + error;
+                    }
+                }
+                if (message.resourceLimits != null && message.hasOwnProperty("resourceLimits")) {
+                    var error = $root.api.ResourceLimits.verify(message.resourceLimits);
+                    if (error)
+                        return "resourceLimits." + error;
+                }
+                if (message.format != null && message.hasOwnProperty("format"))
+                    switch (message.format) {
+                    default:
+                        return "format: enum value expected";
+                    case 0:
+                    case 1:
+                        break;
+                    }
+                if (message.presenced != null && message.hasOwnProperty("presenced")) {
+                    var error = $root.api.ReplToken.Presenced.verify(message.presenced);
+                    if (error)
+                        return "presenced." + error;
+                }
+                if (message.flags != null && message.hasOwnProperty("flags")) {
+                    if (!Array.isArray(message.flags))
+                        return "flags: array expected";
+                    for (var i = 0; i < message.flags.length; ++i)
+                        if (!$util.isString(message.flags[i]))
+                            return "flags: string[] expected";
+                }
+                return null;
+            };
+    
+            /**
+             * Creates a ReplToken message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.ReplToken
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.ReplToken} ReplToken
+             */
+            ReplToken.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.ReplToken)
+                    return object;
+                var message = new $root.api.ReplToken();
+                if (object.iat != null) {
+                    if (typeof object.iat !== "object")
+                        throw TypeError(".api.ReplToken.iat: object expected");
+                    message.iat = $root.google.protobuf.Timestamp.fromObject(object.iat);
+                }
+                if (object.exp != null) {
+                    if (typeof object.exp !== "object")
+                        throw TypeError(".api.ReplToken.exp: object expected");
+                    message.exp = $root.google.protobuf.Timestamp.fromObject(object.exp);
+                }
+                if (object.salt != null)
+                    message.salt = String(object.salt);
+                if (object.cluster != null)
+                    message.cluster = String(object.cluster);
+                switch (object.persistence) {
+                case "PERSISTENT":
+                case 0:
+                    message.persistence = 0;
+                    break;
+                case "EPHEMERAL":
+                case 1:
+                    message.persistence = 1;
+                    break;
+                case "NONE":
+                case 2:
+                    message.persistence = 2;
+                    break;
+                }
+                if (object.repl != null) {
+                    if (typeof object.repl !== "object")
+                        throw TypeError(".api.ReplToken.repl: object expected");
+                    message.repl = $root.api.Repl.fromObject(object.repl);
+                }
+                if (object.id != null) {
+                    if (typeof object.id !== "object")
+                        throw TypeError(".api.ReplToken.id: object expected");
+                    message.id = $root.api.ReplToken.ReplID.fromObject(object.id);
+                }
+                if (object.classroom != null) {
+                    if (typeof object.classroom !== "object")
+                        throw TypeError(".api.ReplToken.classroom: object expected");
+                    message.classroom = $root.api.ReplToken.ClassroomMetadata.fromObject(object.classroom);
+                }
+                if (object.resourceLimits != null) {
+                    if (typeof object.resourceLimits !== "object")
+                        throw TypeError(".api.ReplToken.resourceLimits: object expected");
+                    message.resourceLimits = $root.api.ResourceLimits.fromObject(object.resourceLimits);
+                }
+                switch (object.format) {
+                case "PROTOBUF":
+                case 0:
+                    message.format = 0;
+                    break;
+                case "JSON":
+                case 1:
+                    message.format = 1;
+                    break;
+                }
+                if (object.presenced != null) {
+                    if (typeof object.presenced !== "object")
+                        throw TypeError(".api.ReplToken.presenced: object expected");
+                    message.presenced = $root.api.ReplToken.Presenced.fromObject(object.presenced);
+                }
+                if (object.flags) {
+                    if (!Array.isArray(object.flags))
+                        throw TypeError(".api.ReplToken.flags: array expected");
+                    message.flags = [];
+                    for (var i = 0; i < object.flags.length; ++i)
+                        message.flags[i] = String(object.flags[i]);
+                }
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a ReplToken message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.ReplToken
+             * @static
+             * @param {api.ReplToken} message ReplToken
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            ReplToken.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults)
+                    object.flags = [];
+                if (options.defaults) {
+                    object.iat = null;
+                    object.exp = null;
+                    object.salt = "";
+                    object.cluster = "";
+                    object.persistence = options.enums === String ? "PERSISTENT" : 0;
+                    object.resourceLimits = null;
+                    object.format = options.enums === String ? "PROTOBUF" : 0;
+                    object.presenced = null;
+                }
+                if (message.iat != null && message.hasOwnProperty("iat"))
+                    object.iat = $root.google.protobuf.Timestamp.toObject(message.iat, options);
+                if (message.exp != null && message.hasOwnProperty("exp"))
+                    object.exp = $root.google.protobuf.Timestamp.toObject(message.exp, options);
+                if (message.salt != null && message.hasOwnProperty("salt"))
+                    object.salt = message.salt;
+                if (message.cluster != null && message.hasOwnProperty("cluster"))
+                    object.cluster = message.cluster;
+                if (message.persistence != null && message.hasOwnProperty("persistence"))
+                    object.persistence = options.enums === String ? $root.api.ReplToken.Persistence[message.persistence] : message.persistence;
+                if (message.repl != null && message.hasOwnProperty("repl")) {
+                    object.repl = $root.api.Repl.toObject(message.repl, options);
+                    if (options.oneofs)
+                        object.metadata = "repl";
+                }
+                if (message.id != null && message.hasOwnProperty("id")) {
+                    object.id = $root.api.ReplToken.ReplID.toObject(message.id, options);
+                    if (options.oneofs)
+                        object.metadata = "id";
+                }
+                if (message.classroom != null && message.hasOwnProperty("classroom")) {
+                    object.classroom = $root.api.ReplToken.ClassroomMetadata.toObject(message.classroom, options);
+                    if (options.oneofs)
+                        object.metadata = "classroom";
+                }
+                if (message.resourceLimits != null && message.hasOwnProperty("resourceLimits"))
+                    object.resourceLimits = $root.api.ResourceLimits.toObject(message.resourceLimits, options);
+                if (message.format != null && message.hasOwnProperty("format"))
+                    object.format = options.enums === String ? $root.api.ReplToken.WireFormat[message.format] : message.format;
+                if (message.presenced != null && message.hasOwnProperty("presenced"))
+                    object.presenced = $root.api.ReplToken.Presenced.toObject(message.presenced, options);
+                if (message.flags && message.flags.length) {
+                    object.flags = [];
+                    for (var j = 0; j < message.flags.length; ++j)
+                        object.flags[j] = message.flags[j];
+                }
+                return object;
+            };
+    
+            /**
+             * Converts this ReplToken to JSON.
+             * @function toJSON
+             * @memberof api.ReplToken
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            ReplToken.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            /**
+             * Persistence enum.
+             * @name api.ReplToken.Persistence
+             * @enum {number}
+             * @property {number} PERSISTENT=0 PERSISTENT value
+             * @property {number} EPHEMERAL=1 EPHEMERAL value
+             * @property {number} NONE=2 NONE value
+             */
+            ReplToken.Persistence = (function() {
+                var valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "PERSISTENT"] = 0;
+                values[valuesById[1] = "EPHEMERAL"] = 1;
+                values[valuesById[2] = "NONE"] = 2;
+                return values;
+            })();
+    
+            ReplToken.ClassroomMetadata = (function() {
+    
+                /**
+                 * Properties of a ClassroomMetadata.
+                 * @memberof api.ReplToken
+                 * @interface IClassroomMetadata
+                 * @property {string|null} [id] ClassroomMetadata id
+                 * @property {string|null} [language] ClassroomMetadata language
+                 */
+    
+                /**
+                 * Constructs a new ClassroomMetadata.
+                 * @memberof api.ReplToken
+                 * @classdesc Represents a ClassroomMetadata.
+                 * @constructor
+                 * @param {api.ReplToken.IClassroomMetadata=} [properties] Properties to set
+                 */
+                function ClassroomMetadata(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * ClassroomMetadata id.
+                 * @member {string} id
+                 * @memberof api.ReplToken.ClassroomMetadata
+                 * @instance
+                 */
+                ClassroomMetadata.prototype.id = "";
+    
+                /**
+                 * ClassroomMetadata language.
+                 * @member {string} language
+                 * @memberof api.ReplToken.ClassroomMetadata
+                 * @instance
+                 */
+                ClassroomMetadata.prototype.language = "";
+    
+                /**
+                 * Creates a new ClassroomMetadata instance using the specified properties.
+                 * @function create
+                 * @memberof api.ReplToken.ClassroomMetadata
+                 * @static
+                 * @param {api.ReplToken.IClassroomMetadata=} [properties] Properties to set
+                 * @returns {api.ReplToken.ClassroomMetadata} ClassroomMetadata instance
+                 */
+                ClassroomMetadata.create = function create(properties) {
+                    return ClassroomMetadata.fromObject(properties);
+                };
+    
+                /**
+                 * Encodes the specified ClassroomMetadata message. Does not implicitly {@link api.ReplToken.ClassroomMetadata.verify|verify} messages.
+                 * @function encode
+                 * @memberof api.ReplToken.ClassroomMetadata
+                 * @static
+                 * @param {api.ReplToken.ClassroomMetadata} message ClassroomMetadata message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                ClassroomMetadata.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.id != null && Object.hasOwnProperty.call(message, "id"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                    if (message.language != null && Object.hasOwnProperty.call(message, "language"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.language);
+                    return writer;
+                };
+    
+                /**
+                 * Encodes the specified ClassroomMetadata message, length delimited. Does not implicitly {@link api.ReplToken.ClassroomMetadata.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof api.ReplToken.ClassroomMetadata
+                 * @static
+                 * @param {api.ReplToken.ClassroomMetadata} message ClassroomMetadata message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                ClassroomMetadata.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+    
+                /**
+                 * Decodes a ClassroomMetadata message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof api.ReplToken.ClassroomMetadata
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {api.ReplToken.ClassroomMetadata} ClassroomMetadata
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                ClassroomMetadata.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.ReplToken.ClassroomMetadata();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.id = reader.string();
+                            break;
+                        case 2:
+                            message.language = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Decodes a ClassroomMetadata message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof api.ReplToken.ClassroomMetadata
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {api.ReplToken.ClassroomMetadata} ClassroomMetadata
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                ClassroomMetadata.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+    
+                /**
+                 * Verifies a ClassroomMetadata message.
+                 * @function verify
+                 * @memberof api.ReplToken.ClassroomMetadata
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                ClassroomMetadata.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.id != null && message.hasOwnProperty("id"))
+                        if (!$util.isString(message.id))
+                            return "id: string expected";
+                    if (message.language != null && message.hasOwnProperty("language"))
+                        if (!$util.isString(message.language))
+                            return "language: string expected";
+                    return null;
+                };
+    
+                /**
+                 * Creates a ClassroomMetadata message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof api.ReplToken.ClassroomMetadata
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {api.ReplToken.ClassroomMetadata} ClassroomMetadata
+                 */
+                ClassroomMetadata.fromObject = function fromObject(object) {
+                    if (object instanceof $root.api.ReplToken.ClassroomMetadata)
+                        return object;
+                    var message = new $root.api.ReplToken.ClassroomMetadata();
+                    if (object.id != null)
+                        message.id = String(object.id);
+                    if (object.language != null)
+                        message.language = String(object.language);
+                    return message;
+                };
+    
+                /**
+                 * Creates a plain object from a ClassroomMetadata message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof api.ReplToken.ClassroomMetadata
+                 * @static
+                 * @param {api.ReplToken.ClassroomMetadata} message ClassroomMetadata
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                ClassroomMetadata.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.defaults) {
+                        object.id = "";
+                        object.language = "";
+                    }
+                    if (message.id != null && message.hasOwnProperty("id"))
+                        object.id = message.id;
+                    if (message.language != null && message.hasOwnProperty("language"))
+                        object.language = message.language;
+                    return object;
+                };
+    
+                /**
+                 * Converts this ClassroomMetadata to JSON.
+                 * @function toJSON
+                 * @memberof api.ReplToken.ClassroomMetadata
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                ClassroomMetadata.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+    
+                return ClassroomMetadata;
+            })();
+    
+            ReplToken.ReplID = (function() {
+    
+                /**
+                 * Properties of a ReplID.
+                 * @memberof api.ReplToken
+                 * @interface IReplID
+                 * @property {string|null} [id] ReplID id
+                 * @property {string|null} [sourceRepl] ReplID sourceRepl
+                 */
+    
+                /**
+                 * Constructs a new ReplID.
+                 * @memberof api.ReplToken
+                 * @classdesc Represents a ReplID.
+                 * @constructor
+                 * @param {api.ReplToken.IReplID=} [properties] Properties to set
+                 */
+                function ReplID(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * ReplID id.
+                 * @member {string} id
+                 * @memberof api.ReplToken.ReplID
+                 * @instance
+                 */
+                ReplID.prototype.id = "";
+    
+                /**
+                 * ReplID sourceRepl.
+                 * @member {string} sourceRepl
+                 * @memberof api.ReplToken.ReplID
+                 * @instance
+                 */
+                ReplID.prototype.sourceRepl = "";
+    
+                /**
+                 * Creates a new ReplID instance using the specified properties.
+                 * @function create
+                 * @memberof api.ReplToken.ReplID
+                 * @static
+                 * @param {api.ReplToken.IReplID=} [properties] Properties to set
+                 * @returns {api.ReplToken.ReplID} ReplID instance
+                 */
+                ReplID.create = function create(properties) {
+                    return ReplID.fromObject(properties);
+                };
+    
+                /**
+                 * Encodes the specified ReplID message. Does not implicitly {@link api.ReplToken.ReplID.verify|verify} messages.
+                 * @function encode
+                 * @memberof api.ReplToken.ReplID
+                 * @static
+                 * @param {api.ReplToken.ReplID} message ReplID message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                ReplID.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.id != null && Object.hasOwnProperty.call(message, "id"))
+                        writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                    if (message.sourceRepl != null && Object.hasOwnProperty.call(message, "sourceRepl"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.sourceRepl);
+                    return writer;
+                };
+    
+                /**
+                 * Encodes the specified ReplID message, length delimited. Does not implicitly {@link api.ReplToken.ReplID.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof api.ReplToken.ReplID
+                 * @static
+                 * @param {api.ReplToken.ReplID} message ReplID message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                ReplID.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+    
+                /**
+                 * Decodes a ReplID message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof api.ReplToken.ReplID
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {api.ReplToken.ReplID} ReplID
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                ReplID.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.ReplToken.ReplID();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.id = reader.string();
+                            break;
+                        case 2:
+                            message.sourceRepl = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Decodes a ReplID message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof api.ReplToken.ReplID
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {api.ReplToken.ReplID} ReplID
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                ReplID.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+    
+                /**
+                 * Verifies a ReplID message.
+                 * @function verify
+                 * @memberof api.ReplToken.ReplID
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                ReplID.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.id != null && message.hasOwnProperty("id"))
+                        if (!$util.isString(message.id))
+                            return "id: string expected";
+                    if (message.sourceRepl != null && message.hasOwnProperty("sourceRepl"))
+                        if (!$util.isString(message.sourceRepl))
+                            return "sourceRepl: string expected";
+                    return null;
+                };
+    
+                /**
+                 * Creates a ReplID message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof api.ReplToken.ReplID
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {api.ReplToken.ReplID} ReplID
+                 */
+                ReplID.fromObject = function fromObject(object) {
+                    if (object instanceof $root.api.ReplToken.ReplID)
+                        return object;
+                    var message = new $root.api.ReplToken.ReplID();
+                    if (object.id != null)
+                        message.id = String(object.id);
+                    if (object.sourceRepl != null)
+                        message.sourceRepl = String(object.sourceRepl);
+                    return message;
+                };
+    
+                /**
+                 * Creates a plain object from a ReplID message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof api.ReplToken.ReplID
+                 * @static
+                 * @param {api.ReplToken.ReplID} message ReplID
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                ReplID.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.defaults) {
+                        object.id = "";
+                        object.sourceRepl = "";
+                    }
+                    if (message.id != null && message.hasOwnProperty("id"))
+                        object.id = message.id;
+                    if (message.sourceRepl != null && message.hasOwnProperty("sourceRepl"))
+                        object.sourceRepl = message.sourceRepl;
+                    return object;
+                };
+    
+                /**
+                 * Converts this ReplID to JSON.
+                 * @function toJSON
+                 * @memberof api.ReplToken.ReplID
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                ReplID.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+    
+                return ReplID;
+            })();
+    
+            /**
+             * WireFormat enum.
+             * @name api.ReplToken.WireFormat
+             * @enum {number}
+             * @property {number} PROTOBUF=0 PROTOBUF value
+             * @property {number} JSON=1 JSON value
+             */
+            ReplToken.WireFormat = (function() {
+                var valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "PROTOBUF"] = 0;
+                values[valuesById[1] = "JSON"] = 1;
+                return values;
+            })();
+    
+            ReplToken.Presenced = (function() {
+    
+                /**
+                 * Properties of a Presenced.
+                 * @memberof api.ReplToken
+                 * @interface IPresenced
+                 * @property {number|null} [bearerID] Presenced bearerID
+                 * @property {string|null} [bearerName] Presenced bearerName
+                 */
+    
+                /**
+                 * Constructs a new Presenced.
+                 * @memberof api.ReplToken
+                 * @classdesc Represents a Presenced.
+                 * @constructor
+                 * @param {api.ReplToken.IPresenced=} [properties] Properties to set
+                 */
+                function Presenced(properties) {
+                    if (properties)
+                        for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                            if (properties[keys[i]] != null)
+                                this[keys[i]] = properties[keys[i]];
+                }
+    
+                /**
+                 * Presenced bearerID.
+                 * @member {number} bearerID
+                 * @memberof api.ReplToken.Presenced
+                 * @instance
+                 */
+                Presenced.prototype.bearerID = 0;
+    
+                /**
+                 * Presenced bearerName.
+                 * @member {string} bearerName
+                 * @memberof api.ReplToken.Presenced
+                 * @instance
+                 */
+                Presenced.prototype.bearerName = "";
+    
+                /**
+                 * Creates a new Presenced instance using the specified properties.
+                 * @function create
+                 * @memberof api.ReplToken.Presenced
+                 * @static
+                 * @param {api.ReplToken.IPresenced=} [properties] Properties to set
+                 * @returns {api.ReplToken.Presenced} Presenced instance
+                 */
+                Presenced.create = function create(properties) {
+                    return Presenced.fromObject(properties);
+                };
+    
+                /**
+                 * Encodes the specified Presenced message. Does not implicitly {@link api.ReplToken.Presenced.verify|verify} messages.
+                 * @function encode
+                 * @memberof api.ReplToken.Presenced
+                 * @static
+                 * @param {api.ReplToken.Presenced} message Presenced message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Presenced.encode = function encode(message, writer) {
+                    if (!writer)
+                        writer = $Writer.create();
+                    if (message.bearerID != null && Object.hasOwnProperty.call(message, "bearerID"))
+                        writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.bearerID);
+                    if (message.bearerName != null && Object.hasOwnProperty.call(message, "bearerName"))
+                        writer.uint32(/* id 2, wireType 2 =*/18).string(message.bearerName);
+                    return writer;
+                };
+    
+                /**
+                 * Encodes the specified Presenced message, length delimited. Does not implicitly {@link api.ReplToken.Presenced.verify|verify} messages.
+                 * @function encodeDelimited
+                 * @memberof api.ReplToken.Presenced
+                 * @static
+                 * @param {api.ReplToken.Presenced} message Presenced message or plain object to encode
+                 * @param {$protobuf.Writer} [writer] Writer to encode to
+                 * @returns {$protobuf.Writer} Writer
+                 */
+                Presenced.encodeDelimited = function encodeDelimited(message, writer) {
+                    return this.encode(message, writer).ldelim();
+                };
+    
+                /**
+                 * Decodes a Presenced message from the specified reader or buffer.
+                 * @function decode
+                 * @memberof api.ReplToken.Presenced
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @param {number} [length] Message length if known beforehand
+                 * @returns {api.ReplToken.Presenced} Presenced
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Presenced.decode = function decode(reader, length) {
+                    if (!(reader instanceof $Reader))
+                        reader = $Reader.create(reader);
+                    var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.ReplToken.Presenced();
+                    while (reader.pos < end) {
+                        var tag = reader.uint32();
+                        switch (tag >>> 3) {
+                        case 1:
+                            message.bearerID = reader.uint32();
+                            break;
+                        case 2:
+                            message.bearerName = reader.string();
+                            break;
+                        default:
+                            reader.skipType(tag & 7);
+                            break;
+                        }
+                    }
+                    return message;
+                };
+    
+                /**
+                 * Decodes a Presenced message from the specified reader or buffer, length delimited.
+                 * @function decodeDelimited
+                 * @memberof api.ReplToken.Presenced
+                 * @static
+                 * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+                 * @returns {api.ReplToken.Presenced} Presenced
+                 * @throws {Error} If the payload is not a reader or valid buffer
+                 * @throws {$protobuf.util.ProtocolError} If required fields are missing
+                 */
+                Presenced.decodeDelimited = function decodeDelimited(reader) {
+                    if (!(reader instanceof $Reader))
+                        reader = new $Reader(reader);
+                    return this.decode(reader, reader.uint32());
+                };
+    
+                /**
+                 * Verifies a Presenced message.
+                 * @function verify
+                 * @memberof api.ReplToken.Presenced
+                 * @static
+                 * @param {Object.<string,*>} message Plain object to verify
+                 * @returns {string|null} `null` if valid, otherwise the reason why it is not
+                 */
+                Presenced.verify = function verify(message) {
+                    if (typeof message !== "object" || message === null)
+                        return "object expected";
+                    if (message.bearerID != null && message.hasOwnProperty("bearerID"))
+                        if (!$util.isInteger(message.bearerID))
+                            return "bearerID: integer expected";
+                    if (message.bearerName != null && message.hasOwnProperty("bearerName"))
+                        if (!$util.isString(message.bearerName))
+                            return "bearerName: string expected";
+                    return null;
+                };
+    
+                /**
+                 * Creates a Presenced message from a plain object. Also converts values to their respective internal types.
+                 * @function fromObject
+                 * @memberof api.ReplToken.Presenced
+                 * @static
+                 * @param {Object.<string,*>} object Plain object
+                 * @returns {api.ReplToken.Presenced} Presenced
+                 */
+                Presenced.fromObject = function fromObject(object) {
+                    if (object instanceof $root.api.ReplToken.Presenced)
+                        return object;
+                    var message = new $root.api.ReplToken.Presenced();
+                    if (object.bearerID != null)
+                        message.bearerID = object.bearerID >>> 0;
+                    if (object.bearerName != null)
+                        message.bearerName = String(object.bearerName);
+                    return message;
+                };
+    
+                /**
+                 * Creates a plain object from a Presenced message. Also converts values to other types if specified.
+                 * @function toObject
+                 * @memberof api.ReplToken.Presenced
+                 * @static
+                 * @param {api.ReplToken.Presenced} message Presenced
+                 * @param {$protobuf.IConversionOptions} [options] Conversion options
+                 * @returns {Object.<string,*>} Plain object
+                 */
+                Presenced.toObject = function toObject(message, options) {
+                    if (!options)
+                        options = {};
+                    var object = {};
+                    if (options.defaults) {
+                        object.bearerID = 0;
+                        object.bearerName = "";
+                    }
+                    if (message.bearerID != null && message.hasOwnProperty("bearerID"))
+                        object.bearerID = message.bearerID;
+                    if (message.bearerName != null && message.hasOwnProperty("bearerName"))
+                        object.bearerName = message.bearerName;
+                    return object;
+                };
+    
+                /**
+                 * Converts this Presenced to JSON.
+                 * @function toJSON
+                 * @memberof api.ReplToken.Presenced
+                 * @instance
+                 * @returns {Object.<string,*>} JSON object
+                 */
+                Presenced.prototype.toJSON = function toJSON() {
+                    return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+                };
+    
+                return Presenced;
+            })();
+    
+            return ReplToken;
+        })();
+    
         return api;
     })();
     
