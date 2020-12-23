@@ -9770,6 +9770,703 @@ export namespace api {
          */
         public toJSON(): { [k: string]: any };
     }
+
+    /** Properties of a Repl. */
+    interface IRepl {
+
+        /** Repl id */
+        id?: (string|null);
+
+        /** Repl language */
+        language?: (string|null);
+
+        /** Repl bucket */
+        bucket?: (string|null);
+
+        /** Repl slug */
+        slug?: (string|null);
+
+        /** Repl user */
+        user?: (string|null);
+
+        /** Repl sourceRepl */
+        sourceRepl?: (string|null);
+    }
+
+    /** Represents a Repl. */
+    class Repl {
+
+        /**
+         * Constructs a new Repl.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IRepl);
+
+        /** Repl id. */
+        public id: string;
+
+        /** Repl language. */
+        public language: string;
+
+        /** Repl bucket. */
+        public bucket: string;
+
+        /** Repl slug. */
+        public slug: string;
+
+        /** Repl user. */
+        public user: string;
+
+        /** Repl sourceRepl. */
+        public sourceRepl: string;
+
+        /**
+         * Creates a new Repl instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns Repl instance
+         */
+        public static create(properties?: api.IRepl): api.Repl;
+
+        /**
+         * Encodes the specified Repl message. Does not implicitly {@link api.Repl.verify|verify} messages.
+         * @param message Repl message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.Repl, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified Repl message, length delimited. Does not implicitly {@link api.Repl.verify|verify} messages.
+         * @param message Repl message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.Repl, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a Repl message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns Repl
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.Repl;
+
+        /**
+         * Decodes a Repl message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns Repl
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.Repl;
+
+        /**
+         * Verifies a Repl message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a Repl message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns Repl
+         */
+        public static fromObject(object: { [k: string]: any }): api.Repl;
+
+        /**
+         * Creates a plain object from a Repl message. Also converts values to other types if specified.
+         * @param message Repl
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.Repl, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this Repl to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a ResourceLimits. */
+    interface IResourceLimits {
+
+        /** ResourceLimits net */
+        net?: (boolean|null);
+
+        /** ResourceLimits memory */
+        memory?: (number|null);
+
+        /** ResourceLimits threads */
+        threads?: (number|null);
+
+        /** ResourceLimits shares */
+        shares?: (number|null);
+
+        /** ResourceLimits disk */
+        disk?: (number|null);
+    }
+
+    /** Represents a ResourceLimits. */
+    class ResourceLimits {
+
+        /**
+         * Constructs a new ResourceLimits.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IResourceLimits);
+
+        /** ResourceLimits net. */
+        public net: boolean;
+
+        /** ResourceLimits memory. */
+        public memory: number;
+
+        /** ResourceLimits threads. */
+        public threads: number;
+
+        /** ResourceLimits shares. */
+        public shares: number;
+
+        /** ResourceLimits disk. */
+        public disk: number;
+
+        /**
+         * Creates a new ResourceLimits instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns ResourceLimits instance
+         */
+        public static create(properties?: api.IResourceLimits): api.ResourceLimits;
+
+        /**
+         * Encodes the specified ResourceLimits message. Does not implicitly {@link api.ResourceLimits.verify|verify} messages.
+         * @param message ResourceLimits message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.ResourceLimits, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified ResourceLimits message, length delimited. Does not implicitly {@link api.ResourceLimits.verify|verify} messages.
+         * @param message ResourceLimits message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.ResourceLimits, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a ResourceLimits message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns ResourceLimits
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.ResourceLimits;
+
+        /**
+         * Decodes a ResourceLimits message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns ResourceLimits
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.ResourceLimits;
+
+        /**
+         * Verifies a ResourceLimits message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a ResourceLimits message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns ResourceLimits
+         */
+        public static fromObject(object: { [k: string]: any }): api.ResourceLimits;
+
+        /**
+         * Creates a plain object from a ResourceLimits message. Also converts values to other types if specified.
+         * @param message ResourceLimits
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.ResourceLimits, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this ResourceLimits to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a ReplToken. */
+    interface IReplToken {
+
+        /** ReplToken iat */
+        iat?: (google.protobuf.Timestamp|google.protobuf.ITimestamp|null);
+
+        /** ReplToken exp */
+        exp?: (google.protobuf.Timestamp|google.protobuf.ITimestamp|null);
+
+        /** ReplToken salt */
+        salt?: (string|null);
+
+        /** ReplToken cluster */
+        cluster?: (string|null);
+
+        /** ReplToken persistence */
+        persistence?: (api.ReplToken.Persistence|null);
+
+        /** ReplToken repl */
+        repl?: (api.Repl|api.IRepl|null);
+
+        /** ReplToken id */
+        id?: (api.ReplToken.ReplID|api.ReplToken.IReplID|null);
+
+        /** ReplToken classroom */
+        classroom?: (api.ReplToken.ClassroomMetadata|api.ReplToken.IClassroomMetadata|null);
+
+        /** ReplToken resourceLimits */
+        resourceLimits?: (api.ResourceLimits|api.IResourceLimits|null);
+
+        /** ReplToken format */
+        format?: (api.ReplToken.WireFormat|null);
+
+        /** ReplToken presenced */
+        presenced?: (api.ReplToken.Presenced|api.ReplToken.IPresenced|null);
+
+        /** ReplToken flags */
+        flags?: (string[]|null);
+    }
+
+    /** Represents a ReplToken. */
+    class ReplToken {
+
+        /**
+         * Constructs a new ReplToken.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IReplToken);
+
+        /** ReplToken iat. */
+        public iat?: (google.protobuf.Timestamp|null);
+
+        /** ReplToken exp. */
+        public exp?: (google.protobuf.Timestamp|null);
+
+        /** ReplToken salt. */
+        public salt: string;
+
+        /** ReplToken cluster. */
+        public cluster: string;
+
+        /** ReplToken persistence. */
+        public persistence: api.ReplToken.Persistence;
+
+        /** ReplToken repl. */
+        public repl?: (api.Repl|null);
+
+        /** ReplToken id. */
+        public id?: (api.ReplToken.ReplID|null);
+
+        /** ReplToken classroom. */
+        public classroom?: (api.ReplToken.ClassroomMetadata|null);
+
+        /** ReplToken resourceLimits. */
+        public resourceLimits?: (api.ResourceLimits|null);
+
+        /** ReplToken format. */
+        public format: api.ReplToken.WireFormat;
+
+        /** ReplToken presenced. */
+        public presenced?: (api.ReplToken.Presenced|null);
+
+        /** ReplToken flags. */
+        public flags: string[];
+
+        /** ReplToken metadata. */
+        public metadata?: ("repl"|"id"|"classroom");
+
+        /**
+         * Creates a new ReplToken instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns ReplToken instance
+         */
+        public static create(properties?: api.IReplToken): api.ReplToken;
+
+        /**
+         * Encodes the specified ReplToken message. Does not implicitly {@link api.ReplToken.verify|verify} messages.
+         * @param message ReplToken message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.ReplToken, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified ReplToken message, length delimited. Does not implicitly {@link api.ReplToken.verify|verify} messages.
+         * @param message ReplToken message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.ReplToken, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a ReplToken message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns ReplToken
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.ReplToken;
+
+        /**
+         * Decodes a ReplToken message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns ReplToken
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.ReplToken;
+
+        /**
+         * Verifies a ReplToken message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a ReplToken message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns ReplToken
+         */
+        public static fromObject(object: { [k: string]: any }): api.ReplToken;
+
+        /**
+         * Creates a plain object from a ReplToken message. Also converts values to other types if specified.
+         * @param message ReplToken
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.ReplToken, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this ReplToken to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    namespace ReplToken {
+
+        /** Persistence enum. */
+        enum Persistence {
+            PERSISTENT = 0,
+            EPHEMERAL = 1,
+            NONE = 2
+        }
+
+        /** Properties of a ClassroomMetadata. */
+        interface IClassroomMetadata {
+
+            /** ClassroomMetadata id */
+            id?: (string|null);
+
+            /** ClassroomMetadata language */
+            language?: (string|null);
+        }
+
+        /** Represents a ClassroomMetadata. */
+        class ClassroomMetadata {
+
+            /**
+             * Constructs a new ClassroomMetadata.
+             * @param [properties] Properties to set
+             */
+            private constructor(properties?: api.ReplToken.IClassroomMetadata);
+
+            /** ClassroomMetadata id. */
+            public id: string;
+
+            /** ClassroomMetadata language. */
+            public language: string;
+
+            /**
+             * Creates a new ClassroomMetadata instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ClassroomMetadata instance
+             */
+            public static create(properties?: api.ReplToken.IClassroomMetadata): api.ReplToken.ClassroomMetadata;
+
+            /**
+             * Encodes the specified ClassroomMetadata message. Does not implicitly {@link api.ReplToken.ClassroomMetadata.verify|verify} messages.
+             * @param message ClassroomMetadata message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: api.ReplToken.ClassroomMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified ClassroomMetadata message, length delimited. Does not implicitly {@link api.ReplToken.ClassroomMetadata.verify|verify} messages.
+             * @param message ClassroomMetadata message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: api.ReplToken.ClassroomMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ClassroomMetadata message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ClassroomMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.ReplToken.ClassroomMetadata;
+
+            /**
+             * Decodes a ClassroomMetadata message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns ClassroomMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.ReplToken.ClassroomMetadata;
+
+            /**
+             * Verifies a ClassroomMetadata message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a ClassroomMetadata message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns ClassroomMetadata
+             */
+            public static fromObject(object: { [k: string]: any }): api.ReplToken.ClassroomMetadata;
+
+            /**
+             * Creates a plain object from a ClassroomMetadata message. Also converts values to other types if specified.
+             * @param message ClassroomMetadata
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: api.ReplToken.ClassroomMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this ClassroomMetadata to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** Properties of a ReplID. */
+        interface IReplID {
+
+            /** ReplID id */
+            id?: (string|null);
+
+            /** ReplID sourceRepl */
+            sourceRepl?: (string|null);
+        }
+
+        /** Represents a ReplID. */
+        class ReplID {
+
+            /**
+             * Constructs a new ReplID.
+             * @param [properties] Properties to set
+             */
+            private constructor(properties?: api.ReplToken.IReplID);
+
+            /** ReplID id. */
+            public id: string;
+
+            /** ReplID sourceRepl. */
+            public sourceRepl: string;
+
+            /**
+             * Creates a new ReplID instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns ReplID instance
+             */
+            public static create(properties?: api.ReplToken.IReplID): api.ReplToken.ReplID;
+
+            /**
+             * Encodes the specified ReplID message. Does not implicitly {@link api.ReplToken.ReplID.verify|verify} messages.
+             * @param message ReplID message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: api.ReplToken.ReplID, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified ReplID message, length delimited. Does not implicitly {@link api.ReplToken.ReplID.verify|verify} messages.
+             * @param message ReplID message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: api.ReplToken.ReplID, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a ReplID message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns ReplID
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.ReplToken.ReplID;
+
+            /**
+             * Decodes a ReplID message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns ReplID
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.ReplToken.ReplID;
+
+            /**
+             * Verifies a ReplID message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a ReplID message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns ReplID
+             */
+            public static fromObject(object: { [k: string]: any }): api.ReplToken.ReplID;
+
+            /**
+             * Creates a plain object from a ReplID message. Also converts values to other types if specified.
+             * @param message ReplID
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: api.ReplToken.ReplID, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this ReplID to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+
+        /** WireFormat enum. */
+        enum WireFormat {
+            PROTOBUF = 0,
+            JSON = 1
+        }
+
+        /** Properties of a Presenced. */
+        interface IPresenced {
+
+            /** Presenced bearerID */
+            bearerID?: (number|null);
+
+            /** Presenced bearerName */
+            bearerName?: (string|null);
+        }
+
+        /** Represents a Presenced. */
+        class Presenced {
+
+            /**
+             * Constructs a new Presenced.
+             * @param [properties] Properties to set
+             */
+            private constructor(properties?: api.ReplToken.IPresenced);
+
+            /** Presenced bearerID. */
+            public bearerID: number;
+
+            /** Presenced bearerName. */
+            public bearerName: string;
+
+            /**
+             * Creates a new Presenced instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Presenced instance
+             */
+            public static create(properties?: api.ReplToken.IPresenced): api.ReplToken.Presenced;
+
+            /**
+             * Encodes the specified Presenced message. Does not implicitly {@link api.ReplToken.Presenced.verify|verify} messages.
+             * @param message Presenced message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: api.ReplToken.Presenced, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Encodes the specified Presenced message, length delimited. Does not implicitly {@link api.ReplToken.Presenced.verify|verify} messages.
+             * @param message Presenced message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: api.ReplToken.Presenced, writer?: $protobuf.Writer): $protobuf.Writer;
+
+            /**
+             * Decodes a Presenced message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Presenced
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.ReplToken.Presenced;
+
+            /**
+             * Decodes a Presenced message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns Presenced
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.ReplToken.Presenced;
+
+            /**
+             * Verifies a Presenced message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
+
+            /**
+             * Creates a Presenced message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns Presenced
+             */
+            public static fromObject(object: { [k: string]: any }): api.ReplToken.Presenced;
+
+            /**
+             * Creates a plain object from a Presenced message. Also converts values to other types if specified.
+             * @param message Presenced
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: api.ReplToken.Presenced, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+            /**
+             * Converts this Presenced to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+        }
+    }
 }
 
 /** Namespace google. */
