@@ -53,6 +53,13 @@ message ResourceLimits {
   int64 disk = 5;
 }
 
+// Permissions allow tokens to perform certain actions.
+message Permissions {
+  // This token has permission to toggle the always on state of a container.
+  // For a connection to send the AlwaysOn message, it must have this permission.
+  bool toggleAlwaysOn = 1;
+}
+
 // ReplToken is the expected client options during the handshake. This is encoded
 // into the token that is used to connect using WebSocket.
 message ReplToken {
@@ -168,4 +175,6 @@ message ReplToken {
   // Flags are handy for passing arbitrary configs along. Mostly used so
   // the client can try out new features
   repeated string flags = 14;
+
+  Permissions permissions = 15;
 }
