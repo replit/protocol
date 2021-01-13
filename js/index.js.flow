@@ -66,7 +66,7 @@ declare var npm$namespace$api: {|
   IClear: Class<api$IClear>,
   IToast: Class<api$IToast>,
   IRedirect: Class<api$IRedirect>,
-  IIncRef: Class<api$IIncRef>,
+  IAlwaysOn: Class<api$IAlwaysOn>,
   IRunMain: Class<api$IRunMain>,
   IOpenChannel: Class<api$IOpenChannel>,
   IOpenChannelRes: Class<api$IOpenChannelRes>,
@@ -108,6 +108,7 @@ declare var npm$namespace$api: {|
   IPTYConfig: Class<api$IPTYConfig>,
   IRepl: Class<api$IRepl>,
   IResourceLimits: Class<api$IResourceLimits>,
+  IPermissions: Class<api$IPermissions>,
   IReplToken: Class<api$IReplToken>,
   Command: typeof api$Command,
   Audio: typeof api$Audio,
@@ -164,7 +165,7 @@ declare var npm$namespace$api: {|
   Clear: typeof api$Clear,
   Toast: typeof api$Toast,
   Redirect: typeof api$Redirect,
-  IncRef: typeof api$IncRef,
+  AlwaysOn: typeof api$AlwaysOn,
   RunMain: typeof api$RunMain,
   OpenChannel: typeof api$OpenChannel,
   OpenChannelRes: typeof api$OpenChannelRes,
@@ -206,6 +207,7 @@ declare var npm$namespace$api: {|
   PTYConfig: typeof api$PTYConfig,
   Repl: typeof api$Repl,
   ResourceLimits: typeof api$ResourceLimits,
+  Permissions: typeof api$Permissions,
   ReplToken: typeof api$ReplToken,
 |};
 
@@ -264,9 +266,9 @@ declare type api$ICommand = {|
   redirect?: api$Redirect | api$IRedirect | null,
 
   /**
-   * Command incRef
+   * Command alwaysOn
    */
-  incRef?: api$IncRef | api$IIncRef | null,
+  alwaysOn?: api$AlwaysOn | api$IAlwaysOn | null,
 
   /**
    * Command runMain
@@ -816,9 +818,9 @@ declare class api$Command {
   redirect?: api$Redirect | null;
 
   /**
-   * Command incRef.
+   * Command alwaysOn.
    */
-  incRef?: api$IncRef | null;
+  alwaysOn?: api$AlwaysOn | null;
 
   /**
    * Command runMain.
@@ -1312,7 +1314,7 @@ declare class api$Command {
     | "portOpen"
     | "toast"
     | "redirect"
-    | "incRef"
+    | "alwaysOn"
     | "runMain"
     | "clear"
     | "eval"
@@ -3297,6 +3299,11 @@ declare type api$IVCREntry = {|
    * VCREntry uid
    */
   uid?: string | null,
+
+  /**
+   * VCREntry replid
+   */
+  replid?: string | null,
 |};
 
 /**
@@ -3328,6 +3335,11 @@ declare class api$VCREntry {
    * VCREntry uid.
    */
   uid: string;
+
+  /**
+   * VCREntry replid.
+   */
+  replid: string;
 
   /**
    * Creates a new VCREntry instance using the specified properties.
@@ -8180,73 +8192,83 @@ declare class api$Redirect {
 }
 
 /**
- * Properties of an IncRef.
+ * Properties of an AlwaysOn.
  */
-declare type api$IIncRef = {||};
+declare type api$IAlwaysOn = {|
+  /**
+   * AlwaysOn enable
+   */
+  enable?: boolean | null,
+|};
 
 /**
- * Represents an IncRef.
+ * Represents an AlwaysOn.
  */
-declare class api$IncRef {
+declare class api$AlwaysOn {
   /**
-   * Constructs a new IncRef.
+   * Constructs a new AlwaysOn.
    * @param [properties] Properties to set
    */
-  constructor(properties?: api$IIncRef): this;
+  constructor(properties?: api$IAlwaysOn): this;
 
   /**
-   * Creates a new IncRef instance using the specified properties.
-   * @param [properties] Properties to set
-   * @returns IncRef instance
+   * AlwaysOn enable.
    */
-  static create(properties?: api$IIncRef): api$IncRef;
+  enable: boolean;
 
   /**
-   * Encodes the specified IncRef message. Does not implicitly {@link api.IncRef.verify|verify} messages.
-   * @param message IncRef message or plain object to encode
+   * Creates a new AlwaysOn instance using the specified properties.
+   * @param [properties] Properties to set
+   * @returns AlwaysOn instance
+   */
+  static create(properties?: api$IAlwaysOn): api$AlwaysOn;
+
+  /**
+   * Encodes the specified AlwaysOn message. Does not implicitly {@link api.AlwaysOn.verify|verify} messages.
+   * @param message AlwaysOn message or plain object to encode
    * @param [writer] Writer to encode to
    * @returns Writer
    */
   static encode(
-    message: api$IncRef,
+    message: api$AlwaysOn,
     writer?: $protobuf.Writer
   ): $protobuf.Writer;
 
   /**
-   * Encodes the specified IncRef message, length delimited. Does not implicitly {@link api.IncRef.verify|verify} messages.
-   * @param message IncRef message or plain object to encode
+   * Encodes the specified AlwaysOn message, length delimited. Does not implicitly {@link api.AlwaysOn.verify|verify} messages.
+   * @param message AlwaysOn message or plain object to encode
    * @param [writer] Writer to encode to
    * @returns Writer
    */
   static encodeDelimited(
-    message: api$IncRef,
+    message: api$AlwaysOn,
     writer?: $protobuf.Writer
   ): $protobuf.Writer;
 
   /**
-   * Decodes an IncRef message from the specified reader or buffer.
+   * Decodes an AlwaysOn message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
-   * @returns IncRef
+   * @returns AlwaysOn
    * @throws {Error} If the payload is not a reader or valid buffer
    * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
   static decode(
     reader: $protobuf.Reader | Uint8Array,
     length?: number
-  ): api$IncRef;
+  ): api$AlwaysOn;
 
   /**
-   * Decodes an IncRef message from the specified reader or buffer, length delimited.
+   * Decodes an AlwaysOn message from the specified reader or buffer, length delimited.
    * @param reader Reader or buffer to decode from
-   * @returns IncRef
+   * @returns AlwaysOn
    * @throws {Error} If the payload is not a reader or valid buffer
    * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  static decodeDelimited(reader: $protobuf.Reader | Uint8Array): api$IncRef;
+  static decodeDelimited(reader: $protobuf.Reader | Uint8Array): api$AlwaysOn;
 
   /**
-   * Verifies an IncRef message.
+   * Verifies an AlwaysOn message.
    * @param message Plain object to verify
    * @returns `null` if valid, otherwise the reason why it is not
    */
@@ -8255,29 +8277,29 @@ declare class api$IncRef {
   }): string | null;
 
   /**
-   * Creates an IncRef message from a plain object. Also converts values to their respective internal types.
+   * Creates an AlwaysOn message from a plain object. Also converts values to their respective internal types.
    * @param object Plain object
-   * @returns IncRef
+   * @returns AlwaysOn
    */
   static fromObject(object: {
     [k: string]: any,
-  }): api$IncRef;
+  }): api$AlwaysOn;
 
   /**
-   * Creates a plain object from an IncRef message. Also converts values to other types if specified.
-   * @param message IncRef
+   * Creates a plain object from an AlwaysOn message. Also converts values to other types if specified.
+   * @param message AlwaysOn
    * @param [options] Conversion options
    * @returns Plain object
    */
   static toObject(
-    message: api$IncRef,
+    message: api$AlwaysOn,
     options?: $protobuf.IConversionOptions
   ): {
     [k: string]: any,
   };
 
   /**
-   * Converts this IncRef to JSON.
+   * Converts this AlwaysOn to JSON.
    * @returns JSON object
    */
   toJSON(): {
@@ -13586,6 +13608,11 @@ declare type api$IResourceLimits = {|
    * ResourceLimits disk
    */
   disk?: number | null,
+
+  /**
+   * ResourceLimits cache
+   */
+  cache?: $Values<typeof api$ResourceLimits$Cachability> | null,
 |};
 
 /**
@@ -13622,6 +13649,11 @@ declare class api$ResourceLimits {
    * ResourceLimits disk.
    */
   disk: number;
+
+  /**
+   * ResourceLimits cache.
+   */
+  cache: $Values<typeof api$ResourceLimits$Cachability>;
 
   /**
    * Creates a new ResourceLimits instance using the specified properties.
@@ -13714,6 +13746,135 @@ declare class api$ResourceLimits {
   toJSON(): {
     [k: string]: any,
   };
+  static Cachability: typeof api$ResourceLimits$Cachability;
+}
+
+/**
+ * Cachability enum.
+ */
+
+declare var api$ResourceLimits$Cachability: {|
+  +NONE: 0, // 0
+  +USER: 1, // 1
+  +REPL: 2, // 2
+|};
+
+/**
+ * Properties of a Permissions.
+ */
+declare type api$IPermissions = {|
+  /**
+   * Permissions toggleAlwaysOn
+   */
+  toggleAlwaysOn?: boolean | null,
+|};
+
+/**
+ * Represents a Permissions.
+ */
+declare class api$Permissions {
+  /**
+   * Constructs a new Permissions.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: api$IPermissions): this;
+
+  /**
+   * Permissions toggleAlwaysOn.
+   */
+  toggleAlwaysOn: boolean;
+
+  /**
+   * Creates a new Permissions instance using the specified properties.
+   * @param [properties] Properties to set
+   * @returns Permissions instance
+   */
+  static create(properties?: api$IPermissions): api$Permissions;
+
+  /**
+   * Encodes the specified Permissions message. Does not implicitly {@link api.Permissions.verify|verify} messages.
+   * @param message Permissions message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encode(
+    message: api$Permissions,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Encodes the specified Permissions message, length delimited. Does not implicitly {@link api.Permissions.verify|verify} messages.
+   * @param message Permissions message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encodeDelimited(
+    message: api$Permissions,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Decodes a Permissions message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns Permissions
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): api$Permissions;
+
+  /**
+   * Decodes a Permissions message from the specified reader or buffer, length delimited.
+   * @param reader Reader or buffer to decode from
+   * @returns Permissions
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decodeDelimited(
+    reader: $protobuf.Reader | Uint8Array
+  ): api$Permissions;
+
+  /**
+   * Verifies a Permissions message.
+   * @param message Plain object to verify
+   * @returns `null` if valid, otherwise the reason why it is not
+   */
+  static verify(message: {
+    [k: string]: any,
+  }): string | null;
+
+  /**
+   * Creates a Permissions message from a plain object. Also converts values to their respective internal types.
+   * @param object Plain object
+   * @returns Permissions
+   */
+  static fromObject(object: {
+    [k: string]: any,
+  }): api$Permissions;
+
+  /**
+   * Creates a plain object from a Permissions message. Also converts values to other types if specified.
+   * @param message Permissions
+   * @param [options] Conversion options
+   * @returns Plain object
+   */
+  static toObject(
+    message: api$Permissions,
+    options?: $protobuf.IConversionOptions
+  ): {
+    [k: string]: any,
+  };
+
+  /**
+   * Converts this Permissions to JSON.
+   * @returns JSON object
+   */
+  toJSON(): {
+    [k: string]: any,
+  };
 }
 
 /**
@@ -13782,6 +13943,11 @@ declare type api$IReplToken = {|
    * ReplToken flags
    */
   flags?: string[] | null,
+
+  /**
+   * ReplToken permissions
+   */
+  permissions?: api$Permissions | api$IPermissions | null,
 |};
 
 /**
@@ -13853,6 +14019,11 @@ declare class api$ReplToken {
    * ReplToken flags.
    */
   flags: string[];
+
+  /**
+   * ReplToken permissions.
+   */
+  permissions?: api$Permissions | null;
 
   /**
    * ReplToken metadata.

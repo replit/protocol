@@ -41,7 +41,7 @@
              * @property {api.PortOpen|api.IPortOpen|null} [portOpen] Command portOpen
              * @property {api.Toast|api.IToast|null} [toast] Command toast
              * @property {api.Redirect|api.IRedirect|null} [redirect] Command redirect
-             * @property {api.IncRef|api.IIncRef|null} [incRef] Command incRef
+             * @property {api.AlwaysOn|api.IAlwaysOn|null} [alwaysOn] Command alwaysOn
              * @property {api.RunMain|api.IRunMain|null} [runMain] Command runMain
              * @property {api.Clear|api.IClear|null} [clear] Command clear
              * @property {string|null} ["eval"] Command eval
@@ -235,12 +235,12 @@
             Command.prototype.redirect = null;
     
             /**
-             * Command incRef.
-             * @member {api.IncRef|null|undefined} incRef
+             * Command alwaysOn.
+             * @member {api.AlwaysOn|null|undefined} alwaysOn
              * @memberof api.Command
              * @instance
              */
-            Command.prototype.incRef = null;
+            Command.prototype.alwaysOn = null;
     
             /**
              * Command runMain.
@@ -1015,12 +1015,12 @@
     
             /**
              * Command body.
-             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"incRef"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig"|undefined} body
+             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"alwaysOn"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig"|undefined} body
              * @memberof api.Command
              * @instance
              */
             Object.defineProperty(Command.prototype, "body", {
-                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "redirect", "incRef", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "stat", "statRes", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "otFetchRequest", "otFetchResponse", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock", "hasCap", "pid1Config", "metrics", "bootStatus", "readMeta", "writeMeta", "appendMeta", "audio", "pprofRequest", "pprofResponse", "audio2", "PTYConfig"]),
+                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "redirect", "alwaysOn", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "stat", "statRes", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "otFetchRequest", "otFetchResponse", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock", "hasCap", "pid1Config", "metrics", "bootStatus", "readMeta", "writeMeta", "appendMeta", "audio", "pprofRequest", "pprofResponse", "audio2", "PTYConfig"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
     
@@ -1068,8 +1068,8 @@
                     $root.api.Toast.encode(message.toast, writer.uint32(/* id 11, wireType 2 =*/90).fork()).ldelim();
                 if (message.redirect != null && Object.hasOwnProperty.call(message, "redirect"))
                     $root.api.Redirect.encode(message.redirect, writer.uint32(/* id 12, wireType 2 =*/98).fork()).ldelim();
-                if (message.incRef != null && Object.hasOwnProperty.call(message, "incRef"))
-                    $root.api.IncRef.encode(message.incRef, writer.uint32(/* id 13, wireType 2 =*/106).fork()).ldelim();
+                if (message.alwaysOn != null && Object.hasOwnProperty.call(message, "alwaysOn"))
+                    $root.api.AlwaysOn.encode(message.alwaysOn, writer.uint32(/* id 13, wireType 2 =*/106).fork()).ldelim();
                 if (message.runMain != null && Object.hasOwnProperty.call(message, "runMain"))
                     $root.api.RunMain.encode(message.runMain, writer.uint32(/* id 16, wireType 2 =*/130).fork()).ldelim();
                 if (message.clear != null && Object.hasOwnProperty.call(message, "clear"))
@@ -1327,7 +1327,7 @@
                         message.redirect = $root.api.Redirect.decode(reader, reader.uint32());
                         break;
                     case 13:
-                        message.incRef = $root.api.IncRef.decode(reader, reader.uint32());
+                        message.alwaysOn = $root.api.AlwaysOn.decode(reader, reader.uint32());
                         break;
                     case 16:
                         message.runMain = $root.api.RunMain.decode(reader, reader.uint32());
@@ -1737,14 +1737,14 @@
                             return "redirect." + error;
                     }
                 }
-                if (message.incRef != null && message.hasOwnProperty("incRef")) {
+                if (message.alwaysOn != null && message.hasOwnProperty("alwaysOn")) {
                     if (properties.body === 1)
                         return "body: multiple values";
                     properties.body = 1;
                     {
-                        var error = $root.api.IncRef.verify(message.incRef);
+                        var error = $root.api.AlwaysOn.verify(message.alwaysOn);
                         if (error)
-                            return "incRef." + error;
+                            return "alwaysOn." + error;
                     }
                 }
                 if (message.runMain != null && message.hasOwnProperty("runMain")) {
@@ -2740,10 +2740,10 @@
                         throw TypeError(".api.Command.redirect: object expected");
                     message.redirect = $root.api.Redirect.fromObject(object.redirect);
                 }
-                if (object.incRef != null) {
-                    if (typeof object.incRef !== "object")
-                        throw TypeError(".api.Command.incRef: object expected");
-                    message.incRef = $root.api.IncRef.fromObject(object.incRef);
+                if (object.alwaysOn != null) {
+                    if (typeof object.alwaysOn !== "object")
+                        throw TypeError(".api.Command.alwaysOn: object expected");
+                    message.alwaysOn = $root.api.AlwaysOn.fromObject(object.alwaysOn);
                 }
                 if (object.runMain != null) {
                     if (typeof object.runMain !== "object")
@@ -3271,10 +3271,10 @@
                     if (options.oneofs)
                         object.body = "redirect";
                 }
-                if (message.incRef != null && message.hasOwnProperty("incRef")) {
-                    object.incRef = $root.api.IncRef.toObject(message.incRef, options);
+                if (message.alwaysOn != null && message.hasOwnProperty("alwaysOn")) {
+                    object.alwaysOn = $root.api.AlwaysOn.toObject(message.alwaysOn, options);
                     if (options.oneofs)
-                        object.body = "incRef";
+                        object.body = "alwaysOn";
                 }
                 if (message.runMain != null && message.hasOwnProperty("runMain")) {
                     object.runMain = $root.api.RunMain.toObject(message.runMain, options);
@@ -6911,6 +6911,7 @@
              * @property {api.VCREntry.Direction|null} [direction] VCREntry direction
              * @property {api.Command|api.ICommand|null} [command] VCREntry command
              * @property {string|null} [uid] VCREntry uid
+             * @property {string|null} [replid] VCREntry replid
              */
     
             /**
@@ -6960,6 +6961,14 @@
             VCREntry.prototype.uid = "";
     
             /**
+             * VCREntry replid.
+             * @member {string} replid
+             * @memberof api.VCREntry
+             * @instance
+             */
+            VCREntry.prototype.replid = "";
+    
+            /**
              * Creates a new VCREntry instance using the specified properties.
              * @function create
              * @memberof api.VCREntry
@@ -6991,6 +7000,8 @@
                     $root.api.Command.encode(message.command, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 if (message.uid != null && Object.hasOwnProperty.call(message, "uid"))
                     writer.uint32(/* id 4, wireType 2 =*/34).string(message.uid);
+                if (message.replid != null && Object.hasOwnProperty.call(message, "replid"))
+                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.replid);
                 return writer;
             };
     
@@ -7036,6 +7047,9 @@
                         break;
                     case 4:
                         message.uid = reader.string();
+                        break;
+                    case 5:
+                        message.replid = reader.string();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -7091,6 +7105,9 @@
                 if (message.uid != null && message.hasOwnProperty("uid"))
                     if (!$util.isString(message.uid))
                         return "uid: string expected";
+                if (message.replid != null && message.hasOwnProperty("replid"))
+                    if (!$util.isString(message.replid))
+                        return "replid: string expected";
                 return null;
             };
     
@@ -7132,6 +7149,8 @@
                 }
                 if (object.uid != null)
                     message.uid = String(object.uid);
+                if (object.replid != null)
+                    message.replid = String(object.replid);
                 return message;
             };
     
@@ -7157,6 +7176,7 @@
                     object.direction = options.enums === String ? "IN" : 0;
                     object.command = null;
                     object.uid = "";
+                    object.replid = "";
                 }
                 if (message.timestamp != null && message.hasOwnProperty("timestamp"))
                     if (typeof message.timestamp === "number")
@@ -7169,6 +7189,8 @@
                     object.command = $root.api.Command.toObject(message.command, options);
                 if (message.uid != null && message.hasOwnProperty("uid"))
                     object.uid = message.uid;
+                if (message.replid != null && message.hasOwnProperty("replid"))
+                    object.replid = message.replid;
                 return object;
             };
     
@@ -15248,22 +15270,23 @@
             return Redirect;
         })();
     
-        api.IncRef = (function() {
+        api.AlwaysOn = (function() {
     
             /**
-             * Properties of an IncRef.
+             * Properties of an AlwaysOn.
              * @memberof api
-             * @interface IIncRef
+             * @interface IAlwaysOn
+             * @property {boolean|null} [enable] AlwaysOn enable
              */
     
             /**
-             * Constructs a new IncRef.
+             * Constructs a new AlwaysOn.
              * @memberof api
-             * @classdesc Represents an IncRef.
+             * @classdesc Represents an AlwaysOn.
              * @constructor
-             * @param {api.IIncRef=} [properties] Properties to set
+             * @param {api.IAlwaysOn=} [properties] Properties to set
              */
-            function IncRef(properties) {
+            function AlwaysOn(properties) {
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -15271,63 +15294,76 @@
             }
     
             /**
-             * Creates a new IncRef instance using the specified properties.
-             * @function create
-             * @memberof api.IncRef
-             * @static
-             * @param {api.IIncRef=} [properties] Properties to set
-             * @returns {api.IncRef} IncRef instance
+             * AlwaysOn enable.
+             * @member {boolean} enable
+             * @memberof api.AlwaysOn
+             * @instance
              */
-            IncRef.create = function create(properties) {
-                return IncRef.fromObject(properties);
+            AlwaysOn.prototype.enable = false;
+    
+            /**
+             * Creates a new AlwaysOn instance using the specified properties.
+             * @function create
+             * @memberof api.AlwaysOn
+             * @static
+             * @param {api.IAlwaysOn=} [properties] Properties to set
+             * @returns {api.AlwaysOn} AlwaysOn instance
+             */
+            AlwaysOn.create = function create(properties) {
+                return AlwaysOn.fromObject(properties);
             };
     
             /**
-             * Encodes the specified IncRef message. Does not implicitly {@link api.IncRef.verify|verify} messages.
+             * Encodes the specified AlwaysOn message. Does not implicitly {@link api.AlwaysOn.verify|verify} messages.
              * @function encode
-             * @memberof api.IncRef
+             * @memberof api.AlwaysOn
              * @static
-             * @param {api.IncRef} message IncRef message or plain object to encode
+             * @param {api.AlwaysOn} message AlwaysOn message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            IncRef.encode = function encode(message, writer) {
+            AlwaysOn.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
+                if (message.enable != null && Object.hasOwnProperty.call(message, "enable"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).bool(message.enable);
                 return writer;
             };
     
             /**
-             * Encodes the specified IncRef message, length delimited. Does not implicitly {@link api.IncRef.verify|verify} messages.
+             * Encodes the specified AlwaysOn message, length delimited. Does not implicitly {@link api.AlwaysOn.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof api.IncRef
+             * @memberof api.AlwaysOn
              * @static
-             * @param {api.IncRef} message IncRef message or plain object to encode
+             * @param {api.AlwaysOn} message AlwaysOn message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
-            IncRef.encodeDelimited = function encodeDelimited(message, writer) {
+            AlwaysOn.encodeDelimited = function encodeDelimited(message, writer) {
                 return this.encode(message, writer).ldelim();
             };
     
             /**
-             * Decodes an IncRef message from the specified reader or buffer.
+             * Decodes an AlwaysOn message from the specified reader or buffer.
              * @function decode
-             * @memberof api.IncRef
+             * @memberof api.AlwaysOn
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {api.IncRef} IncRef
+             * @returns {api.AlwaysOn} AlwaysOn
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            IncRef.decode = function decode(reader, length) {
+            AlwaysOn.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.IncRef();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.AlwaysOn();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
+                    case 1:
+                        message.enable = reader.bool();
+                        break;
                     default:
                         reader.skipType(tag & 7);
                         break;
@@ -15337,74 +15373,87 @@
             };
     
             /**
-             * Decodes an IncRef message from the specified reader or buffer, length delimited.
+             * Decodes an AlwaysOn message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof api.IncRef
+             * @memberof api.AlwaysOn
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {api.IncRef} IncRef
+             * @returns {api.AlwaysOn} AlwaysOn
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
-            IncRef.decodeDelimited = function decodeDelimited(reader) {
+            AlwaysOn.decodeDelimited = function decodeDelimited(reader) {
                 if (!(reader instanceof $Reader))
                     reader = new $Reader(reader);
                 return this.decode(reader, reader.uint32());
             };
     
             /**
-             * Verifies an IncRef message.
+             * Verifies an AlwaysOn message.
              * @function verify
-             * @memberof api.IncRef
+             * @memberof api.AlwaysOn
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
              */
-            IncRef.verify = function verify(message) {
+            AlwaysOn.verify = function verify(message) {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
+                if (message.enable != null && message.hasOwnProperty("enable"))
+                    if (typeof message.enable !== "boolean")
+                        return "enable: boolean expected";
                 return null;
             };
     
             /**
-             * Creates an IncRef message from a plain object. Also converts values to their respective internal types.
+             * Creates an AlwaysOn message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof api.IncRef
+             * @memberof api.AlwaysOn
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {api.IncRef} IncRef
+             * @returns {api.AlwaysOn} AlwaysOn
              */
-            IncRef.fromObject = function fromObject(object) {
-                if (object instanceof $root.api.IncRef)
+            AlwaysOn.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.AlwaysOn)
                     return object;
-                return new $root.api.IncRef();
+                var message = new $root.api.AlwaysOn();
+                if (object.enable != null)
+                    message.enable = Boolean(object.enable);
+                return message;
             };
     
             /**
-             * Creates a plain object from an IncRef message. Also converts values to other types if specified.
+             * Creates a plain object from an AlwaysOn message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof api.IncRef
+             * @memberof api.AlwaysOn
              * @static
-             * @param {api.IncRef} message IncRef
+             * @param {api.AlwaysOn} message AlwaysOn
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
-            IncRef.toObject = function toObject() {
-                return {};
+            AlwaysOn.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    object.enable = false;
+                if (message.enable != null && message.hasOwnProperty("enable"))
+                    object.enable = message.enable;
+                return object;
             };
     
             /**
-             * Converts this IncRef to JSON.
+             * Converts this AlwaysOn to JSON.
              * @function toJSON
-             * @memberof api.IncRef
+             * @memberof api.AlwaysOn
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
-            IncRef.prototype.toJSON = function toJSON() {
+            AlwaysOn.prototype.toJSON = function toJSON() {
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
     
-            return IncRef;
+            return AlwaysOn;
         })();
     
         api.RunMain = (function() {
@@ -24548,6 +24597,7 @@
              * @property {number|null} [threads] ResourceLimits threads
              * @property {number|null} [shares] ResourceLimits shares
              * @property {number|null} [disk] ResourceLimits disk
+             * @property {api.ResourceLimits.Cachability|null} [cache] ResourceLimits cache
              */
     
             /**
@@ -24605,6 +24655,14 @@
             ResourceLimits.prototype.disk = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
     
             /**
+             * ResourceLimits cache.
+             * @member {api.ResourceLimits.Cachability} cache
+             * @memberof api.ResourceLimits
+             * @instance
+             */
+            ResourceLimits.prototype.cache = 0;
+    
+            /**
              * Creates a new ResourceLimits instance using the specified properties.
              * @function create
              * @memberof api.ResourceLimits
@@ -24638,6 +24696,8 @@
                     writer.uint32(/* id 4, wireType 1 =*/33).double(message.shares);
                 if (message.disk != null && Object.hasOwnProperty.call(message, "disk"))
                     writer.uint32(/* id 5, wireType 0 =*/40).int64(message.disk);
+                if (message.cache != null && Object.hasOwnProperty.call(message, "cache"))
+                    writer.uint32(/* id 6, wireType 0 =*/48).int32(message.cache);
                 return writer;
             };
     
@@ -24686,6 +24746,9 @@
                         break;
                     case 5:
                         message.disk = reader.int64();
+                        break;
+                    case 6:
+                        message.cache = reader.int32();
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -24737,6 +24800,15 @@
                 if (message.disk != null && message.hasOwnProperty("disk"))
                     if (!$util.isInteger(message.disk) && !(message.disk && $util.isInteger(message.disk.low) && $util.isInteger(message.disk.high)))
                         return "disk: integer|Long expected";
+                if (message.cache != null && message.hasOwnProperty("cache"))
+                    switch (message.cache) {
+                    default:
+                        return "cache: enum value expected";
+                    case 0:
+                    case 1:
+                    case 2:
+                        break;
+                    }
                 return null;
             };
     
@@ -24776,6 +24848,20 @@
                         message.disk = object.disk;
                     else if (typeof object.disk === "object")
                         message.disk = new $util.LongBits(object.disk.low >>> 0, object.disk.high >>> 0).toNumber();
+                switch (object.cache) {
+                case "NONE":
+                case 0:
+                    message.cache = 0;
+                    break;
+                case "USER":
+                case 1:
+                    message.cache = 1;
+                    break;
+                case "REPL":
+                case 2:
+                    message.cache = 2;
+                    break;
+                }
                 return message;
             };
     
@@ -24806,6 +24892,7 @@
                         object.disk = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
                     } else
                         object.disk = options.longs === String ? "0" : 0;
+                    object.cache = options.enums === String ? "NONE" : 0;
                 }
                 if (message.net != null && message.hasOwnProperty("net"))
                     object.net = message.net;
@@ -24823,6 +24910,8 @@
                         object.disk = options.longs === String ? String(message.disk) : message.disk;
                     else
                         object.disk = options.longs === String ? $util.Long.prototype.toString.call(message.disk) : options.longs === Number ? new $util.LongBits(message.disk.low >>> 0, message.disk.high >>> 0).toNumber() : message.disk;
+                if (message.cache != null && message.hasOwnProperty("cache"))
+                    object.cache = options.enums === String ? $root.api.ResourceLimits.Cachability[message.cache] : message.cache;
                 return object;
             };
     
@@ -24837,7 +24926,209 @@
                 return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
             };
     
+            /**
+             * Cachability enum.
+             * @name api.ResourceLimits.Cachability
+             * @enum {number}
+             * @property {number} NONE=0 NONE value
+             * @property {number} USER=1 USER value
+             * @property {number} REPL=2 REPL value
+             */
+            ResourceLimits.Cachability = (function() {
+                var valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "NONE"] = 0;
+                values[valuesById[1] = "USER"] = 1;
+                values[valuesById[2] = "REPL"] = 2;
+                return values;
+            })();
+    
             return ResourceLimits;
+        })();
+    
+        api.Permissions = (function() {
+    
+            /**
+             * Properties of a Permissions.
+             * @memberof api
+             * @interface IPermissions
+             * @property {boolean|null} [toggleAlwaysOn] Permissions toggleAlwaysOn
+             */
+    
+            /**
+             * Constructs a new Permissions.
+             * @memberof api
+             * @classdesc Represents a Permissions.
+             * @constructor
+             * @param {api.IPermissions=} [properties] Properties to set
+             */
+            function Permissions(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * Permissions toggleAlwaysOn.
+             * @member {boolean} toggleAlwaysOn
+             * @memberof api.Permissions
+             * @instance
+             */
+            Permissions.prototype.toggleAlwaysOn = false;
+    
+            /**
+             * Creates a new Permissions instance using the specified properties.
+             * @function create
+             * @memberof api.Permissions
+             * @static
+             * @param {api.IPermissions=} [properties] Properties to set
+             * @returns {api.Permissions} Permissions instance
+             */
+            Permissions.create = function create(properties) {
+                return Permissions.fromObject(properties);
+            };
+    
+            /**
+             * Encodes the specified Permissions message. Does not implicitly {@link api.Permissions.verify|verify} messages.
+             * @function encode
+             * @memberof api.Permissions
+             * @static
+             * @param {api.Permissions} message Permissions message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Permissions.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.toggleAlwaysOn != null && Object.hasOwnProperty.call(message, "toggleAlwaysOn"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).bool(message.toggleAlwaysOn);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified Permissions message, length delimited. Does not implicitly {@link api.Permissions.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.Permissions
+             * @static
+             * @param {api.Permissions} message Permissions message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Permissions.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a Permissions message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.Permissions
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.Permissions} Permissions
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Permissions.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Permissions();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.toggleAlwaysOn = reader.bool();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a Permissions message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.Permissions
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.Permissions} Permissions
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Permissions.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a Permissions message.
+             * @function verify
+             * @memberof api.Permissions
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Permissions.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.toggleAlwaysOn != null && message.hasOwnProperty("toggleAlwaysOn"))
+                    if (typeof message.toggleAlwaysOn !== "boolean")
+                        return "toggleAlwaysOn: boolean expected";
+                return null;
+            };
+    
+            /**
+             * Creates a Permissions message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.Permissions
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.Permissions} Permissions
+             */
+            Permissions.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.Permissions)
+                    return object;
+                var message = new $root.api.Permissions();
+                if (object.toggleAlwaysOn != null)
+                    message.toggleAlwaysOn = Boolean(object.toggleAlwaysOn);
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a Permissions message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.Permissions
+             * @static
+             * @param {api.Permissions} message Permissions
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Permissions.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    object.toggleAlwaysOn = false;
+                if (message.toggleAlwaysOn != null && message.hasOwnProperty("toggleAlwaysOn"))
+                    object.toggleAlwaysOn = message.toggleAlwaysOn;
+                return object;
+            };
+    
+            /**
+             * Converts this Permissions to JSON.
+             * @function toJSON
+             * @memberof api.Permissions
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Permissions.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return Permissions;
         })();
     
         api.ReplToken = (function() {
@@ -24858,6 +25149,7 @@
              * @property {api.ReplToken.WireFormat|null} [format] ReplToken format
              * @property {api.ReplToken.Presenced|api.ReplToken.IPresenced|null} [presenced] ReplToken presenced
              * @property {Array.<string>|null} [flags] ReplToken flags
+             * @property {api.Permissions|api.IPermissions|null} [permissions] ReplToken permissions
              */
     
             /**
@@ -24971,6 +25263,14 @@
              */
             ReplToken.prototype.flags = $util.emptyArray;
     
+            /**
+             * ReplToken permissions.
+             * @member {api.Permissions|null|undefined} permissions
+             * @memberof api.ReplToken
+             * @instance
+             */
+            ReplToken.prototype.permissions = null;
+    
             // OneOf field names bound to virtual getters and setters
             var $oneOfFields;
     
@@ -25034,6 +25334,8 @@
                 if (message.flags != null && message.flags.length)
                     for (var i = 0; i < message.flags.length; ++i)
                         writer.uint32(/* id 14, wireType 2 =*/114).string(message.flags[i]);
+                if (message.permissions != null && Object.hasOwnProperty.call(message, "permissions"))
+                    $root.api.Permissions.encode(message.permissions, writer.uint32(/* id 15, wireType 2 =*/122).fork()).ldelim();
                 return writer;
             };
     
@@ -25105,6 +25407,9 @@
                         if (!(message.flags && message.flags.length))
                             message.flags = [];
                         message.flags.push(reader.string());
+                        break;
+                    case 15:
+                        message.permissions = $root.api.Permissions.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -25220,6 +25525,11 @@
                         if (!$util.isString(message.flags[i]))
                             return "flags: string[] expected";
                 }
+                if (message.permissions != null && message.hasOwnProperty("permissions")) {
+                    var error = $root.api.Permissions.verify(message.permissions);
+                    if (error)
+                        return "permissions." + error;
+                }
                 return null;
             };
     
@@ -25305,6 +25615,11 @@
                     for (var i = 0; i < object.flags.length; ++i)
                         message.flags[i] = String(object.flags[i]);
                 }
+                if (object.permissions != null) {
+                    if (typeof object.permissions !== "object")
+                        throw TypeError(".api.ReplToken.permissions: object expected");
+                    message.permissions = $root.api.Permissions.fromObject(object.permissions);
+                }
                 return message;
             };
     
@@ -25332,6 +25647,7 @@
                     object.resourceLimits = null;
                     object.format = options.enums === String ? "PROTOBUF" : 0;
                     object.presenced = null;
+                    object.permissions = null;
                 }
                 if (message.iat != null && message.hasOwnProperty("iat"))
                     object.iat = $root.google.protobuf.Timestamp.toObject(message.iat, options);
@@ -25369,6 +25685,8 @@
                     for (var j = 0; j < message.flags.length; ++j)
                         object.flags[j] = message.flags[j];
                 }
+                if (message.permissions != null && message.hasOwnProperty("permissions"))
+                    object.permissions = $root.api.Permissions.toObject(message.permissions, options);
                 return object;
             };
     

@@ -35,8 +35,8 @@ export namespace api {
         /** Command redirect */
         redirect?: (api.Redirect|api.IRedirect|null);
 
-        /** Command incRef */
-        incRef?: (api.IncRef|api.IIncRef|null);
+        /** Command alwaysOn */
+        alwaysOn?: (api.AlwaysOn|api.IAlwaysOn|null);
 
         /** Command runMain */
         runMain?: (api.RunMain|api.IRunMain|null);
@@ -366,8 +366,8 @@ export namespace api {
         /** Command redirect. */
         public redirect?: (api.Redirect|null);
 
-        /** Command incRef. */
-        public incRef?: (api.IncRef|null);
+        /** Command alwaysOn. */
+        public alwaysOn?: (api.AlwaysOn|null);
 
         /** Command runMain. */
         public runMain?: (api.RunMain|null);
@@ -658,7 +658,7 @@ export namespace api {
         public ref: string;
 
         /** Command body. */
-        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"incRef"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig");
+        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"alwaysOn"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig");
 
         /**
          * Creates a new Command instance using the specified properties.
@@ -2102,6 +2102,9 @@ export namespace api {
 
         /** VCREntry uid */
         uid?: (string|null);
+
+        /** VCREntry replid */
+        replid?: (string|null);
     }
 
     /** Represents a VCREntry. */
@@ -2124,6 +2127,9 @@ export namespace api {
 
         /** VCREntry uid. */
         public uid: string;
+
+        /** VCREntry replid. */
+        public replid: string;
 
         /**
          * Creates a new VCREntry instance using the specified properties.
@@ -5858,85 +5864,91 @@ export namespace api {
         public toJSON(): { [k: string]: any };
     }
 
-    /** Properties of an IncRef. */
-    interface IIncRef {
+    /** Properties of an AlwaysOn. */
+    interface IAlwaysOn {
+
+        /** AlwaysOn enable */
+        enable?: (boolean|null);
     }
 
-    /** Represents an IncRef. */
-    class IncRef {
+    /** Represents an AlwaysOn. */
+    class AlwaysOn {
 
         /**
-         * Constructs a new IncRef.
+         * Constructs a new AlwaysOn.
          * @param [properties] Properties to set
          */
-        private constructor(properties?: api.IIncRef);
+        private constructor(properties?: api.IAlwaysOn);
+
+        /** AlwaysOn enable. */
+        public enable: boolean;
 
         /**
-         * Creates a new IncRef instance using the specified properties.
+         * Creates a new AlwaysOn instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns IncRef instance
+         * @returns AlwaysOn instance
          */
-        public static create(properties?: api.IIncRef): api.IncRef;
+        public static create(properties?: api.IAlwaysOn): api.AlwaysOn;
 
         /**
-         * Encodes the specified IncRef message. Does not implicitly {@link api.IncRef.verify|verify} messages.
-         * @param message IncRef message or plain object to encode
+         * Encodes the specified AlwaysOn message. Does not implicitly {@link api.AlwaysOn.verify|verify} messages.
+         * @param message AlwaysOn message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: api.IncRef, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: api.AlwaysOn, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified IncRef message, length delimited. Does not implicitly {@link api.IncRef.verify|verify} messages.
-         * @param message IncRef message or plain object to encode
+         * Encodes the specified AlwaysOn message, length delimited. Does not implicitly {@link api.AlwaysOn.verify|verify} messages.
+         * @param message AlwaysOn message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: api.IncRef, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: api.AlwaysOn, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes an IncRef message from the specified reader or buffer.
+         * Decodes an AlwaysOn message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns IncRef
+         * @returns AlwaysOn
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.IncRef;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.AlwaysOn;
 
         /**
-         * Decodes an IncRef message from the specified reader or buffer, length delimited.
+         * Decodes an AlwaysOn message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns IncRef
+         * @returns AlwaysOn
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.IncRef;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.AlwaysOn;
 
         /**
-         * Verifies an IncRef message.
+         * Verifies an AlwaysOn message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates an IncRef message from a plain object. Also converts values to their respective internal types.
+         * Creates an AlwaysOn message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns IncRef
+         * @returns AlwaysOn
          */
-        public static fromObject(object: { [k: string]: any }): api.IncRef;
+        public static fromObject(object: { [k: string]: any }): api.AlwaysOn;
 
         /**
-         * Creates a plain object from an IncRef message. Also converts values to other types if specified.
-         * @param message IncRef
+         * Creates a plain object from an AlwaysOn message. Also converts values to other types if specified.
+         * @param message AlwaysOn
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: api.IncRef, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: api.AlwaysOn, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this IncRef to JSON.
+         * Converts this AlwaysOn to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
@@ -9908,6 +9920,9 @@ export namespace api {
 
         /** ResourceLimits disk */
         disk?: (number|null);
+
+        /** ResourceLimits cache */
+        cache?: (api.ResourceLimits.Cachability|null);
     }
 
     /** Represents a ResourceLimits. */
@@ -9933,6 +9948,9 @@ export namespace api {
 
         /** ResourceLimits disk. */
         public disk: number;
+
+        /** ResourceLimits cache. */
+        public cache: api.ResourceLimits.Cachability;
 
         /**
          * Creates a new ResourceLimits instance using the specified properties.
@@ -10005,6 +10023,106 @@ export namespace api {
         public toJSON(): { [k: string]: any };
     }
 
+    namespace ResourceLimits {
+
+        /** Cachability enum. */
+        enum Cachability {
+            NONE = 0,
+            USER = 1,
+            REPL = 2
+        }
+    }
+
+    /** Properties of a Permissions. */
+    interface IPermissions {
+
+        /** Permissions toggleAlwaysOn */
+        toggleAlwaysOn?: (boolean|null);
+    }
+
+    /** Represents a Permissions. */
+    class Permissions {
+
+        /**
+         * Constructs a new Permissions.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IPermissions);
+
+        /** Permissions toggleAlwaysOn. */
+        public toggleAlwaysOn: boolean;
+
+        /**
+         * Creates a new Permissions instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns Permissions instance
+         */
+        public static create(properties?: api.IPermissions): api.Permissions;
+
+        /**
+         * Encodes the specified Permissions message. Does not implicitly {@link api.Permissions.verify|verify} messages.
+         * @param message Permissions message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.Permissions, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified Permissions message, length delimited. Does not implicitly {@link api.Permissions.verify|verify} messages.
+         * @param message Permissions message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.Permissions, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a Permissions message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns Permissions
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.Permissions;
+
+        /**
+         * Decodes a Permissions message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns Permissions
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.Permissions;
+
+        /**
+         * Verifies a Permissions message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a Permissions message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns Permissions
+         */
+        public static fromObject(object: { [k: string]: any }): api.Permissions;
+
+        /**
+         * Creates a plain object from a Permissions message. Also converts values to other types if specified.
+         * @param message Permissions
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.Permissions, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this Permissions to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
     /** Properties of a ReplToken. */
     interface IReplToken {
 
@@ -10043,6 +10161,9 @@ export namespace api {
 
         /** ReplToken flags */
         flags?: (string[]|null);
+
+        /** ReplToken permissions */
+        permissions?: (api.Permissions|api.IPermissions|null);
     }
 
     /** Represents a ReplToken. */
@@ -10089,6 +10210,9 @@ export namespace api {
 
         /** ReplToken flags. */
         public flags: string[];
+
+        /** ReplToken permissions. */
+        public permissions?: (api.Permissions|null);
 
         /** ReplToken metadata. */
         public metadata?: ("repl"|"id"|"classroom");

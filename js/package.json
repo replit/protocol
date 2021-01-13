@@ -1,6 +1,6 @@
 {
   "name": "@replit/protocol",
-  "version": "0.2.16",
+  "version": "0.2.17",
   "description": "JavaScript bindings for the repl.it protocol",
   "main": "index.js",
   "repository": "https://github.com/replit/protocol",

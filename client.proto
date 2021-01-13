@@ -51,6 +51,28 @@ message ResourceLimits {
 
   // The size of the disk in bytes.
   int64 disk = 5;
+
+  // Whether these limits are cachable, and if they are, by what facet of the token.
+  enum Cachability {
+    // Do not cache these limits.
+    NONE = 0;
+
+    // These limits can be cached and applied to this and any of the user's
+    // other repls.
+    USER = 1;
+
+    // These limits can be cached and applied only to this repl.
+    REPL = 2;
+  }
+
+  Cachability cache = 6;
+}
+
+// Permissions allow tokens to perform certain actions.
+message Permissions {
+  // This token has permission to toggle the always on state of a container.
+  // For a connection to send the AlwaysOn message, it must have this permission.
+  bool toggleAlwaysOn = 1;
 }
 
 // ReplToken is the expected client options during the handshake. This is encoded
@@ -168,4 +190,6 @@ message ReplToken {
   // Flags are handy for passing arbitrary configs along. Mostly used so
   // the client can try out new features
   repeated string flags = 14;
+
+  Permissions permissions = 15;
 }
