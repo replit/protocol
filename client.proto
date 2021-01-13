@@ -51,6 +51,21 @@ message ResourceLimits {
 
   // The size of the disk in bytes.
   int64 disk = 5;
+
+  // Whether these limits are cachable, and if they are, by what facet of the token.
+  enum Cachability {
+    // Do not cache these limits.
+    NONE = 0;
+
+    // These limits can be cached and applied to this and any of the user's
+    // other repls.
+    USER = 1;
+
+    // These limits can be cached and applied only to this repl.
+    REPL = 2;
+  }
+
+  Cachability cache = 6;
 }
 
 // ReplToken is the expected client options during the handshake. This is encoded
