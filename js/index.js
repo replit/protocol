@@ -26361,6 +26361,192 @@
             return ReplToken;
         })();
     
+        api.GovalTokenMetadata = (function() {
+    
+            /**
+             * Properties of a GovalTokenMetadata.
+             * @memberof api
+             * @interface IGovalTokenMetadata
+             * @property {string|null} [keyId] GovalTokenMetadata keyId
+             */
+    
+            /**
+             * Constructs a new GovalTokenMetadata.
+             * @memberof api
+             * @classdesc Represents a GovalTokenMetadata.
+             * @constructor
+             * @param {api.IGovalTokenMetadata=} [properties] Properties to set
+             */
+            function GovalTokenMetadata(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * GovalTokenMetadata keyId.
+             * @member {string} keyId
+             * @memberof api.GovalTokenMetadata
+             * @instance
+             */
+            GovalTokenMetadata.prototype.keyId = "";
+    
+            /**
+             * Creates a new GovalTokenMetadata instance using the specified properties.
+             * @function create
+             * @memberof api.GovalTokenMetadata
+             * @static
+             * @param {api.IGovalTokenMetadata=} [properties] Properties to set
+             * @returns {api.GovalTokenMetadata} GovalTokenMetadata instance
+             */
+            GovalTokenMetadata.create = function create(properties) {
+                return GovalTokenMetadata.fromObject(properties);
+            };
+    
+            /**
+             * Encodes the specified GovalTokenMetadata message. Does not implicitly {@link api.GovalTokenMetadata.verify|verify} messages.
+             * @function encode
+             * @memberof api.GovalTokenMetadata
+             * @static
+             * @param {api.GovalTokenMetadata} message GovalTokenMetadata message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            GovalTokenMetadata.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.keyId != null && Object.hasOwnProperty.call(message, "keyId"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.keyId);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified GovalTokenMetadata message, length delimited. Does not implicitly {@link api.GovalTokenMetadata.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.GovalTokenMetadata
+             * @static
+             * @param {api.GovalTokenMetadata} message GovalTokenMetadata message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            GovalTokenMetadata.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a GovalTokenMetadata message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.GovalTokenMetadata
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.GovalTokenMetadata} GovalTokenMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            GovalTokenMetadata.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.GovalTokenMetadata();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.keyId = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a GovalTokenMetadata message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.GovalTokenMetadata
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.GovalTokenMetadata} GovalTokenMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            GovalTokenMetadata.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a GovalTokenMetadata message.
+             * @function verify
+             * @memberof api.GovalTokenMetadata
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            GovalTokenMetadata.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.keyId != null && message.hasOwnProperty("keyId"))
+                    if (!$util.isString(message.keyId))
+                        return "keyId: string expected";
+                return null;
+            };
+    
+            /**
+             * Creates a GovalTokenMetadata message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.GovalTokenMetadata
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.GovalTokenMetadata} GovalTokenMetadata
+             */
+            GovalTokenMetadata.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.GovalTokenMetadata)
+                    return object;
+                var message = new $root.api.GovalTokenMetadata();
+                if (object.keyId != null)
+                    message.keyId = String(object.keyId);
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a GovalTokenMetadata message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.GovalTokenMetadata
+             * @static
+             * @param {api.GovalTokenMetadata} message GovalTokenMetadata
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            GovalTokenMetadata.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    object.keyId = "";
+                if (message.keyId != null && message.hasOwnProperty("keyId"))
+                    object.keyId = message.keyId;
+                return object;
+            };
+    
+            /**
+             * Converts this GovalTokenMetadata to JSON.
+             * @function toJSON
+             * @memberof api.GovalTokenMetadata
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            GovalTokenMetadata.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return GovalTokenMetadata;
+        })();
+    
         return api;
     })();
     

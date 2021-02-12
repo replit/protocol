@@ -193,3 +193,10 @@ message ReplToken {
 
   Permissions permissions = 15;
 }
+
+// GovalTokenMetadata is information about a goval token, that can be used to
+// validate it. It is stored in the footer of the PASETO.
+message GovalTokenMetadata {
+  // The ID of the key that was used to sign the token.
+  string key_id = 1;
+}
