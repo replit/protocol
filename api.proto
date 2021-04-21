@@ -64,6 +64,12 @@ message Command {
     File stat = 368;
     StatResult statRes = 369;
 
+    TransferStart transferStart = 320;
+    TransferChunk transferChunk = 321;
+    TransferComplete transferComplete = 322;
+    Transfer transferCancel = 323;
+    Transfer transfer = 324;
+
     File read = 35;
     File readdir = 37;
 
@@ -434,6 +440,47 @@ message File {
   }
   Type type = 2;
   bytes content = 3;
+}
+
+// Transfer represents an active file transfer.
+message Transfer {
+  // The opaque id the server assigned to this transfer. Should be used by the client
+  // for every call that refers to this transfer.
+  string id = 1;
+}
+
+// TransferStart is used to initiate a new file transfer. The server is supposed
+// to reply to this message with a Transfer, that contains the id to refer to it.
+// Transfers are used to send large files to the server, the client can split 
+// content into chunks and send them one-by-one.
+message TransferStart {
+  // Relative location for the destination file (same as File.path).
+  string path = 1;
+  // The expected file size of the file. The server can refuse to initiate
+  // the transfer if the file size is too large.
+  int64 size = 2;
+}
+
+// TransferChunk is used by client to send a chunk of a file. The content will be
+// appended to the end of the current buffer file. The server can refuse a chunk
+// if it would result in a file larger than initially expected.
+message TransferChunk {
+  // The opaque id the server assigned to this transfer
+  string id = 1;
+  // The content to append.
+  bytes content = 2;
+}
+
+// TransferComplete is used by client to indicate that it's done sending the file
+// and the server is supposed to finalize the transfer: atomically create a new
+// file in the `path` specified earlier. The client needs to specify the checksum,
+// the server will abort the transfer if the checksum doesn't match, or if the
+// total file size is different from the specified via TransferStart.
+message TransferComplete {
+  // The opaque id the server assigned to this transfer.
+  string id = 1;
+  // CRC-32-IEEE checksum of the whole file content.
+  uint32 crc32 = 2;
 }
 
 message Clear {}
