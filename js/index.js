@@ -62,6 +62,11 @@
              * @property {api.File|api.IFile|null} [mkdir] Command mkdir
              * @property {api.File|api.IFile|null} [stat] Command stat
              * @property {api.StatResult|api.IStatResult|null} [statRes] Command statRes
+             * @property {api.TransferStart|api.ITransferStart|null} [transferStart] Command transferStart
+             * @property {api.TransferChunk|api.ITransferChunk|null} [transferChunk] Command transferChunk
+             * @property {api.TransferComplete|api.ITransferComplete|null} [transferComplete] Command transferComplete
+             * @property {api.Transfer|api.ITransfer|null} [transferCancel] Command transferCancel
+             * @property {api.Transfer|api.ITransfer|null} [transfer] Command transfer
              * @property {api.File|api.IFile|null} [read] Command read
              * @property {api.File|api.IFile|null} [readdir] Command readdir
              * @property {api.Files|api.IFiles|null} [files] Command files
@@ -401,6 +406,46 @@
              * @instance
              */
             Command.prototype.statRes = null;
+    
+            /**
+             * Command transferStart.
+             * @member {api.TransferStart|null|undefined} transferStart
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.transferStart = null;
+    
+            /**
+             * Command transferChunk.
+             * @member {api.TransferChunk|null|undefined} transferChunk
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.transferChunk = null;
+    
+            /**
+             * Command transferComplete.
+             * @member {api.TransferComplete|null|undefined} transferComplete
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.transferComplete = null;
+    
+            /**
+             * Command transferCancel.
+             * @member {api.Transfer|null|undefined} transferCancel
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.transferCancel = null;
+    
+            /**
+             * Command transfer.
+             * @member {api.Transfer|null|undefined} transfer
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.transfer = null;
     
             /**
              * Command read.
@@ -1015,12 +1060,12 @@
     
             /**
              * Command body.
-             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"alwaysOn"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig"|undefined} body
+             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"alwaysOn"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"transferStart"|"transferChunk"|"transferComplete"|"transferCancel"|"transfer"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig"|undefined} body
              * @memberof api.Command
              * @instance
              */
             Object.defineProperty(Command.prototype, "body", {
-                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "redirect", "alwaysOn", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "stat", "statRes", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "otFetchRequest", "otFetchResponse", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock", "hasCap", "pid1Config", "metrics", "bootStatus", "readMeta", "writeMeta", "appendMeta", "audio", "pprofRequest", "pprofResponse", "audio2", "PTYConfig"]),
+                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "redirect", "alwaysOn", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "stat", "statRes", "transferStart", "transferChunk", "transferComplete", "transferCancel", "transfer", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "otFetchRequest", "otFetchResponse", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock", "hasCap", "pid1Config", "metrics", "bootStatus", "readMeta", "writeMeta", "appendMeta", "audio", "pprofRequest", "pprofResponse", "audio2", "PTYConfig"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
     
@@ -1226,6 +1271,16 @@
                     $root.api.ChatTyping.encode(message.chatTyping, writer.uint32(/* id 311, wireType 2 =*/2490).fork()).ldelim();
                 if (message.chatScrollback != null && Object.hasOwnProperty.call(message, "chatScrollback"))
                     $root.api.ChatScrollback.encode(message.chatScrollback, writer.uint32(/* id 312, wireType 2 =*/2498).fork()).ldelim();
+                if (message.transferStart != null && Object.hasOwnProperty.call(message, "transferStart"))
+                    $root.api.TransferStart.encode(message.transferStart, writer.uint32(/* id 320, wireType 2 =*/2562).fork()).ldelim();
+                if (message.transferChunk != null && Object.hasOwnProperty.call(message, "transferChunk"))
+                    $root.api.TransferChunk.encode(message.transferChunk, writer.uint32(/* id 321, wireType 2 =*/2570).fork()).ldelim();
+                if (message.transferComplete != null && Object.hasOwnProperty.call(message, "transferComplete"))
+                    $root.api.TransferComplete.encode(message.transferComplete, writer.uint32(/* id 322, wireType 2 =*/2578).fork()).ldelim();
+                if (message.transferCancel != null && Object.hasOwnProperty.call(message, "transferCancel"))
+                    $root.api.Transfer.encode(message.transferCancel, writer.uint32(/* id 323, wireType 2 =*/2586).fork()).ldelim();
+                if (message.transfer != null && Object.hasOwnProperty.call(message, "transfer"))
+                    $root.api.Transfer.encode(message.transfer, writer.uint32(/* id 324, wireType 2 =*/2594).fork()).ldelim();
                 if (message.fsSnapshot != null && Object.hasOwnProperty.call(message, "fsSnapshot"))
                     $root.api.FSSnapshot.encode(message.fsSnapshot, writer.uint32(/* id 330, wireType 2 =*/2642).fork()).ldelim();
                 if (message.fsTakeLock != null && Object.hasOwnProperty.call(message, "fsTakeLock"))
@@ -1388,6 +1443,21 @@
                         break;
                     case 369:
                         message.statRes = $root.api.StatResult.decode(reader, reader.uint32());
+                        break;
+                    case 320:
+                        message.transferStart = $root.api.TransferStart.decode(reader, reader.uint32());
+                        break;
+                    case 321:
+                        message.transferChunk = $root.api.TransferChunk.decode(reader, reader.uint32());
+                        break;
+                    case 322:
+                        message.transferComplete = $root.api.TransferComplete.decode(reader, reader.uint32());
+                        break;
+                    case 323:
+                        message.transferCancel = $root.api.Transfer.decode(reader, reader.uint32());
+                        break;
+                    case 324:
+                        message.transfer = $root.api.Transfer.decode(reader, reader.uint32());
                         break;
                     case 35:
                         message.read = $root.api.File.decode(reader, reader.uint32());
@@ -1932,6 +2002,56 @@
                         var error = $root.api.StatResult.verify(message.statRes);
                         if (error)
                             return "statRes." + error;
+                    }
+                }
+                if (message.transferStart != null && message.hasOwnProperty("transferStart")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.TransferStart.verify(message.transferStart);
+                        if (error)
+                            return "transferStart." + error;
+                    }
+                }
+                if (message.transferChunk != null && message.hasOwnProperty("transferChunk")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.TransferChunk.verify(message.transferChunk);
+                        if (error)
+                            return "transferChunk." + error;
+                    }
+                }
+                if (message.transferComplete != null && message.hasOwnProperty("transferComplete")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.TransferComplete.verify(message.transferComplete);
+                        if (error)
+                            return "transferComplete." + error;
+                    }
+                }
+                if (message.transferCancel != null && message.hasOwnProperty("transferCancel")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.Transfer.verify(message.transferCancel);
+                        if (error)
+                            return "transferCancel." + error;
+                    }
+                }
+                if (message.transfer != null && message.hasOwnProperty("transfer")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.Transfer.verify(message.transfer);
+                        if (error)
+                            return "transfer." + error;
                     }
                 }
                 if (message.read != null && message.hasOwnProperty("read")) {
@@ -2835,6 +2955,31 @@
                         throw TypeError(".api.Command.statRes: object expected");
                     message.statRes = $root.api.StatResult.fromObject(object.statRes);
                 }
+                if (object.transferStart != null) {
+                    if (typeof object.transferStart !== "object")
+                        throw TypeError(".api.Command.transferStart: object expected");
+                    message.transferStart = $root.api.TransferStart.fromObject(object.transferStart);
+                }
+                if (object.transferChunk != null) {
+                    if (typeof object.transferChunk !== "object")
+                        throw TypeError(".api.Command.transferChunk: object expected");
+                    message.transferChunk = $root.api.TransferChunk.fromObject(object.transferChunk);
+                }
+                if (object.transferComplete != null) {
+                    if (typeof object.transferComplete !== "object")
+                        throw TypeError(".api.Command.transferComplete: object expected");
+                    message.transferComplete = $root.api.TransferComplete.fromObject(object.transferComplete);
+                }
+                if (object.transferCancel != null) {
+                    if (typeof object.transferCancel !== "object")
+                        throw TypeError(".api.Command.transferCancel: object expected");
+                    message.transferCancel = $root.api.Transfer.fromObject(object.transferCancel);
+                }
+                if (object.transfer != null) {
+                    if (typeof object.transfer !== "object")
+                        throw TypeError(".api.Command.transfer: object expected");
+                    message.transfer = $root.api.Transfer.fromObject(object.transfer);
+                }
                 if (object.read != null) {
                     if (typeof object.read !== "object")
                         throw TypeError(".api.Command.read: object expected");
@@ -3665,6 +3810,31 @@
                     object.chatScrollback = $root.api.ChatScrollback.toObject(message.chatScrollback, options);
                     if (options.oneofs)
                         object.body = "chatScrollback";
+                }
+                if (message.transferStart != null && message.hasOwnProperty("transferStart")) {
+                    object.transferStart = $root.api.TransferStart.toObject(message.transferStart, options);
+                    if (options.oneofs)
+                        object.body = "transferStart";
+                }
+                if (message.transferChunk != null && message.hasOwnProperty("transferChunk")) {
+                    object.transferChunk = $root.api.TransferChunk.toObject(message.transferChunk, options);
+                    if (options.oneofs)
+                        object.body = "transferChunk";
+                }
+                if (message.transferComplete != null && message.hasOwnProperty("transferComplete")) {
+                    object.transferComplete = $root.api.TransferComplete.toObject(message.transferComplete, options);
+                    if (options.oneofs)
+                        object.body = "transferComplete";
+                }
+                if (message.transferCancel != null && message.hasOwnProperty("transferCancel")) {
+                    object.transferCancel = $root.api.Transfer.toObject(message.transferCancel, options);
+                    if (options.oneofs)
+                        object.body = "transferCancel";
+                }
+                if (message.transfer != null && message.hasOwnProperty("transfer")) {
+                    object.transfer = $root.api.Transfer.toObject(message.transfer, options);
+                    if (options.oneofs)
+                        object.body = "transfer";
                 }
                 if (message.fsSnapshot != null && message.hasOwnProperty("fsSnapshot")) {
                     object.fsSnapshot = $root.api.FSSnapshot.toObject(message.fsSnapshot, options);
@@ -14737,6 +14907,842 @@
             })();
     
             return File;
+        })();
+    
+        api.Transfer = (function() {
+    
+            /**
+             * Properties of a Transfer.
+             * @memberof api
+             * @interface ITransfer
+             * @property {string|null} [id] Transfer id
+             */
+    
+            /**
+             * Constructs a new Transfer.
+             * @memberof api
+             * @classdesc Represents a Transfer.
+             * @constructor
+             * @param {api.ITransfer=} [properties] Properties to set
+             */
+            function Transfer(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * Transfer id.
+             * @member {string} id
+             * @memberof api.Transfer
+             * @instance
+             */
+            Transfer.prototype.id = "";
+    
+            /**
+             * Creates a new Transfer instance using the specified properties.
+             * @function create
+             * @memberof api.Transfer
+             * @static
+             * @param {api.ITransfer=} [properties] Properties to set
+             * @returns {api.Transfer} Transfer instance
+             */
+            Transfer.create = function create(properties) {
+                return Transfer.fromObject(properties);
+            };
+    
+            /**
+             * Encodes the specified Transfer message. Does not implicitly {@link api.Transfer.verify|verify} messages.
+             * @function encode
+             * @memberof api.Transfer
+             * @static
+             * @param {api.Transfer} message Transfer message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Transfer.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && Object.hasOwnProperty.call(message, "id"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified Transfer message, length delimited. Does not implicitly {@link api.Transfer.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.Transfer
+             * @static
+             * @param {api.Transfer} message Transfer message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Transfer.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a Transfer message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.Transfer
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.Transfer} Transfer
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Transfer.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.Transfer();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a Transfer message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.Transfer
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.Transfer} Transfer
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Transfer.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a Transfer message.
+             * @function verify
+             * @memberof api.Transfer
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Transfer.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.id != null && message.hasOwnProperty("id"))
+                    if (!$util.isString(message.id))
+                        return "id: string expected";
+                return null;
+            };
+    
+            /**
+             * Creates a Transfer message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.Transfer
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.Transfer} Transfer
+             */
+            Transfer.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.Transfer)
+                    return object;
+                var message = new $root.api.Transfer();
+                if (object.id != null)
+                    message.id = String(object.id);
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a Transfer message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.Transfer
+             * @static
+             * @param {api.Transfer} message Transfer
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Transfer.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    object.id = "";
+                if (message.id != null && message.hasOwnProperty("id"))
+                    object.id = message.id;
+                return object;
+            };
+    
+            /**
+             * Converts this Transfer to JSON.
+             * @function toJSON
+             * @memberof api.Transfer
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Transfer.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return Transfer;
+        })();
+    
+        api.TransferStart = (function() {
+    
+            /**
+             * Properties of a TransferStart.
+             * @memberof api
+             * @interface ITransferStart
+             * @property {string|null} [path] TransferStart path
+             * @property {number|null} [size] TransferStart size
+             */
+    
+            /**
+             * Constructs a new TransferStart.
+             * @memberof api
+             * @classdesc Represents a TransferStart.
+             * @constructor
+             * @param {api.ITransferStart=} [properties] Properties to set
+             */
+            function TransferStart(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * TransferStart path.
+             * @member {string} path
+             * @memberof api.TransferStart
+             * @instance
+             */
+            TransferStart.prototype.path = "";
+    
+            /**
+             * TransferStart size.
+             * @member {number} size
+             * @memberof api.TransferStart
+             * @instance
+             */
+            TransferStart.prototype.size = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
+    
+            /**
+             * Creates a new TransferStart instance using the specified properties.
+             * @function create
+             * @memberof api.TransferStart
+             * @static
+             * @param {api.ITransferStart=} [properties] Properties to set
+             * @returns {api.TransferStart} TransferStart instance
+             */
+            TransferStart.create = function create(properties) {
+                return TransferStart.fromObject(properties);
+            };
+    
+            /**
+             * Encodes the specified TransferStart message. Does not implicitly {@link api.TransferStart.verify|verify} messages.
+             * @function encode
+             * @memberof api.TransferStart
+             * @static
+             * @param {api.TransferStart} message TransferStart message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TransferStart.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.path != null && Object.hasOwnProperty.call(message, "path"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.path);
+                if (message.size != null && Object.hasOwnProperty.call(message, "size"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int64(message.size);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified TransferStart message, length delimited. Does not implicitly {@link api.TransferStart.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.TransferStart
+             * @static
+             * @param {api.TransferStart} message TransferStart message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TransferStart.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a TransferStart message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.TransferStart
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.TransferStart} TransferStart
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TransferStart.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.TransferStart();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.path = reader.string();
+                        break;
+                    case 2:
+                        message.size = reader.int64();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a TransferStart message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.TransferStart
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.TransferStart} TransferStart
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TransferStart.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a TransferStart message.
+             * @function verify
+             * @memberof api.TransferStart
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            TransferStart.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.path != null && message.hasOwnProperty("path"))
+                    if (!$util.isString(message.path))
+                        return "path: string expected";
+                if (message.size != null && message.hasOwnProperty("size"))
+                    if (!$util.isInteger(message.size) && !(message.size && $util.isInteger(message.size.low) && $util.isInteger(message.size.high)))
+                        return "size: integer|Long expected";
+                return null;
+            };
+    
+            /**
+             * Creates a TransferStart message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.TransferStart
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.TransferStart} TransferStart
+             */
+            TransferStart.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.TransferStart)
+                    return object;
+                var message = new $root.api.TransferStart();
+                if (object.path != null)
+                    message.path = String(object.path);
+                if (object.size != null)
+                    if ($util.Long)
+                        (message.size = $util.Long.fromValue(object.size)).unsigned = false;
+                    else if (typeof object.size === "string")
+                        message.size = parseInt(object.size, 10);
+                    else if (typeof object.size === "number")
+                        message.size = object.size;
+                    else if (typeof object.size === "object")
+                        message.size = new $util.LongBits(object.size.low >>> 0, object.size.high >>> 0).toNumber();
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a TransferStart message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.TransferStart
+             * @static
+             * @param {api.TransferStart} message TransferStart
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            TransferStart.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.path = "";
+                    if ($util.Long) {
+                        var long = new $util.Long(0, 0, false);
+                        object.size = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
+                    } else
+                        object.size = options.longs === String ? "0" : 0;
+                }
+                if (message.path != null && message.hasOwnProperty("path"))
+                    object.path = message.path;
+                if (message.size != null && message.hasOwnProperty("size"))
+                    if (typeof message.size === "number")
+                        object.size = options.longs === String ? String(message.size) : message.size;
+                    else
+                        object.size = options.longs === String ? $util.Long.prototype.toString.call(message.size) : options.longs === Number ? new $util.LongBits(message.size.low >>> 0, message.size.high >>> 0).toNumber() : message.size;
+                return object;
+            };
+    
+            /**
+             * Converts this TransferStart to JSON.
+             * @function toJSON
+             * @memberof api.TransferStart
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            TransferStart.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return TransferStart;
+        })();
+    
+        api.TransferChunk = (function() {
+    
+            /**
+             * Properties of a TransferChunk.
+             * @memberof api
+             * @interface ITransferChunk
+             * @property {string|null} [id] TransferChunk id
+             * @property {Uint8Array|null} [content] TransferChunk content
+             */
+    
+            /**
+             * Constructs a new TransferChunk.
+             * @memberof api
+             * @classdesc Represents a TransferChunk.
+             * @constructor
+             * @param {api.ITransferChunk=} [properties] Properties to set
+             */
+            function TransferChunk(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * TransferChunk id.
+             * @member {string} id
+             * @memberof api.TransferChunk
+             * @instance
+             */
+            TransferChunk.prototype.id = "";
+    
+            /**
+             * TransferChunk content.
+             * @member {Uint8Array} content
+             * @memberof api.TransferChunk
+             * @instance
+             */
+            TransferChunk.prototype.content = $util.newBuffer([]);
+    
+            /**
+             * Creates a new TransferChunk instance using the specified properties.
+             * @function create
+             * @memberof api.TransferChunk
+             * @static
+             * @param {api.ITransferChunk=} [properties] Properties to set
+             * @returns {api.TransferChunk} TransferChunk instance
+             */
+            TransferChunk.create = function create(properties) {
+                return TransferChunk.fromObject(properties);
+            };
+    
+            /**
+             * Encodes the specified TransferChunk message. Does not implicitly {@link api.TransferChunk.verify|verify} messages.
+             * @function encode
+             * @memberof api.TransferChunk
+             * @static
+             * @param {api.TransferChunk} message TransferChunk message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TransferChunk.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && Object.hasOwnProperty.call(message, "id"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                if (message.content != null && Object.hasOwnProperty.call(message, "content"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.content);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified TransferChunk message, length delimited. Does not implicitly {@link api.TransferChunk.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.TransferChunk
+             * @static
+             * @param {api.TransferChunk} message TransferChunk message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TransferChunk.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a TransferChunk message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.TransferChunk
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.TransferChunk} TransferChunk
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TransferChunk.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.TransferChunk();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = reader.string();
+                        break;
+                    case 2:
+                        message.content = reader.bytes();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a TransferChunk message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.TransferChunk
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.TransferChunk} TransferChunk
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TransferChunk.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a TransferChunk message.
+             * @function verify
+             * @memberof api.TransferChunk
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            TransferChunk.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.id != null && message.hasOwnProperty("id"))
+                    if (!$util.isString(message.id))
+                        return "id: string expected";
+                if (message.content != null && message.hasOwnProperty("content"))
+                    if (!(message.content && typeof message.content.length === "number" || $util.isString(message.content)))
+                        return "content: buffer expected";
+                return null;
+            };
+    
+            /**
+             * Creates a TransferChunk message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.TransferChunk
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.TransferChunk} TransferChunk
+             */
+            TransferChunk.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.TransferChunk)
+                    return object;
+                var message = new $root.api.TransferChunk();
+                if (object.id != null)
+                    message.id = String(object.id);
+                if (object.content != null)
+                    if (typeof object.content === "string")
+                        $util.base64.decode(object.content, message.content = $util.newBuffer($util.base64.length(object.content)), 0);
+                    else if (object.content.length)
+                        message.content = object.content;
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a TransferChunk message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.TransferChunk
+             * @static
+             * @param {api.TransferChunk} message TransferChunk
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            TransferChunk.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.id = "";
+                    if (options.bytes === String)
+                        object.content = "";
+                    else {
+                        object.content = [];
+                        if (options.bytes !== Array)
+                            object.content = $util.newBuffer(object.content);
+                    }
+                }
+                if (message.id != null && message.hasOwnProperty("id"))
+                    object.id = message.id;
+                if (message.content != null && message.hasOwnProperty("content"))
+                    object.content = options.bytes === String ? $util.base64.encode(message.content, 0, message.content.length) : options.bytes === Array ? Array.prototype.slice.call(message.content) : message.content;
+                return object;
+            };
+    
+            /**
+             * Converts this TransferChunk to JSON.
+             * @function toJSON
+             * @memberof api.TransferChunk
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            TransferChunk.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return TransferChunk;
+        })();
+    
+        api.TransferComplete = (function() {
+    
+            /**
+             * Properties of a TransferComplete.
+             * @memberof api
+             * @interface ITransferComplete
+             * @property {string|null} [id] TransferComplete id
+             * @property {number|null} [crc32] TransferComplete crc32
+             */
+    
+            /**
+             * Constructs a new TransferComplete.
+             * @memberof api
+             * @classdesc Represents a TransferComplete.
+             * @constructor
+             * @param {api.ITransferComplete=} [properties] Properties to set
+             */
+            function TransferComplete(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * TransferComplete id.
+             * @member {string} id
+             * @memberof api.TransferComplete
+             * @instance
+             */
+            TransferComplete.prototype.id = "";
+    
+            /**
+             * TransferComplete crc32.
+             * @member {number} crc32
+             * @memberof api.TransferComplete
+             * @instance
+             */
+            TransferComplete.prototype.crc32 = 0;
+    
+            /**
+             * Creates a new TransferComplete instance using the specified properties.
+             * @function create
+             * @memberof api.TransferComplete
+             * @static
+             * @param {api.ITransferComplete=} [properties] Properties to set
+             * @returns {api.TransferComplete} TransferComplete instance
+             */
+            TransferComplete.create = function create(properties) {
+                return TransferComplete.fromObject(properties);
+            };
+    
+            /**
+             * Encodes the specified TransferComplete message. Does not implicitly {@link api.TransferComplete.verify|verify} messages.
+             * @function encode
+             * @memberof api.TransferComplete
+             * @static
+             * @param {api.TransferComplete} message TransferComplete message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TransferComplete.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && Object.hasOwnProperty.call(message, "id"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                if (message.crc32 != null && Object.hasOwnProperty.call(message, "crc32"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.crc32);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified TransferComplete message, length delimited. Does not implicitly {@link api.TransferComplete.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.TransferComplete
+             * @static
+             * @param {api.TransferComplete} message TransferComplete message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TransferComplete.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a TransferComplete message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.TransferComplete
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.TransferComplete} TransferComplete
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TransferComplete.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.TransferComplete();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = reader.string();
+                        break;
+                    case 2:
+                        message.crc32 = reader.uint32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a TransferComplete message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.TransferComplete
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.TransferComplete} TransferComplete
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TransferComplete.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a TransferComplete message.
+             * @function verify
+             * @memberof api.TransferComplete
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            TransferComplete.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.id != null && message.hasOwnProperty("id"))
+                    if (!$util.isString(message.id))
+                        return "id: string expected";
+                if (message.crc32 != null && message.hasOwnProperty("crc32"))
+                    if (!$util.isInteger(message.crc32))
+                        return "crc32: integer expected";
+                return null;
+            };
+    
+            /**
+             * Creates a TransferComplete message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.TransferComplete
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.TransferComplete} TransferComplete
+             */
+            TransferComplete.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.TransferComplete)
+                    return object;
+                var message = new $root.api.TransferComplete();
+                if (object.id != null)
+                    message.id = String(object.id);
+                if (object.crc32 != null)
+                    message.crc32 = object.crc32 >>> 0;
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a TransferComplete message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.TransferComplete
+             * @static
+             * @param {api.TransferComplete} message TransferComplete
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            TransferComplete.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.id = "";
+                    object.crc32 = 0;
+                }
+                if (message.id != null && message.hasOwnProperty("id"))
+                    object.id = message.id;
+                if (message.crc32 != null && message.hasOwnProperty("crc32"))
+                    object.crc32 = message.crc32;
+                return object;
+            };
+    
+            /**
+             * Converts this TransferComplete to JSON.
+             * @function toJSON
+             * @memberof api.TransferComplete
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            TransferComplete.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return TransferComplete;
         })();
     
         api.Clear = (function() {

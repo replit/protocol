@@ -98,6 +98,21 @@ export namespace api {
         /** Command statRes */
         statRes?: (api.StatResult|api.IStatResult|null);
 
+        /** Command transferStart */
+        transferStart?: (api.TransferStart|api.ITransferStart|null);
+
+        /** Command transferChunk */
+        transferChunk?: (api.TransferChunk|api.ITransferChunk|null);
+
+        /** Command transferComplete */
+        transferComplete?: (api.TransferComplete|api.ITransferComplete|null);
+
+        /** Command transferCancel */
+        transferCancel?: (api.Transfer|api.ITransfer|null);
+
+        /** Command transfer */
+        transfer?: (api.Transfer|api.ITransfer|null);
+
         /** Command read */
         read?: (api.File|api.IFile|null);
 
@@ -429,6 +444,21 @@ export namespace api {
         /** Command statRes. */
         public statRes?: (api.StatResult|null);
 
+        /** Command transferStart. */
+        public transferStart?: (api.TransferStart|null);
+
+        /** Command transferChunk. */
+        public transferChunk?: (api.TransferChunk|null);
+
+        /** Command transferComplete. */
+        public transferComplete?: (api.TransferComplete|null);
+
+        /** Command transferCancel. */
+        public transferCancel?: (api.Transfer|null);
+
+        /** Command transfer. */
+        public transfer?: (api.Transfer|null);
+
         /** Command read. */
         public read?: (api.File|null);
 
@@ -658,7 +688,7 @@ export namespace api {
         public ref: string;
 
         /** Command body. */
-        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"alwaysOn"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig");
+        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"alwaysOn"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"transferStart"|"transferChunk"|"transferComplete"|"transferCancel"|"transfer"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig");
 
         /**
          * Creates a new Command instance using the specified properties.
@@ -5598,6 +5628,384 @@ export namespace api {
             REGULAR = 0,
             DIRECTORY = 1
         }
+    }
+
+    /** Properties of a Transfer. */
+    interface ITransfer {
+
+        /** Transfer id */
+        id?: (string|null);
+    }
+
+    /** Represents a Transfer. */
+    class Transfer {
+
+        /**
+         * Constructs a new Transfer.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.ITransfer);
+
+        /** Transfer id. */
+        public id: string;
+
+        /**
+         * Creates a new Transfer instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns Transfer instance
+         */
+        public static create(properties?: api.ITransfer): api.Transfer;
+
+        /**
+         * Encodes the specified Transfer message. Does not implicitly {@link api.Transfer.verify|verify} messages.
+         * @param message Transfer message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.Transfer, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified Transfer message, length delimited. Does not implicitly {@link api.Transfer.verify|verify} messages.
+         * @param message Transfer message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.Transfer, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a Transfer message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns Transfer
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.Transfer;
+
+        /**
+         * Decodes a Transfer message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns Transfer
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.Transfer;
+
+        /**
+         * Verifies a Transfer message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a Transfer message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns Transfer
+         */
+        public static fromObject(object: { [k: string]: any }): api.Transfer;
+
+        /**
+         * Creates a plain object from a Transfer message. Also converts values to other types if specified.
+         * @param message Transfer
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.Transfer, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this Transfer to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a TransferStart. */
+    interface ITransferStart {
+
+        /** TransferStart path */
+        path?: (string|null);
+
+        /** TransferStart size */
+        size?: (number|null);
+    }
+
+    /** Represents a TransferStart. */
+    class TransferStart {
+
+        /**
+         * Constructs a new TransferStart.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.ITransferStart);
+
+        /** TransferStart path. */
+        public path: string;
+
+        /** TransferStart size. */
+        public size: number;
+
+        /**
+         * Creates a new TransferStart instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns TransferStart instance
+         */
+        public static create(properties?: api.ITransferStart): api.TransferStart;
+
+        /**
+         * Encodes the specified TransferStart message. Does not implicitly {@link api.TransferStart.verify|verify} messages.
+         * @param message TransferStart message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.TransferStart, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified TransferStart message, length delimited. Does not implicitly {@link api.TransferStart.verify|verify} messages.
+         * @param message TransferStart message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.TransferStart, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a TransferStart message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns TransferStart
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.TransferStart;
+
+        /**
+         * Decodes a TransferStart message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns TransferStart
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.TransferStart;
+
+        /**
+         * Verifies a TransferStart message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a TransferStart message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns TransferStart
+         */
+        public static fromObject(object: { [k: string]: any }): api.TransferStart;
+
+        /**
+         * Creates a plain object from a TransferStart message. Also converts values to other types if specified.
+         * @param message TransferStart
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.TransferStart, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this TransferStart to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a TransferChunk. */
+    interface ITransferChunk {
+
+        /** TransferChunk id */
+        id?: (string|null);
+
+        /** TransferChunk content */
+        content?: (Uint8Array|null);
+    }
+
+    /** Represents a TransferChunk. */
+    class TransferChunk {
+
+        /**
+         * Constructs a new TransferChunk.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.ITransferChunk);
+
+        /** TransferChunk id. */
+        public id: string;
+
+        /** TransferChunk content. */
+        public content: Uint8Array;
+
+        /**
+         * Creates a new TransferChunk instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns TransferChunk instance
+         */
+        public static create(properties?: api.ITransferChunk): api.TransferChunk;
+
+        /**
+         * Encodes the specified TransferChunk message. Does not implicitly {@link api.TransferChunk.verify|verify} messages.
+         * @param message TransferChunk message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.TransferChunk, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified TransferChunk message, length delimited. Does not implicitly {@link api.TransferChunk.verify|verify} messages.
+         * @param message TransferChunk message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.TransferChunk, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a TransferChunk message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns TransferChunk
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.TransferChunk;
+
+        /**
+         * Decodes a TransferChunk message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns TransferChunk
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.TransferChunk;
+
+        /**
+         * Verifies a TransferChunk message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a TransferChunk message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns TransferChunk
+         */
+        public static fromObject(object: { [k: string]: any }): api.TransferChunk;
+
+        /**
+         * Creates a plain object from a TransferChunk message. Also converts values to other types if specified.
+         * @param message TransferChunk
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.TransferChunk, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this TransferChunk to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a TransferComplete. */
+    interface ITransferComplete {
+
+        /** TransferComplete id */
+        id?: (string|null);
+
+        /** TransferComplete crc32 */
+        crc32?: (number|null);
+    }
+
+    /** Represents a TransferComplete. */
+    class TransferComplete {
+
+        /**
+         * Constructs a new TransferComplete.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.ITransferComplete);
+
+        /** TransferComplete id. */
+        public id: string;
+
+        /** TransferComplete crc32. */
+        public crc32: number;
+
+        /**
+         * Creates a new TransferComplete instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns TransferComplete instance
+         */
+        public static create(properties?: api.ITransferComplete): api.TransferComplete;
+
+        /**
+         * Encodes the specified TransferComplete message. Does not implicitly {@link api.TransferComplete.verify|verify} messages.
+         * @param message TransferComplete message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.TransferComplete, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified TransferComplete message, length delimited. Does not implicitly {@link api.TransferComplete.verify|verify} messages.
+         * @param message TransferComplete message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.TransferComplete, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a TransferComplete message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns TransferComplete
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.TransferComplete;
+
+        /**
+         * Decodes a TransferComplete message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns TransferComplete
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.TransferComplete;
+
+        /**
+         * Verifies a TransferComplete message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a TransferComplete message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns TransferComplete
+         */
+        public static fromObject(object: { [k: string]: any }): api.TransferComplete;
+
+        /**
+         * Creates a plain object from a TransferComplete message. Also converts values to other types if specified.
+         * @param message TransferComplete
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.TransferComplete, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this TransferComplete to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
     }
 
     /** Properties of a Clear. */
