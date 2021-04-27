@@ -215,6 +215,12 @@ export namespace api {
         /** Command otFetchResponse */
         otFetchResponse?: (api.OTFetchResponse|api.IOTFetchResponse|null);
 
+        /** Command otTransformSelectionRequest */
+        otTransformSelectionRequest?: (api.OTTransformSelectionRequest|api.IOTTransformSelectionRequest|null);
+
+        /** Command otTransformSelectionResponse */
+        otTransformSelectionResponse?: (api.OTTransformSelectionResponse|api.IOTTransformSelectionResponse|null);
+
         /** Command flush */
         flush?: (api.Flush|api.IFlush|null);
 
@@ -561,6 +567,12 @@ export namespace api {
         /** Command otFetchResponse. */
         public otFetchResponse?: (api.OTFetchResponse|null);
 
+        /** Command otTransformSelectionRequest. */
+        public otTransformSelectionRequest?: (api.OTTransformSelectionRequest|null);
+
+        /** Command otTransformSelectionResponse. */
+        public otTransformSelectionResponse?: (api.OTTransformSelectionResponse|null);
+
         /** Command flush. */
         public flush?: (api.Flush|null);
 
@@ -688,7 +700,7 @@ export namespace api {
         public ref: string;
 
         /** Command body. */
-        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"alwaysOn"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"transferStart"|"transferChunk"|"transferComplete"|"transferCancel"|"transfer"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig");
+        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"alwaysOn"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"transferStart"|"transferChunk"|"transferComplete"|"transferCancel"|"transfer"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"otTransformSelectionRequest"|"otTransformSelectionResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig");
 
         /**
          * Creates a new Command instance using the specified properties.
@@ -7270,6 +7282,216 @@ export namespace api {
 
         /**
          * Converts this OTFetchResponse to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a OTTransformSelectionRequest. */
+    interface IOTTransformSelectionRequest {
+
+        /** OTTransformSelectionRequest indexStart */
+        indexStart?: (number|null);
+
+        /** OTTransformSelectionRequest indexEnd */
+        indexEnd?: (number|null);
+
+        /** OTTransformSelectionRequest versionFrom */
+        versionFrom?: (number|null);
+
+        /** OTTransformSelectionRequest versionTo */
+        versionTo?: (number|null);
+    }
+
+    /** Represents a OTTransformSelectionRequest. */
+    class OTTransformSelectionRequest {
+
+        /**
+         * Constructs a new OTTransformSelectionRequest.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IOTTransformSelectionRequest);
+
+        /** OTTransformSelectionRequest indexStart. */
+        public indexStart: number;
+
+        /** OTTransformSelectionRequest indexEnd. */
+        public indexEnd: number;
+
+        /** OTTransformSelectionRequest versionFrom. */
+        public versionFrom: number;
+
+        /** OTTransformSelectionRequest versionTo. */
+        public versionTo: number;
+
+        /**
+         * Creates a new OTTransformSelectionRequest instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns OTTransformSelectionRequest instance
+         */
+        public static create(properties?: api.IOTTransformSelectionRequest): api.OTTransformSelectionRequest;
+
+        /**
+         * Encodes the specified OTTransformSelectionRequest message. Does not implicitly {@link api.OTTransformSelectionRequest.verify|verify} messages.
+         * @param message OTTransformSelectionRequest message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.OTTransformSelectionRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified OTTransformSelectionRequest message, length delimited. Does not implicitly {@link api.OTTransformSelectionRequest.verify|verify} messages.
+         * @param message OTTransformSelectionRequest message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.OTTransformSelectionRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a OTTransformSelectionRequest message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns OTTransformSelectionRequest
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.OTTransformSelectionRequest;
+
+        /**
+         * Decodes a OTTransformSelectionRequest message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns OTTransformSelectionRequest
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.OTTransformSelectionRequest;
+
+        /**
+         * Verifies a OTTransformSelectionRequest message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a OTTransformSelectionRequest message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns OTTransformSelectionRequest
+         */
+        public static fromObject(object: { [k: string]: any }): api.OTTransformSelectionRequest;
+
+        /**
+         * Creates a plain object from a OTTransformSelectionRequest message. Also converts values to other types if specified.
+         * @param message OTTransformSelectionRequest
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.OTTransformSelectionRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this OTTransformSelectionRequest to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a OTTransformSelectionResponse. */
+    interface IOTTransformSelectionResponse {
+
+        /** OTTransformSelectionResponse indexStart */
+        indexStart?: (number|null);
+
+        /** OTTransformSelectionResponse indexEnd */
+        indexEnd?: (number|null);
+
+        /** OTTransformSelectionResponse version */
+        version?: (number|null);
+    }
+
+    /** Represents a OTTransformSelectionResponse. */
+    class OTTransformSelectionResponse {
+
+        /**
+         * Constructs a new OTTransformSelectionResponse.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IOTTransformSelectionResponse);
+
+        /** OTTransformSelectionResponse indexStart. */
+        public indexStart: number;
+
+        /** OTTransformSelectionResponse indexEnd. */
+        public indexEnd: number;
+
+        /** OTTransformSelectionResponse version. */
+        public version: number;
+
+        /**
+         * Creates a new OTTransformSelectionResponse instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns OTTransformSelectionResponse instance
+         */
+        public static create(properties?: api.IOTTransformSelectionResponse): api.OTTransformSelectionResponse;
+
+        /**
+         * Encodes the specified OTTransformSelectionResponse message. Does not implicitly {@link api.OTTransformSelectionResponse.verify|verify} messages.
+         * @param message OTTransformSelectionResponse message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.OTTransformSelectionResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified OTTransformSelectionResponse message, length delimited. Does not implicitly {@link api.OTTransformSelectionResponse.verify|verify} messages.
+         * @param message OTTransformSelectionResponse message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.OTTransformSelectionResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a OTTransformSelectionResponse message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns OTTransformSelectionResponse
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.OTTransformSelectionResponse;
+
+        /**
+         * Decodes a OTTransformSelectionResponse message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns OTTransformSelectionResponse
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.OTTransformSelectionResponse;
+
+        /**
+         * Verifies a OTTransformSelectionResponse message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a OTTransformSelectionResponse message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns OTTransformSelectionResponse
+         */
+        public static fromObject(object: { [k: string]: any }): api.OTTransformSelectionResponse;
+
+        /**
+         * Creates a plain object from a OTTransformSelectionResponse message. Also converts values to other types if specified.
+         * @param message OTTransformSelectionResponse
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.OTTransformSelectionResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this OTTransformSelectionResponse to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
