@@ -116,6 +116,8 @@ message Command {
     OTCursor otDeleteCursor = 224;
     OTFetchRequest otFetchRequest = 225;
     OTFetchResponse otFetchResponse = 226;
+    OTTransformSelectionRequest otTransformSelectionRequest = 227;
+    OTTransformSelectionResponse otTransformSelectionResponse = 228;
     Flush flush = 251;
 
     Debug debug = 230;
@@ -573,6 +575,28 @@ message OTFetchRequest {
 
 message OTFetchResponse {
   repeated OTPacket packets = 1;
+}
+
+// OTTransformSelectionRequest asks the OT Service to transform a selection 
+// (represented by a start and end index) from one version to another by 
+// applying OT ops.
+message OTTransformSelectionRequest {
+  uint32 indexStart = 1;
+  uint32 indexEnd = 2;
+
+  uint32 versionFrom = 3;
+  uint32 versionTo = 4;
+}
+
+// When the OT Service successfully transforms a selection, the resulting 
+// indexStart, indexEnd pair is returned
+message OTTransformSelectionResponse {
+  // selection
+  uint32 indexStart = 1;
+  uint32 indexEnd = 2;
+  
+  // version
+  uint32 version = 3;
 }
 
 message OTPacket {

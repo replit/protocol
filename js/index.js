@@ -101,6 +101,8 @@
              * @property {api.OTCursor|api.IOTCursor|null} [otDeleteCursor] Command otDeleteCursor
              * @property {api.OTFetchRequest|api.IOTFetchRequest|null} [otFetchRequest] Command otFetchRequest
              * @property {api.OTFetchResponse|api.IOTFetchResponse|null} [otFetchResponse] Command otFetchResponse
+             * @property {api.OTTransformSelectionRequest|api.IOTTransformSelectionRequest|null} [otTransformSelectionRequest] Command otTransformSelectionRequest
+             * @property {api.OTTransformSelectionResponse|api.IOTTransformSelectionResponse|null} [otTransformSelectionResponse] Command otTransformSelectionResponse
              * @property {api.Flush|api.IFlush|null} [flush] Command flush
              * @property {api.Debug|api.IDebug|null} [debug] Command debug
              * @property {api.StartVCR|api.IStartVCR|null} [startVCR] Command startVCR
@@ -720,6 +722,22 @@
             Command.prototype.otFetchResponse = null;
     
             /**
+             * Command otTransformSelectionRequest.
+             * @member {api.OTTransformSelectionRequest|null|undefined} otTransformSelectionRequest
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.otTransformSelectionRequest = null;
+    
+            /**
+             * Command otTransformSelectionResponse.
+             * @member {api.OTTransformSelectionResponse|null|undefined} otTransformSelectionResponse
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.otTransformSelectionResponse = null;
+    
+            /**
              * Command flush.
              * @member {api.Flush|null|undefined} flush
              * @memberof api.Command
@@ -1060,12 +1078,12 @@
     
             /**
              * Command body.
-             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"alwaysOn"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"transferStart"|"transferChunk"|"transferComplete"|"transferCancel"|"transfer"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig"|undefined} body
+             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"alwaysOn"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"transferStart"|"transferChunk"|"transferComplete"|"transferCancel"|"transfer"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"otTransformSelectionRequest"|"otTransformSelectionResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig"|undefined} body
              * @memberof api.Command
              * @instance
              */
             Object.defineProperty(Command.prototype, "body", {
-                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "redirect", "alwaysOn", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "stat", "statRes", "transferStart", "transferChunk", "transferComplete", "transferCancel", "transfer", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "otFetchRequest", "otFetchResponse", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock", "hasCap", "pid1Config", "metrics", "bootStatus", "readMeta", "writeMeta", "appendMeta", "audio", "pprofRequest", "pprofResponse", "audio2", "PTYConfig"]),
+                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "redirect", "alwaysOn", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "stat", "statRes", "transferStart", "transferChunk", "transferComplete", "transferCancel", "transfer", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "otFetchRequest", "otFetchResponse", "otTransformSelectionRequest", "otTransformSelectionResponse", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock", "hasCap", "pid1Config", "metrics", "bootStatus", "readMeta", "writeMeta", "appendMeta", "audio", "pprofRequest", "pprofResponse", "audio2", "PTYConfig"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
     
@@ -1219,6 +1237,10 @@
                     $root.api.OTFetchRequest.encode(message.otFetchRequest, writer.uint32(/* id 225, wireType 2 =*/1802).fork()).ldelim();
                 if (message.otFetchResponse != null && Object.hasOwnProperty.call(message, "otFetchResponse"))
                     $root.api.OTFetchResponse.encode(message.otFetchResponse, writer.uint32(/* id 226, wireType 2 =*/1810).fork()).ldelim();
+                if (message.otTransformSelectionRequest != null && Object.hasOwnProperty.call(message, "otTransformSelectionRequest"))
+                    $root.api.OTTransformSelectionRequest.encode(message.otTransformSelectionRequest, writer.uint32(/* id 227, wireType 2 =*/1818).fork()).ldelim();
+                if (message.otTransformSelectionResponse != null && Object.hasOwnProperty.call(message, "otTransformSelectionResponse"))
+                    $root.api.OTTransformSelectionResponse.encode(message.otTransformSelectionResponse, writer.uint32(/* id 228, wireType 2 =*/1826).fork()).ldelim();
                 if (message.debug != null && Object.hasOwnProperty.call(message, "debug"))
                     $root.api.Debug.encode(message.debug, writer.uint32(/* id 230, wireType 2 =*/1842).fork()).ldelim();
                 if (message.startVCR != null && Object.hasOwnProperty.call(message, "startVCR"))
@@ -1560,6 +1582,12 @@
                         break;
                     case 226:
                         message.otFetchResponse = $root.api.OTFetchResponse.decode(reader, reader.uint32());
+                        break;
+                    case 227:
+                        message.otTransformSelectionRequest = $root.api.OTTransformSelectionRequest.decode(reader, reader.uint32());
+                        break;
+                    case 228:
+                        message.otTransformSelectionResponse = $root.api.OTTransformSelectionResponse.decode(reader, reader.uint32());
                         break;
                     case 251:
                         message.flush = $root.api.Flush.decode(reader, reader.uint32());
@@ -2391,6 +2419,26 @@
                             return "otFetchResponse." + error;
                     }
                 }
+                if (message.otTransformSelectionRequest != null && message.hasOwnProperty("otTransformSelectionRequest")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.OTTransformSelectionRequest.verify(message.otTransformSelectionRequest);
+                        if (error)
+                            return "otTransformSelectionRequest." + error;
+                    }
+                }
+                if (message.otTransformSelectionResponse != null && message.hasOwnProperty("otTransformSelectionResponse")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.OTTransformSelectionResponse.verify(message.otTransformSelectionResponse);
+                        if (error)
+                            return "otTransformSelectionResponse." + error;
+                    }
+                }
                 if (message.flush != null && message.hasOwnProperty("flush")) {
                     if (properties.body === 1)
                         return "body: multiple values";
@@ -3147,6 +3195,16 @@
                         throw TypeError(".api.Command.otFetchResponse: object expected");
                     message.otFetchResponse = $root.api.OTFetchResponse.fromObject(object.otFetchResponse);
                 }
+                if (object.otTransformSelectionRequest != null) {
+                    if (typeof object.otTransformSelectionRequest !== "object")
+                        throw TypeError(".api.Command.otTransformSelectionRequest: object expected");
+                    message.otTransformSelectionRequest = $root.api.OTTransformSelectionRequest.fromObject(object.otTransformSelectionRequest);
+                }
+                if (object.otTransformSelectionResponse != null) {
+                    if (typeof object.otTransformSelectionResponse !== "object")
+                        throw TypeError(".api.Command.otTransformSelectionResponse: object expected");
+                    message.otTransformSelectionResponse = $root.api.OTTransformSelectionResponse.fromObject(object.otTransformSelectionResponse);
+                }
                 if (object.flush != null) {
                     if (typeof object.flush !== "object")
                         throw TypeError(".api.Command.flush: object expected");
@@ -3680,6 +3738,16 @@
                     object.otFetchResponse = $root.api.OTFetchResponse.toObject(message.otFetchResponse, options);
                     if (options.oneofs)
                         object.body = "otFetchResponse";
+                }
+                if (message.otTransformSelectionRequest != null && message.hasOwnProperty("otTransformSelectionRequest")) {
+                    object.otTransformSelectionRequest = $root.api.OTTransformSelectionRequest.toObject(message.otTransformSelectionRequest, options);
+                    if (options.oneofs)
+                        object.body = "otTransformSelectionRequest";
+                }
+                if (message.otTransformSelectionResponse != null && message.hasOwnProperty("otTransformSelectionResponse")) {
+                    object.otTransformSelectionResponse = $root.api.OTTransformSelectionResponse.toObject(message.otTransformSelectionResponse, options);
+                    if (options.oneofs)
+                        object.body = "otTransformSelectionResponse";
                 }
                 if (message.debug != null && message.hasOwnProperty("debug")) {
                     object.debug = $root.api.Debug.toObject(message.debug, options);
@@ -18517,6 +18585,490 @@
             };
     
             return OTFetchResponse;
+        })();
+    
+        api.OTTransformSelectionRequest = (function() {
+    
+            /**
+             * Properties of a OTTransformSelectionRequest.
+             * @memberof api
+             * @interface IOTTransformSelectionRequest
+             * @property {number|null} [indexStart] OTTransformSelectionRequest indexStart
+             * @property {number|null} [indexEnd] OTTransformSelectionRequest indexEnd
+             * @property {number|null} [versionFrom] OTTransformSelectionRequest versionFrom
+             * @property {number|null} [versionTo] OTTransformSelectionRequest versionTo
+             */
+    
+            /**
+             * Constructs a new OTTransformSelectionRequest.
+             * @memberof api
+             * @classdesc Represents a OTTransformSelectionRequest.
+             * @constructor
+             * @param {api.IOTTransformSelectionRequest=} [properties] Properties to set
+             */
+            function OTTransformSelectionRequest(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * OTTransformSelectionRequest indexStart.
+             * @member {number} indexStart
+             * @memberof api.OTTransformSelectionRequest
+             * @instance
+             */
+            OTTransformSelectionRequest.prototype.indexStart = 0;
+    
+            /**
+             * OTTransformSelectionRequest indexEnd.
+             * @member {number} indexEnd
+             * @memberof api.OTTransformSelectionRequest
+             * @instance
+             */
+            OTTransformSelectionRequest.prototype.indexEnd = 0;
+    
+            /**
+             * OTTransformSelectionRequest versionFrom.
+             * @member {number} versionFrom
+             * @memberof api.OTTransformSelectionRequest
+             * @instance
+             */
+            OTTransformSelectionRequest.prototype.versionFrom = 0;
+    
+            /**
+             * OTTransformSelectionRequest versionTo.
+             * @member {number} versionTo
+             * @memberof api.OTTransformSelectionRequest
+             * @instance
+             */
+            OTTransformSelectionRequest.prototype.versionTo = 0;
+    
+            /**
+             * Creates a new OTTransformSelectionRequest instance using the specified properties.
+             * @function create
+             * @memberof api.OTTransformSelectionRequest
+             * @static
+             * @param {api.IOTTransformSelectionRequest=} [properties] Properties to set
+             * @returns {api.OTTransformSelectionRequest} OTTransformSelectionRequest instance
+             */
+            OTTransformSelectionRequest.create = function create(properties) {
+                return OTTransformSelectionRequest.fromObject(properties);
+            };
+    
+            /**
+             * Encodes the specified OTTransformSelectionRequest message. Does not implicitly {@link api.OTTransformSelectionRequest.verify|verify} messages.
+             * @function encode
+             * @memberof api.OTTransformSelectionRequest
+             * @static
+             * @param {api.OTTransformSelectionRequest} message OTTransformSelectionRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            OTTransformSelectionRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.indexStart != null && Object.hasOwnProperty.call(message, "indexStart"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.indexStart);
+                if (message.indexEnd != null && Object.hasOwnProperty.call(message, "indexEnd"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.indexEnd);
+                if (message.versionFrom != null && Object.hasOwnProperty.call(message, "versionFrom"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.versionFrom);
+                if (message.versionTo != null && Object.hasOwnProperty.call(message, "versionTo"))
+                    writer.uint32(/* id 4, wireType 0 =*/32).uint32(message.versionTo);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified OTTransformSelectionRequest message, length delimited. Does not implicitly {@link api.OTTransformSelectionRequest.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.OTTransformSelectionRequest
+             * @static
+             * @param {api.OTTransformSelectionRequest} message OTTransformSelectionRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            OTTransformSelectionRequest.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a OTTransformSelectionRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.OTTransformSelectionRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.OTTransformSelectionRequest} OTTransformSelectionRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            OTTransformSelectionRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.OTTransformSelectionRequest();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.indexStart = reader.uint32();
+                        break;
+                    case 2:
+                        message.indexEnd = reader.uint32();
+                        break;
+                    case 3:
+                        message.versionFrom = reader.uint32();
+                        break;
+                    case 4:
+                        message.versionTo = reader.uint32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a OTTransformSelectionRequest message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.OTTransformSelectionRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.OTTransformSelectionRequest} OTTransformSelectionRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            OTTransformSelectionRequest.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a OTTransformSelectionRequest message.
+             * @function verify
+             * @memberof api.OTTransformSelectionRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            OTTransformSelectionRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.indexStart != null && message.hasOwnProperty("indexStart"))
+                    if (!$util.isInteger(message.indexStart))
+                        return "indexStart: integer expected";
+                if (message.indexEnd != null && message.hasOwnProperty("indexEnd"))
+                    if (!$util.isInteger(message.indexEnd))
+                        return "indexEnd: integer expected";
+                if (message.versionFrom != null && message.hasOwnProperty("versionFrom"))
+                    if (!$util.isInteger(message.versionFrom))
+                        return "versionFrom: integer expected";
+                if (message.versionTo != null && message.hasOwnProperty("versionTo"))
+                    if (!$util.isInteger(message.versionTo))
+                        return "versionTo: integer expected";
+                return null;
+            };
+    
+            /**
+             * Creates a OTTransformSelectionRequest message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.OTTransformSelectionRequest
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.OTTransformSelectionRequest} OTTransformSelectionRequest
+             */
+            OTTransformSelectionRequest.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.OTTransformSelectionRequest)
+                    return object;
+                var message = new $root.api.OTTransformSelectionRequest();
+                if (object.indexStart != null)
+                    message.indexStart = object.indexStart >>> 0;
+                if (object.indexEnd != null)
+                    message.indexEnd = object.indexEnd >>> 0;
+                if (object.versionFrom != null)
+                    message.versionFrom = object.versionFrom >>> 0;
+                if (object.versionTo != null)
+                    message.versionTo = object.versionTo >>> 0;
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a OTTransformSelectionRequest message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.OTTransformSelectionRequest
+             * @static
+             * @param {api.OTTransformSelectionRequest} message OTTransformSelectionRequest
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            OTTransformSelectionRequest.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.indexStart = 0;
+                    object.indexEnd = 0;
+                    object.versionFrom = 0;
+                    object.versionTo = 0;
+                }
+                if (message.indexStart != null && message.hasOwnProperty("indexStart"))
+                    object.indexStart = message.indexStart;
+                if (message.indexEnd != null && message.hasOwnProperty("indexEnd"))
+                    object.indexEnd = message.indexEnd;
+                if (message.versionFrom != null && message.hasOwnProperty("versionFrom"))
+                    object.versionFrom = message.versionFrom;
+                if (message.versionTo != null && message.hasOwnProperty("versionTo"))
+                    object.versionTo = message.versionTo;
+                return object;
+            };
+    
+            /**
+             * Converts this OTTransformSelectionRequest to JSON.
+             * @function toJSON
+             * @memberof api.OTTransformSelectionRequest
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            OTTransformSelectionRequest.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return OTTransformSelectionRequest;
+        })();
+    
+        api.OTTransformSelectionResponse = (function() {
+    
+            /**
+             * Properties of a OTTransformSelectionResponse.
+             * @memberof api
+             * @interface IOTTransformSelectionResponse
+             * @property {number|null} [indexStart] OTTransformSelectionResponse indexStart
+             * @property {number|null} [indexEnd] OTTransformSelectionResponse indexEnd
+             * @property {number|null} [version] OTTransformSelectionResponse version
+             */
+    
+            /**
+             * Constructs a new OTTransformSelectionResponse.
+             * @memberof api
+             * @classdesc Represents a OTTransformSelectionResponse.
+             * @constructor
+             * @param {api.IOTTransformSelectionResponse=} [properties] Properties to set
+             */
+            function OTTransformSelectionResponse(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * OTTransformSelectionResponse indexStart.
+             * @member {number} indexStart
+             * @memberof api.OTTransformSelectionResponse
+             * @instance
+             */
+            OTTransformSelectionResponse.prototype.indexStart = 0;
+    
+            /**
+             * OTTransformSelectionResponse indexEnd.
+             * @member {number} indexEnd
+             * @memberof api.OTTransformSelectionResponse
+             * @instance
+             */
+            OTTransformSelectionResponse.prototype.indexEnd = 0;
+    
+            /**
+             * OTTransformSelectionResponse version.
+             * @member {number} version
+             * @memberof api.OTTransformSelectionResponse
+             * @instance
+             */
+            OTTransformSelectionResponse.prototype.version = 0;
+    
+            /**
+             * Creates a new OTTransformSelectionResponse instance using the specified properties.
+             * @function create
+             * @memberof api.OTTransformSelectionResponse
+             * @static
+             * @param {api.IOTTransformSelectionResponse=} [properties] Properties to set
+             * @returns {api.OTTransformSelectionResponse} OTTransformSelectionResponse instance
+             */
+            OTTransformSelectionResponse.create = function create(properties) {
+                return OTTransformSelectionResponse.fromObject(properties);
+            };
+    
+            /**
+             * Encodes the specified OTTransformSelectionResponse message. Does not implicitly {@link api.OTTransformSelectionResponse.verify|verify} messages.
+             * @function encode
+             * @memberof api.OTTransformSelectionResponse
+             * @static
+             * @param {api.OTTransformSelectionResponse} message OTTransformSelectionResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            OTTransformSelectionResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.indexStart != null && Object.hasOwnProperty.call(message, "indexStart"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.indexStart);
+                if (message.indexEnd != null && Object.hasOwnProperty.call(message, "indexEnd"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.indexEnd);
+                if (message.version != null && Object.hasOwnProperty.call(message, "version"))
+                    writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.version);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified OTTransformSelectionResponse message, length delimited. Does not implicitly {@link api.OTTransformSelectionResponse.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.OTTransformSelectionResponse
+             * @static
+             * @param {api.OTTransformSelectionResponse} message OTTransformSelectionResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            OTTransformSelectionResponse.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a OTTransformSelectionResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.OTTransformSelectionResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.OTTransformSelectionResponse} OTTransformSelectionResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            OTTransformSelectionResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.OTTransformSelectionResponse();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.indexStart = reader.uint32();
+                        break;
+                    case 2:
+                        message.indexEnd = reader.uint32();
+                        break;
+                    case 3:
+                        message.version = reader.uint32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a OTTransformSelectionResponse message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.OTTransformSelectionResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.OTTransformSelectionResponse} OTTransformSelectionResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            OTTransformSelectionResponse.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a OTTransformSelectionResponse message.
+             * @function verify
+             * @memberof api.OTTransformSelectionResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            OTTransformSelectionResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.indexStart != null && message.hasOwnProperty("indexStart"))
+                    if (!$util.isInteger(message.indexStart))
+                        return "indexStart: integer expected";
+                if (message.indexEnd != null && message.hasOwnProperty("indexEnd"))
+                    if (!$util.isInteger(message.indexEnd))
+                        return "indexEnd: integer expected";
+                if (message.version != null && message.hasOwnProperty("version"))
+                    if (!$util.isInteger(message.version))
+                        return "version: integer expected";
+                return null;
+            };
+    
+            /**
+             * Creates a OTTransformSelectionResponse message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.OTTransformSelectionResponse
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.OTTransformSelectionResponse} OTTransformSelectionResponse
+             */
+            OTTransformSelectionResponse.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.OTTransformSelectionResponse)
+                    return object;
+                var message = new $root.api.OTTransformSelectionResponse();
+                if (object.indexStart != null)
+                    message.indexStart = object.indexStart >>> 0;
+                if (object.indexEnd != null)
+                    message.indexEnd = object.indexEnd >>> 0;
+                if (object.version != null)
+                    message.version = object.version >>> 0;
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a OTTransformSelectionResponse message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.OTTransformSelectionResponse
+             * @static
+             * @param {api.OTTransformSelectionResponse} message OTTransformSelectionResponse
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            OTTransformSelectionResponse.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.indexStart = 0;
+                    object.indexEnd = 0;
+                    object.version = 0;
+                }
+                if (message.indexStart != null && message.hasOwnProperty("indexStart"))
+                    object.indexStart = message.indexStart;
+                if (message.indexEnd != null && message.hasOwnProperty("indexEnd"))
+                    object.indexEnd = message.indexEnd;
+                if (message.version != null && message.hasOwnProperty("version"))
+                    object.version = message.version;
+                return object;
+            };
+    
+            /**
+             * Converts this OTTransformSelectionResponse to JSON.
+             * @function toJSON
+             * @memberof api.OTTransformSelectionResponse
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            OTTransformSelectionResponse.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return OTTransformSelectionResponse;
         })();
     
         api.OTPacket = (function() {
