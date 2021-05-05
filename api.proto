@@ -184,6 +184,45 @@ message Command {
 
     // used to set configure pty settings 
     PTYConfig PTYConfig = 367;
+
+    // Debugger
+    //
+    // When the channel is created, a DebugSessions message will be sent to the
+    // channel with the current list of all active sessions. When a session is
+    // created / terminated, another DebugSessions message will be broadcast.
+
+    // Request to start debugging the main file for the project. This will
+    // atomically start a new session or join an existing one, identified by
+    // the `session` name. Clients will receive a DebugState message followed by
+    // a DebugMainReply on success, or an error on failure.
+    //
+    // Following a success, all channels will receive a DebugSessions with
+    // the newly-created session. Also, further debug messages sent from the
+    // client must contain the same session identifier.
+    //
+    // Clients can create any number of concurrent sessions. The main debugging
+    // session is called "main" by convention.
+    DebugMain debugMain = 370;
+    DebugState debugState = 371;
+    DebugMainReply debugMainReply = 372;
+
+    // DebugInput can be sent to write to the adapter or the debuggee (as
+    // stdin). This will reply with OK on success, or an error on failure.
+    DebugInput debugInput = 373;
+
+    // DebugOutput will be sent every time there is new output from the
+    // debuggee (stdout / stderr) or the adapter.
+    DebugOutput debugOutput = 374;
+
+    // DebugStop can be sent to stop and clean up a debugger session. This will
+    // reply with OK on success, or an error on failure.
+    DebugStop debugStop = 375;
+
+    // DebugLeave can be sent to stop receiving notifications for a debugger
+    // session. This will reply with OK on success, or an error on failure.
+    DebugLeave debugLeave = 376;
+
+    DebugSessions debugSessions = 377;
   }
 
   string ref = 1000;
@@ -749,4 +788,92 @@ message PTYConfig {
   // This is designed for comparing and output - the output 
   // should be as close as possible to its original state.  
   bool pipeMode = 1;
+}
+
+// The message used to request to start a new debug session with the main
+// program (i.e. the same one that would be run with the Run button) as
+// debuggee.
+message DebugMain {
+  // The user-chosen session name. This same session must be provided in all
+  // other debugger-related messages. By convention, the "main" session is the
+  // default one.
+  string session = 1;
+  // Whether this session is read-only. Those sessions won't be able to change
+  // the execution state (play, pause, change breakpoints, etc.).
+  bool readOnly = 2;
+}
+
+// The reply message of DebugMain.
+message DebugMainReply {
+  // If the DebugMain request was the first one for the session, joined will be
+  // false. Otherwise, joined will be true. The protocol may also have enough
+  // hints to convey this.
+  bool joined = 1;
+  enum Protocol {
+    // The adapter speaks the Debug Adapter Protocol:
+    // https://microsoft.github.io/debug-adapter-protocol/
+    DAP = 0;
+  }
+  // The protocol that the adapter is using.
+  Protocol protocol = 2;
+}
+
+// The state of a debug session. This is sent before the reply to DebugMain is
+// sent, as well as whenever the adapter exits.
+message DebugState {
+  string session = 1;
+  State state = 2;
+}
+
+// The message used to write to the debuggee or the adapter.
+message DebugInput {
+  string session = 1;
+  oneof stream {
+    // The UTF-8 encoded input for the debuggee.
+    string input = 2;
+
+    // The UTF-8 encoded input for the adapter, using the protocol described by
+    // DebugMainReply.
+    string adapterInput = 3;
+  }
+}
+
+// The message used to read from the debuggee or the adapter.
+message DebugOutput {
+  string session = 1;
+  oneof stream {
+    // The UTF-8 encoded output from the debuggee.
+    string output = 2;
+
+    // The UTF-8 encoded output from the adapter, using the protocol described by
+    // DebugMainReply.
+    string adapterOutput = 3;
+  }
+}
+
+// The message used to request the adapter and debuggee to stop. This is needed
+// because debuggers/adapters can be put in a state where they are not able to
+// receive requests to stop at the protocol level and need to be forcefully
+// stopped.
+//
+// The implementation will first try to gracefully terminate the session by
+// sending an appropriate protocol message, and then send a SIGKILL signal to
+// both the debuggee and the adapter if they don't exit within a certain time
+// limit.
+message DebugStop {
+  string session = 1;
+}
+
+// The message used to request to stop receiving notifications for a debugger
+// session. This can be used to "close" a debugger session without needing to
+// close the whole crosis session.
+message DebugLeave {
+  string session = 1;
+}
+
+// The message sent by the server to signal the current list of sessions. This
+// is also sent upon the creation of the debugger channel, as well as every
+// time a new session is created or terminated.
+message DebugSessions {
+  map<string, State> sessions = 1;
 }
