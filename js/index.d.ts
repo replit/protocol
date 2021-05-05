@@ -344,6 +344,30 @@ export namespace api {
         /** Command PTYConfig */
         PTYConfig?: (api.PTYConfig|api.IPTYConfig|null);
 
+        /** Command debugMain */
+        debugMain?: (api.DebugMain|api.IDebugMain|null);
+
+        /** Command debugState */
+        debugState?: (api.DebugState|api.IDebugState|null);
+
+        /** Command debugMainReply */
+        debugMainReply?: (api.DebugMainReply|api.IDebugMainReply|null);
+
+        /** Command debugInput */
+        debugInput?: (api.DebugInput|api.IDebugInput|null);
+
+        /** Command debugOutput */
+        debugOutput?: (api.DebugOutput|api.IDebugOutput|null);
+
+        /** Command debugStop */
+        debugStop?: (api.DebugStop|api.IDebugStop|null);
+
+        /** Command debugLeave */
+        debugLeave?: (api.DebugLeave|api.IDebugLeave|null);
+
+        /** Command debugSessions */
+        debugSessions?: (api.DebugSessions|api.IDebugSessions|null);
+
         /** Command ref */
         ref?: (string|null);
     }
@@ -696,11 +720,35 @@ export namespace api {
         /** Command PTYConfig. */
         public PTYConfig?: (api.PTYConfig|null);
 
+        /** Command debugMain. */
+        public debugMain?: (api.DebugMain|null);
+
+        /** Command debugState. */
+        public debugState?: (api.DebugState|null);
+
+        /** Command debugMainReply. */
+        public debugMainReply?: (api.DebugMainReply|null);
+
+        /** Command debugInput. */
+        public debugInput?: (api.DebugInput|null);
+
+        /** Command debugOutput. */
+        public debugOutput?: (api.DebugOutput|null);
+
+        /** Command debugStop. */
+        public debugStop?: (api.DebugStop|null);
+
+        /** Command debugLeave. */
+        public debugLeave?: (api.DebugLeave|null);
+
+        /** Command debugSessions. */
+        public debugSessions?: (api.DebugSessions|null);
+
         /** Command ref. */
         public ref: string;
 
         /** Command body. */
-        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"alwaysOn"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"transferStart"|"transferChunk"|"transferComplete"|"transferCancel"|"transfer"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"otTransformSelectionRequest"|"otTransformSelectionResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig");
+        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"alwaysOn"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"transferStart"|"transferChunk"|"transferComplete"|"transferCancel"|"transfer"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"otTransformSelectionRequest"|"otTransformSelectionResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig"|"debugMain"|"debugState"|"debugMainReply"|"debugInput"|"debugOutput"|"debugStop"|"debugLeave"|"debugSessions");
 
         /**
          * Creates a new Command instance using the specified properties.
@@ -10408,6 +10456,782 @@ export namespace api {
 
         /**
          * Converts this PTYConfig to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a DebugMain. */
+    interface IDebugMain {
+
+        /** DebugMain session */
+        session?: (string|null);
+
+        /** DebugMain readOnly */
+        readOnly?: (boolean|null);
+    }
+
+    /** Represents a DebugMain. */
+    class DebugMain {
+
+        /**
+         * Constructs a new DebugMain.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IDebugMain);
+
+        /** DebugMain session. */
+        public session: string;
+
+        /** DebugMain readOnly. */
+        public readOnly: boolean;
+
+        /**
+         * Creates a new DebugMain instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns DebugMain instance
+         */
+        public static create(properties?: api.IDebugMain): api.DebugMain;
+
+        /**
+         * Encodes the specified DebugMain message. Does not implicitly {@link api.DebugMain.verify|verify} messages.
+         * @param message DebugMain message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.DebugMain, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified DebugMain message, length delimited. Does not implicitly {@link api.DebugMain.verify|verify} messages.
+         * @param message DebugMain message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.DebugMain, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a DebugMain message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns DebugMain
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.DebugMain;
+
+        /**
+         * Decodes a DebugMain message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns DebugMain
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.DebugMain;
+
+        /**
+         * Verifies a DebugMain message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a DebugMain message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns DebugMain
+         */
+        public static fromObject(object: { [k: string]: any }): api.DebugMain;
+
+        /**
+         * Creates a plain object from a DebugMain message. Also converts values to other types if specified.
+         * @param message DebugMain
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.DebugMain, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this DebugMain to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a DebugMainReply. */
+    interface IDebugMainReply {
+
+        /** DebugMainReply joined */
+        joined?: (boolean|null);
+
+        /** DebugMainReply protocol */
+        protocol?: (api.DebugMainReply.Protocol|null);
+    }
+
+    /** Represents a DebugMainReply. */
+    class DebugMainReply {
+
+        /**
+         * Constructs a new DebugMainReply.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IDebugMainReply);
+
+        /** DebugMainReply joined. */
+        public joined: boolean;
+
+        /** DebugMainReply protocol. */
+        public protocol: api.DebugMainReply.Protocol;
+
+        /**
+         * Creates a new DebugMainReply instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns DebugMainReply instance
+         */
+        public static create(properties?: api.IDebugMainReply): api.DebugMainReply;
+
+        /**
+         * Encodes the specified DebugMainReply message. Does not implicitly {@link api.DebugMainReply.verify|verify} messages.
+         * @param message DebugMainReply message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.DebugMainReply, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified DebugMainReply message, length delimited. Does not implicitly {@link api.DebugMainReply.verify|verify} messages.
+         * @param message DebugMainReply message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.DebugMainReply, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a DebugMainReply message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns DebugMainReply
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.DebugMainReply;
+
+        /**
+         * Decodes a DebugMainReply message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns DebugMainReply
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.DebugMainReply;
+
+        /**
+         * Verifies a DebugMainReply message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a DebugMainReply message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns DebugMainReply
+         */
+        public static fromObject(object: { [k: string]: any }): api.DebugMainReply;
+
+        /**
+         * Creates a plain object from a DebugMainReply message. Also converts values to other types if specified.
+         * @param message DebugMainReply
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.DebugMainReply, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this DebugMainReply to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    namespace DebugMainReply {
+
+        /** Protocol enum. */
+        enum Protocol {
+            DAP = 0
+        }
+    }
+
+    /** Properties of a DebugState. */
+    interface IDebugState {
+
+        /** DebugState session */
+        session?: (string|null);
+
+        /** DebugState state */
+        state?: (api.State|null);
+    }
+
+    /** Represents a DebugState. */
+    class DebugState {
+
+        /**
+         * Constructs a new DebugState.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IDebugState);
+
+        /** DebugState session. */
+        public session: string;
+
+        /** DebugState state. */
+        public state: api.State;
+
+        /**
+         * Creates a new DebugState instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns DebugState instance
+         */
+        public static create(properties?: api.IDebugState): api.DebugState;
+
+        /**
+         * Encodes the specified DebugState message. Does not implicitly {@link api.DebugState.verify|verify} messages.
+         * @param message DebugState message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.DebugState, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified DebugState message, length delimited. Does not implicitly {@link api.DebugState.verify|verify} messages.
+         * @param message DebugState message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.DebugState, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a DebugState message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns DebugState
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.DebugState;
+
+        /**
+         * Decodes a DebugState message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns DebugState
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.DebugState;
+
+        /**
+         * Verifies a DebugState message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a DebugState message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns DebugState
+         */
+        public static fromObject(object: { [k: string]: any }): api.DebugState;
+
+        /**
+         * Creates a plain object from a DebugState message. Also converts values to other types if specified.
+         * @param message DebugState
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.DebugState, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this DebugState to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a DebugInput. */
+    interface IDebugInput {
+
+        /** DebugInput session */
+        session?: (string|null);
+
+        /** DebugInput input */
+        input?: (string|null);
+
+        /** DebugInput adapterInput */
+        adapterInput?: (string|null);
+    }
+
+    /** Represents a DebugInput. */
+    class DebugInput {
+
+        /**
+         * Constructs a new DebugInput.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IDebugInput);
+
+        /** DebugInput session. */
+        public session: string;
+
+        /** DebugInput input. */
+        public input: string;
+
+        /** DebugInput adapterInput. */
+        public adapterInput: string;
+
+        /** DebugInput stream. */
+        public stream?: ("input"|"adapterInput");
+
+        /**
+         * Creates a new DebugInput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns DebugInput instance
+         */
+        public static create(properties?: api.IDebugInput): api.DebugInput;
+
+        /**
+         * Encodes the specified DebugInput message. Does not implicitly {@link api.DebugInput.verify|verify} messages.
+         * @param message DebugInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.DebugInput, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified DebugInput message, length delimited. Does not implicitly {@link api.DebugInput.verify|verify} messages.
+         * @param message DebugInput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.DebugInput, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a DebugInput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns DebugInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.DebugInput;
+
+        /**
+         * Decodes a DebugInput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns DebugInput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.DebugInput;
+
+        /**
+         * Verifies a DebugInput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a DebugInput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns DebugInput
+         */
+        public static fromObject(object: { [k: string]: any }): api.DebugInput;
+
+        /**
+         * Creates a plain object from a DebugInput message. Also converts values to other types if specified.
+         * @param message DebugInput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.DebugInput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this DebugInput to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a DebugOutput. */
+    interface IDebugOutput {
+
+        /** DebugOutput session */
+        session?: (string|null);
+
+        /** DebugOutput output */
+        output?: (string|null);
+
+        /** DebugOutput adapterOutput */
+        adapterOutput?: (string|null);
+    }
+
+    /** Represents a DebugOutput. */
+    class DebugOutput {
+
+        /**
+         * Constructs a new DebugOutput.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IDebugOutput);
+
+        /** DebugOutput session. */
+        public session: string;
+
+        /** DebugOutput output. */
+        public output: string;
+
+        /** DebugOutput adapterOutput. */
+        public adapterOutput: string;
+
+        /** DebugOutput stream. */
+        public stream?: ("output"|"adapterOutput");
+
+        /**
+         * Creates a new DebugOutput instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns DebugOutput instance
+         */
+        public static create(properties?: api.IDebugOutput): api.DebugOutput;
+
+        /**
+         * Encodes the specified DebugOutput message. Does not implicitly {@link api.DebugOutput.verify|verify} messages.
+         * @param message DebugOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.DebugOutput, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified DebugOutput message, length delimited. Does not implicitly {@link api.DebugOutput.verify|verify} messages.
+         * @param message DebugOutput message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.DebugOutput, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a DebugOutput message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns DebugOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.DebugOutput;
+
+        /**
+         * Decodes a DebugOutput message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns DebugOutput
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.DebugOutput;
+
+        /**
+         * Verifies a DebugOutput message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a DebugOutput message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns DebugOutput
+         */
+        public static fromObject(object: { [k: string]: any }): api.DebugOutput;
+
+        /**
+         * Creates a plain object from a DebugOutput message. Also converts values to other types if specified.
+         * @param message DebugOutput
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.DebugOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this DebugOutput to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a DebugStop. */
+    interface IDebugStop {
+
+        /** DebugStop session */
+        session?: (string|null);
+    }
+
+    /** Represents a DebugStop. */
+    class DebugStop {
+
+        /**
+         * Constructs a new DebugStop.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IDebugStop);
+
+        /** DebugStop session. */
+        public session: string;
+
+        /**
+         * Creates a new DebugStop instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns DebugStop instance
+         */
+        public static create(properties?: api.IDebugStop): api.DebugStop;
+
+        /**
+         * Encodes the specified DebugStop message. Does not implicitly {@link api.DebugStop.verify|verify} messages.
+         * @param message DebugStop message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.DebugStop, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified DebugStop message, length delimited. Does not implicitly {@link api.DebugStop.verify|verify} messages.
+         * @param message DebugStop message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.DebugStop, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a DebugStop message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns DebugStop
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.DebugStop;
+
+        /**
+         * Decodes a DebugStop message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns DebugStop
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.DebugStop;
+
+        /**
+         * Verifies a DebugStop message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a DebugStop message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns DebugStop
+         */
+        public static fromObject(object: { [k: string]: any }): api.DebugStop;
+
+        /**
+         * Creates a plain object from a DebugStop message. Also converts values to other types if specified.
+         * @param message DebugStop
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.DebugStop, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this DebugStop to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a DebugLeave. */
+    interface IDebugLeave {
+
+        /** DebugLeave session */
+        session?: (string|null);
+    }
+
+    /** Represents a DebugLeave. */
+    class DebugLeave {
+
+        /**
+         * Constructs a new DebugLeave.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IDebugLeave);
+
+        /** DebugLeave session. */
+        public session: string;
+
+        /**
+         * Creates a new DebugLeave instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns DebugLeave instance
+         */
+        public static create(properties?: api.IDebugLeave): api.DebugLeave;
+
+        /**
+         * Encodes the specified DebugLeave message. Does not implicitly {@link api.DebugLeave.verify|verify} messages.
+         * @param message DebugLeave message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.DebugLeave, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified DebugLeave message, length delimited. Does not implicitly {@link api.DebugLeave.verify|verify} messages.
+         * @param message DebugLeave message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.DebugLeave, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a DebugLeave message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns DebugLeave
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.DebugLeave;
+
+        /**
+         * Decodes a DebugLeave message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns DebugLeave
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.DebugLeave;
+
+        /**
+         * Verifies a DebugLeave message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a DebugLeave message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns DebugLeave
+         */
+        public static fromObject(object: { [k: string]: any }): api.DebugLeave;
+
+        /**
+         * Creates a plain object from a DebugLeave message. Also converts values to other types if specified.
+         * @param message DebugLeave
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.DebugLeave, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this DebugLeave to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a DebugSessions. */
+    interface IDebugSessions {
+
+        /** DebugSessions sessions */
+        sessions?: ({ [k: string]: api.State }|null);
+    }
+
+    /** Represents a DebugSessions. */
+    class DebugSessions {
+
+        /**
+         * Constructs a new DebugSessions.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IDebugSessions);
+
+        /** DebugSessions sessions. */
+        public sessions: { [k: string]: api.State };
+
+        /**
+         * Creates a new DebugSessions instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns DebugSessions instance
+         */
+        public static create(properties?: api.IDebugSessions): api.DebugSessions;
+
+        /**
+         * Encodes the specified DebugSessions message. Does not implicitly {@link api.DebugSessions.verify|verify} messages.
+         * @param message DebugSessions message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.DebugSessions, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified DebugSessions message, length delimited. Does not implicitly {@link api.DebugSessions.verify|verify} messages.
+         * @param message DebugSessions message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.DebugSessions, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a DebugSessions message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns DebugSessions
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.DebugSessions;
+
+        /**
+         * Decodes a DebugSessions message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns DebugSessions
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.DebugSessions;
+
+        /**
+         * Verifies a DebugSessions message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a DebugSessions message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns DebugSessions
+         */
+        public static fromObject(object: { [k: string]: any }): api.DebugSessions;
+
+        /**
+         * Creates a plain object from a DebugSessions message. Also converts values to other types if specified.
+         * @param message DebugSessions
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.DebugSessions, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this DebugSessions to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };

@@ -144,6 +144,14 @@
              * @property {api.PprofResponse|api.IPprofResponse|null} [pprofResponse] Command pprofResponse
              * @property {api.Audio2|api.IAudio2|null} [audio2] Command audio2
              * @property {api.PTYConfig|api.IPTYConfig|null} [PTYConfig] Command PTYConfig
+             * @property {api.DebugMain|api.IDebugMain|null} [debugMain] Command debugMain
+             * @property {api.DebugState|api.IDebugState|null} [debugState] Command debugState
+             * @property {api.DebugMainReply|api.IDebugMainReply|null} [debugMainReply] Command debugMainReply
+             * @property {api.DebugInput|api.IDebugInput|null} [debugInput] Command debugInput
+             * @property {api.DebugOutput|api.IDebugOutput|null} [debugOutput] Command debugOutput
+             * @property {api.DebugStop|api.IDebugStop|null} [debugStop] Command debugStop
+             * @property {api.DebugLeave|api.IDebugLeave|null} [debugLeave] Command debugLeave
+             * @property {api.DebugSessions|api.IDebugSessions|null} [debugSessions] Command debugSessions
              * @property {string|null} [ref] Command ref
              */
     
@@ -1066,6 +1074,70 @@
             Command.prototype.PTYConfig = null;
     
             /**
+             * Command debugMain.
+             * @member {api.DebugMain|null|undefined} debugMain
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.debugMain = null;
+    
+            /**
+             * Command debugState.
+             * @member {api.DebugState|null|undefined} debugState
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.debugState = null;
+    
+            /**
+             * Command debugMainReply.
+             * @member {api.DebugMainReply|null|undefined} debugMainReply
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.debugMainReply = null;
+    
+            /**
+             * Command debugInput.
+             * @member {api.DebugInput|null|undefined} debugInput
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.debugInput = null;
+    
+            /**
+             * Command debugOutput.
+             * @member {api.DebugOutput|null|undefined} debugOutput
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.debugOutput = null;
+    
+            /**
+             * Command debugStop.
+             * @member {api.DebugStop|null|undefined} debugStop
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.debugStop = null;
+    
+            /**
+             * Command debugLeave.
+             * @member {api.DebugLeave|null|undefined} debugLeave
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.debugLeave = null;
+    
+            /**
+             * Command debugSessions.
+             * @member {api.DebugSessions|null|undefined} debugSessions
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.debugSessions = null;
+    
+            /**
              * Command ref.
              * @member {string} ref
              * @memberof api.Command
@@ -1078,12 +1150,12 @@
     
             /**
              * Command body.
-             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"alwaysOn"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"transferStart"|"transferChunk"|"transferComplete"|"transferCancel"|"transfer"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"otTransformSelectionRequest"|"otTransformSelectionResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig"|undefined} body
+             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"alwaysOn"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"transferStart"|"transferChunk"|"transferComplete"|"transferCancel"|"transfer"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"otTransformSelectionRequest"|"otTransformSelectionResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig"|"debugMain"|"debugState"|"debugMainReply"|"debugInput"|"debugOutput"|"debugStop"|"debugLeave"|"debugSessions"|undefined} body
              * @memberof api.Command
              * @instance
              */
             Object.defineProperty(Command.prototype, "body", {
-                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "redirect", "alwaysOn", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "stat", "statRes", "transferStart", "transferChunk", "transferComplete", "transferCancel", "transfer", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "otFetchRequest", "otFetchResponse", "otTransformSelectionRequest", "otTransformSelectionResponse", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock", "hasCap", "pid1Config", "metrics", "bootStatus", "readMeta", "writeMeta", "appendMeta", "audio", "pprofRequest", "pprofResponse", "audio2", "PTYConfig"]),
+                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "redirect", "alwaysOn", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "stat", "statRes", "transferStart", "transferChunk", "transferComplete", "transferCancel", "transfer", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "otFetchRequest", "otFetchResponse", "otTransformSelectionRequest", "otTransformSelectionResponse", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock", "hasCap", "pid1Config", "metrics", "bootStatus", "readMeta", "writeMeta", "appendMeta", "audio", "pprofRequest", "pprofResponse", "audio2", "PTYConfig", "debugMain", "debugState", "debugMainReply", "debugInput", "debugOutput", "debugStop", "debugLeave", "debugSessions"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
     
@@ -1337,6 +1409,22 @@
                     $root.api.File.encode(message.stat, writer.uint32(/* id 368, wireType 2 =*/2946).fork()).ldelim();
                 if (message.statRes != null && Object.hasOwnProperty.call(message, "statRes"))
                     $root.api.StatResult.encode(message.statRes, writer.uint32(/* id 369, wireType 2 =*/2954).fork()).ldelim();
+                if (message.debugMain != null && Object.hasOwnProperty.call(message, "debugMain"))
+                    $root.api.DebugMain.encode(message.debugMain, writer.uint32(/* id 370, wireType 2 =*/2962).fork()).ldelim();
+                if (message.debugState != null && Object.hasOwnProperty.call(message, "debugState"))
+                    $root.api.DebugState.encode(message.debugState, writer.uint32(/* id 371, wireType 2 =*/2970).fork()).ldelim();
+                if (message.debugMainReply != null && Object.hasOwnProperty.call(message, "debugMainReply"))
+                    $root.api.DebugMainReply.encode(message.debugMainReply, writer.uint32(/* id 372, wireType 2 =*/2978).fork()).ldelim();
+                if (message.debugInput != null && Object.hasOwnProperty.call(message, "debugInput"))
+                    $root.api.DebugInput.encode(message.debugInput, writer.uint32(/* id 373, wireType 2 =*/2986).fork()).ldelim();
+                if (message.debugOutput != null && Object.hasOwnProperty.call(message, "debugOutput"))
+                    $root.api.DebugOutput.encode(message.debugOutput, writer.uint32(/* id 374, wireType 2 =*/2994).fork()).ldelim();
+                if (message.debugStop != null && Object.hasOwnProperty.call(message, "debugStop"))
+                    $root.api.DebugStop.encode(message.debugStop, writer.uint32(/* id 375, wireType 2 =*/3002).fork()).ldelim();
+                if (message.debugLeave != null && Object.hasOwnProperty.call(message, "debugLeave"))
+                    $root.api.DebugLeave.encode(message.debugLeave, writer.uint32(/* id 376, wireType 2 =*/3010).fork()).ldelim();
+                if (message.debugSessions != null && Object.hasOwnProperty.call(message, "debugSessions"))
+                    $root.api.DebugSessions.encode(message.debugSessions, writer.uint32(/* id 377, wireType 2 =*/3018).fork()).ldelim();
                 if (message.ref != null && Object.hasOwnProperty.call(message, "ref"))
                     writer.uint32(/* id 1000, wireType 2 =*/8002).string(message.ref);
                 return writer;
@@ -1711,6 +1799,30 @@
                         break;
                     case 367:
                         message.PTYConfig = $root.api.PTYConfig.decode(reader, reader.uint32());
+                        break;
+                    case 370:
+                        message.debugMain = $root.api.DebugMain.decode(reader, reader.uint32());
+                        break;
+                    case 371:
+                        message.debugState = $root.api.DebugState.decode(reader, reader.uint32());
+                        break;
+                    case 372:
+                        message.debugMainReply = $root.api.DebugMainReply.decode(reader, reader.uint32());
+                        break;
+                    case 373:
+                        message.debugInput = $root.api.DebugInput.decode(reader, reader.uint32());
+                        break;
+                    case 374:
+                        message.debugOutput = $root.api.DebugOutput.decode(reader, reader.uint32());
+                        break;
+                    case 375:
+                        message.debugStop = $root.api.DebugStop.decode(reader, reader.uint32());
+                        break;
+                    case 376:
+                        message.debugLeave = $root.api.DebugLeave.decode(reader, reader.uint32());
+                        break;
+                    case 377:
+                        message.debugSessions = $root.api.DebugSessions.decode(reader, reader.uint32());
                         break;
                     case 1000:
                         message.ref = reader.string();
@@ -2846,6 +2958,86 @@
                             return "PTYConfig." + error;
                     }
                 }
+                if (message.debugMain != null && message.hasOwnProperty("debugMain")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.DebugMain.verify(message.debugMain);
+                        if (error)
+                            return "debugMain." + error;
+                    }
+                }
+                if (message.debugState != null && message.hasOwnProperty("debugState")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.DebugState.verify(message.debugState);
+                        if (error)
+                            return "debugState." + error;
+                    }
+                }
+                if (message.debugMainReply != null && message.hasOwnProperty("debugMainReply")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.DebugMainReply.verify(message.debugMainReply);
+                        if (error)
+                            return "debugMainReply." + error;
+                    }
+                }
+                if (message.debugInput != null && message.hasOwnProperty("debugInput")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.DebugInput.verify(message.debugInput);
+                        if (error)
+                            return "debugInput." + error;
+                    }
+                }
+                if (message.debugOutput != null && message.hasOwnProperty("debugOutput")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.DebugOutput.verify(message.debugOutput);
+                        if (error)
+                            return "debugOutput." + error;
+                    }
+                }
+                if (message.debugStop != null && message.hasOwnProperty("debugStop")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.DebugStop.verify(message.debugStop);
+                        if (error)
+                            return "debugStop." + error;
+                    }
+                }
+                if (message.debugLeave != null && message.hasOwnProperty("debugLeave")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.DebugLeave.verify(message.debugLeave);
+                        if (error)
+                            return "debugLeave." + error;
+                    }
+                }
+                if (message.debugSessions != null && message.hasOwnProperty("debugSessions")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.DebugSessions.verify(message.debugSessions);
+                        if (error)
+                            return "debugSessions." + error;
+                    }
+                }
                 if (message.ref != null && message.hasOwnProperty("ref"))
                     if (!$util.isString(message.ref))
                         return "ref: string expected";
@@ -3406,6 +3598,46 @@
                     if (typeof object.PTYConfig !== "object")
                         throw TypeError(".api.Command.PTYConfig: object expected");
                     message.PTYConfig = $root.api.PTYConfig.fromObject(object.PTYConfig);
+                }
+                if (object.debugMain != null) {
+                    if (typeof object.debugMain !== "object")
+                        throw TypeError(".api.Command.debugMain: object expected");
+                    message.debugMain = $root.api.DebugMain.fromObject(object.debugMain);
+                }
+                if (object.debugState != null) {
+                    if (typeof object.debugState !== "object")
+                        throw TypeError(".api.Command.debugState: object expected");
+                    message.debugState = $root.api.DebugState.fromObject(object.debugState);
+                }
+                if (object.debugMainReply != null) {
+                    if (typeof object.debugMainReply !== "object")
+                        throw TypeError(".api.Command.debugMainReply: object expected");
+                    message.debugMainReply = $root.api.DebugMainReply.fromObject(object.debugMainReply);
+                }
+                if (object.debugInput != null) {
+                    if (typeof object.debugInput !== "object")
+                        throw TypeError(".api.Command.debugInput: object expected");
+                    message.debugInput = $root.api.DebugInput.fromObject(object.debugInput);
+                }
+                if (object.debugOutput != null) {
+                    if (typeof object.debugOutput !== "object")
+                        throw TypeError(".api.Command.debugOutput: object expected");
+                    message.debugOutput = $root.api.DebugOutput.fromObject(object.debugOutput);
+                }
+                if (object.debugStop != null) {
+                    if (typeof object.debugStop !== "object")
+                        throw TypeError(".api.Command.debugStop: object expected");
+                    message.debugStop = $root.api.DebugStop.fromObject(object.debugStop);
+                }
+                if (object.debugLeave != null) {
+                    if (typeof object.debugLeave !== "object")
+                        throw TypeError(".api.Command.debugLeave: object expected");
+                    message.debugLeave = $root.api.DebugLeave.fromObject(object.debugLeave);
+                }
+                if (object.debugSessions != null) {
+                    if (typeof object.debugSessions !== "object")
+                        throw TypeError(".api.Command.debugSessions: object expected");
+                    message.debugSessions = $root.api.DebugSessions.fromObject(object.debugSessions);
                 }
                 if (object.ref != null)
                     message.ref = String(object.ref);
@@ -3988,6 +4220,46 @@
                     object.statRes = $root.api.StatResult.toObject(message.statRes, options);
                     if (options.oneofs)
                         object.body = "statRes";
+                }
+                if (message.debugMain != null && message.hasOwnProperty("debugMain")) {
+                    object.debugMain = $root.api.DebugMain.toObject(message.debugMain, options);
+                    if (options.oneofs)
+                        object.body = "debugMain";
+                }
+                if (message.debugState != null && message.hasOwnProperty("debugState")) {
+                    object.debugState = $root.api.DebugState.toObject(message.debugState, options);
+                    if (options.oneofs)
+                        object.body = "debugState";
+                }
+                if (message.debugMainReply != null && message.hasOwnProperty("debugMainReply")) {
+                    object.debugMainReply = $root.api.DebugMainReply.toObject(message.debugMainReply, options);
+                    if (options.oneofs)
+                        object.body = "debugMainReply";
+                }
+                if (message.debugInput != null && message.hasOwnProperty("debugInput")) {
+                    object.debugInput = $root.api.DebugInput.toObject(message.debugInput, options);
+                    if (options.oneofs)
+                        object.body = "debugInput";
+                }
+                if (message.debugOutput != null && message.hasOwnProperty("debugOutput")) {
+                    object.debugOutput = $root.api.DebugOutput.toObject(message.debugOutput, options);
+                    if (options.oneofs)
+                        object.body = "debugOutput";
+                }
+                if (message.debugStop != null && message.hasOwnProperty("debugStop")) {
+                    object.debugStop = $root.api.DebugStop.toObject(message.debugStop, options);
+                    if (options.oneofs)
+                        object.body = "debugStop";
+                }
+                if (message.debugLeave != null && message.hasOwnProperty("debugLeave")) {
+                    object.debugLeave = $root.api.DebugLeave.toObject(message.debugLeave, options);
+                    if (options.oneofs)
+                        object.body = "debugLeave";
+                }
+                if (message.debugSessions != null && message.hasOwnProperty("debugSessions")) {
+                    object.debugSessions = $root.api.DebugSessions.toObject(message.debugSessions, options);
+                    if (options.oneofs)
+                        object.body = "debugSessions";
                 }
                 if (message.ref != null && message.hasOwnProperty("ref"))
                     object.ref = message.ref;
@@ -25845,6 +26117,1783 @@
             };
     
             return PTYConfig;
+        })();
+    
+        api.DebugMain = (function() {
+    
+            /**
+             * Properties of a DebugMain.
+             * @memberof api
+             * @interface IDebugMain
+             * @property {string|null} [session] DebugMain session
+             * @property {boolean|null} [readOnly] DebugMain readOnly
+             */
+    
+            /**
+             * Constructs a new DebugMain.
+             * @memberof api
+             * @classdesc Represents a DebugMain.
+             * @constructor
+             * @param {api.IDebugMain=} [properties] Properties to set
+             */
+            function DebugMain(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * DebugMain session.
+             * @member {string} session
+             * @memberof api.DebugMain
+             * @instance
+             */
+            DebugMain.prototype.session = "";
+    
+            /**
+             * DebugMain readOnly.
+             * @member {boolean} readOnly
+             * @memberof api.DebugMain
+             * @instance
+             */
+            DebugMain.prototype.readOnly = false;
+    
+            /**
+             * Creates a new DebugMain instance using the specified properties.
+             * @function create
+             * @memberof api.DebugMain
+             * @static
+             * @param {api.IDebugMain=} [properties] Properties to set
+             * @returns {api.DebugMain} DebugMain instance
+             */
+            DebugMain.create = function create(properties) {
+                return DebugMain.fromObject(properties);
+            };
+    
+            /**
+             * Encodes the specified DebugMain message. Does not implicitly {@link api.DebugMain.verify|verify} messages.
+             * @function encode
+             * @memberof api.DebugMain
+             * @static
+             * @param {api.DebugMain} message DebugMain message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DebugMain.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.session != null && Object.hasOwnProperty.call(message, "session"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.session);
+                if (message.readOnly != null && Object.hasOwnProperty.call(message, "readOnly"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).bool(message.readOnly);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified DebugMain message, length delimited. Does not implicitly {@link api.DebugMain.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.DebugMain
+             * @static
+             * @param {api.DebugMain} message DebugMain message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DebugMain.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a DebugMain message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.DebugMain
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.DebugMain} DebugMain
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DebugMain.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.DebugMain();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.session = reader.string();
+                        break;
+                    case 2:
+                        message.readOnly = reader.bool();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a DebugMain message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.DebugMain
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.DebugMain} DebugMain
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DebugMain.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a DebugMain message.
+             * @function verify
+             * @memberof api.DebugMain
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            DebugMain.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.session != null && message.hasOwnProperty("session"))
+                    if (!$util.isString(message.session))
+                        return "session: string expected";
+                if (message.readOnly != null && message.hasOwnProperty("readOnly"))
+                    if (typeof message.readOnly !== "boolean")
+                        return "readOnly: boolean expected";
+                return null;
+            };
+    
+            /**
+             * Creates a DebugMain message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.DebugMain
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.DebugMain} DebugMain
+             */
+            DebugMain.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.DebugMain)
+                    return object;
+                var message = new $root.api.DebugMain();
+                if (object.session != null)
+                    message.session = String(object.session);
+                if (object.readOnly != null)
+                    message.readOnly = Boolean(object.readOnly);
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a DebugMain message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.DebugMain
+             * @static
+             * @param {api.DebugMain} message DebugMain
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            DebugMain.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.session = "";
+                    object.readOnly = false;
+                }
+                if (message.session != null && message.hasOwnProperty("session"))
+                    object.session = message.session;
+                if (message.readOnly != null && message.hasOwnProperty("readOnly"))
+                    object.readOnly = message.readOnly;
+                return object;
+            };
+    
+            /**
+             * Converts this DebugMain to JSON.
+             * @function toJSON
+             * @memberof api.DebugMain
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            DebugMain.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return DebugMain;
+        })();
+    
+        api.DebugMainReply = (function() {
+    
+            /**
+             * Properties of a DebugMainReply.
+             * @memberof api
+             * @interface IDebugMainReply
+             * @property {boolean|null} [joined] DebugMainReply joined
+             * @property {api.DebugMainReply.Protocol|null} [protocol] DebugMainReply protocol
+             */
+    
+            /**
+             * Constructs a new DebugMainReply.
+             * @memberof api
+             * @classdesc Represents a DebugMainReply.
+             * @constructor
+             * @param {api.IDebugMainReply=} [properties] Properties to set
+             */
+            function DebugMainReply(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * DebugMainReply joined.
+             * @member {boolean} joined
+             * @memberof api.DebugMainReply
+             * @instance
+             */
+            DebugMainReply.prototype.joined = false;
+    
+            /**
+             * DebugMainReply protocol.
+             * @member {api.DebugMainReply.Protocol} protocol
+             * @memberof api.DebugMainReply
+             * @instance
+             */
+            DebugMainReply.prototype.protocol = 0;
+    
+            /**
+             * Creates a new DebugMainReply instance using the specified properties.
+             * @function create
+             * @memberof api.DebugMainReply
+             * @static
+             * @param {api.IDebugMainReply=} [properties] Properties to set
+             * @returns {api.DebugMainReply} DebugMainReply instance
+             */
+            DebugMainReply.create = function create(properties) {
+                return DebugMainReply.fromObject(properties);
+            };
+    
+            /**
+             * Encodes the specified DebugMainReply message. Does not implicitly {@link api.DebugMainReply.verify|verify} messages.
+             * @function encode
+             * @memberof api.DebugMainReply
+             * @static
+             * @param {api.DebugMainReply} message DebugMainReply message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DebugMainReply.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.joined != null && Object.hasOwnProperty.call(message, "joined"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).bool(message.joined);
+                if (message.protocol != null && Object.hasOwnProperty.call(message, "protocol"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.protocol);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified DebugMainReply message, length delimited. Does not implicitly {@link api.DebugMainReply.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.DebugMainReply
+             * @static
+             * @param {api.DebugMainReply} message DebugMainReply message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DebugMainReply.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a DebugMainReply message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.DebugMainReply
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.DebugMainReply} DebugMainReply
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DebugMainReply.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.DebugMainReply();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.joined = reader.bool();
+                        break;
+                    case 2:
+                        message.protocol = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a DebugMainReply message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.DebugMainReply
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.DebugMainReply} DebugMainReply
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DebugMainReply.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a DebugMainReply message.
+             * @function verify
+             * @memberof api.DebugMainReply
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            DebugMainReply.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.joined != null && message.hasOwnProperty("joined"))
+                    if (typeof message.joined !== "boolean")
+                        return "joined: boolean expected";
+                if (message.protocol != null && message.hasOwnProperty("protocol"))
+                    switch (message.protocol) {
+                    default:
+                        return "protocol: enum value expected";
+                    case 0:
+                        break;
+                    }
+                return null;
+            };
+    
+            /**
+             * Creates a DebugMainReply message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.DebugMainReply
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.DebugMainReply} DebugMainReply
+             */
+            DebugMainReply.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.DebugMainReply)
+                    return object;
+                var message = new $root.api.DebugMainReply();
+                if (object.joined != null)
+                    message.joined = Boolean(object.joined);
+                switch (object.protocol) {
+                case "DAP":
+                case 0:
+                    message.protocol = 0;
+                    break;
+                }
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a DebugMainReply message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.DebugMainReply
+             * @static
+             * @param {api.DebugMainReply} message DebugMainReply
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            DebugMainReply.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.joined = false;
+                    object.protocol = options.enums === String ? "DAP" : 0;
+                }
+                if (message.joined != null && message.hasOwnProperty("joined"))
+                    object.joined = message.joined;
+                if (message.protocol != null && message.hasOwnProperty("protocol"))
+                    object.protocol = options.enums === String ? $root.api.DebugMainReply.Protocol[message.protocol] : message.protocol;
+                return object;
+            };
+    
+            /**
+             * Converts this DebugMainReply to JSON.
+             * @function toJSON
+             * @memberof api.DebugMainReply
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            DebugMainReply.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            /**
+             * Protocol enum.
+             * @name api.DebugMainReply.Protocol
+             * @enum {number}
+             * @property {number} DAP=0 DAP value
+             */
+            DebugMainReply.Protocol = (function() {
+                var valuesById = {}, values = Object.create(valuesById);
+                values[valuesById[0] = "DAP"] = 0;
+                return values;
+            })();
+    
+            return DebugMainReply;
+        })();
+    
+        api.DebugState = (function() {
+    
+            /**
+             * Properties of a DebugState.
+             * @memberof api
+             * @interface IDebugState
+             * @property {string|null} [session] DebugState session
+             * @property {api.State|null} [state] DebugState state
+             */
+    
+            /**
+             * Constructs a new DebugState.
+             * @memberof api
+             * @classdesc Represents a DebugState.
+             * @constructor
+             * @param {api.IDebugState=} [properties] Properties to set
+             */
+            function DebugState(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * DebugState session.
+             * @member {string} session
+             * @memberof api.DebugState
+             * @instance
+             */
+            DebugState.prototype.session = "";
+    
+            /**
+             * DebugState state.
+             * @member {api.State} state
+             * @memberof api.DebugState
+             * @instance
+             */
+            DebugState.prototype.state = 0;
+    
+            /**
+             * Creates a new DebugState instance using the specified properties.
+             * @function create
+             * @memberof api.DebugState
+             * @static
+             * @param {api.IDebugState=} [properties] Properties to set
+             * @returns {api.DebugState} DebugState instance
+             */
+            DebugState.create = function create(properties) {
+                return DebugState.fromObject(properties);
+            };
+    
+            /**
+             * Encodes the specified DebugState message. Does not implicitly {@link api.DebugState.verify|verify} messages.
+             * @function encode
+             * @memberof api.DebugState
+             * @static
+             * @param {api.DebugState} message DebugState message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DebugState.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.session != null && Object.hasOwnProperty.call(message, "session"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.session);
+                if (message.state != null && Object.hasOwnProperty.call(message, "state"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.state);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified DebugState message, length delimited. Does not implicitly {@link api.DebugState.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.DebugState
+             * @static
+             * @param {api.DebugState} message DebugState message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DebugState.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a DebugState message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.DebugState
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.DebugState} DebugState
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DebugState.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.DebugState();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.session = reader.string();
+                        break;
+                    case 2:
+                        message.state = reader.int32();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a DebugState message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.DebugState
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.DebugState} DebugState
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DebugState.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a DebugState message.
+             * @function verify
+             * @memberof api.DebugState
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            DebugState.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.session != null && message.hasOwnProperty("session"))
+                    if (!$util.isString(message.session))
+                        return "session: string expected";
+                if (message.state != null && message.hasOwnProperty("state"))
+                    switch (message.state) {
+                    default:
+                        return "state: enum value expected";
+                    case 0:
+                    case 1:
+                        break;
+                    }
+                return null;
+            };
+    
+            /**
+             * Creates a DebugState message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.DebugState
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.DebugState} DebugState
+             */
+            DebugState.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.DebugState)
+                    return object;
+                var message = new $root.api.DebugState();
+                if (object.session != null)
+                    message.session = String(object.session);
+                switch (object.state) {
+                case "Stopped":
+                case 0:
+                    message.state = 0;
+                    break;
+                case "Running":
+                case 1:
+                    message.state = 1;
+                    break;
+                }
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a DebugState message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.DebugState
+             * @static
+             * @param {api.DebugState} message DebugState
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            DebugState.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.session = "";
+                    object.state = options.enums === String ? "Stopped" : 0;
+                }
+                if (message.session != null && message.hasOwnProperty("session"))
+                    object.session = message.session;
+                if (message.state != null && message.hasOwnProperty("state"))
+                    object.state = options.enums === String ? $root.api.State[message.state] : message.state;
+                return object;
+            };
+    
+            /**
+             * Converts this DebugState to JSON.
+             * @function toJSON
+             * @memberof api.DebugState
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            DebugState.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return DebugState;
+        })();
+    
+        api.DebugInput = (function() {
+    
+            /**
+             * Properties of a DebugInput.
+             * @memberof api
+             * @interface IDebugInput
+             * @property {string|null} [session] DebugInput session
+             * @property {string|null} [input] DebugInput input
+             * @property {string|null} [adapterInput] DebugInput adapterInput
+             */
+    
+            /**
+             * Constructs a new DebugInput.
+             * @memberof api
+             * @classdesc Represents a DebugInput.
+             * @constructor
+             * @param {api.IDebugInput=} [properties] Properties to set
+             */
+            function DebugInput(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * DebugInput session.
+             * @member {string} session
+             * @memberof api.DebugInput
+             * @instance
+             */
+            DebugInput.prototype.session = "";
+    
+            /**
+             * DebugInput input.
+             * @member {string} input
+             * @memberof api.DebugInput
+             * @instance
+             */
+            DebugInput.prototype.input = "";
+    
+            /**
+             * DebugInput adapterInput.
+             * @member {string} adapterInput
+             * @memberof api.DebugInput
+             * @instance
+             */
+            DebugInput.prototype.adapterInput = "";
+    
+            // OneOf field names bound to virtual getters and setters
+            var $oneOfFields;
+    
+            /**
+             * DebugInput stream.
+             * @member {"input"|"adapterInput"|undefined} stream
+             * @memberof api.DebugInput
+             * @instance
+             */
+            Object.defineProperty(DebugInput.prototype, "stream", {
+                get: $util.oneOfGetter($oneOfFields = ["input", "adapterInput"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+    
+            /**
+             * Creates a new DebugInput instance using the specified properties.
+             * @function create
+             * @memberof api.DebugInput
+             * @static
+             * @param {api.IDebugInput=} [properties] Properties to set
+             * @returns {api.DebugInput} DebugInput instance
+             */
+            DebugInput.create = function create(properties) {
+                return DebugInput.fromObject(properties);
+            };
+    
+            /**
+             * Encodes the specified DebugInput message. Does not implicitly {@link api.DebugInput.verify|verify} messages.
+             * @function encode
+             * @memberof api.DebugInput
+             * @static
+             * @param {api.DebugInput} message DebugInput message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DebugInput.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.session != null && Object.hasOwnProperty.call(message, "session"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.session);
+                if (message.input != null && Object.hasOwnProperty.call(message, "input"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.input);
+                if (message.adapterInput != null && Object.hasOwnProperty.call(message, "adapterInput"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.adapterInput);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified DebugInput message, length delimited. Does not implicitly {@link api.DebugInput.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.DebugInput
+             * @static
+             * @param {api.DebugInput} message DebugInput message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DebugInput.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a DebugInput message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.DebugInput
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.DebugInput} DebugInput
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DebugInput.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.DebugInput();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.session = reader.string();
+                        break;
+                    case 2:
+                        message.input = reader.string();
+                        break;
+                    case 3:
+                        message.adapterInput = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a DebugInput message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.DebugInput
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.DebugInput} DebugInput
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DebugInput.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a DebugInput message.
+             * @function verify
+             * @memberof api.DebugInput
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            DebugInput.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                var properties = {};
+                if (message.session != null && message.hasOwnProperty("session"))
+                    if (!$util.isString(message.session))
+                        return "session: string expected";
+                if (message.input != null && message.hasOwnProperty("input")) {
+                    properties.stream = 1;
+                    if (!$util.isString(message.input))
+                        return "input: string expected";
+                }
+                if (message.adapterInput != null && message.hasOwnProperty("adapterInput")) {
+                    if (properties.stream === 1)
+                        return "stream: multiple values";
+                    properties.stream = 1;
+                    if (!$util.isString(message.adapterInput))
+                        return "adapterInput: string expected";
+                }
+                return null;
+            };
+    
+            /**
+             * Creates a DebugInput message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.DebugInput
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.DebugInput} DebugInput
+             */
+            DebugInput.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.DebugInput)
+                    return object;
+                var message = new $root.api.DebugInput();
+                if (object.session != null)
+                    message.session = String(object.session);
+                if (object.input != null)
+                    message.input = String(object.input);
+                if (object.adapterInput != null)
+                    message.adapterInput = String(object.adapterInput);
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a DebugInput message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.DebugInput
+             * @static
+             * @param {api.DebugInput} message DebugInput
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            DebugInput.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    object.session = "";
+                if (message.session != null && message.hasOwnProperty("session"))
+                    object.session = message.session;
+                if (message.input != null && message.hasOwnProperty("input")) {
+                    object.input = message.input;
+                    if (options.oneofs)
+                        object.stream = "input";
+                }
+                if (message.adapterInput != null && message.hasOwnProperty("adapterInput")) {
+                    object.adapterInput = message.adapterInput;
+                    if (options.oneofs)
+                        object.stream = "adapterInput";
+                }
+                return object;
+            };
+    
+            /**
+             * Converts this DebugInput to JSON.
+             * @function toJSON
+             * @memberof api.DebugInput
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            DebugInput.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return DebugInput;
+        })();
+    
+        api.DebugOutput = (function() {
+    
+            /**
+             * Properties of a DebugOutput.
+             * @memberof api
+             * @interface IDebugOutput
+             * @property {string|null} [session] DebugOutput session
+             * @property {string|null} [output] DebugOutput output
+             * @property {string|null} [adapterOutput] DebugOutput adapterOutput
+             */
+    
+            /**
+             * Constructs a new DebugOutput.
+             * @memberof api
+             * @classdesc Represents a DebugOutput.
+             * @constructor
+             * @param {api.IDebugOutput=} [properties] Properties to set
+             */
+            function DebugOutput(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * DebugOutput session.
+             * @member {string} session
+             * @memberof api.DebugOutput
+             * @instance
+             */
+            DebugOutput.prototype.session = "";
+    
+            /**
+             * DebugOutput output.
+             * @member {string} output
+             * @memberof api.DebugOutput
+             * @instance
+             */
+            DebugOutput.prototype.output = "";
+    
+            /**
+             * DebugOutput adapterOutput.
+             * @member {string} adapterOutput
+             * @memberof api.DebugOutput
+             * @instance
+             */
+            DebugOutput.prototype.adapterOutput = "";
+    
+            // OneOf field names bound to virtual getters and setters
+            var $oneOfFields;
+    
+            /**
+             * DebugOutput stream.
+             * @member {"output"|"adapterOutput"|undefined} stream
+             * @memberof api.DebugOutput
+             * @instance
+             */
+            Object.defineProperty(DebugOutput.prototype, "stream", {
+                get: $util.oneOfGetter($oneOfFields = ["output", "adapterOutput"]),
+                set: $util.oneOfSetter($oneOfFields)
+            });
+    
+            /**
+             * Creates a new DebugOutput instance using the specified properties.
+             * @function create
+             * @memberof api.DebugOutput
+             * @static
+             * @param {api.IDebugOutput=} [properties] Properties to set
+             * @returns {api.DebugOutput} DebugOutput instance
+             */
+            DebugOutput.create = function create(properties) {
+                return DebugOutput.fromObject(properties);
+            };
+    
+            /**
+             * Encodes the specified DebugOutput message. Does not implicitly {@link api.DebugOutput.verify|verify} messages.
+             * @function encode
+             * @memberof api.DebugOutput
+             * @static
+             * @param {api.DebugOutput} message DebugOutput message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DebugOutput.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.session != null && Object.hasOwnProperty.call(message, "session"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.session);
+                if (message.output != null && Object.hasOwnProperty.call(message, "output"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.output);
+                if (message.adapterOutput != null && Object.hasOwnProperty.call(message, "adapterOutput"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.adapterOutput);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified DebugOutput message, length delimited. Does not implicitly {@link api.DebugOutput.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.DebugOutput
+             * @static
+             * @param {api.DebugOutput} message DebugOutput message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DebugOutput.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a DebugOutput message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.DebugOutput
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.DebugOutput} DebugOutput
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DebugOutput.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.DebugOutput();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.session = reader.string();
+                        break;
+                    case 2:
+                        message.output = reader.string();
+                        break;
+                    case 3:
+                        message.adapterOutput = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a DebugOutput message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.DebugOutput
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.DebugOutput} DebugOutput
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DebugOutput.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a DebugOutput message.
+             * @function verify
+             * @memberof api.DebugOutput
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            DebugOutput.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                var properties = {};
+                if (message.session != null && message.hasOwnProperty("session"))
+                    if (!$util.isString(message.session))
+                        return "session: string expected";
+                if (message.output != null && message.hasOwnProperty("output")) {
+                    properties.stream = 1;
+                    if (!$util.isString(message.output))
+                        return "output: string expected";
+                }
+                if (message.adapterOutput != null && message.hasOwnProperty("adapterOutput")) {
+                    if (properties.stream === 1)
+                        return "stream: multiple values";
+                    properties.stream = 1;
+                    if (!$util.isString(message.adapterOutput))
+                        return "adapterOutput: string expected";
+                }
+                return null;
+            };
+    
+            /**
+             * Creates a DebugOutput message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.DebugOutput
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.DebugOutput} DebugOutput
+             */
+            DebugOutput.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.DebugOutput)
+                    return object;
+                var message = new $root.api.DebugOutput();
+                if (object.session != null)
+                    message.session = String(object.session);
+                if (object.output != null)
+                    message.output = String(object.output);
+                if (object.adapterOutput != null)
+                    message.adapterOutput = String(object.adapterOutput);
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a DebugOutput message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.DebugOutput
+             * @static
+             * @param {api.DebugOutput} message DebugOutput
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            DebugOutput.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    object.session = "";
+                if (message.session != null && message.hasOwnProperty("session"))
+                    object.session = message.session;
+                if (message.output != null && message.hasOwnProperty("output")) {
+                    object.output = message.output;
+                    if (options.oneofs)
+                        object.stream = "output";
+                }
+                if (message.adapterOutput != null && message.hasOwnProperty("adapterOutput")) {
+                    object.adapterOutput = message.adapterOutput;
+                    if (options.oneofs)
+                        object.stream = "adapterOutput";
+                }
+                return object;
+            };
+    
+            /**
+             * Converts this DebugOutput to JSON.
+             * @function toJSON
+             * @memberof api.DebugOutput
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            DebugOutput.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return DebugOutput;
+        })();
+    
+        api.DebugStop = (function() {
+    
+            /**
+             * Properties of a DebugStop.
+             * @memberof api
+             * @interface IDebugStop
+             * @property {string|null} [session] DebugStop session
+             */
+    
+            /**
+             * Constructs a new DebugStop.
+             * @memberof api
+             * @classdesc Represents a DebugStop.
+             * @constructor
+             * @param {api.IDebugStop=} [properties] Properties to set
+             */
+            function DebugStop(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * DebugStop session.
+             * @member {string} session
+             * @memberof api.DebugStop
+             * @instance
+             */
+            DebugStop.prototype.session = "";
+    
+            /**
+             * Creates a new DebugStop instance using the specified properties.
+             * @function create
+             * @memberof api.DebugStop
+             * @static
+             * @param {api.IDebugStop=} [properties] Properties to set
+             * @returns {api.DebugStop} DebugStop instance
+             */
+            DebugStop.create = function create(properties) {
+                return DebugStop.fromObject(properties);
+            };
+    
+            /**
+             * Encodes the specified DebugStop message. Does not implicitly {@link api.DebugStop.verify|verify} messages.
+             * @function encode
+             * @memberof api.DebugStop
+             * @static
+             * @param {api.DebugStop} message DebugStop message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DebugStop.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.session != null && Object.hasOwnProperty.call(message, "session"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.session);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified DebugStop message, length delimited. Does not implicitly {@link api.DebugStop.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.DebugStop
+             * @static
+             * @param {api.DebugStop} message DebugStop message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DebugStop.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a DebugStop message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.DebugStop
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.DebugStop} DebugStop
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DebugStop.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.DebugStop();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.session = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a DebugStop message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.DebugStop
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.DebugStop} DebugStop
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DebugStop.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a DebugStop message.
+             * @function verify
+             * @memberof api.DebugStop
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            DebugStop.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.session != null && message.hasOwnProperty("session"))
+                    if (!$util.isString(message.session))
+                        return "session: string expected";
+                return null;
+            };
+    
+            /**
+             * Creates a DebugStop message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.DebugStop
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.DebugStop} DebugStop
+             */
+            DebugStop.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.DebugStop)
+                    return object;
+                var message = new $root.api.DebugStop();
+                if (object.session != null)
+                    message.session = String(object.session);
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a DebugStop message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.DebugStop
+             * @static
+             * @param {api.DebugStop} message DebugStop
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            DebugStop.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    object.session = "";
+                if (message.session != null && message.hasOwnProperty("session"))
+                    object.session = message.session;
+                return object;
+            };
+    
+            /**
+             * Converts this DebugStop to JSON.
+             * @function toJSON
+             * @memberof api.DebugStop
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            DebugStop.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return DebugStop;
+        })();
+    
+        api.DebugLeave = (function() {
+    
+            /**
+             * Properties of a DebugLeave.
+             * @memberof api
+             * @interface IDebugLeave
+             * @property {string|null} [session] DebugLeave session
+             */
+    
+            /**
+             * Constructs a new DebugLeave.
+             * @memberof api
+             * @classdesc Represents a DebugLeave.
+             * @constructor
+             * @param {api.IDebugLeave=} [properties] Properties to set
+             */
+            function DebugLeave(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * DebugLeave session.
+             * @member {string} session
+             * @memberof api.DebugLeave
+             * @instance
+             */
+            DebugLeave.prototype.session = "";
+    
+            /**
+             * Creates a new DebugLeave instance using the specified properties.
+             * @function create
+             * @memberof api.DebugLeave
+             * @static
+             * @param {api.IDebugLeave=} [properties] Properties to set
+             * @returns {api.DebugLeave} DebugLeave instance
+             */
+            DebugLeave.create = function create(properties) {
+                return DebugLeave.fromObject(properties);
+            };
+    
+            /**
+             * Encodes the specified DebugLeave message. Does not implicitly {@link api.DebugLeave.verify|verify} messages.
+             * @function encode
+             * @memberof api.DebugLeave
+             * @static
+             * @param {api.DebugLeave} message DebugLeave message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DebugLeave.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.session != null && Object.hasOwnProperty.call(message, "session"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.session);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified DebugLeave message, length delimited. Does not implicitly {@link api.DebugLeave.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.DebugLeave
+             * @static
+             * @param {api.DebugLeave} message DebugLeave message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DebugLeave.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a DebugLeave message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.DebugLeave
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.DebugLeave} DebugLeave
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DebugLeave.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.DebugLeave();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.session = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a DebugLeave message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.DebugLeave
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.DebugLeave} DebugLeave
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DebugLeave.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a DebugLeave message.
+             * @function verify
+             * @memberof api.DebugLeave
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            DebugLeave.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.session != null && message.hasOwnProperty("session"))
+                    if (!$util.isString(message.session))
+                        return "session: string expected";
+                return null;
+            };
+    
+            /**
+             * Creates a DebugLeave message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.DebugLeave
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.DebugLeave} DebugLeave
+             */
+            DebugLeave.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.DebugLeave)
+                    return object;
+                var message = new $root.api.DebugLeave();
+                if (object.session != null)
+                    message.session = String(object.session);
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a DebugLeave message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.DebugLeave
+             * @static
+             * @param {api.DebugLeave} message DebugLeave
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            DebugLeave.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    object.session = "";
+                if (message.session != null && message.hasOwnProperty("session"))
+                    object.session = message.session;
+                return object;
+            };
+    
+            /**
+             * Converts this DebugLeave to JSON.
+             * @function toJSON
+             * @memberof api.DebugLeave
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            DebugLeave.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return DebugLeave;
+        })();
+    
+        api.DebugSessions = (function() {
+    
+            /**
+             * Properties of a DebugSessions.
+             * @memberof api
+             * @interface IDebugSessions
+             * @property {Object.<string,api.State>|null} [sessions] DebugSessions sessions
+             */
+    
+            /**
+             * Constructs a new DebugSessions.
+             * @memberof api
+             * @classdesc Represents a DebugSessions.
+             * @constructor
+             * @param {api.IDebugSessions=} [properties] Properties to set
+             */
+            function DebugSessions(properties) {
+                this.sessions = {};
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * DebugSessions sessions.
+             * @member {Object.<string,api.State>} sessions
+             * @memberof api.DebugSessions
+             * @instance
+             */
+            DebugSessions.prototype.sessions = $util.emptyObject;
+    
+            /**
+             * Creates a new DebugSessions instance using the specified properties.
+             * @function create
+             * @memberof api.DebugSessions
+             * @static
+             * @param {api.IDebugSessions=} [properties] Properties to set
+             * @returns {api.DebugSessions} DebugSessions instance
+             */
+            DebugSessions.create = function create(properties) {
+                return DebugSessions.fromObject(properties);
+            };
+    
+            /**
+             * Encodes the specified DebugSessions message. Does not implicitly {@link api.DebugSessions.verify|verify} messages.
+             * @function encode
+             * @memberof api.DebugSessions
+             * @static
+             * @param {api.DebugSessions} message DebugSessions message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DebugSessions.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.sessions != null && Object.hasOwnProperty.call(message, "sessions"))
+                    for (var keys = Object.keys(message.sessions), i = 0; i < keys.length; ++i)
+                        writer.uint32(/* id 1, wireType 2 =*/10).fork().uint32(/* id 1, wireType 2 =*/10).string(keys[i]).uint32(/* id 2, wireType 0 =*/16).int32(message.sessions[keys[i]]).ldelim();
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified DebugSessions message, length delimited. Does not implicitly {@link api.DebugSessions.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.DebugSessions
+             * @static
+             * @param {api.DebugSessions} message DebugSessions message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            DebugSessions.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a DebugSessions message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.DebugSessions
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.DebugSessions} DebugSessions
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DebugSessions.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.DebugSessions(), key, value;
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        if (message.sessions === $util.emptyObject)
+                            message.sessions = {};
+                        var end2 = reader.uint32() + reader.pos;
+                        key = "";
+                        value = 0;
+                        while (reader.pos < end2) {
+                            var tag2 = reader.uint32();
+                            switch (tag2 >>> 3) {
+                            case 1:
+                                key = reader.string();
+                                break;
+                            case 2:
+                                value = reader.int32();
+                                break;
+                            default:
+                                reader.skipType(tag2 & 7);
+                                break;
+                            }
+                        }
+                        message.sessions[key] = value;
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a DebugSessions message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.DebugSessions
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.DebugSessions} DebugSessions
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            DebugSessions.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a DebugSessions message.
+             * @function verify
+             * @memberof api.DebugSessions
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            DebugSessions.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.sessions != null && message.hasOwnProperty("sessions")) {
+                    if (!$util.isObject(message.sessions))
+                        return "sessions: object expected";
+                    var key = Object.keys(message.sessions);
+                    for (var i = 0; i < key.length; ++i)
+                        switch (message.sessions[key[i]]) {
+                        default:
+                            return "sessions: enum value{k:string} expected";
+                        case 0:
+                        case 1:
+                            break;
+                        }
+                }
+                return null;
+            };
+    
+            /**
+             * Creates a DebugSessions message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.DebugSessions
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.DebugSessions} DebugSessions
+             */
+            DebugSessions.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.DebugSessions)
+                    return object;
+                var message = new $root.api.DebugSessions();
+                if (object.sessions) {
+                    if (typeof object.sessions !== "object")
+                        throw TypeError(".api.DebugSessions.sessions: object expected");
+                    message.sessions = {};
+                    for (var keys = Object.keys(object.sessions), i = 0; i < keys.length; ++i)
+                        switch (object.sessions[keys[i]]) {
+                        case "Stopped":
+                        case 0:
+                            message.sessions[keys[i]] = 0;
+                            break;
+                        case "Running":
+                        case 1:
+                            message.sessions[keys[i]] = 1;
+                            break;
+                        }
+                }
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a DebugSessions message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.DebugSessions
+             * @static
+             * @param {api.DebugSessions} message DebugSessions
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            DebugSessions.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.objects || options.defaults)
+                    object.sessions = {};
+                var keys2;
+                if (message.sessions && (keys2 = Object.keys(message.sessions)).length) {
+                    object.sessions = {};
+                    for (var j = 0; j < keys2.length; ++j)
+                        object.sessions[keys2[j]] = options.enums === String ? $root.api.State[message.sessions[keys2[j]]] : message.sessions[keys2[j]];
+                }
+                return object;
+            };
+    
+            /**
+             * Converts this DebugSessions to JSON.
+             * @function toJSON
+             * @memberof api.DebugSessions
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            DebugSessions.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return DebugSessions;
         })();
     
         api.Repl = (function() {
