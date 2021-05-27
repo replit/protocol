@@ -115,6 +115,8 @@
              * @property {api.Roster|api.IRoster|null} [roster] Command roster
              * @property {api.User|api.IUser|null} [join] Command join
              * @property {api.User|api.IUser|null} [part] Command part
+             * @property {api.OpenFile|api.IOpenFile|null} [openFile] Command openFile
+             * @property {api.FileOpened|api.IFileOpened|null} [fileOpened] Command fileOpened
              * @property {api.Exec|api.IExec|null} [exec] Command exec
              * @property {api.PackageSearch|api.IPackageSearch|null} [packageSearch] Command packageSearch
              * @property {api.PackageSearchResp|api.IPackageSearchResp|null} [packageSearchResp] Command packageSearchResp
@@ -842,6 +844,22 @@
             Command.prototype.part = null;
     
             /**
+             * Command openFile.
+             * @member {api.OpenFile|null|undefined} openFile
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.openFile = null;
+    
+            /**
+             * Command fileOpened.
+             * @member {api.FileOpened|null|undefined} fileOpened
+             * @memberof api.Command
+             * @instance
+             */
+            Command.prototype.fileOpened = null;
+    
+            /**
              * Command exec.
              * @member {api.Exec|null|undefined} exec
              * @memberof api.Command
@@ -1150,12 +1168,12 @@
     
             /**
              * Command body.
-             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"alwaysOn"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"transferStart"|"transferChunk"|"transferComplete"|"transferCancel"|"transfer"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"otTransformSelectionRequest"|"otTransformSelectionResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig"|"debugMain"|"debugState"|"debugMainReply"|"debugInput"|"debugOutput"|"debugStop"|"debugLeave"|"debugSessions"|undefined} body
+             * @member {"openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"alwaysOn"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"transferStart"|"transferChunk"|"transferComplete"|"transferCancel"|"transfer"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"otTransformSelectionRequest"|"otTransformSelectionResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"openFile"|"fileOpened"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig"|"debugMain"|"debugState"|"debugMainReply"|"debugInput"|"debugOutput"|"debugStop"|"debugLeave"|"debugSessions"|undefined} body
              * @memberof api.Command
              * @instance
              */
             Object.defineProperty(Command.prototype, "body", {
-                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "redirect", "alwaysOn", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "stat", "statRes", "transferStart", "transferChunk", "transferComplete", "transferCancel", "transfer", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "otFetchRequest", "otFetchResponse", "otTransformSelectionRequest", "otTransformSelectionResponse", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribeFile", "fileEvent", "roster", "join", "part", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock", "hasCap", "pid1Config", "metrics", "bootStatus", "readMeta", "writeMeta", "appendMeta", "audio", "pprofRequest", "pprofResponse", "audio2", "PTYConfig", "debugMain", "debugState", "debugMainReply", "debugInput", "debugOutput", "debugStop", "debugLeave", "debugSessions"]),
+                get: $util.oneOfGetter($oneOfFields = ["openChan", "openChanRes", "closeChan", "closeChanRes", "containerState", "portOpen", "toast", "redirect", "alwaysOn", "runMain", "clear", "eval", "result", "input", "output", "error", "saneTerm", "resizeTerm", "state", "ok", "persist", "persistMirror", "write", "remove", "move", "tryRemove", "mkdir", "stat", "statRes", "transferStart", "transferChunk", "transferComplete", "transferCancel", "transfer", "read", "readdir", "files", "file", "checkChanges", "changedFiles", "lintResults", "runContainedTest", "testResult", "debuggerStart", "debuggerStep", "debuggerStatus", "ensurePackages", "ping", "pong", "hello", "goodbye", "hint", "connect", "send", "recv", "disconnect", "fileAuthReq", "fileAuthRes", "mutliFileAuthRes", "listObjects", "listObjectsResp", "ot", "otstatus", "otLinkFile", "otNewCursor", "otDeleteCursor", "otFetchRequest", "otFetchResponse", "otTransformSelectionRequest", "otTransformSelectionResponse", "flush", "debug", "startVCR", "readVCR", "VCRLog", "auth", "execInfo", "subscribeFile", "fileEvent", "roster", "join", "part", "openFile", "fileOpened", "exec", "packageSearch", "packageSearchResp", "packageInfo", "packageInfoResp", "packageAdd", "packageRemove", "packageInstall", "packageListSpecfile", "packageListSpecfileResp", "packageCacheSave", "chatMessage", "chatTyping", "chatScrollback", "fsSnapshot", "fsTakeLock", "fsReleaseLock", "hasCap", "pid1Config", "metrics", "bootStatus", "readMeta", "writeMeta", "appendMeta", "audio", "pprofRequest", "pprofResponse", "audio2", "PTYConfig", "debugMain", "debugState", "debugMainReply", "debugInput", "debugOutput", "debugStop", "debugLeave", "debugSessions"]),
                 set: $util.oneOfSetter($oneOfFields)
             });
     
@@ -1337,6 +1355,10 @@
                     $root.api.User.encode(message.join, writer.uint32(/* id 261, wireType 2 =*/2090).fork()).ldelim();
                 if (message.part != null && Object.hasOwnProperty.call(message, "part"))
                     $root.api.User.encode(message.part, writer.uint32(/* id 262, wireType 2 =*/2098).fork()).ldelim();
+                if (message.openFile != null && Object.hasOwnProperty.call(message, "openFile"))
+                    $root.api.OpenFile.encode(message.openFile, writer.uint32(/* id 263, wireType 2 =*/2106).fork()).ldelim();
+                if (message.fileOpened != null && Object.hasOwnProperty.call(message, "fileOpened"))
+                    $root.api.FileOpened.encode(message.fileOpened, writer.uint32(/* id 264, wireType 2 =*/2114).fork()).ldelim();
                 if (message.exec != null && Object.hasOwnProperty.call(message, "exec"))
                     $root.api.Exec.encode(message.exec, writer.uint32(/* id 270, wireType 2 =*/2162).fork()).ldelim();
                 if (message.packageSearch != null && Object.hasOwnProperty.call(message, "packageSearch"))
@@ -1712,6 +1734,12 @@
                         break;
                     case 262:
                         message.part = $root.api.User.decode(reader, reader.uint32());
+                        break;
+                    case 263:
+                        message.openFile = $root.api.OpenFile.decode(reader, reader.uint32());
+                        break;
+                    case 264:
+                        message.fileOpened = $root.api.FileOpened.decode(reader, reader.uint32());
                         break;
                     case 270:
                         message.exec = $root.api.Exec.decode(reader, reader.uint32());
@@ -2671,6 +2699,26 @@
                             return "part." + error;
                     }
                 }
+                if (message.openFile != null && message.hasOwnProperty("openFile")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.OpenFile.verify(message.openFile);
+                        if (error)
+                            return "openFile." + error;
+                    }
+                }
+                if (message.fileOpened != null && message.hasOwnProperty("fileOpened")) {
+                    if (properties.body === 1)
+                        return "body: multiple values";
+                    properties.body = 1;
+                    {
+                        var error = $root.api.FileOpened.verify(message.fileOpened);
+                        if (error)
+                            return "fileOpened." + error;
+                    }
+                }
                 if (message.exec != null && message.hasOwnProperty("exec")) {
                     if (properties.body === 1)
                         return "body: multiple values";
@@ -3457,6 +3505,16 @@
                         throw TypeError(".api.Command.part: object expected");
                     message.part = $root.api.User.fromObject(object.part);
                 }
+                if (object.openFile != null) {
+                    if (typeof object.openFile !== "object")
+                        throw TypeError(".api.Command.openFile: object expected");
+                    message.openFile = $root.api.OpenFile.fromObject(object.openFile);
+                }
+                if (object.fileOpened != null) {
+                    if (typeof object.fileOpened !== "object")
+                        throw TypeError(".api.Command.fileOpened: object expected");
+                    message.fileOpened = $root.api.FileOpened.fromObject(object.fileOpened);
+                }
                 if (object.exec != null) {
                     if (typeof object.exec !== "object")
                         throw TypeError(".api.Command.exec: object expected");
@@ -4040,6 +4098,16 @@
                     object.part = $root.api.User.toObject(message.part, options);
                     if (options.oneofs)
                         object.body = "part";
+                }
+                if (message.openFile != null && message.hasOwnProperty("openFile")) {
+                    object.openFile = $root.api.OpenFile.toObject(message.openFile, options);
+                    if (options.oneofs)
+                        object.body = "openFile";
+                }
+                if (message.fileOpened != null && message.hasOwnProperty("fileOpened")) {
+                    object.fileOpened = $root.api.FileOpened.toObject(message.fileOpened, options);
+                    if (options.oneofs)
+                        object.body = "fileOpened";
                 }
                 if (message.exec != null && message.hasOwnProperty("exec")) {
                     object.exec = $root.api.Exec.toObject(message.exec, options);
@@ -21182,6 +21250,7 @@
              * @memberof api
              * @interface IRoster
              * @property {Array.<api.User|api.IUser>|null} [user] Roster user
+             * @property {Array.<api.FileOpened|api.IFileOpened>|null} [files] Roster files
              */
     
             /**
@@ -21193,6 +21262,7 @@
              */
             function Roster(properties) {
                 this.user = [];
+                this.files = [];
                 if (properties)
                     for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                         if (properties[keys[i]] != null)
@@ -21206,6 +21276,14 @@
              * @instance
              */
             Roster.prototype.user = $util.emptyArray;
+    
+            /**
+             * Roster files.
+             * @member {Array.<api.FileOpened>} files
+             * @memberof api.Roster
+             * @instance
+             */
+            Roster.prototype.files = $util.emptyArray;
     
             /**
              * Creates a new Roster instance using the specified properties.
@@ -21234,6 +21312,9 @@
                 if (message.user != null && message.user.length)
                     for (var i = 0; i < message.user.length; ++i)
                         $root.api.User.encode(message.user[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.files != null && message.files.length)
+                    for (var i = 0; i < message.files.length; ++i)
+                        $root.api.FileOpened.encode(message.files[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
                 return writer;
             };
     
@@ -21272,6 +21353,11 @@
                         if (!(message.user && message.user.length))
                             message.user = [];
                         message.user.push($root.api.User.decode(reader, reader.uint32()));
+                        break;
+                    case 2:
+                        if (!(message.files && message.files.length))
+                            message.files = [];
+                        message.files.push($root.api.FileOpened.decode(reader, reader.uint32()));
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -21317,6 +21403,15 @@
                             return "user." + error;
                     }
                 }
+                if (message.files != null && message.hasOwnProperty("files")) {
+                    if (!Array.isArray(message.files))
+                        return "files: array expected";
+                    for (var i = 0; i < message.files.length; ++i) {
+                        var error = $root.api.FileOpened.verify(message.files[i]);
+                        if (error)
+                            return "files." + error;
+                    }
+                }
                 return null;
             };
     
@@ -21342,6 +21437,16 @@
                         message.user[i] = $root.api.User.fromObject(object.user[i]);
                     }
                 }
+                if (object.files) {
+                    if (!Array.isArray(object.files))
+                        throw TypeError(".api.Roster.files: array expected");
+                    message.files = [];
+                    for (var i = 0; i < object.files.length; ++i) {
+                        if (typeof object.files[i] !== "object")
+                            throw TypeError(".api.Roster.files: object expected");
+                        message.files[i] = $root.api.FileOpened.fromObject(object.files[i]);
+                    }
+                }
                 return message;
             };
     
@@ -21358,12 +21463,19 @@
                 if (!options)
                     options = {};
                 var object = {};
-                if (options.arrays || options.defaults)
+                if (options.arrays || options.defaults) {
                     object.user = [];
+                    object.files = [];
+                }
                 if (message.user && message.user.length) {
                     object.user = [];
                     for (var j = 0; j < message.user.length; ++j)
                         object.user[j] = $root.api.User.toObject(message.user[j], options);
+                }
+                if (message.files && message.files.length) {
+                    object.files = [];
+                    for (var j = 0; j < message.files.length; ++j)
+                        object.files[j] = $root.api.FileOpened.toObject(message.files[j], options);
                 }
                 return object;
             };
@@ -21380,6 +21492,401 @@
             };
     
             return Roster;
+        })();
+    
+        api.OpenFile = (function() {
+    
+            /**
+             * Properties of an OpenFile.
+             * @memberof api
+             * @interface IOpenFile
+             * @property {string|null} [file] OpenFile file
+             */
+    
+            /**
+             * Constructs a new OpenFile.
+             * @memberof api
+             * @classdesc Represents an OpenFile.
+             * @constructor
+             * @param {api.IOpenFile=} [properties] Properties to set
+             */
+            function OpenFile(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * OpenFile file.
+             * @member {string} file
+             * @memberof api.OpenFile
+             * @instance
+             */
+            OpenFile.prototype.file = "";
+    
+            /**
+             * Creates a new OpenFile instance using the specified properties.
+             * @function create
+             * @memberof api.OpenFile
+             * @static
+             * @param {api.IOpenFile=} [properties] Properties to set
+             * @returns {api.OpenFile} OpenFile instance
+             */
+            OpenFile.create = function create(properties) {
+                return OpenFile.fromObject(properties);
+            };
+    
+            /**
+             * Encodes the specified OpenFile message. Does not implicitly {@link api.OpenFile.verify|verify} messages.
+             * @function encode
+             * @memberof api.OpenFile
+             * @static
+             * @param {api.OpenFile} message OpenFile message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            OpenFile.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.file != null && Object.hasOwnProperty.call(message, "file"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.file);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified OpenFile message, length delimited. Does not implicitly {@link api.OpenFile.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.OpenFile
+             * @static
+             * @param {api.OpenFile} message OpenFile message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            OpenFile.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes an OpenFile message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.OpenFile
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.OpenFile} OpenFile
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            OpenFile.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.OpenFile();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.file = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes an OpenFile message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.OpenFile
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.OpenFile} OpenFile
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            OpenFile.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies an OpenFile message.
+             * @function verify
+             * @memberof api.OpenFile
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            OpenFile.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.file != null && message.hasOwnProperty("file"))
+                    if (!$util.isString(message.file))
+                        return "file: string expected";
+                return null;
+            };
+    
+            /**
+             * Creates an OpenFile message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.OpenFile
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.OpenFile} OpenFile
+             */
+            OpenFile.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.OpenFile)
+                    return object;
+                var message = new $root.api.OpenFile();
+                if (object.file != null)
+                    message.file = String(object.file);
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from an OpenFile message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.OpenFile
+             * @static
+             * @param {api.OpenFile} message OpenFile
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            OpenFile.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    object.file = "";
+                if (message.file != null && message.hasOwnProperty("file"))
+                    object.file = message.file;
+                return object;
+            };
+    
+            /**
+             * Converts this OpenFile to JSON.
+             * @function toJSON
+             * @memberof api.OpenFile
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            OpenFile.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return OpenFile;
+        })();
+    
+        api.FileOpened = (function() {
+    
+            /**
+             * Properties of a FileOpened.
+             * @memberof api
+             * @interface IFileOpened
+             * @property {number|null} [userId] FileOpened userId
+             * @property {string|null} [file] FileOpened file
+             */
+    
+            /**
+             * Constructs a new FileOpened.
+             * @memberof api
+             * @classdesc Represents a FileOpened.
+             * @constructor
+             * @param {api.IFileOpened=} [properties] Properties to set
+             */
+            function FileOpened(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * FileOpened userId.
+             * @member {number} userId
+             * @memberof api.FileOpened
+             * @instance
+             */
+            FileOpened.prototype.userId = 0;
+    
+            /**
+             * FileOpened file.
+             * @member {string} file
+             * @memberof api.FileOpened
+             * @instance
+             */
+            FileOpened.prototype.file = "";
+    
+            /**
+             * Creates a new FileOpened instance using the specified properties.
+             * @function create
+             * @memberof api.FileOpened
+             * @static
+             * @param {api.IFileOpened=} [properties] Properties to set
+             * @returns {api.FileOpened} FileOpened instance
+             */
+            FileOpened.create = function create(properties) {
+                return FileOpened.fromObject(properties);
+            };
+    
+            /**
+             * Encodes the specified FileOpened message. Does not implicitly {@link api.FileOpened.verify|verify} messages.
+             * @function encode
+             * @memberof api.FileOpened
+             * @static
+             * @param {api.FileOpened} message FileOpened message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            FileOpened.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.userId != null && Object.hasOwnProperty.call(message, "userId"))
+                    writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.userId);
+                if (message.file != null && Object.hasOwnProperty.call(message, "file"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.file);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified FileOpened message, length delimited. Does not implicitly {@link api.FileOpened.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.FileOpened
+             * @static
+             * @param {api.FileOpened} message FileOpened message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            FileOpened.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a FileOpened message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.FileOpened
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.FileOpened} FileOpened
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            FileOpened.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.FileOpened();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.userId = reader.uint32();
+                        break;
+                    case 2:
+                        message.file = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a FileOpened message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.FileOpened
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.FileOpened} FileOpened
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            FileOpened.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a FileOpened message.
+             * @function verify
+             * @memberof api.FileOpened
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            FileOpened.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.userId != null && message.hasOwnProperty("userId"))
+                    if (!$util.isInteger(message.userId))
+                        return "userId: integer expected";
+                if (message.file != null && message.hasOwnProperty("file"))
+                    if (!$util.isString(message.file))
+                        return "file: string expected";
+                return null;
+            };
+    
+            /**
+             * Creates a FileOpened message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.FileOpened
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.FileOpened} FileOpened
+             */
+            FileOpened.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.FileOpened)
+                    return object;
+                var message = new $root.api.FileOpened();
+                if (object.userId != null)
+                    message.userId = object.userId >>> 0;
+                if (object.file != null)
+                    message.file = String(object.file);
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a FileOpened message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.FileOpened
+             * @static
+             * @param {api.FileOpened} message FileOpened
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            FileOpened.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.userId = 0;
+                    object.file = "";
+                }
+                if (message.userId != null && message.hasOwnProperty("userId"))
+                    object.userId = message.userId;
+                if (message.file != null && message.hasOwnProperty("file"))
+                    object.file = message.file;
+                return object;
+            };
+    
+            /**
+             * Converts this FileOpened to JSON.
+             * @function toJSON
+             * @memberof api.FileOpened
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            FileOpened.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return FileOpened;
         })();
     
         api.Exec = (function() {
@@ -30152,6 +30659,1490 @@
             };
     
             return GovalTokenMetadata;
+        })();
+    
+        api.TLSCertificate = (function() {
+    
+            /**
+             * Properties of a TLSCertificate.
+             * @memberof api
+             * @interface ITLSCertificate
+             * @property {string|null} [domain] TLSCertificate domain
+             * @property {Uint8Array|null} [cert] TLSCertificate cert
+             */
+    
+            /**
+             * Constructs a new TLSCertificate.
+             * @memberof api
+             * @classdesc Represents a TLSCertificate.
+             * @constructor
+             * @param {api.ITLSCertificate=} [properties] Properties to set
+             */
+            function TLSCertificate(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * TLSCertificate domain.
+             * @member {string} domain
+             * @memberof api.TLSCertificate
+             * @instance
+             */
+            TLSCertificate.prototype.domain = "";
+    
+            /**
+             * TLSCertificate cert.
+             * @member {Uint8Array} cert
+             * @memberof api.TLSCertificate
+             * @instance
+             */
+            TLSCertificate.prototype.cert = $util.newBuffer([]);
+    
+            /**
+             * Creates a new TLSCertificate instance using the specified properties.
+             * @function create
+             * @memberof api.TLSCertificate
+             * @static
+             * @param {api.ITLSCertificate=} [properties] Properties to set
+             * @returns {api.TLSCertificate} TLSCertificate instance
+             */
+            TLSCertificate.create = function create(properties) {
+                return TLSCertificate.fromObject(properties);
+            };
+    
+            /**
+             * Encodes the specified TLSCertificate message. Does not implicitly {@link api.TLSCertificate.verify|verify} messages.
+             * @function encode
+             * @memberof api.TLSCertificate
+             * @static
+             * @param {api.TLSCertificate} message TLSCertificate message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TLSCertificate.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.domain != null && Object.hasOwnProperty.call(message, "domain"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.domain);
+                if (message.cert != null && Object.hasOwnProperty.call(message, "cert"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).bytes(message.cert);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified TLSCertificate message, length delimited. Does not implicitly {@link api.TLSCertificate.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.TLSCertificate
+             * @static
+             * @param {api.TLSCertificate} message TLSCertificate message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            TLSCertificate.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a TLSCertificate message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.TLSCertificate
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.TLSCertificate} TLSCertificate
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TLSCertificate.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.TLSCertificate();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.domain = reader.string();
+                        break;
+                    case 2:
+                        message.cert = reader.bytes();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a TLSCertificate message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.TLSCertificate
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.TLSCertificate} TLSCertificate
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            TLSCertificate.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a TLSCertificate message.
+             * @function verify
+             * @memberof api.TLSCertificate
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            TLSCertificate.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    if (!$util.isString(message.domain))
+                        return "domain: string expected";
+                if (message.cert != null && message.hasOwnProperty("cert"))
+                    if (!(message.cert && typeof message.cert.length === "number" || $util.isString(message.cert)))
+                        return "cert: buffer expected";
+                return null;
+            };
+    
+            /**
+             * Creates a TLSCertificate message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.TLSCertificate
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.TLSCertificate} TLSCertificate
+             */
+            TLSCertificate.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.TLSCertificate)
+                    return object;
+                var message = new $root.api.TLSCertificate();
+                if (object.domain != null)
+                    message.domain = String(object.domain);
+                if (object.cert != null)
+                    if (typeof object.cert === "string")
+                        $util.base64.decode(object.cert, message.cert = $util.newBuffer($util.base64.length(object.cert)), 0);
+                    else if (object.cert.length)
+                        message.cert = object.cert;
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a TLSCertificate message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.TLSCertificate
+             * @static
+             * @param {api.TLSCertificate} message TLSCertificate
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            TLSCertificate.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.domain = "";
+                    if (options.bytes === String)
+                        object.cert = "";
+                    else {
+                        object.cert = [];
+                        if (options.bytes !== Array)
+                            object.cert = $util.newBuffer(object.cert);
+                    }
+                }
+                if (message.domain != null && message.hasOwnProperty("domain"))
+                    object.domain = message.domain;
+                if (message.cert != null && message.hasOwnProperty("cert"))
+                    object.cert = options.bytes === String ? $util.base64.encode(message.cert, 0, message.cert.length) : options.bytes === Array ? Array.prototype.slice.call(message.cert) : message.cert;
+                return object;
+            };
+    
+            /**
+             * Converts this TLSCertificate to JSON.
+             * @function toJSON
+             * @memberof api.TLSCertificate
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            TLSCertificate.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return TLSCertificate;
+        })();
+    
+        api.ReplTransfer = (function() {
+    
+            /**
+             * Properties of a ReplTransfer.
+             * @memberof api
+             * @interface IReplTransfer
+             * @property {api.Repl|api.IRepl|null} [repl] ReplTransfer repl
+             * @property {api.ResourceLimits|api.IResourceLimits|null} [replLimits] ReplTransfer replLimits
+             * @property {api.ResourceLimits|api.IResourceLimits|null} [userLimits] ReplTransfer userLimits
+             * @property {Array.<string>|null} [customDomains] ReplTransfer customDomains
+             * @property {Array.<api.TLSCertificate|api.ITLSCertificate>|null} [certificates] ReplTransfer certificates
+             */
+    
+            /**
+             * Constructs a new ReplTransfer.
+             * @memberof api
+             * @classdesc Represents a ReplTransfer.
+             * @constructor
+             * @param {api.IReplTransfer=} [properties] Properties to set
+             */
+            function ReplTransfer(properties) {
+                this.customDomains = [];
+                this.certificates = [];
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * ReplTransfer repl.
+             * @member {api.Repl|null|undefined} repl
+             * @memberof api.ReplTransfer
+             * @instance
+             */
+            ReplTransfer.prototype.repl = null;
+    
+            /**
+             * ReplTransfer replLimits.
+             * @member {api.ResourceLimits|null|undefined} replLimits
+             * @memberof api.ReplTransfer
+             * @instance
+             */
+            ReplTransfer.prototype.replLimits = null;
+    
+            /**
+             * ReplTransfer userLimits.
+             * @member {api.ResourceLimits|null|undefined} userLimits
+             * @memberof api.ReplTransfer
+             * @instance
+             */
+            ReplTransfer.prototype.userLimits = null;
+    
+            /**
+             * ReplTransfer customDomains.
+             * @member {Array.<string>} customDomains
+             * @memberof api.ReplTransfer
+             * @instance
+             */
+            ReplTransfer.prototype.customDomains = $util.emptyArray;
+    
+            /**
+             * ReplTransfer certificates.
+             * @member {Array.<api.TLSCertificate>} certificates
+             * @memberof api.ReplTransfer
+             * @instance
+             */
+            ReplTransfer.prototype.certificates = $util.emptyArray;
+    
+            /**
+             * Creates a new ReplTransfer instance using the specified properties.
+             * @function create
+             * @memberof api.ReplTransfer
+             * @static
+             * @param {api.IReplTransfer=} [properties] Properties to set
+             * @returns {api.ReplTransfer} ReplTransfer instance
+             */
+            ReplTransfer.create = function create(properties) {
+                return ReplTransfer.fromObject(properties);
+            };
+    
+            /**
+             * Encodes the specified ReplTransfer message. Does not implicitly {@link api.ReplTransfer.verify|verify} messages.
+             * @function encode
+             * @memberof api.ReplTransfer
+             * @static
+             * @param {api.ReplTransfer} message ReplTransfer message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ReplTransfer.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.repl != null && Object.hasOwnProperty.call(message, "repl"))
+                    $root.api.Repl.encode(message.repl, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.replLimits != null && Object.hasOwnProperty.call(message, "replLimits"))
+                    $root.api.ResourceLimits.encode(message.replLimits, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+                if (message.userLimits != null && Object.hasOwnProperty.call(message, "userLimits"))
+                    $root.api.ResourceLimits.encode(message.userLimits, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                if (message.customDomains != null && message.customDomains.length)
+                    for (var i = 0; i < message.customDomains.length; ++i)
+                        writer.uint32(/* id 4, wireType 2 =*/34).string(message.customDomains[i]);
+                if (message.certificates != null && message.certificates.length)
+                    for (var i = 0; i < message.certificates.length; ++i)
+                        $root.api.TLSCertificate.encode(message.certificates[i], writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified ReplTransfer message, length delimited. Does not implicitly {@link api.ReplTransfer.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.ReplTransfer
+             * @static
+             * @param {api.ReplTransfer} message ReplTransfer message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ReplTransfer.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a ReplTransfer message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.ReplTransfer
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.ReplTransfer} ReplTransfer
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ReplTransfer.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.ReplTransfer();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.repl = $root.api.Repl.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.replLimits = $root.api.ResourceLimits.decode(reader, reader.uint32());
+                        break;
+                    case 3:
+                        message.userLimits = $root.api.ResourceLimits.decode(reader, reader.uint32());
+                        break;
+                    case 4:
+                        if (!(message.customDomains && message.customDomains.length))
+                            message.customDomains = [];
+                        message.customDomains.push(reader.string());
+                        break;
+                    case 5:
+                        if (!(message.certificates && message.certificates.length))
+                            message.certificates = [];
+                        message.certificates.push($root.api.TLSCertificate.decode(reader, reader.uint32()));
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a ReplTransfer message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.ReplTransfer
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.ReplTransfer} ReplTransfer
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ReplTransfer.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a ReplTransfer message.
+             * @function verify
+             * @memberof api.ReplTransfer
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ReplTransfer.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.repl != null && message.hasOwnProperty("repl")) {
+                    var error = $root.api.Repl.verify(message.repl);
+                    if (error)
+                        return "repl." + error;
+                }
+                if (message.replLimits != null && message.hasOwnProperty("replLimits")) {
+                    var error = $root.api.ResourceLimits.verify(message.replLimits);
+                    if (error)
+                        return "replLimits." + error;
+                }
+                if (message.userLimits != null && message.hasOwnProperty("userLimits")) {
+                    var error = $root.api.ResourceLimits.verify(message.userLimits);
+                    if (error)
+                        return "userLimits." + error;
+                }
+                if (message.customDomains != null && message.hasOwnProperty("customDomains")) {
+                    if (!Array.isArray(message.customDomains))
+                        return "customDomains: array expected";
+                    for (var i = 0; i < message.customDomains.length; ++i)
+                        if (!$util.isString(message.customDomains[i]))
+                            return "customDomains: string[] expected";
+                }
+                if (message.certificates != null && message.hasOwnProperty("certificates")) {
+                    if (!Array.isArray(message.certificates))
+                        return "certificates: array expected";
+                    for (var i = 0; i < message.certificates.length; ++i) {
+                        var error = $root.api.TLSCertificate.verify(message.certificates[i]);
+                        if (error)
+                            return "certificates." + error;
+                    }
+                }
+                return null;
+            };
+    
+            /**
+             * Creates a ReplTransfer message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.ReplTransfer
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.ReplTransfer} ReplTransfer
+             */
+            ReplTransfer.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.ReplTransfer)
+                    return object;
+                var message = new $root.api.ReplTransfer();
+                if (object.repl != null) {
+                    if (typeof object.repl !== "object")
+                        throw TypeError(".api.ReplTransfer.repl: object expected");
+                    message.repl = $root.api.Repl.fromObject(object.repl);
+                }
+                if (object.replLimits != null) {
+                    if (typeof object.replLimits !== "object")
+                        throw TypeError(".api.ReplTransfer.replLimits: object expected");
+                    message.replLimits = $root.api.ResourceLimits.fromObject(object.replLimits);
+                }
+                if (object.userLimits != null) {
+                    if (typeof object.userLimits !== "object")
+                        throw TypeError(".api.ReplTransfer.userLimits: object expected");
+                    message.userLimits = $root.api.ResourceLimits.fromObject(object.userLimits);
+                }
+                if (object.customDomains) {
+                    if (!Array.isArray(object.customDomains))
+                        throw TypeError(".api.ReplTransfer.customDomains: array expected");
+                    message.customDomains = [];
+                    for (var i = 0; i < object.customDomains.length; ++i)
+                        message.customDomains[i] = String(object.customDomains[i]);
+                }
+                if (object.certificates) {
+                    if (!Array.isArray(object.certificates))
+                        throw TypeError(".api.ReplTransfer.certificates: array expected");
+                    message.certificates = [];
+                    for (var i = 0; i < object.certificates.length; ++i) {
+                        if (typeof object.certificates[i] !== "object")
+                            throw TypeError(".api.ReplTransfer.certificates: object expected");
+                        message.certificates[i] = $root.api.TLSCertificate.fromObject(object.certificates[i]);
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a ReplTransfer message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.ReplTransfer
+             * @static
+             * @param {api.ReplTransfer} message ReplTransfer
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            ReplTransfer.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.arrays || options.defaults) {
+                    object.customDomains = [];
+                    object.certificates = [];
+                }
+                if (options.defaults) {
+                    object.repl = null;
+                    object.replLimits = null;
+                    object.userLimits = null;
+                }
+                if (message.repl != null && message.hasOwnProperty("repl"))
+                    object.repl = $root.api.Repl.toObject(message.repl, options);
+                if (message.replLimits != null && message.hasOwnProperty("replLimits"))
+                    object.replLimits = $root.api.ResourceLimits.toObject(message.replLimits, options);
+                if (message.userLimits != null && message.hasOwnProperty("userLimits"))
+                    object.userLimits = $root.api.ResourceLimits.toObject(message.userLimits, options);
+                if (message.customDomains && message.customDomains.length) {
+                    object.customDomains = [];
+                    for (var j = 0; j < message.customDomains.length; ++j)
+                        object.customDomains[j] = message.customDomains[j];
+                }
+                if (message.certificates && message.certificates.length) {
+                    object.certificates = [];
+                    for (var j = 0; j < message.certificates.length; ++j)
+                        object.certificates[j] = $root.api.TLSCertificate.toObject(message.certificates[j], options);
+                }
+                return object;
+            };
+    
+            /**
+             * Converts this ReplTransfer to JSON.
+             * @function toJSON
+             * @memberof api.ReplTransfer
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            ReplTransfer.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return ReplTransfer;
+        })();
+    
+        api.AllowReplRequest = (function() {
+    
+            /**
+             * Properties of an AllowReplRequest.
+             * @memberof api
+             * @interface IAllowReplRequest
+             * @property {api.ReplTransfer|api.IReplTransfer|null} [replTransfer] AllowReplRequest replTransfer
+             */
+    
+            /**
+             * Constructs a new AllowReplRequest.
+             * @memberof api
+             * @classdesc Represents an AllowReplRequest.
+             * @constructor
+             * @param {api.IAllowReplRequest=} [properties] Properties to set
+             */
+            function AllowReplRequest(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * AllowReplRequest replTransfer.
+             * @member {api.ReplTransfer|null|undefined} replTransfer
+             * @memberof api.AllowReplRequest
+             * @instance
+             */
+            AllowReplRequest.prototype.replTransfer = null;
+    
+            /**
+             * Creates a new AllowReplRequest instance using the specified properties.
+             * @function create
+             * @memberof api.AllowReplRequest
+             * @static
+             * @param {api.IAllowReplRequest=} [properties] Properties to set
+             * @returns {api.AllowReplRequest} AllowReplRequest instance
+             */
+            AllowReplRequest.create = function create(properties) {
+                return AllowReplRequest.fromObject(properties);
+            };
+    
+            /**
+             * Encodes the specified AllowReplRequest message. Does not implicitly {@link api.AllowReplRequest.verify|verify} messages.
+             * @function encode
+             * @memberof api.AllowReplRequest
+             * @static
+             * @param {api.AllowReplRequest} message AllowReplRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            AllowReplRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.replTransfer != null && Object.hasOwnProperty.call(message, "replTransfer"))
+                    $root.api.ReplTransfer.encode(message.replTransfer, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified AllowReplRequest message, length delimited. Does not implicitly {@link api.AllowReplRequest.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.AllowReplRequest
+             * @static
+             * @param {api.AllowReplRequest} message AllowReplRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            AllowReplRequest.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes an AllowReplRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.AllowReplRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.AllowReplRequest} AllowReplRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            AllowReplRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.AllowReplRequest();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.replTransfer = $root.api.ReplTransfer.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes an AllowReplRequest message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.AllowReplRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.AllowReplRequest} AllowReplRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            AllowReplRequest.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies an AllowReplRequest message.
+             * @function verify
+             * @memberof api.AllowReplRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            AllowReplRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.replTransfer != null && message.hasOwnProperty("replTransfer")) {
+                    var error = $root.api.ReplTransfer.verify(message.replTransfer);
+                    if (error)
+                        return "replTransfer." + error;
+                }
+                return null;
+            };
+    
+            /**
+             * Creates an AllowReplRequest message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.AllowReplRequest
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.AllowReplRequest} AllowReplRequest
+             */
+            AllowReplRequest.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.AllowReplRequest)
+                    return object;
+                var message = new $root.api.AllowReplRequest();
+                if (object.replTransfer != null) {
+                    if (typeof object.replTransfer !== "object")
+                        throw TypeError(".api.AllowReplRequest.replTransfer: object expected");
+                    message.replTransfer = $root.api.ReplTransfer.fromObject(object.replTransfer);
+                }
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from an AllowReplRequest message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.AllowReplRequest
+             * @static
+             * @param {api.AllowReplRequest} message AllowReplRequest
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            AllowReplRequest.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    object.replTransfer = null;
+                if (message.replTransfer != null && message.hasOwnProperty("replTransfer"))
+                    object.replTransfer = $root.api.ReplTransfer.toObject(message.replTransfer, options);
+                return object;
+            };
+    
+            /**
+             * Converts this AllowReplRequest to JSON.
+             * @function toJSON
+             * @memberof api.AllowReplRequest
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            AllowReplRequest.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return AllowReplRequest;
+        })();
+    
+        api.ClusterMetadata = (function() {
+    
+            /**
+             * Properties of a ClusterMetadata.
+             * @memberof api
+             * @interface IClusterMetadata
+             * @property {string|null} [id] ClusterMetadata id
+             * @property {string|null} [conmanURL] ClusterMetadata conmanURL
+             * @property {string|null} [gurl] ClusterMetadata gurl
+             * @property {string|null} [proxyHost] ClusterMetadata proxyHost
+             * @property {string|null} [proxy] ClusterMetadata proxy
+             * @property {string|null} [proxyIP] ClusterMetadata proxyIP
+             */
+    
+            /**
+             * Constructs a new ClusterMetadata.
+             * @memberof api
+             * @classdesc Represents a ClusterMetadata.
+             * @constructor
+             * @param {api.IClusterMetadata=} [properties] Properties to set
+             */
+            function ClusterMetadata(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * ClusterMetadata id.
+             * @member {string} id
+             * @memberof api.ClusterMetadata
+             * @instance
+             */
+            ClusterMetadata.prototype.id = "";
+    
+            /**
+             * ClusterMetadata conmanURL.
+             * @member {string} conmanURL
+             * @memberof api.ClusterMetadata
+             * @instance
+             */
+            ClusterMetadata.prototype.conmanURL = "";
+    
+            /**
+             * ClusterMetadata gurl.
+             * @member {string} gurl
+             * @memberof api.ClusterMetadata
+             * @instance
+             */
+            ClusterMetadata.prototype.gurl = "";
+    
+            /**
+             * ClusterMetadata proxyHost.
+             * @member {string} proxyHost
+             * @memberof api.ClusterMetadata
+             * @instance
+             */
+            ClusterMetadata.prototype.proxyHost = "";
+    
+            /**
+             * ClusterMetadata proxy.
+             * @member {string} proxy
+             * @memberof api.ClusterMetadata
+             * @instance
+             */
+            ClusterMetadata.prototype.proxy = "";
+    
+            /**
+             * ClusterMetadata proxyIP.
+             * @member {string} proxyIP
+             * @memberof api.ClusterMetadata
+             * @instance
+             */
+            ClusterMetadata.prototype.proxyIP = "";
+    
+            /**
+             * Creates a new ClusterMetadata instance using the specified properties.
+             * @function create
+             * @memberof api.ClusterMetadata
+             * @static
+             * @param {api.IClusterMetadata=} [properties] Properties to set
+             * @returns {api.ClusterMetadata} ClusterMetadata instance
+             */
+            ClusterMetadata.create = function create(properties) {
+                return ClusterMetadata.fromObject(properties);
+            };
+    
+            /**
+             * Encodes the specified ClusterMetadata message. Does not implicitly {@link api.ClusterMetadata.verify|verify} messages.
+             * @function encode
+             * @memberof api.ClusterMetadata
+             * @static
+             * @param {api.ClusterMetadata} message ClusterMetadata message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ClusterMetadata.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && Object.hasOwnProperty.call(message, "id"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                if (message.conmanURL != null && Object.hasOwnProperty.call(message, "conmanURL"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.conmanURL);
+                if (message.gurl != null && Object.hasOwnProperty.call(message, "gurl"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.gurl);
+                if (message.proxyHost != null && Object.hasOwnProperty.call(message, "proxyHost"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.proxyHost);
+                if (message.proxy != null && Object.hasOwnProperty.call(message, "proxy"))
+                    writer.uint32(/* id 5, wireType 2 =*/42).string(message.proxy);
+                if (message.proxyIP != null && Object.hasOwnProperty.call(message, "proxyIP"))
+                    writer.uint32(/* id 6, wireType 2 =*/50).string(message.proxyIP);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified ClusterMetadata message, length delimited. Does not implicitly {@link api.ClusterMetadata.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.ClusterMetadata
+             * @static
+             * @param {api.ClusterMetadata} message ClusterMetadata message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            ClusterMetadata.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes a ClusterMetadata message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.ClusterMetadata
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.ClusterMetadata} ClusterMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ClusterMetadata.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.ClusterMetadata();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.id = reader.string();
+                        break;
+                    case 2:
+                        message.conmanURL = reader.string();
+                        break;
+                    case 3:
+                        message.gurl = reader.string();
+                        break;
+                    case 4:
+                        message.proxyHost = reader.string();
+                        break;
+                    case 5:
+                        message.proxy = reader.string();
+                        break;
+                    case 6:
+                        message.proxyIP = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes a ClusterMetadata message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.ClusterMetadata
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.ClusterMetadata} ClusterMetadata
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            ClusterMetadata.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies a ClusterMetadata message.
+             * @function verify
+             * @memberof api.ClusterMetadata
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            ClusterMetadata.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.id != null && message.hasOwnProperty("id"))
+                    if (!$util.isString(message.id))
+                        return "id: string expected";
+                if (message.conmanURL != null && message.hasOwnProperty("conmanURL"))
+                    if (!$util.isString(message.conmanURL))
+                        return "conmanURL: string expected";
+                if (message.gurl != null && message.hasOwnProperty("gurl"))
+                    if (!$util.isString(message.gurl))
+                        return "gurl: string expected";
+                if (message.proxyHost != null && message.hasOwnProperty("proxyHost"))
+                    if (!$util.isString(message.proxyHost))
+                        return "proxyHost: string expected";
+                if (message.proxy != null && message.hasOwnProperty("proxy"))
+                    if (!$util.isString(message.proxy))
+                        return "proxy: string expected";
+                if (message.proxyIP != null && message.hasOwnProperty("proxyIP"))
+                    if (!$util.isString(message.proxyIP))
+                        return "proxyIP: string expected";
+                return null;
+            };
+    
+            /**
+             * Creates a ClusterMetadata message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.ClusterMetadata
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.ClusterMetadata} ClusterMetadata
+             */
+            ClusterMetadata.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.ClusterMetadata)
+                    return object;
+                var message = new $root.api.ClusterMetadata();
+                if (object.id != null)
+                    message.id = String(object.id);
+                if (object.conmanURL != null)
+                    message.conmanURL = String(object.conmanURL);
+                if (object.gurl != null)
+                    message.gurl = String(object.gurl);
+                if (object.proxyHost != null)
+                    message.proxyHost = String(object.proxyHost);
+                if (object.proxy != null)
+                    message.proxy = String(object.proxy);
+                if (object.proxyIP != null)
+                    message.proxyIP = String(object.proxyIP);
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from a ClusterMetadata message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.ClusterMetadata
+             * @static
+             * @param {api.ClusterMetadata} message ClusterMetadata
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            ClusterMetadata.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.id = "";
+                    object.conmanURL = "";
+                    object.gurl = "";
+                    object.proxyHost = "";
+                    object.proxy = "";
+                    object.proxyIP = "";
+                }
+                if (message.id != null && message.hasOwnProperty("id"))
+                    object.id = message.id;
+                if (message.conmanURL != null && message.hasOwnProperty("conmanURL"))
+                    object.conmanURL = message.conmanURL;
+                if (message.gurl != null && message.hasOwnProperty("gurl"))
+                    object.gurl = message.gurl;
+                if (message.proxyHost != null && message.hasOwnProperty("proxyHost"))
+                    object.proxyHost = message.proxyHost;
+                if (message.proxy != null && message.hasOwnProperty("proxy"))
+                    object.proxy = message.proxy;
+                if (message.proxyIP != null && message.hasOwnProperty("proxyIP"))
+                    object.proxyIP = message.proxyIP;
+                return object;
+            };
+    
+            /**
+             * Converts this ClusterMetadata to JSON.
+             * @function toJSON
+             * @memberof api.ClusterMetadata
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            ClusterMetadata.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return ClusterMetadata;
+        })();
+    
+        api.EvictReplRequest = (function() {
+    
+            /**
+             * Properties of an EvictReplRequest.
+             * @memberof api
+             * @interface IEvictReplRequest
+             * @property {api.ClusterMetadata|api.IClusterMetadata|null} [clusterMetadata] EvictReplRequest clusterMetadata
+             * @property {string|null} [token] EvictReplRequest token
+             * @property {string|null} [user] EvictReplRequest user
+             * @property {string|null} [slug] EvictReplRequest slug
+             */
+    
+            /**
+             * Constructs a new EvictReplRequest.
+             * @memberof api
+             * @classdesc Represents an EvictReplRequest.
+             * @constructor
+             * @param {api.IEvictReplRequest=} [properties] Properties to set
+             */
+            function EvictReplRequest(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * EvictReplRequest clusterMetadata.
+             * @member {api.ClusterMetadata|null|undefined} clusterMetadata
+             * @memberof api.EvictReplRequest
+             * @instance
+             */
+            EvictReplRequest.prototype.clusterMetadata = null;
+    
+            /**
+             * EvictReplRequest token.
+             * @member {string} token
+             * @memberof api.EvictReplRequest
+             * @instance
+             */
+            EvictReplRequest.prototype.token = "";
+    
+            /**
+             * EvictReplRequest user.
+             * @member {string} user
+             * @memberof api.EvictReplRequest
+             * @instance
+             */
+            EvictReplRequest.prototype.user = "";
+    
+            /**
+             * EvictReplRequest slug.
+             * @member {string} slug
+             * @memberof api.EvictReplRequest
+             * @instance
+             */
+            EvictReplRequest.prototype.slug = "";
+    
+            /**
+             * Creates a new EvictReplRequest instance using the specified properties.
+             * @function create
+             * @memberof api.EvictReplRequest
+             * @static
+             * @param {api.IEvictReplRequest=} [properties] Properties to set
+             * @returns {api.EvictReplRequest} EvictReplRequest instance
+             */
+            EvictReplRequest.create = function create(properties) {
+                return EvictReplRequest.fromObject(properties);
+            };
+    
+            /**
+             * Encodes the specified EvictReplRequest message. Does not implicitly {@link api.EvictReplRequest.verify|verify} messages.
+             * @function encode
+             * @memberof api.EvictReplRequest
+             * @static
+             * @param {api.EvictReplRequest} message EvictReplRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            EvictReplRequest.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.clusterMetadata != null && Object.hasOwnProperty.call(message, "clusterMetadata"))
+                    $root.api.ClusterMetadata.encode(message.clusterMetadata, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                if (message.token != null && Object.hasOwnProperty.call(message, "token"))
+                    writer.uint32(/* id 2, wireType 2 =*/18).string(message.token);
+                if (message.user != null && Object.hasOwnProperty.call(message, "user"))
+                    writer.uint32(/* id 3, wireType 2 =*/26).string(message.user);
+                if (message.slug != null && Object.hasOwnProperty.call(message, "slug"))
+                    writer.uint32(/* id 4, wireType 2 =*/34).string(message.slug);
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified EvictReplRequest message, length delimited. Does not implicitly {@link api.EvictReplRequest.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.EvictReplRequest
+             * @static
+             * @param {api.EvictReplRequest} message EvictReplRequest message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            EvictReplRequest.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes an EvictReplRequest message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.EvictReplRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.EvictReplRequest} EvictReplRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            EvictReplRequest.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.EvictReplRequest();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.clusterMetadata = $root.api.ClusterMetadata.decode(reader, reader.uint32());
+                        break;
+                    case 2:
+                        message.token = reader.string();
+                        break;
+                    case 3:
+                        message.user = reader.string();
+                        break;
+                    case 4:
+                        message.slug = reader.string();
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes an EvictReplRequest message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.EvictReplRequest
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.EvictReplRequest} EvictReplRequest
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            EvictReplRequest.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies an EvictReplRequest message.
+             * @function verify
+             * @memberof api.EvictReplRequest
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            EvictReplRequest.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.clusterMetadata != null && message.hasOwnProperty("clusterMetadata")) {
+                    var error = $root.api.ClusterMetadata.verify(message.clusterMetadata);
+                    if (error)
+                        return "clusterMetadata." + error;
+                }
+                if (message.token != null && message.hasOwnProperty("token"))
+                    if (!$util.isString(message.token))
+                        return "token: string expected";
+                if (message.user != null && message.hasOwnProperty("user"))
+                    if (!$util.isString(message.user))
+                        return "user: string expected";
+                if (message.slug != null && message.hasOwnProperty("slug"))
+                    if (!$util.isString(message.slug))
+                        return "slug: string expected";
+                return null;
+            };
+    
+            /**
+             * Creates an EvictReplRequest message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.EvictReplRequest
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.EvictReplRequest} EvictReplRequest
+             */
+            EvictReplRequest.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.EvictReplRequest)
+                    return object;
+                var message = new $root.api.EvictReplRequest();
+                if (object.clusterMetadata != null) {
+                    if (typeof object.clusterMetadata !== "object")
+                        throw TypeError(".api.EvictReplRequest.clusterMetadata: object expected");
+                    message.clusterMetadata = $root.api.ClusterMetadata.fromObject(object.clusterMetadata);
+                }
+                if (object.token != null)
+                    message.token = String(object.token);
+                if (object.user != null)
+                    message.user = String(object.user);
+                if (object.slug != null)
+                    message.slug = String(object.slug);
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from an EvictReplRequest message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.EvictReplRequest
+             * @static
+             * @param {api.EvictReplRequest} message EvictReplRequest
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            EvictReplRequest.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.clusterMetadata = null;
+                    object.token = "";
+                    object.user = "";
+                    object.slug = "";
+                }
+                if (message.clusterMetadata != null && message.hasOwnProperty("clusterMetadata"))
+                    object.clusterMetadata = $root.api.ClusterMetadata.toObject(message.clusterMetadata, options);
+                if (message.token != null && message.hasOwnProperty("token"))
+                    object.token = message.token;
+                if (message.user != null && message.hasOwnProperty("user"))
+                    object.user = message.user;
+                if (message.slug != null && message.hasOwnProperty("slug"))
+                    object.slug = message.slug;
+                return object;
+            };
+    
+            /**
+             * Converts this EvictReplRequest to JSON.
+             * @function toJSON
+             * @memberof api.EvictReplRequest
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            EvictReplRequest.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return EvictReplRequest;
+        })();
+    
+        api.EvictReplResponse = (function() {
+    
+            /**
+             * Properties of an EvictReplResponse.
+             * @memberof api
+             * @interface IEvictReplResponse
+             * @property {api.ReplTransfer|api.IReplTransfer|null} [replTransfer] EvictReplResponse replTransfer
+             */
+    
+            /**
+             * Constructs a new EvictReplResponse.
+             * @memberof api
+             * @classdesc Represents an EvictReplResponse.
+             * @constructor
+             * @param {api.IEvictReplResponse=} [properties] Properties to set
+             */
+            function EvictReplResponse(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+    
+            /**
+             * EvictReplResponse replTransfer.
+             * @member {api.ReplTransfer|null|undefined} replTransfer
+             * @memberof api.EvictReplResponse
+             * @instance
+             */
+            EvictReplResponse.prototype.replTransfer = null;
+    
+            /**
+             * Creates a new EvictReplResponse instance using the specified properties.
+             * @function create
+             * @memberof api.EvictReplResponse
+             * @static
+             * @param {api.IEvictReplResponse=} [properties] Properties to set
+             * @returns {api.EvictReplResponse} EvictReplResponse instance
+             */
+            EvictReplResponse.create = function create(properties) {
+                return EvictReplResponse.fromObject(properties);
+            };
+    
+            /**
+             * Encodes the specified EvictReplResponse message. Does not implicitly {@link api.EvictReplResponse.verify|verify} messages.
+             * @function encode
+             * @memberof api.EvictReplResponse
+             * @static
+             * @param {api.EvictReplResponse} message EvictReplResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            EvictReplResponse.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.replTransfer != null && Object.hasOwnProperty.call(message, "replTransfer"))
+                    $root.api.ReplTransfer.encode(message.replTransfer, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                return writer;
+            };
+    
+            /**
+             * Encodes the specified EvictReplResponse message, length delimited. Does not implicitly {@link api.EvictReplResponse.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof api.EvictReplResponse
+             * @static
+             * @param {api.EvictReplResponse} message EvictReplResponse message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            EvictReplResponse.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+    
+            /**
+             * Decodes an EvictReplResponse message from the specified reader or buffer.
+             * @function decode
+             * @memberof api.EvictReplResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {api.EvictReplResponse} EvictReplResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            EvictReplResponse.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.api.EvictReplResponse();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1:
+                        message.replTransfer = $root.api.ReplTransfer.decode(reader, reader.uint32());
+                        break;
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+    
+            /**
+             * Decodes an EvictReplResponse message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof api.EvictReplResponse
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {api.EvictReplResponse} EvictReplResponse
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            EvictReplResponse.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+    
+            /**
+             * Verifies an EvictReplResponse message.
+             * @function verify
+             * @memberof api.EvictReplResponse
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            EvictReplResponse.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.replTransfer != null && message.hasOwnProperty("replTransfer")) {
+                    var error = $root.api.ReplTransfer.verify(message.replTransfer);
+                    if (error)
+                        return "replTransfer." + error;
+                }
+                return null;
+            };
+    
+            /**
+             * Creates an EvictReplResponse message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof api.EvictReplResponse
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {api.EvictReplResponse} EvictReplResponse
+             */
+            EvictReplResponse.fromObject = function fromObject(object) {
+                if (object instanceof $root.api.EvictReplResponse)
+                    return object;
+                var message = new $root.api.EvictReplResponse();
+                if (object.replTransfer != null) {
+                    if (typeof object.replTransfer !== "object")
+                        throw TypeError(".api.EvictReplResponse.replTransfer: object expected");
+                    message.replTransfer = $root.api.ReplTransfer.fromObject(object.replTransfer);
+                }
+                return message;
+            };
+    
+            /**
+             * Creates a plain object from an EvictReplResponse message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof api.EvictReplResponse
+             * @static
+             * @param {api.EvictReplResponse} message EvictReplResponse
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            EvictReplResponse.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults)
+                    object.replTransfer = null;
+                if (message.replTransfer != null && message.hasOwnProperty("replTransfer"))
+                    object.replTransfer = $root.api.ReplTransfer.toObject(message.replTransfer, options);
+                return object;
+            };
+    
+            /**
+             * Converts this EvictReplResponse to JSON.
+             * @function toJSON
+             * @memberof api.EvictReplResponse
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            EvictReplResponse.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+    
+            return EvictReplResponse;
         })();
     
         return api;

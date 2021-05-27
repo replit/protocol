@@ -257,6 +257,12 @@ export namespace api {
         /** Command part */
         part?: (api.User|api.IUser|null);
 
+        /** Command openFile */
+        openFile?: (api.OpenFile|api.IOpenFile|null);
+
+        /** Command fileOpened */
+        fileOpened?: (api.FileOpened|api.IFileOpened|null);
+
         /** Command exec */
         exec?: (api.Exec|api.IExec|null);
 
@@ -633,6 +639,12 @@ export namespace api {
         /** Command part. */
         public part?: (api.User|null);
 
+        /** Command openFile. */
+        public openFile?: (api.OpenFile|null);
+
+        /** Command fileOpened. */
+        public fileOpened?: (api.FileOpened|null);
+
         /** Command exec. */
         public exec?: (api.Exec|null);
 
@@ -748,7 +760,7 @@ export namespace api {
         public ref: string;
 
         /** Command body. */
-        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"alwaysOn"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"transferStart"|"transferChunk"|"transferComplete"|"transferCancel"|"transfer"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"otTransformSelectionRequest"|"otTransformSelectionResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig"|"debugMain"|"debugState"|"debugMainReply"|"debugInput"|"debugOutput"|"debugStop"|"debugLeave"|"debugSessions");
+        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"alwaysOn"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"transferStart"|"transferChunk"|"transferComplete"|"transferCancel"|"transfer"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"otTransformSelectionRequest"|"otTransformSelectionResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"openFile"|"fileOpened"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig"|"debugMain"|"debugState"|"debugMainReply"|"debugInput"|"debugOutput"|"debugStop"|"debugLeave"|"debugSessions");
 
         /**
          * Creates a new Command instance using the specified properties.
@@ -8297,6 +8309,9 @@ export namespace api {
 
         /** Roster user */
         user?: ((api.User|api.IUser)[]|null);
+
+        /** Roster files */
+        files?: ((api.FileOpened|api.IFileOpened)[]|null);
     }
 
     /** Represents a Roster. */
@@ -8310,6 +8325,9 @@ export namespace api {
 
         /** Roster user. */
         public user: api.User[];
+
+        /** Roster files. */
+        public files: api.FileOpened[];
 
         /**
          * Creates a new Roster instance using the specified properties.
@@ -8377,6 +8395,192 @@ export namespace api {
 
         /**
          * Converts this Roster to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an OpenFile. */
+    interface IOpenFile {
+
+        /** OpenFile file */
+        file?: (string|null);
+    }
+
+    /** Represents an OpenFile. */
+    class OpenFile {
+
+        /**
+         * Constructs a new OpenFile.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IOpenFile);
+
+        /** OpenFile file. */
+        public file: string;
+
+        /**
+         * Creates a new OpenFile instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns OpenFile instance
+         */
+        public static create(properties?: api.IOpenFile): api.OpenFile;
+
+        /**
+         * Encodes the specified OpenFile message. Does not implicitly {@link api.OpenFile.verify|verify} messages.
+         * @param message OpenFile message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.OpenFile, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified OpenFile message, length delimited. Does not implicitly {@link api.OpenFile.verify|verify} messages.
+         * @param message OpenFile message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.OpenFile, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an OpenFile message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns OpenFile
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.OpenFile;
+
+        /**
+         * Decodes an OpenFile message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns OpenFile
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.OpenFile;
+
+        /**
+         * Verifies an OpenFile message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an OpenFile message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns OpenFile
+         */
+        public static fromObject(object: { [k: string]: any }): api.OpenFile;
+
+        /**
+         * Creates a plain object from an OpenFile message. Also converts values to other types if specified.
+         * @param message OpenFile
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.OpenFile, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this OpenFile to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a FileOpened. */
+    interface IFileOpened {
+
+        /** FileOpened userId */
+        userId?: (number|null);
+
+        /** FileOpened file */
+        file?: (string|null);
+    }
+
+    /** Represents a FileOpened. */
+    class FileOpened {
+
+        /**
+         * Constructs a new FileOpened.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IFileOpened);
+
+        /** FileOpened userId. */
+        public userId: number;
+
+        /** FileOpened file. */
+        public file: string;
+
+        /**
+         * Creates a new FileOpened instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns FileOpened instance
+         */
+        public static create(properties?: api.IFileOpened): api.FileOpened;
+
+        /**
+         * Encodes the specified FileOpened message. Does not implicitly {@link api.FileOpened.verify|verify} messages.
+         * @param message FileOpened message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.FileOpened, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified FileOpened message, length delimited. Does not implicitly {@link api.FileOpened.verify|verify} messages.
+         * @param message FileOpened message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.FileOpened, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a FileOpened message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns FileOpened
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.FileOpened;
+
+        /**
+         * Decodes a FileOpened message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns FileOpened
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.FileOpened;
+
+        /**
+         * Verifies a FileOpened message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a FileOpened message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns FileOpened
+         */
+        public static fromObject(object: { [k: string]: any }): api.FileOpened;
+
+        /**
+         * Creates a plain object from a FileOpened message. Also converts values to other types if specified.
+         * @param message FileOpened
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.FileOpened, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this FileOpened to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
@@ -12131,6 +12335,624 @@ export namespace api {
 
         /**
          * Converts this GovalTokenMetadata to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a TLSCertificate. */
+    interface ITLSCertificate {
+
+        /** TLSCertificate domain */
+        domain?: (string|null);
+
+        /** TLSCertificate cert */
+        cert?: (Uint8Array|null);
+    }
+
+    /** Represents a TLSCertificate. */
+    class TLSCertificate {
+
+        /**
+         * Constructs a new TLSCertificate.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.ITLSCertificate);
+
+        /** TLSCertificate domain. */
+        public domain: string;
+
+        /** TLSCertificate cert. */
+        public cert: Uint8Array;
+
+        /**
+         * Creates a new TLSCertificate instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns TLSCertificate instance
+         */
+        public static create(properties?: api.ITLSCertificate): api.TLSCertificate;
+
+        /**
+         * Encodes the specified TLSCertificate message. Does not implicitly {@link api.TLSCertificate.verify|verify} messages.
+         * @param message TLSCertificate message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.TLSCertificate, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified TLSCertificate message, length delimited. Does not implicitly {@link api.TLSCertificate.verify|verify} messages.
+         * @param message TLSCertificate message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.TLSCertificate, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a TLSCertificate message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns TLSCertificate
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.TLSCertificate;
+
+        /**
+         * Decodes a TLSCertificate message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns TLSCertificate
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.TLSCertificate;
+
+        /**
+         * Verifies a TLSCertificate message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a TLSCertificate message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns TLSCertificate
+         */
+        public static fromObject(object: { [k: string]: any }): api.TLSCertificate;
+
+        /**
+         * Creates a plain object from a TLSCertificate message. Also converts values to other types if specified.
+         * @param message TLSCertificate
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.TLSCertificate, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this TLSCertificate to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a ReplTransfer. */
+    interface IReplTransfer {
+
+        /** ReplTransfer repl */
+        repl?: (api.Repl|api.IRepl|null);
+
+        /** ReplTransfer replLimits */
+        replLimits?: (api.ResourceLimits|api.IResourceLimits|null);
+
+        /** ReplTransfer userLimits */
+        userLimits?: (api.ResourceLimits|api.IResourceLimits|null);
+
+        /** ReplTransfer customDomains */
+        customDomains?: (string[]|null);
+
+        /** ReplTransfer certificates */
+        certificates?: ((api.TLSCertificate|api.ITLSCertificate)[]|null);
+    }
+
+    /** Represents a ReplTransfer. */
+    class ReplTransfer {
+
+        /**
+         * Constructs a new ReplTransfer.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IReplTransfer);
+
+        /** ReplTransfer repl. */
+        public repl?: (api.Repl|null);
+
+        /** ReplTransfer replLimits. */
+        public replLimits?: (api.ResourceLimits|null);
+
+        /** ReplTransfer userLimits. */
+        public userLimits?: (api.ResourceLimits|null);
+
+        /** ReplTransfer customDomains. */
+        public customDomains: string[];
+
+        /** ReplTransfer certificates. */
+        public certificates: api.TLSCertificate[];
+
+        /**
+         * Creates a new ReplTransfer instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns ReplTransfer instance
+         */
+        public static create(properties?: api.IReplTransfer): api.ReplTransfer;
+
+        /**
+         * Encodes the specified ReplTransfer message. Does not implicitly {@link api.ReplTransfer.verify|verify} messages.
+         * @param message ReplTransfer message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.ReplTransfer, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified ReplTransfer message, length delimited. Does not implicitly {@link api.ReplTransfer.verify|verify} messages.
+         * @param message ReplTransfer message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.ReplTransfer, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a ReplTransfer message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns ReplTransfer
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.ReplTransfer;
+
+        /**
+         * Decodes a ReplTransfer message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns ReplTransfer
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.ReplTransfer;
+
+        /**
+         * Verifies a ReplTransfer message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a ReplTransfer message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns ReplTransfer
+         */
+        public static fromObject(object: { [k: string]: any }): api.ReplTransfer;
+
+        /**
+         * Creates a plain object from a ReplTransfer message. Also converts values to other types if specified.
+         * @param message ReplTransfer
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.ReplTransfer, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this ReplTransfer to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an AllowReplRequest. */
+    interface IAllowReplRequest {
+
+        /** AllowReplRequest replTransfer */
+        replTransfer?: (api.ReplTransfer|api.IReplTransfer|null);
+    }
+
+    /** Represents an AllowReplRequest. */
+    class AllowReplRequest {
+
+        /**
+         * Constructs a new AllowReplRequest.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IAllowReplRequest);
+
+        /** AllowReplRequest replTransfer. */
+        public replTransfer?: (api.ReplTransfer|null);
+
+        /**
+         * Creates a new AllowReplRequest instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns AllowReplRequest instance
+         */
+        public static create(properties?: api.IAllowReplRequest): api.AllowReplRequest;
+
+        /**
+         * Encodes the specified AllowReplRequest message. Does not implicitly {@link api.AllowReplRequest.verify|verify} messages.
+         * @param message AllowReplRequest message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.AllowReplRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified AllowReplRequest message, length delimited. Does not implicitly {@link api.AllowReplRequest.verify|verify} messages.
+         * @param message AllowReplRequest message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.AllowReplRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an AllowReplRequest message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns AllowReplRequest
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.AllowReplRequest;
+
+        /**
+         * Decodes an AllowReplRequest message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns AllowReplRequest
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.AllowReplRequest;
+
+        /**
+         * Verifies an AllowReplRequest message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an AllowReplRequest message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns AllowReplRequest
+         */
+        public static fromObject(object: { [k: string]: any }): api.AllowReplRequest;
+
+        /**
+         * Creates a plain object from an AllowReplRequest message. Also converts values to other types if specified.
+         * @param message AllowReplRequest
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.AllowReplRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this AllowReplRequest to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a ClusterMetadata. */
+    interface IClusterMetadata {
+
+        /** ClusterMetadata id */
+        id?: (string|null);
+
+        /** ClusterMetadata conmanURL */
+        conmanURL?: (string|null);
+
+        /** ClusterMetadata gurl */
+        gurl?: (string|null);
+
+        /** ClusterMetadata proxyHost */
+        proxyHost?: (string|null);
+
+        /** ClusterMetadata proxy */
+        proxy?: (string|null);
+
+        /** ClusterMetadata proxyIP */
+        proxyIP?: (string|null);
+    }
+
+    /** Represents a ClusterMetadata. */
+    class ClusterMetadata {
+
+        /**
+         * Constructs a new ClusterMetadata.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IClusterMetadata);
+
+        /** ClusterMetadata id. */
+        public id: string;
+
+        /** ClusterMetadata conmanURL. */
+        public conmanURL: string;
+
+        /** ClusterMetadata gurl. */
+        public gurl: string;
+
+        /** ClusterMetadata proxyHost. */
+        public proxyHost: string;
+
+        /** ClusterMetadata proxy. */
+        public proxy: string;
+
+        /** ClusterMetadata proxyIP. */
+        public proxyIP: string;
+
+        /**
+         * Creates a new ClusterMetadata instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns ClusterMetadata instance
+         */
+        public static create(properties?: api.IClusterMetadata): api.ClusterMetadata;
+
+        /**
+         * Encodes the specified ClusterMetadata message. Does not implicitly {@link api.ClusterMetadata.verify|verify} messages.
+         * @param message ClusterMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.ClusterMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified ClusterMetadata message, length delimited. Does not implicitly {@link api.ClusterMetadata.verify|verify} messages.
+         * @param message ClusterMetadata message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.ClusterMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a ClusterMetadata message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns ClusterMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.ClusterMetadata;
+
+        /**
+         * Decodes a ClusterMetadata message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns ClusterMetadata
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.ClusterMetadata;
+
+        /**
+         * Verifies a ClusterMetadata message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a ClusterMetadata message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns ClusterMetadata
+         */
+        public static fromObject(object: { [k: string]: any }): api.ClusterMetadata;
+
+        /**
+         * Creates a plain object from a ClusterMetadata message. Also converts values to other types if specified.
+         * @param message ClusterMetadata
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.ClusterMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this ClusterMetadata to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an EvictReplRequest. */
+    interface IEvictReplRequest {
+
+        /** EvictReplRequest clusterMetadata */
+        clusterMetadata?: (api.ClusterMetadata|api.IClusterMetadata|null);
+
+        /** EvictReplRequest token */
+        token?: (string|null);
+
+        /** EvictReplRequest user */
+        user?: (string|null);
+
+        /** EvictReplRequest slug */
+        slug?: (string|null);
+    }
+
+    /** Represents an EvictReplRequest. */
+    class EvictReplRequest {
+
+        /**
+         * Constructs a new EvictReplRequest.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IEvictReplRequest);
+
+        /** EvictReplRequest clusterMetadata. */
+        public clusterMetadata?: (api.ClusterMetadata|null);
+
+        /** EvictReplRequest token. */
+        public token: string;
+
+        /** EvictReplRequest user. */
+        public user: string;
+
+        /** EvictReplRequest slug. */
+        public slug: string;
+
+        /**
+         * Creates a new EvictReplRequest instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns EvictReplRequest instance
+         */
+        public static create(properties?: api.IEvictReplRequest): api.EvictReplRequest;
+
+        /**
+         * Encodes the specified EvictReplRequest message. Does not implicitly {@link api.EvictReplRequest.verify|verify} messages.
+         * @param message EvictReplRequest message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.EvictReplRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified EvictReplRequest message, length delimited. Does not implicitly {@link api.EvictReplRequest.verify|verify} messages.
+         * @param message EvictReplRequest message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.EvictReplRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an EvictReplRequest message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns EvictReplRequest
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.EvictReplRequest;
+
+        /**
+         * Decodes an EvictReplRequest message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns EvictReplRequest
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.EvictReplRequest;
+
+        /**
+         * Verifies an EvictReplRequest message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an EvictReplRequest message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns EvictReplRequest
+         */
+        public static fromObject(object: { [k: string]: any }): api.EvictReplRequest;
+
+        /**
+         * Creates a plain object from an EvictReplRequest message. Also converts values to other types if specified.
+         * @param message EvictReplRequest
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.EvictReplRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this EvictReplRequest to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an EvictReplResponse. */
+    interface IEvictReplResponse {
+
+        /** EvictReplResponse replTransfer */
+        replTransfer?: (api.ReplTransfer|api.IReplTransfer|null);
+    }
+
+    /** Represents an EvictReplResponse. */
+    class EvictReplResponse {
+
+        /**
+         * Constructs a new EvictReplResponse.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IEvictReplResponse);
+
+        /** EvictReplResponse replTransfer. */
+        public replTransfer?: (api.ReplTransfer|null);
+
+        /**
+         * Creates a new EvictReplResponse instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns EvictReplResponse instance
+         */
+        public static create(properties?: api.IEvictReplResponse): api.EvictReplResponse;
+
+        /**
+         * Encodes the specified EvictReplResponse message. Does not implicitly {@link api.EvictReplResponse.verify|verify} messages.
+         * @param message EvictReplResponse message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.EvictReplResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified EvictReplResponse message, length delimited. Does not implicitly {@link api.EvictReplResponse.verify|verify} messages.
+         * @param message EvictReplResponse message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.EvictReplResponse, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an EvictReplResponse message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns EvictReplResponse
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.EvictReplResponse;
+
+        /**
+         * Decodes an EvictReplResponse message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns EvictReplResponse
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.EvictReplResponse;
+
+        /**
+         * Verifies an EvictReplResponse message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an EvictReplResponse message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns EvictReplResponse
+         */
+        public static fromObject(object: { [k: string]: any }): api.EvictReplResponse;
+
+        /**
+         * Creates a plain object from an EvictReplResponse message. Also converts values to other types if specified.
+         * @param message EvictReplResponse
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.EvictReplResponse, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this EvictReplResponse to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
