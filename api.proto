@@ -136,6 +136,8 @@ message Command {
     Roster roster = 260;
     User join = 261;
     User part = 262;
+    OpenFile openFile = 263;
+    FileOpened fileOpened = 264;
 
     Exec exec = 270;
 
@@ -688,6 +690,7 @@ message ChatTyping {
   bool typing = 2;
 }
 
+// A user connected to a multiplayer session
 message User {
   uint32 id = 1;
   string name = 2;
@@ -695,7 +698,26 @@ message User {
   int32 session = 4;
 }
 
-message Roster { repeated User user = 1; }
+// When the presence channel is created, a roster will be
+// sent to the channel with the current list of
+// connected users and their active files
+message Roster {
+  repeated User user = 1;
+  repeated FileOpened files = 2;
+}
+
+// OpenFile can be sent to notify other connected
+// clients that the user has switched files
+message OpenFile {
+  string file = 1;
+}
+
+// FileOpened is sent by pid1 to the client any time
+// another connected user sends the OpenFile message
+message FileOpened {
+  uint32 userId = 1;
+  string file = 2;
+}
 
 message Exec {
   repeated string args = 1;

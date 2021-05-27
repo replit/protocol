@@ -200,3 +200,55 @@ message GovalTokenMetadata {
   // The ID of the key that was used to sign the token.
   string key_id = 1;
 }
+
+// TLSCertificate is a SSL/TLS certificate for a specific domain. This is used to transfer
+// certificates between clusters when a repl is transferred so we do not need to request
+// a new certificate in the new cluster.
+message TLSCertificate {
+    string domain = 1;
+    bytes cert = 2;
+}
+
+// ReplTransfer includes all the data needed to transfer a repl between clusters.
+message ReplTransfer {
+    Repl repl = 1;
+    ResourceLimits replLimits = 2;
+    ResourceLimits userLimits = 3;
+    repeated string customDomains = 4;
+    repeated TLSCertificate certificates = 5;
+}
+
+// AllowReplRequest represents a request to allow a repl into a cluster.
+message AllowReplRequest {
+    ReplTransfer replTransfer = 1;
+}
+
+// ClusterMetadata represents all the metadata Lore knows about a cluster. This
+// includes all endpoints needed to communicate with the cluster.
+message ClusterMetadata {
+  string id = 1;
+  string conmanURL = 2;
+  string gurl = 3;
+  string proxyHost = 4;
+  string proxy = 5;
+  string proxyIP = 6;
+}
+
+// EvictReplRequest represents a request to evict a repl from a cluster.
+// Includes the metadata about the repl that will be evicted and a token in
+// case conman needs to forward this request to another instance.
+message EvictReplRequest {
+  ClusterMetadata clusterMetadata = 1;
+  string token = 2;
+
+  // User and slug are sent so that a repl route can be added even if the cluster
+  // doesn't have metadata for this repl.
+  string user = 3;
+  string slug = 4;
+}
+
+// EvictReplResponse represents a response after evicting a repl from a cluster and includes
+// metadata about the repl that was evicted.
+message EvictReplResponse {
+    ReplTransfer replTransfer = 1;
+}
