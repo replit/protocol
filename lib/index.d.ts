@@ -263,6 +263,15 @@ export namespace api {
         /** Command fileOpened */
         fileOpened?: (api.FileOpened|api.IFileOpened|null);
 
+        /** Command followUser */
+        followUser?: (api.FollowUser|api.IFollowUser|null);
+
+        /** Command updateSessionTimestamp */
+        updateSessionTimestamp?: (api.UpdateSessionTimestamp|api.IUpdateSessionTimestamp|null);
+
+        /** Command sessionTimestampUpdated */
+        sessionTimestampUpdated?: (api.SessionTimestampUpdated|api.ISessionTimestampUpdated|null);
+
         /** Command exec */
         exec?: (api.Exec|api.IExec|null);
 
@@ -645,6 +654,15 @@ export namespace api {
         /** Command fileOpened. */
         public fileOpened?: (api.FileOpened|null);
 
+        /** Command followUser. */
+        public followUser?: (api.FollowUser|null);
+
+        /** Command updateSessionTimestamp. */
+        public updateSessionTimestamp?: (api.UpdateSessionTimestamp|null);
+
+        /** Command sessionTimestampUpdated. */
+        public sessionTimestampUpdated?: (api.SessionTimestampUpdated|null);
+
         /** Command exec. */
         public exec?: (api.Exec|null);
 
@@ -760,7 +778,7 @@ export namespace api {
         public ref: string;
 
         /** Command body. */
-        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"alwaysOn"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"transferStart"|"transferChunk"|"transferComplete"|"transferCancel"|"transfer"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"otTransformSelectionRequest"|"otTransformSelectionResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"openFile"|"fileOpened"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig"|"debugMain"|"debugState"|"debugMainReply"|"debugInput"|"debugOutput"|"debugStop"|"debugLeave"|"debugSessions");
+        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"alwaysOn"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"transferStart"|"transferChunk"|"transferComplete"|"transferCancel"|"transfer"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"otTransformSelectionRequest"|"otTransformSelectionResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"openFile"|"fileOpened"|"followUser"|"updateSessionTimestamp"|"sessionTimestampUpdated"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig"|"debugMain"|"debugState"|"debugMainReply"|"debugInput"|"debugOutput"|"debugStop"|"debugLeave"|"debugSessions");
 
         /**
          * Creates a new Command instance using the specified properties.
@@ -8498,6 +8516,12 @@ export namespace api {
 
         /** FileOpened file */
         file?: (string|null);
+
+        /** FileOpened session */
+        session?: (number|null);
+
+        /** FileOpened timestamp */
+        timestamp?: (google.protobuf.Timestamp|google.protobuf.ITimestamp|null);
     }
 
     /** Represents a FileOpened. */
@@ -8514,6 +8538,12 @@ export namespace api {
 
         /** FileOpened file. */
         public file: string;
+
+        /** FileOpened session. */
+        public session: number;
+
+        /** FileOpened timestamp. */
+        public timestamp?: (google.protobuf.Timestamp|null);
 
         /**
          * Creates a new FileOpened instance using the specified properties.
@@ -8581,6 +8611,276 @@ export namespace api {
 
         /**
          * Converts this FileOpened to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an UpdateSessionTimestamp. */
+    interface IUpdateSessionTimestamp {
+    }
+
+    /** Represents an UpdateSessionTimestamp. */
+    class UpdateSessionTimestamp {
+
+        /**
+         * Constructs a new UpdateSessionTimestamp.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IUpdateSessionTimestamp);
+
+        /**
+         * Creates a new UpdateSessionTimestamp instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns UpdateSessionTimestamp instance
+         */
+        public static create(properties?: api.IUpdateSessionTimestamp): api.UpdateSessionTimestamp;
+
+        /**
+         * Encodes the specified UpdateSessionTimestamp message. Does not implicitly {@link api.UpdateSessionTimestamp.verify|verify} messages.
+         * @param message UpdateSessionTimestamp message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.UpdateSessionTimestamp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified UpdateSessionTimestamp message, length delimited. Does not implicitly {@link api.UpdateSessionTimestamp.verify|verify} messages.
+         * @param message UpdateSessionTimestamp message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.UpdateSessionTimestamp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an UpdateSessionTimestamp message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns UpdateSessionTimestamp
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.UpdateSessionTimestamp;
+
+        /**
+         * Decodes an UpdateSessionTimestamp message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns UpdateSessionTimestamp
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.UpdateSessionTimestamp;
+
+        /**
+         * Verifies an UpdateSessionTimestamp message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an UpdateSessionTimestamp message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns UpdateSessionTimestamp
+         */
+        public static fromObject(object: { [k: string]: any }): api.UpdateSessionTimestamp;
+
+        /**
+         * Creates a plain object from an UpdateSessionTimestamp message. Also converts values to other types if specified.
+         * @param message UpdateSessionTimestamp
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.UpdateSessionTimestamp, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this UpdateSessionTimestamp to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a SessionTimestampUpdated. */
+    interface ISessionTimestampUpdated {
+
+        /** SessionTimestampUpdated session */
+        session?: (number|null);
+
+        /** SessionTimestampUpdated timestamp */
+        timestamp?: (google.protobuf.Timestamp|google.protobuf.ITimestamp|null);
+    }
+
+    /** Represents a SessionTimestampUpdated. */
+    class SessionTimestampUpdated {
+
+        /**
+         * Constructs a new SessionTimestampUpdated.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.ISessionTimestampUpdated);
+
+        /** SessionTimestampUpdated session. */
+        public session: number;
+
+        /** SessionTimestampUpdated timestamp. */
+        public timestamp?: (google.protobuf.Timestamp|null);
+
+        /**
+         * Creates a new SessionTimestampUpdated instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns SessionTimestampUpdated instance
+         */
+        public static create(properties?: api.ISessionTimestampUpdated): api.SessionTimestampUpdated;
+
+        /**
+         * Encodes the specified SessionTimestampUpdated message. Does not implicitly {@link api.SessionTimestampUpdated.verify|verify} messages.
+         * @param message SessionTimestampUpdated message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.SessionTimestampUpdated, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified SessionTimestampUpdated message, length delimited. Does not implicitly {@link api.SessionTimestampUpdated.verify|verify} messages.
+         * @param message SessionTimestampUpdated message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.SessionTimestampUpdated, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a SessionTimestampUpdated message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns SessionTimestampUpdated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.SessionTimestampUpdated;
+
+        /**
+         * Decodes a SessionTimestampUpdated message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns SessionTimestampUpdated
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.SessionTimestampUpdated;
+
+        /**
+         * Verifies a SessionTimestampUpdated message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a SessionTimestampUpdated message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns SessionTimestampUpdated
+         */
+        public static fromObject(object: { [k: string]: any }): api.SessionTimestampUpdated;
+
+        /**
+         * Creates a plain object from a SessionTimestampUpdated message. Also converts values to other types if specified.
+         * @param message SessionTimestampUpdated
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.SessionTimestampUpdated, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this SessionTimestampUpdated to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a FollowUser. */
+    interface IFollowUser {
+
+        /** FollowUser session */
+        session?: (number|null);
+    }
+
+    /** Represents a FollowUser. */
+    class FollowUser {
+
+        /**
+         * Constructs a new FollowUser.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IFollowUser);
+
+        /** FollowUser session. */
+        public session: number;
+
+        /**
+         * Creates a new FollowUser instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns FollowUser instance
+         */
+        public static create(properties?: api.IFollowUser): api.FollowUser;
+
+        /**
+         * Encodes the specified FollowUser message. Does not implicitly {@link api.FollowUser.verify|verify} messages.
+         * @param message FollowUser message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.FollowUser, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified FollowUser message, length delimited. Does not implicitly {@link api.FollowUser.verify|verify} messages.
+         * @param message FollowUser message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.FollowUser, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a FollowUser message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns FollowUser
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.FollowUser;
+
+        /**
+         * Decodes a FollowUser message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns FollowUser
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.FollowUser;
+
+        /**
+         * Verifies a FollowUser message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a FollowUser message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns FollowUser
+         */
+        public static fromObject(object: { [k: string]: any }): api.FollowUser;
+
+        /**
+         * Creates a plain object from a FollowUser message. Also converts values to other types if specified.
+         * @param message FollowUser
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.FollowUser, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this FollowUser to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };

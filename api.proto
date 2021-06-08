@@ -133,11 +133,15 @@ message Command {
     SubscribeFile subscribeFile = 256;
     FileEvent fileEvent = 257;
 
+    // Presence service messages
     Roster roster = 260;
     User join = 261;
     User part = 262;
     OpenFile openFile = 263;
     FileOpened fileOpened = 264;
+    FollowUser followUser = 265;
+    UpdateSessionTimestamp updateSessionTimestamp = 266;
+    SessionTimestampUpdated sessionTimestampUpdated = 267;
 
     Exec exec = 270;
 
@@ -717,6 +721,28 @@ message OpenFile {
 message FileOpened {
   uint32 userId = 1;
   string file = 2;
+  int32 session = 3;
+  google.protobuf.Timestamp timestamp = 4;
+}
+
+// Updates the timestamp on the current session
+// which indicates that this is the user's most recent,
+// and therefore active, session.
+message UpdateSessionTimestamp {}
+
+// Indicates that another user's session timestamp has been updated
+// which implies that it is that user's active session.
+// Every client will receive this message from pid1 even if they're
+// not following a user so that their local store is always up to date.
+message SessionTimestampUpdated {
+  int32 session = 1;
+  google.protobuf.Timestamp timestamp = 2;
+}
+
+// Request to follow a user's cursor and notify a user
+// in a given session that their cursor is being followed.
+message FollowUser {
+  int32 session = 1;
 }
 
 message Exec {
