@@ -125,6 +125,11 @@ declare var npm$namespace$api: {|
   IDebugStop: Class<api$IDebugStop>,
   IDebugLeave: Class<api$IDebugLeave>,
   IDebugSessions: Class<api$IDebugSessions>,
+  IDotReplitGetRequest: Class<api$IDotReplitGetRequest>,
+  IDotReplitGetResponse: Class<api$IDotReplitGetResponse>,
+  IDotReplit: Class<api$IDotReplit>,
+  IDotReplitPackager: Class<api$IDotReplitPackager>,
+  IDebuggerConfig: Class<api$IDebuggerConfig>,
   IRepl: Class<api$IRepl>,
   IResourceLimits: Class<api$IResourceLimits>,
   IPermissions: Class<api$IPermissions>,
@@ -250,6 +255,11 @@ declare var npm$namespace$api: {|
   DebugStop: typeof api$DebugStop,
   DebugLeave: typeof api$DebugLeave,
   DebugSessions: typeof api$DebugSessions,
+  DotReplitGetRequest: typeof api$DotReplitGetRequest,
+  DotReplitGetResponse: typeof api$DotReplitGetResponse,
+  DotReplit: typeof api$DotReplit,
+  DotReplitPackager: typeof api$DotReplitPackager,
+  DebuggerConfig: typeof api$DebuggerConfig,
   Repl: typeof api$Repl,
   ResourceLimits: typeof api$ResourceLimits,
   Permissions: typeof api$Permissions,
@@ -916,6 +926,22 @@ declare type api$ICommand = {|
   debugSessions?: api$DebugSessions | api$IDebugSessions | null,
 
   /**
+   * Command dotReplitGetRequest
+   */
+  dotReplitGetRequest?:
+    | api$DotReplitGetRequest
+    | api$IDotReplitGetRequest
+    | null,
+
+  /**
+   * Command dotReplitGetResponse
+   */
+  dotReplitGetResponse?:
+    | api$DotReplitGetResponse
+    | api$IDotReplitGetResponse
+    | null,
+
+  /**
    * Command ref
    */
   ref?: string | null,
@@ -1562,6 +1588,16 @@ declare class api$Command {
   debugSessions?: api$DebugSessions | null;
 
   /**
+   * Command dotReplitGetRequest.
+   */
+  dotReplitGetRequest?: api$DotReplitGetRequest | null;
+
+  /**
+   * Command dotReplitGetResponse.
+   */
+  dotReplitGetResponse?: api$DotReplitGetResponse | null;
+
+  /**
    * Command ref.
    */
   ref: string;
@@ -1693,7 +1729,9 @@ declare class api$Command {
     | "debugOutput"
     | "debugStop"
     | "debugLeave"
-    | "debugSessions";
+    | "debugSessions"
+    | "dotReplitGetRequest"
+    | "dotReplitGetResponse";
 
   /**
    * Creates a new Command instance using the specified properties.
@@ -16139,6 +16177,656 @@ declare class api$DebugSessions {
 
   /**
    * Converts this DebugSessions to JSON.
+   * @returns JSON object
+   */
+  toJSON(): {
+    [k: string]: any,
+  };
+}
+
+/**
+ * Properties of a DotReplitGetRequest.
+ */
+declare type api$IDotReplitGetRequest = {||};
+
+/**
+ * Represents a DotReplitGetRequest.
+ */
+declare class api$DotReplitGetRequest {
+  /**
+   * Constructs a new DotReplitGetRequest.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: api$IDotReplitGetRequest): this;
+
+  /**
+   * Creates a new DotReplitGetRequest instance using the specified properties.
+   * @param [properties] Properties to set
+   * @returns DotReplitGetRequest instance
+   */
+  static create(properties?: api$IDotReplitGetRequest): api$DotReplitGetRequest;
+
+  /**
+   * Encodes the specified DotReplitGetRequest message. Does not implicitly {@link api.DotReplitGetRequest.verify|verify} messages.
+   * @param message DotReplitGetRequest message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encode(
+    message: api$DotReplitGetRequest,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Encodes the specified DotReplitGetRequest message, length delimited. Does not implicitly {@link api.DotReplitGetRequest.verify|verify} messages.
+   * @param message DotReplitGetRequest message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encodeDelimited(
+    message: api$DotReplitGetRequest,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Decodes a DotReplitGetRequest message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns DotReplitGetRequest
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): api$DotReplitGetRequest;
+
+  /**
+   * Decodes a DotReplitGetRequest message from the specified reader or buffer, length delimited.
+   * @param reader Reader or buffer to decode from
+   * @returns DotReplitGetRequest
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decodeDelimited(
+    reader: $protobuf.Reader | Uint8Array
+  ): api$DotReplitGetRequest;
+
+  /**
+   * Verifies a DotReplitGetRequest message.
+   * @param message Plain object to verify
+   * @returns `null` if valid, otherwise the reason why it is not
+   */
+  static verify(message: {
+    [k: string]: any,
+  }): string | null;
+
+  /**
+   * Creates a DotReplitGetRequest message from a plain object. Also converts values to their respective internal types.
+   * @param object Plain object
+   * @returns DotReplitGetRequest
+   */
+  static fromObject(object: {
+    [k: string]: any,
+  }): api$DotReplitGetRequest;
+
+  /**
+   * Creates a plain object from a DotReplitGetRequest message. Also converts values to other types if specified.
+   * @param message DotReplitGetRequest
+   * @param [options] Conversion options
+   * @returns Plain object
+   */
+  static toObject(
+    message: api$DotReplitGetRequest,
+    options?: $protobuf.IConversionOptions
+  ): {
+    [k: string]: any,
+  };
+
+  /**
+   * Converts this DotReplitGetRequest to JSON.
+   * @returns JSON object
+   */
+  toJSON(): {
+    [k: string]: any,
+  };
+}
+
+/**
+ * Properties of a DotReplitGetResponse.
+ */
+declare type api$IDotReplitGetResponse = {|
+  /**
+   * DotReplitGetResponse dotReplit
+   */
+  dotReplit?: api$DotReplit | api$IDotReplit | null,
+|};
+
+/**
+ * Represents a DotReplitGetResponse.
+ */
+declare class api$DotReplitGetResponse {
+  /**
+   * Constructs a new DotReplitGetResponse.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: api$IDotReplitGetResponse): this;
+
+  /**
+   * DotReplitGetResponse dotReplit.
+   */
+  dotReplit?: api$DotReplit | null;
+
+  /**
+   * Creates a new DotReplitGetResponse instance using the specified properties.
+   * @param [properties] Properties to set
+   * @returns DotReplitGetResponse instance
+   */
+  static create(
+    properties?: api$IDotReplitGetResponse
+  ): api$DotReplitGetResponse;
+
+  /**
+   * Encodes the specified DotReplitGetResponse message. Does not implicitly {@link api.DotReplitGetResponse.verify|verify} messages.
+   * @param message DotReplitGetResponse message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encode(
+    message: api$DotReplitGetResponse,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Encodes the specified DotReplitGetResponse message, length delimited. Does not implicitly {@link api.DotReplitGetResponse.verify|verify} messages.
+   * @param message DotReplitGetResponse message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encodeDelimited(
+    message: api$DotReplitGetResponse,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Decodes a DotReplitGetResponse message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns DotReplitGetResponse
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): api$DotReplitGetResponse;
+
+  /**
+   * Decodes a DotReplitGetResponse message from the specified reader or buffer, length delimited.
+   * @param reader Reader or buffer to decode from
+   * @returns DotReplitGetResponse
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decodeDelimited(
+    reader: $protobuf.Reader | Uint8Array
+  ): api$DotReplitGetResponse;
+
+  /**
+   * Verifies a DotReplitGetResponse message.
+   * @param message Plain object to verify
+   * @returns `null` if valid, otherwise the reason why it is not
+   */
+  static verify(message: {
+    [k: string]: any,
+  }): string | null;
+
+  /**
+   * Creates a DotReplitGetResponse message from a plain object. Also converts values to their respective internal types.
+   * @param object Plain object
+   * @returns DotReplitGetResponse
+   */
+  static fromObject(object: {
+    [k: string]: any,
+  }): api$DotReplitGetResponse;
+
+  /**
+   * Creates a plain object from a DotReplitGetResponse message. Also converts values to other types if specified.
+   * @param message DotReplitGetResponse
+   * @param [options] Conversion options
+   * @returns Plain object
+   */
+  static toObject(
+    message: api$DotReplitGetResponse,
+    options?: $protobuf.IConversionOptions
+  ): {
+    [k: string]: any,
+  };
+
+  /**
+   * Converts this DotReplitGetResponse to JSON.
+   * @returns JSON object
+   */
+  toJSON(): {
+    [k: string]: any,
+  };
+}
+
+/**
+ * Properties of a DotReplit.
+ */
+declare type api$IDotReplit = {|
+  /**
+   * DotReplit run
+   */
+  run?: api$Exec | api$IExec | null,
+
+  /**
+   * DotReplit compile
+   */
+  compile?: api$Exec | api$IExec | null,
+
+  /**
+   * DotReplit debugger
+   */
+  debugger?: api$DebuggerConfig | api$IDebuggerConfig | null,
+
+  /**
+   * DotReplit language
+   */
+  language?: string | null,
+
+  /**
+   * DotReplit onBoot
+   */
+  onBoot?: api$Exec | api$IExec | null,
+
+  /**
+   * DotReplit packager
+   */
+  packager?: api$DotReplitPackager | api$IDotReplitPackager | null,
+|};
+
+/**
+ * Represents a DotReplit.
+ */
+declare class api$DotReplit {
+  /**
+   * Constructs a new DotReplit.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: api$IDotReplit): this;
+
+  /**
+   * DotReplit run.
+   */
+  run?: api$Exec | null;
+
+  /**
+   * DotReplit compile.
+   */
+  compile?: api$Exec | null;
+
+  /**
+   * DotReplit debugger.
+   */
+  debugger?: api$DebuggerConfig | null;
+
+  /**
+   * DotReplit language.
+   */
+  language: string;
+
+  /**
+   * DotReplit onBoot.
+   */
+  onBoot?: api$Exec | null;
+
+  /**
+   * DotReplit packager.
+   */
+  packager?: api$DotReplitPackager | null;
+
+  /**
+   * Creates a new DotReplit instance using the specified properties.
+   * @param [properties] Properties to set
+   * @returns DotReplit instance
+   */
+  static create(properties?: api$IDotReplit): api$DotReplit;
+
+  /**
+   * Encodes the specified DotReplit message. Does not implicitly {@link api.DotReplit.verify|verify} messages.
+   * @param message DotReplit message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encode(
+    message: api$DotReplit,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Encodes the specified DotReplit message, length delimited. Does not implicitly {@link api.DotReplit.verify|verify} messages.
+   * @param message DotReplit message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encodeDelimited(
+    message: api$DotReplit,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Decodes a DotReplit message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns DotReplit
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): api$DotReplit;
+
+  /**
+   * Decodes a DotReplit message from the specified reader or buffer, length delimited.
+   * @param reader Reader or buffer to decode from
+   * @returns DotReplit
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decodeDelimited(reader: $protobuf.Reader | Uint8Array): api$DotReplit;
+
+  /**
+   * Verifies a DotReplit message.
+   * @param message Plain object to verify
+   * @returns `null` if valid, otherwise the reason why it is not
+   */
+  static verify(message: {
+    [k: string]: any,
+  }): string | null;
+
+  /**
+   * Creates a DotReplit message from a plain object. Also converts values to their respective internal types.
+   * @param object Plain object
+   * @returns DotReplit
+   */
+  static fromObject(object: {
+    [k: string]: any,
+  }): api$DotReplit;
+
+  /**
+   * Creates a plain object from a DotReplit message. Also converts values to other types if specified.
+   * @param message DotReplit
+   * @param [options] Conversion options
+   * @returns Plain object
+   */
+  static toObject(
+    message: api$DotReplit,
+    options?: $protobuf.IConversionOptions
+  ): {
+    [k: string]: any,
+  };
+
+  /**
+   * Converts this DotReplit to JSON.
+   * @returns JSON object
+   */
+  toJSON(): {
+    [k: string]: any,
+  };
+}
+
+/**
+ * Properties of a DotReplitPackager.
+ */
+declare type api$IDotReplitPackager = {|
+  /**
+   * DotReplitPackager afterInstall
+   */
+  afterInstall?: api$Exec | api$IExec | null,
+
+  /**
+   * DotReplitPackager ignoredPaths
+   */
+  ignoredPaths?: string[] | null,
+
+  /**
+   * DotReplitPackager ignoredPackages
+   */
+  ignoredPackages?: string[] | null,
+|};
+
+/**
+ * Represents a DotReplitPackager.
+ */
+declare class api$DotReplitPackager {
+  /**
+   * Constructs a new DotReplitPackager.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: api$IDotReplitPackager): this;
+
+  /**
+   * DotReplitPackager afterInstall.
+   */
+  afterInstall?: api$Exec | null;
+
+  /**
+   * DotReplitPackager ignoredPaths.
+   */
+  ignoredPaths: string[];
+
+  /**
+   * DotReplitPackager ignoredPackages.
+   */
+  ignoredPackages: string[];
+
+  /**
+   * Creates a new DotReplitPackager instance using the specified properties.
+   * @param [properties] Properties to set
+   * @returns DotReplitPackager instance
+   */
+  static create(properties?: api$IDotReplitPackager): api$DotReplitPackager;
+
+  /**
+   * Encodes the specified DotReplitPackager message. Does not implicitly {@link api.DotReplitPackager.verify|verify} messages.
+   * @param message DotReplitPackager message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encode(
+    message: api$DotReplitPackager,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Encodes the specified DotReplitPackager message, length delimited. Does not implicitly {@link api.DotReplitPackager.verify|verify} messages.
+   * @param message DotReplitPackager message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encodeDelimited(
+    message: api$DotReplitPackager,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Decodes a DotReplitPackager message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns DotReplitPackager
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): api$DotReplitPackager;
+
+  /**
+   * Decodes a DotReplitPackager message from the specified reader or buffer, length delimited.
+   * @param reader Reader or buffer to decode from
+   * @returns DotReplitPackager
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decodeDelimited(
+    reader: $protobuf.Reader | Uint8Array
+  ): api$DotReplitPackager;
+
+  /**
+   * Verifies a DotReplitPackager message.
+   * @param message Plain object to verify
+   * @returns `null` if valid, otherwise the reason why it is not
+   */
+  static verify(message: {
+    [k: string]: any,
+  }): string | null;
+
+  /**
+   * Creates a DotReplitPackager message from a plain object. Also converts values to their respective internal types.
+   * @param object Plain object
+   * @returns DotReplitPackager
+   */
+  static fromObject(object: {
+    [k: string]: any,
+  }): api$DotReplitPackager;
+
+  /**
+   * Creates a plain object from a DotReplitPackager message. Also converts values to other types if specified.
+   * @param message DotReplitPackager
+   * @param [options] Conversion options
+   * @returns Plain object
+   */
+  static toObject(
+    message: api$DotReplitPackager,
+    options?: $protobuf.IConversionOptions
+  ): {
+    [k: string]: any,
+  };
+
+  /**
+   * Converts this DotReplitPackager to JSON.
+   * @returns JSON object
+   */
+  toJSON(): {
+    [k: string]: any,
+  };
+}
+
+/**
+ * Properties of a DebuggerConfig.
+ */
+declare type api$IDebuggerConfig = {|
+  /**
+   * DebuggerConfig support
+   */
+  support?: boolean | null,
+|};
+
+/**
+ * Represents a DebuggerConfig.
+ */
+declare class api$DebuggerConfig {
+  /**
+   * Constructs a new DebuggerConfig.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: api$IDebuggerConfig): this;
+
+  /**
+   * DebuggerConfig support.
+   */
+  support: boolean;
+
+  /**
+   * Creates a new DebuggerConfig instance using the specified properties.
+   * @param [properties] Properties to set
+   * @returns DebuggerConfig instance
+   */
+  static create(properties?: api$IDebuggerConfig): api$DebuggerConfig;
+
+  /**
+   * Encodes the specified DebuggerConfig message. Does not implicitly {@link api.DebuggerConfig.verify|verify} messages.
+   * @param message DebuggerConfig message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encode(
+    message: api$DebuggerConfig,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Encodes the specified DebuggerConfig message, length delimited. Does not implicitly {@link api.DebuggerConfig.verify|verify} messages.
+   * @param message DebuggerConfig message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encodeDelimited(
+    message: api$DebuggerConfig,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Decodes a DebuggerConfig message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns DebuggerConfig
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): api$DebuggerConfig;
+
+  /**
+   * Decodes a DebuggerConfig message from the specified reader or buffer, length delimited.
+   * @param reader Reader or buffer to decode from
+   * @returns DebuggerConfig
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decodeDelimited(
+    reader: $protobuf.Reader | Uint8Array
+  ): api$DebuggerConfig;
+
+  /**
+   * Verifies a DebuggerConfig message.
+   * @param message Plain object to verify
+   * @returns `null` if valid, otherwise the reason why it is not
+   */
+  static verify(message: {
+    [k: string]: any,
+  }): string | null;
+
+  /**
+   * Creates a DebuggerConfig message from a plain object. Also converts values to their respective internal types.
+   * @param object Plain object
+   * @returns DebuggerConfig
+   */
+  static fromObject(object: {
+    [k: string]: any,
+  }): api$DebuggerConfig;
+
+  /**
+   * Creates a plain object from a DebuggerConfig message. Also converts values to other types if specified.
+   * @param message DebuggerConfig
+   * @param [options] Conversion options
+   * @returns Plain object
+   */
+  static toObject(
+    message: api$DebuggerConfig,
+    options?: $protobuf.IConversionOptions
+  ): {
+    [k: string]: any,
+  };
+
+  /**
+   * Converts this DebuggerConfig to JSON.
    * @returns JSON object
    */
   toJSON(): {

@@ -229,6 +229,16 @@ message Command {
     DebugLeave debugLeave = 376;
 
     DebugSessions debugSessions = 377;
+
+    // DotReplit
+    //
+    // The dotreplit service lets the caller get the pre-parsed contents of
+    // .replit in a proto format.
+
+    // DotReplitGetRequest requests the contents of the .replit file. The
+    // response will be a DotReplitGetResponse or an Error.
+    DotReplitGetRequest dotReplitGetRequest = 378;
+    DotReplitGetResponse dotReplitGetResponse = 379;
   }
 
   string ref = 1000;
@@ -924,4 +934,36 @@ message DebugLeave {
 // time a new session is created or terminated.
 message DebugSessions {
   map<string, State> sessions = 1;
+}
+
+// The message used to request to get the contents of the `.replit` file.
+message DotReplitGetRequest {
+}
+
+// The message sent by the server with the contents of the `.replit` file.
+message DotReplitGetResponse {
+  DotReplit dotReplit = 1;
+}
+
+// DotReplit is a .proto representation of types.DotReplit.
+message DotReplit {
+  Exec run = 1;
+  Exec compile = 2;
+  DebuggerConfig debugger = 3;
+  string language= 4;
+  Exec onBoot = 5;
+  DotReplitPackager packager = 6;
+}
+
+// DotReplitPackager is a .proto representation of types.Packager.
+message DotReplitPackager {
+  Exec afterInstall = 1;
+  repeated string ignoredPaths = 2;
+  repeated string ignoredPackages = 3;
+}
+
+// DebuggerConfig is the configuration for the debugger. Right now,
+// only the relevant fields are exposed (whether it's enabled).
+message DebuggerConfig {
+  bool support = 1;
 }
