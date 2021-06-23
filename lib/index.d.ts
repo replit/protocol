@@ -266,6 +266,9 @@ export namespace api {
         /** Command followUser */
         followUser?: (api.FollowUser|api.IFollowUser|null);
 
+        /** Command unfollowUser */
+        unfollowUser?: (api.UnfollowUser|api.IUnfollowUser|null);
+
         /** Command updateSessionTimestamp */
         updateSessionTimestamp?: (api.UpdateSessionTimestamp|api.IUpdateSessionTimestamp|null);
 
@@ -663,6 +666,9 @@ export namespace api {
         /** Command followUser. */
         public followUser?: (api.FollowUser|null);
 
+        /** Command unfollowUser. */
+        public unfollowUser?: (api.UnfollowUser|null);
+
         /** Command updateSessionTimestamp. */
         public updateSessionTimestamp?: (api.UpdateSessionTimestamp|null);
 
@@ -790,7 +796,7 @@ export namespace api {
         public ref: string;
 
         /** Command body. */
-        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"alwaysOn"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"transferStart"|"transferChunk"|"transferComplete"|"transferCancel"|"transfer"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"otTransformSelectionRequest"|"otTransformSelectionResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"openFile"|"fileOpened"|"followUser"|"updateSessionTimestamp"|"sessionTimestampUpdated"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig"|"debugMain"|"debugState"|"debugMainReply"|"debugInput"|"debugOutput"|"debugStop"|"debugLeave"|"debugSessions"|"dotReplitGetRequest"|"dotReplitGetResponse");
+        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"alwaysOn"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"transferStart"|"transferChunk"|"transferComplete"|"transferCancel"|"transfer"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"otTransformSelectionRequest"|"otTransformSelectionResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"openFile"|"fileOpened"|"followUser"|"unfollowUser"|"updateSessionTimestamp"|"sessionTimestampUpdated"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig"|"debugMain"|"debugState"|"debugMainReply"|"debugInput"|"debugOutput"|"debugStop"|"debugLeave"|"debugSessions"|"dotReplitGetRequest"|"dotReplitGetResponse");
 
         /**
          * Creates a new Command instance using the specified properties.
@@ -8893,6 +8899,96 @@ export namespace api {
 
         /**
          * Converts this FollowUser to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of an UnfollowUser. */
+    interface IUnfollowUser {
+
+        /** UnfollowUser session */
+        session?: (number|null);
+    }
+
+    /** Represents an UnfollowUser. */
+    class UnfollowUser {
+
+        /**
+         * Constructs a new UnfollowUser.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IUnfollowUser);
+
+        /** UnfollowUser session. */
+        public session: number;
+
+        /**
+         * Creates a new UnfollowUser instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns UnfollowUser instance
+         */
+        public static create(properties?: api.IUnfollowUser): api.UnfollowUser;
+
+        /**
+         * Encodes the specified UnfollowUser message. Does not implicitly {@link api.UnfollowUser.verify|verify} messages.
+         * @param message UnfollowUser message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.UnfollowUser, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified UnfollowUser message, length delimited. Does not implicitly {@link api.UnfollowUser.verify|verify} messages.
+         * @param message UnfollowUser message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.UnfollowUser, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an UnfollowUser message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns UnfollowUser
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.UnfollowUser;
+
+        /**
+         * Decodes an UnfollowUser message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns UnfollowUser
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.UnfollowUser;
+
+        /**
+         * Verifies an UnfollowUser message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an UnfollowUser message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns UnfollowUser
+         */
+        public static fromObject(object: { [k: string]: any }): api.UnfollowUser;
+
+        /**
+         * Creates a plain object from an UnfollowUser message. Also converts values to other types if specified.
+         * @param message UnfollowUser
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.UnfollowUser, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this UnfollowUser to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };

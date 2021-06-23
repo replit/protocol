@@ -140,6 +140,7 @@ message Command {
     OpenFile openFile = 263;
     FileOpened fileOpened = 264;
     FollowUser followUser = 265;
+    UnfollowUser unfollowUser = 268;
     UpdateSessionTimestamp updateSessionTimestamp = 266;
     SessionTimestampUpdated sessionTimestampUpdated = 267;
 
@@ -749,9 +750,13 @@ message SessionTimestampUpdated {
   google.protobuf.Timestamp timestamp = 2;
 }
 
-// Request to follow a user's cursor and notify a user
-// in a given session that their cursor is being followed.
+// Notify a user that their cursor is being followed.
 message FollowUser {
+  int32 session = 1;
+}
+
+// Notify a user that their cursor is being unfollowed.
+message UnfollowUser {
   int32 session = 1;
 }
 

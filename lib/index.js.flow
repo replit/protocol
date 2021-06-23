@@ -95,6 +95,7 @@ declare var npm$namespace$api: {|
   IUpdateSessionTimestamp: Class<api$IUpdateSessionTimestamp>,
   ISessionTimestampUpdated: Class<api$ISessionTimestampUpdated>,
   IFollowUser: Class<api$IFollowUser>,
+  IUnfollowUser: Class<api$IUnfollowUser>,
   IExec: Class<api$IExec>,
   IPackage: Class<api$IPackage>,
   IPackageSearch: Class<api$IPackageSearch>,
@@ -225,6 +226,7 @@ declare var npm$namespace$api: {|
   UpdateSessionTimestamp: typeof api$UpdateSessionTimestamp,
   SessionTimestampUpdated: typeof api$SessionTimestampUpdated,
   FollowUser: typeof api$FollowUser,
+  UnfollowUser: typeof api$UnfollowUser,
   Exec: typeof api$Exec,
   Package: typeof api$Package,
   PackageSearch: typeof api$PackageSearch,
@@ -717,6 +719,11 @@ declare type api$ICommand = {|
    * Command followUser
    */
   followUser?: api$FollowUser | api$IFollowUser | null,
+
+  /**
+   * Command unfollowUser
+   */
+  unfollowUser?: api$UnfollowUser | api$IUnfollowUser | null,
 
   /**
    * Command updateSessionTimestamp
@@ -1393,6 +1400,11 @@ declare class api$Command {
   followUser?: api$FollowUser | null;
 
   /**
+   * Command unfollowUser.
+   */
+  unfollowUser?: api$UnfollowUser | null;
+
+  /**
    * Command updateSessionTimestamp.
    */
   updateSessionTimestamp?: api$UpdateSessionTimestamp | null;
@@ -1691,6 +1703,7 @@ declare class api$Command {
     | "openFile"
     | "fileOpened"
     | "followUser"
+    | "unfollowUser"
     | "updateSessionTimestamp"
     | "sessionTimestampUpdated"
     | "exec"
@@ -12366,6 +12379,124 @@ declare class api$FollowUser {
 
   /**
    * Converts this FollowUser to JSON.
+   * @returns JSON object
+   */
+  toJSON(): {
+    [k: string]: any,
+  };
+}
+
+/**
+ * Properties of an UnfollowUser.
+ */
+declare type api$IUnfollowUser = {|
+  /**
+   * UnfollowUser session
+   */
+  session?: number | null,
+|};
+
+/**
+ * Represents an UnfollowUser.
+ */
+declare class api$UnfollowUser {
+  /**
+   * Constructs a new UnfollowUser.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: api$IUnfollowUser): this;
+
+  /**
+   * UnfollowUser session.
+   */
+  session: number;
+
+  /**
+   * Creates a new UnfollowUser instance using the specified properties.
+   * @param [properties] Properties to set
+   * @returns UnfollowUser instance
+   */
+  static create(properties?: api$IUnfollowUser): api$UnfollowUser;
+
+  /**
+   * Encodes the specified UnfollowUser message. Does not implicitly {@link api.UnfollowUser.verify|verify} messages.
+   * @param message UnfollowUser message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encode(
+    message: api$UnfollowUser,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Encodes the specified UnfollowUser message, length delimited. Does not implicitly {@link api.UnfollowUser.verify|verify} messages.
+   * @param message UnfollowUser message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encodeDelimited(
+    message: api$UnfollowUser,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Decodes an UnfollowUser message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns UnfollowUser
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): api$UnfollowUser;
+
+  /**
+   * Decodes an UnfollowUser message from the specified reader or buffer, length delimited.
+   * @param reader Reader or buffer to decode from
+   * @returns UnfollowUser
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decodeDelimited(
+    reader: $protobuf.Reader | Uint8Array
+  ): api$UnfollowUser;
+
+  /**
+   * Verifies an UnfollowUser message.
+   * @param message Plain object to verify
+   * @returns `null` if valid, otherwise the reason why it is not
+   */
+  static verify(message: {
+    [k: string]: any,
+  }): string | null;
+
+  /**
+   * Creates an UnfollowUser message from a plain object. Also converts values to their respective internal types.
+   * @param object Plain object
+   * @returns UnfollowUser
+   */
+  static fromObject(object: {
+    [k: string]: any,
+  }): api$UnfollowUser;
+
+  /**
+   * Creates a plain object from an UnfollowUser message. Also converts values to other types if specified.
+   * @param message UnfollowUser
+   * @param [options] Conversion options
+   * @returns Plain object
+   */
+  static toObject(
+    message: api$UnfollowUser,
+    options?: $protobuf.IConversionOptions
+  ): {
+    [k: string]: any,
+  };
+
+  /**
+   * Converts this UnfollowUser to JSON.
    * @returns JSON object
    */
   toJSON(): {
