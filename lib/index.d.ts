@@ -386,6 +386,15 @@ export namespace api {
         /** Command debugSessions */
         debugSessions?: (api.DebugSessions|api.IDebugSessions|null);
 
+        /** Command debugAddBreakpointRequest */
+        debugAddBreakpointRequest?: (api.DebugAddBreakpointRequest|api.IDebugAddBreakpointRequest|null);
+
+        /** Command debugRemoveBreakpointRequest */
+        debugRemoveBreakpointRequest?: (api.DebugRemoveBreakpointRequest|api.IDebugRemoveBreakpointRequest|null);
+
+        /** Command debugBreakpointEvent */
+        debugBreakpointEvent?: (api.DebugBreakpointEvent|api.IDebugBreakpointEvent|null);
+
         /** Command dotReplitGetRequest */
         dotReplitGetRequest?: (api.DotReplitGetRequest|api.IDotReplitGetRequest|null);
 
@@ -786,6 +795,15 @@ export namespace api {
         /** Command debugSessions. */
         public debugSessions?: (api.DebugSessions|null);
 
+        /** Command debugAddBreakpointRequest. */
+        public debugAddBreakpointRequest?: (api.DebugAddBreakpointRequest|null);
+
+        /** Command debugRemoveBreakpointRequest. */
+        public debugRemoveBreakpointRequest?: (api.DebugRemoveBreakpointRequest|null);
+
+        /** Command debugBreakpointEvent. */
+        public debugBreakpointEvent?: (api.DebugBreakpointEvent|null);
+
         /** Command dotReplitGetRequest. */
         public dotReplitGetRequest?: (api.DotReplitGetRequest|null);
 
@@ -796,7 +814,7 @@ export namespace api {
         public ref: string;
 
         /** Command body. */
-        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"alwaysOn"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"transferStart"|"transferChunk"|"transferComplete"|"transferCancel"|"transfer"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"otTransformSelectionRequest"|"otTransformSelectionResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"openFile"|"fileOpened"|"followUser"|"unfollowUser"|"updateSessionTimestamp"|"sessionTimestampUpdated"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig"|"debugMain"|"debugState"|"debugMainReply"|"debugInput"|"debugOutput"|"debugStop"|"debugLeave"|"debugSessions"|"dotReplitGetRequest"|"dotReplitGetResponse");
+        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"alwaysOn"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"transferStart"|"transferChunk"|"transferComplete"|"transferCancel"|"transfer"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"otTransformSelectionRequest"|"otTransformSelectionResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"openFile"|"fileOpened"|"followUser"|"unfollowUser"|"updateSessionTimestamp"|"sessionTimestampUpdated"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig"|"debugMain"|"debugState"|"debugMainReply"|"debugInput"|"debugOutput"|"debugStop"|"debugLeave"|"debugSessions"|"debugAddBreakpointRequest"|"debugRemoveBreakpointRequest"|"debugBreakpointEvent"|"dotReplitGetRequest"|"dotReplitGetResponse");
 
         /**
          * Creates a new Command instance using the specified properties.
@@ -12023,6 +12041,408 @@ export namespace api {
         public toJSON(): { [k: string]: any };
     }
 
+    /** Properties of a DebugAddBreakpointRequest. */
+    interface IDebugAddBreakpointRequest {
+
+        /** DebugAddBreakpointRequest path */
+        path?: (string|null);
+
+        /** DebugAddBreakpointRequest otVersion */
+        otVersion?: (number|null);
+
+        /** DebugAddBreakpointRequest otIndex */
+        otIndex?: (number|null);
+
+        /** DebugAddBreakpointRequest line */
+        line?: (number|null);
+    }
+
+    /** Represents a DebugAddBreakpointRequest. */
+    class DebugAddBreakpointRequest {
+
+        /**
+         * Constructs a new DebugAddBreakpointRequest.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IDebugAddBreakpointRequest);
+
+        /** DebugAddBreakpointRequest path. */
+        public path: string;
+
+        /** DebugAddBreakpointRequest otVersion. */
+        public otVersion: number;
+
+        /** DebugAddBreakpointRequest otIndex. */
+        public otIndex: number;
+
+        /** DebugAddBreakpointRequest line. */
+        public line: number;
+
+        /**
+         * Creates a new DebugAddBreakpointRequest instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns DebugAddBreakpointRequest instance
+         */
+        public static create(properties?: api.IDebugAddBreakpointRequest): api.DebugAddBreakpointRequest;
+
+        /**
+         * Encodes the specified DebugAddBreakpointRequest message. Does not implicitly {@link api.DebugAddBreakpointRequest.verify|verify} messages.
+         * @param message DebugAddBreakpointRequest message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.DebugAddBreakpointRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified DebugAddBreakpointRequest message, length delimited. Does not implicitly {@link api.DebugAddBreakpointRequest.verify|verify} messages.
+         * @param message DebugAddBreakpointRequest message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.DebugAddBreakpointRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a DebugAddBreakpointRequest message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns DebugAddBreakpointRequest
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.DebugAddBreakpointRequest;
+
+        /**
+         * Decodes a DebugAddBreakpointRequest message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns DebugAddBreakpointRequest
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.DebugAddBreakpointRequest;
+
+        /**
+         * Verifies a DebugAddBreakpointRequest message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a DebugAddBreakpointRequest message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns DebugAddBreakpointRequest
+         */
+        public static fromObject(object: { [k: string]: any }): api.DebugAddBreakpointRequest;
+
+        /**
+         * Creates a plain object from a DebugAddBreakpointRequest message. Also converts values to other types if specified.
+         * @param message DebugAddBreakpointRequest
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.DebugAddBreakpointRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this DebugAddBreakpointRequest to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a DebugRemoveBreakpointRequest. */
+    interface IDebugRemoveBreakpointRequest {
+
+        /** DebugRemoveBreakpointRequest breakpointId */
+        breakpointId?: (string|null);
+    }
+
+    /** Represents a DebugRemoveBreakpointRequest. */
+    class DebugRemoveBreakpointRequest {
+
+        /**
+         * Constructs a new DebugRemoveBreakpointRequest.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IDebugRemoveBreakpointRequest);
+
+        /** DebugRemoveBreakpointRequest breakpointId. */
+        public breakpointId: string;
+
+        /**
+         * Creates a new DebugRemoveBreakpointRequest instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns DebugRemoveBreakpointRequest instance
+         */
+        public static create(properties?: api.IDebugRemoveBreakpointRequest): api.DebugRemoveBreakpointRequest;
+
+        /**
+         * Encodes the specified DebugRemoveBreakpointRequest message. Does not implicitly {@link api.DebugRemoveBreakpointRequest.verify|verify} messages.
+         * @param message DebugRemoveBreakpointRequest message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.DebugRemoveBreakpointRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified DebugRemoveBreakpointRequest message, length delimited. Does not implicitly {@link api.DebugRemoveBreakpointRequest.verify|verify} messages.
+         * @param message DebugRemoveBreakpointRequest message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.DebugRemoveBreakpointRequest, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a DebugRemoveBreakpointRequest message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns DebugRemoveBreakpointRequest
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.DebugRemoveBreakpointRequest;
+
+        /**
+         * Decodes a DebugRemoveBreakpointRequest message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns DebugRemoveBreakpointRequest
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.DebugRemoveBreakpointRequest;
+
+        /**
+         * Verifies a DebugRemoveBreakpointRequest message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a DebugRemoveBreakpointRequest message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns DebugRemoveBreakpointRequest
+         */
+        public static fromObject(object: { [k: string]: any }): api.DebugRemoveBreakpointRequest;
+
+        /**
+         * Creates a plain object from a DebugRemoveBreakpointRequest message. Also converts values to other types if specified.
+         * @param message DebugRemoveBreakpointRequest
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.DebugRemoveBreakpointRequest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this DebugRemoveBreakpointRequest to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a DebugBreakpointEvent. */
+    interface IDebugBreakpointEvent {
+
+        /** DebugBreakpointEvent path */
+        path?: (string|null);
+
+        /** DebugBreakpointEvent breakpoints */
+        breakpoints?: ((api.DebugBreakpoint|api.IDebugBreakpoint)[]|null);
+    }
+
+    /** Represents a DebugBreakpointEvent. */
+    class DebugBreakpointEvent {
+
+        /**
+         * Constructs a new DebugBreakpointEvent.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IDebugBreakpointEvent);
+
+        /** DebugBreakpointEvent path. */
+        public path: string;
+
+        /** DebugBreakpointEvent breakpoints. */
+        public breakpoints: api.DebugBreakpoint[];
+
+        /**
+         * Creates a new DebugBreakpointEvent instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns DebugBreakpointEvent instance
+         */
+        public static create(properties?: api.IDebugBreakpointEvent): api.DebugBreakpointEvent;
+
+        /**
+         * Encodes the specified DebugBreakpointEvent message. Does not implicitly {@link api.DebugBreakpointEvent.verify|verify} messages.
+         * @param message DebugBreakpointEvent message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.DebugBreakpointEvent, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified DebugBreakpointEvent message, length delimited. Does not implicitly {@link api.DebugBreakpointEvent.verify|verify} messages.
+         * @param message DebugBreakpointEvent message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.DebugBreakpointEvent, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a DebugBreakpointEvent message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns DebugBreakpointEvent
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.DebugBreakpointEvent;
+
+        /**
+         * Decodes a DebugBreakpointEvent message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns DebugBreakpointEvent
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.DebugBreakpointEvent;
+
+        /**
+         * Verifies a DebugBreakpointEvent message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a DebugBreakpointEvent message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns DebugBreakpointEvent
+         */
+        public static fromObject(object: { [k: string]: any }): api.DebugBreakpointEvent;
+
+        /**
+         * Creates a plain object from a DebugBreakpointEvent message. Also converts values to other types if specified.
+         * @param message DebugBreakpointEvent
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.DebugBreakpointEvent, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this DebugBreakpointEvent to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a DebugBreakpoint. */
+    interface IDebugBreakpoint {
+
+        /** DebugBreakpoint breakpointId */
+        breakpointId?: (string|null);
+
+        /** DebugBreakpoint line */
+        line?: (number|null);
+
+        /** DebugBreakpoint otVersion */
+        otVersion?: (number|null);
+
+        /** DebugBreakpoint otIndex */
+        otIndex?: (number|null);
+    }
+
+    /** Represents a DebugBreakpoint. */
+    class DebugBreakpoint {
+
+        /**
+         * Constructs a new DebugBreakpoint.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IDebugBreakpoint);
+
+        /** DebugBreakpoint breakpointId. */
+        public breakpointId: string;
+
+        /** DebugBreakpoint line. */
+        public line: number;
+
+        /** DebugBreakpoint otVersion. */
+        public otVersion: number;
+
+        /** DebugBreakpoint otIndex. */
+        public otIndex: number;
+
+        /**
+         * Creates a new DebugBreakpoint instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns DebugBreakpoint instance
+         */
+        public static create(properties?: api.IDebugBreakpoint): api.DebugBreakpoint;
+
+        /**
+         * Encodes the specified DebugBreakpoint message. Does not implicitly {@link api.DebugBreakpoint.verify|verify} messages.
+         * @param message DebugBreakpoint message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.DebugBreakpoint, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified DebugBreakpoint message, length delimited. Does not implicitly {@link api.DebugBreakpoint.verify|verify} messages.
+         * @param message DebugBreakpoint message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.DebugBreakpoint, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a DebugBreakpoint message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns DebugBreakpoint
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.DebugBreakpoint;
+
+        /**
+         * Decodes a DebugBreakpoint message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns DebugBreakpoint
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.DebugBreakpoint;
+
+        /**
+         * Verifies a DebugBreakpoint message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a DebugBreakpoint message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns DebugBreakpoint
+         */
+        public static fromObject(object: { [k: string]: any }): api.DebugBreakpoint;
+
+        /**
+         * Creates a plain object from a DebugBreakpoint message. Also converts values to other types if specified.
+         * @param message DebugBreakpoint
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.DebugBreakpoint, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this DebugBreakpoint to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
     /** Properties of a DotReplit. */
     interface IDotReplit {
 
@@ -12043,6 +12463,9 @@ export namespace api {
 
         /** DotReplit packager */
         packager?: (api.DotReplitPackager|api.IDotReplitPackager|null);
+
+        /** DotReplit interpreter */
+        interpreter?: (api.DotReplitInterp|api.IDotReplitInterp|null);
     }
 
     /** Represents a DotReplit. */
@@ -12071,6 +12494,9 @@ export namespace api {
 
         /** DotReplit packager. */
         public packager?: (api.DotReplitPackager|null);
+
+        /** DotReplit interpreter. */
+        public interpreter?: (api.DotReplitInterp|null);
 
         /**
          * Creates a new DotReplit instance using the specified properties.
@@ -12143,11 +12569,116 @@ export namespace api {
         public toJSON(): { [k: string]: any };
     }
 
+    /** Properties of a DotReplitInterp. */
+    interface IDotReplitInterp {
+
+        /** DotReplitInterp command */
+        command?: (api.Exec|api.IExec|null);
+
+        /** DotReplitInterp prompt */
+        prompt?: (Uint8Array|null);
+    }
+
+    /** Represents a DotReplitInterp. */
+    class DotReplitInterp {
+
+        /**
+         * Constructs a new DotReplitInterp.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IDotReplitInterp);
+
+        /** DotReplitInterp command. */
+        public command?: (api.Exec|null);
+
+        /** DotReplitInterp prompt. */
+        public prompt: Uint8Array;
+
+        /**
+         * Creates a new DotReplitInterp instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns DotReplitInterp instance
+         */
+        public static create(properties?: api.IDotReplitInterp): api.DotReplitInterp;
+
+        /**
+         * Encodes the specified DotReplitInterp message. Does not implicitly {@link api.DotReplitInterp.verify|verify} messages.
+         * @param message DotReplitInterp message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.DotReplitInterp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified DotReplitInterp message, length delimited. Does not implicitly {@link api.DotReplitInterp.verify|verify} messages.
+         * @param message DotReplitInterp message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.DotReplitInterp, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a DotReplitInterp message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns DotReplitInterp
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.DotReplitInterp;
+
+        /**
+         * Decodes a DotReplitInterp message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns DotReplitInterp
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.DotReplitInterp;
+
+        /**
+         * Verifies a DotReplitInterp message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a DotReplitInterp message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns DotReplitInterp
+         */
+        public static fromObject(object: { [k: string]: any }): api.DotReplitInterp;
+
+        /**
+         * Creates a plain object from a DotReplitInterp message. Also converts values to other types if specified.
+         * @param message DotReplitInterp
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.DotReplitInterp, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this DotReplitInterp to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
     /** Properties of a DotReplitPackager. */
     interface IDotReplitPackager {
 
         /** DotReplitPackager afterInstall */
         afterInstall?: (api.Exec|api.IExec|null);
+
+        /** DotReplitPackager language */
+        language?: (string|null);
+
+        /** DotReplitPackager features */
+        features?: (api.DotReplitPackagerFeatures|api.IDotReplitPackagerFeatures|null);
+
+        /** DotReplitPackager env */
+        env?: ({ [k: string]: string }|null);
 
         /** DotReplitPackager ignoredPaths */
         ignoredPaths?: (string[]|null);
@@ -12167,6 +12698,15 @@ export namespace api {
 
         /** DotReplitPackager afterInstall. */
         public afterInstall?: (api.Exec|null);
+
+        /** DotReplitPackager language. */
+        public language: string;
+
+        /** DotReplitPackager features. */
+        public features?: (api.DotReplitPackagerFeatures|null);
+
+        /** DotReplitPackager env. */
+        public env: { [k: string]: string };
 
         /** DotReplitPackager ignoredPaths. */
         public ignoredPaths: string[];
@@ -12240,6 +12780,102 @@ export namespace api {
 
         /**
          * Converts this DotReplitPackager to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a DotReplitPackagerFeatures. */
+    interface IDotReplitPackagerFeatures {
+
+        /** DotReplitPackagerFeatures packageSearch */
+        packageSearch?: (boolean|null);
+
+        /** DotReplitPackagerFeatures guessImports */
+        guessImports?: (boolean|null);
+    }
+
+    /** Represents a DotReplitPackagerFeatures. */
+    class DotReplitPackagerFeatures {
+
+        /**
+         * Constructs a new DotReplitPackagerFeatures.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IDotReplitPackagerFeatures);
+
+        /** DotReplitPackagerFeatures packageSearch. */
+        public packageSearch: boolean;
+
+        /** DotReplitPackagerFeatures guessImports. */
+        public guessImports: boolean;
+
+        /**
+         * Creates a new DotReplitPackagerFeatures instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns DotReplitPackagerFeatures instance
+         */
+        public static create(properties?: api.IDotReplitPackagerFeatures): api.DotReplitPackagerFeatures;
+
+        /**
+         * Encodes the specified DotReplitPackagerFeatures message. Does not implicitly {@link api.DotReplitPackagerFeatures.verify|verify} messages.
+         * @param message DotReplitPackagerFeatures message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.DotReplitPackagerFeatures, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified DotReplitPackagerFeatures message, length delimited. Does not implicitly {@link api.DotReplitPackagerFeatures.verify|verify} messages.
+         * @param message DotReplitPackagerFeatures message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.DotReplitPackagerFeatures, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a DotReplitPackagerFeatures message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns DotReplitPackagerFeatures
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.DotReplitPackagerFeatures;
+
+        /**
+         * Decodes a DotReplitPackagerFeatures message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns DotReplitPackagerFeatures
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.DotReplitPackagerFeatures;
+
+        /**
+         * Verifies a DotReplitPackagerFeatures message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a DotReplitPackagerFeatures message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns DotReplitPackagerFeatures
+         */
+        public static fromObject(object: { [k: string]: any }): api.DotReplitPackagerFeatures;
+
+        /**
+         * Creates a plain object from a DotReplitPackagerFeatures message. Also converts values to other types if specified.
+         * @param message DotReplitPackagerFeatures
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.DotReplitPackagerFeatures, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this DotReplitPackagerFeatures to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
