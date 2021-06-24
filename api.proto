@@ -231,6 +231,17 @@ message Command {
 
     DebugSessions debugSessions = 377;
 
+    // DebugAddBreakpointRequest/DebugRemoveBreakpointRequest can be sent to
+    // add/remove a breakpoint. A DebugBreakpointEvent will be broadcast if the
+    // breakpoints changed. This will reply with OK on success, or an error on
+    // failure.
+    DebugAddBreakpointRequest debugAddBreakpointRequest = 380;
+    DebugRemoveBreakpointRequest debugRemoveBreakpointRequest = 381;
+
+    // DebugBreakpointEvent is sent to all clients when a list of breakpoints
+    // changes.
+    DebugBreakpointEvent debugBreakpointEvent = 383;
+
     // DotReplit
     //
     // The dotreplit service lets the caller get the pre-parsed contents of
@@ -950,6 +961,48 @@ message DotReplitGetResponse {
   DotReplit dotReplit = 1;
 }
 
+// The message used to request to add a new breakpoint.
+message DebugAddBreakpointRequest {
+  string path = 1;
+
+  // The OT version and 0-based index (in Unicode codepoints) in which the
+  // breakpoint is inserted. It is recommended to attach the breakpoint to the
+  // first non-whitespace character in the line, so that it better tracks the
+  // breakpoint location.
+  uint32 otVersion = 2;
+  uint32 otIndex = 3;
+
+  // The 1-indexed line number in which the debugger breakpoint will be added.
+  // This is used as a fallback in case the file does not have OT history
+  // available.
+  int32 line = 4;
+}
+
+// The message used to request to remove an existing breakpoint.
+message DebugRemoveBreakpointRequest {
+  string breakpoint_id = 2;
+}
+
+// The message used to notify about when the breakpoints for a file changed.
+message DebugBreakpointEvent {
+  string path = 1;
+  repeated DebugBreakpoint breakpoints = 2;
+}
+
+// The message that represents a single breakpoint for a file.
+message DebugBreakpoint {
+  // The globally-unique ID for a breakpoint.
+  string breakpoint_id = 1;
+  // The 1-indexed line number for the breakpoint.
+  int32 line = 2;
+  // The OT version and 0-based index (in Unicode codepoints) in which the
+  // breakpoint is inserted. It is recommended to attach the breakpoint to the
+  // first non-whitespace character in the line, so that it better tracks the
+  // breakpoint location.
+  uint32 otVersion = 3;
+  uint32 otIndex = 4;
+}
+
 // DotReplit is a .proto representation of types.DotReplit.
 message DotReplit {
   Exec run = 1;
@@ -958,13 +1011,29 @@ message DotReplit {
   string language= 4;
   Exec onBoot = 5;
   DotReplitPackager packager = 6;
+  DotReplitInterp interpreter = 7;
+}
+
+message DotReplitInterp {
+  Exec command = 1;
+  bytes prompt = 2;
 }
 
 // DotReplitPackager is a .proto representation of types.Packager.
 message DotReplitPackager {
   Exec afterInstall = 1;
+
+  string language = 4;
+  DotReplitPackagerFeatures features = 5;
+  map<string, string> env = 6;
+
   repeated string ignoredPaths = 2;
   repeated string ignoredPackages = 3;
+}
+
+message DotReplitPackagerFeatures {
+  bool packageSearch = 1;
+  bool guessImports = 2;
 }
 
 // DebuggerConfig is the configuration for the debugger. Right now,
