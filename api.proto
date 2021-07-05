@@ -985,7 +985,10 @@ message DebugRemoveBreakpointRequest {
 
 // The message used to notify about when the breakpoints for a file changed.
 message DebugBreakpointEvent {
+  // The repl-relative path of the file.
   string path = 1;
+  // The absolute path of the file.
+  string absolutePath = 3;
   repeated DebugBreakpoint breakpoints = 2;
 }
 
@@ -1012,6 +1015,7 @@ message DotReplit {
   Exec onBoot = 5;
   DotReplitPackager packager = 6;
   DotReplitInterp interpreter = 7;
+  string entrypoint = 8;
 }
 
 message DotReplitInterp {

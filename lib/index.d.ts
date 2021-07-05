@@ -12245,6 +12245,9 @@ export namespace api {
         /** DebugBreakpointEvent path */
         path?: (string|null);
 
+        /** DebugBreakpointEvent absolutePath */
+        absolutePath?: (string|null);
+
         /** DebugBreakpointEvent breakpoints */
         breakpoints?: ((api.DebugBreakpoint|api.IDebugBreakpoint)[]|null);
     }
@@ -12260,6 +12263,9 @@ export namespace api {
 
         /** DebugBreakpointEvent path. */
         public path: string;
+
+        /** DebugBreakpointEvent absolutePath. */
+        public absolutePath: string;
 
         /** DebugBreakpointEvent breakpoints. */
         public breakpoints: api.DebugBreakpoint[];
@@ -12466,6 +12472,9 @@ export namespace api {
 
         /** DotReplit interpreter */
         interpreter?: (api.DotReplitInterp|api.IDotReplitInterp|null);
+
+        /** DotReplit entrypoint */
+        entrypoint?: (string|null);
     }
 
     /** Represents a DotReplit. */
@@ -12497,6 +12506,9 @@ export namespace api {
 
         /** DotReplit interpreter. */
         public interpreter?: (api.DotReplitInterp|null);
+
+        /** DotReplit entrypoint. */
+        public entrypoint: string;
 
         /**
          * Creates a new DotReplit instance using the specified properties.
