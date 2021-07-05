@@ -16877,6 +16877,11 @@ declare type api$IDebugBreakpointEvent = {|
   path?: string | null,
 
   /**
+   * DebugBreakpointEvent absolutePath
+   */
+  absolutePath?: string | null,
+
+  /**
    * DebugBreakpointEvent breakpoints
    */
   breakpoints?: (api$DebugBreakpoint | api$IDebugBreakpoint)[] | null,
@@ -16896,6 +16901,11 @@ declare class api$DebugBreakpointEvent {
    * DebugBreakpointEvent path.
    */
   path: string;
+
+  /**
+   * DebugBreakpointEvent absolutePath.
+   */
+  absolutePath: string;
 
   /**
    * DebugBreakpointEvent breakpoints.
@@ -17183,6 +17193,11 @@ declare type api$IDotReplit = {|
    * DotReplit interpreter
    */
   interpreter?: api$DotReplitInterp | api$IDotReplitInterp | null,
+
+  /**
+   * DotReplit entrypoint
+   */
+  entrypoint?: string | null,
 |};
 
 /**
@@ -17229,6 +17244,11 @@ declare class api$DotReplit {
    * DotReplit interpreter.
    */
   interpreter?: api$DotReplitInterp | null;
+
+  /**
+   * DotReplit entrypoint.
+   */
+  entrypoint: string;
 
   /**
    * Creates a new DotReplit instance using the specified properties.
