@@ -7,7 +7,7 @@
   "author": "faris@repl.it",
   "license": "MIT",
   "scripts": {
-    "prepublishOnly": "pbjs --force-number --force-message -t static-module -w default -o index.js ../api.proto ../client.proto && ./tools/jsdoc.js < index.js > .index.js && mv .index.js index.js && pbts -o index.d.ts index.js && sed -i.bak 's/constructor(/private constructor(/' index.d.ts && rm -f index.d.ts.bak && flowgen --interface-records --no-inexact --add-flow-header --output-file index.js.flow index.d.ts && sed -i.bak 's/declare var api: typeof npm\\$namespace\\$api;/export var api = npm$namespace$api;/' index.js.flow && rm -f index.js.flow.bak"
+    "prepublishOnly": "pbjs --force-number --force-message -t static-module -w default -o index.js ../api.proto ../client.proto ../signing.proto && ./tools/jsdoc.js < index.js > .index.js && mv .index.js index.js && pbts -o index.d.ts index.js && sed -i.bak 's/constructor(/private constructor(/' index.d.ts && rm -f index.d.ts.bak && flowgen --interface-records --no-inexact --add-flow-header --output-file index.js.flow index.d.ts && sed -i.bak 's/declare var api: typeof npm\\$namespace\\$api;/export var api = npm$namespace$api;/' index.js.flow && rm -f index.js.flow.bak"
   },
   "dependencies": {
     "protobufjs": "^6.10.2"

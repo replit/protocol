@@ -13792,96 +13792,6 @@ export namespace api {
         }
     }
 
-    /** Properties of a GovalTokenMetadata. */
-    interface IGovalTokenMetadata {
-
-        /** GovalTokenMetadata keyId */
-        keyId?: (string|null);
-    }
-
-    /** Represents a GovalTokenMetadata. */
-    class GovalTokenMetadata {
-
-        /**
-         * Constructs a new GovalTokenMetadata.
-         * @param [properties] Properties to set
-         */
-        private constructor(properties?: api.IGovalTokenMetadata);
-
-        /** GovalTokenMetadata keyId. */
-        public keyId: string;
-
-        /**
-         * Creates a new GovalTokenMetadata instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns GovalTokenMetadata instance
-         */
-        public static create(properties?: api.IGovalTokenMetadata): api.GovalTokenMetadata;
-
-        /**
-         * Encodes the specified GovalTokenMetadata message. Does not implicitly {@link api.GovalTokenMetadata.verify|verify} messages.
-         * @param message GovalTokenMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: api.GovalTokenMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified GovalTokenMetadata message, length delimited. Does not implicitly {@link api.GovalTokenMetadata.verify|verify} messages.
-         * @param message GovalTokenMetadata message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: api.GovalTokenMetadata, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes a GovalTokenMetadata message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns GovalTokenMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.GovalTokenMetadata;
-
-        /**
-         * Decodes a GovalTokenMetadata message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns GovalTokenMetadata
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.GovalTokenMetadata;
-
-        /**
-         * Verifies a GovalTokenMetadata message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates a GovalTokenMetadata message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns GovalTokenMetadata
-         */
-        public static fromObject(object: { [k: string]: any }): api.GovalTokenMetadata;
-
-        /**
-         * Creates a plain object from a GovalTokenMetadata message. Also converts values to other types if specified.
-         * @param message GovalTokenMetadata
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: api.GovalTokenMetadata, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this GovalTokenMetadata to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-    }
-
     /** Properties of a TLSCertificate. */
     interface ITLSCertificate {
 
@@ -14495,6 +14405,447 @@ export namespace api {
 
         /**
          * Converts this EvictReplResponse to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** TokenVersion enum. */
+    enum TokenVersion {
+        BARE_REPL_TOKEN = 0,
+        TYPE_AWARE_TOKEN = 1
+    }
+
+    /** Properties of a GovalSigningAuthority. */
+    interface IGovalSigningAuthority {
+
+        /** GovalSigningAuthority keyId */
+        keyId?: (string|null);
+
+        /** GovalSigningAuthority signedCert */
+        signedCert?: (string|null);
+
+        /** GovalSigningAuthority version */
+        version?: (api.TokenVersion|null);
+    }
+
+    /** Represents a GovalSigningAuthority. */
+    class GovalSigningAuthority {
+
+        /**
+         * Constructs a new GovalSigningAuthority.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IGovalSigningAuthority);
+
+        /** GovalSigningAuthority keyId. */
+        public keyId: string;
+
+        /** GovalSigningAuthority signedCert. */
+        public signedCert: string;
+
+        /** GovalSigningAuthority version. */
+        public version: api.TokenVersion;
+
+        /** GovalSigningAuthority cert. */
+        public cert?: ("keyId"|"signedCert");
+
+        /**
+         * Creates a new GovalSigningAuthority instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns GovalSigningAuthority instance
+         */
+        public static create(properties?: api.IGovalSigningAuthority): api.GovalSigningAuthority;
+
+        /**
+         * Encodes the specified GovalSigningAuthority message. Does not implicitly {@link api.GovalSigningAuthority.verify|verify} messages.
+         * @param message GovalSigningAuthority message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.GovalSigningAuthority, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified GovalSigningAuthority message, length delimited. Does not implicitly {@link api.GovalSigningAuthority.verify|verify} messages.
+         * @param message GovalSigningAuthority message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.GovalSigningAuthority, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a GovalSigningAuthority message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns GovalSigningAuthority
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.GovalSigningAuthority;
+
+        /**
+         * Decodes a GovalSigningAuthority message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns GovalSigningAuthority
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.GovalSigningAuthority;
+
+        /**
+         * Verifies a GovalSigningAuthority message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a GovalSigningAuthority message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns GovalSigningAuthority
+         */
+        public static fromObject(object: { [k: string]: any }): api.GovalSigningAuthority;
+
+        /**
+         * Creates a plain object from a GovalSigningAuthority message. Also converts values to other types if specified.
+         * @param message GovalSigningAuthority
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.GovalSigningAuthority, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this GovalSigningAuthority to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** FlagClaim enum. */
+    enum FlagClaim {
+        MINT_GOVAL_TOKEN = 0,
+        SIGN_INTERMEDIATE_CERT = 1
+    }
+
+    /** Properties of a CertificateClaim. */
+    interface ICertificateClaim {
+
+        /** CertificateClaim replid */
+        replid?: (string|null);
+
+        /** CertificateClaim user */
+        user?: (string|null);
+
+        /** CertificateClaim flag */
+        flag?: (api.FlagClaim|null);
+    }
+
+    /** Represents a CertificateClaim. */
+    class CertificateClaim {
+
+        /**
+         * Constructs a new CertificateClaim.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.ICertificateClaim);
+
+        /** CertificateClaim replid. */
+        public replid: string;
+
+        /** CertificateClaim user. */
+        public user: string;
+
+        /** CertificateClaim flag. */
+        public flag: api.FlagClaim;
+
+        /** CertificateClaim claim. */
+        public claim?: ("replid"|"user"|"flag");
+
+        /**
+         * Creates a new CertificateClaim instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns CertificateClaim instance
+         */
+        public static create(properties?: api.ICertificateClaim): api.CertificateClaim;
+
+        /**
+         * Encodes the specified CertificateClaim message. Does not implicitly {@link api.CertificateClaim.verify|verify} messages.
+         * @param message CertificateClaim message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.CertificateClaim, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified CertificateClaim message, length delimited. Does not implicitly {@link api.CertificateClaim.verify|verify} messages.
+         * @param message CertificateClaim message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.CertificateClaim, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a CertificateClaim message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns CertificateClaim
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.CertificateClaim;
+
+        /**
+         * Decodes a CertificateClaim message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns CertificateClaim
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.CertificateClaim;
+
+        /**
+         * Verifies a CertificateClaim message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a CertificateClaim message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns CertificateClaim
+         */
+        public static fromObject(object: { [k: string]: any }): api.CertificateClaim;
+
+        /**
+         * Creates a plain object from a CertificateClaim message. Also converts values to other types if specified.
+         * @param message CertificateClaim
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.CertificateClaim, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this CertificateClaim to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a GovalCert. */
+    interface IGovalCert {
+
+        /** GovalCert iat */
+        iat?: (google.protobuf.Timestamp|google.protobuf.ITimestamp|null);
+
+        /** GovalCert exp */
+        exp?: (google.protobuf.Timestamp|google.protobuf.ITimestamp|null);
+
+        /** GovalCert claims */
+        claims?: ((api.CertificateClaim|api.ICertificateClaim)[]|null);
+
+        /** GovalCert publicKey */
+        publicKey?: (string|null);
+    }
+
+    /** Represents a GovalCert. */
+    class GovalCert {
+
+        /**
+         * Constructs a new GovalCert.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IGovalCert);
+
+        /** GovalCert iat. */
+        public iat?: (google.protobuf.Timestamp|null);
+
+        /** GovalCert exp. */
+        public exp?: (google.protobuf.Timestamp|null);
+
+        /** GovalCert claims. */
+        public claims: api.CertificateClaim[];
+
+        /** GovalCert publicKey. */
+        public publicKey: string;
+
+        /**
+         * Creates a new GovalCert instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns GovalCert instance
+         */
+        public static create(properties?: api.IGovalCert): api.GovalCert;
+
+        /**
+         * Encodes the specified GovalCert message. Does not implicitly {@link api.GovalCert.verify|verify} messages.
+         * @param message GovalCert message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.GovalCert, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified GovalCert message, length delimited. Does not implicitly {@link api.GovalCert.verify|verify} messages.
+         * @param message GovalCert message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.GovalCert, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a GovalCert message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns GovalCert
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.GovalCert;
+
+        /**
+         * Decodes a GovalCert message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns GovalCert
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.GovalCert;
+
+        /**
+         * Verifies a GovalCert message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a GovalCert message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns GovalCert
+         */
+        public static fromObject(object: { [k: string]: any }): api.GovalCert;
+
+        /**
+         * Creates a plain object from a GovalCert message. Also converts values to other types if specified.
+         * @param message GovalCert
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.GovalCert, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this GovalCert to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a GovalToken. */
+    interface IGovalToken {
+
+        /** GovalToken iat */
+        iat?: (google.protobuf.Timestamp|google.protobuf.ITimestamp|null);
+
+        /** GovalToken exp */
+        exp?: (google.protobuf.Timestamp|google.protobuf.ITimestamp|null);
+
+        /** GovalToken replid */
+        replid?: (string|null);
+
+        /** GovalToken replToken */
+        replToken?: (api.ReplToken|api.IReplToken|null);
+    }
+
+    /** Represents a GovalToken. */
+    class GovalToken {
+
+        /**
+         * Constructs a new GovalToken.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IGovalToken);
+
+        /** GovalToken iat. */
+        public iat?: (google.protobuf.Timestamp|null);
+
+        /** GovalToken exp. */
+        public exp?: (google.protobuf.Timestamp|null);
+
+        /** GovalToken replid. */
+        public replid: string;
+
+        /** GovalToken replToken. */
+        public replToken?: (api.ReplToken|null);
+
+        /** GovalToken Token. */
+        public Token?: "replToken";
+
+        /**
+         * Creates a new GovalToken instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns GovalToken instance
+         */
+        public static create(properties?: api.IGovalToken): api.GovalToken;
+
+        /**
+         * Encodes the specified GovalToken message. Does not implicitly {@link api.GovalToken.verify|verify} messages.
+         * @param message GovalToken message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.GovalToken, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified GovalToken message, length delimited. Does not implicitly {@link api.GovalToken.verify|verify} messages.
+         * @param message GovalToken message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.GovalToken, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a GovalToken message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns GovalToken
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.GovalToken;
+
+        /**
+         * Decodes a GovalToken message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns GovalToken
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.GovalToken;
+
+        /**
+         * Verifies a GovalToken message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a GovalToken message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns GovalToken
+         */
+        public static fromObject(object: { [k: string]: any }): api.GovalToken;
+
+        /**
+         * Creates a plain object from a GovalToken message. Also converts values to other types if specified.
+         * @param message GovalToken
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.GovalToken, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this GovalToken to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };

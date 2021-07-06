@@ -1,0 +1,135 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+import "api/client.proto";
+
+package api;
+option go_package = "/api";
+
+enum TokenVersion {
+  // Body contains are bare ReplToken and must be decoded explicitly
+  BARE_REPL_TOKEN = 0;
+  // Body contains a GovalToken and can be interrogated about the type of its own
+  // message
+  TYPE_AWARE_TOKEN = 1;
+}
+
+// GovalSigningAuthority is information about a goval token, that can be used to
+// validate it. It is stored in the footer of the PASETO.
+message GovalSigningAuthority {
+  oneof cert {
+    // The ID of the root public key that was used to sign the token.
+    string key_id = 1;
+
+    // A signed PASETO with a GovalCert in the body and the GovalSigningAuthority
+    // used to sign the body in the footer.
+    string signed_cert = 2;
+  }
+
+  // An enum detailing how the body of the PASETO this is a footer of should
+  // be decoded
+  TokenVersion version = 3;
+}
+
+enum FlagClaim {
+  // Cert has the authority to sign ReplToken messages that can be validated
+  // by goval
+  MINT_GOVAL_TOKEN = 0;
+
+  // Cert has the authority to sign additional intermediate certs. (The claims
+  // on intermediate certs signed by this cert are still enforced.)
+  SIGN_INTERMEDIATE_CERT = 1;
+}
+
+// Claims are actions that a cert is allowed to do. Claims can be repeated (e.g.
+// to allow a cert to apply to multiple replids or users).
+//
+// Claims should be enforced on certificates by ensuring that certificates
+// are signed by a certificate that has a superset of claims.
+//
+// When a cert is used to sign a message, it is the responsibility of the service
+// validating the message to ensure that any requests in the message are backed
+// up by claims in the certificate. Claims in a single certificate should be
+// interpreted as a union (e.g. if replid and user is set, the token may apply
+// to any repls owned by the user, or any repls in replid, regardless of the
+// owner).
+message CertificateClaim {
+  oneof claim {
+    // This cert has the authority to sign messages on behalf of a replid
+    string replid = 1;
+    // This cert has the authority to sign messages on behalf of a user
+    string user = 2;
+    // This cert has the authority to perform an action as described in FlagClaim
+    FlagClaim flag = 3;
+  }
+}
+
+// GovalCert provides a mechanism of establishing a chain of trust without
+// requiring a single private key to be duplciated to all services that send messages.
+// The processes of generating intermediate certs is as follows:
+// - A PASETO `v2.public` root keypair is generated and added to GSM with an
+//   arbitrary key id.
+// - The root public key id is encoded in a GovalSigningAuthority
+// - An intermediate PASETO `v2.public` keypair is generated
+// - The intermediate public key is encoded in a GovalCert, along with
+//   information about the lifetime and claims of that cert.
+// - The GovalCert is encoded in the body of a PASETO and signed with the root
+//   private key. The root signing authority is inserted into the footer of the
+//   PASETO to use for validation.
+// - This signed PASETO is encoded in another GovalSigningAuthority and appended
+//   as the footer of PASETOs signed by the intermediate private key.
+// Additional intermediate certs can be generated and signed by private key and
+// signing authority of the previous cert.
+//
+// When validating a chain of certs, the footer of each wrapped PASETO is
+// recursed until reaching a root key id. The body of that PASETO is
+// validated with the root public key. The body is decoded into a GovalCert,
+// its lifetime is checked, and the public key is pulled out and used to validate
+// the next PASETO, continuing back up the chain.
+// At each step along the chain (except for the root), the claims of a certificate
+// must be verified to be a subset of the claims of the certificate signing it.
+message GovalCert {
+  // Issue timestamp. Equivalent to JWT's "iat" (Issued At) claim.  Tokens with
+  // no `iat` field will be treated as if they had been issed at the UNIX epoch
+  // (1970-01-01T00:00:00Z).
+  google.protobuf.Timestamp iat = 1;
+
+  // Expiration timestamp. Equivalent to JWT's "exp" (Expiration Time) Claim.
+  // If unset, will default to one hour after `iat`.
+  google.protobuf.Timestamp exp = 2;
+
+  // A list of claims this cert can authorize
+  repeated CertificateClaim claims = 3;
+
+  // The PASETO `v2.public` (Ed25519) public key authorized to sign requests in
+  // this scope. Must be encoded in a PEM PUBLIC KEY block.
+  // (This key is usally generated in nodejs, and nodejs does not provide an
+  // interface to get the raw key bytes)
+  string publicKey = 4;
+}
+
+// A GovalToken should be the body of any PASETO we send
+message GovalToken {
+  // Issue timestamp. Equivalent to JWT's "iat" (Issued At) claim.  Tokens with
+  // no `iat` field will be treated as if they had been issed at the UNIX epoch
+  // (1970-01-01T00:00:00Z).
+  google.protobuf.Timestamp iat = 1;
+
+  // Expiration timestamp. Equivalent to JWT's "exp" (Expiration Time) Claim.
+  // If unset, will default to one hour after `iat`.
+  google.protobuf.Timestamp exp = 2;
+
+  // Tokens are only allowed to act for a single repl, replid is the repl that
+  // this token is authorized for. The validator must check that the replid of
+  // this token agrees with the claims in any of the certs signing it.
+  string replid = 3;
+
+  // The token body, all future tokens should rely on the information in
+  // GovalToken to establish basic validity, and should only add additional
+  // fields. ReplToken has its own iat, exp, and replid for legacy reasons.
+  oneof Token {
+    // This token is used to authorize a request to create a repl in goval
+    ReplToken repl_token = 4;
+  }
+}
