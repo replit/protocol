@@ -194,13 +194,6 @@ message ReplToken {
   Permissions permissions = 15;
 }
 
-// GovalTokenMetadata is information about a goval token, that can be used to
-// validate it. It is stored in the footer of the PASETO.
-message GovalTokenMetadata {
-  // The ID of the key that was used to sign the token.
-  string key_id = 1;
-}
-
 // TLSCertificate is a SSL/TLS certificate for a specific domain. This is used to transfer
 // certificates between clusters when a repl is transferred so we do not need to request
 // a new certificate in the new cluster.
