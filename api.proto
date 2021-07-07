@@ -31,6 +31,8 @@ message Command {
     ContainerState containerState = 9;
     PortOpen portOpen = 10;
     Toast toast = 11;
+    // A protocol error. Will result in a disconnection.
+    ProtocolError protocolError = 45;
 
     Redirect redirect = 12;
 
@@ -555,6 +557,8 @@ message TransferComplete {
 message Clear {}
 
 message Toast { string text = 1; }
+
+message ProtocolError { string text = 1; }
 
 // Redirect indicates that a client should attempt to connect through another
 // URL. This is needed since most browser WebSockets implementations do not

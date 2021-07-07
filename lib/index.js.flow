@@ -71,6 +71,7 @@ declare var npm$namespace$api: {|
   ITransferComplete: Class<api$ITransferComplete>,
   IClear: Class<api$IClear>,
   IToast: Class<api$IToast>,
+  IProtocolError: Class<api$IProtocolError>,
   IRedirect: Class<api$IRedirect>,
   IAlwaysOn: Class<api$IAlwaysOn>,
   IRunMain: Class<api$IRunMain>,
@@ -211,6 +212,7 @@ declare var npm$namespace$api: {|
   TransferComplete: typeof api$TransferComplete,
   Clear: typeof api$Clear,
   Toast: typeof api$Toast,
+  ProtocolError: typeof api$ProtocolError,
   Redirect: typeof api$Redirect,
   AlwaysOn: typeof api$AlwaysOn,
   RunMain: typeof api$RunMain,
@@ -343,6 +345,11 @@ declare type api$ICommand = {|
    * Command toast
    */
   toast?: api$Toast | api$IToast | null,
+
+  /**
+   * Command protocolError
+   */
+  protocolError?: api$ProtocolError | api$IProtocolError | null,
 
   /**
    * Command redirect
@@ -1054,6 +1061,11 @@ declare class api$Command {
   toast?: api$Toast | null;
 
   /**
+   * Command protocolError.
+   */
+  protocolError?: api$ProtocolError | null;
+
+  /**
    * Command redirect.
    */
   redirect?: api$Redirect | null;
@@ -1684,6 +1696,7 @@ declare class api$Command {
     | "containerState"
     | "portOpen"
     | "toast"
+    | "protocolError"
     | "redirect"
     | "alwaysOn"
     | "runMain"
@@ -8965,6 +8978,124 @@ declare class api$Toast {
 
   /**
    * Converts this Toast to JSON.
+   * @returns JSON object
+   */
+  toJSON(): {
+    [k: string]: any,
+  };
+}
+
+/**
+ * Properties of a ProtocolError.
+ */
+declare type api$IProtocolError = {|
+  /**
+   * ProtocolError text
+   */
+  text?: string | null,
+|};
+
+/**
+ * Represents a ProtocolError.
+ */
+declare class api$ProtocolError {
+  /**
+   * Constructs a new ProtocolError.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: api$IProtocolError): this;
+
+  /**
+   * ProtocolError text.
+   */
+  text: string;
+
+  /**
+   * Creates a new ProtocolError instance using the specified properties.
+   * @param [properties] Properties to set
+   * @returns ProtocolError instance
+   */
+  static create(properties?: api$IProtocolError): api$ProtocolError;
+
+  /**
+   * Encodes the specified ProtocolError message. Does not implicitly {@link api.ProtocolError.verify|verify} messages.
+   * @param message ProtocolError message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encode(
+    message: api$ProtocolError,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Encodes the specified ProtocolError message, length delimited. Does not implicitly {@link api.ProtocolError.verify|verify} messages.
+   * @param message ProtocolError message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encodeDelimited(
+    message: api$ProtocolError,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Decodes a ProtocolError message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns ProtocolError
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): api$ProtocolError;
+
+  /**
+   * Decodes a ProtocolError message from the specified reader or buffer, length delimited.
+   * @param reader Reader or buffer to decode from
+   * @returns ProtocolError
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decodeDelimited(
+    reader: $protobuf.Reader | Uint8Array
+  ): api$ProtocolError;
+
+  /**
+   * Verifies a ProtocolError message.
+   * @param message Plain object to verify
+   * @returns `null` if valid, otherwise the reason why it is not
+   */
+  static verify(message: {
+    [k: string]: any,
+  }): string | null;
+
+  /**
+   * Creates a ProtocolError message from a plain object. Also converts values to their respective internal types.
+   * @param object Plain object
+   * @returns ProtocolError
+   */
+  static fromObject(object: {
+    [k: string]: any,
+  }): api$ProtocolError;
+
+  /**
+   * Creates a plain object from a ProtocolError message. Also converts values to other types if specified.
+   * @param message ProtocolError
+   * @param [options] Conversion options
+   * @returns Plain object
+   */
+  static toObject(
+    message: api$ProtocolError,
+    options?: $protobuf.IConversionOptions
+  ): {
+    [k: string]: any,
+  };
+
+  /**
+   * Converts this ProtocolError to JSON.
    * @returns JSON object
    */
   toJSON(): {

@@ -32,6 +32,9 @@ export namespace api {
         /** Command toast */
         toast?: (api.Toast|api.IToast|null);
 
+        /** Command protocolError */
+        protocolError?: (api.ProtocolError|api.IProtocolError|null);
+
         /** Command redirect */
         redirect?: (api.Redirect|api.IRedirect|null);
 
@@ -441,6 +444,9 @@ export namespace api {
         /** Command toast. */
         public toast?: (api.Toast|null);
 
+        /** Command protocolError. */
+        public protocolError?: (api.ProtocolError|null);
+
         /** Command redirect. */
         public redirect?: (api.Redirect|null);
 
@@ -814,7 +820,7 @@ export namespace api {
         public ref: string;
 
         /** Command body. */
-        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"redirect"|"alwaysOn"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"transferStart"|"transferChunk"|"transferComplete"|"transferCancel"|"transfer"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"otTransformSelectionRequest"|"otTransformSelectionResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"openFile"|"fileOpened"|"followUser"|"unfollowUser"|"updateSessionTimestamp"|"sessionTimestampUpdated"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig"|"debugMain"|"debugState"|"debugMainReply"|"debugInput"|"debugOutput"|"debugStop"|"debugLeave"|"debugSessions"|"debugAddBreakpointRequest"|"debugRemoveBreakpointRequest"|"debugBreakpointEvent"|"dotReplitGetRequest"|"dotReplitGetResponse");
+        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"protocolError"|"redirect"|"alwaysOn"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"transferStart"|"transferChunk"|"transferComplete"|"transferCancel"|"transfer"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"otTransformSelectionRequest"|"otTransformSelectionResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"openFile"|"fileOpened"|"followUser"|"unfollowUser"|"updateSessionTimestamp"|"sessionTimestampUpdated"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMeta"|"writeMeta"|"appendMeta"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig"|"debugMain"|"debugState"|"debugMainReply"|"debugInput"|"debugOutput"|"debugStop"|"debugLeave"|"debugSessions"|"debugAddBreakpointRequest"|"debugRemoveBreakpointRequest"|"debugBreakpointEvent"|"dotReplitGetRequest"|"dotReplitGetResponse");
 
         /**
          * Creates a new Command instance using the specified properties.
@@ -6303,6 +6309,96 @@ export namespace api {
 
         /**
          * Converts this Toast to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+    }
+
+    /** Properties of a ProtocolError. */
+    interface IProtocolError {
+
+        /** ProtocolError text */
+        text?: (string|null);
+    }
+
+    /** Represents a ProtocolError. */
+    class ProtocolError {
+
+        /**
+         * Constructs a new ProtocolError.
+         * @param [properties] Properties to set
+         */
+        private constructor(properties?: api.IProtocolError);
+
+        /** ProtocolError text. */
+        public text: string;
+
+        /**
+         * Creates a new ProtocolError instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns ProtocolError instance
+         */
+        public static create(properties?: api.IProtocolError): api.ProtocolError;
+
+        /**
+         * Encodes the specified ProtocolError message. Does not implicitly {@link api.ProtocolError.verify|verify} messages.
+         * @param message ProtocolError message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: api.ProtocolError, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified ProtocolError message, length delimited. Does not implicitly {@link api.ProtocolError.verify|verify} messages.
+         * @param message ProtocolError message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: api.ProtocolError, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a ProtocolError message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns ProtocolError
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): api.ProtocolError;
+
+        /**
+         * Decodes a ProtocolError message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns ProtocolError
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): api.ProtocolError;
+
+        /**
+         * Verifies a ProtocolError message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a ProtocolError message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns ProtocolError
+         */
+        public static fromObject(object: { [k: string]: any }): api.ProtocolError;
+
+        /**
+         * Creates a plain object from a ProtocolError message. Also converts values to other types if specified.
+         * @param message ProtocolError
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: api.ProtocolError, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this ProtocolError to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
