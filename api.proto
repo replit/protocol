@@ -114,6 +114,7 @@ message Command {
     OTPacket ot = 220;
     OTStatus otstatus = 221;
     OTLinkFile otLinkFile = 222;
+    OTLinkFileResponse otLinkFileResponse = 229;
     OTCursor otNewCursor = 223;
     OTCursor otDeleteCursor = 224;
     OTFetchRequest otFetchRequest = 225;
@@ -178,9 +179,14 @@ message Command {
     BootStatus bootStatus = 351;
 
     // metadata store
-    ReadMeta readMeta = 360;
-    WriteMeta writeMeta = 361;
-    AppendMeta appendMeta = 362;
+    ReadMetaRequest readMetaRequest = 360;
+    ReadMetaResponse readMetaResponse = 384;
+
+    WriteMetaRequest writeMetaRequest = 361;
+    WriteMetaResponse writeMetaResponse = 385;
+
+    AppendMetaRequest appendMetaRequest = 362;
+    AppendMetaResponse appendMetaResponse = 386;
 
     // audio
     Audio audio = 363;
@@ -265,20 +271,68 @@ message Audio2 {
   int64 samples = 2;
 }
 
-message ReadMeta {
+// Preconditions that need to be met before an operation starts. If they are
+// not met, the operation will fail.
+message Preconditions {
+  // generation/metageneration are the expected generation numbers of the
+  // metadata file in the storage layer. If set, the write will fail if the
+  // generation does not match the expected value.
+  int64 generation = 1;
+  int64 metageneration = 2;
+
+  // doesNotExist requires the file to not exist beforehand.
+  bool doesNotExist = 3;
+}
+
+message ReadMetaRequest {
   string key = 1;
   bool exists = 2;
   bytes data = 3;
 }
 
-message WriteMeta {
+message ReadMetaResponse {
   string key = 1;
-  bytes data = 2;
+  bool exists = 2;
+  bytes data = 3;
+
+  // generation/metageneration are the generation numbers of the metadata file
+  // in the storage layer.  Will always be non-zero if exists is true.
+  int64 generation = 4;
+  int64 metageneration = 5;
 }
 
-message AppendMeta {
+message WriteMetaRequest {
+  reserved 3, 4;
+
   string key = 1;
   bytes data = 2;
+
+  // Preconditions that need to be met before the file is written to.
+  Preconditions preconditions = 5;
+}
+
+message WriteMetaResponse {
+  // generation/metageneration are the new generation numbers of the metadata
+  // file in the storage layer after being written to.
+  int64 generation = 1;
+  int64 metageneration = 2;
+}
+
+message AppendMetaRequest {
+  reserved 3, 4;
+
+  string key = 1;
+  bytes data = 2;
+
+  // Preconditions that need to be met before the file is appended to.
+  Preconditions preconditions = 5;
+}
+
+message AppendMetaResponse {
+  // generation/metageneration are the new generation numbers of the metadata
+  // file in the storage layer after being written to.
+  int64 generation = 1;
+  int64 metageneration = 2;
 }
 
 message BootStatus {
@@ -335,6 +389,13 @@ message OTLinkFile {
   // The service will now always consider modtime of the file when
   // comparing history with disk content.
   bool OBSOLETE_useModTime = 3 [deprecated = true];
+}
+
+// OTLinkFileResponse contains the latest OT
+// version as well as the linked file, with path and contents populated.
+message OTLinkFileResponse {
+  uint32 version = 1;
+  File linkedFile = 2;
 }
 
 message Auth {
@@ -400,6 +461,8 @@ message FileAuthRes {
   int64 expire = 4;
 
   string error = 5;
+  // Whether this error applies to the whole repl or only to the requested file.
+  bool replError = 7;
 }
 
 message ListObjects { string prefix = 1; }

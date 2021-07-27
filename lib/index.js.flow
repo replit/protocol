@@ -16,9 +16,13 @@ declare var npm$namespace$api: {|
   ICommand: Class<api$ICommand>,
   IAudio: Class<api$IAudio>,
   IAudio2: Class<api$IAudio2>,
-  IReadMeta: Class<api$IReadMeta>,
-  IWriteMeta: Class<api$IWriteMeta>,
-  IAppendMeta: Class<api$IAppendMeta>,
+  IPreconditions: Class<api$IPreconditions>,
+  IReadMetaRequest: Class<api$IReadMetaRequest>,
+  IReadMetaResponse: Class<api$IReadMetaResponse>,
+  IWriteMetaRequest: Class<api$IWriteMetaRequest>,
+  IWriteMetaResponse: Class<api$IWriteMetaResponse>,
+  IAppendMetaRequest: Class<api$IAppendMetaRequest>,
+  IAppendMetaResponse: Class<api$IAppendMetaResponse>,
   IBootStatus: Class<api$IBootStatus>,
   IPid1Config: Class<api$IPid1Config>,
   IFSLock: Class<api$IFSLock>,
@@ -27,6 +31,7 @@ declare var npm$namespace$api: {|
   IFileEvent: Class<api$IFileEvent>,
   IFlush: Class<api$IFlush>,
   IOTLinkFile: Class<api$IOTLinkFile>,
+  IOTLinkFileResponse: Class<api$IOTLinkFileResponse>,
   IAuth: Class<api$IAuth>,
   IVCREntry: Class<api$IVCREntry>,
   IStartVCR: Class<api$IStartVCR>,
@@ -157,9 +162,13 @@ declare var npm$namespace$api: {|
   Command: typeof api$Command,
   Audio: typeof api$Audio,
   Audio2: typeof api$Audio2,
-  ReadMeta: typeof api$ReadMeta,
-  WriteMeta: typeof api$WriteMeta,
-  AppendMeta: typeof api$AppendMeta,
+  Preconditions: typeof api$Preconditions,
+  ReadMetaRequest: typeof api$ReadMetaRequest,
+  ReadMetaResponse: typeof api$ReadMetaResponse,
+  WriteMetaRequest: typeof api$WriteMetaRequest,
+  WriteMetaResponse: typeof api$WriteMetaResponse,
+  AppendMetaRequest: typeof api$AppendMetaRequest,
+  AppendMetaResponse: typeof api$AppendMetaResponse,
   BootStatus: typeof api$BootStatus,
   Pid1Config: typeof api$Pid1Config,
   FSLock: typeof api$FSLock,
@@ -168,6 +177,7 @@ declare var npm$namespace$api: {|
   FileEvent: typeof api$FileEvent,
   Flush: typeof api$Flush,
   OTLinkFile: typeof api$OTLinkFile,
+  OTLinkFileResponse: typeof api$OTLinkFileResponse,
   Auth: typeof api$Auth,
   VCREntry: typeof api$VCREntry,
   StartVCR: typeof api$StartVCR,
@@ -637,6 +647,11 @@ declare type api$ICommand = {|
   otLinkFile?: api$OTLinkFile | api$IOTLinkFile | null,
 
   /**
+   * Command otLinkFileResponse
+   */
+  otLinkFileResponse?: api$OTLinkFileResponse | api$IOTLinkFileResponse | null,
+
+  /**
    * Command otNewCursor
    */
   otNewCursor?: api$OTCursor | api$IOTCursor | null,
@@ -880,19 +895,34 @@ declare type api$ICommand = {|
   bootStatus?: api$BootStatus | api$IBootStatus | null,
 
   /**
-   * Command readMeta
+   * Command readMetaRequest
    */
-  readMeta?: api$ReadMeta | api$IReadMeta | null,
+  readMetaRequest?: api$ReadMetaRequest | api$IReadMetaRequest | null,
 
   /**
-   * Command writeMeta
+   * Command readMetaResponse
    */
-  writeMeta?: api$WriteMeta | api$IWriteMeta | null,
+  readMetaResponse?: api$ReadMetaResponse | api$IReadMetaResponse | null,
 
   /**
-   * Command appendMeta
+   * Command writeMetaRequest
    */
-  appendMeta?: api$AppendMeta | api$IAppendMeta | null,
+  writeMetaRequest?: api$WriteMetaRequest | api$IWriteMetaRequest | null,
+
+  /**
+   * Command writeMetaResponse
+   */
+  writeMetaResponse?: api$WriteMetaResponse | api$IWriteMetaResponse | null,
+
+  /**
+   * Command appendMetaRequest
+   */
+  appendMetaRequest?: api$AppendMetaRequest | api$IAppendMetaRequest | null,
+
+  /**
+   * Command appendMetaResponse
+   */
+  appendMetaResponse?: api$AppendMetaResponse | api$IAppendMetaResponse | null,
 
   /**
    * Command audio
@@ -1351,6 +1381,11 @@ declare class api$Command {
   otLinkFile?: api$OTLinkFile | null;
 
   /**
+   * Command otLinkFileResponse.
+   */
+  otLinkFileResponse?: api$OTLinkFileResponse | null;
+
+  /**
    * Command otNewCursor.
    */
   otNewCursor?: api$OTCursor | null;
@@ -1576,19 +1611,34 @@ declare class api$Command {
   bootStatus?: api$BootStatus | null;
 
   /**
-   * Command readMeta.
+   * Command readMetaRequest.
    */
-  readMeta?: api$ReadMeta | null;
+  readMetaRequest?: api$ReadMetaRequest | null;
 
   /**
-   * Command writeMeta.
+   * Command readMetaResponse.
    */
-  writeMeta?: api$WriteMeta | null;
+  readMetaResponse?: api$ReadMetaResponse | null;
 
   /**
-   * Command appendMeta.
+   * Command writeMetaRequest.
    */
-  appendMeta?: api$AppendMeta | null;
+  writeMetaRequest?: api$WriteMetaRequest | null;
+
+  /**
+   * Command writeMetaResponse.
+   */
+  writeMetaResponse?: api$WriteMetaResponse | null;
+
+  /**
+   * Command appendMetaRequest.
+   */
+  appendMetaRequest?: api$AppendMetaRequest | null;
+
+  /**
+   * Command appendMetaResponse.
+   */
+  appendMetaResponse?: api$AppendMetaResponse | null;
 
   /**
    * Command audio.
@@ -1754,6 +1804,7 @@ declare class api$Command {
     | "ot"
     | "otstatus"
     | "otLinkFile"
+    | "otLinkFileResponse"
     | "otNewCursor"
     | "otDeleteCursor"
     | "otFetchRequest"
@@ -1799,9 +1850,12 @@ declare class api$Command {
     | "pid1Config"
     | "metrics"
     | "bootStatus"
-    | "readMeta"
-    | "writeMeta"
-    | "appendMeta"
+    | "readMetaRequest"
+    | "readMetaResponse"
+    | "writeMetaRequest"
+    | "writeMetaResponse"
+    | "appendMetaRequest"
+    | "appendMetaResponse"
     | "audio"
     | "pprofRequest"
     | "pprofResponse"
@@ -2155,103 +2209,243 @@ declare class api$Audio2 {
 }
 
 /**
- * Properties of a ReadMeta.
+ * Properties of a Preconditions.
  */
-declare type api$IReadMeta = {|
+declare type api$IPreconditions = {|
   /**
-   * ReadMeta key
+   * Preconditions generation
+   */
+  generation?: number | null,
+
+  /**
+   * Preconditions metageneration
+   */
+  metageneration?: number | null,
+
+  /**
+   * Preconditions doesNotExist
+   */
+  doesNotExist?: boolean | null,
+|};
+
+/**
+ * Represents a Preconditions.
+ */
+declare class api$Preconditions {
+  /**
+   * Constructs a new Preconditions.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: api$IPreconditions): this;
+
+  /**
+   * Preconditions generation.
+   */
+  generation: number;
+
+  /**
+   * Preconditions metageneration.
+   */
+  metageneration: number;
+
+  /**
+   * Preconditions doesNotExist.
+   */
+  doesNotExist: boolean;
+
+  /**
+   * Creates a new Preconditions instance using the specified properties.
+   * @param [properties] Properties to set
+   * @returns Preconditions instance
+   */
+  static create(properties?: api$IPreconditions): api$Preconditions;
+
+  /**
+   * Encodes the specified Preconditions message. Does not implicitly {@link api.Preconditions.verify|verify} messages.
+   * @param message Preconditions message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encode(
+    message: api$Preconditions,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Encodes the specified Preconditions message, length delimited. Does not implicitly {@link api.Preconditions.verify|verify} messages.
+   * @param message Preconditions message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encodeDelimited(
+    message: api$Preconditions,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Decodes a Preconditions message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns Preconditions
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): api$Preconditions;
+
+  /**
+   * Decodes a Preconditions message from the specified reader or buffer, length delimited.
+   * @param reader Reader or buffer to decode from
+   * @returns Preconditions
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decodeDelimited(
+    reader: $protobuf.Reader | Uint8Array
+  ): api$Preconditions;
+
+  /**
+   * Verifies a Preconditions message.
+   * @param message Plain object to verify
+   * @returns `null` if valid, otherwise the reason why it is not
+   */
+  static verify(message: {
+    [k: string]: any,
+  }): string | null;
+
+  /**
+   * Creates a Preconditions message from a plain object. Also converts values to their respective internal types.
+   * @param object Plain object
+   * @returns Preconditions
+   */
+  static fromObject(object: {
+    [k: string]: any,
+  }): api$Preconditions;
+
+  /**
+   * Creates a plain object from a Preconditions message. Also converts values to other types if specified.
+   * @param message Preconditions
+   * @param [options] Conversion options
+   * @returns Plain object
+   */
+  static toObject(
+    message: api$Preconditions,
+    options?: $protobuf.IConversionOptions
+  ): {
+    [k: string]: any,
+  };
+
+  /**
+   * Converts this Preconditions to JSON.
+   * @returns JSON object
+   */
+  toJSON(): {
+    [k: string]: any,
+  };
+}
+
+/**
+ * Properties of a ReadMetaRequest.
+ */
+declare type api$IReadMetaRequest = {|
+  /**
+   * ReadMetaRequest key
    */
   key?: string | null,
 
   /**
-   * ReadMeta exists
+   * ReadMetaRequest exists
    */
   exists?: boolean | null,
 
   /**
-   * ReadMeta data
+   * ReadMetaRequest data
    */
   data?: Uint8Array | null,
 |};
 
 /**
- * Represents a ReadMeta.
+ * Represents a ReadMetaRequest.
  */
-declare class api$ReadMeta {
+declare class api$ReadMetaRequest {
   /**
-   * Constructs a new ReadMeta.
+   * Constructs a new ReadMetaRequest.
    * @param [properties] Properties to set
    */
-  constructor(properties?: api$IReadMeta): this;
+  constructor(properties?: api$IReadMetaRequest): this;
 
   /**
-   * ReadMeta key.
+   * ReadMetaRequest key.
    */
   key: string;
 
   /**
-   * ReadMeta exists.
+   * ReadMetaRequest exists.
    */
   exists: boolean;
 
   /**
-   * ReadMeta data.
+   * ReadMetaRequest data.
    */
   data: Uint8Array;
 
   /**
-   * Creates a new ReadMeta instance using the specified properties.
+   * Creates a new ReadMetaRequest instance using the specified properties.
    * @param [properties] Properties to set
-   * @returns ReadMeta instance
+   * @returns ReadMetaRequest instance
    */
-  static create(properties?: api$IReadMeta): api$ReadMeta;
+  static create(properties?: api$IReadMetaRequest): api$ReadMetaRequest;
 
   /**
-   * Encodes the specified ReadMeta message. Does not implicitly {@link api.ReadMeta.verify|verify} messages.
-   * @param message ReadMeta message or plain object to encode
+   * Encodes the specified ReadMetaRequest message. Does not implicitly {@link api.ReadMetaRequest.verify|verify} messages.
+   * @param message ReadMetaRequest message or plain object to encode
    * @param [writer] Writer to encode to
    * @returns Writer
    */
   static encode(
-    message: api$ReadMeta,
+    message: api$ReadMetaRequest,
     writer?: $protobuf.Writer
   ): $protobuf.Writer;
 
   /**
-   * Encodes the specified ReadMeta message, length delimited. Does not implicitly {@link api.ReadMeta.verify|verify} messages.
-   * @param message ReadMeta message or plain object to encode
+   * Encodes the specified ReadMetaRequest message, length delimited. Does not implicitly {@link api.ReadMetaRequest.verify|verify} messages.
+   * @param message ReadMetaRequest message or plain object to encode
    * @param [writer] Writer to encode to
    * @returns Writer
    */
   static encodeDelimited(
-    message: api$ReadMeta,
+    message: api$ReadMetaRequest,
     writer?: $protobuf.Writer
   ): $protobuf.Writer;
 
   /**
-   * Decodes a ReadMeta message from the specified reader or buffer.
+   * Decodes a ReadMetaRequest message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
-   * @returns ReadMeta
+   * @returns ReadMetaRequest
    * @throws {Error} If the payload is not a reader or valid buffer
    * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
   static decode(
     reader: $protobuf.Reader | Uint8Array,
     length?: number
-  ): api$ReadMeta;
+  ): api$ReadMetaRequest;
 
   /**
-   * Decodes a ReadMeta message from the specified reader or buffer, length delimited.
+   * Decodes a ReadMetaRequest message from the specified reader or buffer, length delimited.
    * @param reader Reader or buffer to decode from
-   * @returns ReadMeta
+   * @returns ReadMetaRequest
    * @throws {Error} If the payload is not a reader or valid buffer
    * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  static decodeDelimited(reader: $protobuf.Reader | Uint8Array): api$ReadMeta;
+  static decodeDelimited(
+    reader: $protobuf.Reader | Uint8Array
+  ): api$ReadMetaRequest;
 
   /**
-   * Verifies a ReadMeta message.
+   * Verifies a ReadMetaRequest message.
    * @param message Plain object to verify
    * @returns `null` if valid, otherwise the reason why it is not
    */
@@ -2260,29 +2454,29 @@ declare class api$ReadMeta {
   }): string | null;
 
   /**
-   * Creates a ReadMeta message from a plain object. Also converts values to their respective internal types.
+   * Creates a ReadMetaRequest message from a plain object. Also converts values to their respective internal types.
    * @param object Plain object
-   * @returns ReadMeta
+   * @returns ReadMetaRequest
    */
   static fromObject(object: {
     [k: string]: any,
-  }): api$ReadMeta;
+  }): api$ReadMetaRequest;
 
   /**
-   * Creates a plain object from a ReadMeta message. Also converts values to other types if specified.
-   * @param message ReadMeta
+   * Creates a plain object from a ReadMetaRequest message. Also converts values to other types if specified.
+   * @param message ReadMetaRequest
    * @param [options] Conversion options
    * @returns Plain object
    */
   static toObject(
-    message: api$ReadMeta,
+    message: api$ReadMetaRequest,
     options?: $protobuf.IConversionOptions
   ): {
     [k: string]: any,
   };
 
   /**
-   * Converts this ReadMeta to JSON.
+   * Converts this ReadMetaRequest to JSON.
    * @returns JSON object
    */
   toJSON(): {
@@ -2291,93 +2485,125 @@ declare class api$ReadMeta {
 }
 
 /**
- * Properties of a WriteMeta.
+ * Properties of a ReadMetaResponse.
  */
-declare type api$IWriteMeta = {|
+declare type api$IReadMetaResponse = {|
   /**
-   * WriteMeta key
+   * ReadMetaResponse key
    */
   key?: string | null,
 
   /**
-   * WriteMeta data
+   * ReadMetaResponse exists
+   */
+  exists?: boolean | null,
+
+  /**
+   * ReadMetaResponse data
    */
   data?: Uint8Array | null,
+
+  /**
+   * ReadMetaResponse generation
+   */
+  generation?: number | null,
+
+  /**
+   * ReadMetaResponse metageneration
+   */
+  metageneration?: number | null,
 |};
 
 /**
- * Represents a WriteMeta.
+ * Represents a ReadMetaResponse.
  */
-declare class api$WriteMeta {
+declare class api$ReadMetaResponse {
   /**
-   * Constructs a new WriteMeta.
+   * Constructs a new ReadMetaResponse.
    * @param [properties] Properties to set
    */
-  constructor(properties?: api$IWriteMeta): this;
+  constructor(properties?: api$IReadMetaResponse): this;
 
   /**
-   * WriteMeta key.
+   * ReadMetaResponse key.
    */
   key: string;
 
   /**
-   * WriteMeta data.
+   * ReadMetaResponse exists.
+   */
+  exists: boolean;
+
+  /**
+   * ReadMetaResponse data.
    */
   data: Uint8Array;
 
   /**
-   * Creates a new WriteMeta instance using the specified properties.
-   * @param [properties] Properties to set
-   * @returns WriteMeta instance
+   * ReadMetaResponse generation.
    */
-  static create(properties?: api$IWriteMeta): api$WriteMeta;
+  generation: number;
 
   /**
-   * Encodes the specified WriteMeta message. Does not implicitly {@link api.WriteMeta.verify|verify} messages.
-   * @param message WriteMeta message or plain object to encode
+   * ReadMetaResponse metageneration.
+   */
+  metageneration: number;
+
+  /**
+   * Creates a new ReadMetaResponse instance using the specified properties.
+   * @param [properties] Properties to set
+   * @returns ReadMetaResponse instance
+   */
+  static create(properties?: api$IReadMetaResponse): api$ReadMetaResponse;
+
+  /**
+   * Encodes the specified ReadMetaResponse message. Does not implicitly {@link api.ReadMetaResponse.verify|verify} messages.
+   * @param message ReadMetaResponse message or plain object to encode
    * @param [writer] Writer to encode to
    * @returns Writer
    */
   static encode(
-    message: api$WriteMeta,
+    message: api$ReadMetaResponse,
     writer?: $protobuf.Writer
   ): $protobuf.Writer;
 
   /**
-   * Encodes the specified WriteMeta message, length delimited. Does not implicitly {@link api.WriteMeta.verify|verify} messages.
-   * @param message WriteMeta message or plain object to encode
+   * Encodes the specified ReadMetaResponse message, length delimited. Does not implicitly {@link api.ReadMetaResponse.verify|verify} messages.
+   * @param message ReadMetaResponse message or plain object to encode
    * @param [writer] Writer to encode to
    * @returns Writer
    */
   static encodeDelimited(
-    message: api$WriteMeta,
+    message: api$ReadMetaResponse,
     writer?: $protobuf.Writer
   ): $protobuf.Writer;
 
   /**
-   * Decodes a WriteMeta message from the specified reader or buffer.
+   * Decodes a ReadMetaResponse message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
-   * @returns WriteMeta
+   * @returns ReadMetaResponse
    * @throws {Error} If the payload is not a reader or valid buffer
    * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
   static decode(
     reader: $protobuf.Reader | Uint8Array,
     length?: number
-  ): api$WriteMeta;
+  ): api$ReadMetaResponse;
 
   /**
-   * Decodes a WriteMeta message from the specified reader or buffer, length delimited.
+   * Decodes a ReadMetaResponse message from the specified reader or buffer, length delimited.
    * @param reader Reader or buffer to decode from
-   * @returns WriteMeta
+   * @returns ReadMetaResponse
    * @throws {Error} If the payload is not a reader or valid buffer
    * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  static decodeDelimited(reader: $protobuf.Reader | Uint8Array): api$WriteMeta;
+  static decodeDelimited(
+    reader: $protobuf.Reader | Uint8Array
+  ): api$ReadMetaResponse;
 
   /**
-   * Verifies a WriteMeta message.
+   * Verifies a ReadMetaResponse message.
    * @param message Plain object to verify
    * @returns `null` if valid, otherwise the reason why it is not
    */
@@ -2386,29 +2612,29 @@ declare class api$WriteMeta {
   }): string | null;
 
   /**
-   * Creates a WriteMeta message from a plain object. Also converts values to their respective internal types.
+   * Creates a ReadMetaResponse message from a plain object. Also converts values to their respective internal types.
    * @param object Plain object
-   * @returns WriteMeta
+   * @returns ReadMetaResponse
    */
   static fromObject(object: {
     [k: string]: any,
-  }): api$WriteMeta;
+  }): api$ReadMetaResponse;
 
   /**
-   * Creates a plain object from a WriteMeta message. Also converts values to other types if specified.
-   * @param message WriteMeta
+   * Creates a plain object from a ReadMetaResponse message. Also converts values to other types if specified.
+   * @param message ReadMetaResponse
    * @param [options] Conversion options
    * @returns Plain object
    */
   static toObject(
-    message: api$WriteMeta,
+    message: api$ReadMetaResponse,
     options?: $protobuf.IConversionOptions
   ): {
     [k: string]: any,
   };
 
   /**
-   * Converts this WriteMeta to JSON.
+   * Converts this ReadMetaResponse to JSON.
    * @returns JSON object
    */
   toJSON(): {
@@ -2417,93 +2643,105 @@ declare class api$WriteMeta {
 }
 
 /**
- * Properties of an AppendMeta.
+ * Properties of a WriteMetaRequest.
  */
-declare type api$IAppendMeta = {|
+declare type api$IWriteMetaRequest = {|
   /**
-   * AppendMeta key
+   * WriteMetaRequest key
    */
   key?: string | null,
 
   /**
-   * AppendMeta data
+   * WriteMetaRequest data
    */
   data?: Uint8Array | null,
+
+  /**
+   * WriteMetaRequest preconditions
+   */
+  preconditions?: api$Preconditions | api$IPreconditions | null,
 |};
 
 /**
- * Represents an AppendMeta.
+ * Represents a WriteMetaRequest.
  */
-declare class api$AppendMeta {
+declare class api$WriteMetaRequest {
   /**
-   * Constructs a new AppendMeta.
+   * Constructs a new WriteMetaRequest.
    * @param [properties] Properties to set
    */
-  constructor(properties?: api$IAppendMeta): this;
+  constructor(properties?: api$IWriteMetaRequest): this;
 
   /**
-   * AppendMeta key.
+   * WriteMetaRequest key.
    */
   key: string;
 
   /**
-   * AppendMeta data.
+   * WriteMetaRequest data.
    */
   data: Uint8Array;
 
   /**
-   * Creates a new AppendMeta instance using the specified properties.
-   * @param [properties] Properties to set
-   * @returns AppendMeta instance
+   * WriteMetaRequest preconditions.
    */
-  static create(properties?: api$IAppendMeta): api$AppendMeta;
+  preconditions?: api$Preconditions | null;
 
   /**
-   * Encodes the specified AppendMeta message. Does not implicitly {@link api.AppendMeta.verify|verify} messages.
-   * @param message AppendMeta message or plain object to encode
+   * Creates a new WriteMetaRequest instance using the specified properties.
+   * @param [properties] Properties to set
+   * @returns WriteMetaRequest instance
+   */
+  static create(properties?: api$IWriteMetaRequest): api$WriteMetaRequest;
+
+  /**
+   * Encodes the specified WriteMetaRequest message. Does not implicitly {@link api.WriteMetaRequest.verify|verify} messages.
+   * @param message WriteMetaRequest message or plain object to encode
    * @param [writer] Writer to encode to
    * @returns Writer
    */
   static encode(
-    message: api$AppendMeta,
+    message: api$WriteMetaRequest,
     writer?: $protobuf.Writer
   ): $protobuf.Writer;
 
   /**
-   * Encodes the specified AppendMeta message, length delimited. Does not implicitly {@link api.AppendMeta.verify|verify} messages.
-   * @param message AppendMeta message or plain object to encode
+   * Encodes the specified WriteMetaRequest message, length delimited. Does not implicitly {@link api.WriteMetaRequest.verify|verify} messages.
+   * @param message WriteMetaRequest message or plain object to encode
    * @param [writer] Writer to encode to
    * @returns Writer
    */
   static encodeDelimited(
-    message: api$AppendMeta,
+    message: api$WriteMetaRequest,
     writer?: $protobuf.Writer
   ): $protobuf.Writer;
 
   /**
-   * Decodes an AppendMeta message from the specified reader or buffer.
+   * Decodes a WriteMetaRequest message from the specified reader or buffer.
    * @param reader Reader or buffer to decode from
    * @param [length] Message length if known beforehand
-   * @returns AppendMeta
+   * @returns WriteMetaRequest
    * @throws {Error} If the payload is not a reader or valid buffer
    * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
   static decode(
     reader: $protobuf.Reader | Uint8Array,
     length?: number
-  ): api$AppendMeta;
+  ): api$WriteMetaRequest;
 
   /**
-   * Decodes an AppendMeta message from the specified reader or buffer, length delimited.
+   * Decodes a WriteMetaRequest message from the specified reader or buffer, length delimited.
    * @param reader Reader or buffer to decode from
-   * @returns AppendMeta
+   * @returns WriteMetaRequest
    * @throws {Error} If the payload is not a reader or valid buffer
    * @throws {$protobuf.util.ProtocolError} If required fields are missing
    */
-  static decodeDelimited(reader: $protobuf.Reader | Uint8Array): api$AppendMeta;
+  static decodeDelimited(
+    reader: $protobuf.Reader | Uint8Array
+  ): api$WriteMetaRequest;
 
   /**
-   * Verifies an AppendMeta message.
+   * Verifies a WriteMetaRequest message.
    * @param message Plain object to verify
    * @returns `null` if valid, otherwise the reason why it is not
    */
@@ -2512,29 +2750,423 @@ declare class api$AppendMeta {
   }): string | null;
 
   /**
-   * Creates an AppendMeta message from a plain object. Also converts values to their respective internal types.
+   * Creates a WriteMetaRequest message from a plain object. Also converts values to their respective internal types.
    * @param object Plain object
-   * @returns AppendMeta
+   * @returns WriteMetaRequest
    */
   static fromObject(object: {
     [k: string]: any,
-  }): api$AppendMeta;
+  }): api$WriteMetaRequest;
 
   /**
-   * Creates a plain object from an AppendMeta message. Also converts values to other types if specified.
-   * @param message AppendMeta
+   * Creates a plain object from a WriteMetaRequest message. Also converts values to other types if specified.
+   * @param message WriteMetaRequest
    * @param [options] Conversion options
    * @returns Plain object
    */
   static toObject(
-    message: api$AppendMeta,
+    message: api$WriteMetaRequest,
     options?: $protobuf.IConversionOptions
   ): {
     [k: string]: any,
   };
 
   /**
-   * Converts this AppendMeta to JSON.
+   * Converts this WriteMetaRequest to JSON.
+   * @returns JSON object
+   */
+  toJSON(): {
+    [k: string]: any,
+  };
+}
+
+/**
+ * Properties of a WriteMetaResponse.
+ */
+declare type api$IWriteMetaResponse = {|
+  /**
+   * WriteMetaResponse generation
+   */
+  generation?: number | null,
+
+  /**
+   * WriteMetaResponse metageneration
+   */
+  metageneration?: number | null,
+|};
+
+/**
+ * Represents a WriteMetaResponse.
+ */
+declare class api$WriteMetaResponse {
+  /**
+   * Constructs a new WriteMetaResponse.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: api$IWriteMetaResponse): this;
+
+  /**
+   * WriteMetaResponse generation.
+   */
+  generation: number;
+
+  /**
+   * WriteMetaResponse metageneration.
+   */
+  metageneration: number;
+
+  /**
+   * Creates a new WriteMetaResponse instance using the specified properties.
+   * @param [properties] Properties to set
+   * @returns WriteMetaResponse instance
+   */
+  static create(properties?: api$IWriteMetaResponse): api$WriteMetaResponse;
+
+  /**
+   * Encodes the specified WriteMetaResponse message. Does not implicitly {@link api.WriteMetaResponse.verify|verify} messages.
+   * @param message WriteMetaResponse message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encode(
+    message: api$WriteMetaResponse,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Encodes the specified WriteMetaResponse message, length delimited. Does not implicitly {@link api.WriteMetaResponse.verify|verify} messages.
+   * @param message WriteMetaResponse message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encodeDelimited(
+    message: api$WriteMetaResponse,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Decodes a WriteMetaResponse message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns WriteMetaResponse
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): api$WriteMetaResponse;
+
+  /**
+   * Decodes a WriteMetaResponse message from the specified reader or buffer, length delimited.
+   * @param reader Reader or buffer to decode from
+   * @returns WriteMetaResponse
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decodeDelimited(
+    reader: $protobuf.Reader | Uint8Array
+  ): api$WriteMetaResponse;
+
+  /**
+   * Verifies a WriteMetaResponse message.
+   * @param message Plain object to verify
+   * @returns `null` if valid, otherwise the reason why it is not
+   */
+  static verify(message: {
+    [k: string]: any,
+  }): string | null;
+
+  /**
+   * Creates a WriteMetaResponse message from a plain object. Also converts values to their respective internal types.
+   * @param object Plain object
+   * @returns WriteMetaResponse
+   */
+  static fromObject(object: {
+    [k: string]: any,
+  }): api$WriteMetaResponse;
+
+  /**
+   * Creates a plain object from a WriteMetaResponse message. Also converts values to other types if specified.
+   * @param message WriteMetaResponse
+   * @param [options] Conversion options
+   * @returns Plain object
+   */
+  static toObject(
+    message: api$WriteMetaResponse,
+    options?: $protobuf.IConversionOptions
+  ): {
+    [k: string]: any,
+  };
+
+  /**
+   * Converts this WriteMetaResponse to JSON.
+   * @returns JSON object
+   */
+  toJSON(): {
+    [k: string]: any,
+  };
+}
+
+/**
+ * Properties of an AppendMetaRequest.
+ */
+declare type api$IAppendMetaRequest = {|
+  /**
+   * AppendMetaRequest key
+   */
+  key?: string | null,
+
+  /**
+   * AppendMetaRequest data
+   */
+  data?: Uint8Array | null,
+
+  /**
+   * AppendMetaRequest preconditions
+   */
+  preconditions?: api$Preconditions | api$IPreconditions | null,
+|};
+
+/**
+ * Represents an AppendMetaRequest.
+ */
+declare class api$AppendMetaRequest {
+  /**
+   * Constructs a new AppendMetaRequest.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: api$IAppendMetaRequest): this;
+
+  /**
+   * AppendMetaRequest key.
+   */
+  key: string;
+
+  /**
+   * AppendMetaRequest data.
+   */
+  data: Uint8Array;
+
+  /**
+   * AppendMetaRequest preconditions.
+   */
+  preconditions?: api$Preconditions | null;
+
+  /**
+   * Creates a new AppendMetaRequest instance using the specified properties.
+   * @param [properties] Properties to set
+   * @returns AppendMetaRequest instance
+   */
+  static create(properties?: api$IAppendMetaRequest): api$AppendMetaRequest;
+
+  /**
+   * Encodes the specified AppendMetaRequest message. Does not implicitly {@link api.AppendMetaRequest.verify|verify} messages.
+   * @param message AppendMetaRequest message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encode(
+    message: api$AppendMetaRequest,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Encodes the specified AppendMetaRequest message, length delimited. Does not implicitly {@link api.AppendMetaRequest.verify|verify} messages.
+   * @param message AppendMetaRequest message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encodeDelimited(
+    message: api$AppendMetaRequest,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Decodes an AppendMetaRequest message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns AppendMetaRequest
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): api$AppendMetaRequest;
+
+  /**
+   * Decodes an AppendMetaRequest message from the specified reader or buffer, length delimited.
+   * @param reader Reader or buffer to decode from
+   * @returns AppendMetaRequest
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decodeDelimited(
+    reader: $protobuf.Reader | Uint8Array
+  ): api$AppendMetaRequest;
+
+  /**
+   * Verifies an AppendMetaRequest message.
+   * @param message Plain object to verify
+   * @returns `null` if valid, otherwise the reason why it is not
+   */
+  static verify(message: {
+    [k: string]: any,
+  }): string | null;
+
+  /**
+   * Creates an AppendMetaRequest message from a plain object. Also converts values to their respective internal types.
+   * @param object Plain object
+   * @returns AppendMetaRequest
+   */
+  static fromObject(object: {
+    [k: string]: any,
+  }): api$AppendMetaRequest;
+
+  /**
+   * Creates a plain object from an AppendMetaRequest message. Also converts values to other types if specified.
+   * @param message AppendMetaRequest
+   * @param [options] Conversion options
+   * @returns Plain object
+   */
+  static toObject(
+    message: api$AppendMetaRequest,
+    options?: $protobuf.IConversionOptions
+  ): {
+    [k: string]: any,
+  };
+
+  /**
+   * Converts this AppendMetaRequest to JSON.
+   * @returns JSON object
+   */
+  toJSON(): {
+    [k: string]: any,
+  };
+}
+
+/**
+ * Properties of an AppendMetaResponse.
+ */
+declare type api$IAppendMetaResponse = {|
+  /**
+   * AppendMetaResponse generation
+   */
+  generation?: number | null,
+
+  /**
+   * AppendMetaResponse metageneration
+   */
+  metageneration?: number | null,
+|};
+
+/**
+ * Represents an AppendMetaResponse.
+ */
+declare class api$AppendMetaResponse {
+  /**
+   * Constructs a new AppendMetaResponse.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: api$IAppendMetaResponse): this;
+
+  /**
+   * AppendMetaResponse generation.
+   */
+  generation: number;
+
+  /**
+   * AppendMetaResponse metageneration.
+   */
+  metageneration: number;
+
+  /**
+   * Creates a new AppendMetaResponse instance using the specified properties.
+   * @param [properties] Properties to set
+   * @returns AppendMetaResponse instance
+   */
+  static create(properties?: api$IAppendMetaResponse): api$AppendMetaResponse;
+
+  /**
+   * Encodes the specified AppendMetaResponse message. Does not implicitly {@link api.AppendMetaResponse.verify|verify} messages.
+   * @param message AppendMetaResponse message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encode(
+    message: api$AppendMetaResponse,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Encodes the specified AppendMetaResponse message, length delimited. Does not implicitly {@link api.AppendMetaResponse.verify|verify} messages.
+   * @param message AppendMetaResponse message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encodeDelimited(
+    message: api$AppendMetaResponse,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Decodes an AppendMetaResponse message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns AppendMetaResponse
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): api$AppendMetaResponse;
+
+  /**
+   * Decodes an AppendMetaResponse message from the specified reader or buffer, length delimited.
+   * @param reader Reader or buffer to decode from
+   * @returns AppendMetaResponse
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decodeDelimited(
+    reader: $protobuf.Reader | Uint8Array
+  ): api$AppendMetaResponse;
+
+  /**
+   * Verifies an AppendMetaResponse message.
+   * @param message Plain object to verify
+   * @returns `null` if valid, otherwise the reason why it is not
+   */
+  static verify(message: {
+    [k: string]: any,
+  }): string | null;
+
+  /**
+   * Creates an AppendMetaResponse message from a plain object. Also converts values to their respective internal types.
+   * @param object Plain object
+   * @returns AppendMetaResponse
+   */
+  static fromObject(object: {
+    [k: string]: any,
+  }): api$AppendMetaResponse;
+
+  /**
+   * Creates a plain object from an AppendMetaResponse message. Also converts values to other types if specified.
+   * @param message AppendMetaResponse
+   * @param [options] Conversion options
+   * @returns Plain object
+   */
+  static toObject(
+    message: api$AppendMetaResponse,
+    options?: $protobuf.IConversionOptions
+  ): {
+    [k: string]: any,
+  };
+
+  /**
+   * Converts this AppendMetaResponse to JSON.
    * @returns JSON object
    */
   toJSON(): {
@@ -3556,6 +4188,134 @@ declare class api$OTLinkFile {
 
   /**
    * Converts this OTLinkFile to JSON.
+   * @returns JSON object
+   */
+  toJSON(): {
+    [k: string]: any,
+  };
+}
+
+/**
+ * Properties of a OTLinkFileResponse.
+ */
+declare type api$IOTLinkFileResponse = {|
+  /**
+   * OTLinkFileResponse version
+   */
+  version?: number | null,
+
+  /**
+   * OTLinkFileResponse linkedFile
+   */
+  linkedFile?: api$File | api$IFile | null,
+|};
+
+/**
+ * Represents a OTLinkFileResponse.
+ */
+declare class api$OTLinkFileResponse {
+  /**
+   * Constructs a new OTLinkFileResponse.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: api$IOTLinkFileResponse): this;
+
+  /**
+   * OTLinkFileResponse version.
+   */
+  version: number;
+
+  /**
+   * OTLinkFileResponse linkedFile.
+   */
+  linkedFile?: api$File | null;
+
+  /**
+   * Creates a new OTLinkFileResponse instance using the specified properties.
+   * @param [properties] Properties to set
+   * @returns OTLinkFileResponse instance
+   */
+  static create(properties?: api$IOTLinkFileResponse): api$OTLinkFileResponse;
+
+  /**
+   * Encodes the specified OTLinkFileResponse message. Does not implicitly {@link api.OTLinkFileResponse.verify|verify} messages.
+   * @param message OTLinkFileResponse message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encode(
+    message: api$OTLinkFileResponse,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Encodes the specified OTLinkFileResponse message, length delimited. Does not implicitly {@link api.OTLinkFileResponse.verify|verify} messages.
+   * @param message OTLinkFileResponse message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encodeDelimited(
+    message: api$OTLinkFileResponse,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Decodes a OTLinkFileResponse message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns OTLinkFileResponse
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): api$OTLinkFileResponse;
+
+  /**
+   * Decodes a OTLinkFileResponse message from the specified reader or buffer, length delimited.
+   * @param reader Reader or buffer to decode from
+   * @returns OTLinkFileResponse
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decodeDelimited(
+    reader: $protobuf.Reader | Uint8Array
+  ): api$OTLinkFileResponse;
+
+  /**
+   * Verifies a OTLinkFileResponse message.
+   * @param message Plain object to verify
+   * @returns `null` if valid, otherwise the reason why it is not
+   */
+  static verify(message: {
+    [k: string]: any,
+  }): string | null;
+
+  /**
+   * Creates a OTLinkFileResponse message from a plain object. Also converts values to their respective internal types.
+   * @param object Plain object
+   * @returns OTLinkFileResponse
+   */
+  static fromObject(object: {
+    [k: string]: any,
+  }): api$OTLinkFileResponse;
+
+  /**
+   * Creates a plain object from a OTLinkFileResponse message. Also converts values to other types if specified.
+   * @param message OTLinkFileResponse
+   * @param [options] Conversion options
+   * @returns Plain object
+   */
+  static toObject(
+    message: api$OTLinkFileResponse,
+    options?: $protobuf.IConversionOptions
+  ): {
+    [k: string]: any,
+  };
+
+  /**
+   * Converts this OTLinkFileResponse to JSON.
    * @returns JSON object
    */
   toJSON(): {
@@ -4737,6 +5497,11 @@ declare type api$IFileAuthRes = {|
    * FileAuthRes error
    */
   error?: string | null,
+
+  /**
+   * FileAuthRes replError
+   */
+  replError?: boolean | null,
 |};
 
 /**
@@ -4773,6 +5538,11 @@ declare class api$FileAuthRes {
    * FileAuthRes error.
    */
   error: string;
+
+  /**
+   * FileAuthRes replError.
+   */
+  replError: boolean;
 
   /**
    * Creates a new FileAuthRes instance using the specified properties.
