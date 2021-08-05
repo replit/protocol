@@ -62,6 +62,12 @@ export namespace api {
         /** Command error */
         error?: (string|null);
 
+        /** Command stderr */
+        stderr?: (string|null);
+
+        /** Command log */
+        log?: (string|null);
+
         /** Command saneTerm */
         saneTerm?: (api.SaneTerm|api.ISaneTerm|null);
 
@@ -486,6 +492,12 @@ export namespace api {
         /** Command error. */
         public error: string;
 
+        /** Command stderr. */
+        public stderr: string;
+
+        /** Command log. */
+        public log: string;
+
         /** Command saneTerm. */
         public saneTerm?: (api.SaneTerm|null);
 
@@ -844,7 +856,7 @@ export namespace api {
         public ref: string;
 
         /** Command body. */
-        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"protocolError"|"redirect"|"alwaysOn"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"transferStart"|"transferChunk"|"transferComplete"|"transferCancel"|"transfer"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otLinkFileResponse"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"otTransformSelectionRequest"|"otTransformSelectionResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"openFile"|"fileOpened"|"followUser"|"unfollowUser"|"updateSessionTimestamp"|"sessionTimestampUpdated"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMetaRequest"|"readMetaResponse"|"writeMetaRequest"|"writeMetaResponse"|"appendMetaRequest"|"appendMetaResponse"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig"|"debugMain"|"debugState"|"debugMainReply"|"debugInput"|"debugOutput"|"debugStop"|"debugLeave"|"debugSessions"|"debugAddBreakpointRequest"|"debugRemoveBreakpointRequest"|"debugBreakpointEvent"|"dotReplitGetRequest"|"dotReplitGetResponse");
+        public body?: ("openChan"|"openChanRes"|"closeChan"|"closeChanRes"|"containerState"|"portOpen"|"toast"|"protocolError"|"redirect"|"alwaysOn"|"runMain"|"clear"|"eval"|"result"|"input"|"output"|"error"|"stderr"|"log"|"saneTerm"|"resizeTerm"|"state"|"ok"|"persist"|"persistMirror"|"write"|"remove"|"move"|"tryRemove"|"mkdir"|"stat"|"statRes"|"transferStart"|"transferChunk"|"transferComplete"|"transferCancel"|"transfer"|"read"|"readdir"|"files"|"file"|"checkChanges"|"changedFiles"|"lintResults"|"runContainedTest"|"testResult"|"debuggerStart"|"debuggerStep"|"debuggerStatus"|"ensurePackages"|"ping"|"pong"|"hello"|"goodbye"|"hint"|"connect"|"send"|"recv"|"disconnect"|"fileAuthReq"|"fileAuthRes"|"mutliFileAuthRes"|"listObjects"|"listObjectsResp"|"ot"|"otstatus"|"otLinkFile"|"otLinkFileResponse"|"otNewCursor"|"otDeleteCursor"|"otFetchRequest"|"otFetchResponse"|"otTransformSelectionRequest"|"otTransformSelectionResponse"|"flush"|"debug"|"startVCR"|"readVCR"|"VCRLog"|"auth"|"execInfo"|"subscribeFile"|"fileEvent"|"roster"|"join"|"part"|"openFile"|"fileOpened"|"followUser"|"unfollowUser"|"updateSessionTimestamp"|"sessionTimestampUpdated"|"exec"|"packageSearch"|"packageSearchResp"|"packageInfo"|"packageInfoResp"|"packageAdd"|"packageRemove"|"packageInstall"|"packageListSpecfile"|"packageListSpecfileResp"|"packageCacheSave"|"chatMessage"|"chatTyping"|"chatScrollback"|"fsSnapshot"|"fsTakeLock"|"fsReleaseLock"|"hasCap"|"pid1Config"|"metrics"|"bootStatus"|"readMetaRequest"|"readMetaResponse"|"writeMetaRequest"|"writeMetaResponse"|"appendMetaRequest"|"appendMetaResponse"|"audio"|"pprofRequest"|"pprofResponse"|"audio2"|"PTYConfig"|"debugMain"|"debugState"|"debugMainReply"|"debugInput"|"debugOutput"|"debugStop"|"debugLeave"|"debugSessions"|"debugAddBreakpointRequest"|"debugRemoveBreakpointRequest"|"debugBreakpointEvent"|"dotReplitGetRequest"|"dotReplitGetResponse");
 
         /**
          * Creates a new Command instance using the specified properties.
@@ -9665,6 +9677,12 @@ export namespace api {
 
         /** Exec blocking */
         blocking?: (boolean|null);
+
+        /** Exec splitStderr */
+        splitStderr?: (boolean|null);
+
+        /** Exec splitLogs */
+        splitLogs?: (boolean|null);
     }
 
     /** Represents an Exec. */
@@ -9684,6 +9702,12 @@ export namespace api {
 
         /** Exec blocking. */
         public blocking: boolean;
+
+        /** Exec splitStderr. */
+        public splitStderr: boolean;
+
+        /** Exec splitLogs. */
+        public splitLogs: boolean;
 
         /**
          * Creates a new Exec instance using the specified properties.
@@ -12695,8 +12719,14 @@ export namespace api {
         /** DebugAddBreakpointRequest otIndex */
         otIndex?: (number|null);
 
+        /** DebugAddBreakpointRequest sessionLocal */
+        sessionLocal?: (boolean|null);
+
         /** DebugAddBreakpointRequest line */
         line?: (number|null);
+
+        /** DebugAddBreakpointRequest logMessage */
+        logMessage?: (string|null);
     }
 
     /** Represents a DebugAddBreakpointRequest. */
@@ -12717,8 +12747,14 @@ export namespace api {
         /** DebugAddBreakpointRequest otIndex. */
         public otIndex: number;
 
+        /** DebugAddBreakpointRequest sessionLocal. */
+        public sessionLocal: boolean;
+
         /** DebugAddBreakpointRequest line. */
         public line: number;
+
+        /** DebugAddBreakpointRequest logMessage. */
+        public logMessage: string;
 
         /**
          * Creates a new DebugAddBreakpointRequest instance using the specified properties.
@@ -12997,6 +13033,12 @@ export namespace api {
 
         /** DebugBreakpoint otIndex */
         otIndex?: (number|null);
+
+        /** DebugBreakpoint sessionLocal */
+        sessionLocal?: (boolean|null);
+
+        /** DebugBreakpoint logMessage */
+        logMessage?: (string|null);
     }
 
     /** Represents a DebugBreakpoint. */
@@ -13019,6 +13061,12 @@ export namespace api {
 
         /** DebugBreakpoint otIndex. */
         public otIndex: number;
+
+        /** DebugBreakpoint sessionLocal. */
+        public sessionLocal: boolean;
+
+        /** DebugBreakpoint logMessage. */
+        public logMessage: string;
 
         /**
          * Creates a new DebugBreakpoint instance using the specified properties.

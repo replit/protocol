@@ -407,6 +407,16 @@ declare type api$ICommand = {|
   error?: string | null,
 
   /**
+   * Command stderr
+   */
+  stderr?: string | null,
+
+  /**
+   * Command log
+   */
+  log?: string | null,
+
+  /**
    * Command saneTerm
    */
   saneTerm?: api$SaneTerm | api$ISaneTerm | null,
@@ -1141,6 +1151,16 @@ declare class api$Command {
   error: string;
 
   /**
+   * Command stderr.
+   */
+  stderr: string;
+
+  /**
+   * Command log.
+   */
+  log: string;
+
+  /**
    * Command saneTerm.
    */
   saneTerm?: api$SaneTerm | null;
@@ -1756,6 +1776,8 @@ declare class api$Command {
     | "input"
     | "output"
     | "error"
+    | "stderr"
+    | "log"
     | "saneTerm"
     | "resizeTerm"
     | "state"
@@ -13487,6 +13509,16 @@ declare type api$IExec = {|
    * Exec blocking
    */
   blocking?: boolean | null,
+
+  /**
+   * Exec splitStderr
+   */
+  splitStderr?: boolean | null,
+
+  /**
+   * Exec splitLogs
+   */
+  splitLogs?: boolean | null,
 |};
 
 /**
@@ -13515,6 +13547,16 @@ declare class api$Exec {
    * Exec blocking.
    */
   blocking: boolean;
+
+  /**
+   * Exec splitStderr.
+   */
+  splitStderr: boolean;
+
+  /**
+   * Exec splitLogs.
+   */
+  splitLogs: boolean;
 
   /**
    * Creates a new Exec instance using the specified properties.
@@ -17526,9 +17568,19 @@ declare type api$IDebugAddBreakpointRequest = {|
   otIndex?: number | null,
 
   /**
+   * DebugAddBreakpointRequest sessionLocal
+   */
+  sessionLocal?: boolean | null,
+
+  /**
    * DebugAddBreakpointRequest line
    */
   line?: number | null,
+
+  /**
+   * DebugAddBreakpointRequest logMessage
+   */
+  logMessage?: string | null,
 |};
 
 /**
@@ -17557,9 +17609,19 @@ declare class api$DebugAddBreakpointRequest {
   otIndex: number;
 
   /**
+   * DebugAddBreakpointRequest sessionLocal.
+   */
+  sessionLocal: boolean;
+
+  /**
    * DebugAddBreakpointRequest line.
    */
   line: number;
+
+  /**
+   * DebugAddBreakpointRequest logMessage.
+   */
+  logMessage: string;
 
   /**
    * Creates a new DebugAddBreakpointRequest instance using the specified properties.
@@ -17939,6 +18001,16 @@ declare type api$IDebugBreakpoint = {|
    * DebugBreakpoint otIndex
    */
   otIndex?: number | null,
+
+  /**
+   * DebugBreakpoint sessionLocal
+   */
+  sessionLocal?: boolean | null,
+
+  /**
+   * DebugBreakpoint logMessage
+   */
+  logMessage?: string | null,
 |};
 
 /**
@@ -17970,6 +18042,16 @@ declare class api$DebugBreakpoint {
    * DebugBreakpoint otIndex.
    */
   otIndex: number;
+
+  /**
+   * DebugBreakpoint sessionLocal.
+   */
+  sessionLocal: boolean;
+
+  /**
+   * DebugBreakpoint logMessage.
+   */
+  logMessage: string;
 
   /**
    * Creates a new DebugBreakpoint instance using the specified properties.

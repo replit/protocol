@@ -1,6 +1,6 @@
 {
   "name": "@replit/protocol",
-  "version": "0.2.31",
+  "version": "0.2.32",
   "description": "JavaScript bindings for the Replit protocol",
   "main": "index.js",
   "repository": "https://github.com/replit/protocol",
