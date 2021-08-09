@@ -1,9 +1,11 @@
 #!/bin/sh
-PATH="${PATH}:node_modules/.bin"
 
 set -e
 
-TARGET={TARGET:-"./index"}
+export PATH="${PATH}:./node_modules/.bin"
+export TARGET="${TARGET:-./index}"
+
+mkdir -p "$(dirname "${TARGET}")"
 
 pbjs \
     --force-number \
@@ -11,7 +13,7 @@ pbjs \
     -t static-module \
     -w default \
     -o "${TARGET}.js" \
-    $@
+    "$@"
 
 ./tools/jsdoc.js <"${TARGET}.js" >"${TARGET}.tmp.js"
 
