@@ -1,3 +1,6 @@
+# By default, just build. This prevents accidents.
+all: build
+
 bump-%:
 	OLD_VERSION=$$(git tag | sort -r --version-sort | head -n1) && \
 	SEMVER_NEW_TAG=$$(bash ./scripts/semver.sh bump $(*) $${OLD_VERSION}) && \
@@ -8,11 +11,15 @@ bump-%:
 	git commit -am "[$(*)] Bump version to $${SEMVER_NEW_TAG}" && \
 	git tag $${SEMVER_NEW_TAG}
 
-all: build bump-patch publish
-
+.PHONY: clean
 clean:
-	rm -f lib/index.d.ts lib/index.js lib/export.flow.js lib/iotester/*
+	rm -rf lib/index.d.ts lib/index.js lib/export.flow.js lib/iotester
+
+.PHONY: build
 build: clean
 	cd lib && npm install && npm run prepublishOnly
+
+.PHONY: publish
 publish:
+	$(MAKE) build bump-patch
 	cd lib && npm publish
