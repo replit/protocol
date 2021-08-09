@@ -6,7 +6,7 @@
  */
 
 import * as $protobuf from "protobufjs";
-declare var api: typeof npm$namespace$api;
+export var api = npm$namespace$api;
 
 declare var npm$namespace$api: {|
   IPayload: Class<api$IPayload>,
