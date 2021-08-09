@@ -1,0 +1,142 @@
+/**
+
+Messages are JSON encoded and ternminated by `\n` (/ newlines).
+
+So to communicate tests to the I/O testing binary, a single message, the
+`Payload` messsage is sent, which should contain all of the information needed
+for the I/O testing binary to build, execute, and test the target.
+
+For every instruction, the binary will send an InstructionResult response
+containing output during that instruction, and the status of the instruction
+(for output instructions) (PASSED/FAILED/TIMEOUT).
+
+After either an instruction fails, or the last instruction passess, a TestResult
+response is sent which is used to indicate whether that test passed or not.
+
+The execution stops when the binary's proc exits.  The binary should exit after
+an error, but its not garunteed to.
+*/
+
+syntax = "proto3";
+
+import "google/protobuf/duration.proto";
+
+package api;
+option go_package = "./lib/api";
+
+// input: The payload which holds all data that the test runner needs to test
+// the program.
+message Payload {
+  RunInfo runInfo = 1;
+
+  repeated Test tests = 2;
+}
+
+// input: All information needed to run a system command.
+message SysCommand {
+  // The first element is looked up on PATH, and the rest of the elements
+  // are arguments.
+  repeated string args = 1;
+  map<string, string> env = 2;
+}
+
+// input: Information on how to compile (if applicable) the code and then how to
+// execute it
+message RunInfo {
+  SysCommand buildCommand = 1;
+  SysCommand execCommand = 2;
+}
+
+// input: Instructions for a particular test case
+message Test {
+  int32 id = 1;
+
+  repeated Instruction instructions = 2;
+}
+
+// input: an instruction for a test - so either input to send or output to
+// expect.
+message Instruction {
+  int32 id = 1;
+
+  oneof body {
+    InputInstruction input = 2;
+    OutputInstruction output = 3;
+  }
+}
+
+// input: A string that should be sent via STDIN once the instruction is
+// reached.
+message InputInstruction { string input = 1; }
+
+// input: An instruction which tells the tester to expect a certain output
+// before preceeding. It can have a custom timeout for how long to wait for the
+// instruction, along with a method on how to match the output - e.g. regex.
+message OutputInstruction {
+
+  google.protobuf.Duration timeout = 1;
+
+  oneof matchOptions {
+    RegexMatchOptions regex = 2;
+    ExactMatchOptions exact = 3;
+    MatchMatchOptions match = 4;
+    CompatibilityMatchOptions compatibility = 5;
+  }
+}
+
+// input: match options for an instruction which expects output to match a regex
+// expression.
+message RegexMatchOptions { string expression = 1; }
+
+// input: match options for an instruciton which expects the output to equal an
+// expected value
+message ExactMatchOptions { string expected = 1; }
+
+// input: match options for an instruciton which expects the output to contain
+// an expected value
+message MatchMatchOptions { string expected = 1; }
+
+// input: match options for an instruciton which expects the output to contain
+// an expected value (after removing some potential garbage output like escape
+// codes and trailing newlines)
+message CompatibilityMatchOptions { string expected = 1; }
+
+// output: A response from the tester to the client.
+message Response {
+  oneof body {
+    Error error = 1;
+    TestResult testResult = 2;
+    InstructionResult instructionResult = 3;
+  }
+}
+
+// output: Information on the results of a test.
+// Contains a boolean field for passed/failed and the ID of the test the results
+// are for.
+message TestResult {
+  int32 testId = 1;
+
+  bool didPass = 2;
+}
+
+// output: Information for the results of an instruction.
+// (for output instructions).  It contains a status detailing what happened,
+// along with the id of the instruction represented.
+message InstructionResult {
+  int32 instructionId = 1;
+
+
+  message Passed { string output = 1; }
+  message Failed { string output = 1; }
+  message Timeout { string output = 1; }
+
+  oneof body {
+    Passed passed = 2;
+    Failed failed = 3;
+    Timeout timeout = 4;
+    Error error = 5;
+  }
+}
+
+// output: An error that the auto-tester can't handle
+message Error { string message = 1; }
