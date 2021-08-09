@@ -12,7 +12,7 @@ pbjs \
     --force-message \
     -t static-module \
     -w default \
-    -o "${TARGET}".js \
+    -o "${TARGET}.js" \
     $@
 
 ./tools/jsdoc.js <"${TARGET}.js" >"${TARGET}.tmp.js"
