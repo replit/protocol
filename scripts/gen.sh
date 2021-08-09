@@ -3,9 +3,7 @@ PATH="${PATH}:node_modules/.bin"
 
 set -e
 
-if [[ -z "${TARGET}" ]]; then 
-    TARGET="./index"
-fi
+TARGET={TARGET:-"./index"}
 
 pbjs \
     --force-number \
