@@ -6,7 +6,7 @@
  */
 
 import * as $protobuf from "protobufjs";
-export var api = npm$namespace$api;
+declare var api: typeof npm$namespace$api;
 
 declare var npm$namespace$api: {|
   FileAuthMethod: typeof api$FileAuthMethod,
