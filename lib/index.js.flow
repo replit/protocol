@@ -137,6 +137,7 @@ declare var npm$namespace$api: {|
   IDotReplitGetRequest: Class<api$IDotReplitGetRequest>,
   IDotReplitGetResponse: Class<api$IDotReplitGetResponse>,
   IDebugAddBreakpointRequest: Class<api$IDebugAddBreakpointRequest>,
+  IDebugUpdateBreakpointRequest: Class<api$IDebugUpdateBreakpointRequest>,
   IDebugRemoveBreakpointRequest: Class<api$IDebugRemoveBreakpointRequest>,
   IDebugBreakpointEvent: Class<api$IDebugBreakpointEvent>,
   IDebugBreakpoint: Class<api$IDebugBreakpoint>,
@@ -283,6 +284,7 @@ declare var npm$namespace$api: {|
   DotReplitGetRequest: typeof api$DotReplitGetRequest,
   DotReplitGetResponse: typeof api$DotReplitGetResponse,
   DebugAddBreakpointRequest: typeof api$DebugAddBreakpointRequest,
+  DebugUpdateBreakpointRequest: typeof api$DebugUpdateBreakpointRequest,
   DebugRemoveBreakpointRequest: typeof api$DebugRemoveBreakpointRequest,
   DebugBreakpointEvent: typeof api$DebugBreakpointEvent,
   DebugBreakpoint: typeof api$DebugBreakpoint,
@@ -405,6 +407,16 @@ declare type api$ICommand = {|
    * Command error
    */
   error?: string | null,
+
+  /**
+   * Command stderr
+   */
+  stderr?: string | null,
+
+  /**
+   * Command log
+   */
+  log?: string | null,
 
   /**
    * Command saneTerm
@@ -998,6 +1010,14 @@ declare type api$ICommand = {|
     | null,
 
   /**
+   * Command debugUpdateBreakpointRequest
+   */
+  debugUpdateBreakpointRequest?:
+    | api$DebugUpdateBreakpointRequest
+    | api$IDebugUpdateBreakpointRequest
+    | null,
+
+  /**
    * Command debugRemoveBreakpointRequest
    */
   debugRemoveBreakpointRequest?:
@@ -1139,6 +1159,16 @@ declare class api$Command {
    * Command error.
    */
   error: string;
+
+  /**
+   * Command stderr.
+   */
+  stderr: string;
+
+  /**
+   * Command log.
+   */
+  log: string;
 
   /**
    * Command saneTerm.
@@ -1711,6 +1741,11 @@ declare class api$Command {
   debugAddBreakpointRequest?: api$DebugAddBreakpointRequest | null;
 
   /**
+   * Command debugUpdateBreakpointRequest.
+   */
+  debugUpdateBreakpointRequest?: api$DebugUpdateBreakpointRequest | null;
+
+  /**
    * Command debugRemoveBreakpointRequest.
    */
   debugRemoveBreakpointRequest?: api$DebugRemoveBreakpointRequest | null;
@@ -1756,6 +1791,8 @@ declare class api$Command {
     | "input"
     | "output"
     | "error"
+    | "stderr"
+    | "log"
     | "saneTerm"
     | "resizeTerm"
     | "state"
@@ -1870,6 +1907,7 @@ declare class api$Command {
     | "debugLeave"
     | "debugSessions"
     | "debugAddBreakpointRequest"
+    | "debugUpdateBreakpointRequest"
     | "debugRemoveBreakpointRequest"
     | "debugBreakpointEvent"
     | "dotReplitGetRequest"
@@ -13487,6 +13525,16 @@ declare type api$IExec = {|
    * Exec blocking
    */
   blocking?: boolean | null,
+
+  /**
+   * Exec splitStderr
+   */
+  splitStderr?: boolean | null,
+
+  /**
+   * Exec splitLogs
+   */
+  splitLogs?: boolean | null,
 |};
 
 /**
@@ -13515,6 +13563,16 @@ declare class api$Exec {
    * Exec blocking.
    */
   blocking: boolean;
+
+  /**
+   * Exec splitStderr.
+   */
+  splitStderr: boolean;
+
+  /**
+   * Exec splitLogs.
+   */
+  splitLogs: boolean;
 
   /**
    * Creates a new Exec instance using the specified properties.
@@ -17526,9 +17584,19 @@ declare type api$IDebugAddBreakpointRequest = {|
   otIndex?: number | null,
 
   /**
+   * DebugAddBreakpointRequest sessionLocal
+   */
+  sessionLocal?: boolean | null,
+
+  /**
    * DebugAddBreakpointRequest line
    */
   line?: number | null,
+
+  /**
+   * DebugAddBreakpointRequest logMessage
+   */
+  logMessage?: string | null,
 |};
 
 /**
@@ -17557,9 +17625,19 @@ declare class api$DebugAddBreakpointRequest {
   otIndex: number;
 
   /**
+   * DebugAddBreakpointRequest sessionLocal.
+   */
+  sessionLocal: boolean;
+
+  /**
    * DebugAddBreakpointRequest line.
    */
   line: number;
+
+  /**
+   * DebugAddBreakpointRequest logMessage.
+   */
+  logMessage: string;
 
   /**
    * Creates a new DebugAddBreakpointRequest instance using the specified properties.
@@ -17649,6 +17727,136 @@ declare class api$DebugAddBreakpointRequest {
 
   /**
    * Converts this DebugAddBreakpointRequest to JSON.
+   * @returns JSON object
+   */
+  toJSON(): {
+    [k: string]: any,
+  };
+}
+
+/**
+ * Properties of a DebugUpdateBreakpointRequest.
+ */
+declare type api$IDebugUpdateBreakpointRequest = {|
+  /**
+   * DebugUpdateBreakpointRequest breakpointId
+   */
+  breakpointId?: string | null,
+
+  /**
+   * DebugUpdateBreakpointRequest logMessage
+   */
+  logMessage?: string | null,
+|};
+
+/**
+ * Represents a DebugUpdateBreakpointRequest.
+ */
+declare class api$DebugUpdateBreakpointRequest {
+  /**
+   * Constructs a new DebugUpdateBreakpointRequest.
+   * @param [properties] Properties to set
+   */
+  constructor(properties?: api$IDebugUpdateBreakpointRequest): this;
+
+  /**
+   * DebugUpdateBreakpointRequest breakpointId.
+   */
+  breakpointId: string;
+
+  /**
+   * DebugUpdateBreakpointRequest logMessage.
+   */
+  logMessage: string;
+
+  /**
+   * Creates a new DebugUpdateBreakpointRequest instance using the specified properties.
+   * @param [properties] Properties to set
+   * @returns DebugUpdateBreakpointRequest instance
+   */
+  static create(
+    properties?: api$IDebugUpdateBreakpointRequest
+  ): api$DebugUpdateBreakpointRequest;
+
+  /**
+   * Encodes the specified DebugUpdateBreakpointRequest message. Does not implicitly {@link api.DebugUpdateBreakpointRequest.verify|verify} messages.
+   * @param message DebugUpdateBreakpointRequest message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encode(
+    message: api$DebugUpdateBreakpointRequest,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Encodes the specified DebugUpdateBreakpointRequest message, length delimited. Does not implicitly {@link api.DebugUpdateBreakpointRequest.verify|verify} messages.
+   * @param message DebugUpdateBreakpointRequest message or plain object to encode
+   * @param [writer] Writer to encode to
+   * @returns Writer
+   */
+  static encodeDelimited(
+    message: api$DebugUpdateBreakpointRequest,
+    writer?: $protobuf.Writer
+  ): $protobuf.Writer;
+
+  /**
+   * Decodes a DebugUpdateBreakpointRequest message from the specified reader or buffer.
+   * @param reader Reader or buffer to decode from
+   * @param [length] Message length if known beforehand
+   * @returns DebugUpdateBreakpointRequest
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decode(
+    reader: $protobuf.Reader | Uint8Array,
+    length?: number
+  ): api$DebugUpdateBreakpointRequest;
+
+  /**
+   * Decodes a DebugUpdateBreakpointRequest message from the specified reader or buffer, length delimited.
+   * @param reader Reader or buffer to decode from
+   * @returns DebugUpdateBreakpointRequest
+   * @throws {Error} If the payload is not a reader or valid buffer
+   * @throws {$protobuf.util.ProtocolError} If required fields are missing
+   */
+  static decodeDelimited(
+    reader: $protobuf.Reader | Uint8Array
+  ): api$DebugUpdateBreakpointRequest;
+
+  /**
+   * Verifies a DebugUpdateBreakpointRequest message.
+   * @param message Plain object to verify
+   * @returns `null` if valid, otherwise the reason why it is not
+   */
+  static verify(message: {
+    [k: string]: any,
+  }): string | null;
+
+  /**
+   * Creates a DebugUpdateBreakpointRequest message from a plain object. Also converts values to their respective internal types.
+   * @param object Plain object
+   * @returns DebugUpdateBreakpointRequest
+   */
+  static fromObject(object: {
+    [k: string]: any,
+  }): api$DebugUpdateBreakpointRequest;
+
+  /**
+   * Creates a plain object from a DebugUpdateBreakpointRequest message. Also converts values to other types if specified.
+   * @param message DebugUpdateBreakpointRequest
+   * @param [options] Conversion options
+   * @returns Plain object
+   */
+  static toObject(
+    message: api$DebugUpdateBreakpointRequest,
+    options?: $protobuf.IConversionOptions
+  ): {
+    [k: string]: any,
+  };
+
+  /**
+   * Converts this DebugUpdateBreakpointRequest to JSON.
    * @returns JSON object
    */
   toJSON(): {
@@ -17939,6 +18147,16 @@ declare type api$IDebugBreakpoint = {|
    * DebugBreakpoint otIndex
    */
   otIndex?: number | null,
+
+  /**
+   * DebugBreakpoint sessionLocal
+   */
+  sessionLocal?: boolean | null,
+
+  /**
+   * DebugBreakpoint logMessage
+   */
+  logMessage?: string | null,
 |};
 
 /**
@@ -17970,6 +18188,16 @@ declare class api$DebugBreakpoint {
    * DebugBreakpoint otIndex.
    */
   otIndex: number;
+
+  /**
+   * DebugBreakpoint sessionLocal.
+   */
+  sessionLocal: boolean;
+
+  /**
+   * DebugBreakpoint logMessage.
+   */
+  logMessage: string;
 
   /**
    * Creates a new DebugBreakpoint instance using the specified properties.
