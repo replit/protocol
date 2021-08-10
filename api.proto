@@ -48,6 +48,8 @@ message Command {
     string input = 22;
     string output = 23;
     string error = 24;
+    string stderr = 46;
+    string log = 47;
 
     SaneTerm saneTerm = 26;
     ResizeTerm resizeTerm = 27;
@@ -239,11 +241,12 @@ message Command {
 
     DebugSessions debugSessions = 377;
 
-    // DebugAddBreakpointRequest/DebugRemoveBreakpointRequest can be sent to
-    // add/remove a breakpoint. A DebugBreakpointEvent will be broadcast if the
-    // breakpoints changed. This will reply with OK on success, or an error on
-    // failure.
+    // DebugAddBreakpointRequest/DebugUpdateBreakpointRequest/DebugRemoveBreakpointRequest
+    // can be sent to add/update/remove a breakpoint. A DebugBreakpointEvent
+    // will be broadcast if the breakpoints changed. These will reply with OK on
+    // success, or an error on failure.
     DebugAddBreakpointRequest debugAddBreakpointRequest = 380;
+    DebugUpdateBreakpointRequest debugUpdateBreakpointRequest = 387;
     DebugRemoveBreakpointRequest debugRemoveBreakpointRequest = 381;
 
     // DebugBreakpointEvent is sent to all clients when a list of breakpoints
@@ -842,6 +845,16 @@ message Exec {
   repeated string args = 1;
   map<string, string> env = 2;
   bool blocking = 3;
+
+  // splitStderr can be set to true in order to send stderr as separate
+  // messages. Note that there is no synchronization between stdout and stderr.
+  bool splitStderr = 4;
+
+  // splitLogs can be set to true if the underlying program will log
+  // JSON-formatted logs to the file descriptor pointed to by the `LOG_FD`
+  // environment variable available to the child process. These logs will be
+  // send through separate messages.
+  bool splitLogs = 5;
 }
 
 message Package {
@@ -1039,15 +1052,40 @@ message DebugAddBreakpointRequest {
   uint32 otVersion = 2;
   uint32 otIndex = 3;
 
+  // When a breakpoint is session-local, two things happen:
+  // - The OT stream is ignored. This means that this means that the
+  //   breakpoint's line will not be updated when there are new OT operations.
+  // - The breakpoint is not saved to the `.breakpoints` file.
+  bool sessionLocal = 6;
+
   // The 1-indexed line number in which the debugger breakpoint will be added.
   // This is used as a fallback in case the file does not have OT history
   // available.
   int32 line = 4;
+
+  // The optional log message that will be used as a logpoint instead of a
+  // breakpoint. Logpoints are different from breakpoints in that the backend
+  // does not 'break' (stop), and instead logs the message. Expressions within
+  // {} are interpolated.  This is only honored by a debug adapter if the
+  // capability `supportsLogPoints` is true.
+  string logMessage = 5;
+}
+
+// The message used to request to update an existing breakpoint.
+message DebugUpdateBreakpointRequest {
+  string breakpointId = 1;
+
+  // The optional log message that will be used as a logpoint instead of a
+  // breakpoint. Logpoints are different from breakpoints in that the backend
+  // does not 'break' (stop), and instead logs the message. Expressions within
+  // {} are interpolated.  This is only honored by a debug adapter if the
+  // capability `supportsLogPoints` is true.
+  string logMessage = 2;
 }
 
 // The message used to request to remove an existing breakpoint.
 message DebugRemoveBreakpointRequest {
-  string breakpoint_id = 2;
+  string breakpointId = 2;
 }
 
 // The message used to notify about when the breakpoints for a file changed.
@@ -1062,7 +1100,7 @@ message DebugBreakpointEvent {
 // The message that represents a single breakpoint for a file.
 message DebugBreakpoint {
   // The globally-unique ID for a breakpoint.
-  string breakpoint_id = 1;
+  string breakpointId = 1;
   // The 1-indexed line number for the breakpoint.
   int32 line = 2;
   // The OT version and 0-based index (in Unicode codepoints) in which the
@@ -1071,6 +1109,8 @@ message DebugBreakpoint {
   // breakpoint location.
   uint32 otVersion = 3;
   uint32 otIndex = 4;
+  bool sessionLocal = 6;
+  string logMessage = 5;
 }
 
 // DotReplit is a .proto representation of types.DotReplit.
