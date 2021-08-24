@@ -844,7 +844,20 @@ message UnfollowUser {
 message Exec {
   repeated string args = 1;
   map<string, string> env = 2;
-  bool blocking = 3;
+  // Blocking is deprecated. Prefer to use lifecycle = BLOCKING instead.
+  bool blocking = 3 [deprecated = true];
+
+  enum Lifecycle {
+    // NON_BLOCKING is the default. This lets the process run in the background.
+    NON_BLOCKING = 0;
+    // BLOCKING starts and waits until the process has finished executing.
+    BLOCKING = 1;
+    // STDIN starts the process in the background and opens a pipe to stdin.
+    // TODO: Add an explicit message to be able to close the stdin.
+    STDIN = 2;
+  };
+  Lifecycle lifecycle = 6;
+
 
   // splitStderr can be set to true in order to send stderr as separate
   // messages. Note that there is no synchronization between stdout and stderr.

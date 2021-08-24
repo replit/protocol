@@ -1138,37 +1138,37 @@ declare class api$Command {
   /**
    * Command eval.
    */
-  eval: string;
+  eval?: string | null;
 
   /**
    * Command result.
    */
-  result: string;
+  result?: string | null;
 
   /**
    * Command input.
    */
-  input: string;
+  input?: string | null;
 
   /**
    * Command output.
    */
-  output: string;
+  output?: string | null;
 
   /**
    * Command error.
    */
-  error: string;
+  error?: string | null;
 
   /**
    * Command stderr.
    */
-  stderr: string;
+  stderr?: string | null;
 
   /**
    * Command log.
    */
-  log: string;
+  log?: string | null;
 
   /**
    * Command saneTerm.
@@ -1183,7 +1183,7 @@ declare class api$Command {
   /**
    * Command state.
    */
-  state: $Values<typeof api$State>;
+  state?: $Values<typeof api$State> | null;
 
   /**
    * Command ok.
@@ -1308,7 +1308,7 @@ declare class api$Command {
   /**
    * Command debuggerStart.
    */
-  debuggerStart: string;
+  debuggerStart?: string | null;
 
   /**
    * Command debuggerStep.
@@ -1623,7 +1623,7 @@ declare class api$Command {
   /**
    * Command hasCap.
    */
-  hasCap: boolean;
+  hasCap?: boolean | null;
 
   /**
    * Command pid1Config.
@@ -11834,17 +11834,17 @@ declare class api$OTRuneTransformOp {
   /**
    * OTRuneTransformOp skip.
    */
-  skip: number;
+  skip?: number | null;
 
   /**
    * OTRuneTransformOp delete.
    */
-  delete: number;
+  delete?: number | null;
 
   /**
    * OTRuneTransformOp insert.
    */
-  insert: string;
+  insert?: string | null;
 
   /**
    * OTRuneTransformOp op.
@@ -13527,6 +13527,11 @@ declare type api$IExec = {|
   blocking?: boolean | null,
 
   /**
+   * Exec lifecycle
+   */
+  lifecycle?: $Values<typeof api$Exec$Lifecycle> | null,
+
+  /**
    * Exec splitStderr
    */
   splitStderr?: boolean | null,
@@ -13563,6 +13568,11 @@ declare class api$Exec {
    * Exec blocking.
    */
   blocking: boolean;
+
+  /**
+   * Exec lifecycle.
+   */
+  lifecycle: $Values<typeof api$Exec$Lifecycle>;
 
   /**
    * Exec splitStderr.
@@ -13660,7 +13670,18 @@ declare class api$Exec {
   toJSON(): {
     [k: string]: any,
   };
+  static Lifecycle: typeof api$Exec$Lifecycle;
 }
+
+/**
+ * Lifecycle enum.
+ */
+
+declare var api$Exec$Lifecycle: {|
+  +NON_BLOCKING: 0, // 0
+  +BLOCKING: 1, // 1
+  +STDIN: 2, // 2
+|};
 
 /**
  * Properties of a Package.
@@ -16736,12 +16757,12 @@ declare class api$DebugInput {
   /**
    * DebugInput input.
    */
-  input: string;
+  input?: string | null;
 
   /**
    * DebugInput adapterInput.
    */
-  adapterInput: string;
+  adapterInput?: string | null;
 
   /**
    * DebugInput stream.
@@ -16877,12 +16898,12 @@ declare class api$DebugOutput {
   /**
    * DebugOutput output.
    */
-  output: string;
+  output?: string | null;
 
   /**
    * DebugOutput adapterOutput.
    */
-  adapterOutput: string;
+  adapterOutput?: string | null;
 
   /**
    * DebugOutput stream.
@@ -21026,12 +21047,12 @@ declare class api$GovalSigningAuthority {
   /**
    * GovalSigningAuthority keyId.
    */
-  keyId: string;
+  keyId?: string | null;
 
   /**
    * GovalSigningAuthority signedCert.
    */
-  signedCert: string;
+  signedCert?: string | null;
 
   /**
    * GovalSigningAuthority version.
@@ -21180,17 +21201,17 @@ declare class api$CertificateClaim {
   /**
    * CertificateClaim replid.
    */
-  replid: string;
+  replid?: string | null;
 
   /**
    * CertificateClaim user.
    */
-  user: string;
+  user?: string | null;
 
   /**
    * CertificateClaim flag.
    */
-  flag: $Values<typeof api$FlagClaim>;
+  flag?: $Values<typeof api$FlagClaim> | null;
 
   /**
    * CertificateClaim claim.

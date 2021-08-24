@@ -481,25 +481,25 @@ export namespace api {
         public clear?: (api.Clear|null);
 
         /** Command eval. */
-        public eval: string;
+        public eval?: (string|null);
 
         /** Command result. */
-        public result: string;
+        public result?: (string|null);
 
         /** Command input. */
-        public input: string;
+        public input?: (string|null);
 
         /** Command output. */
-        public output: string;
+        public output?: (string|null);
 
         /** Command error. */
-        public error: string;
+        public error?: (string|null);
 
         /** Command stderr. */
-        public stderr: string;
+        public stderr?: (string|null);
 
         /** Command log. */
-        public log: string;
+        public log?: (string|null);
 
         /** Command saneTerm. */
         public saneTerm?: (api.SaneTerm|null);
@@ -508,7 +508,7 @@ export namespace api {
         public resizeTerm?: (api.ResizeTerm|null);
 
         /** Command state. */
-        public state: api.State;
+        public state?: (api.State|null);
 
         /** Command ok. */
         public ok?: (api.OK|null);
@@ -583,7 +583,7 @@ export namespace api {
         public testResult?: (api.TestResult|null);
 
         /** Command debuggerStart. */
-        public debuggerStart: string;
+        public debuggerStart?: (string|null);
 
         /** Command debuggerStep. */
         public debuggerStep?: (api.RunMain|null);
@@ -772,7 +772,7 @@ export namespace api {
         public fsReleaseLock?: (api.FSLock|null);
 
         /** Command hasCap. */
-        public hasCap: boolean;
+        public hasCap?: (boolean|null);
 
         /** Command pid1Config. */
         public pid1Config?: (api.Pid1Config|null);
@@ -8414,13 +8414,13 @@ export namespace api {
         private constructor(properties?: api.IOTRuneTransformOp);
 
         /** OTRuneTransformOp skip. */
-        public skip: number;
+        public skip?: (number|null);
 
         /** OTRuneTransformOp delete. */
-        public delete: number;
+        public delete?: (number|null);
 
         /** OTRuneTransformOp insert. */
-        public insert: string;
+        public insert?: (string|null);
 
         /** OTRuneTransformOp op. */
         public op?: ("skip"|"delete"|"insert");
@@ -9684,6 +9684,9 @@ export namespace api {
         /** Exec blocking */
         blocking?: (boolean|null);
 
+        /** Exec lifecycle */
+        lifecycle?: (api.Exec.Lifecycle|null);
+
         /** Exec splitStderr */
         splitStderr?: (boolean|null);
 
@@ -9708,6 +9711,9 @@ export namespace api {
 
         /** Exec blocking. */
         public blocking: boolean;
+
+        /** Exec lifecycle. */
+        public lifecycle: api.Exec.Lifecycle;
 
         /** Exec splitStderr. */
         public splitStderr: boolean;
@@ -9784,6 +9790,16 @@ export namespace api {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
+    }
+
+    namespace Exec {
+
+        /** Lifecycle enum. */
+        enum Lifecycle {
+            NON_BLOCKING = 0,
+            BLOCKING = 1,
+            STDIN = 2
+        }
     }
 
     /** Properties of a Package. */
@@ -12085,10 +12101,10 @@ export namespace api {
         public session: string;
 
         /** DebugInput input. */
-        public input: string;
+        public input?: (string|null);
 
         /** DebugInput adapterInput. */
-        public adapterInput: string;
+        public adapterInput?: (string|null);
 
         /** DebugInput stream. */
         public stream?: ("input"|"adapterInput");
@@ -12190,10 +12206,10 @@ export namespace api {
         public session: string;
 
         /** DebugOutput output. */
-        public output: string;
+        public output?: (string|null);
 
         /** DebugOutput adapterOutput. */
-        public adapterOutput: string;
+        public adapterOutput?: (string|null);
 
         /** DebugOutput stream. */
         public stream?: ("output"|"adapterOutput");
@@ -15231,10 +15247,10 @@ export namespace api {
         private constructor(properties?: api.IGovalSigningAuthority);
 
         /** GovalSigningAuthority keyId. */
-        public keyId: string;
+        public keyId?: (string|null);
 
         /** GovalSigningAuthority signedCert. */
-        public signedCert: string;
+        public signedCert?: (string|null);
 
         /** GovalSigningAuthority version. */
         public version: api.TokenVersion;
@@ -15342,13 +15358,13 @@ export namespace api {
         private constructor(properties?: api.ICertificateClaim);
 
         /** CertificateClaim replid. */
-        public replid: string;
+        public replid?: (string|null);
 
         /** CertificateClaim user. */
-        public user: string;
+        public user?: (string|null);
 
         /** CertificateClaim flag. */
-        public flag: api.FlagClaim;
+        public flag?: (api.FlagClaim|null);
 
         /** CertificateClaim claim. */
         public claim?: ("replid"|"user"|"flag");
