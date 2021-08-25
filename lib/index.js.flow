@@ -1138,37 +1138,37 @@ declare class api$Command {
   /**
    * Command eval.
    */
-  eval?: string | null;
+  eval: string;
 
   /**
    * Command result.
    */
-  result?: string | null;
+  result: string;
 
   /**
    * Command input.
    */
-  input?: string | null;
+  input: string;
 
   /**
    * Command output.
    */
-  output?: string | null;
+  output: string;
 
   /**
    * Command error.
    */
-  error?: string | null;
+  error: string;
 
   /**
    * Command stderr.
    */
-  stderr?: string | null;
+  stderr: string;
 
   /**
    * Command log.
    */
-  log?: string | null;
+  log: string;
 
   /**
    * Command saneTerm.
@@ -1183,7 +1183,7 @@ declare class api$Command {
   /**
    * Command state.
    */
-  state?: $Values<typeof api$State> | null;
+  state: $Values<typeof api$State>;
 
   /**
    * Command ok.
@@ -1308,7 +1308,7 @@ declare class api$Command {
   /**
    * Command debuggerStart.
    */
-  debuggerStart?: string | null;
+  debuggerStart: string;
 
   /**
    * Command debuggerStep.
@@ -1623,7 +1623,7 @@ declare class api$Command {
   /**
    * Command hasCap.
    */
-  hasCap?: boolean | null;
+  hasCap: boolean;
 
   /**
    * Command pid1Config.
@@ -11834,17 +11834,17 @@ declare class api$OTRuneTransformOp {
   /**
    * OTRuneTransformOp skip.
    */
-  skip?: number | null;
+  skip: number;
 
   /**
    * OTRuneTransformOp delete.
    */
-  delete?: number | null;
+  delete: number;
 
   /**
    * OTRuneTransformOp insert.
    */
-  insert?: string | null;
+  insert: string;
 
   /**
    * OTRuneTransformOp op.
@@ -16757,12 +16757,12 @@ declare class api$DebugInput {
   /**
    * DebugInput input.
    */
-  input?: string | null;
+  input: string;
 
   /**
    * DebugInput adapterInput.
    */
-  adapterInput?: string | null;
+  adapterInput: string;
 
   /**
    * DebugInput stream.
@@ -16898,12 +16898,12 @@ declare class api$DebugOutput {
   /**
    * DebugOutput output.
    */
-  output?: string | null;
+  output: string;
 
   /**
    * DebugOutput adapterOutput.
    */
-  adapterOutput?: string | null;
+  adapterOutput: string;
 
   /**
    * DebugOutput stream.
@@ -21047,12 +21047,12 @@ declare class api$GovalSigningAuthority {
   /**
    * GovalSigningAuthority keyId.
    */
-  keyId?: string | null;
+  keyId: string;
 
   /**
    * GovalSigningAuthority signedCert.
    */
-  signedCert?: string | null;
+  signedCert: string;
 
   /**
    * GovalSigningAuthority version.
@@ -21201,17 +21201,17 @@ declare class api$CertificateClaim {
   /**
    * CertificateClaim replid.
    */
-  replid?: string | null;
+  replid: string;
 
   /**
    * CertificateClaim user.
    */
-  user?: string | null;
+  user: string;
 
   /**
    * CertificateClaim flag.
    */
-  flag?: $Values<typeof api$FlagClaim> | null;
+  flag: $Values<typeof api$FlagClaim>;
 
   /**
    * CertificateClaim claim.

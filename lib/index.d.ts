@@ -481,25 +481,25 @@ export namespace api {
         public clear?: (api.Clear|null);
 
         /** Command eval. */
-        public eval?: (string|null);
+        public eval: string;
 
         /** Command result. */
-        public result?: (string|null);
+        public result: string;
 
         /** Command input. */
-        public input?: (string|null);
+        public input: string;
 
         /** Command output. */
-        public output?: (string|null);
+        public output: string;
 
         /** Command error. */
-        public error?: (string|null);
+        public error: string;
 
         /** Command stderr. */
-        public stderr?: (string|null);
+        public stderr: string;
 
         /** Command log. */
-        public log?: (string|null);
+        public log: string;
 
         /** Command saneTerm. */
         public saneTerm?: (api.SaneTerm|null);
@@ -508,7 +508,7 @@ export namespace api {
         public resizeTerm?: (api.ResizeTerm|null);
 
         /** Command state. */
-        public state?: (api.State|null);
+        public state: api.State;
 
         /** Command ok. */
         public ok?: (api.OK|null);
@@ -583,7 +583,7 @@ export namespace api {
         public testResult?: (api.TestResult|null);
 
         /** Command debuggerStart. */
-        public debuggerStart?: (string|null);
+        public debuggerStart: string;
 
         /** Command debuggerStep. */
         public debuggerStep?: (api.RunMain|null);
@@ -772,7 +772,7 @@ export namespace api {
         public fsReleaseLock?: (api.FSLock|null);
 
         /** Command hasCap. */
-        public hasCap?: (boolean|null);
+        public hasCap: boolean;
 
         /** Command pid1Config. */
         public pid1Config?: (api.Pid1Config|null);
@@ -8414,13 +8414,13 @@ export namespace api {
         private constructor(properties?: api.IOTRuneTransformOp);
 
         /** OTRuneTransformOp skip. */
-        public skip?: (number|null);
+        public skip: number;
 
         /** OTRuneTransformOp delete. */
-        public delete?: (number|null);
+        public delete: number;
 
         /** OTRuneTransformOp insert. */
-        public insert?: (string|null);
+        public insert: string;
 
         /** OTRuneTransformOp op. */
         public op?: ("skip"|"delete"|"insert");
@@ -12101,10 +12101,10 @@ export namespace api {
         public session: string;
 
         /** DebugInput input. */
-        public input?: (string|null);
+        public input: string;
 
         /** DebugInput adapterInput. */
-        public adapterInput?: (string|null);
+        public adapterInput: string;
 
         /** DebugInput stream. */
         public stream?: ("input"|"adapterInput");
@@ -12206,10 +12206,10 @@ export namespace api {
         public session: string;
 
         /** DebugOutput output. */
-        public output?: (string|null);
+        public output: string;
 
         /** DebugOutput adapterOutput. */
-        public adapterOutput?: (string|null);
+        public adapterOutput: string;
 
         /** DebugOutput stream. */
         public stream?: ("output"|"adapterOutput");
@@ -15247,10 +15247,10 @@ export namespace api {
         private constructor(properties?: api.IGovalSigningAuthority);
 
         /** GovalSigningAuthority keyId. */
-        public keyId?: (string|null);
+        public keyId: string;
 
         /** GovalSigningAuthority signedCert. */
-        public signedCert?: (string|null);
+        public signedCert: string;
 
         /** GovalSigningAuthority version. */
         public version: api.TokenVersion;
@@ -15358,13 +15358,13 @@ export namespace api {
         private constructor(properties?: api.ICertificateClaim);
 
         /** CertificateClaim replid. */
-        public replid?: (string|null);
+        public replid: string;
 
         /** CertificateClaim user. */
-        public user?: (string|null);
+        public user: string;
 
         /** CertificateClaim flag. */
-        public flag?: (api.FlagClaim|null);
+        public flag: api.FlagClaim;
 
         /** CertificateClaim claim. */
         public claim?: ("replid"|"user"|"flag");
