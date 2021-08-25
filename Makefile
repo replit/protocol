@@ -21,5 +21,5 @@ build: clean
 
 .PHONY: publish
 publish:
-	$(MAKE) build bump-patch
+	$(MAKE) bump-patch
 	cd lib && npm publish
