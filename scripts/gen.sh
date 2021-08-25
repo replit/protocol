@@ -13,6 +13,7 @@ pbjs \
     -t static-module \
     -w default \
     -o "${TARGET}.js" \
+    --root "${TARGET}" \
     "$@"
 
 ./tools/jsdoc.js <"${TARGET}.js" >"${TARGET}.tmp.js"

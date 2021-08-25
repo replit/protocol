@@ -13527,6 +13527,11 @@ declare type api$IExec = {|
   blocking?: boolean | null,
 
   /**
+   * Exec lifecycle
+   */
+  lifecycle?: $Values<typeof api$Exec$Lifecycle> | null,
+
+  /**
    * Exec splitStderr
    */
   splitStderr?: boolean | null,
@@ -13563,6 +13568,11 @@ declare class api$Exec {
    * Exec blocking.
    */
   blocking: boolean;
+
+  /**
+   * Exec lifecycle.
+   */
+  lifecycle: $Values<typeof api$Exec$Lifecycle>;
 
   /**
    * Exec splitStderr.
@@ -13660,7 +13670,18 @@ declare class api$Exec {
   toJSON(): {
     [k: string]: any,
   };
+  static Lifecycle: typeof api$Exec$Lifecycle;
 }
+
+/**
+ * Lifecycle enum.
+ */
+
+declare var api$Exec$Lifecycle: {|
+  +NON_BLOCKING: 0, // 0
+  +BLOCKING: 1, // 1
+  +STDIN: 2, // 2
+|};
 
 /**
  * Properties of a Package.

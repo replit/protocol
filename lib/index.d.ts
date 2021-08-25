@@ -9684,6 +9684,9 @@ export namespace api {
         /** Exec blocking */
         blocking?: (boolean|null);
 
+        /** Exec lifecycle */
+        lifecycle?: (api.Exec.Lifecycle|null);
+
         /** Exec splitStderr */
         splitStderr?: (boolean|null);
 
@@ -9708,6 +9711,9 @@ export namespace api {
 
         /** Exec blocking. */
         public blocking: boolean;
+
+        /** Exec lifecycle. */
+        public lifecycle: api.Exec.Lifecycle;
 
         /** Exec splitStderr. */
         public splitStderr: boolean;
@@ -9784,6 +9790,16 @@ export namespace api {
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
+    }
+
+    namespace Exec {
+
+        /** Lifecycle enum. */
+        enum Lifecycle {
+            NON_BLOCKING = 0,
+            BLOCKING = 1,
+            STDIN = 2
+        }
     }
 
     /** Properties of a Package. */
