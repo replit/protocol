@@ -1,3 +1,7 @@
+⚠️ This repo is no longer up to date, the package has been moved into the goval repo. We will look into open sourcing this when we open up our protocol/API, the package will remain up to date on NPM ⚠️
+
+###
+
 Read the docs here http://protodoc.turbio.repl.co
 
 This repository acts as a source of truth for the protocol definitions. Contains the npm package and JavaScript language bindings.
